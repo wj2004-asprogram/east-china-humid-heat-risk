@@ -1,0 +1,16 @@
+# Core scientific stack
+numpy
+pandas
+xarray
+netCDF4
+h5netcdf
+scipy
+
+# Plotting
+matplotlib
+
+# Data access
+cdsapi
+
+# Progress bars
+tqdm

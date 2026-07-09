@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+*.egg-info/
+
+# Virtual environment
+.venv/
+venv/
+
+# Data files (large NetCDF files, not tracked)
+data/raw/*.nc
+data/processed/*.nc
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# CDS API key (contains personal UID/key)
+.cdsapirc
