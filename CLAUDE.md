@@ -39,7 +39,7 @@ python -m pytest
 - No hard-coded paths, dates or regions in `src/`; they come from the config.
 - Refactors must not change results. Re-run both configs and check `git diff --stat data/processed` is empty. A change that is meant to alter results gets its own commit, with a before/after note.
 - Formula changes need tests against an independent reference (NWS heat index chart, MetPy, published values), never against our own output.
-- Time: ERA5 timestamps are UTC. Daily aggregation is by local calendar day via `src/time_utils.local_daily` (config `utc_offset_hours`; 8 = Beijing time, day D = 16:00 UTC on D−1 to 15:00 UTC on D). Never resample hourly data to days directly. Hourly fields keep UTC timestamps.
+- Time: ERA5 timestamps are UTC. Daily aggregation is by local calendar day via `src/time_utils.local_daily` (config `utc_offset_hours`; 8 = Beijing time, day D = 16:00 UTC on D−1 to 15:00 UTC on D). Never resample hourly data to days directly. A day is complete only with exactly the 24 local hours, each once; duplicate or non-hourly timestamps raise (never de-duplicate silently). Hourly fields keep UTC timestamps.
 - Machine learning (phase 3): split train/test by year, never by random shuffle.
 - Keep code simple and readable: English docstrings and comments, units in variable names or attributes.
 - Python virtual environment in `.venv/`; dependencies in `requirements.txt`.

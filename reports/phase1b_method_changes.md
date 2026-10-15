@@ -15,8 +15,9 @@ Each fix is a separate commit on branch `phase-1b-methods`:
 3. Beijing-time (UTC+8) calendar days.
 
 Follow-up fixes found in review (see section 4): missing data is no
-longer counted as "No Risk", and the area-fraction CSV has a new column
-`Valid Land Coverage`.
+longer counted as "No Risk", the area-fraction CSV has a new column
+`Valid Land Coverage`, and a local day must hold exactly its 24 hourly
+time steps.
 
 ---
 
@@ -162,7 +163,9 @@ changes more, because a different night is included.
 
 ---
 
-## 4. Missing data (review fix)
+## 4. Review fixes: missing data and complete days
+
+### Missing data
 
 **Before:** a grid cell whose daily maximum heat index was missing (NaN)
 reached no threshold and was counted as "No Risk"; a day without any data
@@ -182,6 +185,20 @@ Expected effect on ERA5: none. ERA5 2m temperature and dewpoint have no
 gaps, so on the real files the coverage should be 100 % on every day and
 the category columns identical to those of fix 3. The real-data run should
 confirm this (`Valid Land Coverage` = 100 everywhere).
+
+### Complete days
+
+**Before:** a local day counted as complete if it had 24 time stamps, so a
+day with one hour missing and another hour duplicated was accepted.
+
+**After:** a local day is complete only if it holds exactly the 24 hourly
+time steps 00:00–23:00 local time, each once. Duplicate or non-hourly time
+steps anywhere in the input raise an error naming them; they are never
+dropped silently. Incomplete days outside the period are still dropped,
+and an incomplete day inside the period still stops the run.
+
+Expected effect on ERA5: none (hourly, unique time steps); the merge of
+the downloaded parts already rejects duplicates.
 
 ---
 

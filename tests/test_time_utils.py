@@ -131,3 +131,44 @@ def test_missing_hour_makes_the_day_missing():
 
     assert np.isnan(daily_max.values[0]) and np.isnan(daily_mean.values[0])
     assert daily_max.values[1] == _hours_since_ref("2022-07-02 15:00")
+
+
+# ---------------------------------------------------------------------------
+# Complete days: exactly the 24 hourly time steps, each once
+# ---------------------------------------------------------------------------
+
+def _hourly_at(times) -> xr.DataArray:
+    times = pd.DatetimeIndex(times)
+    return xr.DataArray([_hours_since_ref(t) for t in times], dims="time", coords={"time": times})
+
+
+def test_missing_hour_plus_duplicated_hour_is_an_error():
+    # Beijing day 2022-07-01 with 03:00 UTC missing and 04:00 UTC twice still
+    # has 24 time steps, but it is not complete.
+    times = pd.date_range("2022-06-30 16:00", "2022-07-02 23:00", freq="h")
+    times = times.drop(pd.Timestamp("2022-07-01 03:00")).append(pd.DatetimeIndex(["2022-07-01 04:00"]))
+    with pytest.raises(ValueError, match="Duplicate.*2022-07-01 04:00"):
+        local_daily(_hourly_at(times), "time", 8, "max", date(2022, 7, 1), date(2022, 7, 2))
+
+
+def test_duplicate_outside_the_period_is_an_error_too():
+    # Never de-duplicate silently, even in an edge day that would be dropped.
+    times = pd.date_range("2022-06-30 16:00", "2022-07-02 23:00", freq="h")
+    times = times.append(pd.DatetimeIndex(["2022-07-02 20:00"]))
+    with pytest.raises(ValueError, match="2022-07-02 20:00"):
+        local_daily(_hourly_at(times), "time", 8, "max", date(2022, 7, 1), date(2022, 7, 2))
+
+
+def test_non_hourly_time_step_is_an_error():
+    times = pd.date_range("2022-06-30 16:00", "2022-07-02 23:00", freq="h")
+    times = times.append(pd.DatetimeIndex(["2022-07-01 12:30"]))
+    with pytest.raises(ValueError, match="2022-07-01 12:30"):
+        local_daily(_hourly_at(times), "time", 8, "max", date(2022, 7, 1), date(2022, 7, 2))
+
+
+def test_missing_hour_inside_the_period_is_an_error():
+    # 23 hours on Beijing day 2022-07-02 (10:00 UTC on 07-02 missing): stop.
+    times = pd.date_range("2022-06-30 16:00", "2022-07-02 23:00", freq="h")
+    times = times.drop(pd.Timestamp("2022-07-02 10:00"))
+    with pytest.raises(ValueError, match="2022-07-02"):
+        local_daily(_hourly_at(times), "time", 8, "max", date(2022, 7, 1), date(2022, 7, 2))
