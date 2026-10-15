@@ -54,8 +54,8 @@ def test_rh_is_clipped_to_100():
 # Heat index
 # ---------------------------------------------------------------------------
 
-# NWS heat index chart values (°F) for RH >= 40 %, where the current code
-# applies the Rothfusz regression. Chart values are rounded to whole °F.
+# NWS heat index chart values (°F). The chart starts at RH = 40 %; drier
+# air is checked against MetPy below. Chart values are rounded to whole °F.
 NWS_CHART_F = [
     # (T °F, RH %, HI °F)
     (90, 50, 95),
@@ -74,19 +74,47 @@ def test_heat_index_matches_nws_chart(t_f, rh, hi_f):
     assert float(hi_c[0]) == pytest.approx(fahrenheit_to_celsius(hi_f), abs=0.6)
 
 
-def test_heat_index_equals_air_temperature_when_cool():
-    # Below 70 °F (~21 °C) the heat index is set to the air temperature.
-    hi_c = heat_index_rothfusz(_da(15.0), _da(60.0))
-    assert float(hi_c[0]) == pytest.approx(15.0)
+def _metpy_heat_index_c(t_c, rh):
+    """Independent reference: MetPy's NWS heat index (°C)."""
+    mpcalc = pytest.importorskip("metpy.calc")
+    from metpy.units import units
+
+    hi = mpcalc.heat_index(
+        units.Quantity(np.asarray(t_c, dtype=float), "degC"),
+        units.Quantity(np.asarray(rh, dtype=float), "percent"),
+        mask_undefined=False,
+    )
+    return hi.to("degC").magnitude
 
 
-@pytest.mark.xfail(
-    strict=True,
-    reason="Known issue, fixed in phase 1b: for RH < 40 % the code switches to the "
-           "simple formula, while NOAA keeps the Rothfusz regression, so the heat "
-           "index jumps by several °C at RH = 40 %.",
-)
+def _grid(t_values, rh_values):
+    t, rh = np.meshgrid(t_values, rh_values)
+    return t.ravel(), rh.ravel()
+
+
+def test_heat_index_matches_metpy_when_hot():
+    # T >= 28 °C (82.4 °F): both our rule (average of simple formula and T
+    # >= 80 °F) and MetPy's rule (simple formula >= 79 °F) select the
+    # Rothfusz regression, so the two must agree for every humidity,
+    # including hot, dry air (RH < 40 %) and both adjustments
+    # (RH < 13 % for 80-112 °F, RH > 85 % for 80-87 °F).
+    t_c, rh = _grid(
+        [28.0, 30.0, 33.0, 36.0, 38.0, 40.0, 42.0, 44.0, 46.0],
+        [3.0, 8.0, 12.5, 20.0, 30.0, 39.9, 40.1, 55.0, 70.0, 86.0, 95.0, 100.0],
+    )
+    hi_c = heat_index_rothfusz(_da(t_c), _da(rh))
+    np.testing.assert_allclose(hi_c.values, _metpy_heat_index_c(t_c, rh), atol=0.01)
+
+
+def test_heat_index_matches_metpy_when_cool():
+    # 5-24 °C: both rules give the simple formula itself (not averaged with T).
+    t_c, rh = _grid([5.0, 10.0, 15.0, 20.0, 24.0], [10.0, 40.0, 70.0, 100.0])
+    hi_c = heat_index_rothfusz(_da(t_c), _da(rh))
+    np.testing.assert_allclose(hi_c.values, _metpy_heat_index_c(t_c, rh), atol=0.01)
+
+
 def test_heat_index_is_continuous_across_rh_40():
+    # NOAA has no switch at RH = 40 %; v0.2 jumped by ~8 °C here at 40 °C.
     t = _da([40.0, 40.0])
     hi_c = heat_index_rothfusz(t, _da([39.99, 40.01]))
     assert abs(float(hi_c[1] - hi_c[0])) < 0.1

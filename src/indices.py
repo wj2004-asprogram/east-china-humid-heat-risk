@@ -57,48 +57,23 @@ def relative_humidity(t_c: xr.DataArray, td_c: xr.DataArray) -> xr.DataArray:
 # Heat index (NOAA / Rothfusz)
 # ---------------------------------------------------------------------------
 
-def _heat_index_simple(t_f: np.ndarray, rh: np.ndarray) -> np.ndarray:
+def _heat_index_simple(t_f, rh):
     """
-    Simple (first-approximation) heat index formula.
+    NOAA simple heat index formula (°F), consistent with Steadman (1979)
+    for heat index values below about 80 °F:
 
-    Used by NOAA when the full Rothfusz regression is not applicable.
-    Returns heat index in °F.
+        HI = 0.5 * (T + 61.0 + (T - 68.0) * 1.2 + RH * 0.094)
+
+    T in °F, RH in %.
     """
-    hi = (0.5 * (t_f + 61.0
-                 + (t_f - 68.0) * 1.2
-                 + rh * 0.094))
-    return (hi + t_f) / 2.0
+    return 0.5 * (t_f + 61.0 + (t_f - 68.0) * 1.2 + rh * 0.094)
 
 
-def heat_index_rothfusz(
-    t_c: xr.DataArray,
-    rh: xr.DataArray,
-) -> xr.DataArray:
+def _heat_index_regression(t_f, rh):
     """
-    Calculate hourly heat index (°C) using the NOAA / Rothfusz formula.
-
-    Steps
-    -----
-    1. Convert temperature to °F.
-    2. Apply the Rothfusz regression where T >= 80 °F and RH >= 40 %.
-    3. Apply NOAA adjustments for extreme RH conditions.
-    4. For T < 80 °F or RH < 40 %, use the simple formula, averaging
-       with the air temperature.
-    5. Convert back to °C.
-
-    Known issue (to be fixed in phase 1b, see docs/ROADMAP.md): NOAA applies
-    the Rothfusz regression whenever the simple estimate reaches 80 °F,
-    whatever the humidity. Switching to the simple formula for RH < 40 %
-    underestimates the heat index on hot, dry afternoons.
-
-    References
-    ----------
-    https://www.weather.gov/media/ffc/ta_htindx.PDF
-    Steadman, R.G. (1979). J. Appl. Meteor., 18(7), 861–873.
+    Rothfusz (1990) regression (°F) with the NOAA adjustments for very dry
+    (RH < 13 %) and very humid (RH > 85 %) air. T in °F, RH in %.
     """
-    t_f = celsius_to_fahrenheit(t_c)
-
-    # --- Rothfusz regression (core) ---
     hi_f = (
         -42.379
         + 2.04901523 * t_f
@@ -123,16 +98,41 @@ def heat_index_rothfusz(
     adj2 = ((rh - 85.0) / 10.0) * ((87.0 - t_f) / 5.0)
     hi_f = xr.where(cond2, hi_f + adj2, hi_f)
 
-    # --- Simple formula for cooler / low-RH conditions ---
-    simple_hi = _heat_index_simple(t_f.values, rh.values)
-    # Where Rothfusz doesn't apply, use the simple formula
-    low_cond = (t_f < 80.0) | (rh < 40.0)
-    hi_f = xr.where(low_cond, simple_hi, hi_f)
+    return hi_f
 
-    # --- For very cold conditions, just use the air temperature ---
-    cold_cond = t_f < 70.0  # ~21 °C
-    hi_f = xr.where(cold_cond, t_f, hi_f)
 
-    # --- Convert back to Celsius ---
-    hi_c = fahrenheit_to_celsius(hi_f)
-    return hi_c
+def heat_index_rothfusz(
+    t_c: xr.DataArray,
+    rh: xr.DataArray,
+) -> xr.DataArray:
+    """
+    Calculate hourly heat index (°C) following the NOAA/WPC algorithm.
+
+    Steps
+    -----
+    1. Convert temperature to °F.
+    2. Compute the simple formula
+       HI_simple = 0.5 * (T + 61.0 + (T - 68.0) * 1.2 + RH * 0.094).
+    3. If the average of HI_simple and T is >= 80 °F, the heat index is the
+       Rothfusz regression with the NOAA adjustments for RH < 13 % and
+       RH > 85 %, whatever the humidity.
+    4. Otherwise the heat index is HI_simple itself (the average with T is
+       only used for the decision in step 3).
+    5. Convert back to °C.
+
+    The index is meant for warm conditions; no special rule is applied to
+    cold air.
+
+    References
+    ----------
+    https://www.wpc.ncep.noaa.gov/html/heatindex_equation.shtml
+    Rothfusz, L.P. (1990). NWS Southern Region Technical Attachment SR 90-23.
+    Steadman, R.G. (1979). J. Appl. Meteor., 18(7), 861–873.
+    """
+    t_f = celsius_to_fahrenheit(t_c)
+
+    simple_f = _heat_index_simple(t_f, rh)
+    use_regression = (simple_f + t_f) / 2.0 >= 80.0
+    hi_f = xr.where(use_regression, _heat_index_regression(t_f, rh), simple_f)
+
+    return fahrenheit_to_celsius(hi_f)

@@ -40,7 +40,7 @@ python -m pytest
 - Large NetCDF files are not tracked; CSV outputs and figures are.
 - Commit after each meaningful step.
 
-## Known issues (to fix in phase 1b — see docs/ROADMAP.md)
-- Heat index: for RH < 40 % the code switches to the simple formula, while NOAA keeps the Rothfusz regression whenever the simple estimate is >= 80 °F. This underestimates the heat index on hot, dry afternoons and makes it jump at RH = 40 % (pinned by an `xfail` test).
+## Known issues (phase 1b — see docs/ROADMAP.md)
+- Tracked CSVs (`data/processed/`) and figures are still the v0.2 outputs: phase 1b changes the methods, but no raw ERA5 data was available to re-run them. Re-run both configs and fill in `reports/phase1b_method_changes.md` (currently a TODO).
 - No land-sea mask: ocean grid cells (roughly a fifth of the domain) are counted in the risk area fractions.
 - Daily values use UTC days.

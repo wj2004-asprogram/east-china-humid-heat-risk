@@ -87,9 +87,10 @@ def run(cfg: RunConfig) -> None:
     heat_index_c.attrs["units"] = "Celsius"
     heat_index_c.attrs["long_name"] = "heat index"
     heat_index_c.attrs["description"] = (
-        "Hourly heat index computed with the NOAA/Rothfusz formula; "
-        "for air temperature < 26.7 °C or RH < 40 % a simple "
-        "approximation is used"
+        "Hourly heat index following the NOAA/WPC algorithm: Rothfusz "
+        "regression (with the RH < 13 % and RH > 85 % adjustments) where the "
+        "average of the simple formula and the air temperature is >= 80 °F "
+        "(26.7 °C), otherwise the simple formula"
     )
 
     # =======================================================================

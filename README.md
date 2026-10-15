@@ -45,12 +45,22 @@ The workflow includes the following steps:
 1. Download ERA5 hourly 2m temperature and 2m dewpoint temperature.
 2. Convert temperature and dewpoint from Kelvin to Celsius.
 3. Calculate relative humidity from temperature and dewpoint.
-4. Calculate NOAA-style heat index.
+4. Calculate the hourly NOAA heat index (see below).
 5. Extract daily maximum heat index.
 6. Compare city-level daily maximum temperature and heat index.
 7. Classify humid heat risk levels.
 8. Calculate latitude-weighted area fractions for each risk category.
 9. Generate regional time series, city comparison figures, stacked risk-fraction charts, and spatial maps.
+
+### Heat index
+
+The heat index follows the NOAA/WPC algorithm ([equation page](https://www.wpc.ncep.noaa.gov/html/heatindex_equation.shtml)), with T in °F and RH in %:
+
+1. Compute the simple formula `HI = 0.5 * (T + 61.0 + (T - 68.0) * 1.2 + RH * 0.094)`.
+2. If the average of this value and T is at least 80 °F, use the Rothfusz regression instead, with NOAA's adjustments for RH < 13 % (80–112 °F) and RH > 85 % (80–87 °F). This applies at any humidity.
+3. Otherwise the heat index is the simple formula itself.
+
+The implementation is tested against the NWS heat index chart and against MetPy's `heat_index`. Up to v0.2 the regression was only used for RH ≥ 40 %, which overestimated the heat index in very dry air, underestimated it for RH between about 30 % and 40 %, and made it jump at RH = 40 % (see [reports/phase1b_method_changes.md](reports/phase1b_method_changes.md)).
 
 ## Heat Risk Classification
 

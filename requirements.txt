@@ -20,3 +20,4 @@ tqdm
 
 # Tests
 pytest
+metpy  # independent heat index reference in tests/test_indices.py
