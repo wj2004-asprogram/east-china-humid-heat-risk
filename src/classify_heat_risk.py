@@ -35,6 +35,16 @@ from src.risk import (
 )
 
 
+# Coverage below 100 % minus this (percentage points) counts as partial;
+# float sums can end just below 100 when nothing is missing.
+COVERAGE_TOLERANCE = 1e-9
+
+
+def is_partial_coverage(coverage_pct: pd.Series) -> pd.Series:
+    """True for days whose valid land coverage (%) is below 100 %."""
+    return coverage_pct < 100.0 - COVERAGE_TOLERANCE
+
+
 def plot_stacked_bar(
     df: pd.DataFrame,
     output_path: Path,
@@ -74,7 +84,7 @@ def plot_stacked_bar(
         bottom += values
 
     # --- Labels & title ---
-    partial = df[VALID_COVERAGE_LABEL] < 100.0
+    partial = is_partial_coverage(df[VALID_COVERAGE_LABEL])
     ax.set_xticks(x)
     ax.set_xticklabels(
         [f"{d}*" if p else d for d, p in zip(df["date"], partial)], rotation=45, ha="right",

@@ -107,7 +107,12 @@ to the air temperature.
 the average of that value and T is ≥ 80 °F, the Rothfusz regression (with
 its RH < 13 % and RH > 85 % adjustments) is used, whatever the humidity.
 Otherwise the heat index is the simple formula itself. Tested against the
-NWS chart (RH ≥ 40 %) and MetPy `heat_index` (all humidities).
+NWS chart (RH ≥ 40 %) and MetPy `heat_index` (all humidities). The
+adjustment ranges include their bounds (80 ≤ T ≤ 112 °F and
+80 ≤ T ≤ 87 °F), as in the NWS calculator (PR #2 review); this only matters
+at exactly 80 °F with RH > 85 %. At 80 °F and RH < 13 % the simple formula
+is used, so the dry-air adjustment never applies there (MetPy also adjusts
+the simple formula in that case and gives 77.9 instead of 78.2 °F).
 
 Formula-only effect. Heat index in °C, old (phase 1a) → new; "(=)" means
 unchanged. The new values agree with MetPy 1.7.1 `heat_index` to within

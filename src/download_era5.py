@@ -102,10 +102,14 @@ def merge_hourly_files(input_files, output_file) -> None:
     if merged.indexes[time_coord].has_duplicates:
         raise ValueError(f"Duplicate time steps when merging {list(map(str, input_files))}.")
 
-    # Let xarray choose the on-disk encoding again: the parts may have been
-    # packed with different scale factors.
+    # The parts may have been packed with different scale factors, so drop
+    # the packing (values are written exactly, as decoded) but keep the
+    # file compressed.
     for var in merged.variables.values():
-        var.encoding = {}
+        for key in ("scale_factor", "add_offset", "dtype"):
+            var.encoding.pop(key, None)
+    for name in merged.data_vars:
+        merged[name].encoding = {"zlib": True, "complevel": 4}
 
     # Write to a temporary name and rename only on success, so an
     # interrupted write never leaves a truncated raw file that a later run

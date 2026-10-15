@@ -110,7 +110,7 @@ def test_config_rejects_bad_land_sea_mask_threshold(tmp_path: Path, threshold):
         load_config(bad)
 
 
-@pytest.mark.parametrize("offset", ["8.5", "15", "'8'"])
+@pytest.mark.parametrize("offset", ["8.5", "15", "'8'", "true", "false"])
 def test_config_rejects_bad_utc_offset(tmp_path: Path, offset):
     bad = tmp_path / "bad.yaml"
     bad.write_text(
@@ -142,3 +142,23 @@ def test_download_request_days():
     assert july["year"] == ["2022"] and july["month"] == ["07"]
     assert len(july["time"]) == 24
     assert july["area"] == [36, 112, 25, 123]
+
+
+@pytest.mark.parametrize(
+    "key, line, hint",
+    [
+        ("utc_offset_hours", "utc_offset_hours: 8", "0 for UTC days"),
+        ("land_sea_mask_threshold", "land_sea_mask_threshold: 0.5", "0.5"),
+    ],
+)
+def test_config_missing_phase_1b_key_is_explained(tmp_path: Path, key, line, hint):
+    # An older (v0.2) config without the key gets a ValueError that names
+    # the key and the value to use, not a bare KeyError and no silent default.
+    text = (CONFIG_DIR / "july_2022_bjt.yaml").read_text(encoding="utf-8")
+    assert line in text
+    old = tmp_path / "old.yaml"
+    old.write_text(text.replace(line, ""), encoding="utf-8")
+    with pytest.raises(ValueError) as excinfo:
+        load_config(old)
+    message = str(excinfo.value)
+    assert key in message and hint in message

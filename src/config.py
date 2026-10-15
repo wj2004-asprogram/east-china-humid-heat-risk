@@ -17,6 +17,19 @@ import yaml
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
+# Keys added in phase 1b. They have no default: an older config must say
+# explicitly which behaviour it wants. (meaning, value to use)
+PHASE_1B_KEYS = {
+    "utc_offset_hours": (
+        "daily values are calendar days in UTC + this many hours",
+        "0 for UTC days as in v0.2, 8 for Beijing time",
+    ),
+    "land_sea_mask_threshold": (
+        "area fractions count land cells only, i.e. where the ERA5 land-sea mask is >= this",
+        "0.5 as in every config of this project (counting sea cells as in v0.2 is no longer possible)",
+    ),
+}
+
 
 @dataclass(frozen=True)
 class City:
@@ -111,6 +124,17 @@ def build_paths(file_tag: str, region: dict, figures_dir: Path, project_root: Pa
     )
 
 
+def _require_phase_1b_key(raw: dict, key: str):
+    """Return raw[key], or raise a ValueError that explains a missing phase 1b key."""
+    if key not in raw:
+        meaning, value = PHASE_1B_KEYS[key]
+        raise ValueError(
+            f"Config key '{key}' is missing ({meaning}). "
+            f"Add '{key}: <value>' to the config; use {value}."
+        )
+    return raw[key]
+
+
 def load_config(config_path, project_root: Path = PROJECT_ROOT) -> RunConfig:
     """
     Read a YAML run configuration.
@@ -150,13 +174,15 @@ def load_config(config_path, project_root: Path = PROJECT_ROOT) -> RunConfig:
                 f"City {city.name} ({city.lat}°N, {city.lon}°E) is outside the region {region}."
             )
 
-    utc_offset_hours = raw["utc_offset_hours"]
-    if not isinstance(utc_offset_hours, int) or not -12 <= utc_offset_hours <= 14:
+    utc_offset_hours = _require_phase_1b_key(raw, "utc_offset_hours")
+    # bool is a subclass of int in Python: YAML `true` would become UTC+1.
+    if (isinstance(utc_offset_hours, bool) or not isinstance(utc_offset_hours, int)
+            or not -12 <= utc_offset_hours <= 14):
         raise ValueError(
             f"utc_offset_hours must be a whole number of hours from -12 to 14, got {utc_offset_hours!r}."
         )
 
-    lsm_threshold = float(raw["land_sea_mask_threshold"])
+    lsm_threshold = float(_require_phase_1b_key(raw, "land_sea_mask_threshold"))
     if not 0.0 < lsm_threshold <= 1.0:
         raise ValueError(f"land_sea_mask_threshold must be in (0, 1], got {lsm_threshold}.")
 

@@ -86,15 +86,16 @@ def _heat_index_regression(t_f, rh):
         - 0.00000199 * t_f ** 2 * rh ** 2
     )
 
-    # --- Adjustment 1: RH < 13 % and 80 °F < T < 112 °F ---
-    cond1 = (rh < 13.0) & (t_f > 80.0) & (t_f < 112.0)
+    # --- Adjustment 1: RH < 13 % and 80 °F <= T <= 112 °F ---
+    # "Between" in NOAA/WPC; inclusive as in the NWS heat index calculator.
+    cond1 = (rh < 13.0) & (t_f >= 80.0) & (t_f <= 112.0)
     # Clip sqrt argument to avoid negative values outside the condition range
     sqrt_arg = np.maximum((17.0 - np.abs(t_f - 95.0)) / 17.0, 0.0)
     adj1 = ((13.0 - rh) / 4.0) * np.sqrt(sqrt_arg)
     hi_f = xr.where(cond1, hi_f - adj1, hi_f)
 
-    # --- Adjustment 2: RH > 85 % and 80 °F < T < 87 °F ---
-    cond2 = (rh > 85.0) & (t_f > 80.0) & (t_f < 87.0)
+    # --- Adjustment 2: RH > 85 % and 80 °F <= T <= 87 °F ---
+    cond2 = (rh > 85.0) & (t_f >= 80.0) & (t_f <= 87.0)
     adj2 = ((rh - 85.0) / 10.0) * ((87.0 - t_f) / 5.0)
     hi_f = xr.where(cond2, hi_f + adj2, hi_f)
 

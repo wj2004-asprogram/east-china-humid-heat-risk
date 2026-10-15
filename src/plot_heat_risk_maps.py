@@ -67,6 +67,18 @@ def _add_legend(ax, show_missing: bool):
     ax.legend(handles=handles, loc="lower right", fontsize=8)
 
 
+def color_limits(values: np.ndarray, land: np.ndarray) -> tuple:
+    """
+    Colour-scale limits (vmin, vmax) for a heat index map: the range over
+    valid land cells, or over all valid cells if no land cell is valid.
+    """
+    valid = ~np.isnan(values)
+    scale_values = values[valid & land]
+    if scale_values.size == 0:
+        scale_values = values[valid]
+    return float(scale_values.min()), float(scale_values.max())
+
+
 def _add_city_markers(ax, cities):
     """Add city scatter markers and text labels to an axis."""
     for city in cities:
@@ -98,14 +110,15 @@ def plot_heat_index_map(
     lat = da_hi[lat_name].values
     values = da_hi.values
     missing = np.isnan(values)
+    vmin, vmax = color_limits(values, land.values)
 
     # pcolormesh: centres of grid cells
     pcm = ax.pcolormesh(
         lon, lat, values,
         cmap="YlOrRd",
         shading="auto",
-        vmin=np.nanmin(values),
-        vmax=np.nanmax(values),
+        vmin=vmin,
+        vmax=vmax,
     )
 
     cbar = fig.colorbar(pcm, ax=ax, fraction=0.046, pad=0.04)

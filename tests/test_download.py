@@ -52,6 +52,11 @@ def test_merge_hourly_files(tmp_path):
     with xr.open_dataset(merged_file) as merged:
         assert merged.sizes["valid_time"] == 8 + 24
         xr.testing.assert_equal(merged[["t2m", "d2m"]], full[["t2m", "d2m"]])
+        for name in ("t2m", "d2m"):
+            # Exact values (same dtype, no packing), compressed on disk.
+            assert merged[name].dtype == full[name].dtype
+            assert "scale_factor" not in merged[name].encoding
+            assert merged[name].encoding.get("zlib") is True
 
 
 def test_interrupted_merge_leaves_no_raw_file(tmp_path, monkeypatch):

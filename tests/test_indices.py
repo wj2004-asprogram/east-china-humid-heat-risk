@@ -118,3 +118,20 @@ def test_heat_index_is_continuous_across_rh_40():
     t = _da([40.0, 40.0])
     hi_c = heat_index_rothfusz(t, _da([39.99, 40.01]))
     assert abs(float(hi_c[1] - hi_c[0])) < 0.1
+
+
+def test_heat_index_adjustments_include_80_f():
+    # NOAA/WPC applies the adjustments for T "between" 80 and 112 / 87 °F;
+    # the NWS calculator includes the bounds. Hand calculation at exactly
+    # T = 80 °F (also MetPy 1.7.1: 86.3419 °F at RH 90 %):
+    #   RH 90 %: simple = 81.93, average with T = 80.965 >= 80 -> regression
+    #            85.6419 + high-humidity adjustment (90-85)/10*(87-80)/5 = 0.7
+    #            -> 86.3419 °F
+    #   RH 10 %: simple = 78.17, average with T = 79.085 < 80 -> simple formula,
+    #            no adjustment (it belongs to the regression) -> 78.17 °F.
+    #            MetPy gives 77.91 °F here because it also adjusts the simple
+    #            formula, so MetPy is not the reference for this case.
+    t_c = _da([fahrenheit_to_celsius(80.0)] * 2)
+    hi_f = celsius_to_fahrenheit(heat_index_rothfusz(t_c, _da([90.0, 10.0])))
+    assert float(hi_f[0]) == pytest.approx(86.3419, abs=1e-3)
+    assert float(hi_f[1]) == pytest.approx(78.17, abs=1e-3)
