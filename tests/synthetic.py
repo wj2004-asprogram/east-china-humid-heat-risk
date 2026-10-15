@@ -39,3 +39,29 @@ def make_synthetic_era5(start: str, end: str, step: float = 0.5, seed: int = 0) 
             "expver": ("valid_time", np.full(len(times), "0001")),
         },
     )
+
+
+def make_synthetic_land_sea_mask(date: str, step: float = 0.5) -> xr.Dataset:
+    """
+    Build a land-sea mask laid out like a new-CDS ERA5 download: one
+    valid_time step, same grid as make_synthetic_era5.
+
+    Land fraction is 1 west of 121°E, falls linearly to 0 at 122°E, and is
+    0 (sea) further east. With threshold 0.5 and step 0.5 the three
+    columns east of 121.5°E are sea.
+    """
+    lats = np.arange(36.0, 25.0 - 1e-9, -step)
+    lons = np.arange(112.0, 123.0 + 1e-9, step)
+    land_fraction = np.clip(122.0 - lons, 0.0, 1.0)
+    lsm = np.broadcast_to(land_fraction, (1, len(lats), len(lons))).astype(np.float32)
+
+    return xr.Dataset(
+        {"lsm": (("valid_time", "latitude", "longitude"), lsm, {"units": "(0 - 1)"})},
+        coords={
+            "valid_time": pd.to_datetime([date]),
+            "latitude": lats,
+            "longitude": lons,
+            "number": 0,
+            "expver": ("valid_time", ["0001"]),
+        },
+    )

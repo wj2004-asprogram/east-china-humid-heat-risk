@@ -31,7 +31,7 @@ Acceptance:
 Each fix is a separate commit, with a before/after table of the July 2022 daily area fractions per category.
 
 - [x] **Heat index algorithm.** Follow NOAA/WPC: compute the simple formula first, then apply the Rothfusz regression (with its RH < 13 % and RH > 85 % adjustments) whenever the average of the simple estimate and T is ≥ 80 °F, whatever the humidity. Tests: NWS chart, MetPy `heat_index`, and continuity across RH = 40 % (the current `xfail`).
-- [ ] **Land-sea mask.** Download the ERA5 `land_sea_mask` once and compute area fractions over land only (document the threshold, e.g. lsm ≥ 0.5). Maps keep the ocean, but greyed out.
+- [x] **Land-sea mask.** Download the ERA5 `land_sea_mask` once and compute area fractions over land only (document the threshold, e.g. lsm ≥ 0.5). Maps keep the ocean, but greyed out.
 - [ ] **Beijing-time days (UTC+8).** Beijing day D runs from 16:00 UTC on D−1 to 15:00 UTC on D. The download must include the last 8 hours of the previous day.
 - [ ] Short note in `reports/` quantifying how each fix changed the July 2022 results.
 

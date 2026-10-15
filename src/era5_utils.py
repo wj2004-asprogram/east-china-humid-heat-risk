@@ -60,6 +60,11 @@ def detect_d2m_var(ds: xr.Dataset) -> str:
     )
 
 
+def detect_lsm_var(ds: xr.Dataset) -> str:
+    """Detect the land-sea mask variable name ('lsm' or 'land_sea_mask')."""
+    return _first_present(["lsm", "land_sea_mask"], ds.data_vars, "a land-sea mask variable")
+
+
 def load_dataset(path) -> xr.Dataset:
     """
     Read a NetCDF file fully into memory and close it.

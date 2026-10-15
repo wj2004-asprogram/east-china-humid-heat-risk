@@ -8,7 +8,8 @@
 ## Current setup (keep in sync with README)
 - Region: 112–123°E, 25–36°N (CDS `area = [36, 112, 25, 123]`).
 - Periods: one YAML file per run in `configs/` (`sample_2022_07_01_07.yaml`, `july_2022.yaml`).
-- Variables: ERA5 2m temperature and 2m dewpoint temperature.
+- Variables: ERA5 2m temperature and 2m dewpoint temperature; ERA5 land-sea mask (one file per region, `data/raw/era5_land_sea_mask_<region>.nc`).
+- Area fractions: land cells only, land = `land_sea_mask >= land_sea_mask_threshold` (0.5 in both configs). Maps grey out the sea.
 - Plotting: matplotlib only (no cartopy).
 
 ## Commands
@@ -23,7 +24,8 @@ python -m pytest
 - `src/pipeline.py` — CLI; runs the steps in order.
 - `src/config.py` — loads a YAML config; **every file path is derived here**.
 - `src/indices.py` — unit conversions, relative humidity, heat index (pure functions).
-- `src/risk.py` — risk categories, thresholds, colours, cos(latitude) area fractions.
+- `src/risk.py` — risk categories, thresholds, colours, cos(latitude) area fractions (optionally land only).
+- `src/land_sea_mask.py` — reads the ERA5 land-sea mask onto the data grid as a boolean land mask.
 - `src/era5_utils.py` — coordinate/variable name detection (`time` vs `valid_time`, etc.).
 - `src/<step>.py` — one pipeline step each, exposing `run(cfg)`.
 - `tests/` — pytest; `tests/synthetic.py` builds a small ERA5-like file for end-to-end tests.
@@ -42,5 +44,5 @@ python -m pytest
 
 ## Known issues (phase 1b — see docs/ROADMAP.md)
 - Tracked CSVs (`data/processed/`) and figures are still the v0.2 outputs: phase 1b changes the methods, but no raw ERA5 data was available to re-run them. Re-run both configs and fill in `reports/phase1b_method_changes.md` (currently a TODO).
-- No land-sea mask: ocean grid cells (roughly a fifth of the domain) are counted in the risk area fractions.
+- Regional-mean time series (`plot_figures`, `plot_heat_index_figures`) are plain means over all grid cells: no cos(latitude) weights, sea included.
 - Daily values use UTC days.

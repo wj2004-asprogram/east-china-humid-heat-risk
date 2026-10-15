@@ -34,6 +34,7 @@ class Paths:
 
     # Data
     raw_era5: Path
+    raw_land_sea_mask: Path
     daily_tmax_nc: Path
     humid_heat_nc: Path
     heat_risk_nc: Path
@@ -63,6 +64,7 @@ class RunConfig:
     south: float
     east: float
     cities: tuple
+    land_sea_mask_threshold: float  # land where ERA5 land_sea_mask >= this
     file_tag: str
     paths: Paths
 
@@ -77,14 +79,21 @@ class RunConfig:
         return [self.north, self.west, self.south, self.east]
 
 
-def build_paths(file_tag: str, figures_dir: Path, project_root: Path) -> Paths:
-    """Derive every file path of a run from its file tag."""
+def build_paths(file_tag: str, region: dict, figures_dir: Path, project_root: Path) -> Paths:
+    """
+    Derive every file path of a run from its file tag.
+
+    The land-sea mask does not depend on the period, so its file is named
+    after the region and shared by every run over the same region.
+    """
     raw = project_root / "data" / "raw"
     processed = project_root / "data" / "processed"
     t = file_tag
+    area = "{north:g}N_{west:g}E_{south:g}N_{east:g}E".format(**region)
 
     return Paths(
         raw_era5=raw / f"era5_east_china_{t}.nc",
+        raw_land_sea_mask=raw / f"era5_land_sea_mask_{area}.nc",
         daily_tmax_nc=processed / f"daily_tmax_{t}.nc",
         humid_heat_nc=processed / f"humid_heat_{t}.nc",
         heat_risk_nc=processed / f"heat_risk_categories_{t}.nc",
@@ -140,6 +149,10 @@ def load_config(config_path, project_root: Path = PROJECT_ROOT) -> RunConfig:
                 f"City {city.name} ({city.lat}°N, {city.lon}°E) is outside the region {region}."
             )
 
+    lsm_threshold = float(raw["land_sea_mask_threshold"])
+    if not 0.0 < lsm_threshold <= 1.0:
+        raise ValueError(f"land_sea_mask_threshold must be in (0, 1], got {lsm_threshold}.")
+
     file_tag = str(raw["file_tag"])
     figures_dir = project_root / raw["figures_dir"]
 
@@ -152,6 +165,7 @@ def load_config(config_path, project_root: Path = PROJECT_ROOT) -> RunConfig:
         south=region["south"],
         east=region["east"],
         cities=cities,
+        land_sea_mask_threshold=lsm_threshold,
         file_tag=file_tag,
-        paths=build_paths(file_tag, figures_dir, project_root),
+        paths=build_paths(file_tag, region, figures_dir, project_root),
     )

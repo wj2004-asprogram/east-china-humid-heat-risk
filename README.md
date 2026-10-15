@@ -35,6 +35,7 @@ Variables used:
 
 - 2m temperature
 - 2m dewpoint temperature
+- land-sea mask (time-invariant; one file per region, used to restrict area fractions to land)
 
 Large NetCDF files are intentionally excluded from Git tracking using `.gitignore`. The repository keeps scripts, figures, reports, and processed CSV outputs, while raw and processed NetCDF files are reproducible from the workflow.
 
@@ -42,15 +43,15 @@ Large NetCDF files are intentionally excluded from Git tracking using `.gitignor
 
 The workflow includes the following steps:
 
-1. Download ERA5 hourly 2m temperature and 2m dewpoint temperature.
+1. Download ERA5 hourly 2m temperature and 2m dewpoint temperature, and the ERA5 land-sea mask.
 2. Convert temperature and dewpoint from Kelvin to Celsius.
 3. Calculate relative humidity from temperature and dewpoint.
 4. Calculate the hourly NOAA heat index (see below).
 5. Extract daily maximum heat index.
 6. Compare city-level daily maximum temperature and heat index.
 7. Classify humid heat risk levels.
-8. Calculate latitude-weighted area fractions for each risk category.
-9. Generate regional time series, city comparison figures, stacked risk-fraction charts, and spatial maps.
+8. Calculate latitude-weighted area fractions for each risk category, over land only.
+9. Generate regional time series, city comparison figures, stacked risk-fraction charts, and spatial maps (sea greyed out).
 
 ### Heat index
 
@@ -74,7 +75,7 @@ Daily maximum heat index is classified into the following categories:
 | Danger | 40.6°C to 54.4°C |
 | Extreme Danger | >= 54.4°C |
 
-Area-fraction statistics are calculated using latitude-based weighting with `cos(latitude)`.
+Area-fraction statistics are calculated over **land grid cells only**, using latitude-based weighting with `cos(latitude)`. A grid cell counts as land where the ERA5 land-sea mask (the fraction of land in the cell, 0–1) is at least `land_sea_mask_threshold` in the config, 0.5 by default; this excludes the East China Sea and the Yellow Sea, about a fifth of the domain. The same land area is used to pick the hottest risk day for the maps. The maps still show sea cells, greyed out. Regional-mean time series still average over all grid cells.
 
 ## How to Run
 

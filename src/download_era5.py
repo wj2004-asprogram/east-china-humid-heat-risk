@@ -1,9 +1,11 @@
 """
 download_era5.py
 
-Download ERA5 hourly single-level 2m temperature and 2m dewpoint
-temperature for the configured region and period from the Copernicus
-Climate Data Store (CDS).
+Download from the Copernicus Climate Data Store (CDS), for the configured
+region:
+  - ERA5 hourly single-level 2m temperature and 2m dewpoint temperature
+    for the configured period;
+  - the ERA5 land-sea mask (time-invariant, a single time step).
 
 Before running:
     1. Register at https://cds.climate.copernicus.eu/
@@ -53,23 +55,39 @@ def build_request(cfg: RunConfig) -> dict:
     }
 
 
-def run(cfg: RunConfig) -> None:
-    """Download the raw ERA5 file, unless it already exists."""
+def build_land_sea_mask_request(cfg: RunConfig) -> dict:
+    """
+    Build the CDS API request for the ERA5 land-sea mask over the region.
+
+    The land-sea mask does not change in time, so a single time step
+    (00 UTC on the first day of the period) is enough.
+    """
+    d = cfg.start_date
+    return {
+        "product_type": ["reanalysis"],
+        "variable": ["land_sea_mask"],
+        "year": [f"{d.year:04d}"],
+        "month": [f"{d.month:02d}"],
+        "day": [f"{d.day:02d}"],
+        "time": ["00:00"],
+        "area": cfg.cds_area,
+        "data_format": "netcdf",
+        "download_format": "unarchived",
+    }
+
+
+def _retrieve(request: dict, output_file, what: str) -> None:
+    """Retrieve one CDS request into `output_file`, unless the file already exists."""
     import cdsapi  # imported here so the other steps run without cdsapi
 
-    output_file = cfg.paths.raw_era5
     output_file.parent.mkdir(parents=True, exist_ok=True)
-
     if output_file.exists():
-        print(f"Output file already exists: {output_file}")
+        print(f"{what}: file already exists: {output_file}")
         print("Delete it first if you want to download again.")
         return
 
-    request = build_request(cfg)
-
-    print(f"Downloading ERA5 for {cfg.period_label} ...")
-    print(f"  Variables: {VARIABLES}")
-    print(f"  Region:    N={cfg.north}°, W={cfg.west}°, S={cfg.south}°, E={cfg.east}°")
+    print(f"Downloading {what} ...")
+    print(f"  Variables: {request['variable']}")
     print(f"  Output:    {output_file}")
 
     # Download to a temporary name and rename only on success, so an
@@ -82,3 +100,10 @@ def run(cfg: RunConfig) -> None:
     partial_file.replace(output_file)
 
     print("Download completed.")
+
+
+def run(cfg: RunConfig) -> None:
+    """Download the raw ERA5 file and the land-sea mask, unless they already exist."""
+    print(f"Region: N={cfg.north}°, W={cfg.west}°, S={cfg.south}°, E={cfg.east}°")
+    _retrieve(build_request(cfg), cfg.paths.raw_era5, f"ERA5 for {cfg.period_label}")
+    _retrieve(build_land_sea_mask_request(cfg), cfg.paths.raw_land_sea_mask, "ERA5 land-sea mask")

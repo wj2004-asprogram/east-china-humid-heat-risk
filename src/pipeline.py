@@ -43,13 +43,16 @@ STEPS = {
 # Steps that read the raw ERA5 file (the others read processed files).
 RAW_INPUT_STEPS = {"process_temperature", "process_humid_heat"}
 
+# Steps that read the raw ERA5 land-sea mask file.
+LAND_SEA_MASK_STEPS = {"classify_heat_risk"}
+
 
 def parse_args(argv=None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="East China humid heat risk workflow")
     parser.add_argument("--config", required=True, help="Path to a YAML file in configs/")
     parser.add_argument(
         "--download", action="store_true",
-        help="Download the raw ERA5 file first (skipped if it already exists)",
+        help="Download the raw ERA5 file and land-sea mask first (skipped if they already exist)",
     )
     parser.add_argument(
         "--steps", nargs="+", choices=list(STEPS), metavar="STEP",
@@ -71,11 +74,17 @@ def main(argv=None) -> None:
     selected = args.steps or list(STEPS)
     steps = [name for name in STEPS if name in selected]  # keep pipeline order
 
-    if RAW_INPUT_STEPS.intersection(steps) and not cfg.paths.raw_era5.exists():
-        raise SystemExit(
-            f"Raw ERA5 file not found: {cfg.paths.raw_era5}\n"
-            "Run again with --download, or copy the file there."
-        )
+    required = []
+    if RAW_INPUT_STEPS.intersection(steps):
+        required.append(cfg.paths.raw_era5)
+    if LAND_SEA_MASK_STEPS.intersection(steps):
+        required.append(cfg.paths.raw_land_sea_mask)
+    for raw_file in required:
+        if not raw_file.exists():
+            raise SystemExit(
+                f"Raw ERA5 file not found: {raw_file}\n"
+                "Run again with --download, or copy the file there."
+            )
 
     for i, name in enumerate(steps, start=1):
         print(f"\n=== Step {i}/{len(steps)}: {name} ===")

@@ -60,3 +60,42 @@ def test_find_hottest_risk_day():
     date_str, frac, idx = find_hottest_risk_day(cat, "date", "latitude", "longitude")
     assert (date_str, idx) == ("2022-07-02", 1)
     assert frac == pytest.approx((1 + 1 + 0.5) / 3)
+
+
+def _land_mask(values):
+    """Land mask on the same 2 x 2 grid as _category_grid (True = land)."""
+    return xr.DataArray(
+        np.asarray(values, dtype=bool),
+        dims=("latitude", "longitude"),
+        coords={"latitude": [0.0, 60.0], "longitude": [118.0, 119.0]},
+    )
+
+
+def test_area_fractions_count_land_only():
+    # The Danger cell at (0°N, 119°E) is sea and must not be counted.
+    # Land weights: (0°N, 118°E) = 1, (60°N, 118°E) = 0.5, (60°N, 119°E) = 0.5.
+    cat = _category_grid([[[2, 3], [0, 0]]])
+    land = _land_mask([[True, False], [True, True]])
+    df = compute_area_fractions(cat, "latitude", "longitude", "date", land)
+
+    assert df.loc[0, "Extreme Caution"] == pytest.approx(100.0 * 1 / 2)
+    assert df.loc[0, "No Risk"] == pytest.approx(100.0 * 1 / 2)
+    assert df.loc[0, "Danger"] == pytest.approx(0.0)
+    assert df.loc[0, list(CATEGORY_LABELS.values())].sum() == pytest.approx(100.0)
+
+
+def test_hottest_risk_day_ignores_sea():
+    cat = _category_grid([
+        [[0, 4], [0, 4]],  # day 1: Extreme Danger over the sea column only
+        [[3, 0], [0, 0]],  # day 2: Danger on land
+    ])
+    land = _land_mask([[True, False], [True, False]])
+    date_str, frac, idx = find_hottest_risk_day(cat, "date", "latitude", "longitude", land)
+    assert (date_str, idx) == ("2022-07-02", 1)
+    assert frac == pytest.approx(1 / 1.5)
+
+
+def test_empty_land_mask_is_an_error():
+    cat = _category_grid([[[0, 0], [0, 0]]])
+    with pytest.raises(ValueError):
+        compute_area_fractions(cat, "latitude", "longitude", "date", _land_mask([[False, False], [False, False]]))

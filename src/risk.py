@@ -1,7 +1,8 @@
 """
 risk.py
 
-Heat risk categories and cos(latitude)-weighted area fractions.
+Heat risk categories and cos(latitude)-weighted area fractions
+(optionally over land only).
 
 Categories (based on NOAA heat index thresholds):
     0 = No Risk:          HI < 26.7 °C
@@ -56,23 +57,26 @@ def classify_heat_risk(hi: xr.DataArray) -> xr.DataArray:
     return category
 
 
-def cos_lat_weights(category: xr.DataArray, lat_name: str, lon_name: str):
+def area_weights(grid: xr.DataArray, lat_name: str, lon_name: str, land_mask=None) -> xr.DataArray:
     """
-    Cosine-latitude area weights for a regular lat/lon grid.
+    Area weight of each cell of a regular lat/lon grid.
+
+    The weight is cos(latitude), proportional to the true surface area of
+    the cell. With a `land_mask` (bool, True = land) the weight of sea cells
+    is 0, so area fractions refer to the land area only.
 
     Returns
     -------
-    weights_1d : xr.DataArray
-        cos(lat) for each latitude row (not normalised).
-    total_weight : float
-        Sum of the weights over all grid cells = sum(cos(lat)) * n_lon.
+    xr.DataArray
+        Weights on the (lat, lon) grid, not normalised.
     """
-    lat_rad = np.deg2rad(category[lat_name])
-    weights_1d = np.cos(lat_rad)  # shape (n_lat,)
-
-    n_lon = category.sizes[lon_name]
-    total_weight = float(weights_1d.sum()) * n_lon
-    return weights_1d, total_weight
+    cos_lat = np.cos(np.deg2rad(grid[lat_name]))
+    weights = cos_lat * xr.ones_like(grid[lon_name], dtype=float)
+    if land_mask is not None:
+        weights = weights.where(land_mask, 0.0)
+    if float(weights.sum()) <= 0.0:
+        raise ValueError("No grid cell with a positive area weight (empty land mask?).")
+    return weights
 
 
 def compute_area_fractions(
@@ -80,12 +84,15 @@ def compute_area_fractions(
     lat_name: str,
     lon_name: str,
     date_name: str,
+    land_mask=None,
 ) -> pd.DataFrame:
     """
     Compute the area fraction (in %) of each risk category per day.
 
     Uses cos(latitude) as the area weight so that grid cells at higher
     latitudes are not over-weighted relative to their true surface area.
+    With a `land_mask` (bool, True = land) only land cells are counted, so
+    the fractions are fractions of the land area.
 
     Returns
     -------
@@ -93,7 +100,8 @@ def compute_area_fractions(
         Columns: date, No Risk, Caution, Extreme Caution, Danger, Extreme Danger.
         Area fractions in percent (0-100).
     """
-    weights_1d, total_weight = cos_lat_weights(category, lat_name, lon_name)
+    weights = area_weights(category, lat_name, lon_name, land_mask)
+    total_weight = float(weights.sum())
 
     rows = []
     for i in range(category.sizes[date_name]):
@@ -104,8 +112,8 @@ def compute_area_fractions(
         row = {"date": date_str}
         for cat_val, cat_label in CATEGORY_LABELS.items():
             mask = (day_slice == cat_val)
-            # Sum of cos(lat) over grid cells where mask is True
-            weighted_sum = float((mask * weights_1d).sum())
+            # Sum of the area weights over grid cells where mask is True
+            weighted_sum = float((mask * weights).sum())
             frac = weighted_sum / total_weight * 100.0
             row[cat_label] = frac
 
@@ -119,9 +127,12 @@ def find_hottest_risk_day(
     date_name: str,
     lat_name: str,
     lon_name: str,
+    land_mask=None,
 ) -> tuple:
     """
     Find the day with the largest area-weighted Danger + Extreme Danger fraction.
+
+    With a `land_mask` (bool, True = land) only land cells are counted.
 
     Returns
     -------
@@ -132,14 +143,15 @@ def find_hottest_risk_day(
     day_index : int
         Index of the selected day along the date dimension.
     """
-    weights_1d, total_weight = cos_lat_weights(category, lat_name, lon_name)
+    weights = area_weights(category, lat_name, lon_name, land_mask)
+    total_weight = float(weights.sum())
 
     best_idx = 0
     best_frac = -1.0
 
     for i in range(category.sizes[date_name]):
         mask = category.isel({date_name: i}) >= 3
-        frac = float((mask * weights_1d).sum()) / total_weight
+        frac = float((mask * weights).sum()) / total_weight
 
         if frac > best_frac:
             best_frac = frac

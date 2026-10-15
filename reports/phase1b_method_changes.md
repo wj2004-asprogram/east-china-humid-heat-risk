@@ -73,6 +73,35 @@ What this means:
 
 ---
 
+## 2. Land-sea mask
+
+**Before:** area fractions (and the choice of the "hottest risk day" for
+the maps) counted every grid cell of the 112–123°E, 25–36°N box, including
+the East China Sea and the Yellow Sea (roughly a fifth of the domain).
+
+**After:** the ERA5 `land_sea_mask` is downloaded once per region
+(`data/raw/era5_land_sea_mask_36N_112E_25N_123E.nc`, one time step).
+A grid cell is land where the mask is ≥ `land_sea_mask_threshold`
+(0.5 in both configs). Area fractions are cos(latitude)-weighted fractions
+of the land area, so each day still sums to 100 %. The mask is saved as
+`land_mask` in `heat_risk_categories_<tag>.nc`. The maps still show the
+sea, greyed out. Regional-mean time series are unchanged (all cells).
+
+Expected effect: sea cells have a smaller diurnal cycle, so their daily
+maximum heat index is usually lower than inland. Removing them should
+shift the fractions towards the higher categories. With real data,
+record the number of land cells printed by `classify_heat_risk`.
+
+### July 2022 daily area fractions — TODO
+
+| Date | No Risk | Caution | Extreme Caution | Danger | Extreme Danger |
+|---|---|---|---|---|---|
+| TODO: fix 1 → fix 2 for each day | | | | | |
+
+City daily maximum heat index is not affected by this fix.
+
+---
+
 ## How to fill this report
 
 1. Put the raw July 2022 ERA5 file in `data/raw/` (or run the pipeline

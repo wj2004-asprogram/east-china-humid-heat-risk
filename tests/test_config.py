@@ -5,7 +5,7 @@ from pathlib import Path
 import pytest
 
 from src.config import PROJECT_ROOT, load_config
-from src.download_era5 import build_request
+from src.download_era5 import build_land_sea_mask_request, build_request
 
 
 CONFIG_DIR = PROJECT_ROOT / "configs"
@@ -25,6 +25,11 @@ def test_config_reproduces_existing_outputs(config_name, tag, period):
     assert cfg.cds_area == [36, 112, 25, 123]
     assert [c.name for c in cfg.cities] == ["Nanjing", "Shanghai", "Hangzhou", "Huai'an"]
     assert cfg.paths.raw_era5 == PROJECT_ROOT / "data" / "raw" / f"era5_east_china_{tag}.nc"
+    assert cfg.land_sea_mask_threshold == 0.5
+    # One land-sea mask file per region, shared by both configs.
+    assert cfg.paths.raw_land_sea_mask == (
+        PROJECT_ROOT / "data" / "raw" / "era5_land_sea_mask_36N_112E_25N_123E.nc"
+    )
 
     # The CSVs tracked in git are exactly the files this config writes,
     # so a re-run shows any change in results as a git diff.
@@ -62,6 +67,29 @@ def test_config_rejects_invalid_region_or_city(tmp_path: Path, old, new):
     bad.write_text(text.replace(old, new), encoding="utf-8")
     with pytest.raises(ValueError):
         load_config(bad)
+
+
+@pytest.mark.parametrize("threshold", ["0", "1.5"])
+def test_config_rejects_bad_land_sea_mask_threshold(tmp_path: Path, threshold):
+    bad = tmp_path / "bad.yaml"
+    bad.write_text(
+        (CONFIG_DIR / "july_2022.yaml").read_text(encoding="utf-8")
+        .replace("land_sea_mask_threshold: 0.5", f"land_sea_mask_threshold: {threshold}"),
+        encoding="utf-8",
+    )
+    with pytest.raises(ValueError):
+        load_config(bad)
+
+
+def test_land_sea_mask_request():
+    request = build_land_sea_mask_request(load_config(CONFIG_DIR / "july_2022.yaml"))
+
+    assert request["variable"] == ["land_sea_mask"]
+    # Time-invariant field: a single time step is enough.
+    assert (request["year"], request["month"], request["day"], request["time"]) == (
+        ["2022"], ["07"], ["01"], ["00:00"]
+    )
+    assert request["area"] == [36, 112, 25, 123]
 
 
 def test_download_request_days():
