@@ -1,27 +1,101 @@
 # Phase 1b — Method changes and their effect on July 2022
 
-> **TODO — the real-data comparison has not been done yet.**
-> No raw ERA5 files were available (`data/raw/` was empty) when phase 1b
-> was implemented, so the three fixes were implemented and tested on
-> synthetic data only (`python -m pytest`). The tracked CSVs in
-> `data/processed/` and the figures in `figures/` are still the **v0.2
-> outputs (old methods)**. Fill in the tables below after re-running both
-> configs on real ERA5 data (procedure at the end of this note).
+> **Status:** validated on the real ERA5 data for July 2022 (2026-10-15).
+> The tracked outputs in `data/processed/` (CSVs) and `figures/` are
+> **still the v0.2 outputs** (old methods). They were deliberately not
+> regenerated in phase 1b; how the v0.3 outputs are published is still to
+> be decided. The numbers below come from validation runs in a separate
+> worktree (see Provenance).
 
 Each fix is a separate commit on branch `phase-1b-methods`:
 
-1. Heat index algorithm (NOAA/WPC selection rule).
-2. Land-sea mask: area fractions over land only.
-3. Beijing-time (UTC+8) calendar days.
-
-Follow-up fixes found in review (see section 4): missing data is no
-longer counted as "No Risk", the area-fraction CSV has a new column
-`Valid Land Coverage`, and a local day must hold exactly its 24 hourly
-time steps.
+1. `2eb0f82` Heat index algorithm (NOAA/WPC selection rule).
+2. `2b8358c` Land-sea mask: area fractions over land only.
+3. `39a815a` Beijing-time (UTC+8) calendar days, with separate `*_bjt`
+   configs.
+4. Review fixes: `35de607` missing data is counted as "Missing", not
+   "No Risk" (new CSV column `Valid Land Coverage`); `bf73072` a local
+   day must hold exactly its 24 hourly time steps.
 
 ---
 
-## 1. Heat index algorithm
+## Summary
+
+The stages are applied cumulatively: each row adds one change to the row
+above. The order matters, so the differences between rows are not a
+unique causal split between the fixes.
+
+Period-mean daily area fraction (%), July 2022:
+
+| Stage | No Risk | Caution | Extreme Caution | Danger | Extreme Danger | Days with Danger+ > 0 |
+|---|---|---|---|---|---|---|
+| v0.2 (old heat index, all cells, UTC days) | 4.1 | 7.8 | 50.8 | 37.3 | 0.0 | 31/31 |
+| + NOAA/WPC heat index | 2.7 | 9.2 | 49.9 | 38.2 | 0.0 | 31/31 |
+| + land only | 1.7 | 5.2 | 45.2 | 48.0 | 0.0 | 31/31 |
+| + Beijing-time days | 1.4 | 5.0 | 45.6 | 48.0 | 0.0 | 31/31 |
+
+"Danger+" is Danger + Extreme Danger. Extreme Danger is 0.0 at every stage.
+
+- **Heat index fix: small effect on the area fractions.** Mean Danger
+  rises by 0.9 percentage points (37.3 → 38.2 %), by at most 2.5 points on
+  a single day (07-24), and falls on no day. The city daily maxima do not
+  change. In this humid domain the daily maximum heat index is mostly
+  reached at RH ≥ 40 %, where the old and new formulas agree, so the old
+  RH < 40 % switch rarely set the daily maximum. The per-point error of the
+  old code was real (e.g. −2.7 °C at 40 °C and RH 30 %), it just rarely
+  mattered for the daily maximum.
+- **Land mask: the largest effect.** Mean Danger rises by 9.8 points
+  (38.2 → 48.0 %), by 4.0 to 16.7 points per day (most on 07-09). The sea
+  is 22 % of the domain (cos(latitude) weighted); sea cells almost never
+  reach Danger, so counting them diluted the land signal.
+- **Beijing-time days: small effect.** The period mean is unchanged
+  (48.0 %); daily differences run from −1.5 points (07-22) to +2.2 points
+  (07-17). City period means change by at most 0.2 °C.
+- **Review fixes (missing data, complete days): no effect on this data**,
+  which has no missing values or time defects. They protect later runs,
+  e.g. the multi-year downloads of phase 2.
+- **Hottest risk day** (used for the maps): 2022-07-09 at every stage, with
+  a Danger+ share of 63.8 → 64.2 → 80.9 → 80.9 %.
+
+---
+
+## Provenance
+
+- **Code:** `cc969fa` (v0.2 baseline, `main`) → `2eb0f82` (heat index) →
+  `2b8358c` (land mask) → `39a815a` (Beijing time) → `bf73072` (review
+  fixes). Each commit was run with the full pipeline on the same real
+  files, in the worktree `D:\Claudecode_workspace\projects\ehhr-1a-verify`.
+  Up to `2b8358c` the UTC config `configs/july_2022.yaml` was used; from
+  `39a815a` on, the Beijing-time config `configs/july_2022_bjt.yaml`.
+- **Environment:** Python 3.13.1, numpy 2.5.4, pandas 3.0.6,
+  xarray 2026.9.0, matplotlib 3.11.2 (project `.venv`).
+- **Inputs** (CDS, downloaded 2026-10-15):
+  - `era5_east_china_2022_07.nc`: UTC days, 744 h.
+  - `era5_east_china_2022_07_bjt.nc`: 752 h, 2022-06-30 16:00 to
+    2022-07-31 23:00 UTC.
+  - `era5_land_sea_mask_36N_112E_25N_123E.nc`.
+  - The 7-day files were used for checks only.
+- **Raw-data checks** (independent scripts, not pipeline code):
+  - Beijing-time file: hourly, no gaps or duplicates. On the 744
+    overlapping hours, t2m and d2m equal the UTC file exactly. Jump at the
+    seam between the two download parts: 0.17 K. t2m 13.3–43.3 °C,
+    d2m ≤ t2m, no NaN.
+  - Land-sea mask: values in [0, 1], same grid as the data. Land
+    (lsm ≥ 0.5) is 78.0 % of the domain, cos(latitude) weighted. Spot
+    checks: Nanjing 0.94, Hefei 0.99, 28°N 123°E 0.00, 34°N 122°E 0.00.
+  - Beijing-day windows: the daily maximum heat index recomputed with
+    plain numpy windows (UTC D−1 16:00 to D 15:00) matches the pipeline
+    with 0 error on all 31 days (and on all 7 days of the 7-day file).
+- **Regression checks:**
+  - `39a815a` with the UTC config reproduces `2b8358c` byte for byte
+    (3 of 3 CSVs).
+  - `bf73072` vs `39a815a`, both configs: identical category columns,
+    `Valid Land Coverage` = 100.000000 on every day, byte-identical city
+    CSVs.
+
+---
+
+## 1. Heat index algorithm (`2eb0f82`)
 
 **Before (v0.2):** the Rothfusz regression was used only where T ≥ 80 °F
 **and** RH ≥ 40 %. Elsewhere the simple formula was used and then averaged
@@ -35,9 +109,9 @@ its RH < 13 % and RH > 85 % adjustments) is used, whatever the humidity.
 Otherwise the heat index is the simple formula itself. Tested against the
 NWS chart (RH ≥ 40 %) and MetPy `heat_index` (all humidities).
 
-Formula-only effect (no data needed). Heat index in °C, old (phase 1a) →
-new; "(=)" means unchanged. The new values agree with MetPy 1.7.1
-`heat_index` to within 1e-12 °C.
+Formula-only effect. Heat index in °C, old (phase 1a) → new; "(=)" means
+unchanged. The new values agree with MetPy 1.7.1 `heat_index` to within
+1e-12 °C.
 
 | T (°C) | RH 10 % | RH 20 % | RH 30 % | RH 39.9 % | RH 40 % | RH 60 % |
 |---|---|---|---|---|---|---|
@@ -67,31 +141,23 @@ What this means:
   humidity, by up to 1.3 °C (26.1 °C, RH 93 %). That is right at the
   No Risk / Caution threshold (26.7 °C), so a few cool, humid days could
   be classified differently. The MetPy tests avoid this band.
-- On real data, only hours with RH < 40 % (or cool hours) can change.
-  At 38–40 °C, RH of 30–40 % now gives a much higher heat index and
-  RH below about 25 % a lower one, so the hottest inland afternoons are
-  where the area fractions and the daily maxima may move. How often this
-  happened in July 2022 is what the table below must show.
 
-### July 2022 daily area fractions — TODO
-
-| Date | No Risk | Caution | Extreme Caution | Danger | Extreme Danger | Valid Land Coverage |
-|---|---|---|---|---|---|---|
-| TODO: before → after for each day, 2022-07-01 … 2022-07-31 | | | | | | |
-
-### City daily maximum heat index — TODO
-
-| Date | Nanjing | Shanghai | Hangzhou | Huai'an |
-|---|---|---|---|---|
-| TODO: before → after (°C) | | | | |
+**Effect on July 2022:** mean Danger 37.3 → 38.2 % (+0.9 points), No Risk
+4.1 → 2.7 %, Caution 7.8 → 9.2 %. Danger+ rose on 22 of 31 days (by at
+most 2.5 points, 07-24), stayed the same on 9 and fell on none (daily
+table below). The city
+daily maxima are unchanged (city table below). The daily maximum heat
+index is mostly reached at RH ≥ 40 %, so the old RH < 40 % rule rarely
+decided it, although its per-point error was real (e.g. −2.7 °C at 40 °C,
+RH 30 %).
 
 ---
 
-## 2. Land-sea mask
+## 2. Land-sea mask (`2b8358c`)
 
 **Before:** area fractions (and the choice of the "hottest risk day" for
 the maps) counted every grid cell of the 112–123°E, 25–36°N box, including
-the East China Sea and the Yellow Sea (roughly a fifth of the domain).
+the East China Sea and the Yellow Sea.
 
 **After:** the ERA5 `land_sea_mask` is downloaded once per region
 (`data/raw/era5_land_sea_mask_36N_112E_25N_123E.nc`, one time step).
@@ -101,22 +167,17 @@ of the land area, so each day still sums to 100 %. The mask is saved as
 `land_mask` in `heat_risk_categories_<tag>.nc`. The maps still show the
 sea, greyed out. Regional-mean time series are unchanged (all cells).
 
-Likely effect (to be checked): sea cells have a smaller diurnal cycle, so
-their daily maximum heat index is usually lower than inland, and removing
-them would shift the fractions towards the higher categories. With real
-data, also record the number of land cells printed by `classify_heat_risk`.
-
-### July 2022 daily area fractions — TODO
-
-| Date | No Risk | Caution | Extreme Caution | Danger | Extreme Danger | Valid Land Coverage |
-|---|---|---|---|---|---|---|
-| TODO: fix 1 → fix 2 for each day | | | | | | |
-
-City daily maximum heat index is not affected by this fix.
+**Effect on July 2022: the largest of the three fixes.** Land is 78.0 % of
+the domain and sea 22 % (cos(latitude) weighted). Mean Danger rises from
+38.2 to 48.0 % (+9.8 points); No Risk falls from 2.7 to 1.7 % and Caution
+from 9.2 to 5.2 %. Per day, Danger+ rises by 4.0 to 16.7 points (most on
+07-09: 64.2 → 80.9 %). Sea cells almost never reach Danger, so counting
+them diluted the land signal. The city points and the hottest risk day
+(07-09) are not affected.
 
 ---
 
-## 3. Beijing-time days (UTC+8)
+## 3. Beijing-time days (UTC+8) (`39a815a`)
 
 **Before:** daily maximum temperature, daily maximum heat index and daily
 mean RH were computed over UTC days, i.e. 08:00 to 07:00 Beijing time.
@@ -134,36 +195,26 @@ trailing partial day (16:00–23:00 UTC on the last day) is not used. If a
 day of the period is incomplete, for example because a UTC raw file was
 given to a Beijing-time config, the run stops with an error.
 
-Validated on synthetic data only: day boundaries (15:00 UTC belongs to
+Checks: on synthetic data, the day boundaries (15:00 UTC belongs to
 Beijing day D, 16:00 UTC to D+1), the first day of July using
-16:00–23:00 UTC on 2022-06-30, a month boundary (Beijing 2022-08-01 =
-16:00 UTC on 07-31 to 15:00 UTC on 08-01), the year boundary of the
-download request (2023-01-01 needs 2022-12-31), and a full run of
-`sample_2022_07_01_07_bjt.yaml` checked day by day against the 24-hour
-UTC windows.
+16:00–23:00 UTC on 2022-06-30, a month boundary, the year boundary of the
+download request, and a full run of `sample_2022_07_01_07_bjt.yaml`
+checked day by day. On the real data, the 31 Beijing-day maxima were
+recomputed independently with 0 error (see Provenance).
 
-Likely effect (to be checked): the afternoon maximum (about 14:00–16:00 Beijing time,
-06:00–08:00 UTC) falls in the same day under both conventions, so most
-daily maxima should not change. Changes are expected where the UTC-day
-maximum came from 16:00–23:00 UTC (00:00–07:00 Beijing time on the next
-day), e.g. on cooler days or when warm nights follow hot days. Daily mean RH
-changes more, because a different night is included.
-
-### July 2022 daily area fractions — TODO
-
-| Date | No Risk | Caution | Extreme Caution | Danger | Extreme Danger | Valid Land Coverage |
-|---|---|---|---|---|---|---|
-| TODO: fix 2 → fix 3 for each day | | | | | | |
-
-### City daily maximum heat index — TODO
-
-| Date | Nanjing | Shanghai | Hangzhou | Huai'an |
-|---|---|---|---|---|
-| TODO: fix 2 → fix 3 (°C) | | | | |
+**Effect on July 2022: small.** The period-mean Danger share is unchanged
+(48.0 %); No Risk 1.7 → 1.4 %, Caution 5.2 → 5.0 %, Extreme Caution
+45.2 → 45.6 %. Daily Danger+ differences run from −1.5 points (07-22) to
++2.2 points (07-17); 28 of 31 days change by less than 0.5 points (19 not
+at all). The
+afternoon maximum (about 14:00–16:00 Beijing time) falls on the same date
+under both conventions, so most daily maxima stay the same. City period
+means change by at most 0.2 °C (Shanghai −0.1, Huai'an −0.2 °C); city
+maxima are unchanged.
 
 ---
 
-## 4. Review fixes: missing data and complete days
+## 4. Review fixes: missing data and complete days (`35de607`, `bf73072`)
 
 ### Missing data
 
@@ -181,11 +232,6 @@ empty category columns) when nothing is valid. The hottest risk day for
 the maps uses the same valid-area shares and skips days without data.
 Maps draw missing cells in dark grey.
 
-Expected effect on ERA5: none. ERA5 2m temperature and dewpoint have no
-gaps, so on the real files the coverage should be 100 % on every day and
-the category columns identical to those of fix 3. The real-data run should
-confirm this (`Valid Land Coverage` = 100 everywhere).
-
 ### Complete days
 
 **Before:** a local day counted as complete if it had 24 time stamps, so a
@@ -197,62 +243,87 @@ steps anywhere in the input raise an error naming them; they are never
 dropped silently. Incomplete days outside the period are still dropped,
 and an incomplete day inside the period still stops the run.
 
-Expected effect on ERA5: none (hourly, unique time steps); the merge of
-the downloaded parts already rejects duplicates.
+**Effect on July 2022: none.** The real files have no missing values, gaps
+or duplicates. `Valid Land Coverage` is 100.000000 on every day, the
+category columns equal those of `39a815a`, and the city CSVs are
+byte-identical. The fixes protect later runs, e.g. the multi-year
+downloads of phase 2.
 
 ---
 
-## How to fill this report
+## Daily Danger + Extreme Danger share (%)
 
-Only after the phase 1a real-data acceptance is done, and only with the
-user's confirmation for any CDS download. Running the UTC config
-overwrites the tracked `*_2022_07.csv` files, so work in a separate
-worktree or restore them afterwards.
+Share of the area (v0.2 and "+ heat index": all cells; from "+ land
+only": land cells) in Danger or Extreme Danger, per day. Dates are UTC
+days for the first three columns and Beijing days for the last one.
 
-1. Fixes 1 and 2 (UTC days, the phase 1a raw file
-   `data/raw/era5_east_china_2022_07.nc`; fix 2 also needs the land-sea
-   mask): run `configs/july_2022.yaml` at `phase-1a-refactor` ("before"),
-   at the heat index commit ("fix1") and at the land-sea mask commit
-   ("fix2") (`git log --oneline phase-1a-refactor..phase-1b-methods`):
+| Date | v0.2 | + heat index | + land only | + Beijing days |
+|---|---|---|---|---|
+| 2022-07-01 | 29.9 | 29.9 | 38.3 | 38.3 |
+| 2022-07-02 | 28.3 | 28.3 | 36.3 | 36.2 |
+| 2022-07-03 | 21.2 | 21.2 | 27.2 | 27.2 |
+| 2022-07-04 | 16.9 | 16.9 | 21.6 | 21.6 |
+| 2022-07-05 | 15.6 | 15.6 | 19.6 | 19.4 |
+| 2022-07-06 | 21.0 | 21.0 | 26.4 | 26.4 |
+| 2022-07-07 | 21.7 | 21.7 | 27.1 | 26.7 |
+| 2022-07-08 | 49.3 | 49.5 | 62.0 | 61.5 |
+| 2022-07-09 | 63.8 | 64.2 | 80.9 | 80.9 |
+| 2022-07-10 | 59.4 | 59.8 | 74.8 | 74.8 |
+| 2022-07-11 | 59.3 | 60.1 | 75.2 | 75.2 |
+| 2022-07-12 | 59.8 | 60.2 | 75.3 | 75.3 |
+| 2022-07-13 | 58.6 | 59.2 | 73.2 | 73.2 |
+| 2022-07-14 | 62.4 | 63.3 | 78.7 | 78.9 |
+| 2022-07-15 | 58.6 | 60.6 | 76.4 | 76.4 |
+| 2022-07-16 | 49.7 | 51.1 | 64.7 | 64.8 |
+| 2022-07-17 | 32.1 | 32.5 | 40.5 | 42.7 |
+| 2022-07-18 | 17.1 | 17.1 | 21.7 | 21.7 |
+| 2022-07-19 | 18.0 | 18.0 | 22.9 | 22.9 |
+| 2022-07-20 | 33.4 | 33.6 | 41.4 | 41.4 |
+| 2022-07-21 | 33.3 | 34.2 | 43.1 | 43.1 |
+| 2022-07-22 | 52.6 | 53.8 | 68.1 | 66.6 |
+| 2022-07-23 | 32.0 | 34.2 | 40.9 | 41.0 |
+| 2022-07-24 | 28.5 | 31.0 | 39.1 | 39.2 |
+| 2022-07-25 | 52.4 | 54.7 | 69.4 | 69.4 |
+| 2022-07-26 | 37.5 | 39.3 | 49.8 | 49.8 |
+| 2022-07-27 | 46.3 | 48.6 | 61.6 | 61.6 |
+| 2022-07-28 | 39.4 | 41.1 | 52.1 | 52.3 |
+| 2022-07-29 | 15.9 | 17.7 | 22.6 | 22.6 |
+| 2022-07-30 | 23.4 | 24.4 | 31.2 | 31.2 |
+| 2022-07-31 | 19.7 | 20.5 | 26.0 | 25.9 |
+| **Mean** | **37.3** | **38.2** | **48.0** | **48.0** |
 
-   ```bash
-   git checkout <commit>
-   python -m src.pipeline --config configs/july_2022.yaml
-   ```
+The review fixes (`bf73072`) give the same values as "+ Beijing days".
 
-   After each run, copy `data/processed/*_2022_07.csv` to a folder outside
-   the repository, e.g. `../phase1b_runs/<label>/`, then restore the
-   tracked files with `git checkout -- data/processed figures`.
-2. Fix 3 (Beijing days): at the tip of `phase-1b-methods`, compare the UTC
-   config (`july_2022.yaml`, same as "fix2") with the Beijing-time config
-   (`july_2022_bjt.yaml`, label "fix3"). The latter needs its own raw file
-   `data/raw/era5_east_china_2022_07_bjt.nc`, with 16:00–23:00 UTC of
-   2022-06-30 (`--download`, after confirmation). Its outputs are
-   `data/processed/*_2022_07_bjt.csv`.
-3. Build the before → after tables, one fix at a time, for example:
+## City daily maximum heat index (°C), period mean / maximum
 
-   ```python
-   import pandas as pd
+| Stage | Nanjing | Shanghai | Hangzhou | Huai'an |
+|---|---|---|---|---|
+| v0.2 | 42.5 / 49.9 | 43.5 / 51.8 | 45.6 / 49.0 | 39.8 / 47.7 |
+| + heat index | 42.5 / 49.9 | 43.5 / 51.8 | 45.6 / 49.0 | 39.8 / 47.7 |
+| + land only | same as "+ heat index" (the land mask does not affect city points) | | | |
+| + Beijing days | 42.5 / 49.9 | 43.4 / 51.8 | 45.6 / 49.0 | 39.6 / 47.7 |
 
-   def compare(before_csv, after_csv):
-       before = pd.read_csv(before_csv, index_col="date").round(1)
-       after = pd.read_csv(after_csv, index_col="date").round(1)
-       # Columns and days present in both runs only (older runs have no
-       # "Valid Land Coverage" column).
-       cols = before.columns.intersection(after.columns)
-       table = (before[cols].astype(str) + " → " + after[cols].astype(str)).dropna()
-       print("| date | " + " | ".join(table.columns) + " |")
-       print("|---" * (len(table.columns) + 1) + "|")
-       for date, row in table.iterrows():
-           print(f"| {date} | " + " | ".join(row) + " |")
+---
 
-   compare("../phase1b_runs/before/daily_heat_risk_area_fraction_2022_07.csv",
-           "../phase1b_runs/fix1/daily_heat_risk_area_fraction_2022_07.csv")
-   compare("../phase1b_runs/before/city_daily_heat_index_2022_07.csv",
-           "../phase1b_runs/fix1/city_daily_heat_index_2022_07.csv")
-   # Fix 3: ../phase1b_runs/fix2/*_2022_07.csv vs ../phase1b_runs/fix3/*_2022_07_bjt.csv
-   ```
+## Reproducing these numbers
 
-4. Finally, decide with the user which outputs are tracked for v0.3 (the
-   new `_bjt` CSVs and figures; whether the v0.2 UTC CSVs are regenerated
-   or kept as the v0.2 record), and commit them together with this report.
+Raw files go in `data/raw/` (the land-sea mask and the Beijing-time raw
+file come from `--download`, which needs a CDS account). Run the July 2022
+config at each commit in a separate worktree, so the tracked v0.2 CSVs in
+the main checkout are not overwritten:
+
+```bash
+git worktree add ../ehhr-verify <commit>
+cd ../ehhr-verify
+python -m src.pipeline --config configs/july_2022.yaml       # cc969fa, 2eb0f82, 2b8358c
+python -m src.pipeline --config configs/july_2022_bjt.yaml   # 39a815a, bf73072
+```
+
+Compare `data/processed/daily_heat_risk_area_fraction_*.csv` and
+`city_daily_heat_index_*.csv` between consecutive commits. Older CSVs have
+no `Valid Land Coverage` column, so compare only the columns both runs
+share.
+
+Still open: deciding how the v0.3 outputs (the `_bjt` CSVs and figures,
+and whether the v0.2 UTC CSVs are regenerated or kept as the v0.2 record)
+are published and tracked.

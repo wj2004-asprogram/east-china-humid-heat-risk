@@ -47,6 +47,6 @@ python -m pytest
 - Commit after each meaningful step.
 
 ## Known issues (phase 1b — see docs/ROADMAP.md)
-- Tracked CSVs (`data/processed/`) and figures are still the v0.2 outputs: phase 1b changes the methods, but no raw ERA5 data was available to re-run them. Re-run both configs and fill in `reports/phase1b_method_changes.md` (currently a TODO).
+- Tracked CSVs (`data/processed/`) and figures are still the v0.2 outputs, on purpose: phase 1b was validated on real July 2022 data in a separate worktree (results in `reports/phase1b_method_changes.md`), but how the v0.3 outputs are published is not decided yet. Do not regenerate or commit them until then.
 - Regional-mean time series (`plot_figures`, `plot_heat_index_figures`) are plain means over all grid cells: no cos(latitude) weights, sea included.
-- Beijing-time raw files (`data/raw/era5_east_china_*_bjt.nc`) have not been downloaded yet. Phase 1a real-data acceptance is done (PR #1, merged); do not download without the user's confirmation.
+- The Beijing-time raw files and the land-sea mask were downloaded in the validation worktree (`projects/ehhr-1a-verify`), not in this checkout. Do not run CDS downloads without the user's confirmation.
