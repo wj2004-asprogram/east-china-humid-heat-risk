@@ -11,7 +11,9 @@ Indices computed:
   - daily_max_heat_index_c : daily maximum heat index
   - daily_mean_rh           : daily mean relative humidity
 
-Note: daily values are aggregated over UTC days.
+Hourly variables keep the UTC timestamps of ERA5 ("time"). Daily values
+("date") are local calendar days (config `utc_offset_hours`; 8 = Beijing
+time), see src/time_utils.py.
 """
 
 import xarray as xr
@@ -26,6 +28,7 @@ from src.era5_utils import (
     load_dataset,
 )
 from src.indices import heat_index_rothfusz, kelvin_to_celsius, relative_humidity
+from src.time_utils import local_daily
 
 
 def run(cfg: RunConfig) -> None:
@@ -87,9 +90,10 @@ def run(cfg: RunConfig) -> None:
     heat_index_c.attrs["units"] = "Celsius"
     heat_index_c.attrs["long_name"] = "heat index"
     heat_index_c.attrs["description"] = (
-        "Hourly heat index computed with the NOAA/Rothfusz formula; "
-        "for air temperature < 26.7 °C or RH < 40 % a simple "
-        "approximation is used"
+        "Hourly heat index following the NOAA/WPC algorithm: Rothfusz "
+        "regression (with the RH < 13 % and RH > 85 % adjustments) where the "
+        "average of the simple formula and the air temperature is >= 80 °F "
+        "(26.7 °C), otherwise the simple formula"
     )
 
     # =======================================================================
@@ -107,39 +111,37 @@ def run(cfg: RunConfig) -> None:
             "period": cfg.period_label,
             "source": "ERA5 hourly single-level reanalysis",
             "created_with": "src/process_humid_heat.py",
+            "daily_aggregation": f"local calendar days, UTC{cfg.utc_offset_hours:+d}",
         },
     )
 
     # =======================================================================
-    # Step 7: Daily aggregation (UTC days) on a "time" coordinate
+    # Step 7: Daily aggregation (local calendar days) on a "time" coordinate
     # =======================================================================
     if time_coord != "time":
         ds_out = ds_out.rename({time_coord: "time"})
 
+    def to_local_days(da: xr.DataArray, how: str) -> xr.DataArray:
+        return local_daily(
+            da, "time", cfg.utc_offset_hours, how, cfg.start_date, cfg.end_date,
+        ).rename({"time": "date"})
+
     # Daily maximum heat index
-    daily_max_heat_index_c = (
-        ds_out["heat_index_c"]
-        .resample(time="1D")
-        .max(keep_attrs=True)
-        .rename({"time": "date"})
-    )
+    daily_max_heat_index_c = to_local_days(ds_out["heat_index_c"], "max")
     daily_max_heat_index_c.attrs["units"] = "Celsius"
     daily_max_heat_index_c.attrs["long_name"] = "daily maximum heat index"
     daily_max_heat_index_c.attrs["description"] = (
-        "Daily maximum of the hourly NOAA/Rothfusz heat index"
+        "Daily maximum of the hourly NOAA/Rothfusz heat index over local "
+        f"calendar days (UTC{cfg.utc_offset_hours:+d}); NaN if any hour is missing"
     )
 
     # Daily mean relative humidity
-    daily_mean_rh = (
-        ds_out["rh"]
-        .resample(time="1D")
-        .mean(keep_attrs=True)
-        .rename({"time": "date"})
-    )
+    daily_mean_rh = to_local_days(ds_out["rh"], "mean")
     daily_mean_rh.attrs["units"] = "%"
     daily_mean_rh.attrs["long_name"] = "daily mean relative humidity"
     daily_mean_rh.attrs["description"] = (
-        "Daily mean of hourly relative humidity"
+        "Daily mean of hourly relative humidity over local calendar days "
+        f"(UTC{cfg.utc_offset_hours:+d}); NaN if any hour is missing"
     )
 
     ds_out["daily_max_heat_index_c"] = daily_max_heat_index_c

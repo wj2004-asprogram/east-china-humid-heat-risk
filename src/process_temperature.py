@@ -4,7 +4,8 @@ process_temperature.py
 Open the raw ERA5 NetCDF file, convert 2m temperature from Kelvin to
 Celsius, calculate daily maximum temperature, and save the result.
 
-Note: daily values are aggregated over UTC days.
+Daily values are local calendar days (config `utc_offset_hours`; 8 =
+Beijing time), see src/time_utils.py.
 """
 
 import xarray as xr
@@ -12,11 +13,7 @@ import xarray as xr
 from src.config import RunConfig
 from src.era5_utils import detect_t2m_var, detect_time_coord, load_dataset
 from src.indices import kelvin_to_celsius
-
-
-def daily_max(ds: xr.Dataset, time_coord: str) -> xr.Dataset:
-    """Resample hourly data to the daily maximum at each grid point."""
-    return ds.resample({time_coord: "1D"}).max(keep_attrs=True)
+from src.time_utils import local_daily
 
 
 def run(cfg: RunConfig) -> None:
@@ -44,8 +41,10 @@ def run(cfg: RunConfig) -> None:
     ds[t_var].attrs["long_name"] = "2 metre temperature (daily maximum)"
 
     # --- 4. Daily maximum ---
-    print("\nCalculating daily maximum temperature over each grid point ...")
-    ds_daily = daily_max(ds, time_coord)
+    print(f"\nCalculating daily maximum temperature over each grid point "
+          f"(local days, UTC{cfg.utc_offset_hours:+d}) ...")
+    ds_daily = local_daily(ds, time_coord, cfg.utc_offset_hours, "max", cfg.start_date, cfg.end_date)
+    ds_daily.attrs["daily_aggregation"] = f"local calendar days, UTC{cfg.utc_offset_hours:+d}"
     print(f"Original time steps: {ds.sizes[time_coord]}")
     print(f"Daily time steps:    {ds_daily.sizes[time_coord]}")
 

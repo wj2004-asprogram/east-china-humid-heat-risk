@@ -17,6 +17,19 @@ import yaml
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
+# Keys added in phase 1b. They have no default: an older config must say
+# explicitly which behaviour it wants. (meaning, value to use)
+PHASE_1B_KEYS = {
+    "utc_offset_hours": (
+        "daily values are calendar days in UTC + this many hours",
+        "0 for UTC days as in v0.2, 8 for Beijing time",
+    ),
+    "land_sea_mask_threshold": (
+        "area fractions count land cells only, i.e. where the ERA5 land-sea mask is >= this",
+        "0.5 as in every config of this project (counting sea cells as in v0.2 is no longer possible)",
+    ),
+}
+
 
 @dataclass(frozen=True)
 class City:
@@ -34,6 +47,7 @@ class Paths:
 
     # Data
     raw_era5: Path
+    raw_land_sea_mask: Path
     daily_tmax_nc: Path
     humid_heat_nc: Path
     heat_risk_nc: Path
@@ -63,6 +77,8 @@ class RunConfig:
     south: float
     east: float
     cities: tuple
+    utc_offset_hours: int  # daily values are calendar days in UTC + this offset
+    land_sea_mask_threshold: float  # land where ERA5 land_sea_mask >= this
     file_tag: str
     paths: Paths
 
@@ -77,14 +93,21 @@ class RunConfig:
         return [self.north, self.west, self.south, self.east]
 
 
-def build_paths(file_tag: str, figures_dir: Path, project_root: Path) -> Paths:
-    """Derive every file path of a run from its file tag."""
+def build_paths(file_tag: str, region: dict, figures_dir: Path, project_root: Path) -> Paths:
+    """
+    Derive every file path of a run from its file tag.
+
+    The land-sea mask does not depend on the period, so its file is named
+    after the region and shared by every run over the same region.
+    """
     raw = project_root / "data" / "raw"
     processed = project_root / "data" / "processed"
     t = file_tag
+    area = "{north:g}N_{west:g}E_{south:g}N_{east:g}E".format(**region)
 
     return Paths(
         raw_era5=raw / f"era5_east_china_{t}.nc",
+        raw_land_sea_mask=raw / f"era5_land_sea_mask_{area}.nc",
         daily_tmax_nc=processed / f"daily_tmax_{t}.nc",
         humid_heat_nc=processed / f"humid_heat_{t}.nc",
         heat_risk_nc=processed / f"heat_risk_categories_{t}.nc",
@@ -99,6 +122,17 @@ def build_paths(file_tag: str, figures_dir: Path, project_root: Path) -> Paths:
         fig_heat_index_map=figures_dir / f"east_china_heat_index_map_hottest_day_{t}.png",
         fig_category_map=figures_dir / f"east_china_heat_risk_category_map_hottest_day_{t}.png",
     )
+
+
+def _require_phase_1b_key(raw: dict, key: str):
+    """Return raw[key], or raise a ValueError that explains a missing phase 1b key."""
+    if key not in raw:
+        meaning, value = PHASE_1B_KEYS[key]
+        raise ValueError(
+            f"Config key '{key}' is missing ({meaning}). "
+            f"Add '{key}: <value>' to the config; use {value}."
+        )
+    return raw[key]
 
 
 def load_config(config_path, project_root: Path = PROJECT_ROOT) -> RunConfig:
@@ -140,6 +174,18 @@ def load_config(config_path, project_root: Path = PROJECT_ROOT) -> RunConfig:
                 f"City {city.name} ({city.lat}°N, {city.lon}°E) is outside the region {region}."
             )
 
+    utc_offset_hours = _require_phase_1b_key(raw, "utc_offset_hours")
+    # bool is a subclass of int in Python: YAML `true` would become UTC+1.
+    if (isinstance(utc_offset_hours, bool) or not isinstance(utc_offset_hours, int)
+            or not -12 <= utc_offset_hours <= 14):
+        raise ValueError(
+            f"utc_offset_hours must be a whole number of hours from -12 to 14, got {utc_offset_hours!r}."
+        )
+
+    lsm_threshold = float(_require_phase_1b_key(raw, "land_sea_mask_threshold"))
+    if not 0.0 < lsm_threshold <= 1.0:
+        raise ValueError(f"land_sea_mask_threshold must be in (0, 1], got {lsm_threshold}.")
+
     file_tag = str(raw["file_tag"])
     figures_dir = project_root / raw["figures_dir"]
 
@@ -152,6 +198,8 @@ def load_config(config_path, project_root: Path = PROJECT_ROOT) -> RunConfig:
         south=region["south"],
         east=region["east"],
         cities=cities,
+        utc_offset_hours=utc_offset_hours,
+        land_sea_mask_threshold=lsm_threshold,
         file_tag=file_tag,
-        paths=build_paths(file_tag, figures_dir, project_root),
+        paths=build_paths(file_tag, region, figures_dir, project_root),
     )

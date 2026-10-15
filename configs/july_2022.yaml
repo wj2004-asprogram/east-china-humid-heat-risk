@@ -16,12 +16,23 @@ region:
   south: 25
   east: 123
 
+# Daily values are calendar days in this time zone, as hours from UTC
+# (ERA5 timestamps are UTC). This config keeps UTC days, as in v0.1/v0.2,
+# and reads the same raw file as phase 1a. Beijing-time days: see
+# configs/july_2022_bjt.yaml (separate raw and output files).
+utc_offset_hours: 0
+
 # City points are compared at the nearest ERA5 grid point.
 cities:
   - {name: Nanjing,  lat: 32.06, lon: 118.79, color: "#d62728"}
   - {name: Shanghai, lat: 31.23, lon: 121.47, color: "#1f77b4"}
   - {name: Hangzhou, lat: 30.27, lon: 120.15, color: "#2ca02c"}
   - {name: "Huai'an", lat: 33.61, lon: 119.02, color: "#ff7f0e"}
+
+# Risk area fractions count land grid cells only. ERA5 "land_sea_mask" is
+# the fraction of land in each grid cell (0 = sea, 1 = land); a cell is
+# land where it is >= this threshold. Maps grey out the other (sea) cells.
+land_sea_mask_threshold: 0.5
 
 # Suffix used in every data and figure file name of this run.
 file_tag: "2022_07"
