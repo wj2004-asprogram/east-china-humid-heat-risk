@@ -6,6 +6,9 @@ netCDF4
 h5netcdf
 scipy
 
+# Configuration
+pyyaml
+
 # Plotting
 matplotlib
 
@@ -14,3 +17,6 @@ cdsapi
 
 # Progress bars
 tqdm
+
+# Tests
+pytest

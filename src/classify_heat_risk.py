@@ -4,180 +4,25 @@ classify_heat_risk.py
 Read the processed humid-heat-risk NetCDF file, classify daily maximum
 heat index into heat risk categories, compute daily area fractions, and
 produce a stacked bar chart.
-
-Usage:
-    python src/classify_heat_risk.py
 """
 
-import numpy as np
-import xarray as xr
-import pandas as pd
-import matplotlib.pyplot as plt
 from pathlib import Path
 
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import xarray as xr
 
-# ---------------------------------------------------------------------------
-# 1. Coordinate / dimension detection helpers
-# ---------------------------------------------------------------------------
+from src.config import RunConfig
+from src.era5_utils import detect_date_dim, detect_lat_coord, detect_lon_coord, require_var
+from src.risk import (
+    CATEGORY_COLORS,
+    CATEGORY_LABELS,
+    CATEGORY_THRESHOLDS_C,
+    classify_heat_risk,
+    compute_area_fractions,
+)
 
-def detect_lat_name(ds: xr.Dataset) -> str:
-    """Detect the latitude coordinate name."""
-    for candidate in ["latitude", "lat"]:
-        if candidate in ds.coords:
-            return candidate
-    raise KeyError(
-        f"Cannot find latitude coordinate (tried 'latitude', 'lat'). "
-        f"Available coords: {list(ds.coords)}"
-    )
-
-
-def detect_lon_name(ds: xr.Dataset) -> str:
-    """Detect the longitude coordinate name."""
-    for candidate in ["longitude", "lon"]:
-        if candidate in ds.coords:
-            return candidate
-    raise KeyError(
-        f"Cannot find longitude coordinate (tried 'longitude', 'lon'). "
-        f"Available coords: {list(ds.coords)}"
-    )
-
-
-def detect_date_name(da: xr.DataArray) -> str:
-    """
-    Detect the daily time dimension name from a DataArray.
-
-    Prefers 'date' over 'time'.
-    """
-    for candidate in ["date", "time"]:
-        if candidate in da.dims:
-            return candidate
-    raise KeyError(
-        f"Cannot find a daily time dimension (tried 'date', 'time'). "
-        f"Array dims: {list(da.dims)}"
-    )
-
-
-# ---------------------------------------------------------------------------
-# 2. Heat risk classification
-# ---------------------------------------------------------------------------
-
-def classify_heat_risk(hi: xr.DataArray) -> xr.DataArray:
-    """
-    Classify heat index values into risk categories.
-
-    Categories (based on NOAA heat index thresholds):
-        0 = No Risk:          HI < 26.7 °C
-        1 = Caution:          26.7 °C <= HI < 32.2 °C
-        2 = Extreme Caution:  32.2 °C <= HI < 40.6 °C
-        3 = Danger:           40.6 °C <= HI < 54.4 °C
-        4 = Extreme Danger:   HI >= 54.4 °C
-
-    Parameters
-    ----------
-    hi : xr.DataArray
-        Heat index values in °C.
-
-    Returns
-    -------
-    xr.DataArray
-        Integer risk categories (0-4) with the same shape as `hi`.
-    """
-    category = xr.zeros_like(hi, dtype=np.int8)
-
-    category = category.where(~(hi >= 26.7), 1)   # Caution
-    category = category.where(~(hi >= 32.2), 2)   # Extreme Caution
-    category = category.where(~(hi >= 40.6), 3)   # Danger
-    category = category.where(~(hi >= 54.4), 4)   # Extreme Danger
-
-    # For values already set to 0 (HI < 26.7), xr.where leaves them at 0
-    # because the first condition (hi >= 26.7) is False for those.
-    # However, xr.where always replaces where condition is True, so we need
-    # to build from the top down to avoid overwriting.
-    #
-    # Let's use a cleaner approach: build from highest to lowest.
-
-    category = xr.full_like(hi, 0, dtype=np.int8)  # default: No Risk
-
-    category = xr.where(hi >= 26.7, 1, category)
-    category = xr.where(hi >= 32.2, 2, category)
-    category = xr.where(hi >= 40.6, 3, category)
-    category = xr.where(hi >= 54.4, 4, category)
-
-    return category
-
-
-# ---------------------------------------------------------------------------
-# 3. Area fraction calculation
-# ---------------------------------------------------------------------------
-
-def compute_area_fractions(
-    category: xr.DataArray,
-    lat_name: str,
-    lon_name: str,
-    date_name: str,
-) -> pd.DataFrame:
-    """
-    Compute the area fraction (in %) of each risk category per day.
-
-    Uses cos(latitude) as the area weight so that grid cells at higher
-    latitudes are not over-weighted relative to their true surface area.
-
-    Parameters
-    ----------
-    category : xr.DataArray
-        Integer risk categories with dimensions (date, lat, lon).
-    lat_name : str
-        Name of the latitude coordinate.
-    lon_name : str
-        Name of the longitude coordinate.
-    date_name : str
-        Name of the date/time dimension.
-
-    Returns
-    -------
-    pd.DataFrame
-        Columns: date, No Risk, Caution, Extreme Caution, Danger, Extreme Danger.
-        Area fractions in percent (0-100).
-    """
-    # Cosine latitude weights (raw, not normalised yet)
-    lat_rad = np.deg2rad(category[lat_name])
-    weights_1d = np.cos(lat_rad)  # shape (n_lat,)
-
-    # Total weight across all grid cells  =  sum(cos(lat)) * n_lon
-    n_lon = category.sizes[lon_name]
-    total_weight = float(weights_1d.sum()) * n_lon
-
-    category_labels = {
-        0: "No Risk",
-        1: "Caution",
-        2: "Extreme Caution",
-        3: "Danger",
-        4: "Extreme Danger",
-    }
-
-    rows = []
-    for i in range(category.sizes[date_name]):
-        day_slice = category.isel({date_name: i})
-        date_val = day_slice[date_name].values
-        date_str = pd.Timestamp(date_val).strftime("%Y-%m-%d")
-
-        row = {"date": date_str}
-        for cat_val, cat_label in category_labels.items():
-            mask = (day_slice == cat_val)
-            # Sum of cos(lat) over grid cells where mask is True
-            weighted_sum = float((mask * weights_1d).sum())
-            frac = weighted_sum / total_weight * 100.0
-            row[cat_label] = frac
-
-        rows.append(row)
-
-    df = pd.DataFrame(rows)
-    return df
-
-
-# ---------------------------------------------------------------------------
-# 4. Plotting
-# ---------------------------------------------------------------------------
 
 def plot_stacked_bar(
     df: pd.DataFrame,
@@ -194,37 +39,19 @@ def plot_stacked_bar(
         Columns: date, No Risk, Caution, Extreme Caution, Danger, Extreme Danger.
     output_path : Path
         Where to save the PNG figure.
-    start_date : str
-        Start date string for the title (e.g. "2022-07-01").
-    end_date : str
-        End date string for the title (e.g. "2022-07-07").
+    start_date, end_date : str
+        Date strings for the title (e.g. "2022-07-01").
     """
-    category_colors = {
-        "No Risk":          "#2ecc71",  # green
-        "Caution":          "#f1c40f",  # yellow
-        "Extreme Caution":  "#e67e22",  # orange
-        "Danger":           "#e74c3c",  # red
-        "Extreme Danger":   "#8e44ad",  # purple
-    }
-
-    category_order = [
-        "No Risk",
-        "Caution",
-        "Extreme Caution",
-        "Danger",
-        "Extreme Danger",
-    ]
-
     fig, ax = plt.subplots(figsize=(12, 6))
 
     bottom = np.zeros(len(df))
     x = np.arange(len(df))
 
-    for cat in category_order:
+    for cat in CATEGORY_LABELS.values():
         values = df[cat].values
         ax.bar(
             x, values, bottom=bottom,
-            color=category_colors[cat],
+            color=CATEGORY_COLORS[cat],
             label=cat,
             width=0.6,
         )
@@ -254,19 +81,26 @@ def plot_stacked_bar(
     plt.close(fig)
 
 
-# ---------------------------------------------------------------------------
-# 5. Main
-# ---------------------------------------------------------------------------
+def category_attrs() -> dict:
+    """NetCDF attributes describing the integer risk categories."""
+    t = CATEGORY_THRESHOLDS_C
+    return {
+        "units": "category",
+        "description": "Heat risk category based on daily maximum heat index",
+        "category_0": f"No Risk: heat index < {t[1]}°C",
+        "category_1": f"Caution: {t[1]}°C <= heat index < {t[2]}°C",
+        "category_2": f"Extreme Caution: {t[2]}°C <= heat index < {t[3]}°C",
+        "category_3": f"Danger: {t[3]}°C <= heat index < {t[4]}°C",
+        "category_4": f"Extreme Danger: heat index >= {t[4]}°C",
+    }
 
-def main():
-    # --- Paths ---
-    project_root = Path(__file__).resolve().parent.parent
-    input_path = project_root / "data" / "processed" / "humid_heat_2022_07_01_07.nc"
-    output_nc = project_root / "data" / "processed" / "heat_risk_categories_2022_07_01_07.nc"
-    output_csv = project_root / "data" / "processed" / "daily_heat_risk_area_fraction_2022_07_01_07.csv"
-    output_fig = project_root / "figures" / "east_china_heat_risk_area_fraction_2022_07_01_07.png"
 
-    # Ensure output directories exist
+def run(cfg: RunConfig) -> None:
+    input_path = cfg.paths.humid_heat_nc
+    output_nc = cfg.paths.heat_risk_nc
+    output_csv = cfg.paths.area_fraction_csv
+    output_fig = cfg.paths.fig_area_fraction
+
     output_nc.parent.mkdir(parents=True, exist_ok=True)
     output_fig.parent.mkdir(parents=True, exist_ok=True)
 
@@ -277,16 +111,10 @@ def main():
     ds = xr.open_dataset(input_path)
 
     var_name = "daily_max_heat_index_c"
-    if var_name not in ds.data_vars:
-        raise KeyError(
-            f"Variable '{var_name}' not found. "
-            f"Available: {list(ds.data_vars)}"
-        )
-
-    da = ds[var_name]
-    lat_name = detect_lat_name(da)
-    lon_name = detect_lon_name(da)
-    date_name = detect_date_name(da)
+    da = require_var(ds, var_name)
+    lat_name = detect_lat_coord(da)
+    lon_name = detect_lon_coord(da)
+    date_name = detect_date_dim(da)
 
     print(f"Variable:      {var_name}")
     print(f"Date dim:      '{date_name}'")
@@ -297,17 +125,7 @@ def main():
     # Step 2: Classify heat risk
     # =======================================================================
     heat_risk_category = classify_heat_risk(da)
-
-    # Add metadata
-    heat_risk_category.attrs = {
-        "units": "category",
-        "description": "Heat risk category based on daily maximum heat index",
-        "category_0": "No Risk: heat index < 26.7°C",
-        "category_1": "Caution: 26.7°C <= heat index < 32.2°C",
-        "category_2": "Extreme Caution: 32.2°C <= heat index < 40.6°C",
-        "category_3": "Danger: 40.6°C <= heat index < 54.4°C",
-        "category_4": "Extreme Danger: heat index >= 54.4°C",
-    }
+    heat_risk_category.attrs = category_attrs()
 
     # =======================================================================
     # Step 3: Save NetCDF
@@ -319,9 +137,9 @@ def main():
         },
         attrs={
             "title": "Heat risk categories for East China",
-            "period": "2022-07-01 to 2022-07-07",
+            "period": cfg.period_label,
             "source": "Based on ERA5 hourly single-level reanalysis",
-            "created_with": "classify_heat_risk.py",
+            "created_with": "src/classify_heat_risk.py",
         },
     )
     ds_out.to_netcdf(output_nc)
@@ -332,17 +150,14 @@ def main():
     # =======================================================================
     df = compute_area_fractions(heat_risk_category, lat_name, lon_name, date_name)
 
-    # Print per-day fractions
     print("\n=== Daily heat risk area fractions (%) ===")
     print(df.to_string(index=False))
 
-    # Verify sums are close to 100%
-    sum_cols = ["No Risk", "Caution", "Extreme Caution", "Danger", "Extreme Danger"]
-    daily_sums = df[sum_cols].sum(axis=1)
-    print(f"\nDaily sum check (should be ~100%):")
-    for _, row in df.iterrows():
-        total = sum(row[col] for col in sum_cols)
-        print(f"  {row['date']}: {total:.2f}%")
+    # Sanity check: the categories cover every grid cell, so each day sums to 100 %
+    daily_sums = df[list(CATEGORY_LABELS.values())].sum(axis=1)
+    print("\nDaily sum check (should be ~100%):")
+    for date_str, total in zip(df["date"], daily_sums):
+        print(f"  {date_str}: {total:.2f}%")
 
     # =======================================================================
     # Step 5: Save CSV
@@ -353,14 +168,6 @@ def main():
     # =======================================================================
     # Step 6: Plot
     # =======================================================================
-    dates_list = df["date"].tolist()
-    start_date = dates_list[0]
-    end_date = dates_list[-1]
-
-    plot_stacked_bar(df, output_fig, start_date, end_date)
+    plot_stacked_bar(df, output_fig, df["date"].iloc[0], df["date"].iloc[-1])
 
     print("\nDone.")
-
-
-if __name__ == "__main__":
-    main()
