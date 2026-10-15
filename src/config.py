@@ -64,6 +64,7 @@ class RunConfig:
     south: float
     east: float
     cities: tuple
+    utc_offset_hours: int  # daily values are calendar days in UTC + this offset
     land_sea_mask_threshold: float  # land where ERA5 land_sea_mask >= this
     file_tag: str
     paths: Paths
@@ -149,6 +150,12 @@ def load_config(config_path, project_root: Path = PROJECT_ROOT) -> RunConfig:
                 f"City {city.name} ({city.lat}°N, {city.lon}°E) is outside the region {region}."
             )
 
+    utc_offset_hours = raw["utc_offset_hours"]
+    if not isinstance(utc_offset_hours, int) or not -12 <= utc_offset_hours <= 14:
+        raise ValueError(
+            f"utc_offset_hours must be a whole number of hours from -12 to 14, got {utc_offset_hours!r}."
+        )
+
     lsm_threshold = float(raw["land_sea_mask_threshold"])
     if not 0.0 < lsm_threshold <= 1.0:
         raise ValueError(f"land_sea_mask_threshold must be in (0, 1], got {lsm_threshold}.")
@@ -165,6 +172,7 @@ def load_config(config_path, project_root: Path = PROJECT_ROOT) -> RunConfig:
         south=region["south"],
         east=region["east"],
         cities=cities,
+        utc_offset_hours=utc_offset_hours,
         land_sea_mask_threshold=lsm_threshold,
         file_tag=file_tag,
         paths=build_paths(file_tag, region, figures_dir, project_root),

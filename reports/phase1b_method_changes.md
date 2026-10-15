@@ -55,9 +55,18 @@ What this means:
   rather than the air temperature below 21 °C (15 °C, 60 %: 15.0 → 14.1 °C)
   or the simple formula averaged with T a second time between 21 and
   27 °C (24 °C, 50 %: 23.9 → 23.8 °C). These cells stay in "No Risk".
-- Expected effect on July 2022: humid East China afternoons rarely have
-  RH < 40 % at high temperatures, so most grid cells should not change;
-  look for changes on the hottest, driest inland days.
+- Known difference from MetPy and the NWS online calculator: they switch
+  to the regression when the simple formula itself is ≥ 79 °F, while the
+  WPC equation page (followed here) uses the average of the simple formula
+  and T ≥ 80 °F. The two rules differ only for 25.0–27.3 °C at high
+  humidity, by up to 1.3 °C (26.1 °C, RH 93 %). That is right at the
+  No Risk / Caution threshold (26.7 °C), so a few cool, humid days could
+  be classified differently. The MetPy tests avoid this band.
+- On real data, only hours with RH < 40 % (or cool hours) can change.
+  At 38–40 °C, RH of 30–40 % now gives a much higher heat index and
+  RH below about 25 % a lower one, so the hottest inland afternoons are
+  where the area fractions and the daily maxima may move. How often this
+  happened in July 2022 is what the table below must show.
 
 ### July 2022 daily area fractions — TODO
 
@@ -87,10 +96,10 @@ of the land area, so each day still sums to 100 %. The mask is saved as
 `land_mask` in `heat_risk_categories_<tag>.nc`. The maps still show the
 sea, greyed out. Regional-mean time series are unchanged (all cells).
 
-Expected effect: sea cells have a smaller diurnal cycle, so their daily
-maximum heat index is usually lower than inland. Removing them should
-shift the fractions towards the higher categories. With real data,
-record the number of land cells printed by `classify_heat_risk`.
+Likely effect (to be checked): sea cells have a smaller diurnal cycle, so
+their daily maximum heat index is usually lower than inland, and removing
+them would shift the fractions towards the higher categories. With real
+data, also record the number of land cells printed by `classify_heat_risk`.
 
 ### July 2022 daily area fractions — TODO
 
@@ -102,13 +111,65 @@ City daily maximum heat index is not affected by this fix.
 
 ---
 
+## 3. Beijing-time days (UTC+8)
+
+**Before:** daily maximum temperature, daily maximum heat index and daily
+mean RH were computed over UTC days, i.e. 08:00 to 07:00 Beijing time.
+
+**After:** daily values are computed over local calendar days set by
+`utc_offset_hours`. New Beijing-time configs (`july_2022_bjt.yaml`,
+`sample_2022_07_01_07_bjt.yaml`, `utc_offset_hours: 8`) use Beijing days:
+day D runs from 16:00 UTC on D−1 to 15:00 UTC on D. Their download also
+fetches 16:00–23:00 UTC of the day before the period (a separate CDS
+request, merged into the same raw file). They have their own file tag
+(`2022_07_bjt`), so raw, processed and figure files never mix with the
+UTC files. The v0.1/v0.2 configs keep UTC days (`utc_offset_hours: 0`)
+and the phase 1a raw files. Days without all 24 hours are dropped, so the
+trailing partial day (16:00–23:00 UTC on the last day) is not used. If a
+day of the period is incomplete, for example because a UTC raw file was
+given to a Beijing-time config, the run stops with an error.
+
+Validated on synthetic data only: day boundaries (15:00 UTC belongs to
+Beijing day D, 16:00 UTC to D+1), the first day of July using
+16:00–23:00 UTC on 2022-06-30, a month boundary (Beijing 2022-08-01 =
+16:00 UTC on 07-31 to 15:00 UTC on 08-01), the year boundary of the
+download request (2023-01-01 needs 2022-12-31), and a full run of
+`sample_2022_07_01_07_bjt.yaml` checked day by day against the 24-hour
+UTC windows.
+
+Likely effect (to be checked): the afternoon maximum (about 14:00–16:00 Beijing time,
+06:00–08:00 UTC) falls in the same day under both conventions, so most
+daily maxima should not change. Changes are expected where the UTC-day
+maximum came from 16:00–23:00 UTC (00:00–07:00 Beijing time on the next
+day), e.g. on cooler days or when warm nights follow hot days. Daily mean RH
+changes more, because a different night is included.
+
+### July 2022 daily area fractions — TODO
+
+| Date | No Risk | Caution | Extreme Caution | Danger | Extreme Danger |
+|---|---|---|---|---|---|
+| TODO: fix 2 → fix 3 for each day | | | | | |
+
+### City daily maximum heat index — TODO
+
+| Date | Nanjing | Shanghai | Hangzhou | Huai'an |
+|---|---|---|---|---|
+| TODO: fix 2 → fix 3 (°C) | | | | |
+
+---
+
 ## How to fill this report
 
-1. Put the raw July 2022 ERA5 file in `data/raw/` (or run the pipeline
-   with `--download`).
-2. Run the July 2022 config once at the parent commit (`phase-1a-refactor`,
-   label "before") and once at each fix commit
-   (`git log --oneline phase-1a-refactor..phase-1b-methods`):
+Only after the phase 1a real-data acceptance is done, and only with the
+user's confirmation for any CDS download. Running the UTC config
+overwrites the tracked `*_2022_07.csv` files, so work in a separate
+worktree or restore them afterwards.
+
+1. Fixes 1 and 2 (UTC days, the phase 1a raw file
+   `data/raw/era5_east_china_2022_07.nc`; fix 2 also needs the land-sea
+   mask): run `configs/july_2022.yaml` at `phase-1a-refactor` ("before"),
+   at the heat index commit ("fix1") and at the land-sea mask commit
+   ("fix2") (`git log --oneline phase-1a-refactor..phase-1b-methods`):
 
    ```bash
    git checkout <commit>
@@ -118,8 +179,13 @@ City daily maximum heat index is not affected by this fix.
    After each run, copy `data/processed/*_2022_07.csv` to a folder outside
    the repository, e.g. `../phase1b_runs/<label>/`, then restore the
    tracked files with `git checkout -- data/processed figures`.
-3. Build the before → after tables, one fix at a time (previous commit →
-   fix commit), for example:
+2. Fix 3 (Beijing days): at the tip of `phase-1b-methods`, compare the UTC
+   config (`july_2022.yaml`, same as "fix2") with the Beijing-time config
+   (`july_2022_bjt.yaml`, label "fix3"). The latter needs its own raw file
+   `data/raw/era5_east_china_2022_07_bjt.nc`, with 16:00–23:00 UTC of
+   2022-06-30 (`--download`, after confirmation). Its outputs are
+   `data/processed/*_2022_07_bjt.csv`.
+3. Build the before → after tables, one fix at a time, for example:
 
    ```python
    import pandas as pd
@@ -127,7 +193,8 @@ City daily maximum heat index is not affected by this fix.
    def compare(before_csv, after_csv):
        before = pd.read_csv(before_csv, index_col="date").round(1)
        after = pd.read_csv(after_csv, index_col="date").round(1)
-       table = before.astype(str) + " → " + after.astype(str)
+       # Days present in both runs only.
+       table = (before.astype(str) + " → " + after.astype(str)).dropna()
        print("| date | " + " | ".join(table.columns) + " |")
        print("|---" * (len(table.columns) + 1) + "|")
        for date, row in table.iterrows():
@@ -137,7 +204,9 @@ City daily maximum heat index is not affected by this fix.
            "../phase1b_runs/fix1/daily_heat_risk_area_fraction_2022_07.csv")
    compare("../phase1b_runs/before/city_daily_heat_index_2022_07.csv",
            "../phase1b_runs/fix1/city_daily_heat_index_2022_07.csv")
+   # Fix 3: ../phase1b_runs/fix2/*_2022_07.csv vs ../phase1b_runs/fix3/*_2022_07_bjt.csv
    ```
 
-4. Finally, at the tip of `phase-1b-methods`, re-run both configs and
-   commit the regenerated CSVs and figures together with this report.
+4. Finally, decide with the user which outputs are tracked for v0.3 (the
+   new `_bjt` CSVs and figures; whether the v0.2 UTC CSVs are regenerated
+   or kept as the v0.2 record), and commit them together with this report.

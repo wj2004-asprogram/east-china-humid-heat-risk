@@ -5,16 +5,22 @@ import pandas as pd
 import xarray as xr
 
 
-def make_synthetic_era5(start: str, end: str, step: float = 0.5, seed: int = 0) -> xr.Dataset:
+def make_synthetic_era5(
+    start: str, end: str, step: float = 0.5, seed: int = 0, hours_before: int = 0,
+) -> xr.Dataset:
     """
     Build a small hourly dataset laid out like a new-CDS ERA5 download.
+
+    Hourly UTC timestamps from `start` 00:00 to `end` 23:00, plus the last
+    `hours_before` hours of the day before `start` (as downloaded for local
+    days east of UTC, e.g. 8 for Beijing time).
 
     Dimensions (valid_time, latitude, longitude), latitude descending,
     t2m/d2m in Kelvin as float32. Temperatures (~10-45 °C) and dewpoint
     depressions (1-18 K) are spread wide enough to reach every heat index
     branch and most risk categories.
     """
-    times = pd.date_range(start, f"{end} 23:00", freq="h")
+    times = pd.date_range(pd.Timestamp(start) - pd.Timedelta(hours=hours_before), f"{end} 23:00", freq="h")
     lats = np.arange(36.0, 25.0 - 1e-9, -step)
     lons = np.arange(112.0, 123.0 + 1e-9, step)
     shape = (len(times), len(lats), len(lons))

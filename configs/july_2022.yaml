@@ -16,6 +16,12 @@ region:
   south: 25
   east: 123
 
+# Daily values are calendar days in this time zone, as hours from UTC
+# (ERA5 timestamps are UTC). This config keeps UTC days, as in v0.1/v0.2,
+# and reads the same raw file as phase 1a. Beijing-time days: see
+# configs/july_2022_bjt.yaml (separate raw and output files).
+utc_offset_hours: 0
+
 # City points are compared at the nearest ERA5 grid point.
 cities:
   - {name: Nanjing,  lat: 32.06, lon: 118.79, color: "#d62728"}
