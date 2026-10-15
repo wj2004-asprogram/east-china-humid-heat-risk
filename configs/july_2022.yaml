@@ -1,0 +1,30 @@
+# v0.2: full-month July 2022 case study.
+#
+# Run with:
+#     python -m src.pipeline --config configs/july_2022.yaml
+
+name: july_2022
+
+period:
+  start: "2022-07-01"
+  end: "2022-07-31"
+
+# East China sample domain (degrees). CDS "area" order is [north, west, south, east].
+region:
+  north: 36
+  west: 112
+  south: 25
+  east: 123
+
+# City points are compared at the nearest ERA5 grid point.
+cities:
+  - {name: Nanjing,  lat: 32.06, lon: 118.79, color: "#d62728"}
+  - {name: Shanghai, lat: 31.23, lon: 121.47, color: "#1f77b4"}
+  - {name: Hangzhou, lat: 30.27, lon: 120.15, color: "#2ca02c"}
+  - {name: "Huai'an", lat: 33.61, lon: 119.02, color: "#ff7f0e"}
+
+# Suffix used in every data and figure file name of this run.
+file_tag: "2022_07"
+
+# Where this run's figures are written (relative to the project root).
+figures_dir: figures/v0.2_july_2022

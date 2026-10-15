@@ -10,6 +10,7 @@ This project is not intended to make long-term climate trend claims at the curre
 
 - **v0.1:** 7-day workflow test, 2022-07-01 to 2022-07-07.
 - **v0.2:** Full-month July 2022 case study, 2022-07-01 to 2022-07-31.
+- **v0.3 (in progress):** single config-driven pipeline, tests, method fixes, multi-year data and a machine learning module. See [docs/ROADMAP.md](docs/ROADMAP.md).
 
 ## Study Area and Period
 
@@ -65,19 +66,45 @@ Daily maximum heat index is classified into the following categories:
 
 Area-fraction statistics are calculated using latitude-based weighting with `cos(latitude)`.
 
+## How to Run
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate          # Windows; on macOS/Linux: source .venv/bin/activate
+pip install -r requirements.txt
+
+# Download ERA5 (needs a CDS account and ~/.cdsapirc), then run every step
+python -m src.pipeline --config configs/july_2022.yaml --download
+
+# Re-run selected steps only
+python -m src.pipeline --config configs/july_2022.yaml --steps classify_heat_risk plot_heat_risk_maps
+
+# Tests
+python -m pytest
+```
+
+Each run is described by one YAML file in `configs/` (period, region, cities, output names). To analyse another period, add a config file. Do not copy scripts.
+
 ## Repository Structure
 
 ```text
+configs/                # One YAML file per run (v0.1 sample, v0.2 July 2022)
 data/
   raw/                  # Raw ERA5 NetCDF files, ignored by Git
   processed/            # Processed NetCDF files ignored by Git; CSV outputs tracked
-
-figures/                # Output figures
+docs/                   # Roadmap
+figures/                # Output figures, one folder per version
 reports/                # Project summary and notes
-src/                    # Python scripts
+src/
+  pipeline.py           # Entry point: python -m src.pipeline --config ...
+  config.py             # Loads a config and derives all file paths
+  indices.py            # Unit conversion, relative humidity, heat index
+  risk.py               # Risk categories and cos(latitude) area fractions
+  era5_utils.py         # ERA5 coordinate/variable name detection
+  <step>.py             # One module per workflow step
+tests/                  # pytest unit and end-to-end tests
 README.md
 requirements.txt
-run_sample_workflow.sh
-run_july_2022_workflow.sh
+```
 
 
