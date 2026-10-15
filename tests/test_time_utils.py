@@ -2,6 +2,7 @@
 
 from datetime import date
 
+import numpy as np
 import pandas as pd
 import pytest
 import xarray as xr
@@ -117,3 +118,16 @@ def test_no_complete_day_is_an_error():
     da = _hourly("2022-07-01 00:00", "2022-07-01 12:00")
     with pytest.raises(ValueError):
         local_daily(da, "time", 8, "max", date(2022, 7, 1), date(2022, 7, 1))
+
+
+def test_missing_hour_makes_the_day_missing():
+    # skipna=False: one NaN hour in Beijing day 2022-07-01 makes that day's
+    # max and mean NaN; 2022-07-02 is unaffected.
+    da = _hourly("2022-06-30 16:00", "2022-07-02 23:00")
+    da.loc["2022-07-01 03:00"] = np.nan
+    period = (date(2022, 7, 1), date(2022, 7, 2))
+    daily_max = local_daily(da, "time", 8, "max", *period)
+    daily_mean = local_daily(da, "time", 8, "mean", *period)
+
+    assert np.isnan(daily_max.values[0]) and np.isnan(daily_mean.values[0])
+    assert daily_max.values[1] == _hours_since_ref("2022-07-02 15:00")

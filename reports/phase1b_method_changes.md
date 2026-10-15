@@ -14,6 +14,10 @@ Each fix is a separate commit on branch `phase-1b-methods`:
 2. Land-sea mask: area fractions over land only.
 3. Beijing-time (UTC+8) calendar days.
 
+Follow-up fixes found in review (see section 4): missing data is no
+longer counted as "No Risk", and the area-fraction CSV has a new column
+`Valid Land Coverage`.
+
 ---
 
 ## 1. Heat index algorithm
@@ -70,9 +74,9 @@ What this means:
 
 ### July 2022 daily area fractions — TODO
 
-| Date | No Risk | Caution | Extreme Caution | Danger | Extreme Danger |
-|---|---|---|---|---|---|
-| TODO: before → after for each day, 2022-07-01 … 2022-07-31 | | | | | |
+| Date | No Risk | Caution | Extreme Caution | Danger | Extreme Danger | Valid Land Coverage |
+|---|---|---|---|---|---|---|
+| TODO: before → after for each day, 2022-07-01 … 2022-07-31 | | | | | | |
 
 ### City daily maximum heat index — TODO
 
@@ -103,9 +107,9 @@ data, also record the number of land cells printed by `classify_heat_risk`.
 
 ### July 2022 daily area fractions — TODO
 
-| Date | No Risk | Caution | Extreme Caution | Danger | Extreme Danger |
-|---|---|---|---|---|---|
-| TODO: fix 1 → fix 2 for each day | | | | | |
+| Date | No Risk | Caution | Extreme Caution | Danger | Extreme Danger | Valid Land Coverage |
+|---|---|---|---|---|---|---|
+| TODO: fix 1 → fix 2 for each day | | | | | | |
 
 City daily maximum heat index is not affected by this fix.
 
@@ -146,15 +150,38 @@ changes more, because a different night is included.
 
 ### July 2022 daily area fractions — TODO
 
-| Date | No Risk | Caution | Extreme Caution | Danger | Extreme Danger |
-|---|---|---|---|---|---|
-| TODO: fix 2 → fix 3 for each day | | | | | |
+| Date | No Risk | Caution | Extreme Caution | Danger | Extreme Danger | Valid Land Coverage |
+|---|---|---|---|---|---|---|
+| TODO: fix 2 → fix 3 for each day | | | | | | |
 
 ### City daily maximum heat index — TODO
 
 | Date | Nanjing | Shanghai | Hangzhou | Huai'an |
 |---|---|---|---|---|
 | TODO: fix 2 → fix 3 (°C) | | | | |
+
+---
+
+## 4. Missing data (review fix)
+
+**Before:** a grid cell whose daily maximum heat index was missing (NaN)
+reached no threshold and was counted as "No Risk"; a day without any data
+was reported as 100 % No Risk. Daily maxima and means skipped missing
+hours, i.e. they could come from a partial day.
+
+**After:** daily aggregation uses `skipna=False`, so a cell-day with any
+missing hour is NaN. NaN gets category −1 "Missing". Area fractions are
+shares of the valid land area (land cells with data, cos(latitude)
+weighted) and still sum to 100 %. The new CSV column `Valid Land Coverage`
+is the valid share of the land area: 100 when nothing is missing, 0 (with
+empty category columns) when nothing is valid. The hottest risk day for
+the maps uses the same valid-area shares and skips days without data.
+Maps draw missing cells in dark grey.
+
+Expected effect on ERA5: none. ERA5 2m temperature and dewpoint have no
+gaps, so on the real files the coverage should be 100 % on every day and
+the category columns identical to those of fix 3. The real-data run should
+confirm this (`Valid Land Coverage` = 100 everywhere).
 
 ---
 
@@ -193,8 +220,10 @@ worktree or restore them afterwards.
    def compare(before_csv, after_csv):
        before = pd.read_csv(before_csv, index_col="date").round(1)
        after = pd.read_csv(after_csv, index_col="date").round(1)
-       # Days present in both runs only.
-       table = (before.astype(str) + " → " + after.astype(str)).dropna()
+       # Columns and days present in both runs only (older runs have no
+       # "Valid Land Coverage" column).
+       cols = before.columns.intersection(after.columns)
+       table = (before[cols].astype(str) + " → " + after[cols].astype(str)).dropna()
        print("| date | " + " | ".join(table.columns) + " |")
        print("|---" * (len(table.columns) + 1) + "|")
        for date, row in table.iterrows():

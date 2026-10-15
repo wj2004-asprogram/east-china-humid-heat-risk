@@ -27,6 +27,9 @@ from src.risk import (
     CATEGORY_COLORS,
     CATEGORY_LABELS,
     CATEGORY_THRESHOLDS_C,
+    MISSING_CATEGORY,
+    MISSING_LABEL,
+    VALID_COVERAGE_LABEL,
     classify_heat_risk,
     compute_area_fractions,
 )
@@ -41,10 +44,15 @@ def plot_stacked_bar(
     """
     Draw a stacked bar chart of daily heat risk land area fractions.
 
+    Fractions are shares of the valid land area. Days whose valid land
+    coverage is below 100 % are marked with "*"; days without valid data
+    have no bar.
+
     Parameters
     ----------
     df : pd.DataFrame
-        Columns: date, No Risk, Caution, Extreme Caution, Danger, Extreme Danger.
+        Columns: date, No Risk, Caution, Extreme Caution, Danger,
+        Extreme Danger, Valid Land Coverage.
     output_path : Path
         Where to save the PNG figure.
     start_date, end_date : str
@@ -56,7 +64,7 @@ def plot_stacked_bar(
     x = np.arange(len(df))
 
     for cat in CATEGORY_LABELS.values():
-        values = df[cat].values
+        values = np.nan_to_num(df[cat].values)  # no bar on days without valid data
         ax.bar(
             x, values, bottom=bottom,
             color=CATEGORY_COLORS[cat],
@@ -66,14 +74,20 @@ def plot_stacked_bar(
         bottom += values
 
     # --- Labels & title ---
+    partial = df[VALID_COVERAGE_LABEL] < 100.0
     ax.set_xticks(x)
-    ax.set_xticklabels(df["date"], rotation=45, ha="right")
+    ax.set_xticklabels(
+        [f"{d}*" if p else d for d, p in zip(df["date"], partial)], rotation=45, ha="right",
+    )
     ax.set_xlabel("Date")
-    ax.set_ylabel("Land Area Fraction (%)")
-    ax.set_title(
+    ax.set_ylabel("Share of Valid Land Area (%)")
+    title = (
         f"Daily Heat Risk Area Fraction over East China (land only)\n"
         f"{start_date} to {end_date}"
     )
+    if partial.any():
+        title += "\n* valid land coverage below 100 % (missing data)"
+    ax.set_title(title)
     ax.set_ylim(0, 100)
     ax.yaxis.grid(True, alpha=0.3)
     ax.legend(
@@ -100,6 +114,10 @@ def category_attrs() -> dict:
         "category_2": f"Extreme Caution: {t[2]}°C <= heat index < {t[3]}°C",
         "category_3": f"Danger: {t[3]}°C <= heat index < {t[4]}°C",
         "category_4": f"Extreme Danger: heat index >= {t[4]}°C",
+        "category_missing": (
+            f"{MISSING_CATEGORY} = {MISSING_LABEL}: daily maximum heat index is "
+            "missing (NaN); not counted in the area fractions"
+        ),
     }
 
 
@@ -182,11 +200,12 @@ def run(cfg: RunConfig) -> None:
     print("\n=== Daily heat risk land area fractions (%) ===")
     print(df.to_string(index=False))
 
-    # Sanity check: the categories cover every land cell, so each day sums to 100 %
-    daily_sums = df[list(CATEGORY_LABELS.values())].sum(axis=1)
-    print("\nDaily sum check (should be ~100%):")
-    for date_str, total in zip(df["date"], daily_sums):
-        print(f"  {date_str}: {total:.2f}%")
+    # Sanity check: the categories cover every valid land cell, so each day
+    # with valid data sums to 100 %
+    daily_sums = df[list(CATEGORY_LABELS.values())].sum(axis=1, min_count=1)
+    print("\nDaily sum check (should be ~100% where coverage > 0):")
+    for date_str, total, coverage in zip(df["date"], daily_sums, df[VALID_COVERAGE_LABEL]):
+        print(f"  {date_str}: {total:.2f}%  (valid land coverage {coverage:.2f}%)")
 
     # =======================================================================
     # Step 5: Save CSV

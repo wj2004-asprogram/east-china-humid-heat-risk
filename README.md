@@ -80,8 +80,13 @@ Daily maximum heat index is classified into the following categories:
 | Extreme Caution | 32.2°C to 40.6°C |
 | Danger | 40.6°C to 54.4°C |
 | Extreme Danger | >= 54.4°C |
+| Missing (code −1) | heat index missing |
 
 Area-fraction statistics are calculated over **land grid cells only**, using latitude-based weighting with `cos(latitude)`. A grid cell counts as land where the ERA5 land-sea mask (the fraction of land in the cell, 0–1) is at least `land_sea_mask_threshold` in the config (0.5 in both configs); this excludes the East China Sea and the Yellow Sea, roughly a fifth of the domain. The same land area is used to pick the hottest risk day for the maps. The maps still show sea cells, greyed out. Regional-mean time series still average over all grid cells.
+
+**Missing data.** Daily maximum and mean values are NaN for a grid cell if any of its hours that day is missing (no maxima over partial days). Such cell-days get category −1 "Missing", never "No Risk". They are left out of the area fractions and drawn in dark grey on the maps.
+
+**Area-fraction table** (`data/processed/daily_heat_risk_area_fraction_<tag>.csv`): one row per day with `date`, the five category columns and `Valid Land Coverage`. The five category columns are percentages of the **valid land area** of that day (land cells with data, cos(latitude)-weighted), so they sum to 100 %. `Valid Land Coverage` is the valid share of the whole land area in %, 100 when nothing is missing. On a day without any valid land cell the five categories are empty (NaN) and the coverage is 0.
 
 ## How to Run
 

@@ -132,7 +132,7 @@ def run(cfg: RunConfig) -> None:
     daily_max_heat_index_c.attrs["long_name"] = "daily maximum heat index"
     daily_max_heat_index_c.attrs["description"] = (
         "Daily maximum of the hourly NOAA/Rothfusz heat index over local "
-        f"calendar days (UTC{cfg.utc_offset_hours:+d})"
+        f"calendar days (UTC{cfg.utc_offset_hours:+d}); NaN if any hour is missing"
     )
 
     # Daily mean relative humidity
@@ -141,7 +141,7 @@ def run(cfg: RunConfig) -> None:
     daily_mean_rh.attrs["long_name"] = "daily mean relative humidity"
     daily_mean_rh.attrs["description"] = (
         "Daily mean of hourly relative humidity over local calendar days "
-        f"(UTC{cfg.utc_offset_hours:+d})"
+        f"(UTC{cfg.utc_offset_hours:+d}); NaN if any hour is missing"
     )
 
     ds_out["daily_max_heat_index_c"] = daily_max_heat_index_c

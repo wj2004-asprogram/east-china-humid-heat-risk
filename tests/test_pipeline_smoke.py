@@ -11,7 +11,7 @@ import xarray as xr  # noqa: E402
 
 from src.config import PROJECT_ROOT, load_config  # noqa: E402
 from src.pipeline import STEPS  # noqa: E402
-from src.risk import CATEGORY_LABELS  # noqa: E402
+from src.risk import CATEGORY_LABELS, MISSING_CATEGORY, VALID_COVERAGE_LABEL  # noqa: E402
 from tests.synthetic import make_synthetic_era5, make_synthetic_land_sea_mask  # noqa: E402
 
 
@@ -49,9 +49,13 @@ def test_pipeline_runs_end_to_end(tmp_path, utc_offset_hours):
         step(cfg)
 
     fractions = pd.read_csv(cfg.paths.area_fraction_csv)
-    assert list(fractions.columns) == ["date", *CATEGORY_LABELS.values()]
+    assert list(fractions.columns) == ["date", *CATEGORY_LABELS.values(), VALID_COVERAGE_LABEL]
     assert list(fractions["date"]) == ["2022-07-01", "2022-07-02", "2022-07-03"]
     assert fractions[list(CATEGORY_LABELS.values())].sum(axis=1).tolist() == pytest.approx([100.0] * 3)
+    # No missing data: the whole land area is valid and no cell is Missing.
+    assert fractions[VALID_COVERAGE_LABEL].tolist() == [100.0] * 3
+    with xr.open_dataset(cfg.paths.heat_risk_nc) as ds:
+        assert int((ds["heat_risk_category"] == MISSING_CATEGORY).sum()) == 0
 
     # Land mask saved with the categories: the 3 columns east of 121.5 °E are sea.
     with xr.open_dataset(cfg.paths.heat_risk_nc) as ds:
@@ -103,3 +107,57 @@ def test_beijing_sample_config_day_boundaries(tmp_path):
             np.testing.assert_array_equal(
                 hh["daily_max_heat_index_c"].sel(date=day), hh["heat_index_c"].sel(time=window).max("time"),
             )
+
+
+def test_missing_hours_end_to_end(tmp_path):
+    """
+    One missing (NaN) hour makes that cell-day Missing (-1), not No Risk;
+    the area fractions are shares of the valid land area and the CSV
+    reports the valid land coverage per day. UTC days, so the hours below
+    fall on the stated dates.
+    """
+    config_file = tmp_path / "smoke.yaml"
+    config_file.write_text(CONFIG.replace("utc_offset_hours: 8", "utc_offset_hours: 0"), encoding="utf-8")
+    cfg = load_config(config_file, project_root=tmp_path)
+
+    raw = make_synthetic_era5("2022-07-01", "2022-07-03")
+    # Land cell (30°N, 115°E): one NaN hour every day -> Missing on every day,
+    # so the maps of the selected day show missing cells too.
+    for day in ("2022-07-01", "2022-07-02", "2022-07-03"):
+        raw["t2m"].loc[{"valid_time": f"{day}T05:00", "latitude": 30.0, "longitude": 115.0}] = np.nan
+    # Land cell (33°N, 113°E): one NaN hour on 2022-07-02 only.
+    raw["d2m"].loc[{"valid_time": "2022-07-02T10:00", "latitude": 33.0, "longitude": 113.0}] = np.nan
+
+    cfg.paths.raw_era5.parent.mkdir(parents=True)
+    raw.to_netcdf(cfg.paths.raw_era5)
+    make_synthetic_land_sea_mask("2022-07-01").to_netcdf(cfg.paths.raw_land_sea_mask)
+
+    for step in STEPS.values():
+        step(cfg)
+
+    with xr.open_dataset(cfg.paths.heat_risk_nc) as ds:
+        cat = ds["heat_risk_category"]
+        hi = ds["daily_max_heat_index_c"]
+        assert (cat.sel(latitude=30.0, longitude=115.0) == MISSING_CATEGORY).all()
+        assert hi.sel(latitude=30.0, longitude=115.0).isnull().all()
+        cell33 = cat.sel(latitude=33.0, longitude=113.0).values.tolist()
+        assert [c == MISSING_CATEGORY for c in cell33] == [False, True, False]
+        assert int((cat == MISSING_CATEGORY).sum()) == 3 + 1
+
+    # Land = the 20 columns from 112 to 121.5 °E on every latitude row.
+    lats = np.arange(36.0, 25.0 - 1e-9, -0.5)
+    land_weight = 20 * np.cos(np.deg2rad(lats)).sum()
+    w30, w33 = np.cos(np.deg2rad(30.0)), np.cos(np.deg2rad(33.0))
+    expected_coverage = [
+        100.0 * (1 - w30 / land_weight),
+        100.0 * (1 - (w30 + w33) / land_weight),
+        100.0 * (1 - w30 / land_weight),
+    ]
+
+    fractions = pd.read_csv(cfg.paths.area_fraction_csv)
+    assert fractions[VALID_COVERAGE_LABEL].tolist() == pytest.approx(expected_coverage)
+    assert fractions[list(CATEGORY_LABELS.values())].sum(axis=1).tolist() == pytest.approx([100.0] * 3)
+
+    for name, path in vars(cfg.paths).items():
+        if name.startswith("fig_"):
+            assert path.exists(), f"missing figure {path.name}"

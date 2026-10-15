@@ -22,7 +22,9 @@ def local_daily(obj, time_coord: str, utc_offset_hours: int, how: str,
     Aggregate hourly data (UTC timestamps) to local calendar days.
 
     Each timestamp is shifted by `utc_offset_hours` and the values are
-    grouped by local calendar date. Days without all 24 hourly values
+    grouped by local calendar date. A missing value (NaN) in any hour makes
+    that cell-day missing (skipna=False): no maxima or means over partial
+    days. Days without all 24 hourly values
     (e.g. the partial days at the edges of a download) are dropped, and
     only days from `start_date` to `end_date` are kept. A ValueError is
     raised if any day of the period is not complete.
@@ -48,7 +50,7 @@ def local_daily(obj, time_coord: str, utc_offset_hours: int, how: str,
     local_time = obj[time_coord].values + np.timedelta64(utc_offset_hours, "h")
     local = obj.assign_coords({time_coord: local_time})
 
-    daily = getattr(local.resample({time_coord: "1D"}), how)(keep_attrs=True)
+    daily = getattr(local.resample({time_coord: "1D"}), how)(skipna=False, keep_attrs=True)
 
     # Keep complete local days only.
     hours_per_day = pd.Series(1, index=pd.DatetimeIndex(local_time)).resample("1D").count()
