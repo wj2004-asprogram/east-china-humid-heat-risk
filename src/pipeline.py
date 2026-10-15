@@ -40,6 +40,9 @@ STEPS = {
     "plot_heat_risk_maps": plot_heat_risk_maps.run,
 }
 
+# Steps that read the raw ERA5 file (the others read processed files).
+RAW_INPUT_STEPS = {"process_temperature", "process_humid_heat"}
+
 
 def parse_args(argv=None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="East China humid heat risk workflow")
@@ -65,14 +68,14 @@ def main(argv=None) -> None:
         print("\n=== download ===")
         download_era5.run(cfg)
 
-    if not cfg.paths.raw_era5.exists():
+    selected = args.steps or list(STEPS)
+    steps = [name for name in STEPS if name in selected]  # keep pipeline order
+
+    if RAW_INPUT_STEPS.intersection(steps) and not cfg.paths.raw_era5.exists():
         raise SystemExit(
             f"Raw ERA5 file not found: {cfg.paths.raw_era5}\n"
             "Run again with --download, or copy the file there."
         )
-
-    selected = args.steps or list(STEPS)
-    steps = [name for name in STEPS if name in selected]  # keep pipeline order
 
     for i, name in enumerate(steps, start=1):
         print(f"\n=== Step {i}/{len(steps)}: {name} ===")

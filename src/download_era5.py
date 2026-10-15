@@ -72,7 +72,13 @@ def run(cfg: RunConfig) -> None:
     print(f"  Region:    N={cfg.north}°, W={cfg.west}°, S={cfg.south}°, E={cfg.east}°")
     print(f"  Output:    {output_file}")
 
+    # Download to a temporary name and rename only on success, so an
+    # interrupted download never leaves a truncated file at the final path.
+    partial_file = output_file.with_name(output_file.name + ".part")
+    partial_file.unlink(missing_ok=True)
+
     client = cdsapi.Client()
-    client.retrieve("reanalysis-era5-single-levels", request, str(output_file))
+    client.retrieve("reanalysis-era5-single-levels", request, str(partial_file))
+    partial_file.replace(output_file)
 
     print("Download completed.")

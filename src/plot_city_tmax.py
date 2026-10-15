@@ -8,10 +8,16 @@ table (long format: one row per city and day).
 
 import matplotlib.pyplot as plt
 import pandas as pd
-import xarray as xr
 
 from src.config import RunConfig
-from src.era5_utils import detect_lat_coord, detect_lon_coord, detect_t2m_var, detect_time_coord
+from src.era5_utils import (
+    detect_lat_coord,
+    detect_lon_coord,
+    detect_t2m_var,
+    detect_time_coord,
+    load_dataset,
+    select_city_points,
+)
 
 
 def run(cfg: RunConfig) -> None:
@@ -24,7 +30,7 @@ def run(cfg: RunConfig) -> None:
 
     # --- Load data ---
     print(f"Loading {input_file} ...")
-    ds = xr.open_dataset(input_file)
+    ds = load_dataset(input_file)
 
     lat_name = detect_lat_coord(ds)
     lon_name = detect_lon_coord(ds)
@@ -39,19 +45,9 @@ def run(cfg: RunConfig) -> None:
 
     fig, ax = plt.subplots(figsize=(12, 6))
 
-    for city in cfg.cities:
-        # Select nearest grid point
-        ds_city = ds.sel({
-            lat_name: city.lat,
-            lon_name: city.lon,
-        }, method="nearest")
-
-        # Report actual matched coordinates
-        actual_lat = float(ds_city[lat_name].values)
-        actual_lon = float(ds_city[lon_name].values)
-        print(f"{city.name:>10s}: requested ({city.lat:.2f}°N, {city.lon:.2f}°E)  "
-              f"→ matched ({actual_lat:.2f}°N, {actual_lon:.2f}°E)")
-
+    for city, ds_city, actual_lat, actual_lon in select_city_points(
+        ds, cfg.cities, lat_name, lon_name
+    ):
         da_city = ds_city[var_name]
         temps = da_city.values
         time_vals = da_city[time_name].values

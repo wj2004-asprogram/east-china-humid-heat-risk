@@ -13,10 +13,16 @@ Also exports a CSV table of the city-level daily heat index values
 
 import matplotlib.pyplot as plt
 import pandas as pd
-import xarray as xr
 
 from src.config import RunConfig
-from src.era5_utils import detect_date_dim, detect_lat_coord, detect_lon_coord, require_var
+from src.era5_utils import (
+    detect_date_dim,
+    detect_lat_coord,
+    detect_lon_coord,
+    load_dataset,
+    require_var,
+    select_city_points,
+)
 
 
 def run(cfg: RunConfig) -> None:
@@ -30,7 +36,7 @@ def run(cfg: RunConfig) -> None:
 
     # --- Load data ---
     print(f"Loading {input_file} ...")
-    ds = xr.open_dataset(input_file)
+    ds = load_dataset(input_file)
 
     lat_name = detect_lat_coord(ds)
     lon_name = detect_lon_coord(ds)
@@ -77,18 +83,7 @@ def run(cfg: RunConfig) -> None:
 
     fig2, ax2 = plt.subplots(figsize=(12, 6))
 
-    for city in cfg.cities:
-        # Select nearest grid point
-        ds_city = da.sel({
-            lat_name: city.lat,
-            lon_name: city.lon,
-        }, method="nearest")
-
-        actual_lat = float(ds_city[lat_name].values)
-        actual_lon = float(ds_city[lon_name].values)
-        print(f"{city.name:>10s}: requested ({city.lat:.2f}°N, {city.lon:.2f}°E)  "
-              f"→ matched ({actual_lat:.2f}°N, {actual_lon:.2f}°E)")
-
+    for city, ds_city, _, _ in select_city_points(da, cfg.cities, lat_name, lon_name):
         time_vals = ds_city[date_name].values
         heat_vals = ds_city.values
 

@@ -124,11 +124,21 @@ def load_config(config_path, project_root: Path = PROJECT_ROOT) -> RunConfig:
     if end_date < start_date:
         raise ValueError(f"Period end {end_date} is before start {start_date}.")
 
-    region = raw["region"]
+    region = {k: float(raw["region"][k]) for k in ("north", "west", "south", "east")}
+    if region["south"] >= region["north"] or region["west"] >= region["east"]:
+        raise ValueError(f"Invalid region {region}: need south < north and west < east.")
+
     cities = tuple(
         City(name=c["name"], lat=float(c["lat"]), lon=float(c["lon"]), color=c["color"])
         for c in raw["cities"]
     )
+    # A city outside the region would silently snap to an edge grid cell.
+    for city in cities:
+        if not (region["south"] <= city.lat <= region["north"]
+                and region["west"] <= city.lon <= region["east"]):
+            raise ValueError(
+                f"City {city.name} ({city.lat}°N, {city.lon}°E) is outside the region {region}."
+            )
 
     file_tag = str(raw["file_tag"])
     figures_dir = project_root / raw["figures_dir"]
@@ -137,10 +147,10 @@ def load_config(config_path, project_root: Path = PROJECT_ROOT) -> RunConfig:
         name=raw["name"],
         start_date=start_date,
         end_date=end_date,
-        north=float(region["north"]),
-        west=float(region["west"]),
-        south=float(region["south"]),
-        east=float(region["east"]),
+        north=region["north"],
+        west=region["west"],
+        south=region["south"],
+        east=region["east"],
         cities=cities,
         file_tag=file_tag,
         paths=build_paths(file_tag, figures_dir, project_root),

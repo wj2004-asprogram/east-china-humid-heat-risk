@@ -60,6 +60,43 @@ def detect_d2m_var(ds: xr.Dataset) -> str:
     )
 
 
+def load_dataset(path) -> xr.Dataset:
+    """
+    Read a NetCDF file fully into memory and close it.
+
+    Closing straight away matters on Windows: an open handle would block a
+    later step (or a re-run) from overwriting the same file.
+    """
+    with xr.open_dataset(path) as ds:
+        return ds.load()
+
+
+def select_city_points(data, cities, lat_name: str, lon_name: str):
+    """
+    Select the nearest grid point for each city.
+
+    Parameters
+    ----------
+    data : xr.Dataset or xr.DataArray
+        Gridded data with latitude/longitude coordinates.
+    cities : iterable of City
+        Cities from the run configuration.
+
+    Returns
+    -------
+    list of (City, xr.Dataset or xr.DataArray, matched_lat, matched_lon)
+    """
+    points = []
+    for city in cities:
+        point = data.sel({lat_name: city.lat, lon_name: city.lon}, method="nearest")
+        actual_lat = float(point[lat_name].values)
+        actual_lon = float(point[lon_name].values)
+        print(f"{city.name:>10s}: requested ({city.lat:.2f}°N, {city.lon:.2f}°E)  "
+              f"→ matched ({actual_lat:.2f}°N, {actual_lon:.2f}°E)")
+        points.append((city, point, actual_lat, actual_lon))
+    return points
+
+
 def require_var(ds: xr.Dataset, var_name: str) -> xr.DataArray:
     """Return `ds[var_name]`, with a clear error if the variable is missing."""
     if var_name not in ds.data_vars:

@@ -10,7 +10,7 @@ Note: daily values are aggregated over UTC days.
 import xarray as xr
 
 from src.config import RunConfig
-from src.era5_utils import detect_t2m_var, detect_time_coord
+from src.era5_utils import detect_t2m_var, detect_time_coord, load_dataset
 from src.indices import kelvin_to_celsius
 
 
@@ -26,7 +26,7 @@ def run(cfg: RunConfig) -> None:
 
     # --- 1. Open the file ---
     print(f"Opening {input_path} ...")
-    ds = xr.open_dataset(input_path)
+    ds = load_dataset(input_path)
 
     print("\n=== Dataset summary ===")
     print(ds)

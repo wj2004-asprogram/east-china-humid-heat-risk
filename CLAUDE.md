@@ -44,4 +44,3 @@ python -m pytest
 - Heat index: for RH < 40 % the code switches to the simple formula, while NOAA keeps the Rothfusz regression whenever the simple estimate is >= 80 °F. This underestimates the heat index on hot, dry afternoons and makes it jump at RH = 40 % (pinned by an `xfail` test).
 - No land-sea mask: ocean grid cells (roughly a fifth of the domain) are counted in the risk area fractions.
 - Daily values use UTC days.
-- Two Magnus-formula constant sets existed in v0.2; only `src/indices.py` remains.

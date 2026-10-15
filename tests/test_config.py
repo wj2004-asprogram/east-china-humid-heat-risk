@@ -46,6 +46,24 @@ def test_config_rejects_reversed_period(tmp_path: Path):
         load_config(bad)
 
 
+@pytest.mark.parametrize(
+    "old, new",
+    [
+        # City outside the region would silently snap to an edge grid cell.
+        ('{name: Nanjing,  lat: 32.06', '{name: Nanjing,  lat: 39.90'),
+        # Region with south >= north.
+        ("south: 25", "south: 40"),
+    ],
+)
+def test_config_rejects_invalid_region_or_city(tmp_path: Path, old, new):
+    text = (CONFIG_DIR / "july_2022.yaml").read_text(encoding="utf-8")
+    assert old in text
+    bad = tmp_path / "bad.yaml"
+    bad.write_text(text.replace(old, new), encoding="utf-8")
+    with pytest.raises(ValueError):
+        load_config(bad)
+
+
 def test_download_request_days():
     sample = build_request(load_config(CONFIG_DIR / "sample_2022_07_01_07.yaml"))
     july = build_request(load_config(CONFIG_DIR / "july_2022.yaml"))

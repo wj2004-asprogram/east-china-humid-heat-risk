@@ -15,7 +15,13 @@ import matplotlib.pyplot as plt
 import xarray as xr
 
 from src.config import RunConfig
-from src.era5_utils import detect_date_dim, detect_lat_coord, detect_lon_coord, require_var
+from src.era5_utils import (
+    detect_date_dim,
+    detect_lat_coord,
+    detect_lon_coord,
+    load_dataset,
+    require_var,
+)
 from src.risk import CATEGORY_COLORS, CATEGORY_LABELS, find_hottest_risk_day
 
 
@@ -126,7 +132,7 @@ def run(cfg: RunConfig) -> None:
     # Step 1: Load data
     # =======================================================================
     print(f"Input file:              {input_path}")
-    ds = xr.open_dataset(input_path)
+    ds = load_dataset(input_path)
 
     da_hi = require_var(ds, "daily_max_heat_index_c")
     da_cat = require_var(ds, "heat_risk_category")

@@ -6,10 +6,14 @@ East China.
 """
 
 import matplotlib.pyplot as plt
-import xarray as xr
-
 from src.config import RunConfig
-from src.era5_utils import detect_lat_coord, detect_lon_coord, detect_t2m_var, detect_time_coord
+from src.era5_utils import (
+    detect_lat_coord,
+    detect_lon_coord,
+    detect_t2m_var,
+    detect_time_coord,
+    load_dataset,
+)
 
 
 def run(cfg: RunConfig) -> None:
@@ -19,7 +23,7 @@ def run(cfg: RunConfig) -> None:
 
     # --- Load data (daily Tmax in °C, written by process_temperature) ---
     print(f"Loading {input_file} ...")
-    ds = xr.open_dataset(input_file)
+    ds = load_dataset(input_file)
 
     var_name = detect_t2m_var(ds)
     time_name = detect_time_coord(ds)

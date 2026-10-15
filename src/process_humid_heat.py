@@ -23,6 +23,7 @@ from src.era5_utils import (
     detect_lon_coord,
     detect_t2m_var,
     detect_time_coord,
+    load_dataset,
 )
 from src.indices import heat_index_rothfusz, kelvin_to_celsius, relative_humidity
 
@@ -36,7 +37,7 @@ def run(cfg: RunConfig) -> None:
     # Step 1: Open the NetCDF file
     # =======================================================================
     print(f"Input file:  {input_path}")
-    ds = xr.open_dataset(input_path)
+    ds = load_dataset(input_path)
 
     # =======================================================================
     # Step 2: Auto-detect coordinate and variable names
