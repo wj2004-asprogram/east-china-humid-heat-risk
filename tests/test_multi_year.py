@@ -20,6 +20,7 @@ import xarray as xr  # noqa: E402
 from src import pipeline  # noqa: E402
 from src.config import PROJECT_ROOT, load_config  # noqa: E402
 from src.download_era5 import build_raw_file_request, check_raw_file  # noqa: E402
+from src.hourly_input import iter_hourly_blocks, utc_window  # noqa: E402
 from src.indices import heat_index_rothfusz, kelvin_to_celsius, relative_humidity  # noqa: E402
 from src.pipeline import STEPS  # noqa: E402
 from src.risk import CATEGORY_LABELS, MISSING_CATEGORY, VALID_COVERAGE_LABEL  # noqa: E402
@@ -286,6 +287,30 @@ def test_beijing_day_1_june_uses_the_edge_file(tmp_path):
         assert float(point.sel(valid_time="2003-07-01")) == pytest.approx(59.0, abs=1e-4)
         assert float(point.sel(valid_time="2003-08-31")) < 55.0
         assert pd.Timestamp("2003-09-01") not in pd.DatetimeIndex(tmax["valid_time"].values)
+
+
+@pytest.mark.parametrize("utc_offset_hours", [0, 8])
+def test_blocks_own_their_data(tmp_path, utc_offset_hours):
+    """
+    Each month block is a deep copy. Changing a block in place (here: all
+    NaN) changes neither the raw files kept in memory nor a later block.
+    UTC blocks are cut from a single file (without the deep copy they would
+    be views of it); Beijing-time blocks join two files.
+    """
+    hourly = _continuous_hourly()
+    cfg = _config(tmp_path, utc_offset_hours)
+    _write_raw_files(cfg, hourly)
+
+    n_blocks = 0
+    for block in iter_hourly_blocks(cfg):
+        start, end = utc_window(block.first_day, block.last_day, utc_offset_hours)
+        for name in ("t2m", "d2m"):
+            values = block.data[name].values
+            np.testing.assert_array_equal(values, hourly[name].sel(valid_time=slice(start, end)).values)
+            assert values.flags.owndata, f"{name} of block {block.first_day} is a view"
+            values[...] = np.nan  # in place
+        n_blocks += 1
+    assert n_blocks == len(cfg.month_blocks)
 
 
 def test_missing_edge_file_is_reported(tmp_path, monkeypatch):

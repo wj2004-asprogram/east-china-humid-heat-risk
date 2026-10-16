@@ -88,9 +88,10 @@ def iter_hourly_blocks(cfg: RunConfig) -> Iterator[HourlyBlock]:
         hourly = parts[0] if len(parts) == 1 else xr.concat(
             parts, dim=time_coord, data_vars="all", coords="minimal", compat="equals", join="exact",
         )
-        # A copy, so that a step converting units never changes a file
-        # kept for the next block.
-        hourly = hourly.sel({time_coord: slice(start, end)}).copy()
+        # A deep copy (about one month of data): the block owns its arrays,
+        # so a step may change them, even in place, without changing a
+        # file kept for the next block.
+        hourly = hourly.sel({time_coord: slice(start, end)}).copy(deep=True)
         yield HourlyBlock(hourly, first_day, last_day)
 
 

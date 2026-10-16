@@ -32,8 +32,8 @@ the run, e.g. for whole years.
 
 **Resumable download.** A complete file at its final name is skipped. A
 missing one is downloaded as `<name>.part`, checked (`t2m`/`d2m`, exactly
-the requested hours, each once and in order, grid spanning the region)
-and only then renamed. Failures are reported and the next file is
+the requested hours, each once and in order, grid spanning the region,
+no NaN, all values within 180–340 K) and only then renamed. Failures are reported and the next file is
 tried. Existing files are never overwritten. After 3 failed requests in
 a row (in the order they finish), which points to an account, licence or
 CDS problem, no new request is started and the running ones finish.

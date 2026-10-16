@@ -57,12 +57,13 @@ class FakeCDS:
     requests wait, e.g. for each other.
     """
 
-    def __init__(self, monkeypatch, fail=None, drop_hour=None, hold=None):
+    def __init__(self, monkeypatch, fail=None, drop_hour=None, hold=None, alter=None):
         self.calls = []  # target file names, in the order the requests started
         self.options = []  # keyword arguments of each Client()
         self.fail = fail or {}
         self.drop_hour = drop_hour  # (target name, timestamp) to leave out of a file
         self.hold = hold
+        self.alter = alter  # (target name, function(Dataset) -> Dataset) for bad values
         self.lock = threading.Lock()
         self.in_flight = 0
         self.max_in_flight = 0
@@ -93,7 +94,10 @@ class FakeCDS:
                     times = _times(request)
                     if fake.drop_hour and name.startswith(fake.drop_hour[0]):
                         times = times.drop(pd.Timestamp(fake.drop_hour[1]))
-                    make_synthetic_era5_at(times, step=1.0).to_netcdf(target)
+                    ds = make_synthetic_era5_at(times, step=1.0)
+                    if fake.alter and name.startswith(fake.alter[0]):
+                        ds = fake.alter[1](ds)
+                    ds.to_netcdf(target)
                 finally:
                     with fake.lock:
                         fake.in_flight -= 1
@@ -196,6 +200,55 @@ def test_stops_after_repeated_failures(cfg, monkeypatch):
         download_raw_files(cfg)
     assert len(fake.calls) == download_era5.MAX_CONSECUTIVE_FAILURES
     assert not any(f.path.exists() for f in cfg.raw_files)
+
+
+# ---------------------------------------------------------------------------
+# Value check: a file with missing or implausible values is never accepted
+# ---------------------------------------------------------------------------
+
+def _with_nan_block(ds):
+    ds = ds.copy(deep=True)
+    ds["t2m"][10:20, 2:5, 3:6] = float("nan")
+    return ds
+
+
+def _in_celsius(ds):
+    ds = ds.copy(deep=True)
+    ds["d2m"] = ds["d2m"] - 273.15
+    return ds
+
+
+@pytest.mark.parametrize("alter, message", [
+    (_with_nan_block, "t2m has 90 missing \\(NaN\\) values"),
+    (_in_celsius, "d2m ranges from .* outside the plausible 180-340 K \\(not in Kelvin\\?\\)"),
+])
+def test_check_rejects_implausible_values(cfg, alter, message):
+    june_2003 = cfg.raw_files[0]
+    june_2003.path.parent.mkdir(parents=True)
+    alter(make_synthetic_era5_at(june_2003.utc_times, step=1.0)).to_netcdf(june_2003.path)
+
+    with pytest.raises(ValueError, match=message):
+        check_raw_file(june_2003.path, june_2003, cfg)
+    # --check-raw reports it as incomplete.
+    assert not report_raw_files(cfg)
+
+
+def test_downloaded_file_with_bad_values_is_not_renamed(cfg, monkeypatch):
+    # A bad CDS month must not get its final name, or a resumed download
+    # would skip it as complete for ever.
+    july_2003 = cfg.raw_files[1]
+    FakeCDS(monkeypatch, alter=(july_2003.path.name, _in_celsius))
+
+    with pytest.raises(RuntimeError, match="(?s)era5_east_china_2003_07.nc: .*not in Kelvin"):
+        download_raw_files(cfg, workers=3)
+    assert not july_2003.path.exists()
+    assert july_2003.path.with_name(july_2003.path.name + ".part").exists()
+
+    # The next run fetches it again.
+    fake = FakeCDS(monkeypatch)
+    download_raw_files(cfg, workers=3)
+    assert fake.calls == [july_2003.path.name + ".part"]
+    assert _all_complete(cfg)
 
 
 # ---------------------------------------------------------------------------

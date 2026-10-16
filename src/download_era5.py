@@ -68,6 +68,10 @@ DEFAULT_DOWNLOAD_WORKERS = 3
 # Grid coordinates must match the region bounds to within this (degrees).
 GRID_TOLERANCE_DEG = 1e-6
 
+# Plausible range of ERA5 2m temperature and dewpoint (K), -93 to +67 °C,
+# wider than any surface value on record; used to reject broken files.
+PLAUSIBLE_KELVIN = (180.0, 340.0)
+
 
 def _request(cfg: RunConfig, variables: list, days: list, hours) -> dict:
     """CDS request for `variables` on `days` (all in one month) at `hours` (UTC) over the region."""
@@ -172,7 +176,10 @@ def check_raw_file(path, raw_file: RawFile, cfg: RunConfig) -> None:
     """
     Raise ValueError unless `path` is a readable NetCDF file with 2m
     temperature and dewpoint at exactly the UTC hours of `raw_file`, each
-    once and in order, on a grid spanning the configured region.
+    once and in order, on a grid spanning the configured region, and with
+    plausible values: no missing value (NaN) and every value within
+    PLAUSIBLE_KELVIN. A downloaded file is renamed to its final name only if
+    it passes, so a bad file is never skipped as complete later on.
     """
     try:
         ds = xr.open_dataset(path)
@@ -181,32 +188,49 @@ def check_raw_file(path, raw_file: RawFile, cfg: RunConfig) -> None:
 
     with ds:
         try:
-            detect_t2m_var(ds)
-            detect_d2m_var(ds)
+            variables = [detect_t2m_var(ds), detect_d2m_var(ds)]
             times = pd.DatetimeIndex(ds[detect_time_coord(ds)].values)
             lat = ds[detect_lat_coord(ds)].values
             lon = ds[detect_lon_coord(ds)].values
         except KeyError as err:
             raise ValueError(f"{path.name}: {err}") from err
 
-    expected = raw_file.utc_times
-    if not times.equals(expected):
-        missing = expected.difference(times)
-        extra = times.difference(expected)
-        raise ValueError(
-            f"{path.name}: time steps do not match the request ({len(times)} found, "
-            f"{len(expected)} expected: {len(missing)} missing, {len(extra)} unexpected, "
-            f"{int(times.duplicated().sum())} duplicated"
-            + (f"; first missing {missing[0]}" if len(missing) else "")
-            + ")."
-        )
+        expected = raw_file.utc_times
+        if not times.equals(expected):
+            missing = expected.difference(times)
+            extra = times.difference(expected)
+            raise ValueError(
+                f"{path.name}: time steps do not match the request ({len(times)} found, "
+                f"{len(expected)} expected: {len(missing)} missing, {len(extra)} unexpected, "
+                f"{int(times.duplicated().sum())} duplicated"
+                + (f"; first missing {missing[0]}" if len(missing) else "")
+                + ")."
+            )
 
-    bounds = (lat.min(), lat.max(), lon.min(), lon.max())
-    if not np.allclose(bounds, (cfg.south, cfg.north, cfg.west, cfg.east), rtol=0.0, atol=GRID_TOLERANCE_DEG):
-        raise ValueError(
-            f"{path.name}: grid spans {bounds[0]:g}-{bounds[1]:g}°N, {bounds[2]:g}-{bounds[3]:g}°E, "
-            f"not the configured region {cfg.south:g}-{cfg.north:g}°N, {cfg.west:g}-{cfg.east:g}°E."
-        )
+        bounds = (lat.min(), lat.max(), lon.min(), lon.max())
+        if not np.allclose(bounds, (cfg.south, cfg.north, cfg.west, cfg.east), rtol=0.0, atol=GRID_TOLERANCE_DEG):
+            raise ValueError(
+                f"{path.name}: grid spans {bounds[0]:g}-{bounds[1]:g}°N, {bounds[2]:g}-{bounds[3]:g}°E, "
+                f"not the configured region {cfg.south:g}-{cfg.north:g}°N, {cfg.west:g}-{cfg.east:g}°E."
+            )
+
+        # Values (read last: the checks above need no data). ERA5 t2m/d2m
+        # have no gaps, so a NaN or a value far outside Earth's surface
+        # range means a broken or wrong file (e.g. one in °C).
+        low_k, high_k = PLAUSIBLE_KELVIN
+        for name in variables:
+            values = ds[name].values
+            n_missing = int(np.isnan(values).sum())
+            if n_missing:
+                raise ValueError(
+                    f"{path.name}: {name} has {n_missing} missing (NaN) values; complete ERA5 files have none."
+                )
+            low, high = float(values.min()), float(values.max())
+            if low < low_k or high > high_k:
+                raise ValueError(
+                    f"{path.name}: {name} ranges from {low:.1f} to {high:.1f}, outside the plausible "
+                    f"{low_k:g}-{high_k:g} K (not in Kelvin?)."
+                )
 
 
 def _print_request(what: str, request: dict, output_file) -> None:

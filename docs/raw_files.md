@@ -49,7 +49,8 @@ of the run.
 A file at its final name is complete: the download writes
 `<name>.part`, checks it (`check_raw_file`: `t2m` and `d2m` present,
 time steps exactly the expected hours, each once and in order, grid
-spanning the region) and only then renames it. `.part` files are
+spanning the region, no missing values, all values within 180–340 K)
+and only then renames it. `.part` files are
 leftovers of interrupted downloads and are replaced by the next run.
 
 Check the state of a config's raw files without downloading:
