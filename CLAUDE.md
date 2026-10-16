@@ -40,6 +40,7 @@ python -m pytest
 - `src/era5_utils.py` — coordinate/variable name detection (`time` vs `valid_time`, etc.).
 - `src/<step>.py` — one pipeline step each, exposing `run(cfg)`.
 - `tests/` — pytest; `tests/synthetic.py` builds a small ERA5-like file for end-to-end tests.
+- `tests/scientific_validation/` — independent acceptance tests written by Codex (second reviewer) for the missing-data (F1) and complete-day / UTC+8 calendar (F2) rules. Expected values are fixed or hand-calculated; do not "fix" a failure there by editing the expectation — a failure means production behaviour changed.
 
 ## Rules
 - One code path for every period: never copy a script to change dates, region or cities — add a config file.
