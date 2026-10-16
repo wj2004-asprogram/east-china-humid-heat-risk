@@ -24,6 +24,7 @@ python -m src.pipeline --config configs/july_2022.yaml             # same, UTC d
 python -m src.pipeline --config configs/july_2022.yaml --download  # fetch raw ERA5 first (needs ~/.cdsapirc)
 python -m src.pipeline --config configs/july_2022.yaml --steps classify_heat_risk plot_heat_risk_maps
 python -m src.pipeline --config configs/jja_2000_2024_bjt.yaml --check-raw     # which raw files are complete (no download)
+python -m tools.validate_multiyear --config configs/jja_2000_2024_bjt.yaml --raw-dir data/raw --output <report.json>  # independent read-only acceptance
 python -m pytest
 ```
 
@@ -41,6 +42,7 @@ python -m pytest
 - `src/<step>.py` — one pipeline step each, exposing `run(cfg)`.
 - `tests/` — pytest; `tests/synthetic.py` builds a small ERA5-like file for end-to-end tests.
 - `tests/scientific_validation/` — independent acceptance tests written by Codex (second reviewer) for the missing-data (F1) and complete-day / UTC+8 calendar (F2) rules. Expected values are fixed or hand-calculated; do not "fix" a failure there by editing the expectation — a failure means production behaviour changed.
+- `tools/` — independent, read-only ERA5 acceptance tools written by Codex: `validate_era5` (single-period files), `validate_batch` (explicit per-month binding), `validate_multiyear` (the phase 2 layout of 75 monthly + 25 Beijing-time edge files + mask; reports, re-check against a previous report). They never download, modify inputs or run the pipeline; they complement, not replace, the download's own `check_raw_file`. Docs: `tools/*_VALIDATION.md`. Tests: `tests/test_era5_validation.py`, `test_batch_validation.py`, `test_monthly_batch.py`, `test_multiyear_validation.py`, `test_phase2_independent.py` (helpers in `tests/phase2_support.py`; `tests/run_phase2_demo.py` is a demo script, not a test).
 
 ## Rules
 - One code path for every period: never copy a script to change dates, region or cities — add a config file.

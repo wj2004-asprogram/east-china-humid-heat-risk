@@ -182,9 +182,14 @@ python -m src.pipeline --config configs/jja_2000_2024_bjt.yaml --check-raw
 python -m src.pipeline --config configs/jja_2000_2024_bjt.yaml --download --download-workers 3
 python -m src.pipeline --config configs/jja_2000_2024.yaml
 
+# Independent read-only acceptance of the raw files (report as JSON/Markdown)
+python -m tools.validate_multiyear --config configs/jja_2000_2024_bjt.yaml --raw-dir data/raw --output reports/raw_check.json
+
 # Tests
 python -m pytest
 ```
+
+The tools in `tools/` were written by a second, independent reviewer (Codex). They check time coverage, duplicates, units, grid, missing values and the Beijing-time edge hours of every raw file without changing anything; see `tools/MULTIYEAR_VALIDATION.md`.
 
 Each run is described by one YAML file in `configs/` (period, region, cities, output names). To analyse another period, add a config file. Do not copy scripts.
 
@@ -208,7 +213,8 @@ src/
   hourly_input.py       # Reads raw hourly data month by month (multi-year runs)
   climatology.py        # Heat index climatology for chosen years (step + functions)
   <step>.py             # One module per workflow step
-tests/                  # pytest unit and end-to-end tests
+tests/                  # pytest unit and end-to-end tests (scientific_validation/: independent acceptance tests)
+tools/                  # Independent read-only ERA5 acceptance tools (validate_multiyear, ...)
 README.md
 requirements.txt
 ```
