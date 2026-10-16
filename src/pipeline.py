@@ -18,6 +18,7 @@ matplotlib.use("Agg")  # write figures to files only; no GUI windows
 
 from src import (  # noqa: E402  (must come after selecting the backend)
     classify_heat_risk,
+    climatology,
     download_era5,
     plot_city_tmax,
     plot_figures,
@@ -39,6 +40,7 @@ STEPS = {
     "plot_heat_index_figures": plot_heat_index_figures.run,
     "classify_heat_risk": classify_heat_risk.run,
     "plot_heat_risk_maps": plot_heat_risk_maps.run,
+    "heat_index_climatology": climatology.run,
 }
 
 # Steps that read the raw ERA5 file (the others read processed files).
