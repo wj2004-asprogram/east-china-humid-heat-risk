@@ -1,11 +1,8 @@
 """Tests for the pipeline entry point and the download step (no network)."""
-
-import sys
-import types
-
 import pytest
 
 from src import download_era5, pipeline
+from src.cds_download import Downloader, task_id
 from src.config import PROJECT_ROOT, load_config
 
 
@@ -29,16 +26,38 @@ def test_raw_file_is_required_only_by_raw_input_steps(tmp_path):
 
 
 def _fake_cdsapi(monkeypatch, fail: bool):
-    """Install a fake `cdsapi` module whose retrieve() writes the target file."""
+    """Install an asynchronous CDS adapter whose result writes a small file."""
+
+    class Remote:
+        status = "successful"
+
+        def __init__(self, ident):
+            self.request_id = ident
 
     class Client:
-        def retrieve(self, dataset, request, target):
+        def __init__(self, capture, options=None):
+            self.capture = capture
+
+        def matching_jobs(self, dataset, request):
+            return []
+
+        def submit(self, dataset, request):
+            ident = task_id(dataset, request)
+            self.capture(ident)
+            return Remote(ident)
+
+        def remote(self, ident):
+            return Remote(ident)
+
+        def download(self, remote, target, store, ident):
             with open(target, "wb") as f:
                 f.write(b"partial" if fail else b"complete")
             if fail:
                 raise ConnectionError("download interrupted")
 
-    monkeypatch.setitem(sys.modules, "cdsapi", types.SimpleNamespace(Client=Client))
+    monkeypatch.setattr(download_era5, "CDSClient", Client)
+    monkeypatch.setattr(download_era5, "Downloader",
+                        lambda *a, **kw: Downloader(*a, **kw, retries=0, sleep=lambda _: None))
 
 
 def test_interrupted_download_leaves_no_file_at_final_path(tmp_path, monkeypatch):

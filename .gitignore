@@ -25,3 +25,6 @@ Thumbs.db
 
 # Partial downloads (renamed to *.nc only when complete)
 data/raw/*.part
+
+# Local durable CDS journal, task locks, imported logs and smoke-test artifacts
+data/cds_state/

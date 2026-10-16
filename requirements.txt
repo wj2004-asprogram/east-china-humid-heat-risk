@@ -13,7 +13,10 @@ pyyaml
 matplotlib
 
 # Data access
-cdsapi
+cdsapi==0.7.7
+# The current CDS backend used by cdsapi; lifecycle adapter tested against this version.
+ecmwf-datastores-client==0.5.3
+requests
 
 # Progress bars
 tqdm

@@ -51,7 +51,10 @@ A file at its final name is complete: the download writes
 time steps exactly the expected hours, each once and in order, grid
 spanning the region, no missing values, all values within 180–340 K)
 and only then renames it. `.part` files are
-leftovers of interrupted downloads and are replaced by the next run.
+leftovers of interrupted downloads. The downloader recovers the original
+CDS job from `data/cds_state/requests.sqlite3` and resumes result transfer
+with HTTP Range when supported; otherwise only the result transfer restarts.
+See [CDS recovery](cds_recovery.md) for the state journal and migration.
 
 Check the state of a config's raw files without downloading:
 

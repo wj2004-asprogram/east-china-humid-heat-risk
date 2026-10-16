@@ -27,6 +27,11 @@ import yaml
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
+
+def cds_state_path(target: Path) -> Path:
+    """Keep the CDS journal beside raw/, isolated within each project root."""
+    return target.parent.parent / "cds_state" / "requests.sqlite3"
+
 # ERA5 hourly data start in 1940.
 FIRST_ERA5_YEAR = 1940
 
