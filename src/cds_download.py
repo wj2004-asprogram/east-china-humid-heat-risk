@@ -36,6 +36,22 @@ class ResultAccessError(RuntimeError):
     """
 
 
+def redacted(exc):
+    """
+    A copy of `exc` (same type when possible) whose message has no signed URL
+    parts, without the original exception chain: final tracebacks printed by
+    the CLIs must not expose result signatures (review DLR-04).
+    """
+    text = redact(str(exc))
+    try:
+        copy = type(exc)(text)
+    except Exception:
+        copy = RuntimeError(f"{type(exc).__name__}: {text}")
+    if str(copy) != text:
+        copy = RuntimeError(f"{type(exc).__name__}: {text}")
+    return copy
+
+
 def now():
     return datetime.now(timezone.utc).isoformat()
 
@@ -291,7 +307,18 @@ def download_asset(url, size, partial, store, ident, *, verify=True, timeout=60,
     session = session or requests.Session()
     try:
         with session.get(url, headers=headers, stream=True, timeout=timeout, verify=verify) as response:
-            response.raise_for_status()
+            try:
+                response.raise_for_status()
+            except requests.HTTPError as exc:
+                code = exc.response.status_code if exc.response is not None else None
+                if code in (401, 403):
+                    # Only the result asset host lands here: the request was
+                    # seen completed with valid API credentials, so this is an
+                    # (expired) signed URL. Retried with fresh result metadata
+                    # of the same request ID. API 401/403 stay permanent.
+                    raise ResultAccessError(f"result download refused (HTTP {code}); "
+                                            "refreshing the result URL of the same request") from None
+                raise
             if response.status_code == 206:
                 match = re.fullmatch(r"bytes (\d+)-(\d+)/(\d+)", response.headers.get("Content-Range", ""))
                 if not match or int(match[1]) != offset or int(match[3]) != size or int(match[2]) != size - 1:
@@ -347,7 +374,7 @@ class Downloader:
                              + (f"Retrying in {delay:.0f} seconds" if transient and attempt < self.retries
                                 else "Stopped; state retained for recovery."))
                 if not transient or attempt == self.retries:
-                    raise
+                    raise redacted(exc) from None
             else:
                 self.store.update(ident, next_retry_at=None, error=None, error_kind=None)
                 return result
@@ -433,18 +460,7 @@ class Downloader:
             def transfer():
                 self.store.update(ident, status="DOWNLOADING")
                 # Refresh the result URL on every attempt, always by the SAME ID.
-                try:
-                    client.download(client.remote(request_id), partial, self.store, ident)
-                except requests.HTTPError as exc:
-                    code = exc.response.status_code if exc.response is not None else None
-                    if code in (401, 403):
-                        # The request was just seen completed with these
-                        # credentials, so this is the result asset refusing an
-                        # (expired) signed URL: retry with fresh result metadata.
-                        raise ResultAccessError(
-                            f"result download refused (HTTP {code}); refreshing the result URL "
-                            f"of the same request {request_id}") from exc
-                    raise
+                client.download(client.remote(request_id), partial, self.store, ident)
             self.retry(ident, f"downloading result of {request_id}", transfer)
             try:
                 if validator:

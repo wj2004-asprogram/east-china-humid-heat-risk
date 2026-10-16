@@ -4,11 +4,12 @@ No other task is submitted. A pending smoke job retains its ID across invocation
 """
 
 import argparse
+import sys
 
 import pandas as pd
 import xarray as xr
 
-from src.cds_download import Downloader, StateStore
+from src.cds_download import Downloader, StateStore, redact
 from src.config import cds_state_path, load_config
 from src.download_era5 import DATASET, build_raw_file_request
 from src.era5_utils import detect_d2m_var, detect_t2m_var, detect_time_coord
@@ -33,8 +34,13 @@ def main():
             expected = pd.Timestamp(f"{request['year'][0]}-{request['month'][0]}-{request['day'][0]} {request['time'][0]}")
             if not times.equals(pd.DatetimeIndex([expected])):
                 raise ValueError("Smoke file does not contain exactly the requested hour")
-    Downloader(StateStore(state_path)).retrieve(DATASET, request, target,
-                                               {"progress": False}, validator=validate)
+    try:
+        Downloader(StateStore(state_path)).retrieve(DATASET, request, target,
+                                                   {"progress": False}, validator=validate)
+    except Exception as exc:
+        # Print the reason without a traceback or chained signed URLs (DLR-04).
+        print(redact(f"SMOKE FAILED: {type(exc).__name__}: {exc}"), file=sys.stderr, flush=True)
+        sys.exit(1)
     print(f"SMOKE PASSED: {target}", flush=True)
 
 

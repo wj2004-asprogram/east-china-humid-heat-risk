@@ -535,6 +535,17 @@ def _http_error(code, url, body=b""):
     return requests.HTTPError(f"{code} Client Error for url: {url}", response=response)
 
 
+def _refused_asset(remote, partial, store, ident, query):
+    """Stream the result through download_asset; the asset host answers 403."""
+    url = f"https://asset.invalid/result?{query}"
+
+    class Refused(AssetResponse):
+        def raise_for_status(self):
+            raise _http_error(403, url, b"<Code>ExpiredToken</Code>")
+    download_asset(url, 8, partial, store, ident,
+                   session=SimpleNamespace(get=lambda *a, **k: Refused(403, {}, [])))
+
+
 def test_dlr03_expired_result_url_refreshes_same_request(setup):
     s = setup
     ident = s.store.ensure(DATASET, REQUEST, s.target)
@@ -550,8 +561,8 @@ def test_dlr03_expired_result_url_refreshes_same_request(setup):
         def download(remote, partial, store, ident_):
             attempts.append(remote.request_id)
             if len(attempts) == 1:
-                raise _http_error(403, "https://asset.invalid/result?X-Amz-Signature=old",
-                                  b"<Code>ExpiredToken</Code>")
+                # The refusal comes from the result asset GET, not the CDS API.
+                return _refused_asset(remote, partial, store, ident_, "X-Amz-Signature=old")
             return original(remote, partial, store, ident_)
         client.download = download
         return client
@@ -573,7 +584,7 @@ def test_dlr03_persistent_refusal_stops_after_bounded_retries_without_post(setup
         client = factory(capture, options)
 
         def download(remote, partial, store, ident_):
-            raise _http_error(403, "https://asset.invalid/result?token=t")
+            _refused_asset(remote, partial, store, ident_, "token=t")
         client.download = download
         return client
     with pytest.raises(Exception, match="refreshing the result URL"):
