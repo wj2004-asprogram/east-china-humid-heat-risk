@@ -469,3 +469,154 @@ def test_rejection_detail_is_persisted_without_reposting(setup):
         Downloader(s.store, client_factory=with_detail).retrieve(DATASET, REQUEST, s.target)
     assert "queued requests temporarily limited" in s.store.get(task_id(DATASET, REQUEST))["error"]
     assert s.server.posts == 1
+
+
+# --- Review fixes (Codex review of ca92faa: DLR-01, DLR-03, DLR-04) ---------
+
+def _asset_key(url, size):
+    from urllib.parse import urlsplit
+    parts = urlsplit(url)
+    import hashlib
+    return hashlib.sha256(f"{parts.netloc}{parts.path}:{size}".encode()).hexdigest()
+
+
+def test_dlr01_changed_asset_after_failed_get_never_reuses_old_bytes(setup):
+    """A new asset must not inherit another asset's bytes, whatever fails in between."""
+    s = setup
+    ident = s.store.ensure(DATASET, REQUEST, s.target)
+    partial = s.target.with_suffix(".nc.part")
+    partial.parent.mkdir()
+    partial.write_bytes(b"OLD")  # prefix of asset A
+    s.store.update(ident, asset_key=_asset_key("https://asset.invalid/old-result", 6),
+                   asset_size=6, etag='"asset-A"')
+
+    def disconnected(url, **kwargs):
+        raise requests.ConnectionError("no response")
+    with pytest.raises(requests.ConnectionError):
+        download_asset("https://asset.invalid/new-result", 6, partial, s.store, ident,
+                       session=SimpleNamespace(get=disconnected))
+    # The journal now names asset B, and no byte of asset A is left to resume from.
+    assert not partial.exists()
+    assert s.store.get(ident)["etag"] is None
+
+    headers = []
+
+    def new_asset(url, **kwargs):
+        headers.append(kwargs["headers"])
+        if "Range" in kwargs["headers"]:
+            return AssetResponse(206, {"Content-Range": "bytes 3-5/6"}, [b"def"])
+        return AssetResponse(200, {"ETag": '"asset-B"'}, [b"abcdef"])
+    download_asset("https://asset.invalid/new-result", 6, partial, StateStore(s.store.path), ident,
+                   session=SimpleNamespace(get=new_asset))
+    assert partial.read_bytes() == b"abcdef"
+    assert "Range" not in headers[0]
+
+
+def test_dlr01_same_asset_still_resumes(setup):
+    """The fix must not lose a genuine resume of the same asset."""
+    s = setup
+    ident = s.store.ensure(DATASET, REQUEST, s.target)
+    partial = s.target.with_suffix(".nc.part")
+    partial.parent.mkdir()
+    responses = [AssetResponse(200, {"ETag": '"same"'}, [b"abc", requests.exceptions.ChunkedEncodingError("x")]),
+                 AssetResponse(206, {"Content-Range": "bytes 3-5/6"}, [b"def"])]
+    session = SimpleNamespace(get=lambda url, **kwargs: responses.pop(0))
+    with pytest.raises(requests.exceptions.ChunkedEncodingError):
+        download_asset("https://asset.invalid/r?sig=1", 6, partial, s.store, ident, session=session)
+    download_asset("https://asset.invalid/r?sig=2", 6, partial, s.store, ident, session=session)
+    assert partial.read_bytes() == b"abcdef"
+
+
+def _http_error(code, url, body=b""):
+    response = requests.Response()
+    response.status_code = code
+    response.url = url
+    response._content = body
+    return requests.HTTPError(f"{code} Client Error for url: {url}", response=response)
+
+
+def test_dlr03_expired_result_url_refreshes_same_request(setup):
+    s = setup
+    ident = s.store.ensure(DATASET, REQUEST, s.target)
+    s.store.update(ident, request_id="done-job", status="COMPLETED")
+    s.server.jobs["done-job"] = REQUEST
+    factory = s.server.factory
+    attempts = []
+
+    def expiring(capture, options):
+        client = factory(capture, options)
+        original = client.download
+
+        def download(remote, partial, store, ident_):
+            attempts.append(remote.request_id)
+            if len(attempts) == 1:
+                raise _http_error(403, "https://asset.invalid/result?X-Amz-Signature=old",
+                                  b"<Code>ExpiredToken</Code>")
+            return original(remote, partial, store, ident_)
+        client.download = download
+        return client
+    Downloader(s.store, client_factory=expiring, sleep=s.sleeps.append, log=s.logs.append,
+               retry_seconds=0.01, poll_seconds=0.01).retrieve(DATASET, REQUEST, s.target)
+    assert attempts == ["done-job", "done-job"] and s.server.posts == 0
+    assert s.target.read_bytes() == b"complete"
+    assert s.store.get(ident)["status"] == "DOWNLOADED"
+
+
+def test_dlr03_persistent_refusal_stops_after_bounded_retries_without_post(setup):
+    s = setup
+    ident = s.store.ensure(DATASET, REQUEST, s.target)
+    s.store.update(ident, request_id="done-job", status="COMPLETED")
+    s.server.jobs["done-job"] = REQUEST
+    factory = s.server.factory
+
+    def refusing(capture, options):
+        client = factory(capture, options)
+
+        def download(remote, partial, store, ident_):
+            raise _http_error(403, "https://asset.invalid/result?token=t")
+        client.download = download
+        return client
+    with pytest.raises(Exception, match="refreshing the result URL"):
+        Downloader(s.store, client_factory=refusing, sleep=s.sleeps.append, log=s.logs.append,
+                   retries=2, retry_seconds=0.01, poll_seconds=0.01).retrieve(DATASET, REQUEST, s.target)
+    state = s.store.get(ident)
+    # Bounded, retryable on the next run with the same ID; never a new request.
+    assert state["status"] == "RETRYABLE_ERROR" and state["error_kind"] == "RESULT_ACCESS"
+    assert state["request_id"] == "done-job" and s.server.posts == 0
+    assert not s.target.exists()
+
+
+def test_dlr03_api_auth_errors_are_still_permanent(setup):
+    """Only result downloads are refreshed; a 403 on the request itself stays permanent."""
+    s = setup
+    s.server.statuses = [_http_error(403, "https://cds.invalid/api/retrieve/v1/jobs/job-001")]
+    with pytest.raises(requests.HTTPError):
+        s.downloader().retrieve(DATASET, REQUEST, s.target)
+    assert s.store.get(task_id(DATASET, REQUEST))["status"] == "PERMANENT_ERROR"
+
+
+def test_dlr04_signed_urls_are_never_persisted_or_logged(setup):
+    s = setup
+    ident = s.store.ensure(DATASET, REQUEST, s.target)
+    signature = "SYNTHETIC_ONLY_SIGNATURE"
+    error = _http_error(503, f"https://asset.invalid/result?X-Amz-Signature={signature}&X-Amz-Credential=abc")
+
+    def operation():
+        raise error
+    with pytest.raises(requests.HTTPError):
+        s.downloader(retries=0).retry(ident, "downloading result", operation)
+    stored = s.store.get(ident)["error"]
+    assert signature not in stored and "X-Amz-Credential=abc" not in stored
+    assert "https://asset.invalid/result" in stored  # host and path kept for diagnosis
+    assert s.logs and all(signature not in line for line in s.logs)
+
+
+def test_dlr04_redact_keeps_diagnosis_and_drops_secrets():
+    from src.cds_download import redact
+    text = ("403 for url: https://object-store.invalid/cache/abc.nc?X-Amz-Signature=s3cr3t&X-Amz-Expires=600 "
+            "and token=t0k3n, api key=k3y")
+    out = redact(text)
+    for secret in ("s3cr3t", "t0k3n", "k3y"):
+        assert secret not in out
+    assert "https://object-store.invalid/cache/abc.nc" in out and out.startswith("403 for url")
+    assert redact(None) is None

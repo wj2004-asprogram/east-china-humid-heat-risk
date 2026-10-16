@@ -39,7 +39,7 @@ import pandas as pd
 import xarray as xr
 
 from src.config import RawFile, RunConfig, cds_state_path
-from src.cds_download import CDSClient, Downloader, StateStore
+from src.cds_download import CDSClient, Downloader, StateStore, redact
 from src.era5_utils import (
     detect_d2m_var,
     detect_lat_coord,
@@ -273,9 +273,12 @@ _print_lock = threading.Lock()
 
 
 def _say(label: str, message: str) -> None:
-    """Print one log line starting with `label` (the file), whole even when threads interleave."""
+    """
+    Print one log line starting with `label` (the file), whole even when
+    threads interleave. Signed result URLs are redacted (src/cds_download.redact).
+    """
     with _print_lock:
-        print(f"{label}: {message}", flush=True)
+        print(redact(f"{label}: {message}"), flush=True)
 
 
 def _client_options(label: str) -> dict:
@@ -323,7 +326,7 @@ def _fetch_raw_file(cfg: RunConfig, raw_file: RawFile, label: str) -> tuple:
                        validator=lambda partial: check_raw_file(partial, raw_file, cfg))
     except Exception as err:  # reported by the caller, which goes on with other files
         _say(label, f"FAILED after {time.monotonic() - started:.0f} s: {err}")
-        return "failed", str(err)
+        return "failed", redact(str(err))
 
     # Published under the task lock only after the existing scientific checks.
     _say(label, f"done in {time.monotonic() - started:.0f} s")

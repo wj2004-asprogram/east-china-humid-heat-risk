@@ -27,8 +27,31 @@ class PermanentError(RuntimeError):
     """An account, parameter, remote-job or local-state problem needs attention."""
 
 
+class ResultAccessError(RuntimeError):
+    """
+    The result download was refused (HTTP 401/403) after the request itself
+    was found completed with the same credentials: typically an expired
+    signed result URL. Retried by refreshing the result metadata of the SAME
+    request ID; never a reason to submit a new request.
+    """
+
+
 def now():
     return datetime.now(timezone.utc).isoformat()
+
+
+# Signed result URLs carry credentials in their query string (signature,
+# token, expiry). Keep scheme, host and path for diagnosis; drop the rest.
+_URL_QUERY = re.compile(r"(https?://[^\s?#'\"<>]+)[?#][^\s'\"<>]*")
+_SECRET_PARAM = re.compile(r"(?i)\b([\w-]*(?:signature|token|credential|key)[\w-]*)=[^&\s'\"<>]+")
+
+
+def redact(text):
+    """Remove URL query strings and signature/token/key parameters from a message."""
+    if text is None:
+        return None
+    text = _URL_QUERY.sub(r"\1?[redacted]", str(text))
+    return _SECRET_PARAM.sub(r"\1=[redacted]", text)
 
 
 def canonical_request(dataset, request):
@@ -101,6 +124,8 @@ class StateStore:
         return ident
 
     def update(self, ident, **fields):
+        if fields.get("error") is not None:
+            fields["error"] = redact(fields["error"])  # never persist signed result URLs
         fields["updated_at"] = now()
         with self.connect() as db:
             db.execute(f"UPDATE tasks SET {','.join(k + '=?' for k in fields)} WHERE task_id=?",
@@ -143,6 +168,8 @@ class StateStore:
 
 
 def error_kind(exc):
+    if isinstance(exc, ResultAccessError):
+        return "RESULT_ACCESS"
     if isinstance(exc, requests.HTTPError) and exc.response is not None:
         code = exc.response.status_code
         if code in (401, 403):
@@ -240,10 +267,18 @@ def download_asset(url, size, partial, store, ident, *, verify=True, timeout=60,
     parts = urlsplit(url)
     key = hashlib.sha256(f"{parts.netloc}{parts.path}:{size}".encode()).hexdigest()
     state = store.get(ident)
-    offset = partial.stat().st_size if partial.exists() and state["asset_key"] == key else 0
+    if state["asset_key"] != key:
+        # A different asset (or none recorded yet): any bytes already in
+        # `partial` belong to another asset. Discard them BEFORE recording the
+        # new key, so that whatever fails afterwards (no response, a crash, a
+        # restart), the journal never pairs this key with another asset's bytes.
+        partial.unlink(missing_ok=True)
+        store.update(ident, asset_key=key, asset_size=size, etag=None)
+        state = store.get(ident)
+    offset = partial.stat().st_size if partial.exists() else 0
     if offset > size:
+        partial.unlink()
         offset = 0
-    store.update(ident, asset_key=key, asset_size=size)
     if offset == size and partial.exists():
         return
     headers = {"Accept-Encoding": "identity"}
@@ -289,8 +324,8 @@ class Downloader:
 
     def message(self, ident, text):
         state = self.store.get(ident)
-        self.log(f"TASK {ident[:12]} {Path(state['target']).name} request_id={state['request_id']} "
-                 f"status={state['status']} {text}")
+        self.log(redact(f"TASK {ident[:12]} {Path(state['target']).name} request_id={state['request_id']} "
+                        f"status={state['status']} {text}"))
 
     def retry(self, ident, action, operation):
         for attempt in range(self.retries + 1):
@@ -302,7 +337,7 @@ class Downloader:
                 result = operation()
             except Exception as exc:
                 kind = error_kind(exc)
-                transient = kind in ("NETWORK", "SERVER")
+                transient = kind in ("NETWORK", "SERVER", "RESULT_ACCESS")
                 delay = min(900, self.retry_seconds * 2 ** attempt) * random.uniform(1, 1.2)
                 self.store.update(ident, status="RETRYABLE_ERROR" if transient else "PERMANENT_ERROR",
                                   retry_count=state["retry_count"] + 1, error=str(exc), error_kind=kind,
@@ -398,7 +433,18 @@ class Downloader:
             def transfer():
                 self.store.update(ident, status="DOWNLOADING")
                 # Refresh the result URL on every attempt, always by the SAME ID.
-                client.download(client.remote(request_id), partial, self.store, ident)
+                try:
+                    client.download(client.remote(request_id), partial, self.store, ident)
+                except requests.HTTPError as exc:
+                    code = exc.response.status_code if exc.response is not None else None
+                    if code in (401, 403):
+                        # The request was just seen completed with these
+                        # credentials, so this is the result asset refusing an
+                        # (expired) signed URL: retry with fresh result metadata.
+                        raise ResultAccessError(
+                            f"result download refused (HTTP {code}); refreshing the result URL "
+                            f"of the same request {request_id}") from exc
+                    raise
             self.retry(ident, f"downloading result of {request_id}", transfer)
             try:
                 if validator:

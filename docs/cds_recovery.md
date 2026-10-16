@@ -57,7 +57,15 @@ status and delays, explicitly saying an existing ID will not be resubmitted.
 obtain result location/size through `Remote.get_results()` and stream that
 asset. Each retry refreshes metadata using the **same request ID**. A
 matching partial asset uses Range/If-Range; validate Content-Range before
-appending. A 200 response to Range restarts that asset transfer. A changed
+appending. When the asset changes (different host/path/size), the old
+`.part` is deleted **before** the new asset key is recorded, so no failure
+or restart can pair the new key with another asset's bytes (review DLR-01).
+A result download refused with HTTP 401/403 after the request was seen
+completed (typically an expired signed URL) is retried a bounded number of
+times with fresh result metadata of the same ID, never a new request;
+401/403 on the request itself stays permanent (DLR-03). Errors are stored
+and logged with URL query strings and signature/token/key parameters
+removed (DLR-04). A 200 response to Range restarts that asset transfer. A changed
 asset starts from byte zero. Signed URL query changes do not discard the
 same asset. Verify byte size, then run the existing scientific file checks.
 Final publication is atomic and refuses to overwrite an existing file.
