@@ -10,14 +10,14 @@ This project is not intended to make long-term climate trend claims at the curre
 
 - **v0.1:** 7-day workflow test, 2022-07-01 to 2022-07-07.
 - **v0.2:** Full-month July 2022 case study, 2022-07-01 to 2022-07-31.
-- **v0.3 (in progress):** single config-driven pipeline, tests, method fixes, multi-year data and a machine learning module. See [docs/ROADMAP.md](docs/ROADMAP.md).
+- **v0.3 (in progress):** single config-driven pipeline, tests, method fixes, multi-year data and a machine learning module. See [docs/ROADMAP.md](docs/ROADMAP.md). The multi-year pipeline (June–August 2000–2024) is implemented; its data are not downloaded yet.
 
 ## Study Area and Period
 
 **Region:** East China sample domain  
 **Longitude:** 112°E to 123°E  
 **Latitude:** 25°N to 36°N  
-**Period:** 2022-07-01 to 2022-07-31  
+**Period:** 2022-07-01 to 2022-07-31 (case study); June–August 2000–2024 (multi-year configs, see below)  
 **Temporal resolution:** Hourly ERA5 data  
 
 Selected city points:
@@ -69,6 +69,26 @@ ERA5 timestamps are UTC. Daily values (daily maximum temperature, daily maximum 
 
 The v0.1/v0.2 configs (`sample_2022_07_01_07.yaml`, `july_2022.yaml`) keep UTC days (`utc_offset_hours: 0`) and the v0.2 raw files. The Beijing-time configs have their own file tag (`..._bjt`), so their raw, processed and figure files never mix with the UTC ones. Dates in the CSV outputs are local dates; the hourly fields in `humid_heat_<tag>.nc` keep their UTC timestamps.
 
+### Multi-year summers
+
+`configs/jja_2000_2024_bjt.yaml` (Beijing days) and `configs/jja_2000_2024.yaml` (UTC days) cover June–August of 2000–2024, 25 summers and 2300 days. Phase 3 needs this many years to split training and test data by year. A multi-year config gives the years and the months instead of a start and end date:
+
+```yaml
+period:
+  years: {first: 2000, last: 2024}
+  months: [6, 7, 8]      # consecutive months within one calendar year
+```
+
+- **Raw files:** one CDS request and one file per year and month (`data/raw/era5_east_china_YYYY_MM.nc`, all 24 UTC hours), shared by both configs. Beijing time also needs 16:00–23:00 UTC of 31 May for 1 June, one small file per summer (`era5_east_china_YYYY_05_31_h16-23.nc`); within a summer those hours come from the previous month's file. The layout is specified in [docs/raw_files.md](docs/raw_files.md).
+- **Download:** resumable and meant to run unattended (CDS queues can take hours per request). Complete files are skipped; each file is downloaded as `<name>.part`, checked (variables, every expected hour, the region) and only then renamed, so an interrupted download never leaves a file that looks complete. A failed file is reported and the next one tried; re-running fetches what is missing. `--check-raw` shows the progress.
+- **Processing:** month by month, so memory stays small. Each month is read with exactly the UTC hours of its local days (Beijing-time July: 16:00 UTC on 30 June to 15:00 UTC on 31 July), aggregated to local days with the same rules as above (missing hour → Missing, exactly 24 hours per day), and the daily results are concatenated. The days between summers are not part of the run, so they are never counted as missing. Multi-year runs save daily variables only (no hourly fields), draw time series with a break between summers, and show the area fractions as one bar per summer (mean daily shares).
+- **Climatology (phase 3 baseline):** the step `heat_index_climatology` writes `data/processed/heat_index_climatology_<tag>.nc`, the daily maximum heat index of every year on a (year, day of year) grid (365-day calendar, so 1 June is day 152 in every year). No climatology over all years is stored, so test years cannot leak into the baseline. It is computed for chosen years only:
+
+  ```python
+  from src.climatology import climatology_for_years, load_by_year
+  baseline = climatology_for_years(load_by_year(cfg.paths.climatology_nc), years=range(2000, 2018))
+  ```
+
 ## Heat Risk Classification
 
 Daily maximum heat index is classified into the following categories:
@@ -102,6 +122,11 @@ python -m src.pipeline --config configs/july_2022.yaml --download       # UTC da
 # Re-run selected steps only
 python -m src.pipeline --config configs/july_2022.yaml --steps classify_heat_risk plot_heat_risk_maps
 
+# Multi-year summers: check which raw files exist, download the rest (resumable), run
+python -m src.pipeline --config configs/jja_2000_2024_bjt.yaml --check-raw
+python -m src.pipeline --config configs/jja_2000_2024_bjt.yaml --download
+python -m src.pipeline --config configs/jja_2000_2024.yaml
+
 # Tests
 python -m pytest
 ```
@@ -111,11 +136,11 @@ Each run is described by one YAML file in `configs/` (period, region, cities, ou
 ## Repository Structure
 
 ```text
-configs/                # One YAML file per run (v0.1 sample, v0.2 July 2022: UTC days; *_bjt: Beijing days)
+configs/                # One YAML file per run (v0.1 sample, v0.2 July 2022, jja_2000_2024: UTC days; *_bjt: Beijing days)
 data/
-  raw/                  # Raw ERA5 NetCDF files, ignored by Git
+  raw/                  # Raw ERA5 NetCDF files, ignored by Git (layout: docs/raw_files.md)
   processed/            # Processed NetCDF files ignored by Git; CSV outputs tracked
-docs/                   # Roadmap
+docs/                   # Roadmap, raw file layout
 figures/                # Output figures, one folder per version
 reports/                # Project summary and notes
 src/
@@ -124,6 +149,9 @@ src/
   indices.py            # Unit conversion, relative humidity, heat index
   risk.py               # Risk categories and cos(latitude) area fractions
   era5_utils.py         # ERA5 coordinate/variable name detection
+  time_utils.py         # Hourly UTC data to local calendar days
+  hourly_input.py       # Reads raw hourly data month by month (multi-year runs)
+  climatology.py        # Heat index climatology for chosen years (step + functions)
   <step>.py             # One module per workflow step
 tests/                  # pytest unit and end-to-end tests
 README.md
