@@ -17,6 +17,9 @@ are skipped, each file is written as `<name>.part`, checked (variables,
 every expected hour, region) and only then renamed, so a partial file is
 never taken for a complete one. A failed file is reported and the next
 one tried; re-running the download fetches what is still missing.
+Several requests can wait in the CDS queue at once (`workers`, CLI
+`--download-workers`, 1-4): each file is fetched in its own thread with
+its own CDS client, and every log line starts with the file it is about.
 
 Before running:
     1. Register at https://cds.climate.copernicus.eu/
@@ -24,6 +27,8 @@ Before running:
     3. Accept the ERA5 licence on the dataset page.
 """
 
+import queue
+import threading
 import time
 from datetime import date, timedelta
 
@@ -53,6 +58,12 @@ VARIABLES = [
 # that usually means a problem on the CDS side or with the account
 # (credentials, licence), not with one file.
 MAX_CONSECUTIVE_FAILURES = 3
+
+# Requests of a multi-year download that may wait in the CDS queue at
+# once. The CLI default is DEFAULT_DOWNLOAD_WORKERS; 1 fetches one file
+# after the other.
+MAX_DOWNLOAD_WORKERS = 4
+DEFAULT_DOWNLOAD_WORKERS = 3
 
 # Grid coordinates must match the region bounds to within this (degrees).
 GRID_TOLERANCE_DEG = 1e-6
@@ -206,15 +217,19 @@ def _print_request(what: str, request: dict, output_file) -> None:
     print(f"  Output:    {output_file}")
 
 
-def _retrieve_to_part(request: dict, output_file):
-    """Retrieve one CDS request into `<output_file>.part` and return that path."""
+def _retrieve_to_part(request: dict, output_file, client_options: dict | None = None):
+    """
+    Retrieve one CDS request into `<output_file>.part` and return that path.
+
+    A new CDS client is made for every call, so threads never share one.
+    """
     import cdsapi  # imported here so the other steps run without cdsapi
 
     output_file.parent.mkdir(parents=True, exist_ok=True)
     partial_file = output_file.with_name(output_file.name + ".part")
     partial_file.unlink(missing_ok=True)  # left over from an interrupted run
 
-    client = cdsapi.Client()
+    client = cdsapi.Client(**(client_options or {}))
     client.retrieve(DATASET, request, str(partial_file))
     return partial_file
 
@@ -233,67 +248,155 @@ def _retrieve(request: dict, output_file, what: str) -> None:
     print("Download completed.")
 
 
-def download_raw_files(cfg: RunConfig) -> None:
+_print_lock = threading.Lock()
+
+
+def _say(label: str, message: str) -> None:
+    """Print one log line starting with `label` (the file), whole even when threads interleave."""
+    with _print_lock:
+        print(f"{label}: {message}", flush=True)
+
+
+def _client_options(label: str) -> dict:
     """
-    Download every raw file of a multi-year config that is not complete yet.
-
-    Existing files are checked (check_raw_file) and skipped when complete.
-    A missing file is downloaded to `<name>.part`, checked, and renamed.
-    Failures (a CDS error, a file that fails the check, an existing file
-    that is incomplete) are reported and the next file is tried; existing
-    files are never deleted or overwritten. Raises RuntimeError at the end
-    if any file failed, or earlier after MAX_CONSECUTIVE_FAILURES failed
-    requests in a row.
+    CDS client options for one file: no progress bar (it would garble the
+    interleaved output) and the client's messages prefixed with `label`.
     """
-    n_files = len(cfg.raw_files)
-    downloaded, skipped, failed = 0, 0, []
-    consecutive_failures = 0
-
-    for i, raw_file in enumerate(cfg.raw_files, start=1):
-        path = raw_file.path
-        label = f"[{i}/{n_files}] {path.name}"
-
-        if path.exists():
+    def report(*args, **kwargs):
+        message = str(args[0]) if args else ""
+        if len(args) > 1:
             try:
-                check_raw_file(path, raw_file, cfg)
-            except ValueError as err:
-                print(f"{label}: existing file is not complete, not overwritten: {err}")
-                failed.append((path.name, f"existing file is not complete ({err}); delete it to download again"))
-            else:
-                print(f"{label}: complete, skipped")
-                skipped += 1
-            continue
+                message = message % args[1:]
+            except (TypeError, ValueError):
+                message = " ".join(str(a) for a in args)
+        _say(label, f"CDS: {message}")
 
-        request = build_raw_file_request(cfg, raw_file)
-        _print_request(label, request, path)
-        started = time.monotonic()
+    return {"progress": False, "info_callback": report, "warning_callback": report, "error_callback": report}
+
+
+def _fetch_raw_file(cfg: RunConfig, raw_file: RawFile, label: str) -> tuple:
+    """
+    Make one raw file of a multi-year config complete; runs in its own thread.
+
+    Returns (outcome, reason) with outcome "skipped" (complete file already
+    there), "downloaded", "incomplete" (an existing file fails the check; it
+    is left alone) or "failed" (the request or the check of the download
+    failed; only `<name>.part` is left).
+    """
+    path = raw_file.path
+    if path.exists():
         try:
-            partial_file = _retrieve_to_part(request, path)
-            check_raw_file(partial_file, raw_file, cfg)
-        except Exception as err:  # report, then try the next file (Ctrl+C still stops)
-            consecutive_failures += 1
-            print(f"{label}: FAILED after {time.monotonic() - started:.0f} s: {err}")
-            failed.append((path.name, str(err)))
-            if consecutive_failures >= MAX_CONSECUTIVE_FAILURES:
-                raise RuntimeError(
-                    f"Stopped after {consecutive_failures} failed downloads in a row "
-                    "(CDS, network, credentials or licence problem?). "
-                    f"Last error: {err}. Run the download again to resume."
-                ) from err
-            continue
+            check_raw_file(path, raw_file, cfg)
+        except ValueError as err:
+            _say(label, f"existing file is not complete, not overwritten: {err}")
+            return "incomplete", f"existing file is not complete ({err}); delete it to download again"
+        _say(label, "complete, skipped")
+        return "skipped", ""
 
-        partial_file.replace(path)
-        consecutive_failures = 0
-        downloaded += 1
-        print(f"{label}: done in {time.monotonic() - started:.0f} s")
+    request = build_raw_file_request(cfg, raw_file)
+    _say(label, f"requesting {request['year'][0]}-{request['month'][0]}, days {request['day'][0]}-"
+                f"{request['day'][-1]}, UTC hours {request['time'][0]}-{request['time'][-1]}")
+    started = time.monotonic()
+    try:
+        partial_file = _retrieve_to_part(request, path, _client_options(label))
+        check_raw_file(partial_file, raw_file, cfg)
+    except Exception as err:  # reported by the caller, which goes on with other files
+        _say(label, f"FAILED after {time.monotonic() - started:.0f} s: {err}")
+        return "failed", str(err)
+
+    # Renamed only after the check: a file at its final name is complete.
+    partial_file.replace(path)
+    _say(label, f"done in {time.monotonic() - started:.0f} s")
+    return "downloaded", ""
+
+
+def download_raw_files(cfg: RunConfig, workers: int = 1) -> None:
+    """
+    Download every raw file of a multi-year config that is not complete yet,
+    with up to `workers` requests waiting in the CDS queue at once.
+
+    Files are started in the config's order (workers=1: one after the
+    other). Existing files are checked (check_raw_file) and skipped when
+    complete. A missing file is downloaded to `<name>.part`, checked, and
+    renamed. Failures (a CDS error, a file that fails the check, an existing
+    file that is incomplete) are reported and other files are tried;
+    existing files are never deleted or overwritten. After
+    MAX_CONSECUTIVE_FAILURES failed downloads in a row (in the order they
+    finish) no new file is started, and the requests still running are
+    allowed to finish. Raises RuntimeError at the end if any file failed.
+
+    Each file runs in a daemon thread, so Ctrl+C (which reaches the main
+    thread) or killing the process stops at once and leaves only `.part`
+    files of the files in progress.
+    """
+    if not 1 <= workers <= MAX_DOWNLOAD_WORKERS:
+        raise ValueError(f"workers must be from 1 to {MAX_DOWNLOAD_WORKERS}, got {workers}.")
+
+    n_files = len(cfg.raw_files)
+    results = queue.Queue()  # (index, outcome, reason) from the file threads
+
+    def fetch(index: int, raw_file: RawFile) -> None:
+        label = f"[{index + 1}/{n_files}] {raw_file.path.name}"
+        try:
+            outcome, reason = _fetch_raw_file(cfg, raw_file, label)
+        except BaseException as err:  # e.g. KeyboardInterrupt: re-raised by the main thread
+            results.put((index, "interrupted", err))
+        else:
+            results.put((index, outcome, reason))
+
+    downloaded, skipped, failed = 0, 0, []
+    consecutive_failures, stop_error = 0, None
+    next_index, running = 0, 0
+
+    while True:
+        # Start files in order while there is a free worker.
+        while stop_error is None and running < workers and next_index < n_files:
+            threading.Thread(
+                target=fetch, args=(next_index, cfg.raw_files[next_index]),
+                daemon=True, name=f"download-{cfg.raw_files[next_index].path.name}",
+            ).start()
+            next_index += 1
+            running += 1
+        if running == 0:
+            break
+
+        # Wait with a timeout, so that Ctrl+C reaches this thread promptly.
+        try:
+            index, outcome, reason = results.get(timeout=1.0)
+        except queue.Empty:
+            continue
+        running -= 1
+        name = cfg.raw_files[index].path.name
+
+        if outcome == "interrupted":
+            raise reason
+        if outcome == "skipped":
+            skipped += 1
+        elif outcome == "downloaded":
+            downloaded += 1
+            consecutive_failures = 0
+        elif outcome == "incomplete":
+            failed.append((name, reason))
+        else:  # "failed"
+            failed.append((name, reason))
+            consecutive_failures += 1
+            if consecutive_failures >= MAX_CONSECUTIVE_FAILURES and stop_error is None:
+                stop_error = reason
+                _say("download", f"{consecutive_failures} failed downloads in a row: no new requests; "
+                                 f"waiting for the {running} still running")
 
     print(f"\nRaw files: {n_files} expected, {downloaded} downloaded, "
-          f"{skipped} already complete, {len(failed)} failed.")
-    if failed:
+          f"{skipped} already complete, {len(failed)} failed"
+          + (f", {n_files - next_index} not started." if next_index < n_files else "."))
+    failures = "\n".join(f"  {name}: {reason}" for name, reason in failed)
+    if stop_error is not None:
         raise RuntimeError(
-            f"{len(failed)} raw file(s) failed; run the download again to resume:\n"
-            + "\n".join(f"  {name}: {reason}" for name, reason in failed)
+            f"Stopped after {MAX_CONSECUTIVE_FAILURES} failed downloads in a row "
+            "(CDS, network, credentials or licence problem?). "
+            f"Last error: {stop_error}. Run the download again to resume.\n{failures}"
         )
+    if failed:
+        raise RuntimeError(f"{len(failed)} raw file(s) failed; run the download again to resume:\n{failures}")
 
 
 def report_raw_files(cfg: RunConfig) -> bool:
@@ -327,15 +430,19 @@ def report_raw_files(cfg: RunConfig) -> bool:
     return not missing and not incomplete
 
 
-def run(cfg: RunConfig) -> None:
-    """Download the raw ERA5 file(s) and the land-sea mask, unless they already exist."""
+def run(cfg: RunConfig, workers: int = 1) -> None:
+    """
+    Download the raw ERA5 file(s) and the land-sea mask, unless they already
+    exist. `workers`: requests at once for multi-year configs (see
+    download_raw_files); single-period configs ignore it.
+    """
     print(f"Region: N={cfg.north}°, W={cfg.west}°, S={cfg.south}°, E={cfg.east}°")
 
     if cfg.is_multi_year:
         # The small land-sea mask first: a quick check of the CDS account
         # before the long monthly downloads.
         _retrieve(build_land_sea_mask_request(cfg), cfg.paths.raw_land_sea_mask, "ERA5 land-sea mask")
-        download_raw_files(cfg)
+        download_raw_files(cfg, workers)
         return
 
     raw = cfg.paths.raw_era5

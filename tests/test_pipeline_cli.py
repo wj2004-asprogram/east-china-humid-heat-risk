@@ -53,3 +53,12 @@ def test_interrupted_download_leaves_no_file_at_final_path(tmp_path, monkeypatch
     _fake_cdsapi(monkeypatch, fail=False)
     download_era5.run(cfg)
     assert cfg.paths.raw_era5.read_bytes() == b"complete"
+
+
+def test_download_workers_option():
+    # Multi-year downloads: 3 CDS requests at once by default, 1-4 allowed.
+    assert pipeline.parse_args(["--config", str(CONFIG)]).download_workers == 3
+    assert pipeline.parse_args(["--config", str(CONFIG), "--download-workers", "1"]).download_workers == 1
+    for bad in ("0", "5"):
+        with pytest.raises(SystemExit):
+            pipeline.parse_args(["--config", str(CONFIG), "--download-workers", bad])

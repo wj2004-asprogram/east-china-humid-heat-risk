@@ -34,9 +34,17 @@ the run, e.g. for whole years.
 missing one is downloaded as `<name>.part`, checked (`t2m`/`d2m`, exactly
 the requested hours, each once and in order, grid spanning the region)
 and only then renamed. Failures are reported and the next file is
-tried. Existing files are never overwritten. The download stops after
-3 failed requests in a row, which points to an account, licence or CDS
-problem. Re-running resumes. `--check-raw` reports progress.
+tried. Existing files are never overwritten. After 3 failed requests in
+a row (in the order they finish), which points to an account, licence or
+CDS problem, no new request is started and the running ones finish.
+Re-running resumes. `--check-raw` reports progress.
+
+**Parallel requests.** `--download-workers N` (1–4, default 3) keeps up to
+N requests in the CDS queue at once. Each file runs in its own daemon
+thread with its own CDS client, so Ctrl+C or killing the process stops at
+once and leaves only `.part` files. Files are started in the config's
+order; N = 1 fetches them one after the other. Log lines start with the
+file name (CDS messages too; progress bars are off).
 
 **Month-by-month processing.** `src/hourly_input.py` yields one block
 per calendar month, cut to the UTC hours of the block's local days.
@@ -73,6 +81,11 @@ the phase 3 baseline can be restricted to training years.
     error; a leftover `.part`; an incomplete existing file (reported,
     not overwritten); a downloaded file with a missing hour (not
     renamed); the stop after repeated failures.
+  - Parallel download (3 workers): 3 requests really run at once (each
+    waits for the other two); one failed file leaves the others intact
+    and is reported; after 3 failures in a row no new file starts and the
+    running request still finishes; resume redoes only `.part` files;
+    Ctrl+C leaves only `.part` files; 1 worker keeps the config order.
   - Climatology: leap-year alignment; changing the test years' data
     leaves a training-year climatology unchanged.
 - **Real data (July 2022)**, run in a scratch directory:
@@ -111,3 +124,7 @@ the phase 3 baseline can be restricted to training years.
 - **Started** 2026-10-16 14:01 (user's go-ahead), Beijing-time config
   (all 100 files; the UTC config's 75 are a subset). The 2022-07 file and
   the land-sea mask were copied from the validation worktree.
+- **Observed:** the first request (2000-06) took 342 s; the second was
+  still queued at CDS after more than an hour. One request at a time would
+  then take days, so the download was restarted with 3 workers (user's
+  go-ahead, 2026-10-16); completed files were kept.

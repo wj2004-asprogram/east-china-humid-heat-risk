@@ -61,6 +61,15 @@ def parse_args(argv=None) -> argparse.Namespace:
         help="Download the raw ERA5 file and land-sea mask first (skipped if they already exist)",
     )
     parser.add_argument(
+        "--download-workers", type=int, metavar="N",
+        default=download_era5.DEFAULT_DOWNLOAD_WORKERS,
+        choices=range(1, download_era5.MAX_DOWNLOAD_WORKERS + 1),
+        help=(
+            "Multi-year configs: CDS requests waiting in the queue at once, "
+            f"1-{download_era5.MAX_DOWNLOAD_WORKERS} (default {download_era5.DEFAULT_DOWNLOAD_WORKERS})"
+        ),
+    )
+    parser.add_argument(
         "--check-raw", action="store_true",
         help="Only report which raw ERA5 files are complete, missing or incomplete, then stop",
     )
@@ -83,7 +92,7 @@ def main(argv=None) -> None:
 
     if args.download:
         print("\n=== download ===")
-        download_era5.run(cfg)
+        download_era5.run(cfg, workers=args.download_workers)
 
     selected = args.steps or list(STEPS)
     steps = [name for name in STEPS if name in selected]  # keep pipeline order

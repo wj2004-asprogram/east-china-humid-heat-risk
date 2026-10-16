@@ -1,9 +1,11 @@
 """
 Resumable multi-year download (no network): a fake `cdsapi` module writes
-synthetic NetCDF files for each request, or fails on chosen files.
+synthetic NetCDF files for each request, or fails on chosen files; with
+several workers, requests run in parallel threads.
 """
 
 import sys
+import threading
 import types
 
 import pandas as pd
@@ -48,35 +50,62 @@ def _times(request) -> pd.DatetimeIndex:
 
 class FakeCDS:
     """
-    Fake `cdsapi`. Client().retrieve writes a synthetic file for the
-    request, or, for target names in `fail`, writes a partial file and
-    raises the given exception, as an interrupted transfer would.
+    Fake `cdsapi`. Client(**options).retrieve writes a synthetic file for
+    the request, or, for target names in `fail`, writes a partial file and
+    raises the given exception, as an interrupted transfer would. `hold`
+    (called with the target name at the start of each request) can make
+    requests wait, e.g. for each other.
     """
 
-    def __init__(self, monkeypatch, fail=None, drop_hour=None):
-        self.calls = []  # target file names, in order
+    def __init__(self, monkeypatch, fail=None, drop_hour=None, hold=None):
+        self.calls = []  # target file names, in the order the requests started
+        self.options = []  # keyword arguments of each Client()
         self.fail = fail or {}
         self.drop_hour = drop_hour  # (target name, timestamp) to leave out of a file
+        self.hold = hold
+        self.lock = threading.Lock()
+        self.in_flight = 0
+        self.max_in_flight = 0
         fake = self
 
         class Client:
+            def __init__(self, **options):
+                with fake.lock:
+                    fake.options.append(options)
+
             def retrieve(self, dataset, request, target):
                 name = target.replace("\\", "/").rsplit("/", 1)[-1]
-                fake.calls.append(name)
-                if request["variable"] == ["land_sea_mask"]:
-                    make_synthetic_land_sea_mask("2003-06-01", step=1.0).to_netcdf(target)
-                    return
-                for prefix, error in fake.fail.items():
-                    if name.startswith(prefix):
-                        with open(target, "wb") as f:
-                            f.write(b"CDF partial")
-                        raise error
-                times = _times(request)
-                if fake.drop_hour and name.startswith(fake.drop_hour[0]):
-                    times = times.drop(pd.Timestamp(fake.drop_hour[1]))
-                make_synthetic_era5_at(times, step=1.0).to_netcdf(target)
+                with fake.lock:
+                    fake.calls.append(name)
+                    fake.in_flight += 1
+                    fake.max_in_flight = max(fake.max_in_flight, fake.in_flight)
+                try:
+                    if fake.hold is not None:
+                        fake.hold(name)
+                    if request["variable"] == ["land_sea_mask"]:
+                        make_synthetic_land_sea_mask("2003-06-01", step=1.0).to_netcdf(target)
+                        return
+                    for prefix, error in fake.fail.items():
+                        if name.startswith(prefix):
+                            with open(target, "wb") as f:
+                                f.write(b"CDF partial")
+                            raise error
+                    times = _times(request)
+                    if fake.drop_hour and name.startswith(fake.drop_hour[0]):
+                        times = times.drop(pd.Timestamp(fake.drop_hour[1]))
+                    make_synthetic_era5_at(times, step=1.0).to_netcdf(target)
+                finally:
+                    with fake.lock:
+                        fake.in_flight -= 1
 
         monkeypatch.setitem(sys.modules, "cdsapi", types.SimpleNamespace(Client=Client))
+
+
+def _join_download_threads(timeout: float = 30.0) -> None:
+    """Wait for file threads still running after a download stopped early."""
+    for thread in threading.enumerate():
+        if thread.name.startswith("download-"):
+            thread.join(timeout)
 
 
 def _all_complete(cfg) -> bool:
@@ -167,3 +196,124 @@ def test_stops_after_repeated_failures(cfg, monkeypatch):
         download_raw_files(cfg)
     assert len(fake.calls) == download_era5.MAX_CONSECUTIVE_FAILURES
     assert not any(f.path.exists() for f in cfg.raw_files)
+
+
+# ---------------------------------------------------------------------------
+# Several requests at once (--download-workers)
+# ---------------------------------------------------------------------------
+
+def test_one_worker_keeps_the_config_order(cfg, monkeypatch):
+    # workers=1 (the function's default): one file after the other, in the
+    # config's order; a complete file in between is skipped.
+    july_2003 = cfg.raw_files[1]
+    july_2003.path.parent.mkdir(parents=True)
+    make_synthetic_era5_at(july_2003.utc_times, step=1.0).to_netcdf(july_2003.path)
+
+    fake = FakeCDS(monkeypatch)
+    download_raw_files(cfg, workers=1)
+    assert fake.calls == [f.path.name + ".part" for f in cfg.raw_files if f is not july_2003]
+    assert fake.max_in_flight == 1
+    assert _all_complete(cfg)
+
+
+def test_three_workers_run_requests_at_the_same_time(cfg, monkeypatch):
+    # Each request waits until 3 requests are in flight: this only finishes
+    # if 3 requests really run at once (else the barrier times out and the
+    # requests fail).
+    barrier = threading.Barrier(3, timeout=20)
+    fake = FakeCDS(monkeypatch, hold=lambda name: barrier.wait())
+
+    download_raw_files(cfg, workers=3)
+    assert fake.max_in_flight == 3
+    assert sorted(fake.calls) == sorted(f.path.name + ".part" for f in cfg.raw_files)
+    assert _all_complete(cfg)
+    # One client per request, without progress bars, CDS messages prefixed.
+    assert len(fake.options) == len(cfg.raw_files)
+    assert all(o["progress"] is False and callable(o["info_callback"]) for o in fake.options)
+
+
+def test_a_failure_does_not_affect_other_files(cfg, monkeypatch):
+    july_2004 = cfg.raw_files[3]
+    FakeCDS(monkeypatch, fail={july_2004.path.name: ConnectionError("connection reset")})
+
+    with pytest.raises(RuntimeError, match="(?s)1 raw file.*era5_east_china_2004_07.nc: connection reset"):
+        download_raw_files(cfg, workers=3)
+    assert not july_2004.path.exists()
+    assert july_2004.path.with_name(july_2004.path.name + ".part").exists()
+    for raw_file in cfg.raw_files:
+        if raw_file is not july_2004:
+            check_raw_file(raw_file.path, raw_file, cfg)
+
+
+def test_stop_after_repeated_failures_lets_running_requests_finish(cfg, monkeypatch):
+    """
+    With 3 workers: the first file is held back, every other request
+    fails. After 3 failures in a row (in the order they finish) no new file
+    is started; the requests still running finish, the held one with
+    success. Files 1-5 are started, file 6 never.
+    """
+    stopped = threading.Event()
+    say = download_era5._say
+
+    def watch(label, message):
+        say(label, message)
+        if "no new requests" in message:
+            stopped.set()
+
+    monkeypatch.setattr(download_era5, "_say", watch)
+    first = cfg.raw_files[0]
+
+    def hold(name):
+        if name.startswith(first.path.name):
+            assert stopped.wait(20), "the download did not stop starting new files"
+
+    fake = FakeCDS(monkeypatch, hold=hold,
+                   fail={f.path.name: ConnectionError("CDS down") for f in cfg.raw_files[1:]})
+
+    with pytest.raises(RuntimeError, match="(?s)3 failed downloads in a row.*CDS down") as excinfo:
+        download_raw_files(cfg, workers=3)
+    assert sorted(fake.calls) == sorted(f.path.name + ".part" for f in cfg.raw_files[:5])
+    check_raw_file(first.path, first, cfg)  # the running request finished
+    assert not cfg.raw_files[5].path.exists()
+    # Every failure is reported, with its reason.
+    assert str(excinfo.value).count("CDS down") == 1 + 4
+
+
+def test_resume_with_three_workers(cfg, monkeypatch):
+    june_2004, edge_2003 = cfg.raw_files[2], cfg.raw_files[4]
+    FakeCDS(monkeypatch, fail={june_2004.path.name: ConnectionError("reset"),
+                               edge_2003.path.name: ConnectionError("reset")})
+    with pytest.raises(RuntimeError, match="2 raw file"):
+        download_raw_files(cfg, workers=3)
+    assert {p.name for p in june_2004.path.parent.glob("*.part")} == {
+        june_2004.path.name + ".part", edge_2003.path.name + ".part",
+    }
+
+    # Resume: complete files are skipped, the .part files are fetched again.
+    fake = FakeCDS(monkeypatch)
+    download_raw_files(cfg, workers=3)
+    assert sorted(fake.calls) == sorted([june_2004.path.name + ".part", edge_2003.path.name + ".part"])
+    assert _all_complete(cfg)
+
+
+def test_ctrl_c_with_three_workers_leaves_only_part_files(cfg, monkeypatch):
+    # Ctrl+C (here raised inside one request) stops the download; the
+    # interrupted file exists only as .part.
+    july_2003 = cfg.raw_files[1]
+    FakeCDS(monkeypatch, fail={july_2003.path.name: KeyboardInterrupt()})
+    try:
+        with pytest.raises(KeyboardInterrupt):
+            download_raw_files(cfg, workers=3)
+    finally:
+        _join_download_threads()
+    assert not july_2003.path.exists()
+    assert july_2003.path.with_name(july_2003.path.name + ".part").exists()
+    for raw_file in cfg.raw_files:  # whatever was renamed is complete
+        if raw_file.path.exists():
+            check_raw_file(raw_file.path, raw_file, cfg)
+
+
+@pytest.mark.parametrize("workers", [0, 5])
+def test_number_of_workers_is_checked(cfg, workers):
+    with pytest.raises(ValueError, match="workers"):
+        download_raw_files(cfg, workers=workers)
