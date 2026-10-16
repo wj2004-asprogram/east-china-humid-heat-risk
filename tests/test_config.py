@@ -3,6 +3,7 @@ Configuration tests: the UTC configs reproduce the v0.1/v0.2 (phase 1a)
 file names; the Beijing-time configs share no raw or processed file with them.
 """
 
+import dataclasses
 from pathlib import Path
 
 import pytest
@@ -67,6 +68,20 @@ def test_beijing_config_has_its_own_files(utc_name, bjt_name):
     shared = {path for path in vars(bjt.paths).values() if path in utc_files}
     assert shared == {utc.paths.raw_land_sea_mask}
     assert bjt.paths.raw_era5.name == f"era5_east_china_{utc.file_tag}_bjt.nc"
+
+
+@pytest.mark.parametrize(
+    "offset, definition, window",
+    [
+        (0, "UTC", "00:00 UTC on D to 23:00 UTC on D"),
+        (8, "UTC+8", "16:00 UTC on D-1 to 15:00 UTC on D"),
+        (-5, "UTC-5", "05:00 UTC on D to 04:00 UTC on D+1"),
+    ],
+)
+def test_day_definition(offset, definition, window):
+    cfg = dataclasses.replace(load_config(CONFIG_DIR / "july_2022_bjt.yaml"), utc_offset_hours=offset)
+    assert cfg.day_definition == definition
+    assert cfg.day_window_utc == window
 
 
 def test_config_rejects_reversed_period(tmp_path: Path):

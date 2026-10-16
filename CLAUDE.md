@@ -10,6 +10,7 @@
 - Periods: one YAML file per run in `configs/`: `sample_2022_07_01_07.yaml`, `july_2022.yaml` (UTC days, phase 1a raw files) and `sample_2022_07_01_07_bjt.yaml`, `july_2022_bjt.yaml` (Beijing days, own `_bjt` raw/processed/figure files).
 - Variables: ERA5 2m temperature and 2m dewpoint temperature; ERA5 land-sea mask (one file per region, `data/raw/era5_land_sea_mask_<region>.nc`).
 - Daily values: local calendar days, `utc_offset_hours` (0 = UTC, 8 = Beijing). A Beijing-time raw file also holds 16:00–23:00 UTC of the day before the period. Never give a UTC raw file to a Beijing-time config (the run stops with an error) and never reuse a UTC config's `file_tag` for Beijing time.
+- CSV dates: every CSV has a `date` column (`YYYY-MM-DD`, local calendar day). The `run_info` step writes `data/processed/run_info_<tag>.json` with the day definition (`UTC` or `UTC+8`); figure date axes and map titles name it.
 - Area fractions: land cells only, land = `land_sea_mask >= land_sea_mask_threshold` (0.5 in both configs). Maps grey out the sea.
 - Missing data: a cell-day with any missing hour is NaN (daily aggregation uses `skipna=False`) and gets category −1 "Missing", never "No Risk". Area fractions are shares of the valid land area (sum to 100 %); the CSV column `Valid Land Coverage` is the valid share of the land area (100 when nothing is missing; 0 and NaN categories when nothing is valid).
 - Plotting: matplotlib only (no cartopy).

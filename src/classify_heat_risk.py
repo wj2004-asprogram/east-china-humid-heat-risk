@@ -50,6 +50,7 @@ def plot_stacked_bar(
     output_path: Path,
     start_date: str,
     end_date: str,
+    day_definition: str,
 ):
     """
     Draw a stacked bar chart of daily heat risk land area fractions.
@@ -67,6 +68,8 @@ def plot_stacked_bar(
         Where to save the PNG figure.
     start_date, end_date : str
         Date strings for the title (e.g. "2022-07-01").
+    day_definition : str
+        Time zone of the calendar days, e.g. "UTC" or "UTC+8", for the date axis.
     """
     fig, ax = plt.subplots(figsize=(12, 6))
 
@@ -89,7 +92,7 @@ def plot_stacked_bar(
     ax.set_xticklabels(
         [f"{d}*" if p else d for d, p in zip(df["date"], partial)], rotation=45, ha="right",
     )
-    ax.set_xlabel("Date")
+    ax.set_xlabel(f"Date ({day_definition} calendar day)")
     ax.set_ylabel("Share of Valid Land Area (%)")
     title = (
         f"Daily Heat Risk Area Fraction over East China (land only)\n"
@@ -226,6 +229,6 @@ def run(cfg: RunConfig) -> None:
     # =======================================================================
     # Step 6: Plot
     # =======================================================================
-    plot_stacked_bar(df, output_fig, df["date"].iloc[0], df["date"].iloc[-1])
+    plot_stacked_bar(df, output_fig, df["date"].iloc[0], df["date"].iloc[-1], cfg.day_definition)
 
     print("\nDone.")

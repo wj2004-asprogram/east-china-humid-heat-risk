@@ -42,7 +42,7 @@ def run(cfg: RunConfig) -> None:
 
     ax.set_title(f"East China Mean Daily Tmax, {cfg.period_label}",
                  fontsize=13)
-    ax.set_xlabel("Date")
+    ax.set_xlabel(f"Date ({cfg.day_definition} calendar day)")
     ax.set_ylabel("Daily Maximum 2m Temperature (°C)")
     ax.grid(True, alpha=0.3)
     fig.autofmt_xdate()

@@ -67,7 +67,7 @@ The implementation is tested against the NWS heat index chart and against MetPy'
 
 ERA5 timestamps are UTC. Daily values (daily maximum temperature, daily maximum heat index, daily mean RH, and everything derived from them) are computed over local calendar days set by `utc_offset_hours` in the config. The Beijing-time configs (`configs/*_bjt.yaml`, `utc_offset_hours: 8`) use **Beijing calendar days** (UTC+8, no daylight saving): Beijing day D runs from 16:00 UTC on D−1 to 15:00 UTC on D. Their download therefore also fetches 16:00–23:00 UTC of the day before the period (e.g. 2022-06-30 for July 2022) and merges it into the raw file. A local day is complete only if it holds exactly the 24 hourly time steps 00:00–23:00 local time, each once; duplicate or non-hourly time steps anywhere in the raw file stop the run with an error (they are never dropped silently). Incomplete days outside the period (the partial day after it) are dropped, and the run stops with an error if a day of the period is incomplete.
 
-The v0.1/v0.2 configs (`sample_2022_07_01_07.yaml`, `july_2022.yaml`) keep UTC days (`utc_offset_hours: 0`) and the v0.2 raw files. The Beijing-time configs have their own file tag (`..._bjt`), so their raw, processed and figure files never mix with the UTC ones. Dates in the CSV outputs are local dates; the hourly fields in `humid_heat_<tag>.nc` keep their UTC timestamps.
+The v0.1/v0.2 configs (`sample_2022_07_01_07.yaml`, `july_2022.yaml`) keep UTC days (`utc_offset_hours: 0`) and the v0.2 raw files. The Beijing-time configs have their own file tag (`..._bjt`), so their raw, processed and figure files never mix with the UTC ones. Every CSV output has a `date` column (`YYYY-MM-DD`) holding these calendar days (up to v0.2 the city Tmax table called it `time`). Each run also writes `data/processed/run_info_<tag>.json`, which records its day definition (`UTC` or `UTC+8`) and the UTC hours of a day; the date axes and map titles of the figures name it too. The hourly fields in `humid_heat_<tag>.nc` keep their UTC timestamps.
 
 ## Heat Risk Classification
 
@@ -114,7 +114,7 @@ Each run is described by one YAML file in `configs/` (period, region, cities, ou
 configs/                # One YAML file per run (v0.1 sample, v0.2 July 2022: UTC days; *_bjt: Beijing days)
 data/
   raw/                  # Raw ERA5 NetCDF files, ignored by Git
-  processed/            # Processed NetCDF files ignored by Git; CSV outputs tracked
+  processed/            # Processed NetCDF files ignored by Git; CSV outputs and run_info JSON tracked
 docs/                   # Roadmap
 figures/                # Output figures, one folder per version
 reports/                # Project summary and notes
