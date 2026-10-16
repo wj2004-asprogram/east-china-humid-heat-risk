@@ -102,6 +102,12 @@ the phase 3 baseline can be restricted to training years.
   request. Sequential requests therefore take between about 1 hour and
   about a week in the worst case. The download runs unattended, can be
   stopped and resumed at any time, and `--check-raw` shows the progress.
-- **CDS terms.** The CDS terms of use change on 2026-10-28. Requests may
-  fail until the new terms are accepted on the CDS website. The download
-  then stops after 3 failures; accept the terms and re-run to resume.
+- **CDS terms.** The CDS terms of use change on 2026-10-28. According to
+  the CDS notice (shown with each request since 2026-10-06), continued use
+  after that date counts as accepting the new terms; users who do not
+  accept must contact ECMWF Support before 2026-10-27. If requests do
+  start failing, the download stops after 3 failures in a row; re-run it
+  to resume.
+- **Started** 2026-10-16 14:01 (user's go-ahead), Beijing-time config
+  (all 100 files; the UTC config's 75 are a subset). The 2022-07 file and
+  the land-sea mask were copied from the validation worktree.
