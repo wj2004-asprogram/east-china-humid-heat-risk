@@ -52,6 +52,15 @@ def test_config_reproduces_existing_outputs(config_name, tag, period):
     assert cfg.paths.fig_area_fraction.exists()
 
 
+@pytest.mark.parametrize("config_name", [name for pair in CONFIG_PAIRS for name in pair])
+def test_every_config_has_tracked_outputs(config_name):
+    # v0.3: the outputs of all four configs (UTC and Beijing time) are tracked.
+    cfg = load_config(CONFIG_DIR / config_name)
+    for name, path in vars(cfg.paths).items():
+        if name.endswith(("_csv", "_json")) or name.startswith("fig_"):
+            assert path.exists(), f"{path.relative_to(PROJECT_ROOT)} is not a tracked output"
+
+
 @pytest.mark.parametrize("utc_name, bjt_name", CONFIG_PAIRS)
 def test_beijing_config_has_its_own_files(utc_name, bjt_name):
     utc = load_config(CONFIG_DIR / utc_name)

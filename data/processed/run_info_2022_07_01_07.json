@@ -1,0 +1,17 @@
+{
+  "config": "sample_2022_07_01_07",
+  "period": {
+    "start": "2022-07-01",
+    "end": "2022-07-07"
+  },
+  "day_definition": "UTC",
+  "utc_offset_hours": 0,
+  "day_window": "day D runs from 00:00 UTC on D to 23:00 UTC on D (24 hourly ERA5 time steps)",
+  "date_column": "the 'date' column of each CSV below is a calendar day in UTC, formatted YYYY-MM-DD",
+  "csv_files": [
+    "city_daily_tmax_2022_07_01_07.csv",
+    "city_daily_heat_index_2022_07_01_07.csv",
+    "daily_heat_risk_area_fraction_2022_07_01_07.csv"
+  ],
+  "land_sea_mask_threshold": 0.5
+}
