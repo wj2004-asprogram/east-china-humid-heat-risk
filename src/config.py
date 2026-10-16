@@ -93,6 +93,7 @@ class Paths:
     city_tmax_csv: Path
     city_heat_index_csv: Path
     area_fraction_csv: Path
+    run_info_json: Path
 
     # Figures
     fig_mean_tmax: Path
@@ -182,6 +183,25 @@ class RunConfig:
         return f"{self.start_date.isoformat()} to {self.end_date.isoformat()}"
 
     @property
+    def day_definition(self) -> str:
+        """Time zone of the daily values' calendar days: 'UTC', or e.g. 'UTC+8' (Beijing time)."""
+        if self.utc_offset_hours == 0:
+            return "UTC"
+        return f"UTC{self.utc_offset_hours:+d}"
+
+    @property
+    def day_window_utc(self) -> str:
+        """The UTC hours of local day D, e.g. '16:00 UTC on D-1 to 15:00 UTC on D' for UTC+8."""
+
+        def utc_hour(local_hour: int) -> str:
+            # Hours relative to 00:00 UTC on day D; floor division gives the day.
+            hours = local_hour - self.utc_offset_hours
+            day = "D" if hours // 24 == 0 else f"D{hours // 24:+d}"
+            return f"{hours % 24:02d}:00 UTC on {day}"
+
+        return f"{utc_hour(0)} to {utc_hour(23)}"
+
+    @property
     def cds_area(self) -> list:
         """Region in the order expected by the CDS API: [North, West, South, East]."""
         return [self.north, self.west, self.south, self.east]
@@ -211,6 +231,7 @@ def build_paths(file_tag: str, region: dict, figures_dir: Path, project_root: Pa
         city_tmax_csv=processed / f"city_daily_tmax_{t}.csv",
         city_heat_index_csv=processed / f"city_daily_heat_index_{t}.csv",
         area_fraction_csv=processed / f"daily_heat_risk_area_fraction_{t}.csv",
+        run_info_json=processed / f"run_info_{t}.json",
         fig_mean_tmax=figures_dir / f"east_china_mean_daily_tmax_{t}.png",
         fig_city_tmax=figures_dir / f"east_china_city_daily_tmax_{t}.png",
         fig_mean_heat_index=figures_dir / f"east_china_mean_daily_heat_index_{t}.png",

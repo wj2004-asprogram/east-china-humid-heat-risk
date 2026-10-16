@@ -98,6 +98,7 @@ def plot_heat_index_map(
     lon_name: str,
     cities,
     target_date_str: str,
+    day_definition: str,
     output_path: Path,
 ):
     """
@@ -134,7 +135,7 @@ def plot_heat_index_map(
     ax.set_ylabel("Latitude (°N)")
     ax.set_title(
         f"Daily Maximum Heat Index over East China\n"
-        f"Selected hottest risk day: {target_date_str}"
+        f"Selected hottest risk day: {target_date_str} ({day_definition} calendar day)"
     )
 
     fig.tight_layout()
@@ -150,6 +151,7 @@ def plot_risk_category_map(
     lon_name: str,
     cities,
     target_date_str: str,
+    day_definition: str,
     output_path: Path,
 ):
     """
@@ -183,7 +185,7 @@ def plot_risk_category_map(
     ax.set_ylabel("Latitude (°N)")
     ax.set_title(
         f"Heat Risk Category over East China\n"
-        f"Selected hottest risk day: {target_date_str}"
+        f"Selected hottest risk day: {target_date_str} ({day_definition} calendar day)"
     )
 
     fig.tight_layout()
@@ -227,11 +229,11 @@ def run(cfg: RunConfig) -> None:
     # =======================================================================
     plot_heat_index_map(
         da_hi.isel({date_name: day_index}), land, lat_name, lon_name,
-        cfg.cities, target_date_str, output_hi,
+        cfg.cities, target_date_str, cfg.day_definition, output_hi,
     )
     plot_risk_category_map(
         da_cat.isel({date_name: day_index}), land, lat_name, lon_name,
-        cfg.cities, target_date_str, output_cat,
+        cfg.cities, target_date_str, cfg.day_definition, output_cat,
     )
 
     print("\nDone.")

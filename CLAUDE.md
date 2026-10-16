@@ -7,10 +7,11 @@
 
 ## Current setup (keep in sync with README)
 - Region: 112–123°E, 25–36°N (CDS `area = [36, 112, 25, 123]`).
-- Periods: one YAML file per run in `configs/`: `sample_2022_07_01_07.yaml`, `july_2022.yaml` (UTC days, phase 1a raw files) and `sample_2022_07_01_07_bjt.yaml`, `july_2022_bjt.yaml` (Beijing days, own `_bjt` raw/processed/figure files). Multi-year (phase 2): `jja_2000_2024.yaml` (UTC days) and `jja_2000_2024_bjt.yaml` (Beijing days), `period: {years: {first, last}, months: [6, 7, 8]}`.
+- Periods: one YAML file per run in `configs/`: `sample_2022_07_01_07.yaml`, `july_2022.yaml` (UTC days, phase 1a raw files) and `sample_2022_07_01_07_bjt.yaml`, `july_2022_bjt.yaml` (Beijing days, own `_bjt` raw/processed/figure files). The README headline results are the Beijing-time July run (`figures/v0.3_july_2022_bjt/`); the UTC runs are the comparison. Multi-year (phase 2): `jja_2000_2024.yaml` (UTC days) and `jja_2000_2024_bjt.yaml` (Beijing days), `period: {years: {first, last}, months: [6, 7, 8]}`.
 - Raw files: layout in `docs/raw_files.md` (keep it stable; an external acceptance check relies on it). Multi-year configs share one file per year and month, `data/raw/era5_east_china_YYYY_MM.nc` (one CDS request each, all 24 UTC hours); Beijing time adds `era5_east_china_YYYY_05_31_h16-23.nc` per summer. Single-period configs: one file per `file_tag`.
 - Variables: ERA5 2m temperature and 2m dewpoint temperature; ERA5 land-sea mask (one file per region, `data/raw/era5_land_sea_mask_<region>.nc`).
 - Daily values: local calendar days, `utc_offset_hours` (0 = UTC, 8 = Beijing). A single-period Beijing-time raw file also holds 16:00–23:00 UTC of the day before the period. Never give a UTC raw file to a single-period Beijing-time config (the run stops with an error) and never reuse a UTC config's `file_tag` for Beijing time. Multi-year runs are processed one month at a time (`src/hourly_input.py`), each month cut to the UTC hours of its local days, and the daily results concatenated; they save daily variables only.
+- CSV dates: every CSV has a `date` column (`YYYY-MM-DD`, local calendar day). The `run_info` step writes `data/processed/run_info_<tag>.json` with the day definition (`UTC` or `UTC+8`); figure date axes and map titles name it.
 - Climatology (phase 3 baseline): `heat_index_climatology_<tag>.nc` holds the daily maximum heat index per year and day of year (365-day calendar). No all-years climatology is stored; phase 3 must call `src.climatology.climatology_for_years` with the training years only.
 - Area fractions: land cells only, land = `land_sea_mask >= land_sea_mask_threshold` (0.5 in both configs). Maps grey out the sea.
 - Missing data: a cell-day with any missing hour is NaN (daily aggregation uses `skipna=False`) and gets category −1 "Missing", never "No Risk". Area fractions are shares of the valid land area (sum to 100 %); the CSV column `Valid Land Coverage` is the valid share of the land area (100 when nothing is missing; 0 and NaN categories when nothing is valid).
@@ -43,7 +44,7 @@ python -m pytest
 ## Rules
 - One code path for every period: never copy a script to change dates, region or cities — add a config file.
 - No hard-coded paths, dates or regions in `src/`; they come from the config.
-- Refactors must not change results. Re-run both configs and check `git diff --stat data/processed` is empty. A change that is meant to alter results gets its own commit, with a before/after note.
+- Refactors must not change results. Re-run all four configs and check `git diff --stat data/processed` is empty. A change that is meant to alter results gets its own commit, with a before/after note.
 - Formula changes need tests against an independent reference (NWS heat index chart, MetPy, published values), never against our own output.
 - Time: ERA5 timestamps are UTC. Daily aggregation is by local calendar day via `src/time_utils.local_daily` (config `utc_offset_hours`; 8 = Beijing time, day D = 16:00 UTC on D−1 to 15:00 UTC on D). Never resample hourly data to days directly. A day is complete only with exactly the 24 local hours, each once; duplicate or non-hourly timestamps raise (never de-duplicate silently). Hourly fields keep UTC timestamps.
 - Machine learning (phase 3): split train/test by year, never by random shuffle. The climatology baseline uses training years only.
@@ -53,8 +54,8 @@ python -m pytest
 - Large NetCDF files are not tracked; CSV outputs and figures are.
 - Commit after each meaningful step.
 
-## Known issues (phase 1b — see docs/ROADMAP.md)
-- Tracked CSVs (`data/processed/`) and figures are still the v0.2 outputs, on purpose: phase 1b was validated on real July 2022 data in a separate worktree (results in `reports/phase1b_method_changes.md`), but how the v0.3 outputs are published is not decided yet. Do not regenerate or commit them until then.
+## Known issues
+- Tracked CSVs (`data/processed/`) and figures are the v0.3 outputs of all four configs. The folders `figures/v0.1_sample_7day` and `figures/v0.2_july_2022` keep their names but were regenerated with the v0.3 methods; the old-method outputs are in the git history (`851b496`).
 - Regional-mean time series (`plot_figures`, `plot_heat_index_figures`) are plain means over all grid cells: no cos(latitude) weights, sea included.
 - The Beijing-time raw files and the land-sea mask were downloaded in the validation worktree (`projects/ehhr-1a-verify`), not in this checkout. Do not run CDS downloads without the user's confirmation.
 - Phase 2: the multi-year download (75 monthly + 25 edge requests) has not been run yet; the multi-year outputs and the climatology do not exist yet.

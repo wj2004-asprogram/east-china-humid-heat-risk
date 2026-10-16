@@ -71,7 +71,7 @@ def plot_stacked_bar(
     df: pd.DataFrame,
     output_path: Path,
     period: str,
-    x_label: str = "Date",
+    x_label: str,
     what: str = "Daily Heat Risk Area Fraction",
 ):
     """
@@ -90,8 +90,11 @@ def plot_stacked_bar(
         Where to save the PNG figure.
     period : str
         Period for the title (e.g. "2022-07-01 to 2022-07-31").
-    x_label, what : str
-        Axis label of the bars and first title line.
+    x_label : str
+        Axis label of the bars; names the day definition, e.g.
+        "Date (UTC+8 calendar day)".
+    what : str
+        First title line.
     """
     fig, ax = plt.subplots(figsize=(12, 6))
 
@@ -257,9 +260,13 @@ def run(cfg: RunConfig) -> None:
         # One bar per season: thousands of daily bars would be unreadable.
         plot_stacked_bar(
             season_means(df, cfg.seasons), output_fig, cfg.period_label,
-            x_label="Year", what="Mean Daily Heat Risk Area Fraction per Season",
+            x_label=f"Year (season mean of {cfg.day_definition} calendar days)",
+            what="Mean Daily Heat Risk Area Fraction per Season",
         )
     else:
-        plot_stacked_bar(df, output_fig, f"{df['date'].iloc[0]} to {df['date'].iloc[-1]}")
+        plot_stacked_bar(
+            df, output_fig, f"{df['date'].iloc[0]} to {df['date'].iloc[-1]}",
+            x_label=f"Date ({cfg.day_definition} calendar day)",
+        )
 
     print("\nDone.")

@@ -68,7 +68,7 @@ def run(cfg: RunConfig) -> None:
         f"{cfg.period_label}",
         fontsize=13,
     )
-    ax1.set_xlabel("Date")
+    ax1.set_xlabel(f"Date ({cfg.day_definition} calendar day)")
     ax1.set_ylabel("Daily Maximum Heat Index (°C)")
     ax1.grid(True, alpha=0.3)
     fig1.autofmt_xdate()
@@ -107,7 +107,7 @@ def run(cfg: RunConfig) -> None:
         f"{cfg.period_label} (ERA5 nearest grid point)",
         fontsize=13,
     )
-    ax2.set_xlabel("Date")
+    ax2.set_xlabel(f"Date ({cfg.day_definition} calendar day)")
     ax2.set_ylabel("Daily Maximum Heat Index (°C)")
     ax2.legend(fontsize=10)
     ax2.grid(True, alpha=0.3)
