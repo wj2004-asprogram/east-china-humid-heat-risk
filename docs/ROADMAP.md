@@ -26,14 +26,15 @@ Acceptance:
 - Old scripts and new pipeline give byte-identical CSVs on the same input. On synthetic data this has already been checked. On real data, `git diff --stat data/processed` must be empty after re-running both configs.
 - If the old scripts themselves cannot reproduce the tracked CSVs in the current environment (different library versions), compare old vs. new in the same environment and record the versions used.
 
-## Phase 1b — Method fixes (week 2) · branch `phase-1b-methods`
+## Phase 1b — Method fixes (week 2) · branch `phase-1b-methods` · done (PR #2)
 
 Each fix is a separate commit, with a before/after table of the July 2022 daily area fractions per category.
 
 - [x] **Heat index algorithm.** Follow NOAA/WPC: compute the simple formula first, then apply the Rothfusz regression (with its RH < 13 % and RH > 85 % adjustments) whenever the average of the simple estimate and T is ≥ 80 °F, whatever the humidity. Tests: NWS chart, MetPy `heat_index`, and continuity across RH = 40 % (the current `xfail`).
 - [x] **Land-sea mask.** Download the ERA5 `land_sea_mask` once and compute area fractions over land only (document the threshold, e.g. lsm ≥ 0.5). Maps keep the ocean, but greyed out.
 - [x] **Beijing-time days (UTC+8).** Beijing day D runs from 16:00 UTC on D−1 to 15:00 UTC on D. The download must include the last 8 hours of the previous day. Separate Beijing-time configs (`configs/*_bjt.yaml`) with their own raw/processed file names; the v0.1/v0.2 configs keep UTC days and the phase 1a raw files.
-- [x] Short note in `reports/` quantifying how each fix changed the July 2022 results: `reports/phase1b_method_changes.md` (validated on real data; the tracked v0.2 outputs are not regenerated yet).
+- [x] Short note in `reports/` quantifying how each fix changed the July 2022 results: `reports/phase1b_method_changes.md` (validated on real data).
+- [x] Publish the v0.3 outputs (branch `v0.3-outputs`, separate from the method changes): the UTC configs regenerate the tracked v0.1/v0.2 CSVs and figures with the new methods, the Beijing-time configs add their own CSVs and `figures/v0.3_*`; they reproduce the numbers of the report. The README headline uses Beijing days. Output format: the city Tmax CSV column `time` is now `date`, and each run records its day definition in `data/processed/run_info_<tag>.json` (PR #2 review finding 6).
 
 ## Phase 2 — Multi-year summers (week 3) · branch `phase-2-multiyear`
 

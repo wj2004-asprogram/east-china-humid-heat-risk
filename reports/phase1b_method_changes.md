@@ -1,11 +1,12 @@
 # Phase 1b — Method changes and their effect on July 2022
 
 > **Status:** validated on the real ERA5 data for July 2022 (2026-10-15).
-> The tracked outputs in `data/processed/` (CSVs) and `figures/` are
-> **still the v0.2 outputs** (old methods). They were deliberately not
-> regenerated in phase 1b; how the v0.3 outputs are published is still to
-> be decided. The numbers below come from validation runs in a separate
-> worktree (see Provenance).
+> The numbers below come from validation runs in a separate worktree (see
+> Provenance). The tracked outputs were regenerated afterwards, in a
+> separate step (branch `v0.3-outputs`): `data/processed/*_2022_07.csv`
+> (UTC days) reproduce the "+ land only" stage and `*_2022_07_bjt.csv`
+> (Beijing days) the "+ Beijing-time days" stage (period means, all 31
+> daily Danger+ values and the city table).
 
 Each fix is a separate commit on branch `phase-1b-methods`:
 
@@ -34,7 +35,10 @@ Period-mean daily area fraction (%), July 2022:
 | + land only | 1.7 | 5.2 | 45.2 | 48.0 | 0.0 | 31/31 |
 | + Beijing-time days | 1.4 | 5.0 | 45.6 | 48.0 | 0.0 | 31/31 |
 
-"Danger+" is Danger + Extreme Danger. Extreme Danger is 0.0 at every stage.
+"Danger+" is Danger + Extreme Danger. Extreme Danger is 0.0 at every stage
+(period mean, rounded): a single grid cell (30.75°N, 121.25°E) reaches it
+on 07-13, in v0.2 as in both v0.3 runs (0.05 % of the domain area,
+0.06 % of the land).
 
 - **Heat index fix: small effect on the area fractions.** Mean Danger
   rises by 0.9 percentage points (37.3 → 38.2 %), by at most 2.5 points on
@@ -329,6 +333,6 @@ Compare `data/processed/daily_heat_risk_area_fraction_*.csv` and
 no `Valid Land Coverage` column, so compare only the columns both runs
 share.
 
-Still open: deciding how the v0.3 outputs (the `_bjt` CSVs and figures,
-and whether the v0.2 UTC CSVs are regenerated or kept as the v0.2 record)
-are published and tracked.
+The v0.3 outputs are tracked: the UTC configs regenerated the v0.2 CSVs
+and figures (the old-method outputs are in the git history, `851b496`),
+and the Beijing-time configs added `*_bjt.csv` and `figures/v0.3_*`.
