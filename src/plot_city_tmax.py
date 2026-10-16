@@ -18,6 +18,7 @@ from src.era5_utils import (
     load_dataset,
     select_city_points,
 )
+from src.plot_utils import break_at_gaps, line_style
 
 
 def run(cfg: RunConfig) -> None:
@@ -61,11 +62,11 @@ def run(cfg: RunConfig) -> None:
                 "era5_lon": actual_lon,
             })
 
+        line = break_at_gaps(da_city, time_name)  # lines break between seasons
         ax.plot(
-            da_city[time_name], da_city,
-            marker="o", linestyle="-", linewidth=1.5,
-            color=city.color, label=city.name,
-            markersize=4,
+            line[time_name], line,
+            linestyle="-", color=city.color, label=city.name,
+            markersize=4, **line_style(len(time_vals)),
         )
 
     # --- Style the plot ---

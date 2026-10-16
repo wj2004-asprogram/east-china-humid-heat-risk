@@ -39,34 +39,59 @@ from src.risk import (
 # float sums can end just below 100 when nothing is missing.
 COVERAGE_TOLERANCE = 1e-9
 
+# Longer runs print a summary instead of every day.
+MAX_DAYS_PRINTED = 62
+
 
 def is_partial_coverage(coverage_pct: pd.Series) -> pd.Series:
     """True for days whose valid land coverage (%) is below 100 %."""
     return coverage_pct < 100.0 - COVERAGE_TOLERANCE
 
 
+def season_means(df: pd.DataFrame, seasons) -> pd.DataFrame:
+    """
+    Mean of the daily area fractions over each season, labelled with the
+    season's year in the "date" column (for the multi-year bar chart).
+
+    Category columns are means over the days with valid data; the
+    coverage column is the mean daily valid land coverage.
+    """
+    dates = pd.to_datetime(df["date"])
+    rows = []
+    for first, last in seasons:
+        days = df[(dates >= pd.Timestamp(first)) & (dates <= pd.Timestamp(last))]
+        row = {"date": str(first.year)}
+        for col in [*CATEGORY_LABELS.values(), VALID_COVERAGE_LABEL]:
+            row[col] = days[col].mean()  # skips NaN (days without valid data)
+        rows.append(row)
+    return pd.DataFrame(rows)
+
+
 def plot_stacked_bar(
     df: pd.DataFrame,
     output_path: Path,
-    start_date: str,
-    end_date: str,
+    period: str,
+    x_label: str = "Date",
+    what: str = "Daily Heat Risk Area Fraction",
 ):
     """
-    Draw a stacked bar chart of daily heat risk land area fractions.
+    Draw a stacked bar chart of heat risk land area fractions.
 
-    Fractions are shares of the valid land area. Days whose valid land
-    coverage is below 100 % are marked with "*"; days without valid data
-    have no bar.
+    Fractions are shares of the valid land area. Bars whose valid land
+    coverage is below 100 % are marked with "*"; bars without valid data
+    are empty.
 
     Parameters
     ----------
     df : pd.DataFrame
-        Columns: date, No Risk, Caution, Extreme Caution, Danger,
-        Extreme Danger, Valid Land Coverage.
+        Columns: date (bar label), No Risk, Caution, Extreme Caution,
+        Danger, Extreme Danger, Valid Land Coverage.
     output_path : Path
         Where to save the PNG figure.
-    start_date, end_date : str
-        Date strings for the title (e.g. "2022-07-01").
+    period : str
+        Period for the title (e.g. "2022-07-01 to 2022-07-31").
+    x_label, what : str
+        Axis label of the bars and first title line.
     """
     fig, ax = plt.subplots(figsize=(12, 6))
 
@@ -89,12 +114,9 @@ def plot_stacked_bar(
     ax.set_xticklabels(
         [f"{d}*" if p else d for d, p in zip(df["date"], partial)], rotation=45, ha="right",
     )
-    ax.set_xlabel("Date")
+    ax.set_xlabel(x_label)
     ax.set_ylabel("Share of Valid Land Area (%)")
-    title = (
-        f"Daily Heat Risk Area Fraction over East China (land only)\n"
-        f"{start_date} to {end_date}"
-    )
+    title = f"{what} over East China (land only)\n{period}"
     if partial.any():
         title += "\n* valid land coverage below 100 % (missing data)"
     ax.set_title(title)
@@ -208,14 +230,19 @@ def run(cfg: RunConfig) -> None:
     df = compute_area_fractions(heat_risk_category, lat_name, lon_name, date_name, land_mask)
 
     print("\n=== Daily heat risk land area fractions (%) ===")
-    print(df.to_string(index=False))
+    print(df.to_string(index=False) if len(df) <= MAX_DAYS_PRINTED else df.to_string(index=False, max_rows=10))
 
     # Sanity check: the categories cover every valid land cell, so each day
     # with valid data sums to 100 %
     daily_sums = df[list(CATEGORY_LABELS.values())].sum(axis=1, min_count=1)
     print("\nDaily sum check (should be ~100% where coverage > 0):")
-    for date_str, total, coverage in zip(df["date"], daily_sums, df[VALID_COVERAGE_LABEL]):
-        print(f"  {date_str}: {total:.2f}%  (valid land coverage {coverage:.2f}%)")
+    if len(df) <= MAX_DAYS_PRINTED:
+        for date_str, total, coverage in zip(df["date"], daily_sums, df[VALID_COVERAGE_LABEL]):
+            print(f"  {date_str}: {total:.2f}%  (valid land coverage {coverage:.2f}%)")
+    else:
+        print(f"  {len(df)} days: sums {daily_sums.min():.2f} to {daily_sums.max():.2f}%, "
+              f"valid land coverage {df[VALID_COVERAGE_LABEL].min():.2f} to "
+              f"{df[VALID_COVERAGE_LABEL].max():.2f}%")
 
     # =======================================================================
     # Step 5: Save CSV
@@ -226,6 +253,13 @@ def run(cfg: RunConfig) -> None:
     # =======================================================================
     # Step 6: Plot
     # =======================================================================
-    plot_stacked_bar(df, output_fig, df["date"].iloc[0], df["date"].iloc[-1])
+    if cfg.is_multi_year:
+        # One bar per season: thousands of daily bars would be unreadable.
+        plot_stacked_bar(
+            season_means(df, cfg.seasons), output_fig, cfg.period_label,
+            x_label="Year", what="Mean Daily Heat Risk Area Fraction per Season",
+        )
+    else:
+        plot_stacked_bar(df, output_fig, f"{df['date'].iloc[0]} to {df['date'].iloc[-1]}")
 
     print("\nDone.")

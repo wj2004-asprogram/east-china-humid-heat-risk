@@ -23,6 +23,7 @@ from src.era5_utils import (
     require_var,
     select_city_points,
 )
+from src.plot_utils import break_at_gaps, line_style
 
 
 def run(cfg: RunConfig) -> None:
@@ -52,12 +53,14 @@ def run(cfg: RunConfig) -> None:
     # Figure 1 — Regional-mean daily maximum heat index over East China
     # ======================================================================
     regional_mean = da.mean(dim=[lat_name, lon_name])
+    n_days = regional_mean.sizes[date_name]
 
     fig1, ax1 = plt.subplots(figsize=(10, 5))
 
+    regional_mean = break_at_gaps(regional_mean, date_name)  # lines break between seasons
     ax1.plot(
         regional_mean[date_name], regional_mean,
-        marker="o", linestyle="-", linewidth=1.5, color="darkred",
+        linestyle="-", color="darkred", **line_style(n_days),
     )
 
     ax1.set_title(
@@ -92,11 +95,11 @@ def run(cfg: RunConfig) -> None:
 
         city_series[city.name] = [float(v) for v in heat_vals]
 
+        line = break_at_gaps(ds_city, date_name)
         ax2.plot(
-            ds_city[date_name], ds_city,
-            marker="o", linestyle="-", linewidth=1.5,
-            color=city.color, label=city.name,
-            markersize=4,
+            line[date_name], line,
+            linestyle="-", color=city.color, label=city.name,
+            markersize=4, **line_style(n_days),
         )
 
     ax2.set_title(

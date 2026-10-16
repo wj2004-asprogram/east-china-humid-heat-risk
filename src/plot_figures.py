@@ -14,6 +14,7 @@ from src.era5_utils import (
     detect_time_coord,
     load_dataset,
 )
+from src.plot_utils import break_at_gaps, line_style
 
 
 def run(cfg: RunConfig) -> None:
@@ -33,12 +34,14 @@ def run(cfg: RunConfig) -> None:
 
     # --- Regional mean: one value per day ---
     regional_mean = ds[var_name].mean(dim=[lat_name, lon_name])
+    n_days = regional_mean.sizes[time_name]
 
-    # --- Plot ---
+    # --- Plot (lines break between seasons) ---
     fig, ax = plt.subplots(figsize=(10, 5))
 
+    regional_mean = break_at_gaps(regional_mean, time_name)
     ax.plot(regional_mean[time_name], regional_mean,
-            marker="o", linestyle="-", linewidth=1.5, color="darkred")
+            linestyle="-", color="darkred", **line_style(n_days))
 
     ax.set_title(f"East China Mean Daily Tmax, {cfg.period_label}",
                  fontsize=13)
