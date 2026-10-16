@@ -24,13 +24,16 @@ from src import (  # noqa: E402  (must come after selecting the backend)
     plot_heat_risk_maps,
     process_humid_heat,
     process_temperature,
+    run_info,
 )
 from src.config import load_config  # noqa: E402
 
 
 # Processing steps in execution order. Each step reads the outputs of
 # earlier steps from disk, so any suffix of this list can be re-run alone.
+# run_info reads nothing: it records the day definition of the run's CSVs.
 STEPS = {
+    "run_info": run_info.run,
     "process_temperature": process_temperature.run,
     "plot_figures": plot_figures.run,
     "plot_city_tmax": plot_city_tmax.run,

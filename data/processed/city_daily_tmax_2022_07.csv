@@ -1,4 +1,4 @@
-city,time,tmax_C,era5_lat,era5_lon
+city,date,tmax_C,era5_lat,era5_lon
 Hangzhou,2022-07-01,32.738433837890625,30.25,120.25
 Hangzhou,2022-07-02,33.366363525390625,30.25,120.25
 Hangzhou,2022-07-03,34.377838134765625,30.25,120.25
