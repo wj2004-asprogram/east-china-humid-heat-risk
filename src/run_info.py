@@ -15,9 +15,21 @@ from src.config import RunConfig
 
 def build_run_info(cfg: RunConfig) -> dict:
     """Run metadata derived from the config only (no time stamps, so reruns give the same file)."""
+    period = {"start": cfg.start_date.isoformat(), "end": cfg.end_date.isoformat()}
+    if cfg.is_multi_year:
+        # Not one continuous period: only these months of each year.
+        period.update({
+            "years": {"first": cfg.years[0], "last": cfg.years[-1]},
+            "months": list(cfg.months),
+            "days": len(cfg.local_days),
+            "note": (
+                f"{cfg.period_label}: only these months of each year; "
+                "the days between them are not part of the run"
+            ),
+        })
     return {
         "config": cfg.name,
-        "period": {"start": cfg.start_date.isoformat(), "end": cfg.end_date.isoformat()},
+        "period": period,
         "day_definition": cfg.day_definition,
         "utc_offset_hours": cfg.utc_offset_hours,
         "day_window": f"day D runs from {cfg.day_window_utc} (24 hourly ERA5 time steps)",

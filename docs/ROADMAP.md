@@ -42,7 +42,7 @@ Phase 3 needs this. One summer (92 days) cannot be split by year.
 
 - [ ] Download June–August for 2000–2024 (at least), one CDS request per month. The download must be resumable and skip existing files. Expect long CDS queues, so run it unattended. Size is modest (two variables, about 45 × 45 grid points, hourly: well under 1 GB per variable).
   - [x] Code: `configs/jja_2000_2024.yaml` and `configs/jja_2000_2024_bjt.yaml` (`period: {years, months}`); 75 monthly requests, plus 25 small 31 May 16–23 UTC requests for Beijing time (inside a summer the edge hours come from the previous month's file). Resumable (`.part` files, checked before renaming), `--check-raw` for progress. Raw file layout: `docs/raw_files.md`.
-  - [ ] Run the download (about 0.37 GB; waits for the user's go-ahead).
+  - [ ] Run the download (about 0.37 GB): started 2026-10-16 after the user's go-ahead, running unattended.
 - [x] Pipeline supports multi-month periods (process month by month, concatenate daily outputs). Tested on synthetic monthly files (month and summer boundaries, Beijing 1 June edge, missing data) and on real July 2022 data (identical to the single-period configs).
 - [x] Daily climatology of maximum heat index per grid cell (baseline for phase 3): `heat_index_climatology_<tag>.nc` stores the values per year and day of year; `climatology_for_years` computes the climatology from training years only.
 - [ ] Run both multi-year configs on the downloaded data; decide which multi-year CSVs and figures are tracked.

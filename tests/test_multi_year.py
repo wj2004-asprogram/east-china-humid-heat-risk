@@ -4,6 +4,7 @@ month-by-month processing on synthetic data split into monthly raw files
 exactly as the CDS delivers them.
 """
 
+import json
 from datetime import date
 from pathlib import Path
 
@@ -105,6 +106,8 @@ def test_multi_year_configs():
         assert cfg.cds_area == [36, 112, 25, 123]
 
     assert (utc.utc_offset_hours, bjt.utc_offset_hours) == (0, 8)
+    assert (utc.day_definition, bjt.day_definition) == ("UTC", "UTC+8")
+    assert bjt.day_window_utc == "16:00 UTC on D-1 to 15:00 UTC on D"
 
     # 75 monthly files (one CDS request per year and month), shared by both
     # configs; Beijing time adds one 31 May 16-23 UTC file per summer.
@@ -229,8 +232,23 @@ def test_multi_year_pipeline_matches_continuous_reference(tmp_path, utc_offset_h
     assert fractions[list(CATEGORY_LABELS.values())].sum(axis=1).tolist() == pytest.approx([100.0] * len(days))
 
     city_hi = pd.read_csv(cfg.paths.city_heat_index_csv)
-    assert len(city_hi) == len(days) and not city_hi.isnull().any().any()
-    assert len(pd.read_csv(cfg.paths.city_tmax_csv)) == 2 * len(days)
+    assert list(city_hi["date"]) == list(fractions["date"])
+    assert not city_hi.isnull().any().any()
+
+    # Same CSV schema as single-period runs: local dates in a `date` column.
+    city_tmax = pd.read_csv(cfg.paths.city_tmax_csv)
+    assert list(city_tmax.columns) == ["city", "date", "tmax_C", "era5_lat", "era5_lon"]
+    assert len(city_tmax) == 2 * len(days)
+    for _, rows in city_tmax.groupby("city"):
+        assert list(rows["date"]) == list(fractions["date"])
+
+    # run_info records the day definition and the seasonal period.
+    info = json.loads(cfg.paths.run_info_json.read_text(encoding="utf-8"))
+    assert info["day_definition"] == ("UTC+8" if utc_offset_hours == 8 else "UTC")
+    assert info["period"]["start"] == "2003-06-01" and info["period"]["end"] == "2004-08-31"
+    assert info["period"]["years"] == {"first": 2003, "last": 2004}
+    assert info["period"]["months"] == [6, 7, 8]
+    assert info["period"]["days"] == len(days)
 
     with xr.open_dataset(cfg.paths.climatology_nc) as clim:
         assert clim["daily_max_heat_index_c"].dims == ("year", "day_of_year", "latitude", "longitude")
