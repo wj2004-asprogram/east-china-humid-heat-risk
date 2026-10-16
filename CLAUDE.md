@@ -36,7 +36,7 @@ python -m pytest
 - `src/time_utils.py` — hourly UTC data to local calendar days (drops incomplete days).
 - `src/hourly_input.py` — serves raw hourly data in blocks (one month for multi-year runs) and concatenates daily results.
 - `src/climatology.py` — step `heat_index_climatology` and `climatology_for_years` (phase 3 baseline).
-- `src/plot_utils.py` — time-series helpers (line breaks between seasons).
+- `src/plot_utils.py` — compressed season axis for multi-year time series (seasons side by side); single-period plots keep calendar dates.
 - `src/era5_utils.py` — coordinate/variable name detection (`time` vs `valid_time`, etc.).
 - `src/<step>.py` — one pipeline step each, exposing `run(cfg)`.
 - `tests/` — pytest; `tests/synthetic.py` builds a small ERA5-like file for end-to-end tests.

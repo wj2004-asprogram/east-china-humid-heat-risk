@@ -56,6 +56,15 @@ against the run's local days. The days between summers are in no
 block, so they are never counted as missing. At most two monthly files
 are in memory. Multi-year runs save daily variables only.
 
+**Multi-year figures.** On a calendar axis the September–May gaps would
+take about 75 % of the width. The daily time series (regional means and
+cities) therefore put the seasons side by side (`src/plot_utils.py`):
+x is the position in the run's local days, with a 10-day gap before
+each later season, a light line and the year at each season start (every
+2nd year for 25 summers), and one line per season. The area-fraction
+chart shows one bar per season. Single-period figures are unchanged
+(byte-identical PNGs for the four existing configs).
+
 **Climatology.** `heat_index_climatology_<tag>.nc` stores the daily
 maximum heat index per (year, day of year, grid cell). Day of year uses
 a 365-day calendar, so 1 June is day 152 in every year. No all-years
