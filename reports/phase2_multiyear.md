@@ -1,8 +1,11 @@
 # Phase 2 — Multi-year summers
 
 > **Status (2026-10-16):** code and tests done on branch
-> `phase-2-multiyear`. The CDS download has **not** been run, so there
-> are no multi-year results yet.
+> `phase-2-multiyear`. Downloads started and were paused for CDS recovery
+> work. Three monthly files are now complete, including 2000-07 recovered
+> from its original request. No multi-year processing results yet. The new
+> one-hour smoke was rejected by CDS's temporary queue limit, so the full
+> queue remains stopped; see [recovery acceptance](cds_recovery_2026-10-16.md).
 
 Goal: June–August 2000–2024 (25 summers, 2300 days) over the same
 region, for UTC days and Beijing-time days. Phase 3 needs this to split

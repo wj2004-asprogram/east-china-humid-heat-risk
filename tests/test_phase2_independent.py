@@ -1,8 +1,7 @@
 """Fixed-commit Phase 2 production modules, independent calendar/value references."""
 
 import json
-import sys
-import types
+from types import SimpleNamespace
 
 import numpy as np
 import pandas as pd
@@ -88,23 +87,45 @@ def test_climatology_missing_training_date_and_future_values_remain_isolated():
 
 
 class IndependentCDS:
-    def __init__(self, monkeypatch, interrupt=False, omit_hour=False):
+    """Independent asynchronous server; its jobs survive client replacement."""
+
+    def __init__(self, monkeypatch, interrupt=False, omit_hour=False, jobs=None):
         self.calls, self.interrupt, self.omit_hour = [], interrupt, omit_hour
+        self.jobs = {} if jobs is None else jobs
+        self.submissions, self.lookups = [], []
         owner = self
         class Client:
-            def __init__(self, **options):
+            def __init__(self, capture, options=None):
+                self.capture = capture
                 self.options = options
 
-            def retrieve(self, dataset, request, target):
-                owner.calls.append(str(target))
+            def matching_jobs(self, dataset, request):
+                return [ident for ident, entry in owner.jobs.items()
+                        if entry == (dataset, request)]
+
+            def submit(self, dataset, request):
+                ident = f'independent-job-{len(owner.jobs) + 1}'
+                owner.jobs[ident] = (dataset, request)
+                owner.submissions.append(ident)
+                self.capture(ident)
+                return self.remote(ident)
+
+            def remote(self, ident):
+                assert ident in owner.jobs, 'Recovery must query an existing job'
+                owner.lookups.append(ident)
+                return SimpleNamespace(request_id=ident, status='successful')
+
+            def download(self, remote, partial, store, ident):
+                _, request = owner.jobs[remote.request_id]
+                owner.calls.append(str(partial))
                 if owner.interrupt:
-                    with open(target, 'wb') as stream: stream.write(b'synthetic interrupted transfer')
+                    with open(partial, 'wb') as stream: stream.write(b'synthetic interrupted transfer')
                     raise KeyboardInterrupt()
                 times = pd.to_datetime([f'{request["year"][0]}-{request["month"][0]}-{day} {hour}'
                                         for day in request['day'] for hour in request['time']])
                 if owner.omit_hour: times = times[1:]
-                hourly(times).to_netcdf(target)
-        monkeypatch.setitem(sys.modules, 'cdsapi', types.SimpleNamespace(Client=Client))
+                hourly(times).to_netcdf(partial)
+        monkeypatch.setattr(download_era5, 'CDSClient', Client)
 
 
 @pytest.mark.parametrize('failure', ['interrupt', 'missing_hour'])
@@ -119,11 +140,14 @@ def test_actual_downloader_recovers_one_missing_file_without_rewriting_accepted_
     with pytest.raises(KeyboardInterrupt if failure == 'interrupt' else RuntimeError):
         download_era5.download_raw_files(cfg, workers=workers)
     assert len(failed.calls) == 1
+    assert len(failed.submissions) == 1
     assert not (folder / name).exists()
     assert (folder / (name + '.part')).exists()
-    recovered = IndependentCDS(monkeypatch)
+    recovered = IndependentCDS(monkeypatch, jobs=failed.jobs)
     download_era5.download_raw_files(cfg, workers=workers)
     assert len(recovered.calls) == 1 and recovered.calls[0].endswith(name + '.part')
+    assert recovered.submissions == []
+    assert recovered.lookups and set(recovered.lookups) == set(failed.submissions)
     assert (folder / name).exists() and not (folder / (name + '.part')).exists()
     assert {name: sha256(folder / name) for name in before} == before
     recovered.calls.clear()

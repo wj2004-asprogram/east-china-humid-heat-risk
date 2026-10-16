@@ -13,10 +13,12 @@ neighbouring day needed to complete the first (or last) local day (config
 Multi-year config: one CDS request per raw file (src/config.py RawFile):
 one per year and month, plus one small edge request per season for local
 days east (or west) of UTC. The download is resumable: complete files
-are skipped, each file is written as `<name>.part`, checked (variables,
+are skipped, CDS request IDs survive process exit in data/cds_state/,
+each file is written as `<name>.part`, checked (variables,
 every expected hour, region) and only then renamed, so a partial file is
 never taken for a complete one. A failed file is reported and the next
-one tried; re-running the download fetches what is still missing.
+one tried; re-running queries the original request for each missing file.
+An uncertain submission is reconciled, never blindly submitted again.
 Several requests can wait in the CDS queue at once (`workers`, CLI
 `--download-workers`, 1-4): each file is fetched in its own thread with
 its own CDS client, and every log line starts with the file it is about.
@@ -36,7 +38,8 @@ import numpy as np
 import pandas as pd
 import xarray as xr
 
-from src.config import RawFile, RunConfig
+from src.config import RawFile, RunConfig, cds_state_path
+from src.cds_download import CDSClient, Downloader, StateStore, redact
 from src.era5_utils import (
     detect_d2m_var,
     detect_lat_coord,
@@ -241,21 +244,15 @@ def _print_request(what: str, request: dict, output_file) -> None:
     print(f"  Output:    {output_file}")
 
 
-def _retrieve_to_part(request: dict, output_file, client_options: dict | None = None):
+def _download_file(request: dict, output_file, client_options: dict | None = None, validator=None):
     """
-    Retrieve one CDS request into `<output_file>.part` and return that path.
+    Recover/submit a durable CDS job, transfer, validate, and publish safely.
 
     A new CDS client is made for every call, so threads never share one.
     """
-    import cdsapi  # imported here so the other steps run without cdsapi
-
-    output_file.parent.mkdir(parents=True, exist_ok=True)
-    partial_file = output_file.with_name(output_file.name + ".part")
-    partial_file.unlink(missing_ok=True)  # left over from an interrupted run
-
-    client = cdsapi.Client(**(client_options or {}))
-    client.retrieve(DATASET, request, str(partial_file))
-    return partial_file
+    downloader = Downloader(StateStore(cds_state_path(output_file)), client_factory=CDSClient,
+                            log=lambda message: _say("CDS", message))
+    return downloader.retrieve(DATASET, request, output_file, client_options, validator)
 
 
 def _retrieve(request: dict, output_file, what: str) -> None:
@@ -268,7 +265,7 @@ def _retrieve(request: dict, output_file, what: str) -> None:
     _print_request(what, request, output_file)
     # Download to a temporary name and rename only on success, so an
     # interrupted download never leaves a truncated file at the final path.
-    _retrieve_to_part(request, output_file).replace(output_file)
+    _download_file(request, output_file)
     print("Download completed.")
 
 
@@ -276,9 +273,12 @@ _print_lock = threading.Lock()
 
 
 def _say(label: str, message: str) -> None:
-    """Print one log line starting with `label` (the file), whole even when threads interleave."""
+    """
+    Print one log line starting with `label` (the file), whole even when
+    threads interleave. Signed result URLs are redacted (src/cds_download.redact).
+    """
     with _print_lock:
-        print(f"{label}: {message}", flush=True)
+        print(redact(f"{label}: {message}"), flush=True)
 
 
 def _client_options(label: str) -> dict:
@@ -322,14 +322,13 @@ def _fetch_raw_file(cfg: RunConfig, raw_file: RawFile, label: str) -> tuple:
                 f"{request['day'][-1]}, UTC hours {request['time'][0]}-{request['time'][-1]}")
     started = time.monotonic()
     try:
-        partial_file = _retrieve_to_part(request, path, _client_options(label))
-        check_raw_file(partial_file, raw_file, cfg)
+        _download_file(request, path, _client_options(label),
+                       validator=lambda partial: check_raw_file(partial, raw_file, cfg))
     except Exception as err:  # reported by the caller, which goes on with other files
         _say(label, f"FAILED after {time.monotonic() - started:.0f} s: {err}")
-        return "failed", str(err)
+        return "failed", redact(str(err))
 
-    # Renamed only after the check: a file at its final name is complete.
-    partial_file.replace(path)
+    # Published under the task lock only after the existing scientific checks.
     _say(label, f"done in {time.monotonic() - started:.0f} s")
     return "downloaded", ""
 
@@ -349,9 +348,9 @@ def download_raw_files(cfg: RunConfig, workers: int = 1) -> None:
     finish) no new file is started, and the requests still running are
     allowed to finish. Raises RuntimeError at the end if any file failed.
 
-    Each file runs in a daemon thread, so Ctrl+C (which reaches the main
-    thread) or killing the process stops at once and leaves only `.part`
-    files of the files in progress.
+    Each file runs in a daemon thread. Ctrl+C or killing the process stops
+    local work; the durable journal retains each CDS ID/submission intent,
+    and `.part` files remain available for transfer recovery.
     """
     if not 1 <= workers <= MAX_DOWNLOAD_WORKERS:
         raise ValueError(f"workers must be from 1 to {MAX_DOWNLOAD_WORKERS}, got {workers}.")

@@ -1,17 +1,16 @@
 """
-Resumable multi-year download (no network): a fake `cdsapi` module writes
+Resumable multi-year download (no network): a fake CDS adapter writes
 synthetic NetCDF files for each request, or fails on chosen files; with
 several workers, requests run in parallel threads.
 """
 
-import sys
 import threading
-import types
 
 import pandas as pd
 import pytest
 
 from src import download_era5
+from src.cds_download import Downloader, task_id
 from src.config import load_config
 from src.download_era5 import check_raw_file, download_raw_files, report_raw_files
 from tests.synthetic import make_synthetic_era5_at, make_synthetic_land_sea_mask
@@ -50,7 +49,7 @@ def _times(request) -> pd.DatetimeIndex:
 
 class FakeCDS:
     """
-    Fake `cdsapi`. Client(**options).retrieve writes a synthetic file for
+    Fake asynchronous CDS client. Its result download writes a synthetic file for
     the request, or, for target names in `fail`, writes a partial file and
     raises the given exception, as an interrupted transfer would. `hold`
     (called with the target name at the start of each request) can make
@@ -68,13 +67,36 @@ class FakeCDS:
         self.in_flight = 0
         self.max_in_flight = 0
         fake = self
+        server = getattr(download_era5, "_fake_server", {})
+        monkeypatch.setattr(download_era5, "_fake_server", server, raising=False)
+
+        class Remote:
+            status = "successful"
+
+            def __init__(self, ident):
+                self.request_id = ident
 
         class Client:
-            def __init__(self, **options):
+            def __init__(self, capture, options=None):
                 with fake.lock:
-                    fake.options.append(options)
+                    fake.options.append(options or {})
+                self.capture = capture
 
-            def retrieve(self, dataset, request, target):
+            def matching_jobs(self, dataset, request):
+                return []
+
+            def submit(self, dataset, request):
+                ident = task_id(dataset, request)
+                server[ident] = request
+                self.capture(ident)
+                return Remote(ident)
+
+            def remote(self, ident):
+                return Remote(ident)
+
+            def download(self, remote, partial, store, ident):
+                request = server[remote.request_id]
+                target = str(partial)
                 name = target.replace("\\", "/").rsplit("/", 1)[-1]
                 with fake.lock:
                     fake.calls.append(name)
@@ -102,7 +124,9 @@ class FakeCDS:
                     with fake.lock:
                         fake.in_flight -= 1
 
-        monkeypatch.setitem(sys.modules, "cdsapi", types.SimpleNamespace(Client=Client))
+        monkeypatch.setattr(download_era5, "CDSClient", Client)
+        monkeypatch.setattr(download_era5, "Downloader",
+                            lambda *a, **kw: Downloader(*a, **kw, retries=0, sleep=lambda _: None))
 
 
 def _join_download_threads(timeout: float = 30.0) -> None:
