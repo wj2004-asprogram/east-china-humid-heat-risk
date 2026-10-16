@@ -7,6 +7,7 @@ Usage (from the project root):
     python -m src.pipeline --config configs/july_2022.yaml
     python -m src.pipeline --config configs/july_2022.yaml --download
     python -m src.pipeline --config configs/july_2022.yaml --steps process_humid_heat classify_heat_risk
+    python -m src.pipeline --config configs/jja_2000_2024_bjt.yaml --check-raw
 """
 
 import argparse
@@ -17,6 +18,7 @@ matplotlib.use("Agg")  # write figures to files only; no GUI windows
 
 from src import (  # noqa: E402  (must come after selecting the backend)
     classify_heat_risk,
+    climatology,
     download_era5,
     plot_city_tmax,
     plot_figures,
@@ -41,6 +43,7 @@ STEPS = {
     "plot_heat_index_figures": plot_heat_index_figures.run,
     "classify_heat_risk": classify_heat_risk.run,
     "plot_heat_risk_maps": plot_heat_risk_maps.run,
+    "heat_index_climatology": climatology.run,
 }
 
 # Steps that read the raw ERA5 file (the others read processed files).
@@ -58,6 +61,19 @@ def parse_args(argv=None) -> argparse.Namespace:
         help="Download the raw ERA5 file and land-sea mask first (skipped if they already exist)",
     )
     parser.add_argument(
+        "--download-workers", type=int, metavar="N",
+        default=download_era5.DEFAULT_DOWNLOAD_WORKERS,
+        choices=range(1, download_era5.MAX_DOWNLOAD_WORKERS + 1),
+        help=(
+            "Multi-year configs: CDS requests waiting in the queue at once, "
+            f"1-{download_era5.MAX_DOWNLOAD_WORKERS} (default {download_era5.DEFAULT_DOWNLOAD_WORKERS})"
+        ),
+    )
+    parser.add_argument(
+        "--check-raw", action="store_true",
+        help="Only report which raw ERA5 files are complete, missing or incomplete, then stop",
+    )
+    parser.add_argument(
         "--steps", nargs="+", choices=list(STEPS), metavar="STEP",
         help=f"Run only these steps (in pipeline order). Choices: {', '.join(STEPS)}",
     )
@@ -70,24 +86,30 @@ def main(argv=None) -> None:
 
     print(f"Configuration: {cfg.name} ({cfg.period_label})")
 
+    if args.check_raw:
+        complete = download_era5.report_raw_files(cfg)
+        raise SystemExit(0 if complete else 1)
+
     if args.download:
         print("\n=== download ===")
-        download_era5.run(cfg)
+        download_era5.run(cfg, workers=args.download_workers)
 
     selected = args.steps or list(STEPS)
     steps = [name for name in STEPS if name in selected]  # keep pipeline order
 
     required = []
     if RAW_INPUT_STEPS.intersection(steps):
-        required.append(cfg.paths.raw_era5)
+        required.extend(cfg.raw_input_files)
     if LAND_SEA_MASK_STEPS.intersection(steps):
         required.append(cfg.paths.raw_land_sea_mask)
-    for raw_file in required:
-        if not raw_file.exists():
-            raise SystemExit(
-                f"Raw ERA5 file not found: {raw_file}\n"
-                "Run again with --download, or copy the file there."
-            )
+    missing = [path for path in required if not path.exists()]
+    if missing:
+        shown = "\n".join(f"  {path}" for path in missing[:5])
+        more = f"\n  ... and {len(missing) - 5} more" if len(missing) > 5 else ""
+        raise SystemExit(
+            f"Raw ERA5 file not found ({len(missing)} of {len(required)}):\n{shown}{more}\n"
+            "Run again with --download, or copy the files there."
+        )
 
     for i, name in enumerate(steps, start=1):
         print(f"\n=== Step {i}/{len(steps)}: {name} ===")

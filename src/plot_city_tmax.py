@@ -22,6 +22,13 @@ from src.era5_utils import (
     load_dataset,
     select_city_points,
 )
+from src.plot_utils import (
+    MULTI_YEAR_FIG_WIDTH,
+    MULTI_YEAR_LINE,
+    format_season_axis,
+    plot_seasons,
+    season_axis,
+)
 
 
 def run(cfg: RunConfig) -> None:
@@ -47,7 +54,9 @@ def run(cfg: RunConfig) -> None:
     # --- Extract city time series ---
     records = []  # for CSV
 
-    fig, ax = plt.subplots(figsize=(12, 6))
+    # Multi-year runs: seasons side by side on a compressed axis (src/plot_utils.py).
+    axis = season_axis(cfg) if cfg.is_multi_year else None
+    fig, ax = plt.subplots(figsize=(MULTI_YEAR_FIG_WIDTH, 6) if axis is not None else (12, 6))
 
     for city, ds_city, actual_lat, actual_lon in select_city_points(
         ds, cfg.cities, lat_name, lon_name
@@ -65,12 +74,15 @@ def run(cfg: RunConfig) -> None:
                 "era5_lon": actual_lon,
             })
 
-        ax.plot(
-            da_city[time_name], da_city,
-            marker="o", linestyle="-", linewidth=1.5,
-            color=city.color, label=city.name,
-            markersize=4,
-        )
+        if axis is not None:
+            plot_seasons(ax, axis, time_vals, temps, label=city.name, color=city.color, **MULTI_YEAR_LINE)
+        else:
+            ax.plot(
+                da_city[time_name], da_city,
+                marker="o", linestyle="-", linewidth=1.5,
+                color=city.color, label=city.name,
+                markersize=4,
+            )
 
     # --- Style the plot ---
     ax.set_title(
@@ -78,11 +90,16 @@ def run(cfg: RunConfig) -> None:
         f"{cfg.period_label} (ERA5 nearest grid point)",
         fontsize=13,
     )
-    ax.set_xlabel(f"Date ({cfg.day_definition} calendar day)")
+    if axis is not None:
+        format_season_axis(ax, axis)
+        ax.set_xlabel(axis.label)
+    else:
+        ax.set_xlabel(f"Date ({cfg.day_definition} calendar day)")
     ax.set_ylabel("Daily Maximum 2m Temperature (°C)")
     ax.legend(fontsize=10)
     ax.grid(True, alpha=0.3)
-    fig.autofmt_xdate()
+    if axis is None:
+        fig.autofmt_xdate()  # calendar dates only
 
     fig.tight_layout()
     fig.savefig(output_fig, dpi=150, bbox_inches="tight")

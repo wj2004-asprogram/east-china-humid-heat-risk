@@ -14,6 +14,10 @@ Indices computed:
 Hourly variables keep the UTC timestamps of ERA5 ("time"). Daily values
 ("date") are local calendar days (config `utc_offset_hours`; 8 = Beijing
 time), see src/time_utils.py.
+
+Multi-year runs are processed one month at a time (src/hourly_input.py)
+and only the daily variables are saved: the hourly fields of 25 summers
+would take several GB, and no later step reads them.
 """
 
 import xarray as xr
@@ -25,40 +29,37 @@ from src.era5_utils import (
     detect_lon_coord,
     detect_t2m_var,
     detect_time_coord,
-    load_dataset,
 )
+from src.hourly_input import concat_days, iter_hourly_blocks
 from src.indices import heat_index_rothfusz, kelvin_to_celsius, relative_humidity
 from src.time_utils import local_daily
 
 
-def run(cfg: RunConfig) -> None:
-    input_path = cfg.paths.raw_era5
-    output_path = cfg.paths.humid_heat_nc
-    output_path.parent.mkdir(parents=True, exist_ok=True)
+HOURLY_VARIABLES = ["t2m_c", "d2m_c", "rh", "heat_index_c"]
+DAILY_VARIABLES = ["daily_max_heat_index_c", "daily_mean_rh"]
 
-    # =======================================================================
-    # Step 1: Open the NetCDF file
-    # =======================================================================
-    print(f"Input file:  {input_path}")
-    ds = load_dataset(input_path)
 
+def hourly_indices(ds: xr.Dataset, verbose: bool = False) -> xr.Dataset:
+    """
+    Hourly temperature, dewpoint (°C), relative humidity and heat index
+    from raw ERA5 data, on a time coordinate named "time" (UTC).
+    """
     # =======================================================================
-    # Step 2: Auto-detect coordinate and variable names
+    # Step 1: Auto-detect coordinate and variable names
     # =======================================================================
     time_coord = detect_time_coord(ds)
-    lat_coord = detect_lat_coord(ds)
-    lon_coord = detect_lon_coord(ds)
     t_var = detect_t2m_var(ds)
     d_var = detect_d2m_var(ds)
 
-    print(f"Detected time coordinate:      '{time_coord}'")
-    print(f"Detected latitude coordinate:  '{lat_coord}'")
-    print(f"Detected longitude coordinate: '{lon_coord}'")
-    print(f"Detected temperature variable: '{t_var}'")
-    print(f"Detected dewpoint variable:    '{d_var}'")
+    if verbose:
+        print(f"Detected time coordinate:      '{time_coord}'")
+        print(f"Detected latitude coordinate:  '{detect_lat_coord(ds)}'")
+        print(f"Detected longitude coordinate: '{detect_lon_coord(ds)}'")
+        print(f"Detected temperature variable: '{t_var}'")
+        print(f"Detected dewpoint variable:    '{d_var}'")
 
     # =======================================================================
-    # Step 3: Convert temperature to Celsius
+    # Step 2: Convert temperature to Celsius
     # =======================================================================
     t2m_c = kelvin_to_celsius(ds[t_var])
     t2m_c.attrs["units"] = "Celsius"
@@ -73,7 +74,7 @@ def run(cfg: RunConfig) -> None:
     )
 
     # =======================================================================
-    # Step 4: Calculate relative humidity
+    # Step 3: Calculate relative humidity
     # =======================================================================
     rh = relative_humidity(t2m_c, d2m_c)
     rh.attrs["units"] = "%"
@@ -84,7 +85,7 @@ def run(cfg: RunConfig) -> None:
     )
 
     # =======================================================================
-    # Step 5: Calculate hourly heat index
+    # Step 4: Calculate hourly heat index
     # =======================================================================
     heat_index_c = heat_index_rothfusz(t2m_c, rh)
     heat_index_c.attrs["units"] = "Celsius"
@@ -96,75 +97,86 @@ def run(cfg: RunConfig) -> None:
         "(26.7 °C), otherwise the simple formula"
     )
 
-    # =======================================================================
-    # Step 6: Build output dataset
-    # =======================================================================
-    ds_out = xr.Dataset(
-        {
-            "t2m_c": t2m_c,
-            "d2m_c": d2m_c,
-            "rh": rh,
-            "heat_index_c": heat_index_c,
-        },
-        attrs={
-            "title": "Humid heat risk indices for East China",
-            "period": cfg.period_label,
-            "source": "ERA5 hourly single-level reanalysis",
-            "created_with": "src/process_humid_heat.py",
-            "daily_aggregation": f"local calendar days, UTC{cfg.utc_offset_hours:+d}",
-        },
-    )
-
-    # =======================================================================
-    # Step 7: Daily aggregation (local calendar days) on a "time" coordinate
-    # =======================================================================
+    hourly = xr.Dataset({"t2m_c": t2m_c, "d2m_c": d2m_c, "rh": rh, "heat_index_c": heat_index_c})
     if time_coord != "time":
-        ds_out = ds_out.rename({time_coord: "time"})
+        hourly = hourly.rename({time_coord: "time"})
+    return hourly
 
-    def to_local_days(da: xr.DataArray, how: str) -> xr.DataArray:
-        return local_daily(
-            da, "time", cfg.utc_offset_hours, how, cfg.start_date, cfg.end_date,
-        ).rename({"time": "date"})
+
+def run(cfg: RunConfig) -> None:
+    output_path = cfg.paths.humid_heat_nc
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    utc_label = f"UTC{cfg.utc_offset_hours:+d}"
+
+    # =======================================================================
+    # Steps 1-5: hourly indices and daily aggregation (local calendar days),
+    # block by block (one month at a time for multi-year runs)
+    # =======================================================================
+    hourly_parts, daily_max_parts, daily_rh_parts = [], [], []
+    for i, block in enumerate(iter_hourly_blocks(cfg)):
+        hourly = hourly_indices(block.data, verbose=(i == 0))
+
+        def to_local_days(da: xr.DataArray, how: str) -> xr.DataArray:
+            return local_daily(
+                da, "time", cfg.utc_offset_hours, how, block.first_day, block.last_day,
+            ).rename({"time": "date"})
+
+        daily_max_parts.append(to_local_days(hourly["heat_index_c"], "max"))
+        daily_rh_parts.append(to_local_days(hourly["rh"], "mean"))
+        if not cfg.is_multi_year:
+            hourly_parts.append(hourly)
+        print(f"  {block.first_day} to {block.last_day}: {hourly.sizes['time']} hourly time steps")
 
     # Daily maximum heat index
-    daily_max_heat_index_c = to_local_days(ds_out["heat_index_c"], "max")
+    daily_max_heat_index_c = concat_days(daily_max_parts, "date", cfg)
     daily_max_heat_index_c.attrs["units"] = "Celsius"
     daily_max_heat_index_c.attrs["long_name"] = "daily maximum heat index"
     daily_max_heat_index_c.attrs["description"] = (
         "Daily maximum of the hourly NOAA/Rothfusz heat index over local "
-        f"calendar days (UTC{cfg.utc_offset_hours:+d}); NaN if any hour is missing"
+        f"calendar days ({utc_label}); NaN if any hour is missing"
     )
 
     # Daily mean relative humidity
-    daily_mean_rh = to_local_days(ds_out["rh"], "mean")
+    daily_mean_rh = concat_days(daily_rh_parts, "date", cfg)
     daily_mean_rh.attrs["units"] = "%"
     daily_mean_rh.attrs["long_name"] = "daily mean relative humidity"
     daily_mean_rh.attrs["description"] = (
         "Daily mean of hourly relative humidity over local calendar days "
-        f"(UTC{cfg.utc_offset_hours:+d}); NaN if any hour is missing"
+        f"({utc_label}); NaN if any hour is missing"
     )
 
+    # =======================================================================
+    # Step 6: Build output dataset
+    # =======================================================================
+    attrs = {
+        "title": "Humid heat risk indices for East China",
+        "period": cfg.period_label,
+        "source": "ERA5 hourly single-level reanalysis",
+        "created_with": "src/process_humid_heat.py",
+        "daily_aggregation": f"local calendar days, {utc_label}",
+    }
+    if hourly_parts:
+        ds_out = xr.concat(hourly_parts, dim="time") if len(hourly_parts) > 1 else hourly_parts[0]
+        ds_out.attrs = attrs
+    else:
+        attrs["hourly_variables"] = (
+            "not saved for multi-year runs; recompute them from the raw files if needed"
+        )
+        ds_out = xr.Dataset(attrs=attrs)
     ds_out["daily_max_heat_index_c"] = daily_max_heat_index_c
     ds_out["daily_mean_rh"] = daily_mean_rh
 
     # =======================================================================
-    # Step 8: Save
+    # Step 7: Save
     # =======================================================================
     ds_out.to_netcdf(output_path)
     print(f"\nOutput file: {output_path}")
 
     # =======================================================================
-    # Step 9: Quick statistics
+    # Step 8: Quick statistics
     # =======================================================================
     print("\n=== Variable statistics ===")
-    for vname in [
-        "t2m_c",
-        "d2m_c",
-        "rh",
-        "heat_index_c",
-        "daily_max_heat_index_c",
-        "daily_mean_rh",
-    ]:
+    for vname in [v for v in HOURLY_VARIABLES + DAILY_VARIABLES if v in ds_out]:
         da = ds_out[vname]
         print(
             f"  {vname:<26s}  "

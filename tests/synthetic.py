@@ -21,6 +21,12 @@ def make_synthetic_era5(
     branch and most risk categories.
     """
     times = pd.date_range(pd.Timestamp(start) - pd.Timedelta(hours=hours_before), f"{end} 23:00", freq="h")
+    return make_synthetic_era5_at(times, step=step, seed=seed)
+
+
+def make_synthetic_era5_at(times, step: float = 0.5, seed: int = 0) -> xr.Dataset:
+    """Like make_synthetic_era5, at the given hourly UTC timestamps."""
+    times = pd.DatetimeIndex(times)
     lats = np.arange(36.0, 25.0 - 1e-9, -step)
     lons = np.arange(112.0, 123.0 + 1e-9, step)
     shape = (len(times), len(lats), len(lons))

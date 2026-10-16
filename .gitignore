@@ -22,3 +22,6 @@ Thumbs.db
 
 # CDS API key (contains personal UID/key)
 .cdsapirc
+
+# Partial downloads (renamed to *.nc only when complete)
+data/raw/*.part

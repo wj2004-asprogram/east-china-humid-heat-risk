@@ -1,0 +1,52 @@
+# v0.3 phase 2: June-August of 2000-2024 (25 summers), Beijing-time (UTC+8) days.
+# Input for the phase 3 models and their climatology baseline.
+#
+# Run with:
+#     python -m src.pipeline --config configs/jja_2000_2024_bjt.yaml --check-raw   # what is downloaded
+#     python -m src.pipeline --config configs/jja_2000_2024_bjt.yaml --download    # resumable
+#     python -m src.pipeline --config configs/jja_2000_2024_bjt.yaml
+
+name: jja_2000_2024_bjt
+
+# Multi-year seasons: the given months of every year from first to last.
+# Months must be consecutive within one calendar year. Raw data are read
+# from one file per year and month (data/raw/era5_east_china_YYYY_MM.nc,
+# all 24 UTC hours), shared with the UTC config, and processed one month
+# at a time. The days between two summers are not part of the run.
+period:
+  years: {first: 2000, last: 2024}
+  months: [6, 7, 8]
+
+# East China sample domain (degrees). CDS "area" order is [north, west, south, east].
+region:
+  north: 36
+  west: 112
+  south: 25
+  east: 123
+
+# Daily values are calendar days in this time zone, as hours from UTC
+# (ERA5 timestamps are UTC). Beijing time is UTC+8 (no daylight saving):
+# Beijing day D runs from 16:00 UTC on D-1 to 15:00 UTC on D. Within a
+# summer those hours come from the previous month's file; 1 June needs
+# 16:00-23:00 UTC on 31 May, one small extra file per summer
+# (data/raw/era5_east_china_YYYY_05_31_h16-23.nc).
+utc_offset_hours: 8
+
+# City points are compared at the nearest ERA5 grid point.
+cities:
+  - {name: Nanjing,  lat: 32.06, lon: 118.79, color: "#d62728"}
+  - {name: Shanghai, lat: 31.23, lon: 121.47, color: "#1f77b4"}
+  - {name: Hangzhou, lat: 30.27, lon: 120.15, color: "#2ca02c"}
+  - {name: "Huai'an", lat: 33.61, lon: 119.02, color: "#ff7f0e"}
+
+# Risk area fractions count land grid cells only. ERA5 "land_sea_mask" is
+# the fraction of land in each grid cell (0 = sea, 1 = land); a cell is
+# land where it is >= this threshold. Maps grey out the other (sea) cells.
+land_sea_mask_threshold: 0.5
+
+# Suffix used in every processed data and figure file name of this run.
+# It differs from the UTC config's, so no processed file is shared.
+file_tag: "jja_2000_2024_bjt"
+
+# Where this run's figures are written (relative to the project root).
+figures_dir: figures/v0.3_jja_2000_2024_bjt

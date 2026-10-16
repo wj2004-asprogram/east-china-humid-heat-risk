@@ -23,6 +23,13 @@ from src.era5_utils import (
     require_var,
     select_city_points,
 )
+from src.plot_utils import (
+    MULTI_YEAR_FIG_WIDTH,
+    MULTI_YEAR_LINE,
+    format_season_axis,
+    plot_seasons,
+    season_axis,
+)
 
 
 def run(cfg: RunConfig) -> None:
@@ -48,27 +55,39 @@ def run(cfg: RunConfig) -> None:
     print(f"Detected — lat: '{lat_name}', lon: '{lon_name}', "
           f"date: '{date_name}', var: '{var_name}'")
 
+    # Multi-year runs: seasons side by side on a compressed axis (src/plot_utils.py).
+    axis = season_axis(cfg) if cfg.is_multi_year else None
+
     # ======================================================================
     # Figure 1 — Regional-mean daily maximum heat index over East China
     # ======================================================================
     regional_mean = da.mean(dim=[lat_name, lon_name])
 
-    fig1, ax1 = plt.subplots(figsize=(10, 5))
+    if axis is not None:
+        fig1, ax1 = plt.subplots(figsize=(MULTI_YEAR_FIG_WIDTH, 5))
+        plot_seasons(ax1, axis, regional_mean[date_name], regional_mean, color="darkred", **MULTI_YEAR_LINE)
+    else:
+        fig1, ax1 = plt.subplots(figsize=(10, 5))
 
-    ax1.plot(
-        regional_mean[date_name], regional_mean,
-        marker="o", linestyle="-", linewidth=1.5, color="darkred",
-    )
+        ax1.plot(
+            regional_mean[date_name], regional_mean,
+            marker="o", linestyle="-", linewidth=1.5, color="darkred",
+        )
 
     ax1.set_title(
         "Mean Daily Maximum Heat Index over East China\n"
         f"{cfg.period_label}",
         fontsize=13,
     )
-    ax1.set_xlabel(f"Date ({cfg.day_definition} calendar day)")
+    if axis is not None:
+        format_season_axis(ax1, axis)
+        ax1.set_xlabel(axis.label)
+    else:
+        ax1.set_xlabel(f"Date ({cfg.day_definition} calendar day)")
     ax1.set_ylabel("Daily Maximum Heat Index (°C)")
     ax1.grid(True, alpha=0.3)
-    fig1.autofmt_xdate()
+    if axis is None:
+        fig1.autofmt_xdate()  # calendar dates only
 
     fig1.tight_layout()
     fig1.savefig(output_fig1, dpi=150, bbox_inches="tight")
@@ -81,7 +100,7 @@ def run(cfg: RunConfig) -> None:
     city_series = {}   # city name -> list of values
     dates_for_csv = None
 
-    fig2, ax2 = plt.subplots(figsize=(12, 6))
+    fig2, ax2 = plt.subplots(figsize=(MULTI_YEAR_FIG_WIDTH, 6) if axis is not None else (12, 6))
 
     for city, ds_city, _, _ in select_city_points(da, cfg.cities, lat_name, lon_name):
         time_vals = ds_city[date_name].values
@@ -92,23 +111,31 @@ def run(cfg: RunConfig) -> None:
 
         city_series[city.name] = [float(v) for v in heat_vals]
 
-        ax2.plot(
-            ds_city[date_name], ds_city,
-            marker="o", linestyle="-", linewidth=1.5,
-            color=city.color, label=city.name,
-            markersize=4,
-        )
+        if axis is not None:
+            plot_seasons(ax2, axis, time_vals, heat_vals, label=city.name, color=city.color, **MULTI_YEAR_LINE)
+        else:
+            ax2.plot(
+                ds_city[date_name], ds_city,
+                marker="o", linestyle="-", linewidth=1.5,
+                color=city.color, label=city.name,
+                markersize=4,
+            )
 
     ax2.set_title(
         "Daily Maximum Heat Index — East China Cities\n"
         f"{cfg.period_label} (ERA5 nearest grid point)",
         fontsize=13,
     )
-    ax2.set_xlabel(f"Date ({cfg.day_definition} calendar day)")
+    if axis is not None:
+        format_season_axis(ax2, axis)
+        ax2.set_xlabel(axis.label)
+    else:
+        ax2.set_xlabel(f"Date ({cfg.day_definition} calendar day)")
     ax2.set_ylabel("Daily Maximum Heat Index (°C)")
     ax2.legend(fontsize=10)
     ax2.grid(True, alpha=0.3)
-    fig2.autofmt_xdate()
+    if axis is None:
+        fig2.autofmt_xdate()  # calendar dates only
 
     fig2.tight_layout()
     fig2.savefig(output_fig2, dpi=150, bbox_inches="tight")
