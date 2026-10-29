@@ -2,7 +2,7 @@
 
 ## Project context
 - Atmospheric data science portfolio project: humid heat risk over East China from ERA5 hourly single-level reanalysis.
-- Released: v0.1 (7-day test) and v0.2 (July 2022 case study). In progress: v0.3 — phases, scope and acceptance criteria are in `docs/ROADMAP.md`. Work on one phase at a time, one branch per phase.
+- Released: v0.1 (7-day test) and v0.2 (July 2022 case study). v0.3 methods and phase 2 multi-year outputs are complete — phases, scope and acceptance criteria are in `docs/ROADMAP.md`. Work on one phase at a time, one branch per phase.
 - The README deliberately makes no long-term climate trend claims. Keep it that way unless multi-decade data and a proper trend analysis are added.
 
 ## Current setup (keep in sync with README)
@@ -58,7 +58,7 @@ python -m pytest
 - Commit after each meaningful step.
 
 ## Known issues
-- Tracked CSVs (`data/processed/`) and figures are the v0.3 outputs of all four configs. The folders `figures/v0.1_sample_7day` and `figures/v0.2_july_2022` keep their names but were regenerated with the v0.3 methods; the old-method outputs are in the git history (`851b496`).
+- Tracked CSVs (`data/processed/`) and figures are the v0.3 outputs of the four single-period configs and both multi-year configs. The folders `figures/v0.1_sample_7day` and `figures/v0.2_july_2022` keep their names but were regenerated with the v0.3 methods; the old-method outputs are in the git history (`851b496`).
 - Regional-mean time series (`plot_figures`, `plot_heat_index_figures`) are plain means over all grid cells: no cos(latitude) weights, sea included.
-- The Beijing-time raw files and the land-sea mask were downloaded in the validation worktree (`projects/ehhr-1a-verify`), not in this checkout. Do not run CDS downloads without the user's confirmation.
-- Phase 2: the multi-year download (75 monthly + 25 edge requests) was started on 2026-10-16 with the user's confirmation and is not finished; the multi-year outputs and the climatology do not exist yet. `--check-raw` shows the progress.
+- The original single-period Beijing-time raw files remain in the validation worktree (`projects/ehhr-1a-verify`). The complete multi-year raw inputs and land-sea mask are in this checkout. Preserve the validation worktree and CDS state database; do not run CDS downloads without the user's confirmation.
+- Phase 2: download and both full production runs completed on 2026-10-29. Each run covers 2,300 summer days; the per-year climatology inputs exist locally (25 years x 92 days). Six CSVs, two run-info JSONs and fourteen figures are tracked; eight NetCDF outputs remain local. See `reports/phase2_real_outputs.md`. M1-D performance calibration and M1-C independent real-data acceptance are still pending; phase 3 awaits advisor confirmation.

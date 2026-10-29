@@ -1,0 +1,152 @@
+[
+  {
+    "path": "data\\processed\\city_daily_heat_index_jja_2000_2024.csv",
+    "bytes": 194851,
+    "sha256": "51133e7e06c522f7b327e9ff9cf34b83a712bbd0d8dc675330cf051f1e22fb12"
+  },
+  {
+    "path": "data\\processed\\city_daily_heat_index_jja_2000_2024_bjt.csv",
+    "bytes": 194885,
+    "sha256": "ae6b2c669e9fef3b002120b0bd0356e4797d9e3495cabe5351266d7532e336fc"
+  },
+  {
+    "path": "data\\processed\\city_daily_tmax_jja_2000_2024.csv",
+    "bytes": 473836,
+    "sha256": "ea2f7e69908283535731a75b2d30df37ae0fdbc82ea0a0f9bc652d5d588b82a3"
+  },
+  {
+    "path": "data\\processed\\city_daily_tmax_jja_2000_2024_bjt.csv",
+    "bytes": 473836,
+    "sha256": "6ac19d10959f5a02900dc9ef4ee4d1d92cf00289714bf5aec1a99af0d82c7d41"
+  },
+  {
+    "path": "data\\processed\\daily_heat_risk_area_fraction_jja_2000_2024.csv",
+    "bytes": 208816,
+    "sha256": "f8f2a2f5908cae94d268ff7ab3293b29b2935b414a5d193c0f9bd338a40d7ccf"
+  },
+  {
+    "path": "data\\processed\\daily_heat_risk_area_fraction_jja_2000_2024_bjt.csv",
+    "bytes": 208825,
+    "sha256": "ea782077c75a9221d374a9131da0a2c53f87db63e765d06da5ac878082058805"
+  },
+  {
+    "path": "data\\processed\\daily_tmax_jja_2000_2024.nc",
+    "bytes": 37304294,
+    "sha256": "9979e595d5fd6a9f5a1c211d0cd39c248110284f8e46e3630820d125b1fa78ea"
+  },
+  {
+    "path": "data\\processed\\daily_tmax_jja_2000_2024_bjt.nc",
+    "bytes": 37304294,
+    "sha256": "d53876d9160c253d4a30b6d4179309f5337f18fd62cb138282acd057d9bb8e3d"
+  },
+  {
+    "path": "data\\processed\\heat_index_climatology_jja_2000_2024.nc",
+    "bytes": 13269421,
+    "sha256": "0bc395d29f7a686eac38046c48c4a3c72e0bab245d70ff418ca162386ef690e1"
+  },
+  {
+    "path": "data\\processed\\heat_index_climatology_jja_2000_2024_bjt.nc",
+    "bytes": 13263486,
+    "sha256": "201e758ff35507494a802d4493bc733f417cce82f69537fa42a3d52ba932d431"
+  },
+  {
+    "path": "data\\processed\\heat_risk_categories_jja_2000_2024.nc",
+    "bytes": 23336933,
+    "sha256": "48105c06a6cbff95e8c156914fc22483ec1367c9334fbaaecd107c51f14371f1"
+  },
+  {
+    "path": "data\\processed\\heat_risk_categories_jja_2000_2024_bjt.nc",
+    "bytes": 23336933,
+    "sha256": "9efea1d5b2d2750aa200813c7b5ffafb101992367503316664b26800dcf93d5b"
+  },
+  {
+    "path": "data\\processed\\humid_heat_jja_2000_2024.nc",
+    "bytes": 37304387,
+    "sha256": "0e377c8fa0dea152ca0b6982a1c1e140a0ac4130eb79bff50c3360945decad46"
+  },
+  {
+    "path": "data\\processed\\humid_heat_jja_2000_2024_bjt.nc",
+    "bytes": 37304387,
+    "sha256": "15809010f8228b41f14883612f4487010698e0c8e58c26e1783bee0548f11e06"
+  },
+  {
+    "path": "data\\processed\\run_info_jja_2000_2024.json",
+    "bytes": 831,
+    "sha256": "a9a4cbec199143404c0a15b02a7ee8a6ad3e2244623851602752f3338b70330a"
+  },
+  {
+    "path": "data\\processed\\run_info_jja_2000_2024_bjt.json",
+    "bytes": 853,
+    "sha256": "0314e892ec6ae9018a6a2c04538789a2d23d4e15bfd8f0ad821ed22984ab0e17"
+  },
+  {
+    "path": "figures\\v0.3_jja_2000_2024\\east_china_city_daily_heat_index_jja_2000_2024.png",
+    "bytes": 593538,
+    "sha256": "c89f57e8cc551b0e539206cd8be49681c07f6f20aa373db13ef8bddd45c168db"
+  },
+  {
+    "path": "figures\\v0.3_jja_2000_2024\\east_china_city_daily_tmax_jja_2000_2024.png",
+    "bytes": 574876,
+    "sha256": "88dc9e1fa41e9eccefe9d441a40534119f186e5f4e7755d2e420b028b8322457"
+  },
+  {
+    "path": "figures\\v0.3_jja_2000_2024\\east_china_heat_index_map_hottest_day_jja_2000_2024.png",
+    "bytes": 76463,
+    "sha256": "a0906cf27db61c76424fbcc9920b92d5d894206aac8ce9c421e03acf0449138d"
+  },
+  {
+    "path": "figures\\v0.3_jja_2000_2024\\east_china_heat_risk_area_fraction_jja_2000_2024.png",
+    "bytes": 69354,
+    "sha256": "7b6bf60afc91f77d3123b20b1e03e6fb2c8567e502023824cefd4fdb2d6cd05c"
+  },
+  {
+    "path": "figures\\v0.3_jja_2000_2024\\east_china_heat_risk_category_map_hottest_day_jja_2000_2024.png",
+    "bytes": 66551,
+    "sha256": "a33c18be8771fc316ec65c57935cd5df107e3196620564d550ca5b0a90f39ac8"
+  },
+  {
+    "path": "figures\\v0.3_jja_2000_2024\\east_china_mean_daily_heat_index_jja_2000_2024.png",
+    "bytes": 227631,
+    "sha256": "901f0dcc61237c2629a2bf26ecfd1a6598a48427455bff66796d95093135c500"
+  },
+  {
+    "path": "figures\\v0.3_jja_2000_2024\\east_china_mean_daily_tmax_jja_2000_2024.png",
+    "bytes": 236538,
+    "sha256": "99df3909f166bdc97c5cce4f2bb80ced8acea0dd85a2be165963aec24a2622ff"
+  },
+  {
+    "path": "figures\\v0.3_jja_2000_2024_bjt\\east_china_city_daily_heat_index_jja_2000_2024_bjt.png",
+    "bytes": 584678,
+    "sha256": "92595b624bbeb0858cb39fc0f8fe88f13f875ca76d67a98d96f7a8c34c2bb8cb"
+  },
+  {
+    "path": "figures\\v0.3_jja_2000_2024_bjt\\east_china_city_daily_tmax_jja_2000_2024_bjt.png",
+    "bytes": 569092,
+    "sha256": "6da34b732ca086cbc3d80704ff5055a312e6c8185afe07d8ef1e4b497eddb0fe"
+  },
+  {
+    "path": "figures\\v0.3_jja_2000_2024_bjt\\east_china_heat_index_map_hottest_day_jja_2000_2024_bjt.png",
+    "bytes": 76648,
+    "sha256": "0d19816112a7fd1bdc7f56678d37ae09fd764a75e719d762ec02f1b0ce4b9bfa"
+  },
+  {
+    "path": "figures\\v0.3_jja_2000_2024_bjt\\east_china_heat_risk_area_fraction_jja_2000_2024_bjt.png",
+    "bytes": 69722,
+    "sha256": "9c6411f09342aeba5957f8f8db86b36e33f9111c77e7498782b66f7300922227"
+  },
+  {
+    "path": "figures\\v0.3_jja_2000_2024_bjt\\east_china_heat_risk_category_map_hottest_day_jja_2000_2024_bjt.png",
+    "bytes": 67168,
+    "sha256": "1762cba608cc1883c300ea4722d58d9064096addc6877c460fcb80db66686f30"
+  },
+  {
+    "path": "figures\\v0.3_jja_2000_2024_bjt\\east_china_mean_daily_heat_index_jja_2000_2024_bjt.png",
+    "bytes": 227215,
+    "sha256": "b67099d68bb246b121f43ff40cb03ac803729ca0b61bf8fc2a86a329c0b696dc"
+  },
+  {
+    "path": "figures\\v0.3_jja_2000_2024_bjt\\east_china_mean_daily_tmax_jja_2000_2024_bjt.png",
+    "bytes": 236102,
+    "sha256": "be155abd31ccbeda6dd6730a68556632d072909d08c316deedae57c2d988e67c"
+  }
+]

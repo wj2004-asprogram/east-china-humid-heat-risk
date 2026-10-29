@@ -4,13 +4,13 @@ This project is an atmospheric data science workflow for analyzing humid heat ri
 
 The analysis is a **full-month July 2022 case study** (v0.2), now re-run with the corrected v0.3 methods: NOAA/WPC heat index, risk area fractions over land only, Beijing-time calendar days, and explicit handling of missing data. It demonstrates a reproducible pipeline for downloading ERA5 data, preprocessing 2m temperature and 2m dewpoint temperature, calculating relative humidity and heat index, classifying humid heat risk levels, comparing selected city points, and visualizing spatial risk patterns.
 
-This project is not intended to make long-term climate trend claims at the current stage. Instead, it focuses on building a clean, reproducible, and extensible workflow that can later be scaled to seasonal, annual, or multi-year humid heat risk analysis.
+This project is not intended to make long-term climate trend claims at the current stage. Instead, it focuses on building a clean, reproducible, and extensible workflow, now also run on 25 summers. A formal long-term trend analysis has not been performed.
 
 ## Project Status
 
 - **v0.1:** 7-day workflow test, 2022-07-01 to 2022-07-07.
 - **v0.2:** Full-month July 2022 case study, 2022-07-01 to 2022-07-31.
-- **v0.3 (in progress):** phase 1 is done: a single config-driven pipeline with tests (1a) and the method fixes (1b). The results and figures below are the v0.3 outputs. Phase 2 (multi-year summers, June–August 2000–2024): the pipeline is implemented, the data download is running, results are not available yet. Next: a machine learning module (phase 3). See [docs/ROADMAP.md](docs/ROADMAP.md).
+- **v0.3 (in progress):** phase 1 is done: a single config-driven pipeline with tests (1a) and the method fixes (1b). The results and figures below are the v0.3 outputs. Phase 2 (multi-year summers, June–August 2000–2024): both Beijing-time and UTC production runs completed on 2026-10-29, with 2,300 days each. The CSVs, run metadata and figures are available; see [run evidence and limitations](reports/phase2_real_outputs.md). Next: real-data performance calibration and independent acceptance, then a machine learning module (phase 3) after advisor confirmation. See [docs/ROADMAP.md](docs/ROADMAP.md).
 
 ## Study Area and Period
 

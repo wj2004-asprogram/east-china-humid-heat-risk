@@ -1,0 +1,101 @@
+{
+  "jja_2000_2024_bjt": {
+    "status": "PASS",
+    "days": 2300,
+    "netcdf": {
+      "daily_tmax": {
+        "dimensions": {
+          "valid_time": 2300,
+          "latitude": 45,
+          "longitude": 45
+        },
+        "variables": [
+          "t2m",
+          "d2m"
+        ]
+      },
+      "humid_heat": {
+        "dimensions": {
+          "date": 2300,
+          "latitude": 45,
+          "longitude": 45
+        },
+        "variables": [
+          "daily_max_heat_index_c",
+          "daily_mean_rh"
+        ]
+      },
+      "heat_risk_categories": {
+        "dimensions": {
+          "date": 2300,
+          "latitude": 45,
+          "longitude": 45
+        },
+        "variables": [
+          "daily_max_heat_index_c",
+          "heat_risk_category",
+          "land_mask"
+        ]
+      }
+    },
+    "figures": 7,
+    "valid_land_coverage_min": 100.0,
+    "peak_danger_date": "2024-08-04",
+    "peak_danger_percent": 95.28315285454929,
+    "july_2022_max_abs_difference": {
+      "city_daily_tmax": 0.0,
+      "city_daily_heat_index": 0.0,
+      "daily_heat_risk_area_fraction": 0.0
+    }
+  },
+  "jja_2000_2024": {
+    "status": "PASS",
+    "days": 2300,
+    "netcdf": {
+      "daily_tmax": {
+        "dimensions": {
+          "valid_time": 2300,
+          "latitude": 45,
+          "longitude": 45
+        },
+        "variables": [
+          "t2m",
+          "d2m"
+        ]
+      },
+      "humid_heat": {
+        "dimensions": {
+          "date": 2300,
+          "latitude": 45,
+          "longitude": 45
+        },
+        "variables": [
+          "daily_max_heat_index_c",
+          "daily_mean_rh"
+        ]
+      },
+      "heat_risk_categories": {
+        "dimensions": {
+          "date": 2300,
+          "latitude": 45,
+          "longitude": 45
+        },
+        "variables": [
+          "daily_max_heat_index_c",
+          "heat_risk_category",
+          "land_mask"
+        ]
+      }
+    },
+    "figures": 7,
+    "valid_land_coverage_min": 100.0,
+    "peak_danger_date": "2024-08-04",
+    "peak_danger_percent": 95.28315285454929,
+    "july_2022_max_abs_difference": {
+      "city_daily_tmax": 0.0,
+      "city_daily_heat_index": 0.0,
+      "daily_heat_risk_area_fraction": 0.0
+    }
+  },
+  "raw_files_unchanged": 101
+}
