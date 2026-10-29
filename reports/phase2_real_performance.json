@@ -1,0 +1,146 @@
+[
+  {
+    "case": "month",
+    "label": "June 2003",
+    "days": 30,
+    "metrics": {
+      "processing_seconds": {
+        "median": 5.9109787000052165,
+        "min": 5.75711429999501,
+        "max": 6.0012157000019215
+      },
+      "numerical_seconds": {
+        "median": 5.6624768000037875,
+        "min": 5.54526359999727,
+        "max": 5.756305400005658
+      },
+      "child_wall_seconds": {
+        "median": 11.301836099999491,
+        "min": 11.159147999991546,
+        "max": 11.374320500006434
+      },
+      "peak_rss_bytes": {
+        "median": 276070400,
+        "min": 275783680,
+        "max": 276422656
+      },
+      "output_bytes": {
+        "median": 1557967,
+        "min": 1557967,
+        "max": 1557967
+      }
+    },
+    "stages": {
+      "other_processing": 0.503997799984063,
+      "read_netcdf": 4.519108399981633,
+      "temperature_conversion": 0.005523100000573322,
+      "daily_aggregation": 0.06823520001489669,
+      "write_netcdf": 0.07221680000657216,
+      "hourly_indices": 0.2735216000000946,
+      "risk_classification": 0.003906300000380725,
+      "area_fractions": 0.17459670000243932,
+      "write_csv": 0.00689540000166744,
+      "plot_area_fraction": 0.24491029999626335
+    },
+    "input_bytes": 4903284,
+    "synthetic_processing_seconds": 3.5645091000042157,
+    "all_attempts_passed": true,
+    "identical_products_across_trials": true
+  },
+  {
+    "case": "summer",
+    "label": "JJA 2003",
+    "days": 92,
+    "metrics": {
+      "processing_seconds": {
+        "median": 10.10808000000543,
+        "min": 10.092735600002925,
+        "max": 10.228561700001592
+      },
+      "numerical_seconds": {
+        "median": 9.869527800008655,
+        "min": 9.824185999998008,
+        "max": 9.971922900003847
+      },
+      "child_wall_seconds": {
+        "median": 15.906753599992953,
+        "min": 15.833168699988164,
+        "max": 16.06867880000209
+      },
+      "peak_rss_bytes": {
+        "median": 316678144,
+        "min": 316510208,
+        "max": 317091840
+      },
+      "output_bytes": {
+        "median": 4550985,
+        "min": 4550985,
+        "max": 4550985
+      }
+    },
+    "stages": {
+      "other_processing": 0.5997019999631448,
+      "read_netcdf": 7.3457346000068355,
+      "temperature_conversion": 0.022520500016980805,
+      "daily_aggregation": 0.1859847000305308,
+      "write_netcdf": 0.09131540000089444,
+      "hourly_indices": 0.9538802000024589,
+      "risk_classification": 0.005290700006298721,
+      "area_fractions": 0.6039469999959692,
+      "write_csv": 0.008077999998931773,
+      "plot_area_fraction": 0.2566387999977451
+    },
+    "input_bytes": 14707179,
+    "synthetic_processing_seconds": 5.128028000006452,
+    "all_attempts_passed": true,
+    "identical_products_across_trials": true
+  },
+  {
+    "case": "two-summers",
+    "label": "JJA 2003\u20132004",
+    "days": 184,
+    "metrics": {
+      "processing_seconds": {
+        "median": 14.323370600002818,
+        "min": 13.354720599993016,
+        "max": 14.454875299998093
+      },
+      "numerical_seconds": {
+        "median": 14.116457299998729,
+        "min": 13.148891399992863,
+        "max": 14.186198299998068
+      },
+      "child_wall_seconds": {
+        "median": 19.308313300003647,
+        "min": 18.66233019999345,
+        "max": 20.02065190000576
+      },
+      "peak_rss_bytes": {
+        "median": 318418944,
+        "min": 317935616,
+        "max": 318619648
+      },
+      "output_bytes": {
+        "median": 8993889,
+        "min": 8993889,
+        "max": 8993889
+      }
+    },
+    "stages": {
+      "other_processing": 0.6412655000458471,
+      "read_netcdf": 10.545718399996986,
+      "temperature_conversion": 0.03349199997319374,
+      "daily_aggregation": 0.31969370000297204,
+      "write_netcdf": 0.11047359998337924,
+      "hourly_indices": 1.3330124999774853,
+      "risk_classification": 0.006220299997949041,
+      "area_fractions": 0.9623766000004252,
+      "write_csv": 0.00617380000767298,
+      "plot_area_fraction": 0.20691330000408925
+    },
+    "input_bytes": 29413357,
+    "synthetic_processing_seconds": 7.7637917999963975,
+    "all_attempts_passed": true,
+    "identical_products_across_trials": true
+  }
+]

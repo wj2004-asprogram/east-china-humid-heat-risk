@@ -40,12 +40,12 @@ Each fix is a separate commit, with a before/after table of the July 2022 daily 
 
 Phase 3 needs this. One summer (92 days) cannot be split by year.
 
-- [ ] Download June–August for 2000–2024 (at least), one CDS request per month. The download must be resumable and skip existing files. Expect long CDS queues, so run it unattended. Size is modest (two variables, about 45 × 45 grid points, hourly: well under 1 GB per variable).
+- [x] Download June–August for 2000–2024 (at least), one CDS request per month. The download must be resumable and skip existing files. Expect long CDS queues, so run it unattended. Size is modest (two variables, about 45 × 45 grid points, hourly: well under 1 GB per variable).
   - [x] Code: `configs/jja_2000_2024.yaml` and `configs/jja_2000_2024_bjt.yaml` (`period: {years, months}`); 75 monthly requests, plus 25 small 31 May 16–23 UTC requests for Beijing time (inside a summer the edge hours come from the previous month's file). Resumable (`.part` files, checked before renaming), `--check-raw` for progress. Raw file layout: `docs/raw_files.md`.
-  - [ ] Run the download (about 0.37 GB): started 2026-10-16 after the user's go-ahead, running unattended.
+  - [x] Run the download (about 0.37 GB): completed 2026-10-29; independent validation passed for 75 monthly files, 25 Beijing-time edges and the land-sea mask.
 - [x] Pipeline supports multi-month periods (process month by month, concatenate daily outputs). Tested on synthetic monthly files (month and summer boundaries, Beijing 1 June edge, missing data) and on real July 2022 data (identical to the single-period configs).
 - [x] Daily climatology of maximum heat index per grid cell (baseline for phase 3): `heat_index_climatology_<tag>.nc` stores the values per year and day of year; `climatology_for_years` computes the climatology from training years only.
-- [ ] Run both multi-year configs on the downloaded data; decide which multi-year CSVs and figures are tracked.
+- [x] Run both multi-year configs on the downloaded data (2026-10-29): 2,300 days each. Track all six CSVs, two run-info JSONs and fourteen figures; keep eight NetCDF outputs local. Evidence and limitations: `reports/phase2_real_outputs.md`. M1-D real-data performance calibration and M1-C input/output acceptance completed on 2026-10-29; evidence and scope: `reports/phase2_real_acceptance.md`. User-requested author self-review is complete (`reports/phase2_self_review.md`); no independent reviewer sign-off is claimed.
 
 ## Phase 3 — Machine learning (weeks 4–6) · direction to be confirmed with the advisor
 

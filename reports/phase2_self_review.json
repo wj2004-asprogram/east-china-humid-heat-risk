@@ -1,0 +1,42 @@
+{
+  "reviewed_commit": "48066f4b49be46d6c4bfc9b069939b75a6c8cbb8",
+  "review_type": "author self-review with supplementary checks",
+  "output_manifest_matches": 30,
+  "checks": {
+    "jja_2000_2024_bjt": {
+      "land_cells": 1580,
+      "raw_mask_matches": true,
+      "heat_index_shared_arrays_identical": true,
+      "area_max_error_percentage_points": 1.4210854715202004e-14,
+      "heat_index_float64_reference_max_error_c_by_day": {
+        "2000-06-01": 0.00018339298595293485,
+        "2000-07-01": 0.00017320451012636795,
+        "2004-08-31": 0.00020178819350746835,
+        "2013-07-01": 0.0001754013440233848,
+        "2022-07-01": 0.0001728422662807816,
+        "2024-08-04": 0.00016632136645000628,
+        "2024-08-31": 0.0001872385356449513
+      },
+      "heat_index_tolerance_c": 0.002,
+      "sampled_cell_days": 14175
+    },
+    "jja_2000_2024": {
+      "land_cells": 1580,
+      "raw_mask_matches": true,
+      "heat_index_shared_arrays_identical": true,
+      "area_max_error_percentage_points": 1.4210854715202004e-14,
+      "heat_index_float64_reference_max_error_c_by_day": {
+        "2000-06-01": 0.000190881812095256,
+        "2000-07-01": 0.00017500083941257571,
+        "2004-08-31": 0.00020178819350746835,
+        "2013-07-01": 0.0001754013440233848,
+        "2022-07-01": 0.0001728422662807816,
+        "2024-08-04": 0.00016320269157432676,
+        "2024-08-31": 0.0001872385356449513
+      },
+      "heat_index_tolerance_c": 0.002,
+      "sampled_cell_days": 14175
+    }
+  },
+  "performance_statistics_recomputed": "PASS"
+}

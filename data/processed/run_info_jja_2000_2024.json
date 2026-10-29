@@ -1,0 +1,28 @@
+{
+  "config": "jja_2000_2024",
+  "period": {
+    "start": "2000-06-01",
+    "end": "2024-08-31",
+    "years": {
+      "first": 2000,
+      "last": 2024
+    },
+    "months": [
+      6,
+      7,
+      8
+    ],
+    "days": 2300,
+    "note": "June to August, 2000 to 2024: only these months of each year; the days between them are not part of the run"
+  },
+  "day_definition": "UTC",
+  "utc_offset_hours": 0,
+  "day_window": "day D runs from 00:00 UTC on D to 23:00 UTC on D (24 hourly ERA5 time steps)",
+  "date_column": "the 'date' column of each CSV below is a calendar day in UTC, formatted YYYY-MM-DD",
+  "csv_files": [
+    "city_daily_tmax_jja_2000_2024.csv",
+    "city_daily_heat_index_jja_2000_2024.csv",
+    "daily_heat_risk_area_fraction_jja_2000_2024.csv"
+  ],
+  "land_sea_mask_threshold": 0.5
+}
