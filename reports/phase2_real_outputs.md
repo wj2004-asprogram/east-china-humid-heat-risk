@@ -68,7 +68,7 @@ This change contains outputs and documentation only. The full unit suite was not
 rerun: 349 passing tests are prior evidence for the unchanged source, not a new
 result of this run. Real-data input and output checks above were executed anew.
 Follow-up: M1-D real-data performance calibration and M1-C input/output acceptance
-are now complete; see [evidence and scope](phase2_real_acceptance.md). CC second
-review remains pending. No benchmark timing claim is inferred from this workflow run.
+are now complete; see [evidence and scope](phase2_real_acceptance.md). The user-requested [supplementary author self-review](phase2_self_review.md)
+is complete; it is not independent reviewer approval. No benchmark timing claim is inferred from this workflow run.
 Phase 3 still requires advisor confirmation and training-years-only climatology.
 Regional mean series still include sea cells and use unweighted grid means.

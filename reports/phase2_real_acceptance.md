@@ -33,6 +33,7 @@ Conditional 25-summer core-processing estimate: 111.8 seconds using the one/two-
 Input evidence is reused from the immediately preceding production run: 101 BJT inputs / 76 UTC inputs, 75 logical months and 2,300 days per configuration, all PASS. All 101 input hashes were checked again after this acceptance.
 
 The new independent audit does not call production time aggregation or humidity helpers. For each of 150 local month blocks (75 per day definition), it constructs the exact UTC hourly calendar, concatenates only required previous-month/May edge hours, checks timestamps, reshapes to 24 hours per day, and directly recomputes daily Tmax and daily mean RH. This covers every season edge, month seam and leap-year summer. It also verifies all four city grid selections and CSV values against the corresponding complete daily arrays.
+
 - jja_2000_2024_bjt: PASS; largest absolute raw-derived differences: `{'tmax_c': 0.0, 'mean_rh_percent': 0.0}`. Tolerances: 1e-6 C for Tmax; 2e-5 percentage points for mean RH (float32 rounding).
 - jja_2000_2024: PASS; largest absolute raw-derived differences: `{'tmax_c': 0.0, 'mean_rh_percent': 0.0}`. Tolerances: 1e-6 C for Tmax; 2e-5 percentage points for mean RH (float32 rounding).
 
@@ -44,4 +45,4 @@ Initial benchmark setup attempted a year list and exited before any processing; 
 
 Machine summary: [phase2_real_acceptance.json](phase2_real_acceptance.json). Performance details: [phase2_real_performance.json](phase2_real_performance.json). Full logs, environment, input/source hashes, trial measurements, audit script and configs remain in `D:\AS\ehhr-codex-output\real-validation-20261029`.
 
-M1-D real-data calibration and the specified M1-C input/output acceptance are complete. CC remains the second reviewer; this does not claim CC sign-off. The performance harness remains outside the repository pending a separate integration decision. No ML work, CDS request, push or merge was performed.
+M1-D real-data calibration and the specified M1-C input/output acceptance are complete. The user reassigned review to Codex because CC was unavailable. The [supplementary author self-review](phase2_self_review.md) found no blocking issues; this is not independent reviewer or CC sign-off. The performance harness remains outside the repository pending a separate integration decision. No ML work, CDS request, push or merge was performed.

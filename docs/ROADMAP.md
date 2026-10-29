@@ -45,7 +45,7 @@ Phase 3 needs this. One summer (92 days) cannot be split by year.
   - [x] Run the download (about 0.37 GB): completed 2026-10-29; independent validation passed for 75 monthly files, 25 Beijing-time edges and the land-sea mask.
 - [x] Pipeline supports multi-month periods (process month by month, concatenate daily outputs). Tested on synthetic monthly files (month and summer boundaries, Beijing 1 June edge, missing data) and on real July 2022 data (identical to the single-period configs).
 - [x] Daily climatology of maximum heat index per grid cell (baseline for phase 3): `heat_index_climatology_<tag>.nc` stores the values per year and day of year; `climatology_for_years` computes the climatology from training years only.
-- [x] Run both multi-year configs on the downloaded data (2026-10-29): 2,300 days each. Track all six CSVs, two run-info JSONs and fourteen figures; keep eight NetCDF outputs local. Evidence and limitations: `reports/phase2_real_outputs.md`. M1-D real-data performance calibration and M1-C input/output acceptance completed on 2026-10-29; evidence and scope: `reports/phase2_real_acceptance.md`. CC second review remains pending.
+- [x] Run both multi-year configs on the downloaded data (2026-10-29): 2,300 days each. Track all six CSVs, two run-info JSONs and fourteen figures; keep eight NetCDF outputs local. Evidence and limitations: `reports/phase2_real_outputs.md`. M1-D real-data performance calibration and M1-C input/output acceptance completed on 2026-10-29; evidence and scope: `reports/phase2_real_acceptance.md`. User-requested author self-review is complete (`reports/phase2_self_review.md`); no independent reviewer sign-off is claimed.
 
 ## Phase 3 — Machine learning (weeks 4–6) · direction to be confirmed with the advisor
 
