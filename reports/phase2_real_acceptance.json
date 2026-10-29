@@ -1,0 +1,40 @@
+{
+  "jja_2000_2024_bjt": {
+    "status": "PASS",
+    "months": 75,
+    "days": 2300,
+    "grid_cells": 2025,
+    "raw_hourly_aggregation_max_abs_difference": {
+      "tmax_c": 0.0,
+      "mean_rh_percent": 0.0
+    },
+    "city_extractions": "PASS"
+  },
+  "jja_2000_2024": {
+    "status": "PASS",
+    "months": 75,
+    "days": 2300,
+    "grid_cells": 2025,
+    "raw_hourly_aggregation_max_abs_difference": {
+      "tmax_c": 0.0,
+      "mean_rh_percent": 0.0
+    },
+    "city_extractions": "PASS"
+  },
+  "month": {
+    "isolated_products_vs_full": "PASS",
+    "attempts": 4,
+    "input_and_source_hashes": "unchanged"
+  },
+  "summer": {
+    "isolated_products_vs_full": "PASS",
+    "attempts": 4,
+    "input_and_source_hashes": "unchanged"
+  },
+  "two-summers": {
+    "isolated_products_vs_full": "PASS",
+    "attempts": 4,
+    "input_and_source_hashes": "unchanged"
+  },
+  "input_hashes_unchanged": 101
+}

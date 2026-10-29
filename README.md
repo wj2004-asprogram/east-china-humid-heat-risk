@@ -10,7 +10,7 @@ This project is not intended to make long-term climate trend claims at the curre
 
 - **v0.1:** 7-day workflow test, 2022-07-01 to 2022-07-07.
 - **v0.2:** Full-month July 2022 case study, 2022-07-01 to 2022-07-31.
-- **v0.3 (in progress):** phase 1 is done: a single config-driven pipeline with tests (1a) and the method fixes (1b). The results and figures below are the v0.3 outputs. Phase 2 (multi-year summers, June–August 2000–2024): both Beijing-time and UTC production runs completed on 2026-10-29, with 2,300 days each. The CSVs, run metadata and figures are available; see [run evidence and limitations](reports/phase2_real_outputs.md). Next: real-data performance calibration and independent acceptance, then a machine learning module (phase 3) after advisor confirmation. See [docs/ROADMAP.md](docs/ROADMAP.md).
+- **v0.3 (in progress):** phase 1 is done: a single config-driven pipeline with tests (1a) and the method fixes (1b). The results and figures below are the v0.3 outputs. Phase 2 (multi-year summers, June–August 2000–2024): both Beijing-time and UTC production runs completed on 2026-10-29, with 2,300 days each. The CSVs, run metadata and figures are available; see [run evidence and limitations](reports/phase2_real_outputs.md). Real-data performance calibration and input/output acceptance are also complete ([evidence and scope](reports/phase2_real_acceptance.md)); CC second review is pending. Next: a machine learning module (phase 3) after advisor confirmation. See [docs/ROADMAP.md](docs/ROADMAP.md).
 
 ## Study Area and Period
 
