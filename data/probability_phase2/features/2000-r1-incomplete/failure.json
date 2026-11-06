@@ -1,0 +1,9 @@
+{
+  "status": "incomplete_resource_report_not_used_by_models",
+  "year": 2000,
+  "completed": "daily_night.nc, temporal.npz, strict.npz and feature_registry.json",
+  "failure": "Windows GetProcessMemoryInfo ctypes HANDLE signature was omitted; resource reporting raised WinError 0xc0000008 before run.json was written",
+  "repair": "Declared 64-bit HANDLE result and argument types; reran the unchanged numerical extraction into features/2000",
+  "source_data_modified": false,
+  "replacement": "../2000/run.json"
+}

@@ -1,0 +1,19 @@
+{
+  "observed_utc": "2026-11-05T20:15:35Z",
+  "tool_observation": "collaboration.wait_agent returned: aborted by user after 24.7s",
+  "cause_detail": "No newer written stop/cancel explanation was found in visible parent room history; exact interruption cause is not inferred.",
+  "process_check": "No python process returned; collaboration.list_agents showed root only.",
+  "interrupted_fit_directories": ["data/probability_phase3/lightgbm/run1/search/strict/leaves7_child100_lambda10"],
+  "last_logged_round": 600,
+  "last_logged_fit_seconds": 165.01566419994924,
+  "completed_checkpoint_for_interrupted_candidate": false,
+  "source_log": "data/probability_phase3/lightgbm-search-strict-batch1.log",
+  "numerical_failure_demonstrated": false,
+  "resource_exhaustion_demonstrated": false,
+  "temporal_completed_models": 22,
+  "strict_search_completed_candidates": 1,
+  "strict_winner_selected": false,
+  "followup_resource_batch_started": false,
+  "long_running_training_restarted_after_interruption": false,
+  "recovery": "Reuse complete checkpoints; rerun the interrupted candidate under the unchanged scientific lock in a newly recorded continuation batch. Complete all eight strict candidates before selecting a winner."
+}

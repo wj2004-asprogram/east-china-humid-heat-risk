@@ -1,0 +1,21 @@
+{
+  "prediction_rows": 15120,
+  "distinct_physical_grid_days": 840,
+  "unrounded_legacy_labels_match": true,
+  "common_model_lag_samples": true,
+  "frozen_calibrated_alerts_match": true,
+  "site_count": 5,
+  "accepted_primary_sites": 4,
+  "distinct_accepted_primary_grids": 2,
+  "historical_grid_days": 4600,
+  "historical_grid_years": 50,
+  "source_prediction_bundles": 120,
+  "gates": {
+    "scientific_lock.json": "9e4e1539903757bc216bf951dddce799b713c6f2bb19bca4a27685551874f938",
+    "calibration_lock.json": "0383660a3c02ba5d0233f3bc54747d502d31a397105b8d7e36038dcb5d1588ad",
+    "test_open_lock.json": "4d834059bd4cfc68dcb4c407e896e8f26a715a20fcfc3ca69cc61ecb1c497415"
+  },
+  "no_training_or_calibration": true,
+  "no_test_based_model_selection": true,
+  "source_site_snapshot": "2026-10-29"
+}

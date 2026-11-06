@@ -1,0 +1,1372 @@
+{
+  "protocol_id": "ehhr_probability_phase5_sites_v1",
+  "cards": [
+    {
+      "site_id": "factory_001",
+      "name": "特斯拉上海超级工厂",
+      "entity": "特斯拉（上海）有限公司",
+      "industry": "汽车制造",
+      "production_address": "上海市浦东新区江山路5000号",
+      "snapshot_date": "2026-10-29",
+      "verification_note": "工信部明确列出生产地址；与 OSM 上海超级工厂名称及经营实体对应。仅核验汽车厂区，未并入附近储能工厂；OSM 包围盒中心并非测量中心。",
+      "evidence_ids": [
+        "tesla_miit",
+        "tesla_osm",
+        "osm_crs"
+      ],
+      "source_urls": {
+        "tesla_miit": "https://www.miit.gov.cn/datainfo/dljdclscqyjcpgg054894/xcpgs397/art/2025/art_7761c71ed919427189b6d9749f60945e.html",
+        "tesla_osm": "https://www.openstreetmap.org/api/0.6/way/635670279/full",
+        "osm_crs": "https://wiki.openstreetmap.org/wiki/Converting_to_WGS84"
+      },
+      "mapping": {
+        "site_id": "factory_001",
+        "site_name": "特斯拉上海超级工厂",
+        "primary_grid_id": "30.7500,121.7500",
+        "grid_latitude": 30.75,
+        "grid_longitude": 121.75,
+        "site_latitude": 30.8735828,
+        "site_longitude": 121.7684919,
+        "grid_index": null,
+        "spatial_role": null,
+        "screening_status": "non_land_grid",
+        "temporal_available": false,
+        "strict_H_available": false,
+        "shared_site_count": 1,
+        "representative_distance_km": 13.854809483160688,
+        "primary_partition_area_fraction": 0.7005325509411282,
+        "accepted_partition_area_fraction": 0.2994674490590077
+      },
+      "historical": null,
+      "model_summary": [],
+      "model_status": "masked_primary_no_estimate",
+      "unknowns": {
+        "current_operating_status": null,
+        "operation_start_date": null,
+        "employee_count": null,
+        "shift_pattern": null,
+        "job_and_workload": null,
+        "onsite_temperature_humidity": null,
+        "onsite_WBGT": null,
+        "radiation_wind": null,
+        "clothing_PPE": null,
+        "cooling_equipment_and_controls": null,
+        "energy_metering": null,
+        "downtime_quality_logs": null,
+        "financial_exposure_and_losses": null
+      },
+      "notes": {
+        "representation": "主格被陆地掩膜拒绝。存档边界约70.05%位于该主格最近中心分区、29.95%位于北侧有效格分区；这是几何比例，不是人员暴露或真实海陆比例。原北侧敏感格的历史均值10.52日、最长连续14日仅作存档敏感性说明，不能替代主结果。",
+        "priority": "A：先解决位置、掩膜和代表性证据缺口；缺值不表示危害低。",
+        "next_action": "待验证建议：核对现有汽车厂区边界、代表点与现场参考观测；调查主格拒绝的尺度与掩膜原因。若拟改变气候匹配方法，另立协议，保留本次空值基准，不将北侧格自动移为主格。",
+        "industry_question": "需要确认实际汽车制造岗位及工艺温控要求；未将附近储能工厂并入，也不假定具体生产线或工序存在。"
+      },
+      "impact_paths": [
+        {
+          "id": "people",
+          "path": "室外湿热背景 → 厂内外实际热环境 → 岗位人员热负荷",
+          "status": "合理但未验证路径",
+          "requires": "岗位位置、班次、工作强度、着装、防护装备、风与辐射，以及同步现场温湿度/WBGT资料",
+          "not_established": "没有员工暴露、健康影响或安全合规结论；不能由HI推算WBGT。"
+        },
+        {
+          "id": "cooling",
+          "path": "室外湿热背景 → 实际存在的温控需求 → 冷却设备负荷与能耗",
+          "status": "合理但未验证路径",
+          "requires": "先确认是否存在相关设备和控制要求，再取得设备工况、设定值、分项能耗与产量记录",
+          "not_established": "未确认任何厂区的设备容量、温控方式、能耗增量或投资收益。"
+        },
+        {
+          "id": "operations",
+          "path": "实际温湿环境变化 → 经确认的工艺/物料敏感环节 → 潜在生产或质量影响",
+          "status": "合理但未验证路径",
+          "requires": "工艺及物料要求、产量、质量、停机、维护、供电和订单等同期记录，以区分其他原因",
+          "not_established": "没有工艺故障、停产或损失证据，不估算真实损失或企业风险分数。"
+        }
+      ],
+      "monitoring": [
+        {
+          "queue": "B：建立观测对应关系",
+          "suggestion": "待验证建议：取得场所许可后，先确认室外参考位置及具有不同通风、辐射条件的实际作业点；开展时间同步的厂内外观测试点，记录传感器位置、遮蔽、检定、缺测、时区和采样频率。",
+          "acceptance": "有可追溯位置和时间的观测记录；先评估格点与现场偏差，不能以同格厂观测互相替代。",
+          "status": "待验证；许可、预算、设备、频次和覆盖时长未确定"
+        },
+        {
+          "queue": "C：检验影响路径",
+          "suggestion": "待验证建议：在具备观测和合法访问权限后，以实际岗位、班次、设备、能耗、产量和异常记录检验路径；人员资料尽量采用不识别个人的汇总记录。",
+          "acceptance": "影响与背景气候、工况、适应措施及其他原因能区分；尚未满足前不量化损失或效果。",
+          "status": "待验证；现场及运营数据均未取得"
+        }
+      ],
+      "limits": [
+        "身份与地址来自2026-10-29公开资料桌面核验快照；本项目没有现场核验或重新确认当前在营。",
+        "2000—2024是格点气候资料期，不证明工厂在整个期间存在或持续运营。",
+        "HI≥40.6°C是本项目阈值，不是职业安全、停工或财务损失标准。",
+        "ERA5有效时间不等于实时可获得时间；D−2不能消除所有同化和发布延迟限制。",
+        "5个年份和少量新发生事件不足以证明场所长期可靠性；本阶段不生成单厂置信区间，不套用区域置信区间。",
+        "第四阶段未支持LightGBM_F4稳定优于冻结LR_F4；D−2新发生及校准退化反例保留。",
+        "场所子集成绩是描述性结果；没有利用本次测试选择模型、特征、scope或阈值。"
+      ],
+      "history_text": "主格被掩膜拒绝；历史阈值天数、连续日数和概率保持为空。缺值不表示低危害。"
+    },
+    {
+      "site_id": "factory_002",
+      "name": "长安福特杭州工厂",
+      "entity": "长安福特汽车有限公司杭州分公司",
+      "industry": "汽车制造",
+      "production_address": "浙江省杭州市前进工业园区长福杭路135号",
+      "snapshot_date": "2026-10-29",
+      "verification_note": "工信部生产地址与杭州市政府对杭州装配工厂的说明交叉对应，OSM 为杭州分公司工业用地。剔除搜索结果中的长安福特宿舍。",
+      "evidence_ids": [
+        "ford_miit",
+        "ford_government",
+        "ford_osm",
+        "osm_crs"
+      ],
+      "source_urls": {
+        "ford_miit": "https://www.miit.gov.cn/datainfo/dljdclscqyjcpgg/xcpgs395sfwe85/art/2025/art_2e7e0086c0b04ba3b98b8dd14ec553ff.html",
+        "ford_government": "https://www.ehangzhou.gov.cn/2018-08/27/c_274515.htm",
+        "ford_osm": "https://www.openstreetmap.org/api/0.6/way/585796383/full",
+        "osm_crs": "https://wiki.openstreetmap.org/wiki/Converting_to_WGS84"
+      },
+      "mapping": {
+        "site_id": "factory_002",
+        "site_name": "长安福特杭州工厂",
+        "primary_grid_id": "30.2500,120.5000",
+        "grid_latitude": 30.25,
+        "grid_longitude": 120.5,
+        "site_latitude": 30.3554558,
+        "site_longitude": 120.5486863,
+        "grid_index": 772.0,
+        "spatial_role": "holdout",
+        "screening_status": "ok",
+        "temporal_available": true,
+        "strict_H_available": true,
+        "shared_site_count": 3,
+        "representative_distance_km": 12.623366120481853,
+        "primary_partition_area_fraction": 0.9999999999999988,
+        "accepted_partition_area_fraction": 0.9999999999999988
+      },
+      "historical": {
+        "period": {
+          "first_year": 2000,
+          "last_year": 2024,
+          "months": [
+            6,
+            7,
+            8
+          ],
+          "days_per_summer": 92
+        },
+        "complete_summers": 25,
+        "mean_threshold_days": 44.12,
+        "annual_days_distribution": {
+          "min": 24.0,
+          "p25": 36.0,
+          "median": 43.0,
+          "p75": 55.0,
+          "max": 64.0
+        },
+        "max_consecutive_days": 39.0,
+        "selection": {
+          "typical": {
+            "year": 2008,
+            "median_days_ge_threshold": 43.0,
+            "absolute_distance_days": 0.0,
+            "candidate_years": [
+              2008,
+              2010
+            ],
+            "tie_breaker": "earliest_year"
+          },
+          "extreme": {
+            "year": 2022,
+            "days_ge_threshold": 64,
+            "candidate_years_max_days": [
+              2022
+            ],
+            "longest_run_among_max_days": 39,
+            "candidate_years_max_days_and_run": [
+              2022
+            ],
+            "tie_breakers": [
+              "maximum_longest_run",
+              "earliest_year"
+            ]
+          }
+        },
+        "warning": "Full 92-day JJA; not the 84-day hindcast window or a factory operating history."
+      },
+      "model_summary": [
+        {
+          "scope": "strict",
+          "lag": 1,
+          "model_id": "lightgbm_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "all",
+          "n": 420,
+          "events": 266,
+          "calibrated_brier": 0.1202466289278743,
+          "raw_brier": 0.1246854090169329
+        },
+        {
+          "scope": "strict",
+          "lag": 1,
+          "model_id": "lightgbm_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "onset",
+          "n": 157,
+          "events": 40,
+          "calibrated_brier": 0.1500394634391875,
+          "raw_brier": 0.1572160486613863
+        },
+        {
+          "scope": "strict",
+          "lag": 1,
+          "model_id": "logistic_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "all",
+          "n": 420,
+          "events": 266,
+          "calibrated_brier": 0.1159491238312663,
+          "raw_brier": 0.1195886693406464
+        },
+        {
+          "scope": "strict",
+          "lag": 1,
+          "model_id": "logistic_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "onset",
+          "n": 157,
+          "events": 40,
+          "calibrated_brier": 0.1397743623471368,
+          "raw_brier": 0.1451859141267835
+        },
+        {
+          "scope": "strict",
+          "lag": 2,
+          "model_id": "lightgbm_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "all",
+          "n": 420,
+          "events": 266,
+          "calibrated_brier": 0.1648978975221167,
+          "raw_brier": 0.1814651626012629
+        },
+        {
+          "scope": "strict",
+          "lag": 2,
+          "model_id": "lightgbm_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "onset",
+          "n": 157,
+          "events": 40,
+          "calibrated_brier": 0.169448503400445,
+          "raw_brier": 0.165093338659459
+        },
+        {
+          "scope": "strict",
+          "lag": 2,
+          "model_id": "logistic_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "all",
+          "n": 420,
+          "events": 266,
+          "calibrated_brier": 0.1551969006900601,
+          "raw_brier": 0.1730906571035127
+        },
+        {
+          "scope": "strict",
+          "lag": 2,
+          "model_id": "logistic_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "onset",
+          "n": 157,
+          "events": 40,
+          "calibrated_brier": 0.1542813610761631,
+          "raw_brier": 0.1542730772009612
+        },
+        {
+          "scope": "temporal",
+          "lag": 1,
+          "model_id": "lightgbm_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "all",
+          "n": 420,
+          "events": 266,
+          "calibrated_brier": 0.1190225680373289,
+          "raw_brier": 0.1227753048694046
+        },
+        {
+          "scope": "temporal",
+          "lag": 1,
+          "model_id": "lightgbm_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "onset",
+          "n": 157,
+          "events": 40,
+          "calibrated_brier": 0.1394772334677082,
+          "raw_brier": 0.1457834172447504
+        },
+        {
+          "scope": "temporal",
+          "lag": 1,
+          "model_id": "logistic_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "all",
+          "n": 420,
+          "events": 266,
+          "calibrated_brier": 0.1116125482010496,
+          "raw_brier": 0.1134209081850262
+        },
+        {
+          "scope": "temporal",
+          "lag": 1,
+          "model_id": "logistic_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "onset",
+          "n": 157,
+          "events": 40,
+          "calibrated_brier": 0.1319752945775448,
+          "raw_brier": 0.135579021008996
+        },
+        {
+          "scope": "temporal",
+          "lag": 2,
+          "model_id": "lightgbm_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "all",
+          "n": 420,
+          "events": 266,
+          "calibrated_brier": 0.166020930482693,
+          "raw_brier": 0.178298509738945
+        },
+        {
+          "scope": "temporal",
+          "lag": 2,
+          "model_id": "lightgbm_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "onset",
+          "n": 157,
+          "events": 40,
+          "calibrated_brier": 0.1778098051662078,
+          "raw_brier": 0.1739001146098724
+        },
+        {
+          "scope": "temporal",
+          "lag": 2,
+          "model_id": "logistic_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "all",
+          "n": 420,
+          "events": 266,
+          "calibrated_brier": 0.1462034097472123,
+          "raw_brier": 0.1556049884623383
+        },
+        {
+          "scope": "temporal",
+          "lag": 2,
+          "model_id": "logistic_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "onset",
+          "n": 157,
+          "events": 40,
+          "calibrated_brier": 0.1528295487534228,
+          "raw_brier": 0.1502344599320694
+        }
+      ],
+      "model_status": "frozen_grid_hindcast_descriptive_only",
+      "unknowns": {
+        "current_operating_status": null,
+        "operation_start_date": null,
+        "employee_count": null,
+        "shift_pattern": null,
+        "job_and_workload": null,
+        "onsite_temperature_humidity": null,
+        "onsite_WBGT": null,
+        "radiation_wind": null,
+        "clothing_PPE": null,
+        "cooling_equipment_and_controls": null,
+        "energy_metering": null,
+        "downtime_quality_logs": null,
+        "financial_exposure_and_losses": null
+      },
+      "notes": {
+        "representation": "凹多边形的原包围盒中心在边界外；既有代表点取中纬度最大内部横截段的中点。四种既有几何情景未改变主格。与费列罗、格力共用一条气候序列，不能视为三份独立证据。",
+        "priority": "A：复核代表点及实际作业区域；与另外两厂协同设计观测，但分别保留场所记录。",
+        "next_action": "待验证建议：核实现场边界与代表点后，记录实际作业区的厂内外差异；三厂可以共享格点背景，不能共用一个厂内暴露结论。",
+        "industry_question": "公开来源支持汽车装配厂身份；具体工序、热源、班次和冷却条件仍需现场确认。"
+      },
+      "impact_paths": [
+        {
+          "id": "people",
+          "path": "室外湿热背景 → 厂内外实际热环境 → 岗位人员热负荷",
+          "status": "合理但未验证路径",
+          "requires": "岗位位置、班次、工作强度、着装、防护装备、风与辐射，以及同步现场温湿度/WBGT资料",
+          "not_established": "没有员工暴露、健康影响或安全合规结论；不能由HI推算WBGT。"
+        },
+        {
+          "id": "cooling",
+          "path": "室外湿热背景 → 实际存在的温控需求 → 冷却设备负荷与能耗",
+          "status": "合理但未验证路径",
+          "requires": "先确认是否存在相关设备和控制要求，再取得设备工况、设定值、分项能耗与产量记录",
+          "not_established": "未确认任何厂区的设备容量、温控方式、能耗增量或投资收益。"
+        },
+        {
+          "id": "operations",
+          "path": "实际温湿环境变化 → 经确认的工艺/物料敏感环节 → 潜在生产或质量影响",
+          "status": "合理但未验证路径",
+          "requires": "工艺及物料要求、产量、质量、停机、维护、供电和订单等同期记录，以区分其他原因",
+          "not_established": "没有工艺故障、停产或损失证据，不估算真实损失或企业风险分数。"
+        }
+      ],
+      "monitoring": [
+        {
+          "queue": "B：建立观测对应关系",
+          "suggestion": "待验证建议：取得场所许可后，先确认室外参考位置及具有不同通风、辐射条件的实际作业点；开展时间同步的厂内外观测试点，记录传感器位置、遮蔽、检定、缺测、时区和采样频率。",
+          "acceptance": "有可追溯位置和时间的观测记录；先评估格点与现场偏差，不能以同格厂观测互相替代。",
+          "status": "待验证；许可、预算、设备、频次和覆盖时长未确定"
+        },
+        {
+          "queue": "C：检验影响路径",
+          "suggestion": "待验证建议：在具备观测和合法访问权限后，以实际岗位、班次、设备、能耗、产量和异常记录检验路径；人员资料尽量采用不识别个人的汇总记录。",
+          "acceptance": "影响与背景气候、工况、适应措施及其他原因能区分；尚未满足前不量化损失或效果。",
+          "status": "待验证；现场及运营数据均未取得"
+        }
+      ],
+      "limits": [
+        "身份与地址来自2026-10-29公开资料桌面核验快照；本项目没有现场核验或重新确认当前在营。",
+        "2000—2024是格点气候资料期，不证明工厂在整个期间存在或持续运营。",
+        "HI≥40.6°C是本项目阈值，不是职业安全、停工或财务损失标准。",
+        "ERA5有效时间不等于实时可获得时间；D−2不能消除所有同化和发布延迟限制。",
+        "5个年份和少量新发生事件不足以证明场所长期可靠性；本阶段不生成单厂置信区间，不套用区域置信区间。",
+        "第四阶段未支持LightGBM_F4稳定优于冻结LR_F4；D−2新发生及校准退化反例保留。",
+        "场所子集成绩是描述性结果；没有利用本次测试选择模型、特征、scope或阈值。"
+      ],
+      "history_text": "2000—2024的25个完整夏季，每季92日：日最大HI≥40.6°C的天数均值 44.12日；年度最小/中位/最大为 24/43/64日；季内最长连续 39日。原定典型年 2008，极端年 2022。这些是格点背景，不是企业历史损失。"
+    },
+    {
+      "site_id": "factory_003",
+      "name": "费列罗杭州工厂",
+      "entity": "费列罗食品（杭州）有限公司",
+      "industry": "食品制造",
+      "production_address": "浙江省杭州市江东工业园区江东二路2727号",
+      "snapshot_date": "2026-10-29",
+      "verification_note": "政府抽检表中的生产者地址与企业官网杭州地址一致；OSM 为同名工业用地。上海贸易公司办公地址已区分。抽检表是公开标称生产者证据，非本项目现场审核。",
+      "evidence_ids": [
+        "ferrero_inspection",
+        "ferrero_locations",
+        "ferrero_osm",
+        "osm_crs"
+      ],
+      "source_urls": {
+        "ferrero_inspection": "https://www.zjg.gov.cn/zjgszwz/spaqhh/202602/23f520a1c1cc494a9d927825c5e2fad7.shtml",
+        "ferrero_locations": "https://www.ferrero.com.cn/cn/zh/locations",
+        "ferrero_osm": "https://www.openstreetmap.org/api/0.6/way/878824460/full",
+        "osm_crs": "https://wiki.openstreetmap.org/wiki/Converting_to_WGS84"
+      },
+      "mapping": {
+        "site_id": "factory_003",
+        "site_name": "费列罗杭州工厂",
+        "primary_grid_id": "30.2500,120.5000",
+        "grid_latitude": 30.25,
+        "grid_longitude": 120.5,
+        "site_latitude": 30.3243907,
+        "site_longitude": 120.4719224,
+        "grid_index": 772.0,
+        "spatial_role": "holdout",
+        "screening_status": "ok",
+        "temporal_available": true,
+        "strict_H_available": true,
+        "shared_site_count": 3,
+        "representative_distance_km": 8.70012346558652,
+        "primary_partition_area_fraction": 0.9999999999999992,
+        "accepted_partition_area_fraction": 0.9999999999999992
+      },
+      "historical": {
+        "period": {
+          "first_year": 2000,
+          "last_year": 2024,
+          "months": [
+            6,
+            7,
+            8
+          ],
+          "days_per_summer": 92
+        },
+        "complete_summers": 25,
+        "mean_threshold_days": 44.12,
+        "annual_days_distribution": {
+          "min": 24.0,
+          "p25": 36.0,
+          "median": 43.0,
+          "p75": 55.0,
+          "max": 64.0
+        },
+        "max_consecutive_days": 39.0,
+        "selection": {
+          "typical": {
+            "year": 2008,
+            "median_days_ge_threshold": 43.0,
+            "absolute_distance_days": 0.0,
+            "candidate_years": [
+              2008,
+              2010
+            ],
+            "tie_breaker": "earliest_year"
+          },
+          "extreme": {
+            "year": 2022,
+            "days_ge_threshold": 64,
+            "candidate_years_max_days": [
+              2022
+            ],
+            "longest_run_among_max_days": 39,
+            "candidate_years_max_days_and_run": [
+              2022
+            ],
+            "tie_breakers": [
+              "maximum_longest_run",
+              "earliest_year"
+            ]
+          }
+        },
+        "warning": "Full 92-day JJA; not the 84-day hindcast window or a factory operating history."
+      },
+      "model_summary": [
+        {
+          "scope": "strict",
+          "lag": 1,
+          "model_id": "lightgbm_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "all",
+          "n": 420,
+          "events": 266,
+          "calibrated_brier": 0.1202466289278743,
+          "raw_brier": 0.1246854090169329
+        },
+        {
+          "scope": "strict",
+          "lag": 1,
+          "model_id": "lightgbm_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "onset",
+          "n": 157,
+          "events": 40,
+          "calibrated_brier": 0.1500394634391875,
+          "raw_brier": 0.1572160486613863
+        },
+        {
+          "scope": "strict",
+          "lag": 1,
+          "model_id": "logistic_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "all",
+          "n": 420,
+          "events": 266,
+          "calibrated_brier": 0.1159491238312663,
+          "raw_brier": 0.1195886693406464
+        },
+        {
+          "scope": "strict",
+          "lag": 1,
+          "model_id": "logistic_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "onset",
+          "n": 157,
+          "events": 40,
+          "calibrated_brier": 0.1397743623471368,
+          "raw_brier": 0.1451859141267835
+        },
+        {
+          "scope": "strict",
+          "lag": 2,
+          "model_id": "lightgbm_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "all",
+          "n": 420,
+          "events": 266,
+          "calibrated_brier": 0.1648978975221167,
+          "raw_brier": 0.1814651626012629
+        },
+        {
+          "scope": "strict",
+          "lag": 2,
+          "model_id": "lightgbm_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "onset",
+          "n": 157,
+          "events": 40,
+          "calibrated_brier": 0.169448503400445,
+          "raw_brier": 0.165093338659459
+        },
+        {
+          "scope": "strict",
+          "lag": 2,
+          "model_id": "logistic_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "all",
+          "n": 420,
+          "events": 266,
+          "calibrated_brier": 0.1551969006900601,
+          "raw_brier": 0.1730906571035127
+        },
+        {
+          "scope": "strict",
+          "lag": 2,
+          "model_id": "logistic_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "onset",
+          "n": 157,
+          "events": 40,
+          "calibrated_brier": 0.1542813610761631,
+          "raw_brier": 0.1542730772009612
+        },
+        {
+          "scope": "temporal",
+          "lag": 1,
+          "model_id": "lightgbm_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "all",
+          "n": 420,
+          "events": 266,
+          "calibrated_brier": 0.1190225680373289,
+          "raw_brier": 0.1227753048694046
+        },
+        {
+          "scope": "temporal",
+          "lag": 1,
+          "model_id": "lightgbm_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "onset",
+          "n": 157,
+          "events": 40,
+          "calibrated_brier": 0.1394772334677082,
+          "raw_brier": 0.1457834172447504
+        },
+        {
+          "scope": "temporal",
+          "lag": 1,
+          "model_id": "logistic_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "all",
+          "n": 420,
+          "events": 266,
+          "calibrated_brier": 0.1116125482010496,
+          "raw_brier": 0.1134209081850262
+        },
+        {
+          "scope": "temporal",
+          "lag": 1,
+          "model_id": "logistic_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "onset",
+          "n": 157,
+          "events": 40,
+          "calibrated_brier": 0.1319752945775448,
+          "raw_brier": 0.135579021008996
+        },
+        {
+          "scope": "temporal",
+          "lag": 2,
+          "model_id": "lightgbm_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "all",
+          "n": 420,
+          "events": 266,
+          "calibrated_brier": 0.166020930482693,
+          "raw_brier": 0.178298509738945
+        },
+        {
+          "scope": "temporal",
+          "lag": 2,
+          "model_id": "lightgbm_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "onset",
+          "n": 157,
+          "events": 40,
+          "calibrated_brier": 0.1778098051662078,
+          "raw_brier": 0.1739001146098724
+        },
+        {
+          "scope": "temporal",
+          "lag": 2,
+          "model_id": "logistic_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "all",
+          "n": 420,
+          "events": 266,
+          "calibrated_brier": 0.1462034097472123,
+          "raw_brier": 0.1556049884623383
+        },
+        {
+          "scope": "temporal",
+          "lag": 2,
+          "model_id": "logistic_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "onset",
+          "n": 157,
+          "events": 40,
+          "calibrated_brier": 0.1528295487534228,
+          "raw_brier": 0.1502344599320694
+        }
+      ],
+      "model_status": "frozen_grid_hindcast_descriptive_only",
+      "unknowns": {
+        "current_operating_status": null,
+        "operation_start_date": null,
+        "employee_count": null,
+        "shift_pattern": null,
+        "job_and_workload": null,
+        "onsite_temperature_humidity": null,
+        "onsite_WBGT": null,
+        "radiation_wind": null,
+        "clothing_PPE": null,
+        "cooling_equipment_and_controls": null,
+        "energy_metering": null,
+        "downtime_quality_logs": null,
+        "financial_exposure_and_losses": null
+      },
+      "notes": {
+        "representation": "存档边界全部位于主格最近中心分区；这不证明格点代表室内环境。与长安福特、格力共享格点，行业不同不产生额外气候样本。",
+        "priority": "A：核对生产与贸易办公地址边界，独立确认本厂观测覆盖。",
+        "next_action": "待验证建议：在确认现场条件后，查明是否存在温湿度敏感的生产或储存环节；如存在，再同步记录工况和质量，不能预设冷链或产品损失。",
+        "industry_question": "公开来源支持食品生产地址；具体产品线、温控设施、原料和成品敏感性尚未核实。"
+      },
+      "impact_paths": [
+        {
+          "id": "people",
+          "path": "室外湿热背景 → 厂内外实际热环境 → 岗位人员热负荷",
+          "status": "合理但未验证路径",
+          "requires": "岗位位置、班次、工作强度、着装、防护装备、风与辐射，以及同步现场温湿度/WBGT资料",
+          "not_established": "没有员工暴露、健康影响或安全合规结论；不能由HI推算WBGT。"
+        },
+        {
+          "id": "cooling",
+          "path": "室外湿热背景 → 实际存在的温控需求 → 冷却设备负荷与能耗",
+          "status": "合理但未验证路径",
+          "requires": "先确认是否存在相关设备和控制要求，再取得设备工况、设定值、分项能耗与产量记录",
+          "not_established": "未确认任何厂区的设备容量、温控方式、能耗增量或投资收益。"
+        },
+        {
+          "id": "operations",
+          "path": "实际温湿环境变化 → 经确认的工艺/物料敏感环节 → 潜在生产或质量影响",
+          "status": "合理但未验证路径",
+          "requires": "工艺及物料要求、产量、质量、停机、维护、供电和订单等同期记录，以区分其他原因",
+          "not_established": "没有工艺故障、停产或损失证据，不估算真实损失或企业风险分数。"
+        }
+      ],
+      "monitoring": [
+        {
+          "queue": "B：建立观测对应关系",
+          "suggestion": "待验证建议：取得场所许可后，先确认室外参考位置及具有不同通风、辐射条件的实际作业点；开展时间同步的厂内外观测试点，记录传感器位置、遮蔽、检定、缺测、时区和采样频率。",
+          "acceptance": "有可追溯位置和时间的观测记录；先评估格点与现场偏差，不能以同格厂观测互相替代。",
+          "status": "待验证；许可、预算、设备、频次和覆盖时长未确定"
+        },
+        {
+          "queue": "C：检验影响路径",
+          "suggestion": "待验证建议：在具备观测和合法访问权限后，以实际岗位、班次、设备、能耗、产量和异常记录检验路径；人员资料尽量采用不识别个人的汇总记录。",
+          "acceptance": "影响与背景气候、工况、适应措施及其他原因能区分；尚未满足前不量化损失或效果。",
+          "status": "待验证；现场及运营数据均未取得"
+        }
+      ],
+      "limits": [
+        "身份与地址来自2026-10-29公开资料桌面核验快照；本项目没有现场核验或重新确认当前在营。",
+        "2000—2024是格点气候资料期，不证明工厂在整个期间存在或持续运营。",
+        "HI≥40.6°C是本项目阈值，不是职业安全、停工或财务损失标准。",
+        "ERA5有效时间不等于实时可获得时间；D−2不能消除所有同化和发布延迟限制。",
+        "5个年份和少量新发生事件不足以证明场所长期可靠性；本阶段不生成单厂置信区间，不套用区域置信区间。",
+        "第四阶段未支持LightGBM_F4稳定优于冻结LR_F4；D−2新发生及校准退化反例保留。",
+        "场所子集成绩是描述性结果；没有利用本次测试选择模型、特征、scope或阈值。"
+      ],
+      "history_text": "2000—2024的25个完整夏季，每季92日：日最大HI≥40.6°C的天数均值 44.12日；年度最小/中位/最大为 24/43/64日；季内最长连续 39日。原定典型年 2008，极端年 2022。这些是格点背景，不是企业历史损失。"
+    },
+    {
+      "site_id": "factory_004",
+      "name": "格力杭州生产基地",
+      "entity": "格力电器（杭州）有限公司",
+      "industry": "家电制造",
+      "production_address": "浙江省杭州市钱塘区江东一路2345号",
+      "snapshot_date": "2026-10-29",
+      "verification_note": "证书列明空调生产企业及江东一路2345号；环评位置与 OSM 格力厂区相符。环评涉及园区内能源项目，未把其项目面积或设备坐标当作整厂信息；环评未标注 CRS 的坐标仅作位置佐证，气候输入采用 OSM WGS84。",
+      "evidence_ids": [
+        "gree_ccc",
+        "gree_eia",
+        "gree_osm",
+        "osm_crs"
+      ],
+      "source_urls": {
+        "gree_ccc": "https://www.ccgp-neimenggu.gov.cn/uploader-gpmall/upload/commoninfo/2025/7/11/30399097358771123.pdf",
+        "gree_eia": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web3249/site/attach/0/59edf46a1e694837a9f96a4c11e15639.pdf",
+        "gree_osm": "https://www.openstreetmap.org/api/0.6/way/1201521888/full",
+        "osm_crs": "https://wiki.openstreetmap.org/wiki/Converting_to_WGS84"
+      },
+      "mapping": {
+        "site_id": "factory_004",
+        "site_name": "格力杭州生产基地",
+        "primary_grid_id": "30.2500,120.5000",
+        "grid_latitude": 30.25,
+        "grid_longitude": 120.5,
+        "site_latitude": 30.3239591,
+        "site_longitude": 120.6035093,
+        "grid_index": 772.0,
+        "spatial_role": "holdout",
+        "screening_status": "ok",
+        "temporal_available": true,
+        "strict_H_available": true,
+        "shared_site_count": 3,
+        "representative_distance_km": 12.900052061104,
+        "primary_partition_area_fraction": 1.0000000000000018,
+        "accepted_partition_area_fraction": 1.0000000000000018
+      },
+      "historical": {
+        "period": {
+          "first_year": 2000,
+          "last_year": 2024,
+          "months": [
+            6,
+            7,
+            8
+          ],
+          "days_per_summer": 92
+        },
+        "complete_summers": 25,
+        "mean_threshold_days": 44.12,
+        "annual_days_distribution": {
+          "min": 24.0,
+          "p25": 36.0,
+          "median": 43.0,
+          "p75": 55.0,
+          "max": 64.0
+        },
+        "max_consecutive_days": 39.0,
+        "selection": {
+          "typical": {
+            "year": 2008,
+            "median_days_ge_threshold": 43.0,
+            "absolute_distance_days": 0.0,
+            "candidate_years": [
+              2008,
+              2010
+            ],
+            "tie_breaker": "earliest_year"
+          },
+          "extreme": {
+            "year": 2022,
+            "days_ge_threshold": 64,
+            "candidate_years_max_days": [
+              2022
+            ],
+            "longest_run_among_max_days": 39,
+            "candidate_years_max_days_and_run": [
+              2022
+            ],
+            "tie_breakers": [
+              "maximum_longest_run",
+              "earliest_year"
+            ]
+          }
+        },
+        "warning": "Full 92-day JJA; not the 84-day hindcast window or a factory operating history."
+      },
+      "model_summary": [
+        {
+          "scope": "strict",
+          "lag": 1,
+          "model_id": "lightgbm_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "all",
+          "n": 420,
+          "events": 266,
+          "calibrated_brier": 0.1202466289278743,
+          "raw_brier": 0.1246854090169329
+        },
+        {
+          "scope": "strict",
+          "lag": 1,
+          "model_id": "lightgbm_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "onset",
+          "n": 157,
+          "events": 40,
+          "calibrated_brier": 0.1500394634391875,
+          "raw_brier": 0.1572160486613863
+        },
+        {
+          "scope": "strict",
+          "lag": 1,
+          "model_id": "logistic_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "all",
+          "n": 420,
+          "events": 266,
+          "calibrated_brier": 0.1159491238312663,
+          "raw_brier": 0.1195886693406464
+        },
+        {
+          "scope": "strict",
+          "lag": 1,
+          "model_id": "logistic_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "onset",
+          "n": 157,
+          "events": 40,
+          "calibrated_brier": 0.1397743623471368,
+          "raw_brier": 0.1451859141267835
+        },
+        {
+          "scope": "strict",
+          "lag": 2,
+          "model_id": "lightgbm_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "all",
+          "n": 420,
+          "events": 266,
+          "calibrated_brier": 0.1648978975221167,
+          "raw_brier": 0.1814651626012629
+        },
+        {
+          "scope": "strict",
+          "lag": 2,
+          "model_id": "lightgbm_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "onset",
+          "n": 157,
+          "events": 40,
+          "calibrated_brier": 0.169448503400445,
+          "raw_brier": 0.165093338659459
+        },
+        {
+          "scope": "strict",
+          "lag": 2,
+          "model_id": "logistic_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "all",
+          "n": 420,
+          "events": 266,
+          "calibrated_brier": 0.1551969006900601,
+          "raw_brier": 0.1730906571035127
+        },
+        {
+          "scope": "strict",
+          "lag": 2,
+          "model_id": "logistic_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "onset",
+          "n": 157,
+          "events": 40,
+          "calibrated_brier": 0.1542813610761631,
+          "raw_brier": 0.1542730772009612
+        },
+        {
+          "scope": "temporal",
+          "lag": 1,
+          "model_id": "lightgbm_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "all",
+          "n": 420,
+          "events": 266,
+          "calibrated_brier": 0.1190225680373289,
+          "raw_brier": 0.1227753048694046
+        },
+        {
+          "scope": "temporal",
+          "lag": 1,
+          "model_id": "lightgbm_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "onset",
+          "n": 157,
+          "events": 40,
+          "calibrated_brier": 0.1394772334677082,
+          "raw_brier": 0.1457834172447504
+        },
+        {
+          "scope": "temporal",
+          "lag": 1,
+          "model_id": "logistic_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "all",
+          "n": 420,
+          "events": 266,
+          "calibrated_brier": 0.1116125482010496,
+          "raw_brier": 0.1134209081850262
+        },
+        {
+          "scope": "temporal",
+          "lag": 1,
+          "model_id": "logistic_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "onset",
+          "n": 157,
+          "events": 40,
+          "calibrated_brier": 0.1319752945775448,
+          "raw_brier": 0.135579021008996
+        },
+        {
+          "scope": "temporal",
+          "lag": 2,
+          "model_id": "lightgbm_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "all",
+          "n": 420,
+          "events": 266,
+          "calibrated_brier": 0.166020930482693,
+          "raw_brier": 0.178298509738945
+        },
+        {
+          "scope": "temporal",
+          "lag": 2,
+          "model_id": "lightgbm_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "onset",
+          "n": 157,
+          "events": 40,
+          "calibrated_brier": 0.1778098051662078,
+          "raw_brier": 0.1739001146098724
+        },
+        {
+          "scope": "temporal",
+          "lag": 2,
+          "model_id": "logistic_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "all",
+          "n": 420,
+          "events": 266,
+          "calibrated_brier": 0.1462034097472123,
+          "raw_brier": 0.1556049884623383
+        },
+        {
+          "scope": "temporal",
+          "lag": 2,
+          "model_id": "logistic_F4",
+          "primary_grid_id": "30.2500,120.5000",
+          "risk_set": "onset",
+          "n": 157,
+          "events": 40,
+          "calibrated_brier": 0.1528295487534228,
+          "raw_brier": 0.1502344599320694
+        }
+      ],
+      "model_status": "frozen_grid_hindcast_descriptive_only",
+      "unknowns": {
+        "current_operating_status": null,
+        "operation_start_date": null,
+        "employee_count": null,
+        "shift_pattern": null,
+        "job_and_workload": null,
+        "onsite_temperature_humidity": null,
+        "onsite_WBGT": null,
+        "radiation_wind": null,
+        "clothing_PPE": null,
+        "cooling_equipment_and_controls": null,
+        "energy_metering": null,
+        "downtime_quality_logs": null,
+        "financial_exposure_and_losses": null
+      },
+      "notes": {
+        "representation": "存档边界全部位于主格最近中心分区；公开环评所述园内能源项目不能代表整厂面积、设备或暴露。与另外两家杭州厂共享格点。",
+        "priority": "A：明确整厂与园内项目的边界和设备归属，再确认观测位置。",
+        "next_action": "待验证建议：核对实际生产、储存和公用工程区域；仅在取得真实设备与能耗资料后评估冷却相关路径。",
+        "industry_question": "公开来源支持家电生产场所身份；不从行业名称或园内能源环评推定整厂工艺与冷却能力。"
+      },
+      "impact_paths": [
+        {
+          "id": "people",
+          "path": "室外湿热背景 → 厂内外实际热环境 → 岗位人员热负荷",
+          "status": "合理但未验证路径",
+          "requires": "岗位位置、班次、工作强度、着装、防护装备、风与辐射，以及同步现场温湿度/WBGT资料",
+          "not_established": "没有员工暴露、健康影响或安全合规结论；不能由HI推算WBGT。"
+        },
+        {
+          "id": "cooling",
+          "path": "室外湿热背景 → 实际存在的温控需求 → 冷却设备负荷与能耗",
+          "status": "合理但未验证路径",
+          "requires": "先确认是否存在相关设备和控制要求，再取得设备工况、设定值、分项能耗与产量记录",
+          "not_established": "未确认任何厂区的设备容量、温控方式、能耗增量或投资收益。"
+        },
+        {
+          "id": "operations",
+          "path": "实际温湿环境变化 → 经确认的工艺/物料敏感环节 → 潜在生产或质量影响",
+          "status": "合理但未验证路径",
+          "requires": "工艺及物料要求、产量、质量、停机、维护、供电和订单等同期记录，以区分其他原因",
+          "not_established": "没有工艺故障、停产或损失证据，不估算真实损失或企业风险分数。"
+        }
+      ],
+      "monitoring": [
+        {
+          "queue": "B：建立观测对应关系",
+          "suggestion": "待验证建议：取得场所许可后，先确认室外参考位置及具有不同通风、辐射条件的实际作业点；开展时间同步的厂内外观测试点，记录传感器位置、遮蔽、检定、缺测、时区和采样频率。",
+          "acceptance": "有可追溯位置和时间的观测记录；先评估格点与现场偏差，不能以同格厂观测互相替代。",
+          "status": "待验证；许可、预算、设备、频次和覆盖时长未确定"
+        },
+        {
+          "queue": "C：检验影响路径",
+          "suggestion": "待验证建议：在具备观测和合法访问权限后，以实际岗位、班次、设备、能耗、产量和异常记录检验路径；人员资料尽量采用不识别个人的汇总记录。",
+          "acceptance": "影响与背景气候、工况、适应措施及其他原因能区分；尚未满足前不量化损失或效果。",
+          "status": "待验证；现场及运营数据均未取得"
+        }
+      ],
+      "limits": [
+        "身份与地址来自2026-10-29公开资料桌面核验快照；本项目没有现场核验或重新确认当前在营。",
+        "2000—2024是格点气候资料期，不证明工厂在整个期间存在或持续运营。",
+        "HI≥40.6°C是本项目阈值，不是职业安全、停工或财务损失标准。",
+        "ERA5有效时间不等于实时可获得时间；D−2不能消除所有同化和发布延迟限制。",
+        "5个年份和少量新发生事件不足以证明场所长期可靠性；本阶段不生成单厂置信区间，不套用区域置信区间。",
+        "第四阶段未支持LightGBM_F4稳定优于冻结LR_F4；D−2新发生及校准退化反例保留。",
+        "场所子集成绩是描述性结果；没有利用本次测试选择模型、特征、scope或阈值。"
+      ],
+      "history_text": "2000—2024的25个完整夏季，每季92日：日最大HI≥40.6°C的天数均值 44.12日；年度最小/中位/最大为 24/43/64日；季内最长连续 39日。原定典型年 2008，极端年 2022。这些是格点背景，不是企业历史损失。"
+    },
+    {
+      "site_id": "factory_005",
+      "name": "采埃孚上海元江路厂区",
+      "entity": "采埃孚汽车零部件系统（上海）有限公司；采埃孚商用车底盘技术（上海）有限公司",
+      "industry": "汽车零部件",
+      "production_address": "上海市闵行区元江路4440号",
+      "snapshot_date": "2026-10-29",
+      "verification_note": "企业官网厂名、生产范围证书及政府中文实体/地址相符。两个同址企业按一个场所计数；OSM 边界只标注汽车零部件系统公司，不能保证覆盖另一法人所有生产单元。九泾路889号总部未计入工厂。",
+      "evidence_ids": [
+        "zf_locations",
+        "zf_iso14001",
+        "zf_address",
+        "zf_shanghai_osm",
+        "osm_crs"
+      ],
+      "source_urls": {
+        "zf_locations": "https://www.zf.com/china/zh/company/zf-in-china.html",
+        "zf_iso14001": "https://www.zf.com/master/media/migrated_data_certificates/Friedrichshafen_DNV_ISO14001_2015_10000407354_en_china.pdf",
+        "zf_address": "https://www.shanghai.gov.cn/qjzccs/20220412/6b5f41df7c754ea69c2da43ae1429377.html",
+        "zf_shanghai_osm": "https://www.openstreetmap.org/api/0.6/way/1243688733/full",
+        "osm_crs": "https://wiki.openstreetmap.org/wiki/Converting_to_WGS84"
+      },
+      "mapping": {
+        "site_id": "factory_005",
+        "site_name": "采埃孚上海元江路厂区",
+        "primary_grid_id": "31.0000,121.5000",
+        "grid_latitude": 31.0,
+        "grid_longitude": 121.5,
+        "site_latitude": 31.0471018,
+        "site_longitude": 121.3770646,
+        "grid_index": 887.0,
+        "spatial_role": "buffer",
+        "screening_status": "ok",
+        "temporal_available": true,
+        "strict_H_available": false,
+        "shared_site_count": 1,
+        "representative_distance_km": 12.831948654210692,
+        "primary_partition_area_fraction": 0.9999999999999992,
+        "accepted_partition_area_fraction": 0.9999999999999992
+      },
+      "historical": {
+        "period": {
+          "first_year": 2000,
+          "last_year": 2024,
+          "months": [
+            6,
+            7,
+            8
+          ],
+          "days_per_summer": 92
+        },
+        "complete_summers": 25,
+        "mean_threshold_days": 32.24,
+        "annual_days_distribution": {
+          "min": 13.0,
+          "p25": 24.0,
+          "median": 30.0,
+          "p75": 39.0,
+          "max": 56.0
+        },
+        "max_consecutive_days": 36.0,
+        "selection": {
+          "typical": {
+            "year": 2005,
+            "median_days_ge_threshold": 30.0,
+            "absolute_distance_days": 0.0,
+            "candidate_years": [
+              2005,
+              2006,
+              2019
+            ],
+            "tie_breaker": "earliest_year"
+          },
+          "extreme": {
+            "year": 2022,
+            "days_ge_threshold": 56,
+            "candidate_years_max_days": [
+              2022
+            ],
+            "longest_run_among_max_days": 30,
+            "candidate_years_max_days_and_run": [
+              2022
+            ],
+            "tie_breakers": [
+              "maximum_longest_run",
+              "earliest_year"
+            ]
+          }
+        },
+        "warning": "Full 92-day JJA; not the 84-day hindcast window or a factory operating history."
+      },
+      "model_summary": [
+        {
+          "scope": "temporal",
+          "lag": 1,
+          "model_id": "lightgbm_F4",
+          "primary_grid_id": "31.0000,121.5000",
+          "risk_set": "all",
+          "n": 420,
+          "events": 212,
+          "calibrated_brier": 0.1380797184509347,
+          "raw_brier": 0.1424784407613606
+        },
+        {
+          "scope": "temporal",
+          "lag": 1,
+          "model_id": "lightgbm_F4",
+          "primary_grid_id": "31.0000,121.5000",
+          "risk_set": "onset",
+          "n": 210,
+          "events": 44,
+          "calibrated_brier": 0.1385343244667431,
+          "raw_brier": 0.1429473110139442
+        },
+        {
+          "scope": "temporal",
+          "lag": 1,
+          "model_id": "logistic_F4",
+          "primary_grid_id": "31.0000,121.5000",
+          "risk_set": "all",
+          "n": 420,
+          "events": 212,
+          "calibrated_brier": 0.1337679857702377,
+          "raw_brier": 0.1356118540247671
+        },
+        {
+          "scope": "temporal",
+          "lag": 1,
+          "model_id": "logistic_F4",
+          "primary_grid_id": "31.0000,121.5000",
+          "risk_set": "onset",
+          "n": 210,
+          "events": 44,
+          "calibrated_brier": 0.1383414949512229,
+          "raw_brier": 0.1391170510128263
+        },
+        {
+          "scope": "temporal",
+          "lag": 2,
+          "model_id": "lightgbm_F4",
+          "primary_grid_id": "31.0000,121.5000",
+          "risk_set": "all",
+          "n": 420,
+          "events": 212,
+          "calibrated_brier": 0.1908524300382861,
+          "raw_brier": 0.204545660120228
+        },
+        {
+          "scope": "temporal",
+          "lag": 2,
+          "model_id": "lightgbm_F4",
+          "primary_grid_id": "31.0000,121.5000",
+          "risk_set": "onset",
+          "n": 210,
+          "events": 44,
+          "calibrated_brier": 0.1588880880718091,
+          "raw_brier": 0.1521259499827033
+        },
+        {
+          "scope": "temporal",
+          "lag": 2,
+          "model_id": "logistic_F4",
+          "primary_grid_id": "31.0000,121.5000",
+          "risk_set": "all",
+          "n": 420,
+          "events": 212,
+          "calibrated_brier": 0.1734731382943512,
+          "raw_brier": 0.1835856705447391
+        },
+        {
+          "scope": "temporal",
+          "lag": 2,
+          "model_id": "logistic_F4",
+          "primary_grid_id": "31.0000,121.5000",
+          "risk_set": "onset",
+          "n": 210,
+          "events": 44,
+          "calibrated_brier": 0.1402300363055206,
+          "raw_brier": 0.1365445451104063
+        }
+      ],
+      "model_status": "frozen_grid_hindcast_descriptive_only",
+      "unknowns": {
+        "current_operating_status": null,
+        "operation_start_date": null,
+        "employee_count": null,
+        "shift_pattern": null,
+        "job_and_workload": null,
+        "onsite_temperature_humidity": null,
+        "onsite_WBGT": null,
+        "radiation_wind": null,
+        "clothing_PPE": null,
+        "cooling_equipment_and_controls": null,
+        "energy_metering": null,
+        "downtime_quality_logs": null,
+        "financial_exposure_and_losses": null
+      },
+      "notes": {
+        "representation": "同址两个企业按一个场所计数；OSM边界仅标注其中一家，不能确认覆盖全部生产单元。气候主格属于buffer：有跨年temporal回报，没有该格strict H评价。",
+        "priority": "A：先核清两个同址实体及生产单元的实际边界和观测覆盖。",
+        "next_action": "待验证建议：取得各单元位置和使用关系后，再设计各自观测；现有buffer格不能补写strict分数，新增空间验证须独立设计划分。",
+        "industry_question": "公开证书和地址支持汽车零部件场所身份；未确认每个法人对应的全部车间、设备或岗位。"
+      },
+      "impact_paths": [
+        {
+          "id": "people",
+          "path": "室外湿热背景 → 厂内外实际热环境 → 岗位人员热负荷",
+          "status": "合理但未验证路径",
+          "requires": "岗位位置、班次、工作强度、着装、防护装备、风与辐射，以及同步现场温湿度/WBGT资料",
+          "not_established": "没有员工暴露、健康影响或安全合规结论；不能由HI推算WBGT。"
+        },
+        {
+          "id": "cooling",
+          "path": "室外湿热背景 → 实际存在的温控需求 → 冷却设备负荷与能耗",
+          "status": "合理但未验证路径",
+          "requires": "先确认是否存在相关设备和控制要求，再取得设备工况、设定值、分项能耗与产量记录",
+          "not_established": "未确认任何厂区的设备容量、温控方式、能耗增量或投资收益。"
+        },
+        {
+          "id": "operations",
+          "path": "实际温湿环境变化 → 经确认的工艺/物料敏感环节 → 潜在生产或质量影响",
+          "status": "合理但未验证路径",
+          "requires": "工艺及物料要求、产量、质量、停机、维护、供电和订单等同期记录，以区分其他原因",
+          "not_established": "没有工艺故障、停产或损失证据，不估算真实损失或企业风险分数。"
+        }
+      ],
+      "monitoring": [
+        {
+          "queue": "B：建立观测对应关系",
+          "suggestion": "待验证建议：取得场所许可后，先确认室外参考位置及具有不同通风、辐射条件的实际作业点；开展时间同步的厂内外观测试点，记录传感器位置、遮蔽、检定、缺测、时区和采样频率。",
+          "acceptance": "有可追溯位置和时间的观测记录；先评估格点与现场偏差，不能以同格厂观测互相替代。",
+          "status": "待验证；许可、预算、设备、频次和覆盖时长未确定"
+        },
+        {
+          "queue": "C：检验影响路径",
+          "suggestion": "待验证建议：在具备观测和合法访问权限后，以实际岗位、班次、设备、能耗、产量和异常记录检验路径；人员资料尽量采用不识别个人的汇总记录。",
+          "acceptance": "影响与背景气候、工况、适应措施及其他原因能区分；尚未满足前不量化损失或效果。",
+          "status": "待验证；现场及运营数据均未取得"
+        }
+      ],
+      "limits": [
+        "身份与地址来自2026-10-29公开资料桌面核验快照；本项目没有现场核验或重新确认当前在营。",
+        "2000—2024是格点气候资料期，不证明工厂在整个期间存在或持续运营。",
+        "HI≥40.6°C是本项目阈值，不是职业安全、停工或财务损失标准。",
+        "ERA5有效时间不等于实时可获得时间；D−2不能消除所有同化和发布延迟限制。",
+        "5个年份和少量新发生事件不足以证明场所长期可靠性；本阶段不生成单厂置信区间，不套用区域置信区间。",
+        "第四阶段未支持LightGBM_F4稳定优于冻结LR_F4；D−2新发生及校准退化反例保留。",
+        "场所子集成绩是描述性结果；没有利用本次测试选择模型、特征、scope或阈值。"
+      ],
+      "history_text": "2000—2024的25个完整夏季，每季92日：日最大HI≥40.6°C的天数均值 32.24日；年度最小/中位/最大为 13/30/56日；季内最长连续 36日。原定典型年 2005，极端年 2022。这些是格点背景，不是企业历史损失。"
+    }
+  ]
+}

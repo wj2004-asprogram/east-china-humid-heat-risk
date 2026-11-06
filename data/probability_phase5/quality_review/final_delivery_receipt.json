@@ -1,0 +1,19 @@
+{
+  "checked_at_utc": "2026-11-05T23:53:51.632748+00:00",
+  "status": "completed",
+  "targeted_tests_passed": 3,
+  "tests_deselected": 9,
+  "scientific_audit_reference_commit": "0cb268536f496908dd28c5341992c0a262dc0326",
+  "frozen_artifacts_unchanged": true,
+  "numeric_tables_unchanged": true,
+  "fix": "Clarified legacy gate failure labels; no scores, intervals or gate decisions changed.",
+  "outputs_sha256": {
+    "reports/probability_phase5/index.html": "874886c2f96d16973231bfff1036b396e236502a41b4035e5f6f6250377cdbd4",
+    "docs/PROBABILITY_PHASE5_FINAL_QUALITY_REVIEW.md": "27abc37d62ca647689460468a3a429bf0b4e6ad8cfac76bc7c9eba88b8538382",
+    "docs/PROBABILITY_PHASE5_RESULTS.md": "b720d27592f4e081ffbd29afa2fa8da4a5d2676f3a6e8ff543cbdb2bc1940b24",
+    "tools/probability_phase5_quality_check.py": "4dfe29b7a533480d76558290975ac0ea0e291456749e4db321bfa38b3ff333d9",
+    "data/probability_phase5/quality_review/review_receipt.json": "124e9c2f03cff21ede143234f33e85016343713eefde07d275c9bd3ca7d33da0",
+    "data/probability_phase5/quality_review/application_gate_label_annotations.json": "9a1fbf21950ed1b1f339b3d8093d4406ec7c7ddcfac144e23aa4ee750569b89e",
+    "data/probability_phase5/quality_review/targeted_tests.xml": "3991fbb01dd2953e96295359f80725aafbdc8e15a3c4098db74bcdf5a618c85e"
+  }
+}

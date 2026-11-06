@@ -1,0 +1,17 @@
+# Optional acquisition of the seven archived calibration/evaluation summers.
+# Does not retrain, select models, calibrate probabilities, or set alert thresholds.
+name: reproduce_2018_2024_bjt
+period:
+  years: {first: 2018, last: 2024}
+  months: [6, 7, 8]
+region:
+  north: 36
+  west: 112
+  south: 25
+  east: 123
+utc_offset_hours: 8
+cities:
+  - {name: Hangzhou, lat: 30.27, lon: 120.15, color: "#2ca02c"}
+land_sea_mask_threshold: 0.5
+file_tag: reproduce_2018_2024_bjt
+figures_dir: .reproduce/optional_legacy_figures

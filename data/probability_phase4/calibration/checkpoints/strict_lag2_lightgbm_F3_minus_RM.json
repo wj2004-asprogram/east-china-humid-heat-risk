@@ -1,0 +1,176 @@
+{
+  "gates": {
+    "scientific_lock.json": "9e4e1539903757bc216bf951dddce799b713c6f2bb19bca4a27685551874f938"
+  },
+  "freeze_config_sha256": "21d0e8c54810398f97160952880f3b3449b5b59f7dd5c7caa9a7ab8c5773caed",
+  "artifacts_sha256": {
+    "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F3_minus_RM\\2018.npz": "4cfb9c2a455de4885d22c8f109bce1ff3fdf130635f2ebccc4fd8d7f74f741e8",
+    "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F3_minus_RM\\2018.json": "b395a9924e1a256d3fabc6d60f15053b9415ecd36827533be98ec84d07545c13",
+    "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F3_minus_RM\\2019.npz": "0da2a5ec975cad0b852da0634b79ca8f2f1f19fb686bb91150c467f3ec0b9b0e",
+    "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F3_minus_RM\\2019.json": "ec1b996c2d7938a28bd3ebf693c5561ad1555ca5b040e15ae256e7b249a5079d",
+    "data\\probability_phase4\\enriched\\calibration\\strict\\lag2\\lightgbm_F3_minus_RM\\2018.npz": "2554c27e59891185d6457d4992673903c2531b6bda2b377128af2d14602eb8c3",
+    "data\\probability_phase4\\enriched\\calibration\\strict\\lag2\\lightgbm_F3_minus_RM\\2019.npz": "6887dbad41ce461acbba340198e0e8851a32ef55303167b85606d572859016a3"
+  },
+  "record": {
+    "scope": "strict",
+    "lag": 2,
+    "model_id": "lightgbm_F3_minus_RM",
+    "mapping": {
+      "a": 1.020682596349162,
+      "b": 0.4700742713150339,
+      "status": "fitted",
+      "reason": "",
+      "objective": 0.3714980967883419,
+      "iterations": 7
+    },
+    "budget": {
+      "threshold": 0.73,
+      "calibration_alert_fraction": 0.09750174126617545,
+      "annual_alert_fractions": [
+        0.09030756259393673,
+        0.10469591993841416
+      ],
+      "budget": 0.1
+    },
+    "fit_years": [
+      2018,
+      2019
+    ],
+    "inputs_sha256": {
+      "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F3_minus_RM\\2018.npz": "4cfb9c2a455de4885d22c8f109bce1ff3fdf130635f2ebccc4fd8d7f74f741e8",
+      "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F3_minus_RM\\2018.json": "b395a9924e1a256d3fabc6d60f15053b9415ecd36827533be98ec84d07545c13",
+      "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F3_minus_RM\\2019.npz": "0da2a5ec975cad0b852da0634b79ca8f2f1f19fb686bb91150c467f3ec0b9b0e",
+      "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F3_minus_RM\\2019.json": "ec1b996c2d7938a28bd3ebf693c5561ad1555ca5b040e15ae256e7b249a5079d"
+    }
+  },
+  "diagnostics": [
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "lightgbm_F3_minus_RM",
+      "year": 2018,
+      "probability": "raw",
+      "interpretation": "calibration_in_sample_not_generalization",
+      "n": 109116,
+      "events": 32840,
+      "prevalence": 0.30096411158766817,
+      "brier": 0.14259951926402853,
+      "ap": 0.6786387482754328,
+      "pr_auc_trapezoid": 0.6786172902419734,
+      "tp": 14654,
+      "fp": 5789,
+      "fn": 18186,
+      "tn": 70487,
+      "recall": 0.44622411693057246,
+      "precision": 0.7168223841901874,
+      "far": 0.28317761580981266,
+      "fpr": 0.07589543237715664,
+      "miss_rate": 0.5537758830694275,
+      "alert_fraction": 0.18735107591920525,
+      "brier_coslat": 0.14215022206377315,
+      "log_loss_clip_1e_6": 0.4380858167467917,
+      "intercept": 0.4576499868364605,
+      "slope": 0.9107513720742166,
+      "status": "fitted"
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "lightgbm_F3_minus_RM",
+      "year": 2018,
+      "probability": "calibrated",
+      "interpretation": "calibration_in_sample_not_generalization",
+      "n": 109116,
+      "events": 32840,
+      "prevalence": 0.30096411158766817,
+      "brier": 0.13556662001170705,
+      "ap": 0.6786387482754328,
+      "pr_auc_trapezoid": 0.6786172902419734,
+      "tp": 20874,
+      "fp": 9512,
+      "fn": 11966,
+      "tn": 66764,
+      "recall": 0.6356272838002436,
+      "precision": 0.6869611005068124,
+      "far": 0.31303889949318764,
+      "fpr": 0.12470501861660287,
+      "miss_rate": 0.3643727161997564,
+      "alert_fraction": 0.2784742842479563,
+      "brier_coslat": 0.13522248922233357,
+      "log_loss_clip_1e_6": 0.420523623748638,
+      "intercept": 0.03820442526514769,
+      "slope": 0.8922963803347205,
+      "status": "fitted"
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "lightgbm_F3_minus_RM",
+      "year": 2019,
+      "probability": "raw",
+      "interpretation": "calibration_in_sample_not_generalization",
+      "n": 109116,
+      "events": 27084,
+      "prevalence": 0.248212911030463,
+      "brier": 0.10351965554459064,
+      "ap": 0.7822140169692501,
+      "pr_auc_trapezoid": 0.7822082032679561,
+      "tp": 14987,
+      "fp": 3773,
+      "fn": 12097,
+      "tn": 78259,
+      "recall": 0.5533525328607296,
+      "precision": 0.7988805970149254,
+      "far": 0.20111940298507464,
+      "fpr": 0.045994246147844746,
+      "miss_rate": 0.4466474671392704,
+      "alert_fraction": 0.17192712342827815,
+      "brier_coslat": 0.10475181256329677,
+      "log_loss_clip_1e_6": 0.3293757401650269,
+      "intercept": 0.47901495024148694,
+      "slope": 1.1468819555977119,
+      "status": "fitted"
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "lightgbm_F3_minus_RM",
+      "year": 2019,
+      "probability": "calibrated",
+      "interpretation": "calibration_in_sample_not_generalization",
+      "n": 109116,
+      "events": 27084,
+      "prevalence": 0.248212911030463,
+      "brier": 0.10080654384139315,
+      "ap": 0.7822140169692501,
+      "pr_auc_trapezoid": 0.7822082032679561,
+      "tp": 18617,
+      "fp": 6974,
+      "fn": 8467,
+      "tn": 75058,
+      "recall": 0.6873800029537734,
+      "precision": 0.7274823180024227,
+      "far": 0.27251768199757725,
+      "fpr": 0.08501560366686171,
+      "miss_rate": 0.31261999704622656,
+      "alert_fraction": 0.23453022471498222,
+      "brier_coslat": 0.10198667182589291,
+      "log_loss_clip_1e_6": 0.32247256897250626,
+      "intercept": -0.04918030132428833,
+      "slope": 1.1236421162681802,
+      "status": "fitted"
+    }
+  ],
+  "index_registry": [
+    [
+      "strict",
+      2018,
+      "ccf5e1820cc4e978c9c1a747b7c5b6f224f1601327ce32344547b08d2ec47b76"
+    ],
+    [
+      "strict",
+      2019,
+      "a4b2fab3f0941e8ff8398733246768e2d215780ca29edcdf95ac4b3fecaae684"
+    ]
+  ]
+}

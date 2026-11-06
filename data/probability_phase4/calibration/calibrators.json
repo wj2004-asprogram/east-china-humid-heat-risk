@@ -1,0 +1,3339 @@
+{
+  "schema_version": 1,
+  "protocol_id": "ehhr_probability_phase4_v1",
+  "freeze_config_sha256": "21d0e8c54810398f97160952880f3b3449b5b59f7dd5c7caa9a7ab8c5773caed",
+  "gates": {
+    "scientific_lock.json": "9e4e1539903757bc216bf951dddce799b713c6f2bb19bca4a27685551874f938"
+  },
+  "models": [
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "logistic_F0",
+      "mapping": {
+        "a": 1.0692552333639773,
+        "b": 0.6395889683550433,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.3450537602718937,
+        "iterations": 7
+      },
+      "budget": {
+        "threshold": 0.81,
+        "calibration_alert_fraction": 0.09568264014466546,
+        "annual_alert_fractions": [
+          0.11358499095840868,
+          0.07778028933092224
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F0\\2018.npz": "790ca6abe049ca90b7db0c4fdd00bbd0a95a10954633ad22f31a3ef5816b594a",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F0\\2018.json": "9129e7e14d3e0b62fd8b1b8f7f281cee24703e699e09f54e91f32ce170a1ba82",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F0\\2019.npz": "c23f3de45196ecc6e29d417ca40362acfe7ef09e6fb39382dcf017d6dd5097c3",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F0\\2019.json": "4c1e4ce2dc005ad0ec945e5b875ad69ea2a0e20f2858728689a621fa071121ce"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "lightgbm_F0",
+      "mapping": {
+        "a": 0.9835979145844941,
+        "b": 0.5270696009755924,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.33856649719251153,
+        "iterations": 8
+      },
+      "budget": {
+        "threshold": 0.81,
+        "calibration_alert_fraction": 0.0987115732368897,
+        "annual_alert_fractions": [
+          0.11100060277275467,
+          0.08642254370102471
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F0\\2018.npz": "92032b3334ca80daa14a42677d5e79aad071fb6f8414aa7662b5c0314bdcd8d1",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F0\\2018.json": "fe5c79dc61579bc52f3d37d089c1ae2989f75b1edc4f831747640bfe97448f33",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F0\\2019.npz": "3cb0fefcea6f711c03716fc07eefa9f8f94a9e4a8a11c6d94dea39c6229a0647",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F0\\2019.json": "aed3bf962f9b3fb355bbd58d661cf6ad7293808e7518aceeb71af97a4aebecc3"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "logistic_F1",
+      "mapping": {
+        "a": 1.015507468020321,
+        "b": 0.24493114845604033,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.29748476183257794,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.86,
+        "calibration_alert_fraction": 0.0952682338758288,
+        "annual_alert_fractions": [
+          0.10308167570825799,
+          0.08745479204339963
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F1\\2018.npz": "c09955f503f465d1db488c5d07f4af63b85cf7d6fd352ea130d115d3d6291ed7",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F1\\2018.json": "c7ad484647b745664a5951f3b6693f767b6f3bc82e559cd9e6588824a23acc34",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F1\\2019.npz": "7c8486ca2a82753e0e7992a2c2d3c4f8956bd8bc7caaff7a2d320e594a633a74",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F1\\2019.json": "ecfe74e2a3a12836090eab385761dc5403f1b2dbae1fffbe52bcb2b3bba40dbf"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "lightgbm_F1",
+      "mapping": {
+        "a": 1.0003938886617032,
+        "b": 0.2793340477017494,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.29646128491676504,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.85,
+        "calibration_alert_fraction": 0.09821051838456901,
+        "annual_alert_fractions": [
+          0.09753616636528029,
+          0.09888487040385775
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F1\\2018.npz": "8c2920bd848153f4e9e1015c360fae60060edcb7923d5f88f4e380c4387a9dcc",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F1\\2018.json": "d1867d191e20c7cd0a12e0e99edaa731a7f69158af15d4b5aa51c6fedd8ad72a",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F1\\2019.npz": "e58b5f6664942e489ecaf231d21a087038839c88ff2e8bebad4bf29cb8f13ef7",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F1\\2019.json": "36da5b70c58d72f66b04d455641382bb88a90540b208a4bba7465d5be3e3f077"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "logistic_F2",
+      "mapping": {
+        "a": 1.009147150027193,
+        "b": 0.1713255497147335,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.2892765331171509,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.87,
+        "calibration_alert_fraction": 0.09437537673297167,
+        "annual_alert_fractions": [
+          0.10311934900542495,
+          0.08563140446051838
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F2\\2018.npz": "82e6af9d858fcbfb2726fdbe2fa3a0c7079fa8a3931316f31c817de4811fd177",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F2\\2018.json": "1cf5aee031e686efc9cb85057b32bd2e6734e4c8ee229675dd56f89d69136a73",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F2\\2019.npz": "cf77e91b98855c5c05aeae6b5e187b5a72836efc3758aa6c23ecd8b80df4e1fa",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F2\\2019.json": "0c6fdc01c79017a15b9b75fab3c8f314c437321f99fd4643228fed067af554bc"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "lightgbm_F2",
+      "mapping": {
+        "a": 0.9928537510021795,
+        "b": 0.22873856108007737,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.29162842805517675,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.86,
+        "calibration_alert_fraction": 0.09650768535262205,
+        "annual_alert_fractions": [
+          0.09624773960216998,
+          0.09676763110307414
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F2\\2018.npz": "c8e8a6b79b4dc27fbfdbbc663208b69ecaebe6f7b0bf31fea59646d5b727af6b",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F2\\2018.json": "ef3aedafe1bfda7a9d65342c516a44c082f826f6df728a5e85e8610bc46d3610",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F2\\2019.npz": "a0157a1ab2c6f42ab09f994ea848741f801533cd0b4b779e867a9523b868da2c",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F2\\2019.json": "8e3f7df5ad4b3659a6c363bc0117e366d3033bff24275fc613f761ae51f99550"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "logistic_F3",
+      "mapping": {
+        "a": 1.0063291406147634,
+        "b": 0.17662021851968793,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.28553337246543403,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.87,
+        "calibration_alert_fraction": 0.09725361663652803,
+        "annual_alert_fractions": [
+          0.10626130198915008,
+          0.08824593128390597
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F3\\2018.npz": "9f5ba61738a9fba550044fb4d8f6372981d526ec36ee45fd75fb3c94b5d73f60",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F3\\2018.json": "a285a274546cbe4407c4900704b9f04baf876dea82d916346df1bdced96baf27",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F3\\2019.npz": "71fdd526ae6433001544706644e2af7b442dd26a0ee0a2a9140fdb6ec989b70e",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F3\\2019.json": "94b77fd97b7549034bdf1de08c1ada1c1eaa00359b9702e4ae99ee8b06afa1c6"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "lightgbm_F3",
+      "mapping": {
+        "a": 1.0031108197731449,
+        "b": 0.2364542435181748,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.28908470950871734,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.86,
+        "calibration_alert_fraction": 0.09717827004219409,
+        "annual_alert_fractions": [
+          0.09495177817962629,
+          0.0994047619047619
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F3\\2018.npz": "4bfb2fdbc5935443ca27203356ebbcc863cf1d2d776caae5bb61dac36209cebb",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F3\\2018.json": "3f2e8510d7cde6383b9ccaf0c1b667021460c91a70eda9cef6ac7e8b16e0e68c",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F3\\2019.npz": "d4820191f5e9268b026970a8dd4193d8883104c395b6c6042d46f2a82a6c809c",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F3\\2019.json": "d8a266814a29d25498e956e5fee7d64e84f6077456bc3f3abb9034c1ad4ecdef"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "logistic_F4",
+      "mapping": {
+        "a": 1.0043880568799897,
+        "b": 0.15834777490142077,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.2844723926152948,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.87,
+        "calibration_alert_fraction": 0.09708408679927667,
+        "annual_alert_fractions": [
+          0.10870253164556962,
+          0.08546564195298373
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F4\\2018.npz": "e7bcba6f0d7179c69cb841e706e83f1800ef8b2d51d195ca473a18ef96aa5c25",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F4\\2018.json": "cb8e1a35bea8a2dc1bd701b96230c6bd51361c8dfbb166cecdcab685e9890c25",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F4\\2019.npz": "563a015b64c8e6da13f06bed9852378ce2db818feebc25ca1de59539d822e6f2",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F4\\2019.json": "49b9a1603db508e56e7b1015612cb6411810901b2e2d3d0ef84d12bb8a8d84e9"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "lightgbm_F4",
+      "mapping": {
+        "a": 0.9822072214459205,
+        "b": 0.22999890383319668,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.2918289237597559,
+        "iterations": 5
+      },
+      "budget": {
+        "threshold": 0.86,
+        "calibration_alert_fraction": 0.09718957203134418,
+        "annual_alert_fractions": [
+          0.09521549125979506,
+          0.09916365280289331
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F4\\2018.npz": "a94b6ebef47a22245841004905c8d82fc609faf85edc94685da7bbd42b1d9f94",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F4\\2018.json": "b7e0fbaf776aaf71c72597a80196cd3089a0b8327aef7e4783f33f1275d907b0",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F4\\2019.npz": "8039958d6898d0af1ccb05f7ed502acdb90a046a4fc11bf23331241651e18791",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F4\\2019.json": "ee1b0ca0f083d9039840394c701293b606a7b78223929dd26a4eeab57afdc334"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "logistic_F0P",
+      "mapping": {
+        "a": 1.0409120647639931,
+        "b": 0.4861305565487415,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.3241477939762302,
+        "iterations": 7
+      },
+      "budget": {
+        "threshold": 0.85,
+        "calibration_alert_fraction": 0.09665084388185655,
+        "annual_alert_fractions": [
+          0.11779686558167571,
+          0.07550482218203737
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F0P\\2018.npz": "d519d769772424336c08a5398a16cdd09b0a11033d49a54f54123122eaa27616",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F0P\\2018.json": "d6220237a275b3d0b81ffe0679f84784143c6e73a5e1a2acc1ead0f185f2783c",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F0P\\2019.npz": "bbdef5f36bf5c4abe7166a0175386b887cb267222c343bd26ff8bc9b125fb89b",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F0P\\2019.json": "241fd706037a145530a303702f8b35b95cbf49037bf85120e780e75315e105f9"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "lightgbm_F0P",
+      "mapping": {
+        "a": 0.9569258861158036,
+        "b": 0.3829023693881659,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.32394460238798617,
+        "iterations": 7
+      },
+      "budget": {
+        "threshold": 0.84,
+        "calibration_alert_fraction": 0.09592374924653405,
+        "annual_alert_fractions": [
+          0.10197408077154912,
+          0.08987341772151898
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F0P\\2018.npz": "93e302b7a9c92e7153aba1f0e5a7fb65c4d33805dfa9627f2b84ecd6ac8b1ce4",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F0P\\2018.json": "f0b0fbbb85d8acec3e151baa197b91f6334128ee5414198917ae5c769199ef0e",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F0P\\2019.npz": "476f839343c5dc9520f02c26903237ff2936f04521421a85e84ccb8a6f7a6be3",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F0P\\2019.json": "429cfda331d773ac68c2dd903c393de6f289366b7cb2d3727a4ea7d0c5a4dbbe"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "logistic_F1P",
+      "mapping": {
+        "a": 1.012949513906492,
+        "b": 0.24164548047352674,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.2969076674505673,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.86,
+        "calibration_alert_fraction": 0.09735533453887885,
+        "annual_alert_fractions": [
+          0.10628390596745027,
+          0.08842676311030741
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F1P\\2018.npz": "066a17a1f42749622cee1d234372e3cc6a6dda355fd5104178cce752d1bead6e",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F1P\\2018.json": "9f12dc4eb83be6afbdac0122b7c2463c3cd1c3c12b19576ac76b29d1ba08e1f3",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F1P\\2019.npz": "97c30d2c83a3b965a1556896315921f742b347be298d59f120574ad84da2c224",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F1P\\2019.json": "1367f64fa50925fb4bb8fbcd98ff7aee1d188c174342c086365a924a50e9f42a"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "lightgbm_F1P",
+      "mapping": {
+        "a": 0.9967647699415009,
+        "b": 0.2615145297123604,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.29697188749638104,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.85,
+        "calibration_alert_fraction": 0.09920509342977697,
+        "annual_alert_fractions": [
+          0.09923146473779385,
+          0.0991787221217601
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F1P\\2018.npz": "fe38d93662dad8a3275b4d4ba20c30e699db44c0124f0a02cd957fd2b475406b",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F1P\\2018.json": "342d7452511dc012a8e4aa79eb89600a23f4e858825981428703814d068b7aad",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F1P\\2019.npz": "6f58f9c457f255c7bacd63fffdd14cf00c788237fcf7b17f20b959179dc50731",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F1P\\2019.json": "852951392242104d6881825f0bcb8da890bb119313a556006273170a9385a20b"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "logistic_F2_minus_NT",
+      "mapping": {
+        "a": 1.0101708521532782,
+        "b": 0.12473550134356087,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.29114416050644487,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.87,
+        "calibration_alert_fraction": 0.0950384267631103,
+        "annual_alert_fractions": [
+          0.10409132007233272,
+          0.08598553345388789
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F2_minus_NT\\2018.npz": "0cf7943bc49869c264a841bf178dc8e4e0c208657d8d031d8a3a3c05b203e6e8",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F2_minus_NT\\2018.json": "22ea107eced351729b6dd03065b452131039321fa104118fc2885428e8629fac",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F2_minus_NT\\2019.npz": "0925d58b598cea6caf0be82973019f3c2275ed081511e3ca3a0190eaf86c47a9",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F2_minus_NT\\2019.json": "6bc395fc4ef17763a52193821738eb6cc3c884f8f67c4a218007813dea2054c3"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "lightgbm_F2_minus_NT",
+      "mapping": {
+        "a": 1.0016939950192467,
+        "b": 0.24870957970568724,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.2918981404461447,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.86,
+        "calibration_alert_fraction": 0.09577682338758288,
+        "annual_alert_fractions": [
+          0.0946955997588909,
+          0.09685804701627486
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F2_minus_NT\\2018.npz": "dcaa5a0f68980d4db627bfa0407e7f887bf253f70a3058fcbb691ccd5bc4e7c8",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F2_minus_NT\\2018.json": "29a484637ff4a4f1755eb05ff2bd2e3520e2f5081b08fe4f000aaa3b054eb4cb",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F2_minus_NT\\2019.npz": "3782b2aaa6d99ba08f0bfd0dda3f26dce25f86b4b8514cee2ce1c836fec2dd91",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F2_minus_NT\\2019.json": "b27666562ccbff9682401cf9e55131ef341f8e3bdb040c8cced65630e9d2154b"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "logistic_F2_minus_NM",
+      "mapping": {
+        "a": 1.0028156795678558,
+        "b": 0.20936004134797725,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.2933698217899849,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.86,
+        "calibration_alert_fraction": 0.0972799879445449,
+        "annual_alert_fractions": [
+          0.10671338155515371,
+          0.0878465943339361
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F2_minus_NM\\2018.npz": "905e43f74861a35de283a7871f6571c544d467b56cb69c7c7518299065ac79b4",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F2_minus_NM\\2018.json": "071b112c2bb975af37fa218e9c17f7baed0651a3051a560196d37fc6aa37e444",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F2_minus_NM\\2019.npz": "0b2bd28b5e19d518d374f29acbf1a1f2627a28caa816445731674264ad3b6203",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F2_minus_NM\\2019.json": "de530c770315610b06137243b716c7e3694380eca540a15d96c026d67320978a"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "lightgbm_F2_minus_NM",
+      "mapping": {
+        "a": 0.9889150144761405,
+        "b": 0.23952633296258302,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.29414305212597913,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.86,
+        "calibration_alert_fraction": 0.09379144062688366,
+        "annual_alert_fractions": [
+          0.0925632911392405,
+          0.09501959011452682
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F2_minus_NM\\2018.npz": "d1327b11d73eda539744495f12053aa3d67baeb151920e2694a4bad94d7839ee",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F2_minus_NM\\2018.json": "129dad6073d41f43e98eaa2a731a661c1724d52c57c26b718fcbeae016e1fe5b",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F2_minus_NM\\2019.npz": "a334d4c02a4b756229198539ad6cb936a038f06b2c3bf4201ae8b5fd553aa6ee",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F2_minus_NM\\2019.json": "650811003fcf40cfc8bbf1f4e4b61d57137d37b9dbaf81782ccbe7f2e593135b"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "logistic_F3_minus_RT",
+      "mapping": {
+        "a": 1.0037791519871047,
+        "b": 0.1718381562190689,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.2867178458006095,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.87,
+        "calibration_alert_fraction": 0.09582956600361664,
+        "annual_alert_fractions": [
+          0.10473930078360458,
+          0.08691983122362869
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F3_minus_RT\\2018.npz": "d89726cfbf28e2a2f1198cfd297a008648e830da84f1217baad4db45c2447e8c",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F3_minus_RT\\2018.json": "2676161a74dcd7ed6f407efe668a0785a8133c421f65a1674d56bb1d5d1b596e",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F3_minus_RT\\2019.npz": "0f0feb1745c6d3e4bc8d9fa3619fb254be8a2f48986c8c61b2643ef721203bf0",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F3_minus_RT\\2019.json": "2123efe33d5ca163590ce4de77b06cc27a7505e6af10056a9871ed211ee5f4d1"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "lightgbm_F3_minus_RT",
+      "mapping": {
+        "a": 0.989992506660685,
+        "b": 0.21958265338443153,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.2907236712685271,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.86,
+        "calibration_alert_fraction": 0.09630801687763713,
+        "annual_alert_fractions": [
+          0.09328661844484629,
+          0.09932941531042797
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F3_minus_RT\\2018.npz": "64f48bce2217fa053c240ecda7e9c1d1dac93178e6ffbd6f5e22a570ca8c52fe",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F3_minus_RT\\2018.json": "dbff1c5250c8b4fd44d4229f8d6acd0826ec5bb099b2e8023059d57da5a665d5",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F3_minus_RT\\2019.npz": "a541462e97d009aa5c25e44b301a00ef61072db423ca70e30c57d51698f4d633",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F3_minus_RT\\2019.json": "bdcf4dbc8c5d0f74595e119fa6d7816130765d98486ebbffc97e5e569039d024"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "logistic_F3_minus_RM",
+      "mapping": {
+        "a": 1.002659902081761,
+        "b": 0.18278614912210597,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.2868084619665482,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.87,
+        "calibration_alert_fraction": 0.09617239300783605,
+        "annual_alert_fractions": [
+          0.10544755877034358,
+          0.08689722724532851
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F3_minus_RM\\2018.npz": "20c74e4401d9138411ea70d64af44dfd6803248f807ea5df40af174b85524c54",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F3_minus_RM\\2018.json": "d1b6e0a7dd343ac49f9eb60e2123d368531aad69d9f54a7a7ed12cb48df8d698",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F3_minus_RM\\2019.npz": "31b5f0ad056e97976f528d3a9e08cd9d5154ff2232f523f96a83a6eba0dfa8ea",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F3_minus_RM\\2019.json": "1e63171774f641be045cb19d5b7d91702ff7b578c0b275df4410d22533afc5b2"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "lightgbm_F3_minus_RM",
+      "mapping": {
+        "a": 0.9940664812699469,
+        "b": 0.2411887739265772,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.29040076765108086,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.86,
+        "calibration_alert_fraction": 0.09723854731766124,
+        "annual_alert_fractions": [
+          0.09672995780590718,
+          0.09774713682941531
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F3_minus_RM\\2018.npz": "dec09d8cae1c4cfcd17671a535749d0557b6d8ac6c59d970b36abb25a803f045",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F3_minus_RM\\2018.json": "d3c3d6deefb81013430703daf650cf16dd98cf6f7542d5a929dea7d020adcaf2",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F3_minus_RM\\2019.npz": "30287f1ca8fa366bd5e6e2c074becae5bff10fb31295a0a7f34c9f7fb5305c58",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\lightgbm_F3_minus_RM\\2019.json": "78fa6c5c344a9f2236238831807f752031120c4d02cdf44a696dbdd2c89878b3"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "persistence",
+      "mapping": {
+        "a": 1.0,
+        "b": 0.0,
+        "status": "persistence_raw",
+        "reason": "protocol_no_calibration",
+        "objective": null,
+        "iterations": 0
+      },
+      "budget": {
+        "threshold": 1.000001,
+        "calibration_alert_fraction": 0.0,
+        "annual_alert_fractions": [
+          0.0,
+          0.0
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\persistence\\2018.npz": "042ecea32fb72e1b08b6b198f9c67c53edf7c848bae473d96e2ce1624258868f",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\persistence\\2018.json": "94ba90874732ff166b5b993e3feae902d8127fa260fa611c5acffb50c0fa2256",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\persistence\\2019.npz": "6c408f6f756d16530891bbc99c5a8d28d3632a53d0faddceba74561f947096f7",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\persistence\\2019.json": "11a49538bc539bdb5f975926714e44331207dffd798c4ba5fddecff2cc84a0cb"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "seasonal",
+      "mapping": {
+        "a": 1.2577002536948445,
+        "b": 0.8587340577931728,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.4185940790967655,
+        "iterations": 9
+      },
+      "budget": {
+        "threshold": 0.69,
+        "calibration_alert_fraction": 0.09459764918625678,
+        "annual_alert_fractions": [
+          0.09459764918625678,
+          0.09459764918625678
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\seasonal\\2018.npz": "4438fc049af9db70ef507e095be8102d4caaf98dc44a599b489813ea1cdf1b00",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\seasonal\\2018.json": "f0449ed67ce14609032a904ec0db3922a12503b4b13d899e0a8d22a711c3667e",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\seasonal\\2019.npz": "b5e01237952ddf23d43eafe051350717d3b1189f575cfa67b1fcae9ccf489276",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\seasonal\\2019.json": "c51990cac743b9842f1c30ff5e2ff145e8638cb22e9369455d95dfe1de462b03"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "seasonal_pooled",
+      "mapping": {
+        "a": 1.360456431940524,
+        "b": 0.9175172569153986,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.5125420339725982,
+        "iterations": 10
+      },
+      "budget": {
+        "threshold": 0.53,
+        "calibration_alert_fraction": 0.0,
+        "annual_alert_fractions": [
+          0.0,
+          0.0
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\seasonal_pooled\\2018.npz": "0f85656acefbd53777dcf95990edb733e4a82b3200d7fbfc7e72a71793a27213",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\seasonal_pooled\\2018.json": "e0701d78cf325dcfd06b74fb8898399578b54652273655b2492151ca37bb059f",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\seasonal_pooled\\2019.npz": "af76a69d6d07325b161cb08cb2e44f2d1d78155f4187414d37a7c65b76dd88d2",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\seasonal_pooled\\2019.json": "d4301cbe7cfde5104c3226702d6f194ee0323a478212a3cafca8ee557adbda5e"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "transition",
+      "mapping": {
+        "a": 1.0001216019478354,
+        "b": 0.29272432147192895,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.368852115376537,
+        "iterations": 7
+      },
+      "budget": {
+        "threshold": 0.82,
+        "calibration_alert_fraction": 0.0,
+        "annual_alert_fractions": [
+          0.0,
+          0.0
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\transition\\2018.npz": "907654a3dd0f220adb6aa44f90dba86504bce83ebc56f199b78a39346a3592a8",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\transition\\2018.json": "d117d4d1342ee682d54996560eb10621ba3581858060844a9ab1c26df6e01d1f",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\transition\\2019.npz": "5ec8dcf4df54d5b4064b5263d03b7a7fef9f072b67d5ef94d65588ed2348b53a",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\transition\\2019.json": "14012ac91cbef4d64e46c8691bb2c177efeb916a5b62453d2e211f113fded0a8"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "logistic_F0",
+      "mapping": {
+        "a": 1.0927917524821473,
+        "b": 0.6173783394088586,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.4148642536866135,
+        "iterations": 8
+      },
+      "budget": {
+        "threshold": 0.71,
+        "calibration_alert_fraction": 0.09804098854731766,
+        "annual_alert_fractions": [
+          0.12056962025316456,
+          0.07551235684147077
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F0\\2018.npz": "ee1513f42ff85ce3c095a8484b635b3ae3e96689e703a78f7da62d62fc0504a4",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F0\\2018.json": "feaead1b3a97d44e007562ffd1f1f349620fec44fe7f8a11402de68d8877f1bc",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F0\\2019.npz": "70c1a946f4d63ea555f2a3ddcb4088e3120c28b93a66843fcdb08a52efa84458",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F0\\2019.json": "a890dde57ccee2c09c50554bfe3701f892cac04a801dd4dd70084d09a18d9d2d"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "lightgbm_F0",
+      "mapping": {
+        "a": 0.9389970407974244,
+        "b": 0.4703425967953422,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.40931434910037523,
+        "iterations": 9
+      },
+      "budget": {
+        "threshold": 0.69,
+        "calibration_alert_fraction": 0.09957805907172995,
+        "annual_alert_fractions": [
+          0.10025617842073538,
+          0.09889993972272454
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F0\\2018.npz": "1dd7e66c829788e8cff10093937cac528f06b467235794cb874e19d257853c41",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F0\\2018.json": "6faaa408798bdfdaf35320cbabbcfcebdce6b9ee908c24306778d7e26d6e9181",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F0\\2019.npz": "aa6544c90215b141295d94e92d8a70cb034f10c96c12d9e23b4c5600b9ec9758",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F0\\2019.json": "c4a8ed9a9fb7a9149b13d379095f28d21c00d4b376f111ff947c53ebc55f3bc8"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "logistic_F1",
+      "mapping": {
+        "a": 1.0481308715088329,
+        "b": 0.36241388611945824,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.39180617316129457,
+        "iterations": 7
+      },
+      "budget": {
+        "threshold": 0.74,
+        "calibration_alert_fraction": 0.09423598553345389,
+        "annual_alert_fractions": [
+          0.10670584689572031,
+          0.08176612417118746
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F1\\2018.npz": "d6f1eb34e8392c79a46af74cedb0d98b5abefd3178d6e597f1798fa20a22bff8",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F1\\2018.json": "1d72fdbd68bd7e47ea1db8966b40f1fb49b7fd9c1a8b9516eef37c4e279003ff",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F1\\2019.npz": "084bc459de49aad73bebe1a904b0a0a4ac8a2b17f450f5624b55c5382ed88a43",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F1\\2019.json": "0b6499a21250bfb645d28d2e8ec4ec1ce8610c4d4ca4c1276c9497f389f896d4"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "lightgbm_F1",
+      "mapping": {
+        "a": 0.9173153439254227,
+        "b": 0.35842358653827816,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.3981267291114267,
+        "iterations": 9
+      },
+      "budget": {
+        "threshold": 0.71,
+        "calibration_alert_fraction": 0.0966922845087402,
+        "annual_alert_fractions": [
+          0.08245177817962628,
+          0.11093279083785412
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F1\\2018.npz": "821ac3653fb68ba12d8b0eb9152786ba5c1b55f41e51f11333cee693b6b0e35d",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F1\\2018.json": "0c3ef1a7e05af74f212c2a846c6763f2b3fbad001522189f1f4545e90470162f",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F1\\2019.npz": "3d6504bada8fae9fdea219414a84805a573d57aa7dd320bc6db5cc8cae713f5c",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F1\\2019.json": "04bd70b980ebe12e61ad7bd374e0199b3d9d90fcbec48512c957f23a2681e3fd"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "logistic_F2",
+      "mapping": {
+        "a": 1.0574476025986816,
+        "b": 0.34191133919386696,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.3868890958717691,
+        "iterations": 7
+      },
+      "budget": {
+        "threshold": 0.74,
+        "calibration_alert_fraction": 0.09778104279686559,
+        "annual_alert_fractions": [
+          0.11258288125376734,
+          0.08297920433996384
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F2\\2018.npz": "eeacda170bcf800cd91dd7ba92132e879c3cb2560261d53e60162ded14cb901e",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F2\\2018.json": "ffc01b2a6e9483908b716ccb47cce45f355d85ed762aa79048954ef8706ebb8a",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F2\\2019.npz": "c271c4cf27c0176a6f716353808e8139bda559df8e9bcb767017da84dbfbe05c",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F2\\2019.json": "d1d54d4efce62a70dacb3457795975e46cfc204a7ef4102e7ad8199234a05f6c"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "lightgbm_F2",
+      "mapping": {
+        "a": 0.9120548113563088,
+        "b": 0.33141772364635186,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.39696633040419654,
+        "iterations": 9
+      },
+      "budget": {
+        "threshold": 0.71,
+        "calibration_alert_fraction": 0.0978789933694997,
+        "annual_alert_fractions": [
+          0.08551084990958409,
+          0.11024713682941531
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F2\\2018.npz": "ee8e8e90169abe571bd3ab108348849e1c5164886ba9d5c43139d14318564342",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F2\\2018.json": "ef7f022b7dedad7b146447d6fd49dafdf88af203dadb491f6bfca5f0d5f22283",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F2\\2019.npz": "910ae25e6d705c78836828c4e56253eaebe7fb3d2783dfe6ebc33f8e70ce5373",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F2\\2019.json": "d3e1d5fb46c610c432c247ce494e7342c9cfa37ea8d034d890143816ba3da58b"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "logistic_F3",
+      "mapping": {
+        "a": 1.0527402967856017,
+        "b": 0.35950450976335824,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.3803898045971915,
+        "iterations": 7
+      },
+      "budget": {
+        "threshold": 0.75,
+        "calibration_alert_fraction": 0.09747212176009645,
+        "annual_alert_fractions": [
+          0.11152802893309223,
+          0.08341621458710066
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F3\\2018.npz": "0a166bd2b38f97b70dbb79d69fd2bc3fe35b6d9cf3cc59e96649e0cdcf56ffe2",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F3\\2018.json": "57b815443d3b11c94580b7b158e1b51e599fbb47699a022c227c0299e7926e35",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F3\\2019.npz": "65bb9c812c42c222a644c4b64c0553feb57effde9537036cd28761da9fe1c597",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F3\\2019.json": "5b2785f7e84cbf386cd65f80531ee764155215a7334ce38c880fa641a28e384d"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "lightgbm_F3",
+      "mapping": {
+        "a": 0.9094467876078337,
+        "b": 0.3429763011459924,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.3958006123444573,
+        "iterations": 9
+      },
+      "budget": {
+        "threshold": 0.72,
+        "calibration_alert_fraction": 0.09429626280892103,
+        "annual_alert_fractions": [
+          0.0785488245931284,
+          0.11004370102471368
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F3\\2018.npz": "d18e29ab58bba5b5b608048c766eb02772cdcc7de5ffc54847f2cc00680ac0f9",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F3\\2018.json": "af4303b3e44a923c3d874d8b8f68c95832026088788670f18c5b24c48cd6b757",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F3\\2019.npz": "92851faff8c0615b35710b32be0b179801026b924a2bd1e32dd064d758d2faa9",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F3\\2019.json": "bbcf40b784083a83aa6281e7c348e359a9bafcb3053f3f25c337d8410d38b6ba"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "logistic_F4",
+      "mapping": {
+        "a": 1.0436398172745331,
+        "b": 0.3374938760235859,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.37901803929545846,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.75,
+        "calibration_alert_fraction": 0.0983423749246534,
+        "annual_alert_fractions": [
+          0.11717148884870404,
+          0.07951326100060277
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F4\\2018.npz": "e40c963239c085b8bfdc1b7333d26d5235f6c10666bd574cc70bc48269b4a68a",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F4\\2018.json": "949af6bb80e10610aa2282d41db28602ab9ccf1ce3f24f83b28c006c32c6dd45",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F4\\2019.npz": "a57e5ad81ad8509a5cd80df604b6c5f35ad47768c7a1927d634c33d2732618f5",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F4\\2019.json": "eaa4e7c66dcdcd180f608dbe9084c72583a129df8aa8e325aa05813e85d72992"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "lightgbm_F4",
+      "mapping": {
+        "a": 0.9069759533986859,
+        "b": 0.3418487320738376,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.3962891674822967,
+        "iterations": 9
+      },
+      "budget": {
+        "threshold": 0.71,
+        "calibration_alert_fraction": 0.09964210367691381,
+        "annual_alert_fractions": [
+          0.0853827606992164,
+          0.11390144665461122
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F4\\2018.npz": "a0d7435bb84c0f42afd649684bb39535ee9ac84a826cd74885a782d11cfed389",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F4\\2018.json": "3c22919f0818eca9da511b9620cd8b867a3b83270064b3b37eff22de08680700",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F4\\2019.npz": "525a577155c86b1192d774cabd5a4b66b0951df057b62526f199a8749b016380",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F4\\2019.json": "21ef96a0f4ea462181c909139af4779a25baf099986e70dc6882b7ff4e7dedf7"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "logistic_F0P",
+      "mapping": {
+        "a": 1.0804812893713658,
+        "b": 0.5407771735120552,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.4053062914189312,
+        "iterations": 7
+      },
+      "budget": {
+        "threshold": 0.75,
+        "calibration_alert_fraction": 0.09500452079566003,
+        "annual_alert_fractions": [
+          0.11810578661844484,
+          0.07190325497287522
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F0P\\2018.npz": "78996874389f830b600f9ef00f90806fc4003e686d2cc55cf68d2da44cd9a891",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F0P\\2018.json": "9bb606d37aa621146676e2ea628d3ad013cbe11216829649ecf7a838e5264410",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F0P\\2019.npz": "6370372123fa385308b18479a4d5bca216fc8d146cf1b6f731e21a33e784ed9a",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F0P\\2019.json": "976df997e4944108beb21eb57b265d9430f2efa4bdcb7ce75eae24ecaabcc1ed"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "lightgbm_F0P",
+      "mapping": {
+        "a": 0.9146080231879593,
+        "b": 0.3887530593732978,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.40601142723191874,
+        "iterations": 9
+      },
+      "budget": {
+        "threshold": 0.71,
+        "calibration_alert_fraction": 0.09695599758890898,
+        "annual_alert_fractions": [
+          0.09306057866184449,
+          0.10085141651597347
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F0P\\2018.npz": "9d4fdbbd8c897c396f32414ea74233555e6565ae0e49d01cb1a0220b7e7095db",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F0P\\2018.json": "c79949f674cc810cf349da30f7d288e6e5f4387d1ad1a1cc38bf64b4e0fa5985",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F0P\\2019.npz": "2753d6b3447f7d979f556e099590d393f2cead35006eb247cb4cdfce3ce3957b",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F0P\\2019.json": "560a62b8360bbf007009afe59595e1f944d159839338a802504ccfd98c0ef6cf"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "logistic_F1P",
+      "mapping": {
+        "a": 1.047447186273407,
+        "b": 0.35792736020112237,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.3910739387946816,
+        "iterations": 7
+      },
+      "budget": {
+        "threshold": 0.74,
+        "calibration_alert_fraction": 0.09860608800482218,
+        "annual_alert_fractions": [
+          0.1123945147679325,
+          0.08481766124171188
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F1P\\2018.npz": "5b8303bf372866a0ecda2f097f5c007c8af5986db701109006dbad13a4c08cba",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F1P\\2018.json": "a9c9af38f1ffe78ed442c66b012db37d07e8e3b30a0d84b811f4a8a8b7b29eaa",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F1P\\2019.npz": "ec3e70dcc9ff49f2af051aa69bfb008907791228565d356b903023e1f3337356",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F1P\\2019.json": "65cc571c4a6befdaf5d09e6ba3dd66c4d962d7cf84b6e080cc47941bfd401fa5"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "lightgbm_F1P",
+      "mapping": {
+        "a": 0.9164614733619078,
+        "b": 0.35391237697676425,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.3982611824969989,
+        "iterations": 9
+      },
+      "budget": {
+        "threshold": 0.71,
+        "calibration_alert_fraction": 0.09683167570825799,
+        "annual_alert_fractions": [
+          0.08453134418324292,
+          0.10913200723327306
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F1P\\2018.npz": "2066b76ff4e0031d5a6aeafb87b4dbbb1651d26e8243872f89d0286279c14b59",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F1P\\2018.json": "27698a0c7602f09e1bbc4baa393ccf0856e07aefbc645c5ca415891765f73d35",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F1P\\2019.npz": "35d19719b1cc8344714c818482f39c4be826dd45545c2353654b386ab3d7b07d",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F1P\\2019.json": "f2259e767a79362bb5cd2f20c852f609123c18e1bd129cf1e873302506d8d282"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "logistic_F2_minus_NT",
+      "mapping": {
+        "a": 1.0533574158417516,
+        "b": 0.3109344808182583,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.3882510327055372,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.74,
+        "calibration_alert_fraction": 0.09773206751054853,
+        "annual_alert_fractions": [
+          0.11243218806509946,
+          0.08303194695599758
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F2_minus_NT\\2018.npz": "624936013405acc5e67533d04eb7c21c1e7df259b9ea02934c5c30e5a1995eae",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F2_minus_NT\\2018.json": "5d91b45ac05ab1d1ec4f1a1bbfd628d280e33088bdfaa037e9061158024a4122",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F2_minus_NT\\2019.npz": "bc47c3ed9725dad8e7297bdd911fbb3af132e4d4406aa607bc1ff5f0072d21e0",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F2_minus_NT\\2019.json": "c4250840d4f044e3849b325925b9469040eca3b9508295c877b037d94d808925"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "lightgbm_F2_minus_NT",
+      "mapping": {
+        "a": 0.9159549030329562,
+        "b": 0.34746462265598593,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.3981573485469125,
+        "iterations": 9
+      },
+      "budget": {
+        "threshold": 0.71,
+        "calibration_alert_fraction": 0.09818037974683544,
+        "annual_alert_fractions": [
+          0.08688969258589511,
+          0.10947106690777576
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F2_minus_NT\\2018.npz": "a2c06565c36234eb0b9a9e68000c42050947411a266ced5db08f198b78265256",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F2_minus_NT\\2018.json": "a164e7909365f9757fa2e796af66d2a1a2856213a097e276e0ac85b475ef9342",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F2_minus_NT\\2019.npz": "625f820c579dd6a4033de1998c5c84123d966382cd6ea71b5fdcec9e62d2430d",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F2_minus_NT\\2019.json": "49a6c918fd2ae9fa9573fc1c685fed9b28fa60e9c5622f6cb82943422248c3d5"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "logistic_F2_minus_NM",
+      "mapping": {
+        "a": 1.0521564778131853,
+        "b": 0.35110696447225875,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.389231202895651,
+        "iterations": 7
+      },
+      "budget": {
+        "threshold": 0.74,
+        "calibration_alert_fraction": 0.095874773960217,
+        "annual_alert_fractions": [
+          0.11015672091621459,
+          0.08159282700421941
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F2_minus_NM\\2018.npz": "53960ce17a4429d6499578fbb7ff955bbc0916772924f4a0f45adef769c5866f",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F2_minus_NM\\2018.json": "0aca975c1b7263db4c3a86d77a977e763419018a3c21ced6c3cf932275f4e8b9",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F2_minus_NM\\2019.npz": "ce722ebd5a21078319b28ccdf9e448c4836de235a5c4739e3a4cb701e1db4090",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F2_minus_NM\\2019.json": "856ff1814c4bde74f4dcef3cb6896bfad347fed66badbb487468b48f970346fc"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "lightgbm_F2_minus_NM",
+      "mapping": {
+        "a": 0.9121120125968766,
+        "b": 0.3344911162817622,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.39763205685992997,
+        "iterations": 9
+      },
+      "budget": {
+        "threshold": 0.71,
+        "calibration_alert_fraction": 0.09750979505726341,
+        "annual_alert_fractions": [
+          0.08511151295961422,
+          0.1099080771549126
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F2_minus_NM\\2018.npz": "2983eca7637ba6bb4ff748e9d9eb2c9dfb0b8a17ac50e2af335c8a6808e8db3d",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F2_minus_NM\\2018.json": "15756aba2a756f7df0df083e7050f230ea7a46c8fc2139445e937f2a95bc3e93",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F2_minus_NM\\2019.npz": "44af9ee54b816314449e807d4e1bd1b53cc4212a35eb08e95683c30edd691fe1",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F2_minus_NM\\2019.json": "8886ac5c7e907855b79c2df06c199f13730cf7311c1d9ada100f3ec8f1097813"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "logistic_F3_minus_RT",
+      "mapping": {
+        "a": 1.0470014550519366,
+        "b": 0.34339776445036807,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.3820163043367954,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.75,
+        "calibration_alert_fraction": 0.09553571428571428,
+        "annual_alert_fractions": [
+          0.10907172995780591,
+          0.08199969861362266
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F3_minus_RT\\2018.npz": "7e1e8d2641e7359f28d3a6ee359ba2a5bf31d24e63bbc60c0293176442ed9f45",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F3_minus_RT\\2018.json": "b9a4acfbff702308640288ac4ca5e4dc7933aa7cebd3cfd2d2d779ae2921daa4",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F3_minus_RT\\2019.npz": "75f9609acae0284d19f2dc58b712f2a3fb91be8563b551c60ad8126986b22ce3",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F3_minus_RT\\2019.json": "d78097d712474d6912f243067d302790508cf0f06b405b2174c91ab442e5381a"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "lightgbm_F3_minus_RT",
+      "mapping": {
+        "a": 0.9132185356673714,
+        "b": 0.34380242633968144,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.39496732563563175,
+        "iterations": 9
+      },
+      "budget": {
+        "threshold": 0.72,
+        "calibration_alert_fraction": 0.09698236889692585,
+        "annual_alert_fractions": [
+          0.08165310427968656,
+          0.11231163351416516
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F3_minus_RT\\2018.npz": "f0f4d648f0b0a84cd0bd6d207e6bc2fe27dfde73b610f74a0d51eabca694ddab",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F3_minus_RT\\2018.json": "9d18df8245c0c3d420df1b62b7151fdc80885f1d9bd6497c0aa0a785fbf3d9de",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F3_minus_RT\\2019.npz": "9d0aa600d3e7af57336a3a475b633a81fee5d96a40940379bd58c7061dbd5592",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F3_minus_RT\\2019.json": "e93315194b364cfba4050f4575755af4916a357837e6c209e55b36d66c513386"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "logistic_F3_minus_RM",
+      "mapping": {
+        "a": 1.0488776789725196,
+        "b": 0.3566761573877709,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.38153078743969154,
+        "iterations": 7
+      },
+      "budget": {
+        "threshold": 0.75,
+        "calibration_alert_fraction": 0.0963494575045208,
+        "annual_alert_fractions": [
+          0.11063140446051839,
+          0.08206751054852321
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F3_minus_RM\\2018.npz": "a349f7108870af1e46c42e857300920b30e99310576fcd500f7b44867d62f914",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F3_minus_RM\\2018.json": "5ec7f56ca9c35249ebac05ba2d8b68f62b51d4615db2e8e3cc3a0f53a6fa7334",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F3_minus_RM\\2019.npz": "a10d304faf17e5eaf9f125020341327cdb57a1a8e591ffddc970b9c06321cacc",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\logistic_F3_minus_RM\\2019.json": "52b7f7001a15342bf68b9844ef44dbfc6f70a04f2034738e78249c90b291734b"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "lightgbm_F3_minus_RM",
+      "mapping": {
+        "a": 0.9138876857584285,
+        "b": 0.3446096971895342,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.394990508831745,
+        "iterations": 9
+      },
+      "budget": {
+        "threshold": 0.72,
+        "calibration_alert_fraction": 0.09428119349005425,
+        "annual_alert_fractions": [
+          0.08102019288728149,
+          0.107542194092827
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F3_minus_RM\\2018.npz": "db31932be137bb1d2bbc2df61dbe1b54df30b38f2ce873c25f1dc097f1422cc7",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F3_minus_RM\\2018.json": "49483b9ab423cb2d4507d37fed053e2c39b42e548cb221a866c417d63e5193ec",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F3_minus_RM\\2019.npz": "841995b8ad5dc7c9cbea8a7d5e7e8a5b60a0c4a2ac2b9a9921641eebfe4f163c",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\lightgbm_F3_minus_RM\\2019.json": "838e3241e019475b33c5ea328523ce5fba6a72003497a762460cb724b6ffc38a"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "persistence",
+      "mapping": {
+        "a": 1.0,
+        "b": 0.0,
+        "status": "persistence_raw",
+        "reason": "protocol_no_calibration",
+        "objective": null,
+        "iterations": 0
+      },
+      "budget": {
+        "threshold": 1.000001,
+        "calibration_alert_fraction": 0.0,
+        "annual_alert_fractions": [
+          0.0,
+          0.0
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\persistence\\2018.npz": "cc359436e73bb7086c120353f4396d2d8ce743f34f25cc51dac19432c7f8ae97",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\persistence\\2018.json": "adbc2d9701da48f2eb92c94f41755d1a7d1f7a6a1d2c395df36caa0cb7b0ede2",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\persistence\\2019.npz": "b81943db78d4f0023342124d712400799bb0ebeb33fbe0f498a81544f6474109",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\persistence\\2019.json": "6f94ce0ddeff9bbb662617c15fef73940bd0f20f54a5362c60152b99f54c0713"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "seasonal",
+      "mapping": {
+        "a": 1.2577002536948445,
+        "b": 0.8587340577931728,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.4185940790967655,
+        "iterations": 9
+      },
+      "budget": {
+        "threshold": 0.69,
+        "calibration_alert_fraction": 0.09459764918625678,
+        "annual_alert_fractions": [
+          0.09459764918625678,
+          0.09459764918625678
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\seasonal\\2018.npz": "4438fc049af9db70ef507e095be8102d4caaf98dc44a599b489813ea1cdf1b00",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\seasonal\\2018.json": "822e73b5872fe253d2472c54502ad3528edadcf6482d367c1d5fbb8bf64ab675",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\seasonal\\2019.npz": "b5e01237952ddf23d43eafe051350717d3b1189f575cfa67b1fcae9ccf489276",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\seasonal\\2019.json": "cb587ef376623142f7f6d404f2bcd007340151c06bca3c0b45f3e0147a025ecc"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "seasonal_pooled",
+      "mapping": {
+        "a": 1.360456431940524,
+        "b": 0.9175172569153986,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.5125420339725982,
+        "iterations": 10
+      },
+      "budget": {
+        "threshold": 0.53,
+        "calibration_alert_fraction": 0.0,
+        "annual_alert_fractions": [
+          0.0,
+          0.0
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\seasonal_pooled\\2018.npz": "0f85656acefbd53777dcf95990edb733e4a82b3200d7fbfc7e72a71793a27213",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\seasonal_pooled\\2018.json": "1239acb6529287b50716797df8b89369fe36b3c0870f63bb052bb707ae640b5e",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\seasonal_pooled\\2019.npz": "af76a69d6d07325b161cb08cb2e44f2d1d78155f4187414d37a7c65b76dd88d2",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\seasonal_pooled\\2019.json": "61d06492c3799f3e8e1925dd49d6a8354e172bd4115175633fc148d05ee20009"
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "transition",
+      "mapping": {
+        "a": 1.065998936149792,
+        "b": 0.40362819951298856,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.4343344650889532,
+        "iterations": 7
+      },
+      "budget": {
+        "threshold": 0.69,
+        "calibration_alert_fraction": 0.0989489150090416,
+        "annual_alert_fractions": [
+          0.1031871609403255,
+          0.09471066907775769
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\transition\\2018.npz": "74884ad34eb005a2fc1e6065e00e00df4eb887724f532450b8afe6ac5066739f",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\transition\\2018.json": "f0a100effb48dbd7cdf1f6a9dcf75c9345707b82b89fbd737fba039992346402",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\transition\\2019.npz": "6d0a73a70e73ad1c712b129f79efaa22e7511e6c21b1095aee1d4abf65806a86",
+        "data\\probability_phase4\\predictions\\calibration\\temporal\\lag2\\transition\\2019.json": "267fe9096b3c8021804536381f988b8b0a893ce6035781d71abadd6f888f49a8"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "logistic_F0",
+      "mapping": {
+        "a": 1.0913924933057932,
+        "b": 0.6891960267559617,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.3324966888737422,
+        "iterations": 8
+      },
+      "budget": {
+        "threshold": 0.81,
+        "calibration_alert_fraction": 0.09854191869203417,
+        "annual_alert_fractions": [
+          0.12079804978188351,
+          0.07628578760218484
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F0\\2018.npz": "0abb505b89c06344816bb9cae16efb1f7040d6d9419fcb27210a9bb7e74205c5",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F0\\2018.json": "1cfb4c098959fb3427d26a0af62e1717b529653343377bab0bb75fb8a9dc7ad5",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F0\\2019.npz": "d780b0f584bbd1ca4956feae10a59ee7dac15856705b3c32db3b96b26612d863",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F0\\2019.json": "eb23c35d68df6ae04cfd1de269aaea490459becc20fbb0e9b61e4c0cd77ac900"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "lightgbm_F0",
+      "mapping": {
+        "a": 1.0252899666026107,
+        "b": 0.5596009897024823,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.32509330477479254,
+        "iterations": 8
+      },
+      "budget": {
+        "threshold": 0.82,
+        "calibration_alert_fraction": 0.09506396862055061,
+        "annual_alert_fractions": [
+          0.1102038197881154,
+          0.07992411745298582
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F0\\2018.npz": "bd2a6f12f264c5e6f5b61144801ec0997594d53a819f2b163171dcbeb29e112d",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F0\\2018.json": "3a5b20f062573f0fb44b2dfe5b04659912c2124dedca9658c65fa59dc8d94ee2",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F0\\2019.npz": "16201e0a487154095c1839d5cc9411ef44b62d70c7b94f068de0e600faa71e71",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F0\\2019.json": "1c4ff3bb05521720db00a8de35cb4a9c2aa17fbe620b885656872082a876229a"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "logistic_F1",
+      "mapping": {
+        "a": 1.0444572427965497,
+        "b": 0.30402080518106084,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.28431122016948024,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.86,
+        "calibration_alert_fraction": 0.09729095641335826,
+        "annual_alert_fractions": [
+          0.1087283258183951,
+          0.08585358700832142
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F1\\2018.npz": "6cc3d86a49380b6197278d9b3700768057d578a5c9f7140b887bf2b45e9c9005",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F1\\2018.json": "e31aebadb3e59b5405d9ee415798d3028f5865b53a406f8ee74b4442b7ee8bab",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F1\\2019.npz": "4d1afb2dc827153086b42722e006940daedd1b0826167c4ed82f074ad03db4a5",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F1\\2019.json": "d231d6af521f87212f76c59055dd61809447fe205003bee4f5b3e776cf84156b"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "lightgbm_F1",
+      "mapping": {
+        "a": 1.0529322695574126,
+        "b": 0.3140739212899896,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.2814111347963604,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.86,
+        "calibration_alert_fraction": 0.0957788042083654,
+        "annual_alert_fractions": [
+          0.10018695699989003,
+          0.0913706514168408
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F1\\2018.npz": "f09686f5836693aaf69f0d5982f4dd7e1d7b161a809f5f719072c4fcf3aaae0a",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F1\\2018.json": "59e94afe1bca406141b4e0a890cbc29a7ad712e3115bd5184c79800f3add2b5c",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F1\\2019.npz": "98d626f5fc708fc4784264baaccf0e46ac9f1d0a18c94f6c4ca9007eae136710",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F1\\2019.json": "63a78c67e01d2f7d47bc24c81393bf31a573e120c8a61d171fee06252c909c02"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "logistic_F2",
+      "mapping": {
+        "a": 1.0337559140052819,
+        "b": 0.23526197858146183,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.27623272213807426,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.87,
+        "calibration_alert_fraction": 0.0968831335459511,
+        "annual_alert_fractions": [
+          0.11002969317057076,
+          0.08373657392133142
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F2\\2018.npz": "38ee23198eaff1775fd240b2d33c6d63e2d08fbd6a222559ad25acc8b8282073",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F2\\2018.json": "927b92256c72f3acd5c440b5b3c265c0b726ec8d60ce8f60ec76ab79913aa97d",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F2\\2019.npz": "c485720302ff556b45954c146b3382577aa88c910855a4ff507ee9363d0aff5b",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F2\\2019.json": "46eef38c988d58084b2266538af7ba1ce7b75fbc0b549a0cd06977414078159f"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "lightgbm_F2",
+      "mapping": {
+        "a": 1.0506202146937487,
+        "b": 0.2713421777617565,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.27519286866111564,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.87,
+        "calibration_alert_fraction": 0.09428498112100883,
+        "annual_alert_fractions": [
+          0.09861981744198835,
+          0.08995014480002933
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F2\\2018.npz": "0bc1f4839160e98670ad97015948010a27e7d311a55d21f713234ef0a59d0e5a",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F2\\2018.json": "dc04345d308de61fab32fd4d6d855d1e4cf4d1b0a7999358ff37fa4e99c65266",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F2\\2019.npz": "9d0c24c3b5374a3165ff588a52198b269917452eb524011693a8d8de06a8c93d",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F2\\2019.json": "79242fe7161c4e791a3ee91e535996f7a6180b38f7ccc95815b52d494e4ffaf4"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "logistic_F3",
+      "mapping": {
+        "a": 1.0292352425285316,
+        "b": 0.24247145202131948,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.2728296638784791,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.87,
+        "calibration_alert_fraction": 0.0993117416327578,
+        "annual_alert_fractions": [
+          0.1125132886102863,
+          0.0861101946552293
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F3\\2018.npz": "ef401a557975f135f9ecacf6bbd7f665844bdeb14b89240f764aed6607fb8346",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F3\\2018.json": "25642cb9c62a87f9bf680714d7ffcac050067d14f9ab45f5d82050a177ca9c58",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F3\\2019.npz": "be2f82625316370383d0aac4e9853a624aa333b97cc7540b05d5d832ecffc2d2",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F3\\2019.json": "393f2721106a5e10be2440cbccc5d3c25bdb9a8a35e12852de312a101e39ccb4"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "lightgbm_F3",
+      "mapping": {
+        "a": 1.0481579770744325,
+        "b": 0.27819763308935574,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.27522434659020145,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.87,
+        "calibration_alert_fraction": 0.0932906264892408,
+        "annual_alert_fractions": [
+          0.09656695626672532,
+          0.0900142967117563
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F3\\2018.npz": "03d361eefd90f561e446f00284e51e7f0b9fd2e26ead5a5e529a4bf40ba0798f",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F3\\2018.json": "f54fe8a94f5050ad0f429826324c1d2441df8a6db3d421d50c76dac435286557",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F3\\2019.npz": "218a64ad3d2ba55b933956024687aa87ff39785fdf8eda178a31b6fe3dfac17d",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F3\\2019.json": "0e5d077a11df1f35d04f8e00f21ae7b2e487a22aa61784be9ebaa3fa7376a972"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "logistic_F4",
+      "mapping": {
+        "a": 1.0239583207457834,
+        "b": 0.21813533843581118,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.27168745604037053,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.87,
+        "calibration_alert_fraction": 0.09954543788262032,
+        "annual_alert_fractions": [
+          0.11535430184390924,
+          0.08373657392133142
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F4\\2018.npz": "57aaef71393f3f473c39baf8beece02e68fd85e8bca7a5f057b13b5c500f1bf4",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F4\\2018.json": "c3eff354153800ec4c054926edf84ad3f595a80e0d9b0ae27c915f899a92e7f4",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F4\\2019.npz": "5b4b60cf9e45c0934ae354d12fb0272f16a907c63c20832955235dedb029e141",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F4\\2019.json": "1f1c2ec120fb5def3b5ad8f6efbbec90e3703540c6db82c50b54f814d2212c62"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "lightgbm_F4",
+      "mapping": {
+        "a": 1.0284096173764643,
+        "b": 0.2699980823799632,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.27731572595205856,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.86,
+        "calibration_alert_fraction": 0.09912845045639504,
+        "annual_alert_fractions": [
+          0.10440265405623374,
+          0.09385424685655633
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F4\\2018.npz": "564db6c8f9584a4b47d8d2c629a7d55b797d20b5493ebf1c56a36495eff1b235",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F4\\2018.json": "87d381a073034592846e30ae0c0bbc52d3bc81a1955cbf3440d141ac366c47c5",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F4\\2019.npz": "3c44ae803dfb46c286094bea8bd54c57b256deab07430efd951e99d335e0d7b5",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F4\\2019.json": "6d1f013d5e5acbe8a5d8647ad617a500db6eb4e2678e333a5baf9ec3d79665e3"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "logistic_F0P",
+      "mapping": {
+        "a": 1.0657626823396276,
+        "b": 0.5397658542759728,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.31132601021730133,
+        "iterations": 7
+      },
+      "budget": {
+        "threshold": 0.86,
+        "calibration_alert_fraction": 0.09285530994537923,
+        "annual_alert_fractions": [
+          0.11682063125481139,
+          0.06888998863594707
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F0P\\2018.npz": "ef9bc50519b52dda5d326f98399f90c6dd8fd71c36a2a991cb692d308915f00d",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F0P\\2018.json": "2a1395b77df28a10042f0494f88647043b5b92ae1aa5202f3ae57b7d97bd49f9",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F0P\\2019.npz": "0c2ef9bb9c5a6fa847b7d07c2d84ddf8e09d5fdfdba2c49dacebf7bcef7f0aa0",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F0P\\2019.json": "68c3fc7bf000f7d5af3411ac008e17a5611d52d07cb0c879a19780a6052b2e52"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "lightgbm_F0P",
+      "mapping": {
+        "a": 1.0034166249808385,
+        "b": 0.42750573639262524,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.30966254355766487,
+        "iterations": 7
+      },
+      "budget": {
+        "threshold": 0.84,
+        "calibration_alert_fraction": 0.09766212104549288,
+        "annual_alert_fractions": [
+          0.10819678140694307,
+          0.08712746068404267
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F0P\\2018.npz": "cd20ac8f9b9a6586cfee6a8c176042dc14afdba393a98e33202d4eb076de07a9",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F0P\\2018.json": "231fcbecc3a2321a9fb3c357e2069a47e215a5bea7ea7d9166113f724a241b0f",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F0P\\2019.npz": "64b765e6b7b077fce1bc2468e393968a39676426bc9099d0eb0fa7816832a2b5",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F0P\\2019.json": "fba6e22bf523e0cd02dc6a105b6a07e6c40bdfd270ac66c6dc944c9bdbe3e4ea"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "logistic_F1P",
+      "mapping": {
+        "a": 1.0407179485273488,
+        "b": 0.299452754292356,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.2838715585273868,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.86,
+        "calibration_alert_fraction": 0.0997745518530738,
+        "annual_alert_fractions": [
+          0.11265075699255837,
+          0.0868983467135892
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F1P\\2018.npz": "af6831385c339a89d87787813113aa23de24d8dcb909b40d3ba53102eda0eda9",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F1P\\2018.json": "3a5bfc33a4f03b8fbb7afe90dc80dad1dfcf7e05a696816544357cf98dc7cb4f",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F1P\\2019.npz": "dfc49e32cc36ebf0a1a97ff8b8d53dfed2a594da4d16a0201af6ae342c1e023f",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F1P\\2019.json": "8ac81d2a64d994d02de8b5062b0ada2314530cfccc3911ccf37272c581f27a7e"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "lightgbm_F1P",
+      "mapping": {
+        "a": 1.047899301656793,
+        "b": 0.30511759906348895,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.2819686062874503,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.86,
+        "calibration_alert_fraction": 0.09471113310605228,
+        "annual_alert_fractions": [
+          0.09993034935298215,
+          0.0894919168591224
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F1P\\2018.npz": "9a6fff1994fe11439269e21d417bd41a52d56c84f4b22971836fb4a21702d14b",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F1P\\2018.json": "e16ced660babee604ae79aa84af2b2dd4b399d27509cb582bdc895763decc33b",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F1P\\2019.npz": "42c876d5f0669a6c13e885faf91330e6f631031de2fb19e91a43c4ff5af2145b",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F1P\\2019.json": "cb627cec08eec3cfd0dd4c1eec470bfac0fb43e3458df8d1530239246561bac8"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "logistic_F2_minus_NT",
+      "mapping": {
+        "a": 1.0375320552658964,
+        "b": 0.1827608294586652,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.2781125736054626,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.87,
+        "calibration_alert_fraction": 0.09755214633967521,
+        "annual_alert_fractions": [
+          0.11128523772865574,
+          0.08381905495069468
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F2_minus_NT\\2018.npz": "bb064bc64f95893512fce3c051304a1bf8401d7880978d983d0bc489852adb16",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F2_minus_NT\\2018.json": "28cdc6419f01e203c63c905878bc8acc3c05e7da6318a6d8736582fbdd327d7e",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F2_minus_NT\\2019.npz": "956d956c2c8bc2ed029ddd8dfea580a99a852a2c865d479b815d9c09604687f3",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F2_minus_NT\\2019.json": "2b1466d3d7d486f9625846574894805b411c867f7d6998e139d51d4fccee793e"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "lightgbm_F2_minus_NT",
+      "mapping": {
+        "a": 1.0534804339865884,
+        "b": 0.2937316140688371,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.27690684101717217,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.87,
+        "calibration_alert_fraction": 0.09320814545987756,
+        "annual_alert_fractions": [
+          0.09629201950218116,
+          0.09012427141757395
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F2_minus_NT\\2018.npz": "14197f9d257e91e643a8be4c6c8263497552108514c79880bb058368c79b6a75",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F2_minus_NT\\2018.json": "de4ea119dfd1775e4784596f0d2b0a9645e630959b1ef37630b971f370a8311a",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F2_minus_NT\\2019.npz": "5145460ca9173c68f5848b7d66a028cce9d3603a96ac44131675e913e3dd2383",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F2_minus_NT\\2019.json": "c12fce126536ff6d5d3bd37423d702485a1aa624f2fd9737e4b1518a655a100b"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "logistic_F2_minus_NM",
+      "mapping": {
+        "a": 1.0249577235480194,
+        "b": 0.27353221610760187,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.2806834753084711,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.86,
+        "calibration_alert_fraction": 0.09946295685325708,
+        "annual_alert_fractions": [
+          0.1132281241981011,
+          0.08569778950841306
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F2_minus_NM\\2018.npz": "487429855e71686e621a453f187abc37db3fd133eb7c2ee658e581a537bb35aa",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F2_minus_NM\\2018.json": "f1a9e4f44c4d8a3901d78934a9d8b31cab43fb607b3330d402671d12778f7676",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F2_minus_NM\\2019.npz": "54458514f5426b83809135c6426c0c4b663b428358cd3a40866e29b7ee383da6",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F2_minus_NM\\2019.json": "18ea536afa15ce54f2cad271a161c8bff90cc14c60b2d40f493d725eda915743"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "lightgbm_F2_minus_NM",
+      "mapping": {
+        "a": 1.0439343032556103,
+        "b": 0.283377030849064,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.2780582130375652,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.87,
+        "calibration_alert_fraction": 0.0916959932548847,
+        "annual_alert_fractions": [
+          0.09688771582536017,
+          0.08650427068440925
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F2_minus_NM\\2018.npz": "4c72123e82c95eda891c211acad00eca085aab0a7b1e2e871949bcf7a59c9e34",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F2_minus_NM\\2018.json": "c4ff9d6573fb3e37528de1c93670e6cadb5d9a9596f268892571403235214288",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F2_minus_NM\\2019.npz": "f0c61af03cab125933cb88bf36e9cc0395a89beb37fd5d1d8c1bf68d90fd9e93",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F2_minus_NM\\2019.json": "ba571d3f7806ab028e6fe8333f8b4e0cd6c8c850472dd09f5305f9b6d917f08e"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "logistic_F3_minus_RT",
+      "mapping": {
+        "a": 1.028373016722739,
+        "b": 0.2356570721454798,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.27382432815256086,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.87,
+        "calibration_alert_fraction": 0.09785915906008284,
+        "annual_alert_fractions": [
+          0.111037794640566,
+          0.08468052347959969
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F3_minus_RT\\2018.npz": "da3ce8326b4c4a1a9537f62b27bed2f4f93522d11a623dd1ec604bfbcc2710ec",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F3_minus_RT\\2018.json": "1a33d2bdab299fa454dcaae3f4e68982c41f6a0dd9135a98032da069fcd94e8b",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F3_minus_RT\\2019.npz": "eb07146278a45c89df9489696fc3b29f4f5bb5023aa20da9a94517bb7268856a",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F3_minus_RT\\2019.json": "6433fd0f390e02eee5823521efed5a781787eb46a4c440ea4a9b14d9ebe0cda9"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "lightgbm_F3_minus_RT",
+      "mapping": {
+        "a": 1.0493709239657065,
+        "b": 0.26701903826413975,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.27421331664640625,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.87,
+        "calibration_alert_fraction": 0.09468822170900693,
+        "annual_alert_fractions": [
+          0.09705267788408665,
+          0.0923237655339272
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F3_minus_RT\\2018.npz": "a9bd918021ad2d739bb57d50895ed3dab88c1aa1412b4fa4d88b627b03af40bf",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F3_minus_RT\\2018.json": "d3b90de7ac673f7f1ebcb6bd000cae69a7b737c98b8b9d852564b58c5e6ce4f9",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F3_minus_RT\\2019.npz": "2f7a4110db5589176ac9dedfc51d99b4c25fbcb822a828b9ae84fd265931e4ea",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F3_minus_RT\\2019.json": "60bd4630cac573e1ab51eaaf5f9a45e06440b30870162e923e30b5feda897808"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "logistic_F3_minus_RM",
+      "mapping": {
+        "a": 1.0264674199558361,
+        "b": 0.24685572933135028,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.2739231632863245,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.87,
+        "calibration_alert_fraction": 0.09821199457458119,
+        "annual_alert_fractions": [
+          0.1112760731698376,
+          0.08514791597932475
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F3_minus_RM\\2018.npz": "3170b41dee7e19bd219066f3b5f2c8edcbcb4d47b7b2f31103927c4eca7883b9",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F3_minus_RM\\2018.json": "9ea91a2250ad58d6aaed2cd815f05220a222118cbf30f7335169c2e1becd39b7",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F3_minus_RM\\2019.npz": "c72358d5873955b23251d81e470a26d6e741c83160296d92089c8f15bccca1c2",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\logistic_F3_minus_RM\\2019.json": "1aec3449a9540d498f122cd6923ea9a03c86d8ada86b0b7017acecc6af51943e"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "lightgbm_F3_minus_RM",
+      "mapping": {
+        "a": 1.0521848361593225,
+        "b": 0.2819152696163859,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.2744668608839474,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.87,
+        "calibration_alert_fraction": 0.09435829759155395,
+        "annual_alert_fractions": [
+          0.09822574141280839,
+          0.0904908537702995
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F3_minus_RM\\2018.npz": "509b36f97c2a8c19ad6f69e1c3578a682f24fd86d6f74f3a15962c1de03f1499",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F3_minus_RM\\2018.json": "f208fc27f1fd439353da3b9df335dd08896a9f1af6cd4ddd74777f61c5d45b23",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F3_minus_RM\\2019.npz": "7249c9f7ee3a3abed6688d561c1cac446cc631eafcfce5243eba164c1ab9a52b",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\lightgbm_F3_minus_RM\\2019.json": "d708aa664b2bcd7d129d5f3de2bc8d9fae5937809fa5df8fa2348f02237495b2"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "persistence",
+      "mapping": {
+        "a": 1.0,
+        "b": 0.0,
+        "status": "persistence_raw",
+        "reason": "protocol_no_calibration",
+        "objective": null,
+        "iterations": 0
+      },
+      "budget": {
+        "threshold": 1.000001,
+        "calibration_alert_fraction": 0.0,
+        "annual_alert_fractions": [
+          0.0,
+          0.0
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\persistence\\2018.npz": "59dfdd5f764f095609f8f336809e6a3c57e3016de895cd1e509c7448c0007457",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\persistence\\2018.json": "9369669736ae26357db019403588a05eb34c102c5a1f25a61dc840ef348a619e",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\persistence\\2019.npz": "f479c04e13ad6d06c3eaa620159c395c69fb285f4c2445a3ba319fdffd05b006",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\persistence\\2019.json": "a86a918c96e140faff79b5d4b359e57cf4d14869539cf6de29372f94207deaad"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "seasonal",
+      "mapping": {
+        "a": 1.4011886891314875,
+        "b": 1.0416268080221347,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.5052041250742586,
+        "iterations": 11
+      },
+      "budget": {
+        "threshold": 0.51,
+        "calibration_alert_fraction": 0.0,
+        "annual_alert_fractions": [
+          0.0,
+          0.0
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\seasonal\\2018.npz": "3e05a8cf1705b124fa18ee3cd355033ccfbff9db17c058dbe4aeaf6682206d48",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\seasonal\\2018.json": "e5c0670d3d057d95f41f770159a9e06264211caba4d1377923401d5314ef13da",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\seasonal\\2019.npz": "06c5095967a0681d240acb3c7b4d96780f7d529e3822176c709d2f8c3ffa601e",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\seasonal\\2019.json": "824d975a4ba7b2793c22a0405f8612c9211d73b73920e98d5b0b91927ee18f37"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "seasonal_pooled",
+      "mapping": {
+        "a": 1.4011886891314875,
+        "b": 1.0416268080221347,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.5052041250742586,
+        "iterations": 11
+      },
+      "budget": {
+        "threshold": 0.51,
+        "calibration_alert_fraction": 0.0,
+        "annual_alert_fractions": [
+          0.0,
+          0.0
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\seasonal_pooled\\2018.npz": "3e05a8cf1705b124fa18ee3cd355033ccfbff9db17c058dbe4aeaf6682206d48",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\seasonal_pooled\\2018.json": "0a26cea481e747ecda6514ea6e940b499baf1c2eeaed8e2d9c149c21fccda044",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\seasonal_pooled\\2019.npz": "06c5095967a0681d240acb3c7b4d96780f7d529e3822176c709d2f8c3ffa601e",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\seasonal_pooled\\2019.json": "2653b61fb47383b146c016a31aa166d75fe9289c3bb3f26cef6722e8192af8fd"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "transition",
+      "mapping": {
+        "a": 1.0159509477474231,
+        "b": 0.3325241004131652,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.3564466447261217,
+        "iterations": 7
+      },
+      "budget": {
+        "threshold": 0.82,
+        "calibration_alert_fraction": 0.0,
+        "annual_alert_fractions": [
+          0.0,
+          0.0
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\transition\\2018.npz": "2b487f61b6522d6e354a060d51b3c1654028d3541eaf8baf21f9daddc864c8f9",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\transition\\2018.json": "e7e62c2d82d19f9f83cc0ef23c8e732ab03cbecf9c768f3ac11bbb7e99b7a89e",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\transition\\2019.npz": "fe07e927d022dfde02f1920480319d2876d1516c1fbdff09346a802ea802731f",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag1\\transition\\2019.json": "73651f35848d9caf174485364f62c59dc16be80567f3d6a89c0785595427a035"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "logistic_F0",
+      "mapping": {
+        "a": 1.1503632705143472,
+        "b": 0.7138114082878125,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.39709017651034373,
+        "iterations": 8
+      },
+      "budget": {
+        "threshold": 0.72,
+        "calibration_alert_fraction": 0.0984777667803072,
+        "annual_alert_fractions": [
+          0.1254169874262253,
+          0.07153854613438909
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F0\\2018.npz": "0fe858474a00b902cc1f0b924cafa09c3492f7d6f61084437282cb4275424ff7",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F0\\2018.json": "33c43df050181ae0eda5a1581449b3cd28b1f6e3f20228e683626f4332eae37c",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F0\\2019.npz": "d623bf753cfcf724c2d82863670eb94c5bc3e2bac094d924c23fdd708f7f7d60",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F0\\2019.json": "684ddeaff2c1ddfda3e57dfa07b7d0f15777ef0c99ba6813aff685b04c40d3bc"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "lightgbm_F0",
+      "mapping": {
+        "a": 1.0181681033361294,
+        "b": 0.5500971829837592,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.3894426859802193,
+        "iterations": 9
+      },
+      "budget": {
+        "threshold": 0.71,
+        "calibration_alert_fraction": 0.09671358920781553,
+        "annual_alert_fractions": [
+          0.10354118552732872,
+          0.08988599288830236
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F0\\2018.npz": "0a59e2eca90b340a78f9fd71db8351ddd905cc4a4f74be6006cfd84cb29ea658",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F0\\2018.json": "103fe50bf9c2201f02564bf3046569963c0212f44f6d0503992603fea209d0d5",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F0\\2019.npz": "e41aa0f82885f453b6969a56215b270be4e7daac46764f49d971c1eaba1dfa38",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F0\\2019.json": "f321c3d9ba3fe3f16e557c8a9a1764ef2d9f6d67c83cca2674d1071be800f508"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "logistic_F1",
+      "mapping": {
+        "a": 1.1043797735707463,
+        "b": 0.4514969580138343,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.37391847175292353,
+        "iterations": 7
+      },
+      "budget": {
+        "threshold": 0.75,
+        "calibration_alert_fraction": 0.09479819641482459,
+        "annual_alert_fractions": [
+          0.1115601744931999,
+          0.07803621833644929
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F1\\2018.npz": "cab940748f0f1d995b07f37d0bb9e8bb16be136ca4ceba35b770fdedc82c8f8b",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F1\\2018.json": "342c209ce7ca42caa0d5b79f6a04ccc7e16b548582521868119a118941afc5be",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F1\\2019.npz": "21ef4790a6426648f30d17167f61bb11884c0fda8101049e596566da89b02bb9",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F1\\2019.json": "48defa237c8b42f159889e5ec2a6714ac7defd20c2c1be176cb5874b26ab2dc3"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "lightgbm_F1",
+      "mapping": {
+        "a": 1.0151341169388062,
+        "b": 0.4645802114514625,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.3761061576868295,
+        "iterations": 7
+      },
+      "budget": {
+        "threshold": 0.73,
+        "calibration_alert_fraction": 0.09374885443014773,
+        "annual_alert_fractions": [
+          0.08844715715385461,
+          0.09905055170644085
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F1\\2018.npz": "759a850d3d3066e554db45fec337d8c6ef2aae6c33248fa8e69f5e379238730f",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F1\\2018.json": "ae12e82cc847e01471c9c9be2b5bd44f215dbcf542adc253059b7332b0ee0cba",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F1\\2019.npz": "65ceaed023cdba50bddbc724eca257b092d14a2ba55dbe8b03dd486dc1c6e867",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F1\\2019.json": "621c6f527c54b62803a8492a129b088d575154fc256018d784bf47a426e42ffc"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "logistic_F2",
+      "mapping": {
+        "a": 1.1119040665182276,
+        "b": 0.43437606089445874,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.3689194414815207,
+        "iterations": 7
+      },
+      "budget": {
+        "threshold": 0.75,
+        "calibration_alert_fraction": 0.09836779207448954,
+        "annual_alert_fractions": [
+          0.11781956816598849,
+          0.07891601598299058
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F2\\2018.npz": "f8c7dac6a5ded6acf496ff5eefd30e42f2b2383f35420985b1321e78e78296b8",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F2\\2018.json": "aa00bd4643e8be02e0a76c519ba823bc733f64f02ff4e1e03443d2feabd45c62",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F2\\2019.npz": "8cff3f3c4a0f1e4a673b9a44945f2dc472fb96eb076bdbc2acb02ba7cf83a406",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F2\\2019.json": "28a1eacb84f7d2c94b4c85ac1e7757d4741501c817777ed41ee30f3bd4bebd78"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "lightgbm_F2",
+      "mapping": {
+        "a": 1.0186614957825766,
+        "b": 0.4387055136677648,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.37334944579116247,
+        "iterations": 7
+      },
+      "budget": {
+        "threshold": 0.73,
+        "calibration_alert_fraction": 0.09665860185490671,
+        "annual_alert_fractions": [
+          0.09214047435756442,
+          0.10117672935224899
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F2\\2018.npz": "432d96d00aebb86ad1692ee6f1f138ef4e391818cab41a01d2827d334e37440e",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F2\\2018.json": "a532838ba9ae9d7a9f33536e145156051c79face6aa9c951660c340e1bedc437",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F2\\2019.npz": "1da6d61a479f6b5ddff3cc34be3e886d8d89f69f8c637b123e052b30de1a1424",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F2\\2019.json": "b6e3c3e5c626ca944dfe3d226359baef08184e0a830adcbf391d82a9b73ce5cb"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "logistic_F3",
+      "mapping": {
+        "a": 1.1048456396771729,
+        "b": 0.45262669486506796,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.36270575507262187,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.76,
+        "calibration_alert_fraction": 0.09723596906044943,
+        "annual_alert_fractions": [
+          0.1151801752263646,
+          0.07929176289453425
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F3\\2018.npz": "35a2164d55fd02e38f46ae16c85c5546b8746861a01f41fffcf0dde560c13bb1",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F3\\2018.json": "a75c7502e985a830ae49b7d7528b1d7f3b8c599559d482a8faec0f6d4e235c10",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F3\\2019.npz": "8e2685b7522fe1db05363d60f701dd43792f8c78c944d6d47dc11834354135fb",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F3\\2019.json": "936ea2d748c482e1c3f1a3e5dd39f4681566bf1eb221cc286992fee9b4698b4a"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "lightgbm_F3",
+      "mapping": {
+        "a": 1.0229419128177513,
+        "b": 0.4656811929493616,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.3707541286189733,
+        "iterations": 7
+      },
+      "budget": {
+        "threshold": 0.73,
+        "calibration_alert_fraction": 0.09912386817698596,
+        "annual_alert_fractions": [
+          0.09170057553429378,
+          0.10654716081967815
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F3\\2018.npz": "f944bcdd2aa98d45e20e3fdbb135008c6b8c413d0252d9dd1b159de5c790bd51",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F3\\2018.json": "719324d1d68bc7dc0af49cbbb5e5447b1a11daecd71fabb6242fc5bb52197426",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F3\\2019.npz": "e441ce90892ce87df21c139da28d75213e1f850747718ce938d71e75ce3ab716",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F3\\2019.json": "847831b5fe1d00babd22ff4bb986083883ea89c0860651c480f0e1dedd1ee107"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "logistic_F4",
+      "mapping": {
+        "a": 1.0940758948061484,
+        "b": 0.42641726171177485,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.36113709045521053,
+        "iterations": 7
+      },
+      "budget": {
+        "threshold": 0.76,
+        "calibration_alert_fraction": 0.0973138678104036,
+        "annual_alert_fractions": [
+          0.12052311301733934,
+          0.07410462260346787
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F4\\2018.npz": "4d6c24549caf5b5fe1c136623724333c8c7027b075331b421a2124f358b68572",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F4\\2018.json": "4707e86ff122f59d511dbe68f45f1404868bf796aa5f535c2bc140069b7fc7ad",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F4\\2019.npz": "52588a6d8ad06069196b40f600d9b6e24f075b78bb32222ad616258dd3285a18",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F4\\2019.json": "1afe5db3e9dbcca8057820d5279296d9dbd771576972d42e5413a1cfe84ab345"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "lightgbm_F4",
+      "mapping": {
+        "a": 0.9936075207822237,
+        "b": 0.44099763848532697,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.37466710123184077,
+        "iterations": 8
+      },
+      "budget": {
+        "threshold": 0.73,
+        "calibration_alert_fraction": 0.09418417097400932,
+        "annual_alert_fractions": [
+          0.08476300450896294,
+          0.10360533743905569
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F4\\2018.npz": "7fa10bf46ae2194794109dca2aed77ed064c62de0ceef3e21a9189b66e8b622f",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F4\\2018.json": "7caa2d443d5d7442b6113387728ffd186686efb67e6302840a1cbdcf113783fd",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F4\\2019.npz": "a4350c8c9c43c75e4c83625ab3a93c8d0ac204a7dd27aacc20e77db0e6af1cb1",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F4\\2019.json": "1f3f1cfcca07e73a22c2ddc55649c29e817ff6358852f3b7da83c480155ddd95"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "logistic_F0P",
+      "mapping": {
+        "a": 1.1373661916325535,
+        "b": 0.6388427119315102,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.3875094889544044,
+        "iterations": 8
+      },
+      "budget": {
+        "threshold": 0.76,
+        "calibration_alert_fraction": 0.09524267751750431,
+        "annual_alert_fractions": [
+          0.12275926536896514,
+          0.06772608966604347
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F0P\\2018.npz": "450735c36574130484b244c2680f636f5557534c63807721afeab671c49fba10",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F0P\\2018.json": "a72c020aa392bb8fb8ebd6c3317b698577a138039bc561eb0552d0ad86f12676",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F0P\\2019.npz": "a656565793eaf2386a1071e70dcd7382d859f8edcb7491195d8240a4fd544620",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F0P\\2019.json": "7fb6c24bfc08c1dfae2217eba3bea67e708e3058debbe29e43146a93adf851cf"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "lightgbm_F0P",
+      "mapping": {
+        "a": 0.9931842128733679,
+        "b": 0.46736101222049037,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.3855843990635421,
+        "iterations": 8
+      },
+      "budget": {
+        "threshold": 0.73,
+        "calibration_alert_fraction": 0.0943949558268265,
+        "annual_alert_fractions": [
+          0.09723596906044943,
+          0.09155394259320357
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F0P\\2018.npz": "9e684705ede769b300e053bfeb1119e6a634eb713f5b6e674b6d33e1a3a5b258",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F0P\\2018.json": "94afc4b6ffb0bf48de94eaf2f1d3cf6b812d1d4cdeffd508bf4203ab6585259b",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F0P\\2019.npz": "dd273dceb8cd6735c6050cbf7c7ec37a2e08ead0e5b40ac6c5d86f19bb9e7323",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F0P\\2019.json": "71607b3b46659b9d3691b6487caad81d2c7a2419635fc896078fccb06cc88540"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "logistic_F1P",
+      "mapping": {
+        "a": 1.1028158224393927,
+        "b": 0.4463549213431332,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.3733115716250291,
+        "iterations": 7
+      },
+      "budget": {
+        "threshold": 0.75,
+        "calibration_alert_fraction": 0.09842277942739837,
+        "annual_alert_fractions": [
+          0.11657318816672166,
+          0.08027237068807508
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F1P\\2018.npz": "5552fcc171e5ded4aca04042585addc436456c38dd7035393d909158fb8e4bb1",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F1P\\2018.json": "71098e2c460fcf79d972e88db729bd372b306d700887833682e3f5ebfe78da85",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F1P\\2019.npz": "b259e2ad08f4c84420305dbdeb222c5d48751cd10237838ba53e41a50e14fa8e",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F1P\\2019.json": "96716d8e2dd80474ce0cbfb6f612c6d6ff1dff02fa8b1f0146b65a18920702c5"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "lightgbm_F1P",
+      "mapping": {
+        "a": 1.0022766252809474,
+        "b": 0.45286426027350096,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.3788228442991337,
+        "iterations": 8
+      },
+      "budget": {
+        "threshold": 0.72,
+        "calibration_alert_fraction": 0.09764379192785659,
+        "annual_alert_fractions": [
+          0.09043586641739067,
+          0.10485171743832251
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F1P\\2018.npz": "6954c21a6cb53d3ab5f232f4db2977cdce41dee8d7c060cd1a70b9a392b04191",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F1P\\2018.json": "21f0ac3c475f75471dd8a54806e7522ee246af9e00e9802c2fab1cec63b29ca7",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F1P\\2019.npz": "c8aad6bf9125c420a5b9efd3e991534886324c442eb829e8719bfacc8785b4e0",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F1P\\2019.json": "92e245dba0066f471c5ae10a5f84066970f70c651ad84612e5bc04ace7b22a65"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "logistic_F2_minus_NT",
+      "mapping": {
+        "a": 1.1094641947562967,
+        "b": 0.3997381133202589,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.37032091459655914,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.75,
+        "calibration_alert_fraction": 0.09851442501557975,
+        "annual_alert_fractions": [
+          0.11762711243080758,
+          0.07940173760035192
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F2_minus_NT\\2018.npz": "358f2636f3c8c47773ad55dc3ea3621712b6f4a9b22abb56ae6df679ba19a4b3",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F2_minus_NT\\2018.json": "56c2bc1a8102ef01c1cf5ab2bc5558fbda319e357e90e9522d61062590540951",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F2_minus_NT\\2019.npz": "bdb4397329124d3913dda4224035f7b7cc5f3f3a452fa8d7106d0dfca7c393f4",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F2_minus_NT\\2019.json": "1a5eeddbb2d1c8d37ba141ab3ab3e208a2f582241bc761393b2ad5a600ff1618"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "lightgbm_F2_minus_NT",
+      "mapping": {
+        "a": 1.0171549222499754,
+        "b": 0.4488045839092681,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.37549093478789275,
+        "iterations": 7
+      },
+      "budget": {
+        "threshold": 0.73,
+        "calibration_alert_fraction": 0.0946469811943253,
+        "annual_alert_fractions": [
+          0.09029839803511859,
+          0.09899556435353202
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F2_minus_NT\\2018.npz": "3f3ff99c88f98902546fff991c17266074572b376466265d97e76bd8ab207632",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F2_minus_NT\\2018.json": "64f958d280e07f13b6f1725818a154873f585b4f655f5c0d2c82918803c9e622",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F2_minus_NT\\2019.npz": "c80a789dc9810af0ff89df76bb1409ed93d2a74e309e38c6a58667aa933a3cc6",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F2_minus_NT\\2019.json": "44d7e858acd2a3460c4d600a3129509ffa51478d25b59e8384f8751dcc732735"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "logistic_F2_minus_NM",
+      "mapping": {
+        "a": 1.1072585466577793,
+        "b": 0.44273732596767895,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.3712860588258599,
+        "iterations": 7
+      },
+      "budget": {
+        "threshold": 0.75,
+        "calibration_alert_fraction": 0.09664027273727042,
+        "annual_alert_fractions": [
+          0.11560174493199897,
+          0.07767880054254188
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F2_minus_NM\\2018.npz": "7b0af48b9d23184a90c6e21ac1377c1f430e4662e37c777b59a3527608fffc80",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F2_minus_NM\\2018.json": "932e7278845c9642c966626b14753c6da1b5a560df2dc0d4461f3ebfae5272a9",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F2_minus_NM\\2019.npz": "7d7362697c1a13ddb34c5d477fafb6cd13f81810b7412c9179254767e4aa96f4",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F2_minus_NM\\2019.json": "e7f94ce04febb0bc985231b3d112ed7b7393b8031b58767f09de14aedd7d0748"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "lightgbm_F2_minus_NM",
+      "mapping": {
+        "a": 1.0180795905541113,
+        "b": 0.44133774075098653,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.3736297124638617,
+        "iterations": 7
+      },
+      "budget": {
+        "threshold": 0.73,
+        "calibration_alert_fraction": 0.09609956376700025,
+        "annual_alert_fractions": [
+          0.09079328421129806,
+          0.10140584332270244
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F2_minus_NM\\2018.npz": "927d0e28eb5b8023e7de472995ba2810a8b958e8f92773a218a290384d3560ad",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F2_minus_NM\\2018.json": "dd9fef27d12200fee3df3bec5ccc82af1879370b8a94af4053eeb09ad9b60e2b",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F2_minus_NM\\2019.npz": "2f21d6bffea3c84de11cedb9e504b4c3a5b522f8138e06b38ed5894377d1e7e2",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F2_minus_NM\\2019.json": "cabab8131fb7baadaf2fea7f39effad051b632d9dde8321509f34154ecfbe8d7"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "logistic_F3_minus_RT",
+      "mapping": {
+        "a": 1.1007970028872405,
+        "b": 0.4351900074974166,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.36404978677277033,
+        "iterations": 7
+      },
+      "budget": {
+        "threshold": 0.76,
+        "calibration_alert_fraction": 0.09542596869386707,
+        "annual_alert_fractions": [
+          0.1131089849334653,
+          0.07774295245426885
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F3_minus_RT\\2018.npz": "6881ad793f04a1b9a89eb3f5983af49fec29cd02693cc86890387a374819fca2",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F3_minus_RT\\2018.json": "311beb23ae37e2d22fd4a026dbebb39ff7710e18b31cc1eddd22855e367609af",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F3_minus_RT\\2019.npz": "c850f528ab9f5edff72ad032d52c17da09261dbacc6a52dc197e153013511d90",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F3_minus_RT\\2019.json": "bd368bd72e6ecd71ccd2b86e3735dc7a802bcf4e8292c98bb82bd8538cb6ce1b"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "lightgbm_F3_minus_RT",
+      "mapping": {
+        "a": 1.019887292591049,
+        "b": 0.4614593357106555,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.3717084348211029,
+        "iterations": 7
+      },
+      "budget": {
+        "threshold": 0.73,
+        "calibration_alert_fraction": 0.09784082994244657,
+        "annual_alert_fractions": [
+          0.0887770812713076,
+          0.10690457861358554
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F3_minus_RT\\2018.npz": "8a6eab70fb6607bddd23ba06aae1f9700344adedb35df16e57886edbfb890cae",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F3_minus_RT\\2018.json": "dc99890ba76e0369f86d0c91703057c8ba7ac27b599ffe1257c8c09f9b7cb28b",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F3_minus_RT\\2019.npz": "594b2e5b5a1043bd3d4cb45579071954daa3299aacb63a61d28eb88ab8017d60",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F3_minus_RT\\2019.json": "6a2ecada92a053a081671fb62e997263228543ff2deed8a166d40c4c6b0adab1"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "logistic_F3_minus_RM",
+      "mapping": {
+        "a": 1.1011168301583456,
+        "b": 0.4466073841178938,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.36377908408231957,
+        "iterations": 6
+      },
+      "budget": {
+        "threshold": 0.76,
+        "calibration_alert_fraction": 0.096479892957953,
+        "annual_alert_fractions": [
+          0.11454782066791305,
+          0.07841196524799296
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F3_minus_RM\\2018.npz": "4107ebdba39470c4d7952b527298532fea228f5cbe6735abc7836d30d760a32e",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F3_minus_RM\\2018.json": "32ef31056c808dc6921ac668247f03b44752dfb712c75d7d33e69cb6b3be0705",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F3_minus_RM\\2019.npz": "f8a236d451d3fa15074e30c2fc3744bae15b8f5dcb43197a5d56408945fd9ef4",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F3_minus_RM\\2019.json": "25576f38453b98e7fba2be32f24cd5ad780311b0ed51261e477ed9cb215470bc"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "lightgbm_F3_minus_RM",
+      "mapping": {
+        "a": 1.020682596349162,
+        "b": 0.4700742713150339,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.3714980967883419,
+        "iterations": 7
+      },
+      "budget": {
+        "threshold": 0.73,
+        "calibration_alert_fraction": 0.09750174126617545,
+        "annual_alert_fractions": [
+          0.09030756259393673,
+          0.10469591993841416
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F3_minus_RM\\2018.npz": "4cfb9c2a455de4885d22c8f109bce1ff3fdf130635f2ebccc4fd8d7f74f741e8",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F3_minus_RM\\2018.json": "b395a9924e1a256d3fabc6d60f15053b9415ecd36827533be98ec84d07545c13",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F3_minus_RM\\2019.npz": "0da2a5ec975cad0b852da0634b79ca8f2f1f19fb686bb91150c467f3ec0b9b0e",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\lightgbm_F3_minus_RM\\2019.json": "ec1b996c2d7938a28bd3ebf693c5561ad1555ca5b040e15ae256e7b249a5079d"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "persistence",
+      "mapping": {
+        "a": 1.0,
+        "b": 0.0,
+        "status": "persistence_raw",
+        "reason": "protocol_no_calibration",
+        "objective": null,
+        "iterations": 0
+      },
+      "budget": {
+        "threshold": 1.000001,
+        "calibration_alert_fraction": 0.0,
+        "annual_alert_fractions": [
+          0.0,
+          0.0
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\persistence\\2018.npz": "66b4370e59f5e4fa057702a26867c40797b4bf79a4dcdbacd3f35ee17eb5b8e7",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\persistence\\2018.json": "f3d81dd283ceee7a4ab177317153bb43bec33b68e9c1b0956a8248b5e11591ad",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\persistence\\2019.npz": "4973894a34768fa751478ac762aa101bcbde78ced1240bb12c143d3835fcff70",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\persistence\\2019.json": "3217d5549827f1a51ad2b5da678e3a2ec5d1738563afa1fdabba67513bc049a4"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "seasonal",
+      "mapping": {
+        "a": 1.4011886891314875,
+        "b": 1.0416268080221347,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.5052041250742586,
+        "iterations": 11
+      },
+      "budget": {
+        "threshold": 0.51,
+        "calibration_alert_fraction": 0.0,
+        "annual_alert_fractions": [
+          0.0,
+          0.0
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\seasonal\\2018.npz": "3e05a8cf1705b124fa18ee3cd355033ccfbff9db17c058dbe4aeaf6682206d48",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\seasonal\\2018.json": "58c7c9ac8722677bf31aa6c24ae406ddf4f9de0d42e417f2c6be08105d35c77e",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\seasonal\\2019.npz": "06c5095967a0681d240acb3c7b4d96780f7d529e3822176c709d2f8c3ffa601e",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\seasonal\\2019.json": "e66d8e18137143d185cddc4b24dccf2ca7ae2554a0f2835ce9b824494b6acfd1"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "seasonal_pooled",
+      "mapping": {
+        "a": 1.4011886891314875,
+        "b": 1.0416268080221347,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.5052041250742586,
+        "iterations": 11
+      },
+      "budget": {
+        "threshold": 0.51,
+        "calibration_alert_fraction": 0.0,
+        "annual_alert_fractions": [
+          0.0,
+          0.0
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\seasonal_pooled\\2018.npz": "3e05a8cf1705b124fa18ee3cd355033ccfbff9db17c058dbe4aeaf6682206d48",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\seasonal_pooled\\2018.json": "99782e3ec8dfcfc397492d00c1d7fe5a286e985614df77a57911970f042e916e",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\seasonal_pooled\\2019.npz": "06c5095967a0681d240acb3c7b4d96780f7d529e3822176c709d2f8c3ffa601e",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\seasonal_pooled\\2019.json": "7463bacb5e1cdbcb8d29387461b0f56b17e2e7666a9136edafe2e1c550a2288d"
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "transition",
+      "mapping": {
+        "a": 1.0985503607447633,
+        "b": 0.4678063197980893,
+        "status": "fitted",
+        "reason": "",
+        "objective": 0.42034653358040536,
+        "iterations": 7
+      },
+      "budget": {
+        "threshold": 0.7,
+        "calibration_alert_fraction": 0.0978225008248103,
+        "annual_alert_fractions": [
+          0.10421936287987096,
+          0.09142563876974963
+        ],
+        "budget": 0.1
+      },
+      "fit_years": [
+        2018,
+        2019
+      ],
+      "inputs_sha256": {
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\transition\\2018.npz": "87c07f09bc77737065a39370ec22c82ca47ed8e688841f9ec43b2519e3ee3d58",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\transition\\2018.json": "bf656b5af8a144d26855c13f9e1acfd2336ac13bae5d6ad48770ad6014d0e589",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\transition\\2019.npz": "f26692de70eadd64d292d30a097c439dd2115aad958216864c561831528d148e",
+        "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\transition\\2019.json": "b50bdcb0c265d8a24cbacb6e1708288c7cb25f77bb7476a94d97f8cf7721fdda"
+      }
+    }
+  ],
+  "count": 104
+}

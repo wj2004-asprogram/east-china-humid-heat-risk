@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "models_checked": 44,
+  "formal_fits_completed": 58,
+  "run_config_sha256": "69a5f0879df7b501249a60c8712dc7d6508c580b5c9f3b3ee87c5f5409986363",
+  "checks": [
+    "complete scope/lag/arm matrix",
+    "unique model metadata",
+    "per-scope winner parameters and iteration reuse",
+    "exported model byte hashes",
+    "only 2000-2017 prediction years; no calibration/final years opened"
+  ],
+  "script_sha256": "32bd1d5f3451bef7f8de72d4735b28525d638b302e9adaa4e6077c19a753ec23",
+  "limits": "Metadata and file-integrity verification; earlier numerical replay and scientific review are reused."
+}

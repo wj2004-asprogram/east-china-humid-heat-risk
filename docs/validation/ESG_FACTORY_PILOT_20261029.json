@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "review_type": "Codex self-review, not independent review",
+  "sites": 35,
+  "verified_sites": 5,
+  "candidate_sites": 30,
+  "source_hashes_checked": 18,
+  "representative_points_inside_boundaries": 35,
+  "bbox_overlap_pairs_checked_with_polygons": 23,
+  "polygon_interior_overlap_pairs": [],
+  "annual_records_cross_checked": 850,
+  "climate_status_counts": {
+    "ok": 34,
+    "non_land_grid": 1
+  },
+  "unique_usable_grids": 4,
+  "first_five_unchanged_after_expansion": true,
+  "five_site_gate_precedes_expansion_fetches": true,
+  "climate_inputs_unchanged": true,
+  "climate_sha256": {
+    "heat_index": "15809010f8228b41f14883612f4487010698e0c8e58c26e1783bee0548f11e06",
+    "risk": "9efea1d5b2d2750aa200813c7b5ffafb101992367503316664b26800dcf93d5b"
+  },
+  "catalog_sha256": "e40a3a9e29611ce43bb58d1696d6f0853fa9e51c932b36c8c8ee2f0e51477cf6",
+  "boundary_sha256": "ad501ef40f1af31ec3317076b4e014889fca27f42cf12f64d92c28780dc81349",
+  "screening_manifest_sha256": "76bd8b450c7ca25f62d6b26639ae9ecb91bd51bd7493061a9223040c41e3c96c"
+}

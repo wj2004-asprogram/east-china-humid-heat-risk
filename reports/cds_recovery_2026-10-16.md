@@ -104,7 +104,7 @@ not turn the rejected one-hour smoke into a successful submission test.
 Final command (project's existing `.venv`):
 
 ```powershell
-python -m pytest -q --tb=short --basetemp D:\codex_workspace\era5-resilience\test-tmp-project-final
+python -m pytest -q --tb=short --basetemp <WORKSPACE_ROOT>\era5-resilience\test-tmp-project-final
 ```
 
 **184 passed, 0 failed, 382 warnings, 69.46 s.** Warnings concern the

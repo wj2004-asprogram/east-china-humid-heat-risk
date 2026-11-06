@@ -51,7 +51,7 @@ bytes while retaining equal scientific values. Git newline conversion can also
 change CSV byte hashes across platforms.
 
 Full input reports, pipeline logs and the one-off output audit script are retained
-locally in `D:\AS\ehhr-codex-output\phase2-production-20261029`:
+locally in `<LOCAL_EVIDENCE_ROOT>\phase2-production-20261029`:
 `input-bjt.json/.md`, `input-utc.json/.md`, `pipeline-bjt.log`,
 `pipeline-utc.log`, and `check_outputs.py`.
 The audit initially assumed a wide city Tmax table; that audit assumption was

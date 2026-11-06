@@ -45,7 +45,7 @@ result needed correction. The previous audit file remains preserved as history.
 
 Machine evidence: [phase2_self_review.json](phase2_self_review.json).
 The supplementary script and its stdout are retained at
-`D:\AS\ehhr-codex-output\self-review-48066f4` (`review_checks.py`, `checks.log`).
+`<LOCAL_EVIDENCE_ROOT>\self-review-48066f4` (`review_checks.py`, `checks.log`).
 No complete pipeline or benchmark rerun was needed; output files were read-only.
 No full unit-suite rerun is claimed. Full 25-summer peak memory remains unmeasured;
 performance estimates retain the scope limitations in the calibration report.

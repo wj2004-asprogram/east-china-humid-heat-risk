@@ -1,0 +1,197 @@
+{
+  "generated_at_utc": "2026-11-05T16:08:08.324160+00:00",
+  "files": [
+    {
+      "path": "data/probability_phase1/audit-r1/data_audit.json",
+      "bytes": 160907,
+      "sha256": "cc37b476fe383831c96eb394057d198de5237b5dc14a4618622a2e8a0304cfe9",
+      "local_only": false
+    },
+    {
+      "path": "data/probability_phase1/audit-r2/data_audit.json",
+      "bytes": 161224,
+      "sha256": "b7c61668121da887c4593915918938fbd1e13445098902e5b8847e64f430391a",
+      "local_only": false
+    },
+    {
+      "path": "data/probability_phase1/feature-pilot-2000/daily_features_2000_bjt.nc",
+      "bytes": 2929806,
+      "sha256": "28cda2ab4a5cef6e2bace941c40a7d76416e08dcc74ae87c6a22bba817c4f475",
+      "local_only": true
+    },
+    {
+      "path": "data/probability_phase1/feature-pilot-2000/lagged_feature_pilot.csv",
+      "bytes": 57425,
+      "sha256": "54928717530668ca29eec74147fdeee220b08778922c38b9ee5d4fb21b8968a5",
+      "local_only": false
+    },
+    {
+      "path": "data/probability_phase1/feature-pilot-2000/schema.json",
+      "bytes": 3245,
+      "sha256": "848659ce4f22588558c06905f6f7e604015da9618cdca49f489c7572b21279e3",
+      "local_only": false
+    },
+    {
+      "path": "data/probability_phase1/geometry/geometry_audit.json",
+      "bytes": 1068,
+      "sha256": "87781227c2040ae0afc7656f83986aea699919ac3016b02fd9cd1138dc754136",
+      "local_only": false
+    },
+    {
+      "path": "data/probability_phase1/geometry/neighbor_sources.json",
+      "bytes": 422374,
+      "sha256": "8c809c44e75551422e60bb29ba1e5c01749b63e515b0c94db6b503aa9b7f16dc",
+      "local_only": false
+    },
+    {
+      "path": "data/probability_phase1/geometry/neighborhood_counts.csv",
+      "bytes": 112711,
+      "sha256": "aef0744317ef106f1e6e4a023bc228192b72a79539ab64a72617ecf719af122c",
+      "local_only": false
+    },
+    {
+      "path": "data/probability_phase1/samples/date_manifest.csv",
+      "bytes": 601434,
+      "sha256": "3ad3c34279d3042f2b4329f5a171942c481466c9915837e7b0f59bef5aac1d52",
+      "local_only": false
+    },
+    {
+      "path": "data/probability_phase1/samples/grid_registry.csv",
+      "bytes": 106315,
+      "sha256": "24342db500391f6301bcbed60953c2784f8b203eda020998457fbfa95f8026f6",
+      "local_only": false
+    },
+    {
+      "path": "data/probability_phase1/samples/schema.json",
+      "bytes": 2955,
+      "sha256": "1a3b9c7929e55c66dfb070f587d60e92022591c1e179c69360d08ccb9e0d44e2",
+      "local_only": false
+    },
+    {
+      "path": "data/probability_phase1/samples/yearly_counts.csv",
+      "bytes": 1760,
+      "sha256": "cf84b17e83da6910f831537e82d77a51f32ed87c2dbcb9722c79cadb99e39e43",
+      "local_only": false
+    },
+    {
+      "path": "data/probability_phase1/validation/make_receipt.py",
+      "bytes": 6977,
+      "sha256": "da0addb050d3bc000bfadd01ee0c499fb89360371e666358f4121d347d9857ec",
+      "local_only": false
+    },
+    {
+      "path": "data/probability_phase1/validation/summary.json",
+      "bytes": 4863,
+      "sha256": "7f96b01f2d95534ac8b6963d6dbd70c6e8c6fdf6b605dec2bfafb337123d93bb",
+      "local_only": false
+    },
+    {
+      "path": "data/probability_phase1/validation/targeted-tests.log",
+      "bytes": 1312,
+      "sha256": "70ec39f07b851f0fd48a17312deb59ff2a4e4451b5c7ffc2f7d07e032dfd88d8",
+      "local_only": false
+    },
+    {
+      "path": "data/probability_phase1/validation/targeted-tests.xml",
+      "bytes": 6839,
+      "sha256": "ff8ac5071273293a861844a972f4762c730542064bad445c4b83ab1072bfe10d",
+      "local_only": false
+    },
+    {
+      "path": "src/probability_baselines.py",
+      "bytes": 8749,
+      "sha256": "ab9e45f53934802f2cab33fc0ac062331b4fbbaa94ea7043046ca50a90c474a3",
+      "local_only": false
+    },
+    {
+      "path": "src/probability_features.py",
+      "bytes": 7669,
+      "sha256": "3dca10caa8de10101f4e0e55db04d6f39c67033eff1dc56861b5954f6ff322c2",
+      "local_only": false
+    },
+    {
+      "path": "src/probability_samples.py",
+      "bytes": 9275,
+      "sha256": "b0612117b8fb83d31d900867be73b1e454d57b2a1df29d70afd379700b09e245",
+      "local_only": false
+    },
+    {
+      "path": "tools/probability_data_audit.py",
+      "bytes": 10979,
+      "sha256": "dcbddd7eda3ed2805bf2602508f5effcfc70ccf9379a02d4cfd4744c035f6738",
+      "local_only": false
+    },
+    {
+      "path": "tools/probability_feature_pilot.py",
+      "bytes": 4775,
+      "sha256": "2b1b909098f5ef8e0c91a468af4ff0b9f5017c193cf2af3f6fef2187846fe9f0",
+      "local_only": false
+    },
+    {
+      "path": "tools/probability_geometry.py",
+      "bytes": 4642,
+      "sha256": "72214e4dc983131441db554d60c7f4bf8263cd84d56803e9ab37d15630653ed3",
+      "local_only": false
+    },
+    {
+      "path": "tools/probability_sample_manifest.py",
+      "bytes": 5808,
+      "sha256": "9bf87a3e4b829d5582d7419489d125f2c7a8ff2bea7de1b484a9af8edf9a82d6",
+      "local_only": false
+    },
+    {
+      "path": "docs/PROBABILITY_DATA_DICTIONARY.md",
+      "bytes": 5528,
+      "sha256": "c2666a6d4c9964fe2f224757d0b294042643b462122071441a7d5de4df7cdfd7",
+      "local_only": false
+    },
+    {
+      "path": "docs/PROBABILITY_EXPERIMENT_PROTOCOL.md",
+      "bytes": 28398,
+      "sha256": "a0e8860b344fe94d4740668ae4ed4badd9a99cd2a462622933f81f7295ef81e2",
+      "local_only": false
+    },
+    {
+      "path": "docs/PROBABILITY_PHASE1_PROGRESS.md",
+      "bytes": 8447,
+      "sha256": "bdb250ee42192b1d983ff179795291a0a48d0f6eec06e9c0ac583bee6fed32fb",
+      "local_only": false
+    },
+    {
+      "path": "docs/PROBABILITY_REPRODUCE.md",
+      "bytes": 3031,
+      "sha256": "436fa3d38ce2479ad7c48f60418ade4db2a5dd6c1ef42ba4bda5156f6e36e300",
+      "local_only": false
+    },
+    {
+      "path": "docs/PROBABILITY_USER_REVIEW_PLAN_20261105.md",
+      "bytes": 12704,
+      "sha256": "0ad1ff830808201c98baa73a73247670b1cf583c7d0d8eccb2472209bddea942",
+      "local_only": false
+    },
+    {
+      "path": "tests/test_probability_baselines.py",
+      "bytes": 4980,
+      "sha256": "a5cf69e6fbdd7f192c518733ab34d46dbe5ad8aa8599d380c8d6c0d1a811460b",
+      "local_only": false
+    },
+    {
+      "path": "tests/test_probability_features.py",
+      "bytes": 5107,
+      "sha256": "e8284f2bfb2935c778ccdddcf41711bd10032e36409f3a7232c565b33114f3ff",
+      "local_only": false
+    },
+    {
+      "path": "tests/test_probability_samples.py",
+      "bytes": 6090,
+      "sha256": "ce68287fc52491c9334278896c1128f181be9b9a00df51606fc0a1a0fd3c095b",
+      "local_only": false
+    },
+    {
+      "path": "configs/probability_protocol_v1.json",
+      "bytes": 24827,
+      "sha256": "f0aa474fd6a038709fa00bb8e0e6c9dc5af0d48647ef6b68c1eea968d703df82",
+      "local_only": false
+    }
+  ]
+}

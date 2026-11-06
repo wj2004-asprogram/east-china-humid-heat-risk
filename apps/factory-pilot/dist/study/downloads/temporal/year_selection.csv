@@ -1,0 +1,5 @@
+﻿grid_id,selection_role,selected_year,selection_detail_json
+"30.2500,120.5000",typical,2008,"{""year"":2008,""median_days_ge_threshold"":43.0,""absolute_distance_days"":0.0,""candidate_years"":[2008,2010],""tie_breaker"":""earliest_year""}"
+"30.2500,120.5000",extreme,2022,"{""year"":2022,""days_ge_threshold"":64,""candidate_years_max_days"":[2022],""longest_run_among_max_days"":39,""candidate_years_max_days_and_run"":[2022],""tie_breakers"":[""maximum_longest_run"",""earliest_year""]}"
+"31.0000,121.5000",typical,2005,"{""year"":2005,""median_days_ge_threshold"":30.0,""absolute_distance_days"":0.0,""candidate_years"":[2005,2006,2019],""tie_breaker"":""earliest_year""}"
+"31.0000,121.5000",extreme,2022,"{""year"":2022,""days_ge_threshold"":56,""candidate_years_max_days"":[2022],""longest_run_among_max_days"":30,""candidate_years_max_days_and_run"":[2022],""tie_breakers"":[""maximum_longest_run"",""earliest_year""]}"

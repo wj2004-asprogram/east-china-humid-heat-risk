@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "clean_checkout_commit": "f37df82b24396d256bf7c1779ddb64784b1fb8d2",
+  "source_research_commit": "fdc432eaa165eacc263d3b3d2f3d0e5af480fb4e",
+  "recovery_manifest_sha256": "883806e9289157bce3361b785300f49fdc4d234ce6712a6701ff47ae6cba80f4",
+  "validation_environment": "Existing Windows Python environment, clean Git checkout with no pre-existing local feature or prediction arrays. Raw weather files were supplied read-only from outside the clone.",
+  "new_environment_installation_verified": false,
+  "different_operating_system_verified": false,
+  "targeted_tests": {
+    "passed": 8,
+    "warnings": 9,
+    "command": "python -m pytest tests/test_probability_reproduce.py -q -p no:cacheprovider"
+  },
+  "test_warning_context": "The existing netCDF4/NumPy stack emitted a binary-compatibility warning and shape deprecation warnings. No dependency installation or upgrade was performed; real-data reference matching below passed.",
+  "full_replay": {
+    "years": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "model_instances": 104,
+    "prediction_bundles": 728,
+    "prediction_match_status_counts": {
+      "exact": 728
+    },
+    "raw_file_status_counts": {
+      "byte_match": 28
+    },
+    "annual_score_rows": 4368,
+    "formal_test_annual_score_rows": 3120,
+    "maximum_formal_test_brier_absolute_difference": 0.0,
+    "sample_and_event_counts_match": true,
+    "inputs_unchanged_after_recovery": true,
+    "training_calibration_or_selection_performed": false
+  },
+  "initial_local_setup_attempt": {
+    "status": "failed",
+    "error": "ModuleNotFoundError for narwhals because the validation process omitted an existing isolated dependency directory from its search path. The path was corrected, narwhals was explicitly pinned, and the full replay ran in a new output directory. No scientific choices changed."
+  },
+  "publication_policy": {
+    "private_source_git_ancestry_included": false,
+    "new_commit_identity": "GitHub noreply",
+    "original_scientific_archive_modified": false,
+    "code_open_source_licence_granted": false,
+    "historical_receipts_are_original_archive_evidence_not_public_tree_integrity": true
+  },
+  "known_size_warning": {
+    "path": "data/probability_phase4/evaluation/grid_alert_days.csv",
+    "bytes": 58662869,
+    "decision": "Retained unchanged; exceeds GitHub warning threshold but is below its 100 MiB hard limit."
+  }
+}

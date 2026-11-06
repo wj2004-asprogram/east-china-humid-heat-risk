@@ -1,0 +1,20 @@
+{
+  "started_utc": "20261105T225644363048Z",
+  "module": "tools.probability_phase4_features",
+  "arguments": [
+    "--year",
+    "2024",
+    "--config",
+    "configs/jja_2000_2024_bjt.yaml",
+    "--source-project-root",
+    "<ERA5_SOURCE_ROOT>"
+  ],
+  "python_executable": "<ERA5_SOURCE_ROOT>\\.venv\\Scripts\\python.exe",
+  "working_directory": "<PROJECT_ROOT>",
+  "source_sha256": "80db8427ac269af506747bd6e6eb8056b52566b9ae79b8b025dc30d565ee10d7",
+  "status": "completed",
+  "completed_utc": "2026-11-05T22:56:54.554530+00:00",
+  "runtime_seconds": 10.190178300021216,
+  "peak_working_set_bytes": 707231744,
+  "output_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

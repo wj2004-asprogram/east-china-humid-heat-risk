@@ -1,0 +1,53 @@
+{
+  "stage": "remaining",
+  "scopes": [
+    "strict"
+  ],
+  "command": [
+    "<PROJECT_ROOT>\\tools\\probability_phase3_lightgbm.py",
+    "--stage",
+    "remaining",
+    "--scopes",
+    "strict",
+    "--resume",
+    "--tasks",
+    "2:F3_minus_RM",
+    "--output-dir",
+    "data/probability_phase3/lightgbm/run1",
+    "--batch-plan",
+    "data/probability_phase3/execution_batch2.json"
+  ],
+  "runtime_seconds": 47.131376900011674,
+  "peak_working_set_bytes": 1178087424,
+  "config_sha256": "69a5f0879df7b501249a60c8712dc7d6508c580b5c9f3b3ee87c5f5409986363",
+  "source_sha256_at_invocation_start": {
+    "runner": "e66b514a80d0f433c120d0b6f1bbdc3c775382d2a01bbbe8fdd8a9fdbb99c20d",
+    "helpers": "167edd1108f539c9121e61dc76eff579558d405c5760c4fbfba30027cb1dc881"
+  },
+  "requested_tasks": [
+    "2:F3_minus_RM"
+  ],
+  "requested_arms": null,
+  "resource_batch_plan": "data\\probability_phase3\\execution_batch2.json",
+  "model_years_opened": [
+    2000,
+    2001,
+    2002,
+    2003,
+    2004,
+    2005,
+    2006,
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017
+  ],
+  "calibration_or_final_years_opened": []
+}

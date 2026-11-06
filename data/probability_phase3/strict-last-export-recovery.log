@@ -1,0 +1,2 @@
+{"stage": "model_exported", "scope": "strict", "lag": 2, "arm": "F3_minus_RM", "iterations": 928}
+{"stage": "batch_complete", "batch": "remaining", "scopes": ["strict"], "runtime_seconds": 47.131986000051256}

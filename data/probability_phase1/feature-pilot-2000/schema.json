@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "qualification": "COMPUTATIONAL_PILOT_NOT_STATISTICALLY_INDEPENDENT_SAMPLES",
+  "year": 2000,
+  "split": "train",
+  "config": "<ERA5_SOURCE_ROOT>\\configs\\jja_2000_2024_bjt.yaml",
+  "raw_sources_read_only": [
+    "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2000_06.nc",
+    "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2000_07.nc",
+    "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2000_08.nc",
+    "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2000_05_31_h16-23.nc"
+  ],
+  "daily_variables": {
+    "tmax_c": {
+      "hourly_source": "temperature_c",
+      "reduction": "max",
+      "units": "degC"
+    },
+    "tmin_c": {
+      "hourly_source": "temperature_c",
+      "reduction": "min",
+      "units": "degC"
+    },
+    "tmean_c": {
+      "hourly_source": "temperature_c",
+      "reduction": "mean",
+      "units": "degC"
+    },
+    "tdmean_c": {
+      "hourly_source": "dewpoint_c",
+      "reduction": "mean",
+      "units": "degC"
+    },
+    "tdmax_c": {
+      "hourly_source": "dewpoint_c",
+      "reduction": "max",
+      "units": "degC"
+    },
+    "rhmean_pct": {
+      "hourly_source": "rh_pct",
+      "reduction": "mean",
+      "units": "%"
+    },
+    "himax_c": {
+      "hourly_source": "hi_c",
+      "reduction": "max",
+      "units": "degC"
+    }
+  },
+  "night_variables": {
+    "night_tmean_c": {
+      "hourly_source": "temperature_c",
+      "reduction": "mean",
+      "units": "degC"
+    },
+    "night_tmin_c": {
+      "hourly_source": "temperature_c",
+      "reduction": "min",
+      "units": "degC"
+    },
+    "night_tdmean_c": {
+      "hourly_source": "dewpoint_c",
+      "reduction": "mean",
+      "units": "degC"
+    },
+    "night_rhmean_pct": {
+      "hourly_source": "rh_pct",
+      "reduction": "mean",
+      "units": "%"
+    }
+  },
+  "daily_window": "BJT [00:00,next 00:00); exactly 24 unique hours",
+  "night_window": "BJT [D-lag-1 20:00,D-lag 08:00); exactly 12 unique hours; last hour 07:00",
+  "history_window": "Seven calendar dates [D-(lag+6), D-lag], same-year JJA",
+  "lag_columns": "day_lagN means D-N; columns outside selected mode are structural blanks, not missing feature inputs",
+  "sample_identity": "sample_id shared between modes; CSV row key is (sample_id,cutoff_lag_days)",
+  "missingness": "Missing hourly timestamps raise; nonfinite hourly values propagate to NaN; skipna=False",
+  "sample_points_lat_lon": [
+    [
+      35.0,
+      115.0
+    ],
+    [
+      33.0,
+      116.0
+    ],
+    [
+      27.0,
+      115.0
+    ]
+  ],
+  "sample_rows": 42,
+  "finite_feature_rows": 42,
+  "limits": [
+    "No training, calibration or model evaluation",
+    "Only training-year raw files read",
+    "No labels included in sample CSV; himax history is a lagged feature",
+    "Full-region daily NetCDF includes sea cells; formal samples still need land masking",
+    "Pilot does not certify all-years feature completeness or statistical independence"
+  ]
+}

@@ -28,3 +28,33 @@ data/raw/*.part
 
 # Local durable CDS journal, task locks, imported logs and smoke-test artifacts
 data/cds_state/
+
+# Reproducible, local-only probability feature arrays; keep small evidence tables.
+data/probability_phase1/feature-pilot-*/*.nc
+
+# Phase 2 reproducible large arrays and isolated model dependencies.
+.phase2_deps/
+.phase3_deps/
+.test-tmp-phase3-*/
+
+# Phase 3 binary predictions remain local; small model states and metrics tracked.
+data/probability_phase3/**/*.npz
+data/probability_phase3/**/*.npy
+data/probability_phase2/**/*.nc
+data/probability_phase2/**/*.npz
+data/probability_phase2/**/*.npy
+
+# Phase 4 reproducible arrays stay local; seals, model maps and reports tracked.
+data/probability_phase4/**/*.nc
+data/probability_phase4/**/*.npz
+data/probability_phase4/**/*.npy
+.test-tmp-phase4-*/
+
+# Portable recovery produces local arrays and receipts, never publication inputs.
+.reproduce/
+reproduction/
+.venv-reproduce/
+.pytest_cache/
+.env
+.env.*
+!.env.example

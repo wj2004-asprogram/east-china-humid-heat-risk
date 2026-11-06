@@ -1,0 +1,176 @@
+{
+  "gates": {
+    "scientific_lock.json": "9e4e1539903757bc216bf951dddce799b713c6f2bb19bca4a27685551874f938"
+  },
+  "freeze_config_sha256": "21d0e8c54810398f97160952880f3b3449b5b59f7dd5c7caa9a7ab8c5773caed",
+  "artifacts_sha256": {
+    "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F4\\2018.npz": "4d6c24549caf5b5fe1c136623724333c8c7027b075331b421a2124f358b68572",
+    "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F4\\2018.json": "4707e86ff122f59d511dbe68f45f1404868bf796aa5f535c2bc140069b7fc7ad",
+    "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F4\\2019.npz": "52588a6d8ad06069196b40f600d9b6e24f075b78bb32222ad616258dd3285a18",
+    "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F4\\2019.json": "1afe5db3e9dbcca8057820d5279296d9dbd771576972d42e5413a1cfe84ab345",
+    "data\\probability_phase4\\enriched\\calibration\\strict\\lag2\\logistic_F4\\2018.npz": "453d71124ad465e49b60f427c9d835da4ec1b864a887ad9032c5dc2f992db305",
+    "data\\probability_phase4\\enriched\\calibration\\strict\\lag2\\logistic_F4\\2019.npz": "5c9177fff3db0583f3306162c915d2a890c4094eefaa2c1cdfd0b4a6ac86c216"
+  },
+  "record": {
+    "scope": "strict",
+    "lag": 2,
+    "model_id": "logistic_F4",
+    "mapping": {
+      "a": 1.0940758948061484,
+      "b": 0.42641726171177485,
+      "status": "fitted",
+      "reason": "",
+      "objective": 0.36113709045521053,
+      "iterations": 7
+    },
+    "budget": {
+      "threshold": 0.76,
+      "calibration_alert_fraction": 0.0973138678104036,
+      "annual_alert_fractions": [
+        0.12052311301733934,
+        0.07410462260346787
+      ],
+      "budget": 0.1
+    },
+    "fit_years": [
+      2018,
+      2019
+    ],
+    "inputs_sha256": {
+      "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F4\\2018.npz": "4d6c24549caf5b5fe1c136623724333c8c7027b075331b421a2124f358b68572",
+      "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F4\\2018.json": "4707e86ff122f59d511dbe68f45f1404868bf796aa5f535c2bc140069b7fc7ad",
+      "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F4\\2019.npz": "52588a6d8ad06069196b40f600d9b6e24f075b78bb32222ad616258dd3285a18",
+      "data\\probability_phase4\\predictions\\calibration\\strict\\lag2\\logistic_F4\\2019.json": "1afe5db3e9dbcca8057820d5279296d9dbd771576972d42e5413a1cfe84ab345"
+    }
+  },
+  "diagnostics": [
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "logistic_F4",
+      "year": 2018,
+      "probability": "raw",
+      "interpretation": "calibration_in_sample_not_generalization",
+      "n": 109116,
+      "events": 32840,
+      "prevalence": 0.30096411158766817,
+      "brier": 0.12922723716685144,
+      "ap": 0.7376364408992483,
+      "pr_auc_trapezoid": 0.7376045018213796,
+      "tp": 18425,
+      "fp": 6114,
+      "fn": 14415,
+      "tn": 70162,
+      "recall": 0.5610535931790499,
+      "precision": 0.7508455927299401,
+      "far": 0.2491544072700599,
+      "fpr": 0.08015627458178196,
+      "miss_rate": 0.43894640682095004,
+      "alert_fraction": 0.22488910883830052,
+      "brier_coslat": 0.129167178076599,
+      "log_loss_clip_1e_6": 0.40465342295331547,
+      "intercept": 0.3398207922214155,
+      "slope": 0.997880547635349,
+      "status": "fitted"
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "logistic_F4",
+      "year": 2018,
+      "probability": "calibrated",
+      "interpretation": "calibration_in_sample_not_generalization",
+      "n": 109116,
+      "events": 32840,
+      "prevalence": 0.30096411158766817,
+      "brier": 0.12626421329377108,
+      "ap": 0.7376364408992485,
+      "pr_auc_trapezoid": 0.7376045018213795,
+      "tp": 22291,
+      "fp": 9174,
+      "fn": 10549,
+      "tn": 67102,
+      "recall": 0.6787758830694275,
+      "precision": 0.7084379469251549,
+      "far": 0.29156205307484506,
+      "fpr": 0.12027374272379254,
+      "miss_rate": 0.32122411693057246,
+      "alert_fraction": 0.28836284321272776,
+      "brier_coslat": 0.1261594433372541,
+      "log_loss_clip_1e_6": 0.3982197487634225,
+      "intercept": -0.049104204235034664,
+      "slope": 0.9120762237771155,
+      "status": "fitted"
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "logistic_F4",
+      "year": 2019,
+      "probability": "raw",
+      "interpretation": "calibration_in_sample_not_generalization",
+      "n": 109116,
+      "events": 27084,
+      "prevalence": 0.248212911030463,
+      "brier": 0.10746931930517897,
+      "ap": 0.7644660535133603,
+      "pr_auc_trapezoid": 0.7644510579314363,
+      "tp": 13413,
+      "fp": 3710,
+      "fn": 13671,
+      "tn": 78322,
+      "recall": 0.49523704031900756,
+      "precision": 0.7833323599836477,
+      "far": 0.21666764001635228,
+      "fpr": 0.04522625316949483,
+      "miss_rate": 0.5047629596809925,
+      "alert_fraction": 0.15692474064298545,
+      "brier_coslat": 0.1086347146473628,
+      "log_loss_clip_1e_6": 0.33417051463469366,
+      "intercept": 0.5615370340401991,
+      "slope": 1.2233837904468867,
+      "status": "fitted"
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "logistic_F4",
+      "year": 2019,
+      "probability": "calibrated",
+      "interpretation": "calibration_in_sample_not_generalization",
+      "n": 109116,
+      "events": 27084,
+      "prevalence": 0.248212911030463,
+      "brier": 0.10316579643584602,
+      "ap": 0.7644660535133602,
+      "pr_auc_trapezoid": 0.7644510579314362,
+      "tp": 17003,
+      "fp": 6368,
+      "fn": 10081,
+      "tn": 75664,
+      "recall": 0.627787623689263,
+      "precision": 0.7275255658722348,
+      "far": 0.2724744341277652,
+      "fpr": 0.0776282426370197,
+      "miss_rate": 0.37221237631073695,
+      "alert_fraction": 0.21418490413871477,
+      "brier_coslat": 0.10424562589228777,
+      "log_loss_clip_1e_6": 0.3240544151150705,
+      "intercept": 0.08472188904829173,
+      "slope": 1.1181891495816023,
+      "status": "fitted"
+    }
+  ],
+  "index_registry": [
+    [
+      "strict",
+      2018,
+      "ccf5e1820cc4e978c9c1a747b7c5b6f224f1601327ce32344547b08d2ec47b76"
+    ],
+    [
+      "strict",
+      2019,
+      "a4b2fab3f0941e8ff8398733246768e2d215780ca29edcdf95ac4b3fecaae684"
+    ]
+  ]
+}

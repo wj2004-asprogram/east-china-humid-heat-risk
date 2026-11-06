@@ -1,0 +1,435 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "site_id": "factory_001",
+        "name": "特斯拉上海超级工厂",
+        "grid_id": "30.7500,121.7500",
+        "grid_latitude": 30.75,
+        "grid_longitude": 121.75,
+        "region_bounds_wsen": [
+          121.625,
+          30.625,
+          121.875,
+          30.875
+        ],
+        "relation": "positive_area",
+        "area_m2": 604577.0605596342,
+        "coarse_area_m2": 604577.0605908973,
+        "refinement_absolute_delta_m2": 3.126310184597969e-05,
+        "geodesic_check_area_m2": 604577.0605493694,
+        "geodesic_check_absolute_delta_m2": 1.026480458676815e-05,
+        "factory_area_fraction": 0.7005325509411282,
+        "land_mask": 0.0,
+        "is_primary_grid": true,
+        "research_analysis_role": "primary"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.7724153,
+              30.8732082
+            ],
+            [
+              121.7721385,
+              30.8674459
+            ],
+            [
+              121.7701389,
+              30.8665192
+            ],
+            [
+              121.7697487,
+              30.8664328
+            ],
+            [
+              121.7662739,
+              30.8664478
+            ],
+            [
+              121.7645838,
+              30.8667887
+            ],
+            [
+              121.7644939,
+              30.8668377
+            ],
+            [
+              121.7644354,
+              30.8669026
+            ],
+            [
+              121.764404,
+              30.8669827
+            ],
+            [
+              121.7644052,
+              30.867067
+            ],
+            [
+              121.7655757,
+              30.8711431
+            ],
+            [
+              121.7665869,
+              30.8746194
+            ],
+            [
+              121.76669657923343,
+              30.875
+            ],
+            [
+              121.77249307186817,
+              30.875
+            ],
+            [
+              121.7724153,
+              30.8732082
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_id": "factory_001",
+        "name": "特斯拉上海超级工厂",
+        "grid_id": "31.0000,121.7500",
+        "grid_latitude": 31.0,
+        "grid_longitude": 121.75,
+        "region_bounds_wsen": [
+          121.625,
+          30.875,
+          121.875,
+          31.125
+        ],
+        "relation": "positive_area",
+        "area_m2": 258447.87632231263,
+        "coarse_area_m2": 258447.87636021426,
+        "refinement_absolute_delta_m2": 3.7901627365499735e-05,
+        "geodesic_check_area_m2": 258447.8761835565,
+        "geodesic_check_absolute_delta_m2": 0.00013875612057745457,
+        "factory_area_fraction": 0.29946744905900774,
+        "land_mask": 1.0,
+        "is_primary_grid": false,
+        "research_analysis_role": "sensitivity_only"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.7674771,
+              30.8777085
+            ],
+            [
+              121.767692,
+              30.8776535
+            ],
+            [
+              121.7679843,
+              30.8790992
+            ],
+            [
+              121.7680433,
+              30.8796402
+            ],
+            [
+              121.7683738,
+              30.8807328
+            ],
+            [
+              121.7687277,
+              30.8806796
+            ],
+            [
+              121.7710402,
+              30.8792846
+            ],
+            [
+              121.7725799,
+              30.8789451
+            ],
+            [
+              121.7725761,
+              30.8769129
+            ],
+            [
+              121.77249307186817,
+              30.875
+            ],
+            [
+              121.76669657923343,
+              30.875
+            ],
+            [
+              121.7674771,
+              30.8777085
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_id": "factory_002",
+        "name": "长安福特杭州工厂",
+        "grid_id": "30.2500,120.5000",
+        "grid_latitude": 30.25,
+        "grid_longitude": 120.5,
+        "region_bounds_wsen": [
+          120.375,
+          30.125,
+          120.625,
+          30.375
+        ],
+        "relation": "positive_area",
+        "area_m2": 1398665.6602414714,
+        "coarse_area_m2": 1398665.6602526018,
+        "refinement_absolute_delta_m2": 1.1130468919873238e-05,
+        "geodesic_check_area_m2": 1398665.6602471622,
+        "geodesic_check_absolute_delta_m2": 5.6908465921878815e-06,
+        "factory_area_fraction": 0.9999999999999989,
+        "land_mask": 1.0,
+        "is_primary_grid": true,
+        "research_analysis_role": "primary"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              120.5540289,
+              30.358609
+            ],
+            [
+              120.5540728,
+              30.3531252
+            ],
+            [
+              120.5541877,
+              30.3521441
+            ],
+            [
+              120.5543717,
+              30.3521243
+            ],
+            [
+              120.5545327,
+              30.3505763
+            ],
+            [
+              120.5542222,
+              30.3505168
+            ],
+            [
+              120.5518304,
+              30.350616
+            ],
+            [
+              120.5506906,
+              30.3507354
+            ],
+            [
+              120.5490822,
+              30.3509038
+            ],
+            [
+              120.5471619,
+              30.3511221
+            ],
+            [
+              120.5450461,
+              30.3512312
+            ],
+            [
+              120.5432983,
+              30.3513205
+            ],
+            [
+              120.5433213,
+              30.3560536
+            ],
+            [
+              120.5321328,
+              30.3560735
+            ],
+            [
+              120.5321005,
+              30.3603949
+            ],
+            [
+              120.5540289,
+              30.358609
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_id": "factory_003",
+        "name": "费列罗杭州工厂",
+        "grid_id": "30.2500,120.5000",
+        "grid_latitude": 30.25,
+        "grid_longitude": 120.5,
+        "region_bounds_wsen": [
+          120.375,
+          30.125,
+          120.625,
+          30.375
+        ],
+        "relation": "positive_area",
+        "area_m2": 220690.12649465233,
+        "coarse_area_m2": 220690.12649461633,
+        "refinement_absolute_delta_m2": 3.600143827497959e-08,
+        "geodesic_check_area_m2": 220690.1265082935,
+        "geodesic_check_absolute_delta_m2": 1.3641169061884284e-05,
+        "factory_area_fraction": 0.9999999999999993,
+        "land_mask": 1.0,
+        "is_primary_grid": true,
+        "research_analysis_role": "primary"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              120.474465,
+              30.326424
+            ],
+            [
+              120.4744358,
+              30.3223303
+            ],
+            [
+              120.4693799,
+              30.3223568
+            ],
+            [
+              120.469409,
+              30.3264512
+            ],
+            [
+              120.474465,
+              30.326424
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_id": "factory_004",
+        "name": "格力杭州生产基地",
+        "grid_id": "30.2500,120.5000",
+        "grid_latitude": 30.25,
+        "grid_longitude": 120.5,
+        "region_bounds_wsen": [
+          120.375,
+          30.125,
+          120.625,
+          30.375
+        ],
+        "relation": "positive_area",
+        "area_m2": 895571.7711002853,
+        "coarse_area_m2": 895571.7711009139,
+        "refinement_absolute_delta_m2": 6.285263225436211e-07,
+        "geodesic_check_area_m2": 895571.7711263814,
+        "geodesic_check_absolute_delta_m2": 2.609600778669119e-05,
+        "factory_area_fraction": 1.0000000000000018,
+        "land_mask": 1.0,
+        "is_primary_grid": true,
+        "research_analysis_role": "primary"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              120.6093055,
+              30.3277261
+            ],
+            [
+              120.6098706,
+              30.3208821
+            ],
+            [
+              120.5976722,
+              30.3201921
+            ],
+            [
+              120.5971481,
+              30.3270843
+            ],
+            [
+              120.6093055,
+              30.3277261
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "site_id": "factory_005",
+        "name": "采埃孚上海元江路厂区",
+        "grid_id": "31.0000,121.5000",
+        "grid_latitude": 31.0,
+        "grid_longitude": 121.5,
+        "region_bounds_wsen": [
+          121.375,
+          30.875,
+          121.625,
+          31.125
+        ],
+        "relation": "positive_area",
+        "area_m2": 41277.08856707966,
+        "coarse_area_m2": 41277.08857475359,
+        "refinement_absolute_delta_m2": 7.673923391848803e-06,
+        "geodesic_check_area_m2": 41277.08855955163,
+        "geodesic_check_absolute_delta_m2": 7.528033165726811e-06,
+        "factory_area_fraction": 0.9999999999999991,
+        "land_mask": 1.0,
+        "is_primary_grid": true,
+        "research_analysis_role": "primary"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.3773667,
+              31.0484905
+            ],
+            [
+              121.3781949,
+              31.0461376
+            ],
+            [
+              121.3765031,
+              31.0457131
+            ],
+            [
+              121.3759342,
+              31.0478994
+            ],
+            [
+              121.3773667,
+              31.0484905
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

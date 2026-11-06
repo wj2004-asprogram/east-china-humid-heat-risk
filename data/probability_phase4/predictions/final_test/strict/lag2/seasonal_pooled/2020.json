@@ -1,0 +1,19 @@
+{
+  "gates": {
+    "scientific_lock.json": "9e4e1539903757bc216bf951dddce799b713c6f2bb19bca4a27685551874f938",
+    "calibration_lock.json": "0383660a3c02ba5d0233f3bc54747d502d31a397105b8d7e36038dcb5d1588ad",
+    "test_open_lock.json": "4d834059bd4cfc68dcb4c407e896e8f26a715a20fcfc3ca69cc61ecb1c497415"
+  },
+  "inputs_sha256": {
+    "data\\probability_phase4\\features\\2020\\strict.npz": "4a2cf47fe51b0c3f83de1cf9bb4f94bc7994c06cef64d45562ca76acfd48c475",
+    "data\\probability_phase4\\features\\2020\\feature_registry.json": "fe18d7afe6948d7c69f6092b917c946edbf4ea82751fbb1bb68ddef497deb99d",
+    "data\\probability_phase1\\samples\\grid_registry.csv": "24342db500391f6301bcbed60953c2784f8b203eda020998457fbfa95f8026f6",
+    "data\\probability_phase2\\experiments\\run1\\models\\strict\\lag2_seasonal_pooled.json": "cf4954936c70faa4c19117c91802c36d8382aa61361abbf2f1f49bab217d969b"
+  },
+  "output_sha256": "d406a48465795864d18ace57dcebdd900057cd5d803e9b36516b18af70448443",
+  "sample_index_sha256": "0800a0b332beec0ead3495c3814ed9702605439c2c8f9e0ab7c14434b9e60752",
+  "source_sha256": {
+    "<PROJECT_ROOT>\\tools\\probability_phase4_predict.py": "0df4692998f59c6b4b84ce6a9110d4131be8c0ad29a799824dd74ce9f0cd650f",
+    "src/probability_phase4_data.py": "c0877eb00742e9c6aacd839fdad55e32fdd29325ed870f600f33aa314950c8d9"
+  }
+}

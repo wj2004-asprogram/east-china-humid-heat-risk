@@ -1,0 +1,43 @@
+{
+  "selection_bias": "Selected on already-used validation years; supplementary, not independent evidence",
+  "rule": "all-risk equal-annual Brier; ties fewer features then lexicographic arm",
+  "fixed_phase2_lr_f4_reference_unchanged": true,
+  "selections": [
+    {
+      "scope": "strict",
+      "lag": 1,
+      "arm": "F4",
+      "mean_annual_brier": 0.07535094489734967,
+      "n_features": 117,
+      "completed_candidate_count": 11,
+      "full_planned_lr_set_complete": true
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "arm": "F4",
+      "mean_annual_brier": 0.10885379766777437,
+      "n_features": 117,
+      "completed_candidate_count": 11,
+      "full_planned_lr_set_complete": true
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "arm": "F4",
+      "mean_annual_brier": 0.078638743339029,
+      "n_features": 117,
+      "completed_candidate_count": 11,
+      "full_planned_lr_set_complete": true
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "arm": "F4",
+      "mean_annual_brier": 0.11235929751558411,
+      "n_features": 117,
+      "completed_candidate_count": 11,
+      "full_planned_lr_set_complete": true
+    }
+  ]
+}

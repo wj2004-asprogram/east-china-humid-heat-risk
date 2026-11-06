@@ -1,0 +1,28 @@
+{
+  "source_code_sha256": "ea106360db8518d2c5f31971e0aa450b833e2a274d02dc5132e1de07cb7620b5",
+  "input_sha256": {
+    "data\\probability_phase4\\evaluation\\annual_scores.csv": "1132f0b1d23846d622271b16578129debe0d82a44961091c66be2b6f40c7f111",
+    "data\\probability_phase4\\evaluation\\aggregate_scores.csv": "b7bcbd93715fc68f09057b7a7e90b38462c7197cb252c334d83b9fb3ede83261",
+    "data\\probability_phase4\\evaluation\\comparisons.csv": "7fe625b4f3c5482bcb5b4d63d6bf38cd384c930c84a386bf700a7eb4c9f76b07",
+    "data\\probability_phase4\\evaluation\\annual_comparisons.csv": "2ce86dc0160f81f879cec7b2b04c577ac4af3955fa00fea26e7776caec7efc5d",
+    "data\\probability_phase4\\evaluation\\bootstrap_intervals.csv": "e41998248994e31798368468ef2331fa0f9fcdcc3030fbbdb8e315624ab84073",
+    "data\\probability_phase4\\evaluation\\reliability.csv": "f98a30b16596e9f7ed7b205e81fa1684ae06633a44b0181dd5dbdfb9b010720d",
+    "data\\probability_phase4\\evaluation\\aggregate_alert_metrics.csv": "57d3e904e9462534e3be65735528eb4e7bff767042253ff43f2fb8cc489f313e"
+  },
+  "output_sha256": {
+    "docs\\PROBABILITY_PHASE4_RESULTS.md": "66a96857e3d56b4441e16831b56e45fae9a8db3f6fd54b7cc6e20f05b294595b",
+    "figures\\probability_phase4\\fixed_f4_comparison.svg": "802d014b3f866b6b38212523aa88135e516b745dc13ec73a0be3f47a56979206",
+    "figures\\probability_phase4\\fixed_f4_comparison.png": "c59707eb91e71d4efba0abc0c346dcb3991e1233b86ce8c80053c06f6d86d1e0",
+    "figures\\probability_phase4\\lag2_onset_moisture_years.svg": "d2890898281c494a1476c28327cb1ebad886738b12cd2d5b5c7a6aa6fb5813ab",
+    "figures\\probability_phase4\\lag2_onset_moisture_years.png": "cf641021d28dcbfffd05009d1f6eb72cffd0bf3db89ca84e2995989bc02ed5ac",
+    "figures\\probability_phase4\\reliability_temporal_lag1.svg": "cca90eca003facaa4f714eeedcb45e099cb86b7fcb0812dd55c0effae2bbb3a8",
+    "figures\\probability_phase4\\reliability_temporal_lag1.png": "8c0b5973ee8026b5d9548230100382f3b2e88baee7930bb27fdc4218b3d74a0f",
+    "figures\\probability_phase4\\reliability_temporal_lag2.svg": "debf3d6a47a1cb72887e5228f9769e46d1b52762ab3fd506d39783f42a7e9f75",
+    "figures\\probability_phase4\\reliability_temporal_lag2.png": "4a56eebe1d23a2bd7224a6f4914468b92f72cb84c59d2e251661f4ceb449447e",
+    "figures\\probability_phase4\\reliability_strict_lag1.svg": "e8f6d72e9acbff23adda38484e006a833d58ca4ea7e64ee972b51a48c71b7f29",
+    "figures\\probability_phase4\\reliability_strict_lag1.png": "16250801544925182ecfe2465c511a77b3c07f34f45c26201e74ac7de890b41f",
+    "figures\\probability_phase4\\reliability_strict_lag2.svg": "0c2d1869acc0313e94a1b5973a254f38daa71dde532e160d6be4947e67563b26",
+    "figures\\probability_phase4\\reliability_strict_lag2.png": "23801d67c7a7598f4e748b6a94fcca6b2864b4a3881779b22a6725cbc54fc631"
+  },
+  "purpose": "presentation_only_of_completed_frozen_evaluation"
+}

@@ -1,0 +1,676 @@
+{
+  "reviewed_on": "2026-10-29",
+  "review_type": "Codex desk verification and self-review; not independent review or on-site inspection",
+  "sites": [
+    {
+      "site_id": "factory_001",
+      "name": "特斯拉上海超级工厂",
+      "entity": "特斯拉（上海）有限公司",
+      "city": "上海",
+      "province": "上海",
+      "industry": "汽车制造",
+      "production_address": "上海市浦东新区江山路5000号",
+      "osm_evidence_id": "tesla_osm",
+      "osm_id": "635670279",
+      "evidence_ids": [
+        "tesla_miit",
+        "tesla_osm",
+        "osm_crs"
+      ],
+      "evidence_locators": "工信部车型 TSL7000BEVBR1 公示：企业名称、生产地址；OSM way 635670279 的名称、operator 与完整边界",
+      "verification_note": "工信部明确列出生产地址；与 OSM 上海超级工厂名称及经营实体对应。仅核验汽车厂区，未并入附近储能工厂；OSM 包围盒中心并非测量中心。",
+      "evidence_date_note": "工信部 2025 年车型公示；OSM 对象更新日期单独记录"
+    },
+    {
+      "site_id": "factory_002",
+      "name": "长安福特杭州工厂",
+      "entity": "长安福特汽车有限公司杭州分公司",
+      "city": "杭州",
+      "province": "浙江",
+      "industry": "汽车制造",
+      "production_address": "浙江省杭州市前进工业园区长福杭路135号",
+      "osm_evidence_id": "ford_osm",
+      "osm_id": "585796383",
+      "evidence_ids": [
+        "ford_miit",
+        "ford_government",
+        "ford_osm",
+        "osm_crs"
+      ],
+      "evidence_locators": "工信部 CAF6491B62 公示：生产地址；杭州市政府 2018-08-27 杭州分公司页面；OSM way 585796383",
+      "verification_note": "工信部生产地址与杭州市政府对杭州装配工厂的说明交叉对应，OSM 为杭州分公司工业用地。剔除搜索结果中的长安福特宿舍。",
+      "evidence_date_note": "工信部 2025 年公示；地方政府工厂介绍 2018-08-27"
+    },
+    {
+      "site_id": "factory_003",
+      "name": "费列罗杭州工厂",
+      "entity": "费列罗食品（杭州）有限公司",
+      "city": "杭州",
+      "province": "浙江",
+      "industry": "食品制造",
+      "production_address": "浙江省杭州市江东工业园区江东二路2727号",
+      "osm_evidence_id": "ferrero_osm",
+      "osm_id": "878824460",
+      "evidence_ids": [
+        "ferrero_inspection",
+        "ferrero_locations",
+        "ferrero_osm",
+        "osm_crs"
+      ],
+      "evidence_locators": "张家港市 2026 年第 2 期食品抽检表第 74、76 行：标称生产者及地址；费列罗官网 locations 内嵌 JSON 的 China 条目；OSM way 878824460",
+      "verification_note": "政府抽检表中的生产者地址与企业官网杭州地址一致；OSM 为同名工业用地。上海贸易公司办公地址已区分。抽检表是公开标称生产者证据，非本项目现场审核。",
+      "evidence_date_note": "政府公告 2026 年 2 月；对应产品生产日期 2025-09-12、2025-12-03"
+    },
+    {
+      "site_id": "factory_004",
+      "name": "格力杭州生产基地",
+      "entity": "格力电器（杭州）有限公司",
+      "city": "杭州",
+      "province": "浙江",
+      "industry": "家电制造",
+      "production_address": "浙江省杭州市钱塘区江东一路2345号",
+      "osm_evidence_id": "gree_osm",
+      "osm_id": "1201521888",
+      "evidence_ids": [
+        "gree_ccc",
+        "gree_eia",
+        "gree_osm",
+        "osm_crs"
+      ],
+      "evidence_locators": "CCC 证书 2024010703681728，PDF 第 1 页生产企业；环评 PDF 第 5 页（印刷页 1）及第 26 页（印刷页 22）的项目位置与四至；OSM way 1201521888",
+      "verification_note": "证书列明空调生产企业及江东一路2345号；环评位置与 OSM 格力厂区相符。环评涉及园区内能源项目，未把其项目面积或设备坐标当作整厂信息；环评未标注 CRS 的坐标仅作位置佐证，气候输入采用 OSM WGS84。",
+      "evidence_date_note": "CCC 发证 2024-08-26；未向发证机构实时核查证书状态，不作认证有效性结论"
+    },
+    {
+      "site_id": "factory_005",
+      "name": "采埃孚上海元江路厂区",
+      "entity": "采埃孚汽车零部件系统（上海）有限公司；采埃孚商用车底盘技术（上海）有限公司",
+      "city": "上海",
+      "province": "上海",
+      "industry": "汽车零部件",
+      "production_address": "上海市闵行区元江路4440号",
+      "osm_evidence_id": "zf_shanghai_osm",
+      "osm_id": "1243688733",
+      "evidence_ids": [
+        "zf_locations",
+        "zf_iso14001",
+        "zf_address",
+        "zf_shanghai_osm",
+        "osm_crs"
+      ],
+      "evidence_locators": "ZF 官网 Shanghai Plant 2；ISO14001 证书 PDF 第 3/5 页两家企业及 P=Production；上海市政府莘庄工业区名单第 3、4 项；OSM way 1243688733",
+      "verification_note": "企业官网厂名、生产范围证书及政府中文实体/地址相符。两个同址企业按一个场所计数；OSM 边界只标注汽车零部件系统公司，不能保证覆盖另一法人所有生产单元。九泾路889号总部未计入工厂。",
+      "evidence_date_note": "证书签发 2024-12-18；官网目录于本次获取；政府地址佐证为 2022 年资料"
+    },
+    {
+      "site_id": "factory_006",
+      "name": "ENGEL",
+      "entity": "",
+      "city": "上海",
+      "province": "上海",
+      "industry": "待核验",
+      "production_address": "",
+      "osm_evidence_id": "minhang_map",
+      "osm_id": "381123297",
+      "evidence_ids": [
+        "minhang_map",
+        "osm_crs"
+      ],
+      "evidence_locators": "OSM way 381123297；name 与 industrial/works 标签及闭合边界",
+      "verification_note": "OSM 制造业相关名称/标签候选；企业实体、实际生产地址、厂区范围及在营状态尚未交叉核验。不能作为已核验工厂。",
+      "evidence_date_note": "仅有 OSM 对象版本时间；不代表生产活动日期",
+      "site_verification": "candidate_unverified"
+    },
+    {
+      "site_id": "factory_007",
+      "name": "上海申沃客车有限公司",
+      "entity": "",
+      "city": "上海",
+      "province": "上海",
+      "industry": "待核验",
+      "production_address": "",
+      "osm_evidence_id": "minhang_map",
+      "osm_id": "508324792",
+      "evidence_ids": [
+        "minhang_map",
+        "osm_crs"
+      ],
+      "evidence_locators": "OSM way 508324792；name 与 industrial/works 标签及闭合边界",
+      "verification_note": "OSM 制造业相关名称/标签候选；企业实体、实际生产地址、厂区范围及在营状态尚未交叉核验。不能作为已核验工厂。",
+      "evidence_date_note": "仅有 OSM 对象版本时间；不代表生产活动日期",
+      "site_verification": "candidate_unverified"
+    },
+    {
+      "site_id": "factory_008",
+      "name": "圣戈班磨料磨具",
+      "entity": "",
+      "city": "上海",
+      "province": "上海",
+      "industry": "待核验",
+      "production_address": "",
+      "osm_evidence_id": "minhang_map",
+      "osm_id": "549271567",
+      "evidence_ids": [
+        "minhang_map",
+        "osm_crs"
+      ],
+      "evidence_locators": "OSM way 549271567；name 与 industrial/works 标签及闭合边界",
+      "verification_note": "OSM 制造业相关名称/标签候选；企业实体、实际生产地址、厂区范围及在营状态尚未交叉核验。不能作为已核验工厂。",
+      "evidence_date_note": "仅有 OSM 对象版本时间；不代表生产活动日期",
+      "site_verification": "candidate_unverified"
+    },
+    {
+      "site_id": "factory_009",
+      "name": "三菱电机",
+      "entity": "",
+      "city": "上海",
+      "province": "上海",
+      "industry": "待核验",
+      "production_address": "",
+      "osm_evidence_id": "minhang_map",
+      "osm_id": "667137937",
+      "evidence_ids": [
+        "minhang_map",
+        "osm_crs"
+      ],
+      "evidence_locators": "OSM way 667137937；name 与 industrial/works 标签及闭合边界",
+      "verification_note": "OSM 制造业相关名称/标签候选；企业实体、实际生产地址、厂区范围及在营状态尚未交叉核验。不能作为已核验工厂。",
+      "evidence_date_note": "仅有 OSM 对象版本时间；不代表生产活动日期",
+      "site_verification": "candidate_unverified"
+    },
+    {
+      "site_id": "factory_010",
+      "name": "上海中航光电子有限公司",
+      "entity": "",
+      "city": "上海",
+      "province": "上海",
+      "industry": "待核验",
+      "production_address": "",
+      "osm_evidence_id": "minhang_map",
+      "osm_id": "667137941",
+      "evidence_ids": [
+        "minhang_map",
+        "osm_crs"
+      ],
+      "evidence_locators": "OSM way 667137941；name 与 industrial/works 标签及闭合边界",
+      "verification_note": "OSM 制造业相关名称/标签候选；企业实体、实际生产地址、厂区范围及在营状态尚未交叉核验。不能作为已核验工厂。",
+      "evidence_date_note": "仅有 OSM 对象版本时间；不代表生产活动日期",
+      "site_verification": "candidate_unverified"
+    },
+    {
+      "site_id": "factory_011",
+      "name": "上海申龙客车",
+      "entity": "",
+      "city": "上海",
+      "province": "上海",
+      "industry": "待核验",
+      "production_address": "",
+      "osm_evidence_id": "minhang_map",
+      "osm_id": "667137942",
+      "evidence_ids": [
+        "minhang_map",
+        "osm_crs"
+      ],
+      "evidence_locators": "OSM way 667137942；name 与 industrial/works 标签及闭合边界",
+      "verification_note": "OSM 制造业相关名称/标签候选；企业实体、实际生产地址、厂区范围及在营状态尚未交叉核验。不能作为已核验工厂。",
+      "evidence_date_note": "仅有 OSM 对象版本时间；不代表生产活动日期",
+      "site_verification": "candidate_unverified"
+    },
+    {
+      "site_id": "factory_012",
+      "name": "华电通用轻型燃机设备有限公司",
+      "entity": "",
+      "city": "上海",
+      "province": "上海",
+      "industry": "待核验",
+      "production_address": "",
+      "osm_evidence_id": "minhang_map",
+      "osm_id": "690198785",
+      "evidence_ids": [
+        "minhang_map",
+        "osm_crs"
+      ],
+      "evidence_locators": "OSM way 690198785；name 与 industrial/works 标签及闭合边界",
+      "verification_note": "OSM 制造业相关名称/标签候选；企业实体、实际生产地址、厂区范围及在营状态尚未交叉核验。不能作为已核验工厂。",
+      "evidence_date_note": "仅有 OSM 对象版本时间；不代表生产活动日期",
+      "site_verification": "candidate_unverified"
+    },
+    {
+      "site_id": "factory_013",
+      "name": "上海仪电显示材料有限公司",
+      "entity": "",
+      "city": "上海",
+      "province": "上海",
+      "industry": "待核验",
+      "production_address": "",
+      "osm_evidence_id": "minhang_map",
+      "osm_id": "690198786",
+      "evidence_ids": [
+        "minhang_map",
+        "osm_crs"
+      ],
+      "evidence_locators": "OSM way 690198786；name 与 industrial/works 标签及闭合边界",
+      "verification_note": "OSM 制造业相关名称/标签候选；企业实体、实际生产地址、厂区范围及在营状态尚未交叉核验。不能作为已核验工厂。",
+      "evidence_date_note": "仅有 OSM 对象版本时间；不代表生产活动日期",
+      "site_verification": "candidate_unverified"
+    },
+    {
+      "site_id": "factory_014",
+      "name": "上海依工塑料五金有限公司",
+      "entity": "",
+      "city": "上海",
+      "province": "上海",
+      "industry": "待核验",
+      "production_address": "",
+      "osm_evidence_id": "minhang_map",
+      "osm_id": "690198788",
+      "evidence_ids": [
+        "minhang_map",
+        "osm_crs"
+      ],
+      "evidence_locators": "OSM way 690198788；name 与 industrial/works 标签及闭合边界",
+      "verification_note": "OSM 制造业相关名称/标签候选；企业实体、实际生产地址、厂区范围及在营状态尚未交叉核验。不能作为已核验工厂。",
+      "evidence_date_note": "仅有 OSM 对象版本时间；不代表生产活动日期",
+      "site_verification": "candidate_unverified"
+    },
+    {
+      "site_id": "factory_015",
+      "name": "福伊特驱动技术系统公司",
+      "entity": "",
+      "city": "上海",
+      "province": "上海",
+      "industry": "待核验",
+      "production_address": "",
+      "osm_evidence_id": "minhang_map",
+      "osm_id": "690198789",
+      "evidence_ids": [
+        "minhang_map",
+        "osm_crs"
+      ],
+      "evidence_locators": "OSM way 690198789；name 与 industrial/works 标签及闭合边界",
+      "verification_note": "OSM 制造业相关名称/标签候选；企业实体、实际生产地址、厂区范围及在营状态尚未交叉核验。不能作为已核验工厂。",
+      "evidence_date_note": "仅有 OSM 对象版本时间；不代表生产活动日期",
+      "site_verification": "candidate_unverified"
+    },
+    {
+      "site_id": "factory_016",
+      "name": "思源电气",
+      "entity": "",
+      "city": "上海",
+      "province": "上海",
+      "industry": "待核验",
+      "production_address": "",
+      "osm_evidence_id": "minhang_map",
+      "osm_id": "690198790",
+      "evidence_ids": [
+        "minhang_map",
+        "osm_crs"
+      ],
+      "evidence_locators": "OSM way 690198790；name 与 industrial/works 标签及闭合边界",
+      "verification_note": "OSM 制造业相关名称/标签候选；企业实体、实际生产地址、厂区范围及在营状态尚未交叉核验。不能作为已核验工厂。",
+      "evidence_date_note": "仅有 OSM 对象版本时间；不代表生产活动日期",
+      "site_verification": "candidate_unverified"
+    },
+    {
+      "site_id": "factory_017",
+      "name": "芬美意香料",
+      "entity": "",
+      "city": "上海",
+      "province": "上海",
+      "industry": "待核验",
+      "production_address": "",
+      "osm_evidence_id": "minhang_map",
+      "osm_id": "690198798",
+      "evidence_ids": [
+        "minhang_map",
+        "osm_crs"
+      ],
+      "evidence_locators": "OSM way 690198798；name 与 industrial/works 标签及闭合边界",
+      "verification_note": "OSM 制造业相关名称/标签候选；企业实体、实际生产地址、厂区范围及在营状态尚未交叉核验。不能作为已核验工厂。",
+      "evidence_date_note": "仅有 OSM 对象版本时间；不代表生产活动日期",
+      "site_verification": "candidate_unverified"
+    },
+    {
+      "site_id": "factory_018",
+      "name": "上海云铸三维科技有限公司",
+      "entity": "",
+      "city": "上海",
+      "province": "上海",
+      "industry": "待核验",
+      "production_address": "",
+      "osm_evidence_id": "minhang_map",
+      "osm_id": "690225293",
+      "evidence_ids": [
+        "minhang_map",
+        "osm_crs"
+      ],
+      "evidence_locators": "OSM way 690225293；name 与 industrial/works 标签及闭合边界",
+      "verification_note": "OSM 制造业相关名称/标签候选；企业实体、实际生产地址、厂区范围及在营状态尚未交叉核验。不能作为已核验工厂。",
+      "evidence_date_note": "仅有 OSM 对象版本时间；不代表生产活动日期",
+      "site_verification": "candidate_unverified"
+    },
+    {
+      "site_id": "factory_019",
+      "name": "上海施耐德低压终端电器有限公司",
+      "entity": "",
+      "city": "上海",
+      "province": "上海",
+      "industry": "待核验",
+      "production_address": "",
+      "osm_evidence_id": "minhang_map",
+      "osm_id": "690225294",
+      "evidence_ids": [
+        "minhang_map",
+        "osm_crs"
+      ],
+      "evidence_locators": "OSM way 690225294；name 与 industrial/works 标签及闭合边界",
+      "verification_note": "OSM 制造业相关名称/标签候选；企业实体、实际生产地址、厂区范围及在营状态尚未交叉核验。不能作为已核验工厂。",
+      "evidence_date_note": "仅有 OSM 对象版本时间；不代表生产活动日期",
+      "site_verification": "candidate_unverified"
+    },
+    {
+      "site_id": "factory_020",
+      "name": "上海百事可乐饮料有限公司",
+      "entity": "",
+      "city": "上海",
+      "province": "上海",
+      "industry": "待核验",
+      "production_address": "",
+      "osm_evidence_id": "minhang_map",
+      "osm_id": "1243434107",
+      "evidence_ids": [
+        "minhang_map",
+        "osm_crs"
+      ],
+      "evidence_locators": "OSM way 1243434107；name 与 industrial/works 标签及闭合边界",
+      "verification_note": "OSM 制造业相关名称/标签候选；企业实体、实际生产地址、厂区范围及在营状态尚未交叉核验。不能作为已核验工厂。",
+      "evidence_date_note": "仅有 OSM 对象版本时间；不代表生产活动日期",
+      "site_verification": "candidate_unverified"
+    },
+    {
+      "site_id": "factory_021",
+      "name": "上海锦虎电子配件有限公司",
+      "entity": "",
+      "city": "上海",
+      "province": "上海",
+      "industry": "待核验",
+      "production_address": "",
+      "osm_evidence_id": "minhang_map",
+      "osm_id": "1379642404",
+      "evidence_ids": [
+        "minhang_map",
+        "osm_crs"
+      ],
+      "evidence_locators": "OSM way 1379642404；name 与 industrial/works 标签及闭合边界",
+      "verification_note": "OSM 制造业相关名称/标签候选；企业实体、实际生产地址、厂区范围及在营状态尚未交叉核验。不能作为已核验工厂。",
+      "evidence_date_note": "仅有 OSM 对象版本时间；不代表生产活动日期",
+      "site_verification": "candidate_unverified"
+    },
+    {
+      "site_id": "factory_022",
+      "name": "艾珍机械设备制造(上海)有限公司",
+      "entity": "",
+      "city": "上海",
+      "province": "上海",
+      "industry": "待核验",
+      "production_address": "",
+      "osm_evidence_id": "minhang_map",
+      "osm_id": "1379642411",
+      "evidence_ids": [
+        "minhang_map",
+        "osm_crs"
+      ],
+      "evidence_locators": "OSM way 1379642411；name 与 industrial/works 标签及闭合边界",
+      "verification_note": "OSM 制造业相关名称/标签候选；企业实体、实际生产地址、厂区范围及在营状态尚未交叉核验。不能作为已核验工厂。",
+      "evidence_date_note": "仅有 OSM 对象版本时间；不代表生产活动日期",
+      "site_verification": "candidate_unverified"
+    },
+    {
+      "site_id": "factory_023",
+      "name": "贺德克流体技术(上海)有限公司",
+      "entity": "",
+      "city": "上海",
+      "province": "上海",
+      "industry": "待核验",
+      "production_address": "",
+      "osm_evidence_id": "minhang_map",
+      "osm_id": "1379655194",
+      "evidence_ids": [
+        "minhang_map",
+        "osm_crs"
+      ],
+      "evidence_locators": "OSM way 1379655194；name 与 industrial/works 标签及闭合边界",
+      "verification_note": "OSM 制造业相关名称/标签候选；企业实体、实际生产地址、厂区范围及在营状态尚未交叉核验。不能作为已核验工厂。",
+      "evidence_date_note": "仅有 OSM 对象版本时间；不代表生产活动日期",
+      "site_verification": "candidate_unverified"
+    },
+    {
+      "site_id": "factory_024",
+      "name": "川田机械制造(上海)有限公司",
+      "entity": "",
+      "city": "上海",
+      "province": "上海",
+      "industry": "待核验",
+      "production_address": "",
+      "osm_evidence_id": "minhang_map",
+      "osm_id": "1379655201",
+      "evidence_ids": [
+        "minhang_map",
+        "osm_crs"
+      ],
+      "evidence_locators": "OSM way 1379655201；name 与 industrial/works 标签及闭合边界",
+      "verification_note": "OSM 制造业相关名称/标签候选；企业实体、实际生产地址、厂区范围及在营状态尚未交叉核验。不能作为已核验工厂。",
+      "evidence_date_note": "仅有 OSM 对象版本时间；不代表生产活动日期",
+      "site_verification": "candidate_unverified"
+    },
+    {
+      "site_id": "factory_025",
+      "name": "上海维科精密模塑股份有限公司",
+      "entity": "",
+      "city": "上海",
+      "province": "上海",
+      "industry": "待核验",
+      "production_address": "",
+      "osm_evidence_id": "minhang_map",
+      "osm_id": "1381304038",
+      "evidence_ids": [
+        "minhang_map",
+        "osm_crs"
+      ],
+      "evidence_locators": "OSM way 1381304038；name 与 industrial/works 标签及闭合边界",
+      "verification_note": "OSM 制造业相关名称/标签候选；企业实体、实际生产地址、厂区范围及在营状态尚未交叉核验。不能作为已核验工厂。",
+      "evidence_date_note": "仅有 OSM 对象版本时间；不代表生产活动日期",
+      "site_verification": "candidate_unverified"
+    },
+    {
+      "site_id": "factory_026",
+      "name": "盖米阀门(中国)有限公司",
+      "entity": "",
+      "city": "上海",
+      "province": "上海",
+      "industry": "待核验",
+      "production_address": "",
+      "osm_evidence_id": "minhang_map",
+      "osm_id": "1381619139",
+      "evidence_ids": [
+        "minhang_map",
+        "osm_crs"
+      ],
+      "evidence_locators": "OSM way 1381619139；name 与 industrial/works 标签及闭合边界",
+      "verification_note": "OSM 制造业相关名称/标签候选；企业实体、实际生产地址、厂区范围及在营状态尚未交叉核验。不能作为已核验工厂。",
+      "evidence_date_note": "仅有 OSM 对象版本时间；不代表生产活动日期",
+      "site_verification": "candidate_unverified"
+    },
+    {
+      "site_id": "factory_027",
+      "name": "柏中紧固件(上海)有限公司",
+      "entity": "",
+      "city": "上海",
+      "province": "上海",
+      "industry": "待核验",
+      "production_address": "",
+      "osm_evidence_id": "minhang_map",
+      "osm_id": "1381619143",
+      "evidence_ids": [
+        "minhang_map",
+        "osm_crs"
+      ],
+      "evidence_locators": "OSM way 1381619143；name 与 industrial/works 标签及闭合边界",
+      "verification_note": "OSM 制造业相关名称/标签候选；企业实体、实际生产地址、厂区范围及在营状态尚未交叉核验。不能作为已核验工厂。",
+      "evidence_date_note": "仅有 OSM 对象版本时间；不代表生产活动日期",
+      "site_verification": "candidate_unverified"
+    },
+    {
+      "site_id": "factory_028",
+      "name": "万福乐(上海)液压系统有限公司",
+      "entity": "",
+      "city": "上海",
+      "province": "上海",
+      "industry": "待核验",
+      "production_address": "",
+      "osm_evidence_id": "minhang_map",
+      "osm_id": "1382494056",
+      "evidence_ids": [
+        "minhang_map",
+        "osm_crs"
+      ],
+      "evidence_locators": "OSM way 1382494056；name 与 industrial/works 标签及闭合边界",
+      "verification_note": "OSM 制造业相关名称/标签候选；企业实体、实际生产地址、厂区范围及在营状态尚未交叉核验。不能作为已核验工厂。",
+      "evidence_date_note": "仅有 OSM 对象版本时间；不代表生产活动日期",
+      "site_verification": "candidate_unverified"
+    },
+    {
+      "site_id": "factory_029",
+      "name": "卓勒(上海)精密检测仪器有限公司",
+      "entity": "",
+      "city": "上海",
+      "province": "上海",
+      "industry": "待核验",
+      "production_address": "",
+      "osm_evidence_id": "minhang_map",
+      "osm_id": "1382494060",
+      "evidence_ids": [
+        "minhang_map",
+        "osm_crs"
+      ],
+      "evidence_locators": "OSM way 1382494060；name 与 industrial/works 标签及闭合边界",
+      "verification_note": "OSM 制造业相关名称/标签候选；企业实体、实际生产地址、厂区范围及在营状态尚未交叉核验。不能作为已核验工厂。",
+      "evidence_date_note": "仅有 OSM 对象版本时间；不代表生产活动日期",
+      "site_verification": "candidate_unverified"
+    },
+    {
+      "site_id": "factory_030",
+      "name": "上海至正道化高分子材料股份有限公司",
+      "entity": "",
+      "city": "上海",
+      "province": "上海",
+      "industry": "待核验",
+      "production_address": "",
+      "osm_evidence_id": "minhang_map",
+      "osm_id": "1383705631",
+      "evidence_ids": [
+        "minhang_map",
+        "osm_crs"
+      ],
+      "evidence_locators": "OSM way 1383705631；name 与 industrial/works 标签及闭合边界",
+      "verification_note": "OSM 制造业相关名称/标签候选；企业实体、实际生产地址、厂区范围及在营状态尚未交叉核验。不能作为已核验工厂。",
+      "evidence_date_note": "仅有 OSM 对象版本时间；不代表生产活动日期",
+      "site_verification": "candidate_unverified"
+    },
+    {
+      "site_id": "factory_031",
+      "name": "电气硝子玻璃(上海)广电有限公司",
+      "entity": "",
+      "city": "上海",
+      "province": "上海",
+      "industry": "待核验",
+      "production_address": "",
+      "osm_evidence_id": "minhang_map",
+      "osm_id": "1394480455",
+      "evidence_ids": [
+        "minhang_map",
+        "osm_crs"
+      ],
+      "evidence_locators": "OSM way 1394480455；name 与 industrial/works 标签及闭合边界",
+      "verification_note": "OSM 制造业相关名称/标签候选；企业实体、实际生产地址、厂区范围及在营状态尚未交叉核验。不能作为已核验工厂。",
+      "evidence_date_note": "仅有 OSM 对象版本时间；不代表生产活动日期",
+      "site_verification": "candidate_unverified"
+    },
+    {
+      "site_id": "factory_032",
+      "name": "上海加冷松芝汽车空调股份有限公司",
+      "entity": "",
+      "city": "上海",
+      "province": "上海",
+      "industry": "待核验",
+      "production_address": "",
+      "osm_evidence_id": "minhang_map",
+      "osm_id": "1394480469",
+      "evidence_ids": [
+        "minhang_map",
+        "osm_crs"
+      ],
+      "evidence_locators": "OSM way 1394480469；name 与 industrial/works 标签及闭合边界",
+      "verification_note": "OSM 制造业相关名称/标签候选；企业实体、实际生产地址、厂区范围及在营状态尚未交叉核验。不能作为已核验工厂。",
+      "evidence_date_note": "仅有 OSM 对象版本时间；不代表生产活动日期",
+      "site_verification": "candidate_unverified"
+    },
+    {
+      "site_id": "factory_033",
+      "name": "爱科空气处理技术（苏州）",
+      "entity": "",
+      "city": "苏州（太仓）",
+      "province": "江苏",
+      "industry": "待核验",
+      "production_address": "",
+      "osm_evidence_id": "taicang_map",
+      "osm_id": "1368774637",
+      "evidence_ids": [
+        "taicang_map",
+        "osm_crs"
+      ],
+      "evidence_locators": "OSM way 1368774637；name 与 industrial/works 标签及闭合边界",
+      "verification_note": "OSM 制造业相关名称/标签候选；企业实体、实际生产地址、厂区范围及在营状态尚未交叉核验。不能作为已核验工厂。",
+      "evidence_date_note": "仅有 OSM 对象版本时间；不代表生产活动日期",
+      "site_verification": "candidate_unverified"
+    },
+    {
+      "site_id": "factory_034",
+      "name": "苏州新波生物技术",
+      "entity": "",
+      "city": "苏州（太仓）",
+      "province": "江苏",
+      "industry": "待核验",
+      "production_address": "",
+      "osm_evidence_id": "taicang_map",
+      "osm_id": "1368774638",
+      "evidence_ids": [
+        "taicang_map",
+        "osm_crs"
+      ],
+      "evidence_locators": "OSM way 1368774638；name 与 industrial/works 标签及闭合边界",
+      "verification_note": "OSM 制造业相关名称/标签候选；企业实体、实际生产地址、厂区范围及在营状态尚未交叉核验。不能作为已核验工厂。",
+      "evidence_date_note": "仅有 OSM 对象版本时间；不代表生产活动日期",
+      "site_verification": "candidate_unverified"
+    },
+    {
+      "site_id": "factory_035",
+      "name": "舍弗勒智能装备（太仓）",
+      "entity": "",
+      "city": "苏州（太仓）",
+      "province": "江苏",
+      "industry": "待核验",
+      "production_address": "",
+      "osm_evidence_id": "taicang_map",
+      "osm_id": "1368774664",
+      "evidence_ids": [
+        "taicang_map",
+        "osm_crs"
+      ],
+      "evidence_locators": "OSM way 1368774664；name 与 industrial/works 标签及闭合边界",
+      "verification_note": "OSM 制造业相关名称/标签候选；企业实体、实际生产地址、厂区范围及在营状态尚未交叉核验。不能作为已核验工厂。",
+      "evidence_date_note": "仅有 OSM 对象版本时间；不代表生产活动日期",
+      "site_verification": "candidate_unverified"
+    }
+  ]
+}

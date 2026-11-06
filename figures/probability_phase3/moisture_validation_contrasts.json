@@ -1,0 +1,25 @@
+{
+  "inputs_sha256": {
+    "data\\probability_phase2\\experiments\\run1\\metrics_yearly.csv": "efb447f5f39b119f62ce14f49457299cd0ce6c00d73f488c2d2d25d422aeee82",
+    "data\\probability_phase3\\lr_ablations\\run1\\metrics_yearly.csv": "57dadf392cc9a918cdf0b5dab10c9dcf98fb76362ac2ab34fd7773573e9bd3c1",
+    "data\\probability_phase3\\lightgbm\\run1\\metrics_yearly.csv": "576fc4ee544cc9eac569774f0ddabe3f975375d38a0b03ac183149d358700b73"
+  },
+  "point_records": 48,
+  "summary_records": 16,
+  "years": [
+    2015,
+    2016,
+    2017
+  ],
+  "scope": "temporal",
+  "probabilities": "uncalibrated",
+  "aggregation": "equal-weight mean of annual candidate-minus-reference Brier differences",
+  "year_markers_are_not_uncertainty_intervals": true,
+  "test_or_calibration_years_read": false,
+  "script_sha256": "aa2ff845b356ae522fbda8874d1c8fdcd00a7a11f0064f9f9f0e722f2be01d5c",
+  "versions": {
+    "matplotlib": "3.11.2",
+    "pandas": "3.0.6",
+    "numpy": "2.5.4"
+  }
+}

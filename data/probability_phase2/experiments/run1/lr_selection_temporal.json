@@ -1,0 +1,66 @@
+{
+  "scope": "temporal",
+  "search_arm": "F4",
+  "search_lag": 1,
+  "solver": "lbfgs",
+  "max_iter": 2000,
+  "tol": 1e-06,
+  "threads": 2,
+  "selection": "mean annual raw Brier over 2015,2016,2017; smaller C wins exact ties",
+  "candidates": [
+    {
+      "C": 0.01,
+      "converged": true,
+      "iterations": 560,
+      "runtime_seconds": 113.07438720000209,
+      "warnings": [],
+      "annual_validation_brier": {
+        "2015": 0.05254633011452777,
+        "2016": 0.09131646098852707,
+        "2017": 0.09208256388261787
+      },
+      "mean_annual_validation_brier": 0.0786484516618909
+    },
+    {
+      "C": 0.1,
+      "converged": true,
+      "iterations": 1232,
+      "runtime_seconds": 250.54815380001673,
+      "warnings": [],
+      "annual_validation_brier": {
+        "2015": 0.05255232851890086,
+        "2016": 0.09128030475285413,
+        "2017": 0.09208359674533213
+      },
+      "mean_annual_validation_brier": 0.07863874333902904
+    },
+    {
+      "C": 1.0,
+      "converged": true,
+      "iterations": 1824,
+      "runtime_seconds": 368.476503199985,
+      "warnings": [],
+      "annual_validation_brier": {
+        "2015": 0.05255032065443171,
+        "2016": 0.09129198062323401,
+        "2017": 0.09211829208095523
+      },
+      "mean_annual_validation_brier": 0.07865353111954032
+    },
+    {
+      "C": 10.0,
+      "converged": true,
+      "iterations": 1868,
+      "runtime_seconds": 375.07846249997965,
+      "warnings": [],
+      "annual_validation_brier": {
+        "2015": 0.052547082133906464,
+        "2016": 0.09129336302965203,
+        "2017": 0.0921267893439754
+      },
+      "mean_annual_validation_brier": 0.07865574483584463
+    }
+  ],
+  "selected_C": 0.1,
+  "reuse": "F0,F1,F4 and both lags within this scope"
+}

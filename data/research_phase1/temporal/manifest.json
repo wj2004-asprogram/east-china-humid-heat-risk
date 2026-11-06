@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-11-05T09:15:01.502732+00:00",
+  "protocol_id": "EHHR-FIVE-SITE-01",
+  "protocol_version": "1.0",
+  "rules_fixed_at_utc": "2026-11-05T09:12:21Z",
+  "evidence_snapshot_date": "2026-10-29",
+  "threshold_c": 40.6,
+  "calendar": {
+    "first_date": "2000-06-01",
+    "last_date": "2024-08-31",
+    "season": "JJA",
+    "expected_days_per_summer": 92,
+    "timezone": "UTC+8"
+  },
+  "policies": {
+    "cohort": "Exactly the five verified_public_sources sites in the 2026-10-29 catalog; their primary grids only.",
+    "analysis_unit": "Distinct primary ERA5 grid; shared site links do not create additional climate observations or independent episodes.",
+    "threshold": "Daily maximum HI >= 40.6 Celsius, using unrounded decoded daily values.",
+    "season": "June 1 through August 31, UTC+8; 92 unique finite daily values required per summer.",
+    "episode": "A maximal run of consecutive threshold-reaching calendar days within one JJA; one-day episodes are retained. This is not an independent-event assumption or an official heatwave definition.",
+    "incomplete_season": "Keep annual completeness diagnostics, but withhold all threshold episodes and annual threshold/run metrics for incomplete summers.",
+    "season_censoring": "An episode touching June 1 or August 31 is flagged at that edge; duration is observed within JJA and may omit continuation outside the season.",
+    "episode_peak_tie": "Choose the earliest date among equal daily HI peaks.",
+    "annual_distribution": "Min, 25th percentile, median, 75th percentile and max of complete-summer annual metrics; quantiles use numpy method=linear. These are empirical distributions, not confidence intervals.",
+    "typical_year": "Minimize absolute distance from the median annual threshold-day count; choose the earliest year if tied. All tied candidates are retained.",
+    "extreme_year": "Maximize annual threshold-day count, then maximize annual longest run among tied years, then choose the earliest year. Both tie stages are retained.",
+    "selection_status": "Analysis rules specified before this module calculated new case results; existing summary values were already known, so this is not a prospective preregistration.",
+    "masked_primary": "Withhold daily, annual and episode results on non-land primary grids; do not substitute a sensitivity grid."
+  },
+  "input_sha256": {
+    "research_data": "2655a1fef66c9858d5083463ef5eab8d4a73c8ff1e5c4e90b4ab24b011dde64c",
+    "catalog": "e40a3a9e29611ce43bb58d1696d6f0853fa9e51c932b36c8c8ee2f0e51477cf6",
+    "research_manifest": "e1b8551bf393bb839ccc392e72c758e2980f49bfd4e29bb243480c39b3be619a",
+    "protocol": "76986d6482885af5fb14df904595c3cd900f303496240746bc84231da21d2acc"
+  },
+  "source_input_sha256": {
+    "catalog": "e40a3a9e29611ce43bb58d1696d6f0853fa9e51c932b36c8c8ee2f0e51477cf6",
+    "boundaries": "ad501ef40f1af31ec3317076b4e014889fca27f42cf12f64d92c28780dc81349",
+    "screening_manifest": "76bd8b450c7ca25f62d6b26639ae9ecb91bd51bd7493061a9223040c41e3c96c",
+    "heat_index": "15809010f8228b41f14883612f4487010698e0c8e58c26e1783bee0548f11e06",
+    "risk": "9efea1d5b2d2750aa200813c7b5ffafb101992367503316664b26800dcf93d5b"
+  },
+  "validation": {
+    "verified_site_count": 5,
+    "distinct_primary_grids": 3,
+    "distinct_valid_primary_grids": 2,
+    "unique_primary_grid_years": 50,
+    "complete_primary_grid_years": 50,
+    "deduplicated_episode_count": 407,
+    "reference_annual_values_match": true,
+    "episode_duration_sums_and_maxima_match_annual": true,
+    "research_source_manifest_hash_matches": true,
+    "protocol_rules_match_implementation": true,
+    "input_hashes_unchanged": true
+  },
+  "output_sha256": {
+    "annual.csv": "f026290821e331a79235e5ed2abda9e8bc51c648125d0394a8641a7dedb00655",
+    "case_temporal.json": "77d55014287398641c072c56479ad09f005a6b14d18f034987b8e389960e5f8b",
+    "episodes.csv": "fdf51c0fc8588dbe9a13811ff9c2b98053f0949f94965e0bebdffed5a29fdee0",
+    "grid_summary.csv": "a06f7f2ded5b3083a2fd3047352dfb9a0d4c3b08ca437bc898cc82c97f62cd7b",
+    "site_links.csv": "1b408b51725f2b6f6ba59d4d76ffb0bb0dee64b625ce2a361b9148e44278f927",
+    "year_selection.csv": "1de3f9bef0ebb9a616fc568d7399c05da22c6ecb2300ec69a3e7f34f41441092"
+  }
+}

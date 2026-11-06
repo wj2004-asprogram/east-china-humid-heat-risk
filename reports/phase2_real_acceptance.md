@@ -43,6 +43,6 @@ Initial benchmark setup attempted a year list and exited before any processing; 
 
 ## Evidence and review
 
-Machine summary: [phase2_real_acceptance.json](phase2_real_acceptance.json). Performance details: [phase2_real_performance.json](phase2_real_performance.json). Full logs, environment, input/source hashes, trial measurements, audit script and configs remain in `D:\AS\ehhr-codex-output\real-validation-20261029`.
+Machine summary: [phase2_real_acceptance.json](phase2_real_acceptance.json). Performance details: [phase2_real_performance.json](phase2_real_performance.json). Full logs, environment, input/source hashes, trial measurements, audit script and configs remain in `<LOCAL_EVIDENCE_ROOT>\real-validation-20261029`.
 
 M1-D real-data calibration and the specified M1-C input/output acceptance are complete. The user reassigned review to Codex because CC was unavailable. The [supplementary author self-review](phase2_self_review.md) found no blocking issues; this is not independent reviewer or CC sign-off. The performance harness remains outside the repository pending a separate integration decision. No ML work, CDS request, push or merge was performed.

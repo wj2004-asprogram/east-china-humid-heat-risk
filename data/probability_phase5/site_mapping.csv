@@ -1,0 +1,6 @@
+site_id,site_name,primary_grid_id,grid_latitude,grid_longitude,site_latitude,site_longitude,grid_index,spatial_role,screening_status,temporal_available,strict_H_available,shared_site_count,representative_distance_km,primary_partition_area_fraction,accepted_partition_area_fraction
+factory_001,特斯拉上海超级工厂,"30.7500,121.7500",30.75,121.75,30.8735828,121.7684919,,,non_land_grid,False,False,1,13.854809483160688,0.7005325509411282,0.2994674490590077
+factory_002,长安福特杭州工厂,"30.2500,120.5000",30.25,120.5,30.3554558,120.5486863,772.0,holdout,ok,True,True,3,12.623366120481853,0.9999999999999988,0.9999999999999988
+factory_003,费列罗杭州工厂,"30.2500,120.5000",30.25,120.5,30.3243907,120.4719224,772.0,holdout,ok,True,True,3,8.70012346558652,0.9999999999999992,0.9999999999999992
+factory_004,格力杭州生产基地,"30.2500,120.5000",30.25,120.5,30.3239591,120.6035093,772.0,holdout,ok,True,True,3,12.900052061104,1.0000000000000018,1.0000000000000018
+factory_005,采埃孚上海元江路厂区,"31.0000,121.5000",31.0,121.5,31.0471018,121.3770646,887.0,buffer,ok,True,False,1,12.831948654210692,0.9999999999999992,0.9999999999999992

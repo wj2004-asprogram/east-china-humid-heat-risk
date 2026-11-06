@@ -1,0 +1,30 @@
+[
+  {
+    "user_api": "blas",
+    "internal_api": "openblas",
+    "num_threads": 2,
+    "prefix": "libscipy_openblas",
+    "filepath": "<ERA5_SOURCE_ROOT>\\.venv\\Lib\\site-packages\\numpy.libs\\libscipy_openblas64_-ed4f167a5330424524f45258e7ca2c8d.dll",
+    "version": "0.3.34.106.0",
+    "threading_layer": "pthreads",
+    "architecture": "Haswell"
+  },
+  {
+    "user_api": "openmp",
+    "internal_api": "openmp",
+    "num_threads": 2,
+    "prefix": "vcomp",
+    "filepath": "<PROJECT_ROOT>\\.phase2_deps\\sklearn\\.libs\\vcomp140.dll",
+    "version": null
+  },
+  {
+    "user_api": "blas",
+    "internal_api": "openblas",
+    "num_threads": 2,
+    "prefix": "libscipy_openblas",
+    "filepath": "<ERA5_SOURCE_ROOT>\\.venv\\Lib\\site-packages\\scipy.libs\\libscipy_openblas-197ee2fc9b4d071f7e048078cac74115.dll",
+    "version": "0.3.31.dev",
+    "threading_layer": "pthreads",
+    "architecture": "Haswell"
+  }
+]

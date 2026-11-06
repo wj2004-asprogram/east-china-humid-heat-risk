@@ -30,9 +30,9 @@ From the independent clone, using its approved environment:
 ```powershell
 $env:PYTHONDONTWRITEBYTECODE='1'
 $env:PYTEST_DISABLE_PLUGIN_AUTOLOAD='1'
-.\.venv\Scripts\python.exe -B -m pytest tests/scientific_validation -q -p no:cacheprovider --basetemp D:\AS\ehhr-codex-output\new-tc1-temp
+.\.venv\Scripts\python.exe -B -m pytest tests/scientific_validation -q -p no:cacheprovider --basetemp <LOCAL_EVIDENCE_ROOT>\new-tc1-temp
 
-.\.venv\Scripts\python.exe -B -m tools.run_scientific_validation --output-dir D:\AS\ehhr-codex-output\new-tc1-comparison
+.\.venv\Scripts\python.exe -B -m tools.run_scientific_validation --output-dir <LOCAL_EVIDENCE_ROOT>\new-tc1-comparison
 ```
 
 Use new output paths on each run. The runner reads local Git objects, exports

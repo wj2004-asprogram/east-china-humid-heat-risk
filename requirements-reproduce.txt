@@ -1,0 +1,15 @@
+# Frozen-model inference and numerical reproduction only.
+# Direct scientific versions recorded by the original scientific lock;
+# Python 3.13.1 was used. This is not a cross-platform dependency lock.
+numpy==2.5.4
+pandas==3.0.6
+scipy==1.18.1
+xarray==2026.9.0
+netCDF4==1.7.4
+PyYAML==6.0.3
+lightgbm==4.7.0
+# Required by LightGBM; pinned to the version used in the archived environment.
+narwhals==2.28.0
+
+# scikit-learn is unnecessary for inference from the stored LR coefficients.
+# Optional download/plot dependencies are documented in the reproduction guide.

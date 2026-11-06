@@ -1,0 +1,45 @@
+{
+  "created_before_fitting": true,
+  "solver": "lbfgs",
+  "penalty": "l2",
+  "intercept_penalized": false,
+  "C_candidates": [
+    0.01,
+    0.1,
+    1.0,
+    10.0
+  ],
+  "max_iter": 2000,
+  "tol": 1e-06,
+  "threads": 2,
+  "random_seed": 20261105,
+  "search": "F4 lag1 independently for temporal and strict; reuse chosen C for both lags and all arms",
+  "train_years": [
+    2000,
+    2001,
+    2002,
+    2003,
+    2004,
+    2005,
+    2006,
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014
+  ],
+  "validation_years": [
+    2015,
+    2016,
+    2017
+  ],
+  "source_sha256": {
+    "src\\probability_complete_features.py": "8075bc7ef6d2bdfbc1af4964ce3bb9e42dd8a329fffae0c0ff361d65f6fe142a",
+    "src\\probability_baselines.py": "ab9e45f53934802f2cab33fc0ac062331b4fbbaa94ea7043046ca50a90c474a3",
+    "src\\probability_metrics.py": "998a3c3aff58796cb0e74e3b96e2feb9b64516b95b394f3bdb30e748033ff2b5",
+    "<PROJECT_ROOT>\\tools\\probability_phase2_baselines.py": "4a6e22e0b34e6bbb627b5bf04d017fc3c8b18666a608cb0995c28bb071c07e97"
+  }
+}

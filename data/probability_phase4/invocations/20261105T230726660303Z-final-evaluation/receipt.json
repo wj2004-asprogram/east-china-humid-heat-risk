@@ -1,0 +1,13 @@
+{
+  "started_utc": "20261105T230726660303Z",
+  "module": "tools.probability_phase4_evaluate",
+  "arguments": [],
+  "python_executable": "<ERA5_SOURCE_ROOT>\\.venv\\Scripts\\python.exe",
+  "working_directory": "<PROJECT_ROOT>",
+  "source_sha256": "66c8a47b0c3248c42d5f81b7f41a34be72f45629cbf2b331a9723fa4c2bbe7ad",
+  "status": "completed",
+  "completed_utc": "2026-11-05T23:11:04.425498+00:00",
+  "runtime_seconds": 217.76117640000302,
+  "peak_working_set_bytes": 524222464,
+  "output_log_sha256": "bd6b059fe98a044e6d9fb5bf77ee19cc67e041710558877806ed925cd05fa35d"
+}

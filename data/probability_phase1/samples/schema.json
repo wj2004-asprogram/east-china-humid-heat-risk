@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "qualification": "STRUCTURAL_ONLY_NOT_FEATURE_COMPLETE",
+  "limitations": [
+    "No hourly-derived night or daily mean dewpoint completeness checked",
+    "No target label values read; no model fitted or evaluated",
+    "Formal comparisons must additionally apply one finite full-feature-union mask"
+  ],
+  "date_source": "<ERA5_SOURCE_ROOT>\\data\\processed\\humid_heat_jja_2000_2024_bjt.nc",
+  "static_mask_source": "<ERA5_SOURCE_ROOT>\\data\\processed\\heat_risk_categories_jja_2000_2024_bjt.nc",
+  "land_threshold": 0.5,
+  "holdout_bounds_west_east_south_north": [
+    118,
+    121,
+    29,
+    32
+  ],
+  "buffer_degrees": 0.5,
+  "spatial_geometry": "Closed core rectangle; closed expanded rectangle minus core is buffer",
+  "spatial_grid_counts": {
+    "train": 1302,
+    "holdout": 165,
+    "buffer": 113
+  },
+  "grid_count": 1580,
+  "sample_id_rule": "grid_id + '|' + YYYY-MM-DD; independent of model and lag",
+  "formal_sample_rule": "Cartesian product grid_registry x date_manifest[common_eligible]",
+  "strict_spatial_training_rule": "Use only spatial_role=train in training years; exclude buffer and holdout from fitting, climatology and historical-label priors",
+  "target_threshold_hi_c": 40.6,
+  "history_days": 7,
+  "cutoff_lag_days": [
+    1,
+    2
+  ],
+  "source_utc_semantics": "end_exclusive bounds hourly input; last_hour is end_exclusive minus one hour",
+  "missingness_rule": "finite target AND finite frozen union of all models' features; previous-day grouping label is not part of common mask",
+  "splits": {
+    "train": [
+      2000,
+      2014
+    ],
+    "validation": [
+      2015,
+      2017
+    ],
+    "calibration": [
+      2018,
+      2019
+    ],
+    "final_test": [
+      2020,
+      2024
+    ]
+  },
+  "columns": {
+    "grid_registry.csv": [
+      "grid_id",
+      "latitude",
+      "longitude",
+      "spatial_role"
+    ],
+    "date_manifest.csv": [
+      "date",
+      "year",
+      "split",
+      "issue_utc",
+      "target_start_bjt",
+      "target_end_bjt_exclusive",
+      "target_start_utc",
+      "target_end_utc_exclusive",
+      "lag1_eligible",
+      "lag1_feature_start",
+      "lag1_feature_end",
+      "lag1_source_utc_end_exclusive",
+      "lag1_source_utc_last_hour",
+      "lag2_eligible",
+      "lag2_feature_start",
+      "lag2_feature_end",
+      "lag2_source_utc_end_exclusive",
+      "lag2_source_utc_last_hour",
+      "common_eligible"
+    ],
+    "yearly_counts.csv": [
+      "year",
+      "split",
+      "lag1_eligible",
+      "lag2_eligible",
+      "common_eligible",
+      "lag1_structural_cell_days",
+      "lag2_structural_cell_days",
+      "common_structural_cell_days",
+      "common_train_cell_days",
+      "common_buffer_cell_days",
+      "common_holdout_cell_days"
+    ]
+  }
+}

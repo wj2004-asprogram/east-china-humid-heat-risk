@@ -1,0 +1,933 @@
+{
+  "protocol_id": "ehhr_probability_v1",
+  "version": "1.0.0-draft",
+  "prepared_on": "2026-11-05",
+  "status": "reviewable_draft_pending_feature_audit",
+  "protocol_document": "docs/PROBABILITY_EXPERIMENT_PROTOCOL.md",
+  "user_plan_document": "docs/PROBABILITY_USER_REVIEW_PLAN_20261105.md",
+  "source_config": "configs/jja_2000_2024_bjt.yaml",
+  "source_commit": "3aa2b08",
+  "execution": {
+    "stage": "audit_and_protocol_only",
+    "fit_models": false,
+    "evaluate_final_test": false,
+    "download_raw_data": false,
+    "modify_existing_data": false,
+    "push": false,
+    "deploy": false,
+    "interpretation": "retrospective_reanalysis_hindcast_not_operational_warning",
+    "preregistration_claim": false,
+    "allow_training_period_feature_pilots": true,
+    "allow_synthetic_baseline_tests": true
+  },
+  "decision_provenance": {
+    "user_fixed": [
+      "grid_day_unit",
+      "jja_2000_2024",
+      "hi_max_ge_40_6_c",
+      "bjt_midnight_issue_and_target_day",
+      "lag1_and_lag2",
+      "seven_full_history_days",
+      "no_cross_summer_lags",
+      "year_splits",
+      "four_strong_baselines",
+      "limited_lightgbm",
+      "feature_group_ablation",
+      "strict_spatial_holdout",
+      "common_samples",
+      "year_and_weather_block_uncertainty",
+      "prior_2017_2022_exposure_disclosure",
+      "esg_hazard_screening_only"
+    ],
+    "engineering_defaults": [
+      "common_june09_start",
+      "15day_season_bins",
+      "shrinkage_strength_20",
+      "feature_registry",
+      "finite_hyperparameter_candidates",
+      "single_reference_arm_selection",
+      "calibration_mapping",
+      "warning_rules",
+      "holdout_rectangle_and_buffer",
+      "regional_neighborhood",
+      "bootstrap_parameters"
+    ],
+    "amend_before_modeling_only_for": "documented_data_or_geometry_incompatibility",
+    "amend_on_performance": false
+  },
+  "data": {
+    "years": {
+      "first": 2000,
+      "last": 2024
+    },
+    "months": [
+      6,
+      7,
+      8
+    ],
+    "domain_degrees": {
+      "west": 112,
+      "east": 123,
+      "south": 25,
+      "north": 36
+    },
+    "grid_shape_verified": [
+      45,
+      45
+    ],
+    "land_rule": {
+      "variable": "land_sea_mask",
+      "operator": ">=",
+      "threshold": 0.5
+    },
+    "land_cells_verified": 1580,
+    "raw_inventory_verified": {
+      "monthly": 75,
+      "bjt_edge": 25,
+      "land_mask": 1,
+      "total": 101,
+      "total_bytes": 366301416,
+      "hashes_match_previous_acceptance": true
+    },
+    "processed_bjt_files_hash_verified": 4,
+    "aggregation_pilot": {
+      "year": 2000,
+      "month": 6,
+      "cells": 2025,
+      "max_abs_difference_existing_daily": {
+          "tmax_c": 0,
+        "tdmax_k": 0,
+        "rhmean_percent": 0,
+        "himax_c": 0
+      },
+      "max_abs_tdmax_minus_tdmean_c": 8.5153
+    },
+    "existing_daily_d2m_semantics": "daily_maximum_dewpoint_kelvin_not_daily_mean",
+    "new_daily_means_source": "raw_hourly_t2m_d2m",
+    "raw_time_zone": "UTC",
+    "operational_data_vintage_reconstructed": false,
+    "new_feature_pilot": {
+      "year": 2000,
+      "season_days": 92,
+      "implemented_daily_variables": 7,
+      "implemented_night_variables": 4,
+      "night_cooling_implemented": false,
+      "lagged_examples": {
+        "training_grid_count": 3,
+        "rows": 42,
+        "all_finite": true
+      },
+      "complete_protocol_feature_registry": false
+    }
+  },
+  "target": {
+    "unit": "valid_land_grid_day",
+    "keys": [
+      "grid_id",
+      "target_date_bjt"
+    ],
+    "label": "y_D",
+    "threshold_c": 40.6,
+    "threshold_operator": ">=",
+    "aggregate": "maximum_of_hourly_heat_index",
+    "compare_unrounded": true,
+    "formula": "existing_project_hourly_hi_implementation_no_change",
+    "missing_label": "NA_never_zero",
+    "complete_day_hours": 24,
+    "unique_exact_hour_timestamps_required": true,
+    "all_required_values_finite": true,
+    "official_occupational_limit_claim": false
+  },
+  "time": {
+    "timezone": "Asia/Shanghai",
+    "utc_offset_hours": 8,
+    "issue_local": "D 00:00:00",
+    "target_local": {
+      "start": "D 00:00:00",
+      "end_exclusive": "D+1 00:00:00"
+    },
+    "target_utc": {
+      "start": "D-1 16:00:00",
+      "end_exclusive": "D 16:00:00"
+    },
+    "history_days": 7,
+    "input_lags_days": [
+      1,
+      2
+    ],
+    "arms": {
+      "lag1": {
+        "anchor_date": "D-1",
+        "last_allowed_hour_bjt": "D-1 23:00:00",
+        "history_start": "D-7",
+        "history_end": "D-1",
+        "first_target_month_day": "06-08",
+        "night_start": "D-2 20:00:00",
+        "night_end_exclusive": "D-1 08:00:00"
+      },
+      "lag2": {
+        "anchor_date": "D-2",
+        "last_allowed_hour_bjt": "D-2 23:00:00",
+        "history_start": "D-8",
+        "history_end": "D-2",
+        "first_target_month_day": "06-09",
+        "night_start": "D-3 20:00:00",
+        "night_end_exclusive": "D-2 08:00:00"
+      }
+    },
+    "night": {
+      "interval": "left_closed_right_open",
+      "include_start": true,
+      "include_end": false,
+      "required_hourly_state_samples": 12,
+      "elapsed_window_hours": 12,
+      "last_included_local_hour": "07:00:00",
+      "cooling_feature_planned": true,
+      "cooling_definition": "T(D-lag-1 20:00 BJT) minus T(D-lag 07:00 BJT); 11-hour endpoint interval; all 12 night samples must be finite",
+      "cooling_implementation_pending": true
+    },
+    "common_target_month_day": {
+      "start": "06-09",
+      "end_inclusive": "08-31"
+    },
+    "common_target_days_per_year": 84,
+    "lag1_eligible_days_per_year": 85,
+    "lag2_eligible_days_per_year": 84,
+    "require_real_calendar_continuity": true,
+    "cross_summer_lags": false,
+    "incomplete_history_policy": "exclude",
+    "caveat": "lag2_is_an_assimilation_window_sensitivity_control_not_proof_of_real_time_availability"
+  },
+  "splits": {
+    "train": {
+      "first_year": 2000,
+      "last_year": 2014,
+      "purpose": "fit_models_and_preprocessing"
+    },
+    "validation": {
+      "first_year": 2015,
+      "last_year": 2017,
+      "purpose": "finite_selection_only"
+    },
+    "calibration": {
+      "first_year": 2018,
+      "last_year": 2019,
+      "purpose": "fixed_probability_mapping_and_warning_thresholds_only"
+    },
+    "final_test": {
+      "first_year": 2020,
+      "last_year": 2024,
+      "purpose": "one_frozen_final_evaluation"
+    },
+    "refit_with_validation_or_calibration": false,
+    "prior_exposure": {
+      "years_explicitly_known": [
+        2017,
+        2022
+      ],
+      "statement": "Final-test years are excluded from this round's model selection; no claim of never-seen years."
+    },
+    "audit_allowed_all_years": [
+      "inventory",
+      "hash",
+      "coordinates",
+      "units",
+      "time_completeness",
+      "missingness",
+      "mask",
+      "documented_label_formula_consistency"
+    ],
+    "audit_forbidden_final_test": [
+      "event_prevalence_summaries",
+      "model_scores",
+      "threshold_search",
+      "difficulty_ranking",
+      "performance_driven_case_selection"
+    ]
+  },
+  "features": {
+    "background_C": [
+      "latitude",
+      "longitude",
+      "sin_annual_doy365",
+      "cos_annual_doy365",
+      "sin_semiannual_doy365",
+      "cos_semiannual_doy365"
+    ],
+    "doy365_remove_leap_day_offset": true,
+    "daily_history": {
+      "relative_to_anchor_day_offsets": [
+        0,
+        -1,
+        -2
+      ],
+      "rolling_windows_days": [
+        3,
+        7
+      ],
+      "rolling_statistics": [
+        "mean",
+        "min",
+        "max"
+      ],
+      "rolling_right_edge": "anchor_date",
+      "minimum_periods": "full_window"
+    },
+    "groups": {
+      "T": {
+        "daily_variables": [
+          "tmean_c",
+          "tmin_c",
+          "tmax_c"
+        ],
+        "apply": "daily_history"
+      },
+      "M": {
+        "daily_variables": [
+          "tdmean_c",
+          "tdmin_c",
+          "tdmax_c",
+          "rhmean_percent",
+          "rhmin_percent",
+          "rhmax_percent"
+        ],
+        "apply": "daily_history"
+      },
+      "NT": {
+        "night_variables": [
+          "tmean_c",
+          "tmin_c",
+          "cooling20to07_c"
+        ]
+      },
+      "NM": {
+        "night_variables": [
+          "tdmean_c",
+          "rhmean_percent"
+        ]
+      },
+      "RT": {
+        "daily_source_variables": [
+          "tmean_c"
+        ],
+        "anchor_spatial_statistics": [
+          "mean",
+          "std_ddof0"
+        ],
+        "temporal_means_of_spatial_mean_days": [
+          3,
+          7
+        ]
+      },
+      "RM": {
+        "daily_source_variables": [
+          "tdmean_c",
+          "rhmean_percent"
+        ],
+        "anchor_spatial_statistics": [
+          "mean",
+          "std_ddof0"
+        ],
+        "temporal_means_of_spatial_mean_days": [
+          3,
+          7
+        ]
+      },
+      "H": {
+        "daily_history_variables": [
+          "himax_c"
+        ],
+        "event_features": [
+          "y_anchor",
+          "event_fraction_last3",
+          "event_fraction_last7",
+          "consecutive_event_days_capped7"
+        ]
+      },
+      "P": {
+        "event_features": [
+          "y_anchor"
+        ]
+      }
+    },
+    "arms": {
+      "F0": [
+        "C",
+        "T"
+      ],
+      "F1": [
+        "C",
+        "T",
+        "M"
+      ],
+      "F2": [
+        "C",
+        "T",
+        "M",
+        "NT",
+        "NM"
+      ],
+      "F3": [
+        "C",
+        "T",
+        "M",
+        "NT",
+        "NM",
+        "RT",
+        "RM"
+      ],
+      "F4": [
+        "C",
+        "T",
+        "M",
+        "NT",
+        "NM",
+        "RT",
+        "RM",
+        "H"
+      ],
+      "F0P": [
+        "C",
+        "T",
+        "P"
+      ],
+      "F1P": [
+        "C",
+        "T",
+        "P",
+        "M"
+      ],
+      "F2_minus_NT": [
+        "C",
+        "T",
+        "M",
+        "NM"
+      ],
+      "F2_minus_NM": [
+        "C",
+        "T",
+        "M",
+        "NT"
+      ],
+      "F3_minus_RT": [
+        "C",
+        "T",
+        "M",
+        "NT",
+        "NM",
+        "RM"
+      ],
+      "F3_minus_RM": [
+        "C",
+        "T",
+        "M",
+        "NT",
+        "NM",
+        "RT"
+      ]
+    },
+    "primary_moisture_contrast": {
+      "candidate": "F1",
+      "reference": "F0"
+    },
+    "conditional_moisture_contrast": {
+      "candidate": "F1P",
+      "reference": "F0P",
+      "caveat": "event_state_already_contains_moisture_information"
+    },
+    "forbidden_in_F0": [
+      "dewpoint",
+      "relative_humidity",
+      "heat_index",
+      "event_state",
+      "event_duration",
+      "wet_bulb",
+      "dewpoint_depression",
+      "regional_moisture",
+      "label_based_climatology_features"
+    ],
+    "forbidden_all": [
+      "target_day_weather",
+      "year_as_numeric_feature",
+      "factory_id",
+      "grid_id_target_encoding",
+      "all_years_statistics",
+      "future_centered_rolling"
+    ],
+    "preprocessing": {
+      "fit_split": "train",
+      "spatial_fit_members": "training_space_only",
+      "missing_value_imputation": false,
+      "scaling_for_lr": "training_mean_and_standard_deviation"
+    }
+  },
+  "spatial": {
+    "experiment_id": "strict_rectangle_holdout",
+    "geometry_selection": "fixed_coordinates_without_event_or_performance_selection",
+    "core": {
+      "west": 118,
+      "east": 121,
+      "south": 29,
+      "north": 32,
+      "boundaries_inclusive": true
+    },
+    "buffer_degrees_each_axis": 0.5,
+    "expanded": {
+      "west": 117.5,
+      "east": 121.5,
+      "south": 28.5,
+      "north": 32.5,
+      "boundaries_inclusive": true
+    },
+    "buffer_definition": "expanded_rectangle_minus_core",
+    "train_definition": "land_outside_expanded_rectangle",
+    "counts_verified": {
+      "holdout": 165,
+      "buffer": 113,
+      "train": 1302
+    },
+    "forbidden_fit_regions_all_years": [
+      "holdout",
+      "buffer"
+    ],
+    "fit_preprocessing_validation_calibration_space": "train",
+    "test_space": "holdout",
+    "test_years": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "fit_holdout_specific_climatology": false,
+    "infer_with_available_recent_local_weather": true,
+    "infer_with_lagged_local_labels_only_when_arm_allows": true,
+    "claim": "unseen_fitting_locations_with_recent_local_weather_available",
+    "cold_start_without_local_observations_claim": false,
+    "minimum_core_land_cells": 50,
+    "minimum_training_land_cells": 500,
+    "min_core_largest_4neighbor_component_fraction": 0.9,
+    "connectivity_verified": true,
+    "revision_on_geometry_failure": "record_and_amend_before_modeling_never_select_using_performance",
+    "core_component_sizes": [
+      165
+    ],
+    "core_largest_component_fraction": 1,
+    "geometry_audit_file": "data/probability_phase1/geometry/geometry_audit.json",
+    "geometry_gate_passed": true,
+    "eligible_query_counts_verified": {
+      "train": 1299,
+      "holdout": 165
+    },
+    "training_neighborhood_source_count": 1302,
+    "recursive_source_filtering": false
+  },
+  "neighborhood": {
+    "shape": "axis_aligned_rectangle",
+    "longitude_half_width_degrees": 0.5,
+    "latitude_half_width_degrees": 0.5,
+    "include_boundary": true,
+    "include_center": false,
+    "source_land_only": true,
+    "min_sources": 3,
+    "weighting": "equal",
+    "standard_deviation_ddof": 0,
+    "source_list_fixed_by_geometry": true,
+    "any_required_source_missing": "feature_missing_then_common_sample_exclusion",
+    "temporal_experiment_source_regions": "all_valid_land_in_domain",
+    "strict_source_map": {
+      "train": [
+        "train"
+      ],
+      "holdout": [
+        "holdout"
+      ],
+      "buffer": []
+    },
+    "aggregate_globally_then_split_forbidden": true,
+    "full_geometry_audit_complete": true,
+    "eligible_queries_verified": {
+      "temporal": 1580,
+      "strict_train": 1299,
+      "strict_holdout": 165
+    },
+    "source_list_sha256": "8c809c44e75551422e60bb29ba1e5c01749b63e515b0c94db6b503aa9b7f16dc",
+    "grid_registry_sha256": "24342db500391f6301bcbed60953c2784f8b203eda020998457fbfa95f8026f6"
+  },
+  "samples": {
+    "stage": "structural_manifest_verified_feature_complete_manifest_pending",
+    "eligibility": "common_intersection_across_all_planned_features_and_both_lags",
+    "preregistration_claim": false,
+    "required_local_daily_offsets": [
+      0,
+      -1,
+      -2,
+      -3,
+      -4,
+      -5,
+      -6,
+      -7,
+      -8
+    ],
+    "required_local_hourly_variables": [
+      "t2m",
+      "d2m"
+    ],
+    "required_local_hours_per_day": 24,
+    "evaluation_prev_day_label_required": "already_implied_by_lag1_in_common_index_not_additional_lag2_feature",
+    "lag2_may_use_prev_day_label_for_prediction": false,
+    "full_neighborhood_history_required": true,
+    "missing_data_policy": "complete_case_no_imputation",
+    "drop_by_outcome_forbidden": true,
+    "compare_same_keys": true,
+    "structural_counts_verified": {
+      "target_dates": 2100,
+      "total": 3318000,
+      "train": 1990800,
+      "validation": 398160,
+      "calibration": 265440,
+      "final_test": 663600
+    },
+    "spatial_and_temporal_common_indices_separate": true,
+    "strict_structural_upper_bounds": {
+      "train": 1636740,
+      "validation": 327348,
+      "calibration": 218232,
+      "final_test_holdout": 69300
+    }
+  },
+  "baselines": {
+    "persistence": {
+      "probability": "y(D-lag)",
+      "calibrate_raw_persistence": false
+    },
+    "seasonal": {
+      "bin_width_days": 15,
+      "day0_month_day": "06-01",
+      "bin_expression": "floor(day_of_season/15)",
+      "number_of_bins": 7,
+      "last_bin_month_day": [
+        "08-30",
+        "08-31"
+      ],
+      "fit_common_training_samples_only": true,
+      "pooled_beta_prior": {
+        "alpha": 1,
+        "beta": 1
+      },
+      "pooled_formula": "(K_bin+1)/(N_bin+2)",
+      "empty_bin_fallback": "raise_training_coverage_error_do_not_predict_do_not_use_future_data",
+      "grid_shrinkage_strength": 20,
+      "grid_formula": "(k_grid_bin+20*p_bin)/(n_grid_bin+20)",
+      "temporal_main": "grid_shrunk",
+      "strict_holdout_main": "pooled_training_space_bin_probability",
+      "report_pooled_in_all_experiments": true
+    },
+    "transition": {
+      "conditioning": [
+        "season_bin_of_target",
+        "y(D-lag)"
+      ],
+      "fit_separately_by_lag": true,
+      "pool_training_space": true,
+      "grid_specific": false,
+      "shrinkage_strength": 20,
+      "formula": "(k_bin_state+20*p_bin)/(n_bin_state+20)",
+      "unseen_state_fallback": "training_bin_probability"
+    },
+    "logistic_regression": {
+      "penalty": "l2",
+      "C_candidates": [
+        0.01,
+        0.1,
+        1,
+        10
+      ],
+      "class_weight": null,
+      "oversampling": false,
+      "fit_intercept": true,
+      "penalize_intercept": false,
+      "max_iter": 2000,
+      "solver_to_lock_before_run": "lbfgs_or_equivalent_unpenalized_intercept",
+      "convergence_failure_policy": "record_candidate_failure_no_silent_solver_search",
+      "tie_break": "smaller_C"
+    },
+    "champion_selection": {
+      "split": "validation",
+      "metric": "mean_annual_raw_brier",
+      "test_reselection": false,
+      "eligible": [
+        "persistence",
+        "seasonal",
+        "transition",
+        "logistic_F4",
+        "logistic_F0"
+      ]
+    }
+  },
+  "lightgbm": {
+    "enabled_in_current_stage": false,
+    "objective": "binary",
+    "learning_rate": 0.05,
+    "candidate_grid": {
+      "num_leaves": [
+        7,
+        15
+      ],
+      "min_child_samples": [
+        100,
+        500
+      ],
+      "reg_lambda": [
+        1,
+        10
+      ]
+    },
+    "candidate_count": 8,
+    "max_depth": -1,
+    "feature_fraction": 1,
+    "bagging_fraction": 1,
+    "class_weight": null,
+    "num_threads": 1,
+    "deterministic": true,
+    "random_seed": 20261105,
+    "max_boosting_rounds": 2000,
+    "early_stopping": {
+      "split": "validation",
+      "metric": "binary_logloss",
+      "patience_rounds": 100
+    },
+    "selection_metric": "mean_annual_raw_brier",
+    "tie_break": [
+      "smaller_num_leaves",
+      "larger_min_child_samples",
+      "larger_reg_lambda"
+    ],
+    "selection_reference": {
+      "feature_arm": "F4",
+      "lag": 1
+    },
+    "reuse_selected_parameters_and_rounds_for_other_arms": true,
+    "strict_spatial_selection": "repeat_same_finite_search_on_training_space_only",
+    "unbounded_search": false
+  },
+  "calibration": {
+    "fit_years": [
+      2018,
+      2019
+    ],
+    "year_weighting": "equal",
+    "method": "nonnegative_slope_logit_platt",
+    "probability_clip": [
+      0.000001,
+      0.999999
+    ],
+    "mapping": "sigmoid(a*logit(clipped_raw_probability)+b)",
+    "slope_constraint": "a>=0",
+    "loss": "logloss_plus_1e-6_times_(a-1)^2",
+    "penalize_intercept": false,
+    "choose_method_on_calibration": false,
+    "fit_separately_per_frozen_model_arm_lag": true,
+    "strict_fit_space": "train_only",
+    "failure_fallback": "identity_mapping_with_failure_record",
+    "raw_probability_primary_scientific_report": true,
+    "calibrated_probability_secondary_report": true
+  },
+  "warning_rules": {
+    "primary": {
+      "probability": "calibrated",
+      "operator": ">=",
+      "threshold": 0.5
+    },
+    "secondary": {
+      "name": "calibration_alert_budget_10pct",
+      "max_calibration_alert_fraction": 0.1,
+      "thresholds": {
+        "start": 0,
+        "end": 1,
+        "step": 0.01,
+        "no_alert_sentinel": 1.000001
+      },
+      "selection": "smallest_threshold_meeting_budget",
+      "calibration_year_weighting": "equal",
+      "use_event_labels_for_threshold_selection": false,
+      "split_ties": false,
+      "freeze_before_test": true,
+      "recompute_on_test": false
+    },
+    "persistence_probability": "raw",
+    "occupational_action_threshold_claim": false
+  },
+  "evaluation": {
+    "primary_weighting": "equal_grid_day_with_equal_year_aggregation",
+    "sensitivity_weighting": "cos_latitude_area_weighted",
+    "primary_metric": "brier_score",
+    "difference": "candidate_minus_reference_negative_is_improvement",
+    "brier_skill": "1-candidate_brier/reference_brier",
+    "zero_reference_brier": "NA",
+    "ranking_metrics": {
+      "primary": "average_precision_step_integral",
+      "secondary": "pr_auc_trapezoidal_recall_ascending",
+      "report_prevalence": true,
+      "one_class": "NA_with_counts",
+      "curve_definition": {
+        "order": "descending_probability",
+        "ties": "include_all_equal_probability_samples_together",
+        "start_point": {
+          "recall": 0,
+          "precision": 1
+        },
+        "end_point": {
+          "recall": 1,
+          "precision": "prevalence"
+        },
+        "ap_integral": "sum(delta_recall*precision_at_segment_end)",
+        "trapezoid_integral": "sum(delta_recall*(precision_previous+precision_current)/2)",
+        "constant_prediction": {
+          "ap": "prevalence",
+          "trapezoid": "(1+prevalence)/2"
+        }
+      }
+    },
+    "reliability": {
+      "bin_edges": [
+        0,
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7,
+        0.8,
+        0.9,
+        1
+      ],
+      "last_bin_includes_1": true,
+      "empty_bins": "NA_no_interpolation",
+      "report": [
+        "n",
+        "n_positive",
+        "mean_probability",
+        "event_fraction"
+      ],
+      "intervals": "left_closed_right_open_except_last_includes_1"
+    },
+    "alert_metrics": [
+      "TP",
+      "FP",
+      "FN",
+      "TN",
+      "recall",
+      "precision",
+      "FAR",
+      "FPR",
+      "miss_rate",
+      "per_grid_summer_alert_days",
+      "grid_day_alert_fraction"
+    ],
+    "zero_metric_denominator": "NA",
+    "risk_sets": {
+      "onset": "y(D-1)=0_including_00_and_01",
+      "persistence_or_clearance": "y(D-1)=1_including_10_and_11"
+    },
+    "transition_groups": [
+      "0_to_0",
+      "0_to_1_onset",
+      "1_to_0_clearance",
+      "1_to_1_continuation"
+    ],
+    "lag2_grouping": "posthoc_only_no_forecast_routing",
+    "subregions": {
+      "longitude_boundary": 117.5,
+      "latitude_boundary": 30.5,
+      "equal_boundary_assignment": "east_or_north"
+    },
+    "report_by_year": true,
+    "bootstrap": {
+      "paired": true,
+      "hierarchy": [
+        "resample_whole_years_with_replacement",
+        "resample_non_circular_contiguous_date_blocks_with_all_spatial_cells"
+      ],
+      "replicates": 2000,
+      "seed": 20261105,
+      "primary_block_days": 14,
+      "sensitivity_block_days": [
+        7,
+        21
+      ],
+      "days_drawn_per_year": 84,
+      "truncate_final_block": true,
+      "cross_season_or_year_blocks": false,
+      "retain_all_model_pairs_and_missing_masks": true,
+      "percentile_interval": [
+        2.5,
+        97.5
+      ],
+      "grid_day_iid_resampling": false,
+      "leave_one_year_out": true,
+      "caveat": "five_test_years_do_not_support_precise_population_uncertainty_claims"
+    },
+    "display_precision": {
+      "probability_scores_max_decimals": 4,
+      "percentage_decimals": 1
+    },
+    "application_gate": {
+      "beat_validation_frozen_simple_baseline": true,
+      "min_test_years_improving": 3,
+      "total_test_years": 5,
+      "require_onset_support": true,
+      "require_lag2_support": true,
+      "ci_including_zero": "insufficient_evidence",
+      "replace_failed_complex_model_with_simple": true
+    }
+  },
+  "audit_remaining": [
+    "full_feature_registry_implementation",
+    "full_feature_complete_common_index",
+    "model_dependency_installation_and_versions"
+  ],
+  "prediction_output_required": [
+    "grid_id",
+    "latitude",
+    "longitude",
+    "spatial_role",
+    "target_date_bjt",
+    "issue_time_bjt",
+    "issue_time_utc",
+    "target_start_bjt",
+    "target_end_bjt",
+    "target_start_utc",
+    "target_end_utc",
+    "lag_days",
+    "max_input_valid_time",
+    "model_id",
+    "protocol_version",
+    "p_raw",
+    "p_calibrated",
+    "alert_threshold",
+    "y_D",
+    "evaluation_y_D_minus1",
+    "sample_eligibility"
+  ],
+  "esg": {
+    "use": "climate_hazard_screening_and_adaptation_information",
+    "factory_as_independent_training_sample": false,
+    "mask_rejection_preserved": true,
+    "occupational_compliance_or_financial_loss_claim": false
+  },
+  "external_sources": [
+    {
+      "title": "ECMWF ERA5 data documentation",
+      "url": "https://confluence.ecmwf.int/spaces/CKB/pages/76414402/ERA5%2Bdata%2Bdocumentation",
+      "retrieved_on": "2026-11-05",
+      "verified_facts": [
+        "atmospheric_4dvar_12h_09_to_21_and_21_to_09_utc",
+        "some_surface_variables_use_other_assimilation_schemes",
+        "era5t_about_five_days_latency_no_fixed_daily_release_time"
+      ],
+      "caveat": "general_atmospheric_window_does_not_reconstruct_each_2m_field_observation_lineage"
+    }
+  ]
+}

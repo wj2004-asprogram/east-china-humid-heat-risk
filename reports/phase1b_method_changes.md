@@ -68,7 +68,7 @@ on 07-13, in v0.2 as in both v0.3 runs (0.05 % of the domain area,
 - **Code:** `cc969fa` (v0.2 baseline, `main`) → `2eb0f82` (heat index) →
   `2b8358c` (land mask) → `39a815a` (Beijing time) → `bf73072` (review
   fixes). Each commit was run with the full pipeline on the same real
-  files, in the worktree `D:\Claudecode_workspace\projects\ehhr-1a-verify`.
+  files, in the worktree `<LOCAL_WORKSPACE_ROOT>\projects\ehhr-1a-verify`.
   Up to `2b8358c` the UTC config `configs/july_2022.yaml` was used; from
   `39a815a` on, the Beijing-time config `configs/july_2022_bjt.yaml`.
 - **Environment:** Python 3.13.1, numpy 2.5.4, pandas 3.0.6,

@@ -1,0 +1,12 @@
+{
+  "status": "pending_full_grid",
+  "completed_or_failed": 7,
+  "planned_candidates": 8,
+  "winner_frozen": false,
+  "reason": "resource budget, not scores",
+  "historical_snapshot": true,
+  "superseded_by": [
+    "execution_registry.json",
+    "selection_strict.json"
+  ]
+}

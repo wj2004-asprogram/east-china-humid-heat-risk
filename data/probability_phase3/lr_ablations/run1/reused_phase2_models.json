@@ -1,0 +1,98 @@
+[
+  {
+    "scope": "temporal",
+    "lag": 1,
+    "arm": "F0",
+    "state": "data\\probability_phase2\\experiments\\run1\\models\\temporal\\lag1_logistic_F0.json",
+    "sha256": "97c9d172384fd9e2cc2bb1c2147fadcd44d2c222074f6b8c5bea1058d561b788",
+    "predictions": "data\\probability_phase2\\experiments\\run1\\predictions\\temporal\\lag1\\logistic_F0"
+  },
+  {
+    "scope": "temporal",
+    "lag": 1,
+    "arm": "F1",
+    "state": "data\\probability_phase2\\experiments\\run1\\models\\temporal\\lag1_logistic_F1.json",
+    "sha256": "48730413e38f9044607627f04d75ec91f7184305ef4f60efad94a37f50f30cdc",
+    "predictions": "data\\probability_phase2\\experiments\\run1\\predictions\\temporal\\lag1\\logistic_F1"
+  },
+  {
+    "scope": "temporal",
+    "lag": 1,
+    "arm": "F4",
+    "state": "data\\probability_phase2\\experiments\\run1\\models\\temporal\\lag1_logistic_F4.json",
+    "sha256": "d915f6a2455f12f4ecb2fa1a4d6ff161566584558f3011629b6cf5ee34b48d35",
+    "predictions": "data\\probability_phase2\\experiments\\run1\\predictions\\temporal\\lag1\\logistic_F4"
+  },
+  {
+    "scope": "temporal",
+    "lag": 2,
+    "arm": "F0",
+    "state": "data\\probability_phase2\\experiments\\run1\\models\\temporal\\lag2_logistic_F0.json",
+    "sha256": "e0832a4aa5c86132f283b6d0fd164218080958fad7485f7a219932f0fb5f2c07",
+    "predictions": "data\\probability_phase2\\experiments\\run1\\predictions\\temporal\\lag2\\logistic_F0"
+  },
+  {
+    "scope": "temporal",
+    "lag": 2,
+    "arm": "F1",
+    "state": "data\\probability_phase2\\experiments\\run1\\models\\temporal\\lag2_logistic_F1.json",
+    "sha256": "9bdf79df9729df3c8c9dec75f00eb637e2edc29ad5ef4bf520862050b25bd53d",
+    "predictions": "data\\probability_phase2\\experiments\\run1\\predictions\\temporal\\lag2\\logistic_F1"
+  },
+  {
+    "scope": "temporal",
+    "lag": 2,
+    "arm": "F4",
+    "state": "data\\probability_phase2\\experiments\\run1\\models\\temporal\\lag2_logistic_F4.json",
+    "sha256": "a40bd3758f89873074d2989634e178b455213e66a092548905e5f4f60b7556cf",
+    "predictions": "data\\probability_phase2\\experiments\\run1\\predictions\\temporal\\lag2\\logistic_F4"
+  },
+  {
+    "scope": "strict",
+    "lag": 1,
+    "arm": "F0",
+    "state": "data\\probability_phase2\\experiments\\run1\\models\\strict\\lag1_logistic_F0.json",
+    "sha256": "9ea0a8f50599aca0de3fccdb8501d74b76fe84c03d22ad29ceab01cad74aa9fc",
+    "predictions": "data\\probability_phase2\\experiments\\run1\\predictions\\strict\\lag1\\logistic_F0"
+  },
+  {
+    "scope": "strict",
+    "lag": 1,
+    "arm": "F1",
+    "state": "data\\probability_phase2\\experiments\\run1\\models\\strict\\lag1_logistic_F1.json",
+    "sha256": "ffead0538cb638489788dccba74641db9a343c535d0f9d1dd1e4d03ffb314314",
+    "predictions": "data\\probability_phase2\\experiments\\run1\\predictions\\strict\\lag1\\logistic_F1"
+  },
+  {
+    "scope": "strict",
+    "lag": 1,
+    "arm": "F4",
+    "state": "data\\probability_phase2\\experiments\\run1\\models\\strict\\lag1_logistic_F4.json",
+    "sha256": "689725aab42d60eefff27f5d44063baf65fccf215ea255bd5c6fdbe046ea7049",
+    "predictions": "data\\probability_phase2\\experiments\\run1\\predictions\\strict\\lag1\\logistic_F4"
+  },
+  {
+    "scope": "strict",
+    "lag": 2,
+    "arm": "F0",
+    "state": "data\\probability_phase2\\experiments\\run1\\models\\strict\\lag2_logistic_F0.json",
+    "sha256": "20b1c4392e9093c225ce3bf4659f32f79c100d3d341bf50b9353127fab890146",
+    "predictions": "data\\probability_phase2\\experiments\\run1\\predictions\\strict\\lag2\\logistic_F0"
+  },
+  {
+    "scope": "strict",
+    "lag": 2,
+    "arm": "F1",
+    "state": "data\\probability_phase2\\experiments\\run1\\models\\strict\\lag2_logistic_F1.json",
+    "sha256": "31a40c6b5c60f0abe60eb16944ab2351a58a725ee7b3faa8539425870b6b42df",
+    "predictions": "data\\probability_phase2\\experiments\\run1\\predictions\\strict\\lag2\\logistic_F1"
+  },
+  {
+    "scope": "strict",
+    "lag": 2,
+    "arm": "F4",
+    "state": "data\\probability_phase2\\experiments\\run1\\models\\strict\\lag2_logistic_F4.json",
+    "sha256": "e2ad6e16571317fdcc8f9bc2651043314c42b17aa6cfcf7c1d101265bc8709cf",
+    "predictions": "data\\probability_phase2\\experiments\\run1\\predictions\\strict\\lag2\\logistic_F4"
+  }
+]

@@ -1,0 +1,293 @@
+{
+  "created_at_utc": "2026-11-05T23:53:53.092209+00:00",
+  "purpose": "Small phase-five delivery inventory; no raw weather or phase-four arrays copied",
+  "phase4_base_commit": "4bb4028977ee3ad75d2035e60887491f53096a49",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 2828,
+      "sha256": "2b06b2bb243d8dabeed140cbc2060a04ebda00487bcb7141b4f66577f17448f7"
+    },
+    {
+      "path": "configs/probability_phase5_application.json",
+      "bytes": 7342,
+      "sha256": "854f2528e82973532455f09acc2e1b71a134c429d18b39440ee52e291feac216"
+    },
+    {
+      "path": "configs/probability_phase5_sites.json",
+      "bytes": 3034,
+      "sha256": "a85b39322f63d3f930f110c1a951bb23d6f1e4e686c3205fc58cf951f93f718d"
+    },
+    {
+      "path": "data/probability_phase5/aggregate_scores.csv",
+      "bytes": 43799,
+      "sha256": "a7415e60cd2c29577f8f0d44b91c8962baf84df671621b35dc145ddd84e6e2c4"
+    },
+    {
+      "path": "data/probability_phase5/annual_alerts.csv",
+      "bytes": 189171,
+      "sha256": "b2d3f929afcc4bd9a048e21d85ea8dcb9f4b8a4b6fff853e29df3de481e8661f"
+    },
+    {
+      "path": "data/probability_phase5/annual_scores.csv",
+      "bytes": 306543,
+      "sha256": "6c1a3adef92f13811a92cb5c5e5279066aab17257b05d86a5e74548c2570cfb2"
+    },
+    {
+      "path": "data/probability_phase5/data_gaps.csv",
+      "bytes": 5229,
+      "sha256": "cee441d264820227f2666b032d9804c508064169a6ab2e7f185969964022912f"
+    },
+    {
+      "path": "data/probability_phase5/extraction_manifest.json",
+      "bytes": 29407,
+      "sha256": "d4c3da1010bbf9bf2008cec2312bac0df1b9440dd87f5e2302c686c3714b7292"
+    },
+    {
+      "path": "data/probability_phase5/historical_annual.csv",
+      "bytes": 4367,
+      "sha256": "2e1507a6e2c566ce9adaa02d077ca14f9f6eff32bfa155f593284dbced893ef8"
+    },
+    {
+      "path": "data/probability_phase5/historical_daily.csv",
+      "bytes": 221602,
+      "sha256": "c05c14b5cd5fb5f1bd8cf51a3db787b500e03aa385c52a2cea7cdc5ac9fc795b"
+    },
+    {
+      "path": "data/probability_phase5/historical_grid_summary.json",
+      "bytes": 206461,
+      "sha256": "39d434a91fcf1b2b1c500aa121e1a7f23469efde432446acf5b0c6496d4577e1"
+    },
+    {
+      "path": "data/probability_phase5/impact_pathways.csv",
+      "bytes": 6862,
+      "sha256": "b2fe63e0ccc5c03d8128d713d8b55615b6805f79513266bd9bdbd30110aed06c"
+    },
+    {
+      "path": "data/probability_phase5/monitoring_queue.csv",
+      "bytes": 6244,
+      "sha256": "a2e8daf19336ed2238223ec2cde183ea1094eb491ab4dc8ab6a8b782a4875113"
+    },
+    {
+      "path": "data/probability_phase5/predictions.csv",
+      "bytes": 5654373,
+      "sha256": "c2c281d4d5c935e24952ef71665578a3f06548d0874703caa71d8c1a739acf6f"
+    },
+    {
+      "path": "data/probability_phase5/pytest.xml",
+      "bytes": 1948,
+      "sha256": "4cff024c4260c53485d434ce8ccf6b27fa172c58fe4b2303eea497849c3f00df"
+    },
+    {
+      "path": "data/probability_phase5/quality_review/application_gate_label_annotations.json",
+      "bytes": 9705,
+      "sha256": "9a1fbf21950ed1b1f339b3d8093d4406ec7c7ddcfac144e23aa4ee750569b89e"
+    },
+    {
+      "path": "data/probability_phase5/quality_review/final_delivery_receipt.json",
+      "bytes": 1304,
+      "sha256": "638455a20c149e4460a61d7e34f6e1629f6ed41c9f7e83cece33223b8d25c81a"
+    },
+    {
+      "path": "data/probability_phase5/quality_review/review_receipt.json",
+      "bytes": 11235,
+      "sha256": "124e9c2f03cff21ede143234f33e85016343713eefde07d275c9bd3ca7d33da0"
+    },
+    {
+      "path": "data/probability_phase5/quality_review/targeted_tests.xml",
+      "bytes": 646,
+      "sha256": "3991fbb01dd2953e96295359f80725aafbdc8e15a3c4098db74bcdf5a618c85e"
+    },
+    {
+      "path": "data/probability_phase5/rebuild_verification.json",
+      "bytes": 3530,
+      "sha256": "1d3d54c902fcb14e8dea9ae868a8bfb3acc7cf1cd118a49ba18c8376afb5953b"
+    },
+    {
+      "path": "data/probability_phase5/reliability.csv",
+      "bytes": 1330216,
+      "sha256": "500fbb34f33e2aeb7ec7e2c4c16dadc94ea80d65426fb2ccbda5e8cde628257d"
+    },
+    {
+      "path": "data/probability_phase5/report_manifest.json",
+      "bytes": 2583,
+      "sha256": "d5fd203668c2259cc515fec25aa8a3d39f26bcacf34c59e9d93a994ee54f24e7"
+    },
+    {
+      "path": "data/probability_phase5/site_cards.json",
+      "bytes": 57437,
+      "sha256": "f3c7116c981145ad4da6e116d5a206c70effd12437e220e7519b8f37a5ab3857"
+    },
+    {
+      "path": "data/probability_phase5/site_mapping.csv",
+      "bytes": 1168,
+      "sha256": "d7042bae982c1e26535bcdc65e42beefb5b8b931a029dd0df1affd07bf858bf2"
+    },
+    {
+      "path": "data/probability_phase5/source_catalog.json",
+      "bytes": 19841,
+      "sha256": "9c910a32a10b4fb6057ac8ce799e06e9d4028f877998d0d6377dcd22efc47669"
+    },
+    {
+      "path": "data/probability_phase5/validation.json",
+      "bytes": 801,
+      "sha256": "d939aaa34758bb798817ea9d93fc7e9d8ecb776374bf6553e441ed0ee9decfef"
+    },
+    {
+      "path": "data/probability_phase5/validation_receipt.json",
+      "bytes": 1039,
+      "sha256": "297b867d0de301cc85046587488d6eaf66d45c09a3f321c9c162749ddf3217fc"
+    },
+    {
+      "path": "docs/PROBABILITY_PHASE5_EXECUTION.md",
+      "bytes": 5250,
+      "sha256": "6b27cfc5f8d4b5624e2c15862c75398e18dc050eb024a52aa185475dc04bae29"
+    },
+    {
+      "path": "docs/PROBABILITY_PHASE5_FINAL_QUALITY_REVIEW.md",
+      "bytes": 5776,
+      "sha256": "27abc37d62ca647689460468a3a429bf0b4e6ad8cfac76bc7c9eba88b8538382"
+    },
+    {
+      "path": "docs/PROBABILITY_PHASE5_MODEL_USE.md",
+      "bytes": 4534,
+      "sha256": "1d5ec37e7e01e13b96efdb8b633c646494c70c25bad8d6c3603e473aaca5148b"
+    },
+    {
+      "path": "docs/PROBABILITY_PHASE5_PROTOCOL.md",
+      "bytes": 5252,
+      "sha256": "a159f1de84af292a5f5dedd51a142708522e69e25863cf6fc797fcb2d32dfb28"
+    },
+    {
+      "path": "docs/PROBABILITY_PHASE5_REPRODUCE.md",
+      "bytes": 5081,
+      "sha256": "ba0fbd149a424885ffa40c5e97cd3044e2da5084ba941eb128b1fe5fd9e2b3f9"
+    },
+    {
+      "path": "docs/PROBABILITY_PHASE5_RESULTS.md",
+      "bytes": 7304,
+      "sha256": "b720d27592f4e081ffbd29afa2fa8da4a5d2676f3a6e8ff543cbdb2bc1940b24"
+    },
+    {
+      "path": "README.md",
+      "bytes": 20169,
+      "sha256": "8ab1065dc80eaf1f35aa171febae62ccc8a1d796697a9ac52342f5d36cbff2f8"
+    },
+    {
+      "path": "reports/probability_phase5/cards/factory_001.md",
+      "bytes": 5823,
+      "sha256": "a71ec7557d987550430da60888ef35103b1a195d6c6247d16d2ef8edb46810d0"
+    },
+    {
+      "path": "reports/probability_phase5/cards/factory_002.md",
+      "bytes": 7159,
+      "sha256": "9c05068e2ec0f3b686d68809414129b434ee9ade50842d4afd13fba57ee71c59"
+    },
+    {
+      "path": "reports/probability_phase5/cards/factory_003.md",
+      "bytes": 7099,
+      "sha256": "6a4ec0aa48a3019d486cf784f44cc4a96a35b0d677ca86d2c66162d03ed4e421"
+    },
+    {
+      "path": "reports/probability_phase5/cards/factory_004.md",
+      "bytes": 7217,
+      "sha256": "2f06d1b3f5a163af4a957930587a265bef781f1fc6522963e1fc326b2995f515"
+    },
+    {
+      "path": "reports/probability_phase5/cards/factory_005.md",
+      "bytes": 6763,
+      "sha256": "e047fa9a29cf2a988adae900a8c7321e133c00176af4e50b857d96f77658bd59"
+    },
+    {
+      "path": "reports/probability_phase5/figures/annual_all.png",
+      "bytes": 327217,
+      "sha256": "a40e3182494c6b42fe27566fdf56a51a1d82d2fd554edf110208afd98e37555c"
+    },
+    {
+      "path": "reports/probability_phase5/figures/annual_onset.png",
+      "bytes": 302731,
+      "sha256": "deb37fdaa12b5e37653ec7922281cbd10a196aaa187d17e3953efc94ecc569d1"
+    },
+    {
+      "path": "reports/probability_phase5/figures/historical_days.png",
+      "bytes": 118919,
+      "sha256": "33470fe13164e509a75e9f3cc0930cabee26506746e1625289d8b3935eb28f2d"
+    },
+    {
+      "path": "reports/probability_phase5/figures/mapping.png",
+      "bytes": 72860,
+      "sha256": "a7c3adbff8c7faa919ce24ffbca788d3feeeb76407194287af4d99b566e2e721"
+    },
+    {
+      "path": "reports/probability_phase5/index.html",
+      "bytes": 24774,
+      "sha256": "874886c2f96d16973231bfff1036b396e236502a41b4035e5f6f6250377cdbd4"
+    },
+    {
+      "path": "reports/probability_phase5/qa/chromium-debug.log",
+      "bytes": 912,
+      "sha256": "8fce9996e35b1517c060866a05c932fa417cd16c523d5878c3e40d90d512785f"
+    },
+    {
+      "path": "reports/probability_phase5/qa/hangzhou-card-expanded.png",
+      "bytes": 137034,
+      "sha256": "d7690f748121958511bf39bc02b7a49ebc46eec8ad88cd2120987036d893e5b3"
+    },
+    {
+      "path": "reports/probability_phase5/qa/report-1280.png",
+      "bytes": 106331,
+      "sha256": "26e6df486439558d2308055c7bc273b9e7044622da8831bb4dacd70d197a5283"
+    },
+    {
+      "path": "reports/probability_phase5/qa/report-390.png",
+      "bytes": 60639,
+      "sha256": "466e99ec39daa3b8f250096674e58b11c965248fb3d3ad3d317272c9ed1812d1"
+    },
+    {
+      "path": "reports/probability_phase5/qa/report-768.png",
+      "bytes": 72734,
+      "sha256": "640e6b1e089edbf18eca6bc83286b49887c4b41a2c967cba5c74db8a6376fc16"
+    },
+    {
+      "path": "reports/probability_phase5/qa/verification.json",
+      "bytes": 407,
+      "sha256": "4057597d789a96b5745ec58aa2885e9cda42c9c4a2aa41de99201e84bbf49dc5"
+    },
+    {
+      "path": "src/probability_site_evidence.py",
+      "bytes": 7369,
+      "sha256": "eae06b4565c3d58a462cd8a2c0167e8de0522a03587ba2f45a6f3833988d41f1"
+    },
+    {
+      "path": "tests/test_probability_site_evidence.py",
+      "bytes": 8913,
+      "sha256": "93441706f53ff30b759ff9716f2689871bfe6fa71acc39dc06297dcd6dba4e72"
+    },
+    {
+      "path": "tools/probability_phase5_archive.py",
+      "bytes": 4281,
+      "sha256": "bbb8cdf14421ad41556d1aa899f2685490446b07a20c9a0817a127a00045ae7c"
+    },
+    {
+      "path": "tools/probability_phase5_quality_check.py",
+      "bytes": 13114,
+      "sha256": "4dfe29b7a533480d76558290975ac0ea0e291456749e4db321bfa38b3ff333d9"
+    },
+    {
+      "path": "tools/probability_phase5_report.py",
+      "bytes": 28612,
+      "sha256": "2e501920b91ce85ae00b5e1c8928ec80ee7ac993ef3382a7f1614ab55ab815a8"
+    },
+    {
+      "path": "tools/probability_phase5_sites.py",
+      "bytes": 10225,
+      "sha256": "4b187ee2cdc5998ca10d663c536e16b512c1904518222d5f4886cf77c8ffad0e"
+    },
+    {
+      "path": "tools/probability_phase5_verify_ui.cjs",
+      "bytes": 3544,
+      "sha256": "b5676a86dcc33fb471dd97da3621a72047804cb1aaa1978b37239a3dec8a7a28"
+    }
+  ],
+  "total_bytes": 9516758
+}

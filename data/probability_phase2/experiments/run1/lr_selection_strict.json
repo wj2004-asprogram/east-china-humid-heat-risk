@@ -1,0 +1,58 @@
+{
+  "scope": "strict",
+  "search_arm": "F4",
+  "search_lag": 1,
+  "solver": "lbfgs",
+  "max_iter": 2000,
+  "tol": 1e-06,
+  "threads": 2,
+  "selection": "mean annual raw Brier over 2015,2016,2017; smaller C wins exact ties",
+  "candidates": [
+    {
+      "C": 0.01,
+      "converged": true,
+      "iterations": 486,
+      "runtime_seconds": 75.71393269998953,
+      "warnings": [],
+      "annual_validation_brier": {
+        "2015": 0.05103646394290591,
+        "2016": 0.08687931196367864,
+        "2017": 0.08822248112983407
+      },
+      "mean_annual_validation_brier": 0.07537941901213953
+    },
+    {
+      "C": 0.1,
+      "converged": true,
+      "iterations": 1236,
+      "runtime_seconds": 193.82425050000893,
+      "warnings": [],
+      "annual_validation_brier": {
+        "2015": 0.05095794427136752,
+        "2016": 0.08683559992916022,
+        "2017": 0.08825929049152133
+      },
+      "mean_annual_validation_brier": 0.07535094489734968
+    },
+    {
+      "C": 1.0,
+      "converged": false,
+      "iterations": 2000,
+      "runtime_seconds": 309.793786299997,
+      "warnings": [
+        "lbfgs failed to converge after 2000 iteration(s) (status=1):\nSTOP: TOTAL NO. OF ITERATIONS REACHED LIMIT\n\nIncrease the number of iterations to improve the convergence (max_iter=2000).\nYou might also want to scale the data as shown in:\n    https://scikit-learn.org/stable/modules/preprocessing.html\nPlease also refer to the documentation for alternative solver options:\n    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression"
+      ]
+    },
+    {
+      "C": 10.0,
+      "converged": false,
+      "iterations": 2000,
+      "runtime_seconds": 312.35401640000055,
+      "warnings": [
+        "lbfgs failed to converge after 2000 iteration(s) (status=1):\nSTOP: TOTAL NO. OF ITERATIONS REACHED LIMIT\n\nIncrease the number of iterations to improve the convergence (max_iter=2000).\nYou might also want to scale the data as shown in:\n    https://scikit-learn.org/stable/modules/preprocessing.html\nPlease also refer to the documentation for alternative solver options:\n    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression"
+      ]
+    }
+  ],
+  "selected_C": 0.1,
+  "reuse": "F0,F1,F4 and both lags within this scope"
+}

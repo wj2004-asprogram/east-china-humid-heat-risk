@@ -1,0 +1,6 @@
+﻿site_id,site_name,entity,production_address,site_verification,primary_grid_id,screening_status,shared_verified_site_count,case_role,typical_year,extreme_year
+factory_001,特斯拉上海超级工厂,特斯拉（上海）有限公司,上海市浦东新区江山路5000号,verified_public_sources,"30.7500,121.7500",non_land_grid,1,masked_primary_no_temporal_result,,
+factory_002,长安福特杭州工厂,长安福特汽车有限公司杭州分公司,浙江省杭州市前进工业园区长福杭路135号,verified_public_sources,"30.2500,120.5000",ok,3,verified_primary,2008,2022
+factory_003,费列罗杭州工厂,费列罗食品（杭州）有限公司,浙江省杭州市江东工业园区江东二路2727号,verified_public_sources,"30.2500,120.5000",ok,3,verified_primary,2008,2022
+factory_004,格力杭州生产基地,格力电器（杭州）有限公司,浙江省杭州市钱塘区江东一路2345号,verified_public_sources,"30.2500,120.5000",ok,3,verified_primary,2008,2022
+factory_005,采埃孚上海元江路厂区,采埃孚汽车零部件系统（上海）有限公司；采埃孚商用车底盘技术（上海）有限公司,上海市闵行区元江路4440号,verified_public_sources,"31.0000,121.5000",ok,1,verified_primary,2005,2022

@@ -1,0 +1,36 @@
+{
+  "created_at_utc": "2026-11-05T23:52:41.798683+00:00",
+  "source_extraction_manifest_sha256": "d4c3da1010bbf9bf2008cec2312bac0df1b9440dd87f5e2302c686c3714b7292",
+  "configuration_sha256": {
+    "configs\\probability_phase5_sites.json": "a85b39322f63d3f930f110c1a951bb23d6f1e4e686c3205fc58cf951f93f718d",
+    "configs\\probability_phase5_application.json": "854f2528e82973532455f09acc2e1b71a134c429d18b39440ee52e291feac216"
+  },
+  "source_code_sha256": {
+    "tools/probability_phase5_report.py": "2e501920b91ce85ae00b5e1c8928ec80ee7ac993ef3382a7f1614ab55ab815a8"
+  },
+  "software": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6"
+  },
+  "outputs_sha256": {
+    "data/probability_phase5/site_cards.json": "f3c7116c981145ad4da6e116d5a206c70effd12437e220e7519b8f37a5ab3857",
+    "data/probability_phase5/impact_pathways.csv": "b2fe63e0ccc5c03d8128d713d8b55615b6805f79513266bd9bdbd30110aed06c",
+    "data/probability_phase5/data_gaps.csv": "cee441d264820227f2666b032d9804c508064169a6ab2e7f185969964022912f",
+    "data/probability_phase5/monitoring_queue.csv": "a2e8daf19336ed2238223ec2cde183ea1094eb491ab4dc8ab6a8b782a4875113",
+    "docs/PROBABILITY_PHASE5_RESULTS.md": "b720d27592f4e081ffbd29afa2fa8da4a5d2676f3a6e8ff543cbdb2bc1940b24",
+    "reports/probability_phase5/index.html": "874886c2f96d16973231bfff1036b396e236502a41b4035e5f6f6250377cdbd4",
+    "reports/probability_phase5/cards/factory_001.md": "a71ec7557d987550430da60888ef35103b1a195d6c6247d16d2ef8edb46810d0",
+    "reports/probability_phase5/cards/factory_002.md": "9c05068e2ec0f3b686d68809414129b434ee9ade50842d4afd13fba57ee71c59",
+    "reports/probability_phase5/cards/factory_003.md": "6a4ec0aa48a3019d486cf784f44cc4a96a35b0d677ca86d2c66162d03ed4e421",
+    "reports/probability_phase5/cards/factory_004.md": "2f06d1b3f5a163af4a957930587a265bef781f1fc6522963e1fc326b2995f515",
+    "reports/probability_phase5/cards/factory_005.md": "e047fa9a29cf2a988adae900a8c7321e133c00176af4e50b857d96f77658bd59",
+    "reports/probability_phase5/figures/annual_all.png": "a40e3182494c6b42fe27566fdf56a51a1d82d2fd554edf110208afd98e37555c",
+    "reports/probability_phase5/figures/annual_onset.png": "deb37fdaa12b5e37653ec7922281cbd10a196aaa187d17e3953efc94ecc569d1",
+    "reports/probability_phase5/figures/historical_days.png": "33470fe13164e509a75e9f3cc0930cabee26506746e1625289d8b3935eb28f2d",
+    "reports/probability_phase5/figures/mapping.png": "a7c3adbff8c7faa919ce24ffbca788d3feeeb76407194287af4d99b566e2e721"
+  },
+  "cards": 5,
+  "distinct_climate_sequences": 2,
+  "no_new_model_selection": true
+}

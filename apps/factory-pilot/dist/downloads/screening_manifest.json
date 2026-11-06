@@ -1,0 +1,25 @@
+{
+  "input_sha256": {
+    "sites": "38a0aecb84bd2c2772fdef20c266d92c964645477e38a90c6bde4e504a2c09f3",
+    "heat_index": "15809010f8228b41f14883612f4487010698e0c8e58c26e1783bee0548f11e06",
+    "risk": "9efea1d5b2d2750aa200813c7b5ffafb101992367503316664b26800dcf93d5b"
+  },
+  "day_definition": "local calendar days, UTC+8",
+  "first_date": "2000-06-01",
+  "last_date": "2024-08-31",
+  "threshold_c": 40.6,
+  "comparison": ">=",
+  "sites": 35,
+  "status_counts": {
+    "ok": 34,
+    "non_land_grid": 1
+  },
+  "unique_land_grids": 4,
+  "coordinate_match": "nearest coordinate on regular grid; ties follow file coordinate order",
+  "metric_policy": "JJA only; exclude incomplete summers from aggregate metrics; no ocean substitution",
+  "interpretation": "Historical environmental screening at current candidate locations; not workforce exposure, occupational compliance or ESG ratings",
+  "outputs_sha256": {
+    "site_summary.csv": "6fbf4a4030b3e3e6a6331b27ae904aac106c9abe2319b22fd1b389087d6af12d",
+    "site_annual.csv": "dd9fbf8e337a564be95caf29cf62019f2d71550cf4a5982f402a3c6611e262d9"
+  }
+}

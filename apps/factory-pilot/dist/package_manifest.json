@@ -1,0 +1,13 @@
+{
+  "input_sha256": {
+    "catalog": "e40a3a9e29611ce43bb58d1696d6f0853fa9e51c932b36c8c8ee2f0e51477cf6",
+    "sites_csv": "38a0aecb84bd2c2772fdef20c266d92c964645477e38a90c6bde4e504a2c09f3"
+  },
+  "output_sha256": {
+    "pilot-data.js": "5a9b1327af01b656d4884da58318edacea219ccc1c89ef19417943cc6904ee34",
+    "downloads/site_summary.csv": "6fbf4a4030b3e3e6a6331b27ae904aac106c9abe2319b22fd1b389087d6af12d",
+    "downloads/site_annual.csv": "dd9fbf8e337a564be95caf29cf62019f2d71550cf4a5982f402a3c6611e262d9",
+    "downloads/screening_manifest.json": "76bd8b450c7ca25f62d6b26639ae9ecb91bd51bd7493061a9223040c41e3c96c",
+    "downloads/factory_sites.json": "e40a3a9e29611ce43bb58d1696d6f0853fa9e51c932b36c8c8ee2f0e51477cf6"
+  }
+}

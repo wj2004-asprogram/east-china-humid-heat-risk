@@ -1,0 +1,630 @@
+{
+  "year": 2000,
+  "rows_per_instance": 64,
+  "instances": [
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model": "logistic_F0",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model": "lightgbm_F0",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model": "logistic_F1",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model": "lightgbm_F1",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model": "logistic_F2",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model": "lightgbm_F2",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model": "logistic_F3",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model": "lightgbm_F3",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model": "logistic_F4",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model": "lightgbm_F4",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model": "logistic_F0P",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model": "lightgbm_F0P",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model": "logistic_F1P",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model": "lightgbm_F1P",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model": "logistic_F2_minus_NT",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model": "lightgbm_F2_minus_NT",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model": "logistic_F2_minus_NM",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model": "lightgbm_F2_minus_NM",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model": "logistic_F3_minus_RT",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model": "lightgbm_F3_minus_RT",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model": "logistic_F3_minus_RM",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model": "lightgbm_F3_minus_RM",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model": "persistence",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model": "seasonal",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model": "seasonal_pooled",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model": "transition",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model": "logistic_F0",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model": "lightgbm_F0",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model": "logistic_F1",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model": "lightgbm_F1",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model": "logistic_F2",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model": "lightgbm_F2",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model": "logistic_F3",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model": "lightgbm_F3",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model": "logistic_F4",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model": "lightgbm_F4",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model": "logistic_F0P",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model": "lightgbm_F0P",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model": "logistic_F1P",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model": "lightgbm_F1P",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model": "logistic_F2_minus_NT",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model": "lightgbm_F2_minus_NT",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model": "logistic_F2_minus_NM",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model": "lightgbm_F2_minus_NM",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model": "logistic_F3_minus_RT",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model": "lightgbm_F3_minus_RT",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model": "logistic_F3_minus_RM",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model": "lightgbm_F3_minus_RM",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model": "persistence",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model": "seasonal",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model": "seasonal_pooled",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model": "transition",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model": "logistic_F0",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model": "lightgbm_F0",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model": "logistic_F1",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model": "lightgbm_F1",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model": "logistic_F2",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model": "lightgbm_F2",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model": "logistic_F3",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model": "lightgbm_F3",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model": "logistic_F4",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model": "lightgbm_F4",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model": "logistic_F0P",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model": "lightgbm_F0P",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model": "logistic_F1P",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model": "lightgbm_F1P",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model": "logistic_F2_minus_NT",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model": "lightgbm_F2_minus_NT",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model": "logistic_F2_minus_NM",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model": "lightgbm_F2_minus_NM",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model": "logistic_F3_minus_RT",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model": "lightgbm_F3_minus_RT",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model": "logistic_F3_minus_RM",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model": "lightgbm_F3_minus_RM",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model": "persistence",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model": "seasonal",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model": "seasonal_pooled",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model": "transition",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model": "logistic_F0",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model": "lightgbm_F0",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model": "logistic_F1",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model": "lightgbm_F1",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model": "logistic_F2",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model": "lightgbm_F2",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model": "logistic_F3",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model": "lightgbm_F3",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model": "logistic_F4",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model": "lightgbm_F4",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model": "logistic_F0P",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model": "lightgbm_F0P",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model": "logistic_F1P",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model": "lightgbm_F1P",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model": "logistic_F2_minus_NT",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model": "lightgbm_F2_minus_NT",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model": "logistic_F2_minus_NM",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model": "lightgbm_F2_minus_NM",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model": "logistic_F3_minus_RT",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model": "lightgbm_F3_minus_RT",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model": "logistic_F3_minus_RM",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model": "lightgbm_F3_minus_RM",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model": "persistence",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model": "seasonal",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model": "seasonal_pooled",
+      "max_absolute_error": 0.0
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model": "transition",
+      "max_absolute_error": 0.0
+    }
+  ]
+}

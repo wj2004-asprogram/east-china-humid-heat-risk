@@ -1,0 +1,794 @@
+{
+  "planned_formal_fits": 58,
+  "planned_models": 44,
+  "resource_pilot_excluded_from_formal_count": true,
+  "completed_or_fitted": 58,
+  "failed": 0,
+  "interrupted": 0,
+  "not_executed": 0,
+  "pending_total": 0,
+  "exported_models": 44,
+  "pending_reason": "Awaiting scheduled continuation; interrupted fits remain pending and are not numerical failures",
+  "fits": [
+    {
+      "scope": "temporal",
+      "operation": "search",
+      "candidate": {
+        "num_leaves": 7,
+        "min_child_samples": 100,
+        "reg_lambda": 1
+      },
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\search\\temporal\\leaves7_child100_lambda1\\result.json"
+    },
+    {
+      "scope": "temporal",
+      "operation": "search",
+      "candidate": {
+        "num_leaves": 7,
+        "min_child_samples": 100,
+        "reg_lambda": 10
+      },
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\search\\temporal\\leaves7_child100_lambda10\\result.json"
+    },
+    {
+      "scope": "temporal",
+      "operation": "search",
+      "candidate": {
+        "num_leaves": 7,
+        "min_child_samples": 500,
+        "reg_lambda": 1
+      },
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\search\\temporal\\leaves7_child500_lambda1\\result.json"
+    },
+    {
+      "scope": "temporal",
+      "operation": "search",
+      "candidate": {
+        "num_leaves": 7,
+        "min_child_samples": 500,
+        "reg_lambda": 10
+      },
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\search\\temporal\\leaves7_child500_lambda10\\result.json"
+    },
+    {
+      "scope": "temporal",
+      "operation": "search",
+      "candidate": {
+        "num_leaves": 15,
+        "min_child_samples": 100,
+        "reg_lambda": 1
+      },
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\search\\temporal\\leaves15_child100_lambda1\\result.json"
+    },
+    {
+      "scope": "temporal",
+      "operation": "search",
+      "candidate": {
+        "num_leaves": 15,
+        "min_child_samples": 100,
+        "reg_lambda": 10
+      },
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\search\\temporal\\leaves15_child100_lambda10\\result.json"
+    },
+    {
+      "scope": "temporal",
+      "operation": "search",
+      "candidate": {
+        "num_leaves": 15,
+        "min_child_samples": 500,
+        "reg_lambda": 1
+      },
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\search\\temporal\\leaves15_child500_lambda1\\result.json"
+    },
+    {
+      "scope": "temporal",
+      "operation": "search",
+      "candidate": {
+        "num_leaves": 15,
+        "min_child_samples": 500,
+        "reg_lambda": 10
+      },
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\search\\temporal\\leaves15_child500_lambda10\\result.json"
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "arm": "F0",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "arm": "F1",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "arm": "F2",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "arm": "F3",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "arm": "F0P",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "arm": "F1P",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "arm": "F2_minus_NT",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "arm": "F2_minus_NM",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "arm": "F3_minus_RT",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "arm": "F3_minus_RM",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "arm": "F0",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "arm": "F1",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "arm": "F2",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "arm": "F3",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "arm": "F4",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "arm": "F0P",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "arm": "F1P",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "arm": "F2_minus_NT",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "arm": "F2_minus_NM",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "arm": "F3_minus_RT",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "arm": "F3_minus_RM",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "strict",
+      "operation": "search",
+      "candidate": {
+        "num_leaves": 7,
+        "min_child_samples": 100,
+        "reg_lambda": 1
+      },
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child100_lambda1\\result.json"
+    },
+    {
+      "scope": "strict",
+      "operation": "search",
+      "candidate": {
+        "num_leaves": 7,
+        "min_child_samples": 100,
+        "reg_lambda": 10
+      },
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child100_lambda10\\result.json"
+    },
+    {
+      "scope": "strict",
+      "operation": "search",
+      "candidate": {
+        "num_leaves": 7,
+        "min_child_samples": 500,
+        "reg_lambda": 1
+      },
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child500_lambda1\\result.json"
+    },
+    {
+      "scope": "strict",
+      "operation": "search",
+      "candidate": {
+        "num_leaves": 7,
+        "min_child_samples": 500,
+        "reg_lambda": 10
+      },
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child500_lambda10\\result.json"
+    },
+    {
+      "scope": "strict",
+      "operation": "search",
+      "candidate": {
+        "num_leaves": 15,
+        "min_child_samples": 100,
+        "reg_lambda": 1
+      },
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves15_child100_lambda1\\result.json"
+    },
+    {
+      "scope": "strict",
+      "operation": "search",
+      "candidate": {
+        "num_leaves": 15,
+        "min_child_samples": 100,
+        "reg_lambda": 10
+      },
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves15_child100_lambda10\\result.json"
+    },
+    {
+      "scope": "strict",
+      "operation": "search",
+      "candidate": {
+        "num_leaves": 15,
+        "min_child_samples": 500,
+        "reg_lambda": 1
+      },
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves15_child500_lambda1\\result.json"
+    },
+    {
+      "scope": "strict",
+      "operation": "search",
+      "candidate": {
+        "num_leaves": 15,
+        "min_child_samples": 500,
+        "reg_lambda": 10
+      },
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves15_child500_lambda10\\result.json"
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "arm": "F0",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "arm": "F1",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "arm": "F2",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "arm": "F3",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "arm": "F0P",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "arm": "F1P",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "arm": "F2_minus_NT",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "arm": "F2_minus_NM",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "arm": "F3_minus_RT",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "arm": "F3_minus_RM",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "arm": "F0",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "arm": "F1",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "arm": "F2",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "arm": "F3",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "arm": "F4",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "arm": "F0P",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "arm": "F1P",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "arm": "F2_minus_NT",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "arm": "F2_minus_NM",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "arm": "F3_minus_RT",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "arm": "F3_minus_RM",
+      "operation": "fixed_reuse",
+      "status": "fitted"
+    }
+  ],
+  "models": [
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "arm": "F0",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\temporal\\lag1_lightgbm_F0.json"
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "arm": "F1",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\temporal\\lag1_lightgbm_F1.json"
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "arm": "F2",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\temporal\\lag1_lightgbm_F2.json"
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "arm": "F3",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\temporal\\lag1_lightgbm_F3.json"
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "arm": "F4",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\temporal\\lag1_lightgbm_F4.json"
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "arm": "F0P",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\temporal\\lag1_lightgbm_F0P.json"
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "arm": "F1P",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\temporal\\lag1_lightgbm_F1P.json"
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "arm": "F2_minus_NT",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\temporal\\lag1_lightgbm_F2_minus_NT.json"
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "arm": "F2_minus_NM",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\temporal\\lag1_lightgbm_F2_minus_NM.json"
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "arm": "F3_minus_RT",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\temporal\\lag1_lightgbm_F3_minus_RT.json"
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "arm": "F3_minus_RM",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\temporal\\lag1_lightgbm_F3_minus_RM.json"
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "arm": "F0",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\temporal\\lag2_lightgbm_F0.json"
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "arm": "F1",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\temporal\\lag2_lightgbm_F1.json"
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "arm": "F2",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\temporal\\lag2_lightgbm_F2.json"
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "arm": "F3",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\temporal\\lag2_lightgbm_F3.json"
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "arm": "F4",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\temporal\\lag2_lightgbm_F4.json"
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "arm": "F0P",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\temporal\\lag2_lightgbm_F0P.json"
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "arm": "F1P",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\temporal\\lag2_lightgbm_F1P.json"
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "arm": "F2_minus_NT",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\temporal\\lag2_lightgbm_F2_minus_NT.json"
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "arm": "F2_minus_NM",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\temporal\\lag2_lightgbm_F2_minus_NM.json"
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "arm": "F3_minus_RT",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\temporal\\lag2_lightgbm_F3_minus_RT.json"
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "arm": "F3_minus_RM",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\temporal\\lag2_lightgbm_F3_minus_RM.json"
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "arm": "F0",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\strict\\lag1_lightgbm_F0.json"
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "arm": "F1",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\strict\\lag1_lightgbm_F1.json"
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "arm": "F2",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\strict\\lag1_lightgbm_F2.json"
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "arm": "F3",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\strict\\lag1_lightgbm_F3.json"
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "arm": "F4",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\strict\\lag1_lightgbm_F4.json"
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "arm": "F0P",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\strict\\lag1_lightgbm_F0P.json"
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "arm": "F1P",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\strict\\lag1_lightgbm_F1P.json"
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "arm": "F2_minus_NT",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\strict\\lag1_lightgbm_F2_minus_NT.json"
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "arm": "F2_minus_NM",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\strict\\lag1_lightgbm_F2_minus_NM.json"
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "arm": "F3_minus_RT",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\strict\\lag1_lightgbm_F3_minus_RT.json"
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "arm": "F3_minus_RM",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\strict\\lag1_lightgbm_F3_minus_RM.json"
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "arm": "F0",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\strict\\lag2_lightgbm_F0.json"
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "arm": "F1",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\strict\\lag2_lightgbm_F1.json"
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "arm": "F2",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\strict\\lag2_lightgbm_F2.json"
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "arm": "F3",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\strict\\lag2_lightgbm_F3.json"
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "arm": "F4",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\strict\\lag2_lightgbm_F4.json"
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "arm": "F0P",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\strict\\lag2_lightgbm_F0P.json"
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "arm": "F1P",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\strict\\lag2_lightgbm_F1P.json"
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "arm": "F2_minus_NT",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\strict\\lag2_lightgbm_F2_minus_NT.json"
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "arm": "F2_minus_NM",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\strict\\lag2_lightgbm_F2_minus_NM.json"
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "arm": "F3_minus_RT",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\strict\\lag2_lightgbm_F3_minus_RT.json"
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "arm": "F3_minus_RM",
+      "status": "complete",
+      "path": "data\\probability_phase3\\lightgbm\\run1\\models\\strict\\lag2_lightgbm_F3_minus_RM.json"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "passed": true,
+  "review_type": "Codex author self-review; not independent or field verification",
+  "checked_at_utc": "2026-11-05T08:39:44.639284+00:00",
+  "evidence_snapshot_date": "2026-10-29",
+  "pytest": {
+    "passed": 24,
+    "files": [
+      "tests/test_esg_site_screen.py",
+      "tests/test_esg_catalog.py",
+      "tests/test_esg_research_data.py"
+    ]
+  },
+  "research_package_validation": {
+    "primary_site_count": 35,
+    "primary_annual_records_matched": 850,
+    "unique_primary_grids": 5,
+    "unique_candidate_grids": 6,
+    "unique_primary_land_grids": 4,
+    "unique_primary_grid_year_records": 100,
+    "sensitivity_only_grids": 1,
+    "input_hashes_unchanged": true,
+    "independent_run_grouping_matches": true
+  },
+  "csv_role_counts": {
+    "annual": {
+      "primary": 100,
+      "sensitivity_only": 25
+    },
+    "daily": {
+      "primary": 9200,
+      "sensitivity_only": 2300
+    }
+  },
+  "research_input_and_output_hashes_match": true,
+  "baseline_package_hashes_match": true,
+  "research_manifest_sha256": "e1b8551bf393bb839ccc392e72c758e2980f49bfd4e29bb243480c39b3be619a",
+  "input_sha256": {
+    "catalog": "e40a3a9e29611ce43bb58d1696d6f0853fa9e51c932b36c8c8ee2f0e51477cf6",
+    "boundaries": "ad501ef40f1af31ec3317076b4e014889fca27f42cf12f64d92c28780dc81349",
+    "screening_manifest": "76bd8b450c7ca25f62d6b26639ae9ecb91bd51bd7493061a9223040c41e3c96c",
+    "heat_index": "15809010f8228b41f14883612f4487010698e0c8e58c26e1783bee0548f11e06",
+    "risk": "9efea1d5b2d2750aa200813c7b5ffafb101992367503316664b26800dcf93d5b"
+  },
+  "output_sha256": {
+    "research-data.js": "2655a1fef66c9858d5083463ef5eab8d4a73c8ff1e5c4e90b4ab24b011dde64c",
+    "downloads/research_grid_annual.csv": "840f5928e4eec6f3308baf8ed7657abfa6927c079273d6e5803ad655566b51b2",
+    "downloads/research_grid_daily.csv": "a18a47c322859dac22b39dcd8a40a404c3fd9e3d64e1173ff53ac9cbbfabbaa8",
+    "downloads/research_grid_summary.csv": "df76d9970dd1c6e461c66b296966302138c6549167777d540038807e004c1c8a",
+    "downloads/research_site_grid_links.csv": "5ffcd8843c0461fe84a575c40ba98a74603030146117f6e70afc4c6e2c492851"
+  },
+  "browser_checks": {
+    "passed": true,
+    "checked_at_utc": "2026-11-05T08:38:31.138Z",
+    "checks": [
+      "verified_default_and_grid_deduplication",
+      "actual_polygon_and_concave_representative_point",
+      "annual_completeness_and_single_summer_daily_values",
+      "annual_and_unrounded_daily_csv",
+      "masked_primary_withholds_all_climate_values",
+      "sensitivity_cannot_replace_primary_or_make_invalid_delta",
+      "evidence_snapshot_mask_rule_and_metadata_disclosure",
+      "keyboard_accessible_tabs",
+      "sensitivity_only_grid_excluded_from_main_comparison",
+      "candidate_city_filter_and_filtered_export",
+      "empty_filter_clears_stale_data_and_disables_exports",
+      "reset_and_missing_metrics_sort_last",
+      "all_mobile_tabs_without_page_overflow",
+      "no_javascript_errors_or_external_requests"
+    ],
+    "browser_version": "151.0.7922.34",
+    "errors": [],
+    "external_requests": []
+  },
+  "screenshot_review": [
+    "desktop-sample.png",
+    "desktop-time.png",
+    "mobile-evidence.png"
+  ],
+  "local_browser_artifacts": "<LOCAL_EVIDENCE_ROOT>\\esg-research-workbench-20261105\\ui_qa",
+  "limitations": [
+    "No new factory evidence fetch or verification; snapshot remains 2026-10-29.",
+    "Sensitivity-only grid has 25 grid-years; never counted in 100 primary grid-years.",
+    "Inherited temperature/K GRIB metadata preserved and explicitly disclosed; derived units=Celsius used.",
+    "Historical ambient grid conditions do not establish employee exposure or site operation over 2000-2024."
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "temporal": {
+    "num_leaves": 15,
+    "min_child_samples": 100,
+    "reg_lambda": 10,
+    "best_iteration": 667,
+    "mean_annual_validation_brier": 0.07841765426174223
+  },
+  "strict": {
+    "num_leaves": 7,
+    "min_child_samples": 500,
+    "reg_lambda": 10,
+    "best_iteration": 928,
+    "mean_annual_validation_brier": 0.07511816258616512
+  }
+}

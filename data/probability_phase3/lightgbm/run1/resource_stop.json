@@ -1,0 +1,13 @@
+{
+  "status": "resource_budget_reached",
+  "batch_plan": "data\\probability_phase3\\execution_batches.json",
+  "deadline_unix": 1793911864.442315,
+  "observed_unix": 1793911966.6655772,
+  "scientific_grid_unchanged": true,
+  "pending_not_failed": true,
+  "historical_snapshot": true,
+  "superseded_by": [
+    "execution_registry.json",
+    "selection_strict.json"
+  ]
+}

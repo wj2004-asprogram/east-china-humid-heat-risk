@@ -1,0 +1,63 @@
+{"stage": "fit_start", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child100_lambda10", "rounds_requested": 2000}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child100_lambda10", "round": 100, "elapsed_seconds": 31.240614499954972}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child100_lambda10", "round": 200, "elapsed_seconds": 58.066595799988136}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child100_lambda10", "round": 300, "elapsed_seconds": 82.7922931999783}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child100_lambda10", "round": 400, "elapsed_seconds": 106.6527025999967}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child100_lambda10", "round": 500, "elapsed_seconds": 130.3867761999718}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child100_lambda10", "round": 600, "elapsed_seconds": 153.43011029995978}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child100_lambda10", "round": 700, "elapsed_seconds": 176.10772969998652}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child100_lambda10", "round": 800, "elapsed_seconds": 199.5800128999981}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child100_lambda10", "round": 900, "elapsed_seconds": 222.11991409998154}
+{"stage": "fit_saved", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child100_lambda10", "best_iteration": 883, "actual_model_iterations": 883, "fit_seconds": 240.3868307999801}
+{"stage": "candidate_complete", "scope": "strict", "candidate": {"num_leaves": 7, "min_child_samples": 100, "reg_lambda": 10}, "status": "complete", "best_iteration": 883, "mean_annual_validation_brier": 0.07514625672543947}
+{"stage": "fit_start", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child500_lambda1", "rounds_requested": 2000}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child500_lambda1", "round": 100, "elapsed_seconds": 33.61582930001896}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child500_lambda1", "round": 200, "elapsed_seconds": 62.85857310000574}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child500_lambda1", "round": 300, "elapsed_seconds": 88.67273170000408}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child500_lambda1", "round": 400, "elapsed_seconds": 114.8450835000258}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child500_lambda1", "round": 500, "elapsed_seconds": 140.40681130002486}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child500_lambda1", "round": 600, "elapsed_seconds": 165.298703700013}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child500_lambda1", "round": 700, "elapsed_seconds": 189.31234230002156}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child500_lambda1", "round": 800, "elapsed_seconds": 213.02228440000908}
+{"stage": "fit_saved", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child500_lambda1", "best_iteration": 783, "actual_model_iterations": 783, "fit_seconds": 233.9429774999735}
+{"stage": "candidate_complete", "scope": "strict", "candidate": {"num_leaves": 7, "min_child_samples": 500, "reg_lambda": 1}, "status": "complete", "best_iteration": 783, "mean_annual_validation_brier": 0.07513364317250541}
+{"stage": "fit_start", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child500_lambda10", "rounds_requested": 2000}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child500_lambda10", "round": 100, "elapsed_seconds": 33.37661510001635}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child500_lambda10", "round": 200, "elapsed_seconds": 62.57364819996292}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child500_lambda10", "round": 300, "elapsed_seconds": 89.3887745999964}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child500_lambda10", "round": 400, "elapsed_seconds": 114.89980869996361}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child500_lambda10", "round": 500, "elapsed_seconds": 139.9069182999665}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child500_lambda10", "round": 600, "elapsed_seconds": 164.15781619999325}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child500_lambda10", "round": 700, "elapsed_seconds": 189.12101210001856}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child500_lambda10", "round": 800, "elapsed_seconds": 213.4122384999646}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child500_lambda10", "round": 900, "elapsed_seconds": 237.7639931999729}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child500_lambda10", "round": 1000, "elapsed_seconds": 261.5306194999721}
+{"stage": "fit_saved", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves7_child500_lambda10", "best_iteration": 928, "actual_model_iterations": 928, "fit_seconds": 267.8781564999954}
+{"stage": "candidate_complete", "scope": "strict", "candidate": {"num_leaves": 7, "min_child_samples": 500, "reg_lambda": 10}, "status": "complete", "best_iteration": 928, "mean_annual_validation_brier": 0.07511816258616512}
+{"stage": "fit_start", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves15_child100_lambda1", "rounds_requested": 2000}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves15_child100_lambda1", "round": 100, "elapsed_seconds": 41.63560460001463}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves15_child100_lambda1", "round": 200, "elapsed_seconds": 77.20987640001113}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves15_child100_lambda1", "round": 300, "elapsed_seconds": 107.72175830003107}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves15_child100_lambda1", "round": 400, "elapsed_seconds": 136.55368060001638}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves15_child100_lambda1", "round": 500, "elapsed_seconds": 164.47536290000426}
+{"stage": "fit_saved", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves15_child100_lambda1", "best_iteration": 467, "actual_model_iterations": 467, "fit_seconds": 182.24042649997864}
+{"stage": "candidate_complete", "scope": "strict", "candidate": {"num_leaves": 15, "min_child_samples": 100, "reg_lambda": 1}, "status": "complete", "best_iteration": 467, "mean_annual_validation_brier": 0.0755390028604849}
+{"stage": "fit_start", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves15_child100_lambda10", "rounds_requested": 2000}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves15_child100_lambda10", "round": 100, "elapsed_seconds": 41.8204684999655}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves15_child100_lambda10", "round": 200, "elapsed_seconds": 76.6214199999813}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves15_child100_lambda10", "round": 300, "elapsed_seconds": 107.42221099999733}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves15_child100_lambda10", "round": 400, "elapsed_seconds": 136.56213350000326}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves15_child100_lambda10", "round": 500, "elapsed_seconds": 164.4111473999801}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves15_child100_lambda10", "round": 600, "elapsed_seconds": 192.03092379996087}
+{"stage": "fit_saved", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves15_child100_lambda10", "best_iteration": 539, "actual_model_iterations": 539, "fit_seconds": 202.02874290000182}
+{"stage": "candidate_complete", "scope": "strict", "candidate": {"num_leaves": 15, "min_child_samples": 100, "reg_lambda": 10}, "status": "complete", "best_iteration": 539, "mean_annual_validation_brier": 0.07536493270587107}
+{"stage": "fit_start", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves15_child500_lambda1", "rounds_requested": 2000}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves15_child500_lambda1", "round": 100, "elapsed_seconds": 41.41158430004725}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves15_child500_lambda1", "round": 200, "elapsed_seconds": 75.8927349000005}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves15_child500_lambda1", "round": 300, "elapsed_seconds": 107.07825600000797}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves15_child500_lambda1", "round": 400, "elapsed_seconds": 135.59367490001023}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves15_child500_lambda1", "round": 500, "elapsed_seconds": 163.26580890000332}
+{"stage": "fit_saved", "fit": "data\\probability_phase3\\lightgbm\\run1\\search\\strict\\leaves15_child500_lambda1", "best_iteration": 476, "actual_model_iterations": 476, "fit_seconds": 183.74505999998655}
+{"stage": "candidate_complete", "scope": "strict", "candidate": {"num_leaves": 15, "min_child_samples": 500, "reg_lambda": 1}, "status": "complete", "best_iteration": 476, "mean_annual_validation_brier": 0.07535358643305527}
+{"status": "resource_budget_reached", "batch_plan": "data\\probability_phase3\\execution_batches.json", "deadline_unix": 1793911864.442315, "observed_unix": 1793911966.6655772, "scientific_grid_unchanged": true, "pending_not_failed": true}
+{"stage": "batch_complete", "batch": "search", "scopes": ["strict"], "runtime_seconds": 1358.4840312000015}

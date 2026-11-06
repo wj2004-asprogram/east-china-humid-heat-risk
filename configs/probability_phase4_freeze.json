@@ -1,0 +1,2141 @@
+{
+  "schema_version": 1,
+  "protocol_id": "ehhr_probability_phase4_v1",
+  "version": "1.0.0",
+  "prepared_on": "2026-11-05",
+  "status": "scientific_specification_requires_external_seal_before_reserved_data_access",
+  "base_commit": "97c160c7ec3a124032629bba4c3f77a05374b35f",
+  "branch": "research/probability-final-eval-20261105",
+  "protocol_document": "docs/PROBABILITY_PHASE4_PROTOCOL.md",
+  "source_protocol": "configs/probability_protocol_v1.json",
+  "source_protocol_sha256": "f0aa474fd6a038709fa00bb8e0e6c9dc5af0d48647ef6b68c1eea968d703df82",
+  "phase3_run_config": "configs/probability_phase3_run.json",
+  "phase3_run_config_sha256": "69a5f0879df7b501249a60c8712dc7d6508c580b5c9f3b3ee87c5f5409986363",
+  "immutable_artifacts_sha256": {
+    "configs/probability_protocol_v1.json": "f0aa474fd6a038709fa00bb8e0e6c9dc5af0d48647ef6b68c1eea968d703df82",
+    "configs/probability_phase3_run.json": "69a5f0879df7b501249a60c8712dc7d6508c580b5c9f3b3ee87c5f5409986363",
+    "docs/PROBABILITY_EXPERIMENT_PROTOCOL.md": "a0e8860b344fe94d4740668ae4ed4badd9a99cd2a462622933f81f7295ef81e2",
+    "docs/PROBABILITY_USER_REVIEW_PLAN_20261105.md": "0ad1ff830808201c98baa73a73247670b1cf583c7d0d8eccb2472209bddea942",
+    "docs/PROBABILITY_PHASE3_LIGHTGBM_RESULTS.md": "3f519429b6650cc9dec17cdcc8f97d766bc3a79e0cda404c1fadcc9728985e11",
+    "docs/PROBABILITY_PHASE3_STRICT_REVIEW.md": "d2b4c41ef61b4fbb7382a68f9f8ada74d039009ccffcbd8ec84a04470f3cddab",
+    "data/probability_phase2/features/2000/feature_registry.json": "92dc1344b8925b1940c34fed4e2ec09aab429eba0299a1e7922a3e867f991f11",
+    "data/probability_phase1/samples/grid_registry.csv": "24342db500391f6301bcbed60953c2784f8b203eda020998457fbfa95f8026f6",
+    "data/probability_phase1/geometry/neighbor_sources.json": "8c809c44e75551422e60bb29ba1e5c01749b63e515b0c94db6b503aa9b7f16dc",
+    "data/probability_phase1/geometry/geometry_audit.json": "87781227c2040ae0afc7656f83986aea699919ac3016b02fd9cd1138dc754136",
+    "data/probability_phase2/experiments/run1/validation_champions.json": "6cf97b1460ea4d8dbdaab99e30bc7ab802a840cf47069f596ce9f37b94edc527",
+    "data/probability_phase3/lightgbm/run1/report/supplementary_lr_champions.json": "1f2401ae7dc2d4e59e50b15cdf1699bda784d9ebffa092ccc965a7c586c61a3d",
+    "data/probability_phase3/lightgbm/run1/report/selected_configurations.json": "75ef922330abbde4eabd9c63f252912e2c48fe41435454be8ef12e055dabd791",
+    "configs/jja_2000_2024_bjt.yaml": "b478234a2704360e73849f2df23802314427531eac859362c316e0987d597f02"
+  },
+  "authorization": {
+    "source": "parent_thread_explicit_phase4_authorization",
+    "sequence": [
+      "scientific_freeze",
+      "calibration_2018_2019",
+      "calibration_parameter_and_threshold_seal",
+      "final_features_and_completeness_only",
+      "test_open_seal",
+      "one_formal_final_evaluation"
+    ],
+    "old_execution_flags_are_historical": true,
+    "ordinary_defaults_require_no_new_user_confirmation": true,
+    "root_agent_confirms_seals": true
+  },
+  "execution": {
+    "fit_training_models": false,
+    "refit_training_or_scaler": false,
+    "search_hyperparameters": false,
+    "reselect_features_or_model": false,
+    "download_raw": false,
+    "modify_raw_or_existing_models": false,
+    "push": false,
+    "deploy": false,
+    "prediction_dtype": "float64",
+    "feature_storage_dtype": "float32",
+    "threads": 1,
+    "output_root": "data/probability_phase4",
+    "access_ledger_required": true
+  },
+  "gates": {
+    "scientific_lock": {
+      "path": "data/probability_phase4/scientific_lock.json",
+      "status": "scientific_frozen",
+      "required_fields": [
+        "created_at_utc",
+        "freeze_config_sha256",
+        "protocol_document_sha256",
+        "source_code_sha256",
+        "artifacts_sha256"
+      ],
+      "allows": [
+        "calibration_feature_extraction_2018_2019",
+        "calibration_raw_prediction",
+        "fixed_calibration_fit_and_threshold_selection"
+      ],
+      "source_code_sha256": "path_to_file_byte_sha256_map",
+      "artifacts_sha256": "path_to_file_byte_sha256_map_including_all_frozen_model_files"
+    },
+    "calibration_lock": {
+      "path": "data/probability_phase4/calibration_lock.json",
+      "status": "calibration_frozen",
+      "required_fields": [
+        "created_at_utc",
+        "scientific_lock_sha256",
+        "calibration_artifacts_sha256"
+      ],
+      "allows": [
+        "final_feature_extraction_2020_2024_completeness_only"
+      ],
+      "calibration_artifacts_sha256": "path_to_file_byte_sha256_map_including_calibrators_thresholds_calibration_indices_and_predictions",
+      "requires_all_104_mapping_records_including_identity_and_persistence": true
+    },
+    "test_open_lock": {
+      "path": "data/probability_phase4/test_open_lock.json",
+      "status": "test_open_frozen",
+      "required_fields": [
+        "created_at_utc",
+        "scientific_lock_sha256",
+        "calibration_lock_sha256",
+        "final_input_artifacts_sha256",
+        "final_common_index_sha256"
+      ],
+      "allows": [
+        "one_formal_final_prediction_and_evaluation"
+      ],
+      "final_input_artifacts_sha256": "path_to_file_byte_sha256_map",
+      "final_common_index_sha256": "scope/year_to_canonical_index_sha256_map"
+    },
+    "verification": "fail_closed_verify_ancestors_and_current_file_bytes_before_reading_data",
+    "scientific_config_self_hash": "external_scientific_lock_only_no_recursive_self_hash",
+    "final_before_test_open_forbidden": [
+      "predictions",
+      "event_prevalence",
+      "model_scores",
+      "difficulty_ranking",
+      "threshold_selection",
+      "case_selection"
+    ],
+    "final_prediction_execution_record": "exclusive_create_then_resume_only_hash_identical_incomplete_outputs_no_new_scientific_choices",
+    "error_reopen": "record_bug_evidence_affected_artifacts_version_and_prior_test_exposure_never_claim_new_first_test"
+  },
+  "splits": {
+    "train": [
+      2000,
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014
+    ],
+    "validation": [
+      2015,
+      2016,
+      2017
+    ],
+    "calibration": [
+      2018,
+      2019
+    ],
+    "final_test": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ]
+  },
+  "scopes": {
+    "temporal": {
+      "calibration_query_role": "all_land",
+      "calibration_query_grids": 1580,
+      "final_query_role": "all_land",
+      "final_query_grids": 1580,
+      "neighborhood_sources": "all_land",
+      "calibration_structural_rows": 265440,
+      "final_structural_rows": 663600
+    },
+    "strict": {
+      "train_validation_calibration_query_role": "train",
+      "calibration_query_grids": 1299,
+      "calibration_source_grids": 1302,
+      "final_query_role": "holdout",
+      "final_query_grids": 165,
+      "final_neighborhood_sources": "holdout_only_165",
+      "calibration_structural_rows": 218232,
+      "final_structural_rows": 69300,
+      "holdout_and_buffer_fit_allowed": false,
+      "holdout_2000_2019_calibration_or_parameter_fit": false,
+      "strict_validation_is_holdout_transfer": false,
+      "reuse_temporal_calibrator_or_scaler": false
+    }
+  },
+  "sample_policy": {
+    "keys": [
+      "grid_id",
+      "target_date_bjt"
+    ],
+    "index_order": "ascending_year_then_saved_day_index_then_grid_index",
+    "index_hash_method": "preserve_phase2_canonical_index_definition_and_record_method_in_seal",
+    "target_month_days": [
+      "06-09",
+      "08-31"
+    ],
+    "days_per_year": 84,
+    "lags": [
+      1,
+      2
+    ],
+    "common_intersection": "all_11_arms_both_lags_all_algorithms_within_scope",
+    "no_outcome_filtering": true,
+    "no_model_specific_rows": true,
+    "required_history_and_completeness": "inherit_original_protocol_samples_and_frozen_feature_registry",
+    "missing": "exclude_by_frozen_finite_value_rules_never_impute",
+    "model_numerical_failure": "stop_affected_scope_evaluation_record_failure_never_drop_rows_or_clip_invalid_model_probabilities",
+    "structural_counts_are_upper_bounds": true,
+    "final_indices_frozen_before_prediction": true,
+    "lag2_previous_y": "evaluation_table_only_never_feature_calibrator_or_threshold_router"
+  },
+  "features": {
+    "registry_columns": 117,
+    "order": "original_registry_relative_order",
+    "selection": "union_of_group_matches_and_exact_names_without_duplicates",
+    "arms": {
+      "F0": {
+        "groups": [
+          "C",
+          "T"
+        ],
+        "exact_names": [],
+        "n_features": 33
+      },
+      "F1": {
+        "groups": [
+          "C",
+          "T",
+          "M"
+        ],
+        "exact_names": [],
+        "n_features": 87
+      },
+      "F2": {
+        "groups": [
+          "C",
+          "T",
+          "M",
+          "NT",
+          "NM"
+        ],
+        "exact_names": [],
+        "n_features": 92
+      },
+      "F3": {
+        "groups": [
+          "C",
+          "T",
+          "M",
+          "NT",
+          "NM",
+          "RT",
+          "RM"
+        ],
+        "exact_names": [],
+        "n_features": 104
+      },
+      "F4": {
+        "groups": [
+          "C",
+          "T",
+          "M",
+          "NT",
+          "NM",
+          "RT",
+          "RM",
+          "H"
+        ],
+        "exact_names": [],
+        "n_features": 117
+      },
+      "F0P": {
+        "groups": [
+          "C",
+          "T"
+        ],
+        "exact_names": [
+          "y_anchor"
+        ],
+        "n_features": 34
+      },
+      "F1P": {
+        "groups": [
+          "C",
+          "T",
+          "M"
+        ],
+        "exact_names": [
+          "y_anchor"
+        ],
+        "n_features": 88
+      },
+      "F2_minus_NT": {
+        "groups": [
+          "C",
+          "T",
+          "M",
+          "NM"
+        ],
+        "exact_names": [],
+        "n_features": 89
+      },
+      "F2_minus_NM": {
+        "groups": [
+          "C",
+          "T",
+          "M",
+          "NT"
+        ],
+        "exact_names": [],
+        "n_features": 90
+      },
+      "F3_minus_RT": {
+        "groups": [
+          "C",
+          "T",
+          "M",
+          "NT",
+          "NM",
+          "RM"
+        ],
+        "exact_names": [],
+        "n_features": 100
+      },
+      "F3_minus_RM": {
+        "groups": [
+          "C",
+          "T",
+          "M",
+          "NT",
+          "NM",
+          "RT"
+        ],
+        "exact_names": [],
+        "n_features": 96
+      }
+    },
+    "P_definition": "exact_column_y_anchor_only_from_corresponding_X1_or_X2",
+    "evaluation_previous_y_never_used_as_lag2_P": true,
+    "tree_and_lr_feature_names_must_match": true,
+    "tree_scaling": false,
+    "tree_categorical_feature": [],
+    "require_all_finite": true
+  },
+  "model_policy": {
+    "retain_all_predefined_models": true,
+    "ml_models": 88,
+    "simple_baseline_instances": 16,
+    "total_instances": 104,
+    "no_score_based_omission": true,
+    "selection_source_years": [
+      2015,
+      2016,
+      2017
+    ],
+    "lr_C_by_scope": {
+      "temporal": 0.1,
+      "strict": 0.1
+    },
+    "lightgbm_selected": {
+      "temporal": {
+        "num_leaves": 15,
+        "min_child_samples": 100,
+        "reg_lambda": 10,
+        "best_iteration": 667,
+        "mean_annual_validation_brier": 0.07841765426174223
+      },
+      "strict": {
+        "num_leaves": 7,
+        "min_child_samples": 500,
+        "reg_lambda": 10,
+        "best_iteration": 928,
+        "mean_annual_validation_brier": 0.07511816258616512
+      }
+    },
+    "simple_champion_by_scope_lag": {
+      "temporal/lag1": "logistic_F4",
+      "temporal/lag2": "logistic_F4",
+      "strict/lag1": "logistic_F4",
+      "strict/lag2": "logistic_F4"
+    },
+    "fixed_complex_application_candidate": "lightgbm_F4",
+    "strict_seasonal": "pooled_training_T_probability_no_H_climatology",
+    "strict_seasonal_and_seasonal_pooled_duplicate": "retain_both_labels_disclose_identical_definition"
+  },
+  "models": [
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "logistic_F0",
+      "learner": "logistic",
+      "arm": "F0",
+      "metadata_path": "data/probability_phase2/experiments/run1/models/temporal/lag1_logistic_F0.json",
+      "metadata_sha256": "97c9d172384fd9e2cc2bb1c2147fadcd44d2c222074f6b8c5bea1058d561b788",
+      "model_path": "data/probability_phase2/experiments/run1/models/temporal/lag1_logistic_F0.json",
+      "model_sha256": "97c9d172384fd9e2cc2bb1c2147fadcd44d2c222074f6b8c5bea1058d561b788",
+      "calibrate": true
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "lightgbm_F0",
+      "learner": "lightgbm",
+      "arm": "F0",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag1_lightgbm_F0.json",
+      "metadata_sha256": "0ed05fbd06bd1623d3cf9d8b2dd45e472281eea84b263a00dbde6fb22912d9bc",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag1_lightgbm_F0.txt",
+      "model_sha256": "fac6475a3b0e79c0bbb1a966d5423eec1b7e9cd8dc29a0eb401e0c6c6a035a99",
+      "calibrate": true,
+      "prediction_num_iteration": 667
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "logistic_F1",
+      "learner": "logistic",
+      "arm": "F1",
+      "metadata_path": "data/probability_phase2/experiments/run1/models/temporal/lag1_logistic_F1.json",
+      "metadata_sha256": "48730413e38f9044607627f04d75ec91f7184305ef4f60efad94a37f50f30cdc",
+      "model_path": "data/probability_phase2/experiments/run1/models/temporal/lag1_logistic_F1.json",
+      "model_sha256": "48730413e38f9044607627f04d75ec91f7184305ef4f60efad94a37f50f30cdc",
+      "calibrate": true
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "lightgbm_F1",
+      "learner": "lightgbm",
+      "arm": "F1",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag1_lightgbm_F1.json",
+      "metadata_sha256": "b2e5f15721290221b7fcafe5de007e76e877f69fd1cc90b481457cfac09d1caa",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag1_lightgbm_F1.txt",
+      "model_sha256": "e0fc099ca65baab0f1affcec7d59ce45a308c3de19a3a75a1d4ec55d8aaecdbd",
+      "calibrate": true,
+      "prediction_num_iteration": 667
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "logistic_F2",
+      "learner": "logistic",
+      "arm": "F2",
+      "metadata_path": "data/probability_phase3/lr_ablations/run1/models/temporal/lag1_logistic_F2.json",
+      "metadata_sha256": "7f1a8dc2d85ae4c5bc2a0d6a88466c73fab3dd4b5d7445f0fcd2678a62c2c299",
+      "model_path": "data/probability_phase3/lr_ablations/run1/models/temporal/lag1_logistic_F2.json",
+      "model_sha256": "7f1a8dc2d85ae4c5bc2a0d6a88466c73fab3dd4b5d7445f0fcd2678a62c2c299",
+      "calibrate": true
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "lightgbm_F2",
+      "learner": "lightgbm",
+      "arm": "F2",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag1_lightgbm_F2.json",
+      "metadata_sha256": "6aae7b8f081b57061f39bbe175d7e8e87df54829d9678120a254ae07eb07f678",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag1_lightgbm_F2.txt",
+      "model_sha256": "b1e93f049e3b06cd6947c047b93aff75b4d9f37c059549d29a3e4492c57db0f7",
+      "calibrate": true,
+      "prediction_num_iteration": 667
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "logistic_F3",
+      "learner": "logistic",
+      "arm": "F3",
+      "metadata_path": "data/probability_phase3/lr_ablations/run1/models/temporal/lag1_logistic_F3.json",
+      "metadata_sha256": "585744c028c6f63b2241214c151a95bb9c50ac964f78b8e692dfd2a4043c045b",
+      "model_path": "data/probability_phase3/lr_ablations/run1/models/temporal/lag1_logistic_F3.json",
+      "model_sha256": "585744c028c6f63b2241214c151a95bb9c50ac964f78b8e692dfd2a4043c045b",
+      "calibrate": true
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "lightgbm_F3",
+      "learner": "lightgbm",
+      "arm": "F3",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag1_lightgbm_F3.json",
+      "metadata_sha256": "e5a7545ad95be5015b7bf22e1a5e249f087b411a22516909f00c5bd33aac7b6f",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag1_lightgbm_F3.txt",
+      "model_sha256": "1e8575f99a08600b25df3354ba11da5863f16fc0eade926a87ee88f8a79f280a",
+      "calibrate": true,
+      "prediction_num_iteration": 667
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "logistic_F4",
+      "learner": "logistic",
+      "arm": "F4",
+      "metadata_path": "data/probability_phase2/experiments/run1/models/temporal/lag1_logistic_F4.json",
+      "metadata_sha256": "d915f6a2455f12f4ecb2fa1a4d6ff161566584558f3011629b6cf5ee34b48d35",
+      "model_path": "data/probability_phase2/experiments/run1/models/temporal/lag1_logistic_F4.json",
+      "model_sha256": "d915f6a2455f12f4ecb2fa1a4d6ff161566584558f3011629b6cf5ee34b48d35",
+      "calibrate": true
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "lightgbm_F4",
+      "learner": "lightgbm",
+      "arm": "F4",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag1_lightgbm_F4.json",
+      "metadata_sha256": "ad11b5984f92d5cf555190487b6ba63b0b8e74b89de23396156f1c345e128a29",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag1_lightgbm_F4.txt",
+      "model_sha256": "f026735e8572050944b39efeb244f3da34987844857a1c4e0a15a0f35a1158a7",
+      "calibrate": true,
+      "prediction_num_iteration": 667
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "logistic_F0P",
+      "learner": "logistic",
+      "arm": "F0P",
+      "metadata_path": "data/probability_phase3/lr_ablations/run1/models/temporal/lag1_logistic_F0P.json",
+      "metadata_sha256": "e4c82dacecb2b1361bc36bc3f647ab50c440534f88975d63c18e9061ca13984d",
+      "model_path": "data/probability_phase3/lr_ablations/run1/models/temporal/lag1_logistic_F0P.json",
+      "model_sha256": "e4c82dacecb2b1361bc36bc3f647ab50c440534f88975d63c18e9061ca13984d",
+      "calibrate": true
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "lightgbm_F0P",
+      "learner": "lightgbm",
+      "arm": "F0P",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag1_lightgbm_F0P.json",
+      "metadata_sha256": "e027a0adcc37f59f052fc5a639dc37554f9dfc5687563c12c9a44eee5d7bdce8",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag1_lightgbm_F0P.txt",
+      "model_sha256": "73deff1ba41a8c4bbeb6be8755c778cbc0815d6cea64d28ad80fcbd19e552ac3",
+      "calibrate": true,
+      "prediction_num_iteration": 667
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "logistic_F1P",
+      "learner": "logistic",
+      "arm": "F1P",
+      "metadata_path": "data/probability_phase3/lr_ablations/run1/models/temporal/lag1_logistic_F1P.json",
+      "metadata_sha256": "c969fc6f45d9a7384f229a594b59be2b7df2f8747c7c36b8d27d22a9a7a75f9c",
+      "model_path": "data/probability_phase3/lr_ablations/run1/models/temporal/lag1_logistic_F1P.json",
+      "model_sha256": "c969fc6f45d9a7384f229a594b59be2b7df2f8747c7c36b8d27d22a9a7a75f9c",
+      "calibrate": true
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "lightgbm_F1P",
+      "learner": "lightgbm",
+      "arm": "F1P",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag1_lightgbm_F1P.json",
+      "metadata_sha256": "5edf112435fef39e8ce1b4421182e589d116d2fafaa3617abcdbd539591cbaf1",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag1_lightgbm_F1P.txt",
+      "model_sha256": "c1616bfa45d0771c24a9e3e346a3426106e73c0c7a2eb0501d3707104d9cb2d1",
+      "calibrate": true,
+      "prediction_num_iteration": 667
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "logistic_F2_minus_NT",
+      "learner": "logistic",
+      "arm": "F2_minus_NT",
+      "metadata_path": "data/probability_phase3/lr_ablations/run1/models/temporal/lag1_logistic_F2_minus_NT.json",
+      "metadata_sha256": "94badb9539474bbefd0d780808f2b1a2556f491a6d2fb03a1c219149ef1d1b2e",
+      "model_path": "data/probability_phase3/lr_ablations/run1/models/temporal/lag1_logistic_F2_minus_NT.json",
+      "model_sha256": "94badb9539474bbefd0d780808f2b1a2556f491a6d2fb03a1c219149ef1d1b2e",
+      "calibrate": true
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "lightgbm_F2_minus_NT",
+      "learner": "lightgbm",
+      "arm": "F2_minus_NT",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag1_lightgbm_F2_minus_NT.json",
+      "metadata_sha256": "20e81a39d35903d6157eda7a0b6b1ba146a38a3402fff2b628ad265ff6431e30",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag1_lightgbm_F2_minus_NT.txt",
+      "model_sha256": "5b7d34aa06eee83fac9c782e11380f31e0fbb4df1cbe66d7556cdb4f415b0c88",
+      "calibrate": true,
+      "prediction_num_iteration": 667
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "logistic_F2_minus_NM",
+      "learner": "logistic",
+      "arm": "F2_minus_NM",
+      "metadata_path": "data/probability_phase3/lr_ablations/run1/models/temporal/lag1_logistic_F2_minus_NM.json",
+      "metadata_sha256": "c9c177ea93eb2a8a74c1f9a2d995da28616a6e11dd45060bb857e48e77d1e413",
+      "model_path": "data/probability_phase3/lr_ablations/run1/models/temporal/lag1_logistic_F2_minus_NM.json",
+      "model_sha256": "c9c177ea93eb2a8a74c1f9a2d995da28616a6e11dd45060bb857e48e77d1e413",
+      "calibrate": true
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "lightgbm_F2_minus_NM",
+      "learner": "lightgbm",
+      "arm": "F2_minus_NM",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag1_lightgbm_F2_minus_NM.json",
+      "metadata_sha256": "ecb384e62604f7b7c80dafd87603e54153b1df7a814b691ee07dd12e6cfc71f0",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag1_lightgbm_F2_minus_NM.txt",
+      "model_sha256": "e92fcbcc8f050cbeee1d82776b485dd1d615f075f25cd5d8f2f9f302d146a271",
+      "calibrate": true,
+      "prediction_num_iteration": 667
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "logistic_F3_minus_RT",
+      "learner": "logistic",
+      "arm": "F3_minus_RT",
+      "metadata_path": "data/probability_phase3/lr_ablations/run1/models/temporal/lag1_logistic_F3_minus_RT.json",
+      "metadata_sha256": "59b517b69fda274331f2268602e863680a88f85d9b7562739db5b004bd02004c",
+      "model_path": "data/probability_phase3/lr_ablations/run1/models/temporal/lag1_logistic_F3_minus_RT.json",
+      "model_sha256": "59b517b69fda274331f2268602e863680a88f85d9b7562739db5b004bd02004c",
+      "calibrate": true
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "lightgbm_F3_minus_RT",
+      "learner": "lightgbm",
+      "arm": "F3_minus_RT",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag1_lightgbm_F3_minus_RT.json",
+      "metadata_sha256": "483376b9e5aa464cddec8a5610905c683267cd50ec3f5f9b7f8eb360b8dd6604",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag1_lightgbm_F3_minus_RT.txt",
+      "model_sha256": "24bbc9dca63d9fa689cf453be72bb3f09bbf02fe9c40bfd93d7e3d148414e58c",
+      "calibrate": true,
+      "prediction_num_iteration": 667
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "logistic_F3_minus_RM",
+      "learner": "logistic",
+      "arm": "F3_minus_RM",
+      "metadata_path": "data/probability_phase3/lr_ablations/run1/models/temporal/lag1_logistic_F3_minus_RM.json",
+      "metadata_sha256": "ada48b950119a1a1f4aaf2c37e0369d0ac4be270a1d7354ea3c4342a16460605",
+      "model_path": "data/probability_phase3/lr_ablations/run1/models/temporal/lag1_logistic_F3_minus_RM.json",
+      "model_sha256": "ada48b950119a1a1f4aaf2c37e0369d0ac4be270a1d7354ea3c4342a16460605",
+      "calibrate": true
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "lightgbm_F3_minus_RM",
+      "learner": "lightgbm",
+      "arm": "F3_minus_RM",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag1_lightgbm_F3_minus_RM.json",
+      "metadata_sha256": "5b4977c320e05a96a0c1d4d408100b76381351f74dfc3c976470447db3fc0588",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag1_lightgbm_F3_minus_RM.txt",
+      "model_sha256": "86e579f05d90e90051f6013ee02580ea7a9cd7c7f986f60bc637b391637ce454",
+      "calibrate": true,
+      "prediction_num_iteration": 667
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "persistence",
+      "learner": "simple_baseline",
+      "arm": null,
+      "metadata_path": "data/probability_phase2/experiments/run1/models/temporal/lag1_persistence.json",
+      "metadata_sha256": "25f45c5381a1298f4bb704707454fd90c0d2d2a9af9207e9a91b0916596af76f",
+      "model_path": "data/probability_phase2/experiments/run1/models/temporal/lag1_persistence.json",
+      "model_sha256": "25f45c5381a1298f4bb704707454fd90c0d2d2a9af9207e9a91b0916596af76f",
+      "calibrate": false
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "seasonal",
+      "learner": "simple_baseline",
+      "arm": null,
+      "metadata_path": "data/probability_phase2/experiments/run1/models/temporal/lag1_seasonal.json",
+      "metadata_sha256": "f86ba02b56a78e14204a55b8355450d30bcd3cfa409775a0d0db1e8d55a3f294",
+      "model_path": "data/probability_phase2/experiments/run1/models/temporal/lag1_seasonal.json",
+      "model_sha256": "f86ba02b56a78e14204a55b8355450d30bcd3cfa409775a0d0db1e8d55a3f294",
+      "calibrate": true
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "seasonal_pooled",
+      "learner": "simple_baseline",
+      "arm": null,
+      "metadata_path": "data/probability_phase2/experiments/run1/models/temporal/lag1_seasonal_pooled.json",
+      "metadata_sha256": "9b669cdad989b07d0934be0dd0243312a0c7f56059c1ceb72631a878cb6450b1",
+      "model_path": "data/probability_phase2/experiments/run1/models/temporal/lag1_seasonal_pooled.json",
+      "model_sha256": "9b669cdad989b07d0934be0dd0243312a0c7f56059c1ceb72631a878cb6450b1",
+      "calibrate": true
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "transition",
+      "learner": "simple_baseline",
+      "arm": null,
+      "metadata_path": "data/probability_phase2/experiments/run1/models/temporal/lag1_transition.json",
+      "metadata_sha256": "41be6d512ed4e40edef47ea0716ccbef380c5ea0371d326e45055bb45dcdab09",
+      "model_path": "data/probability_phase2/experiments/run1/models/temporal/lag1_transition.json",
+      "model_sha256": "41be6d512ed4e40edef47ea0716ccbef380c5ea0371d326e45055bb45dcdab09",
+      "calibrate": true
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "logistic_F0",
+      "learner": "logistic",
+      "arm": "F0",
+      "metadata_path": "data/probability_phase2/experiments/run1/models/temporal/lag2_logistic_F0.json",
+      "metadata_sha256": "e0832a4aa5c86132f283b6d0fd164218080958fad7485f7a219932f0fb5f2c07",
+      "model_path": "data/probability_phase2/experiments/run1/models/temporal/lag2_logistic_F0.json",
+      "model_sha256": "e0832a4aa5c86132f283b6d0fd164218080958fad7485f7a219932f0fb5f2c07",
+      "calibrate": true
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "lightgbm_F0",
+      "learner": "lightgbm",
+      "arm": "F0",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag2_lightgbm_F0.json",
+      "metadata_sha256": "fc984ad16b042df0595623623a0637b1f8e4dabb0ef2fe2b156ea517cb42eb44",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag2_lightgbm_F0.txt",
+      "model_sha256": "61496ab30e3ca8e46f1cb79f21ef97c1bf8d1d9ed72a89914b618424a618afcb",
+      "calibrate": true,
+      "prediction_num_iteration": 667
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "logistic_F1",
+      "learner": "logistic",
+      "arm": "F1",
+      "metadata_path": "data/probability_phase2/experiments/run1/models/temporal/lag2_logistic_F1.json",
+      "metadata_sha256": "9bdf79df9729df3c8c9dec75f00eb637e2edc29ad5ef4bf520862050b25bd53d",
+      "model_path": "data/probability_phase2/experiments/run1/models/temporal/lag2_logistic_F1.json",
+      "model_sha256": "9bdf79df9729df3c8c9dec75f00eb637e2edc29ad5ef4bf520862050b25bd53d",
+      "calibrate": true
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "lightgbm_F1",
+      "learner": "lightgbm",
+      "arm": "F1",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag2_lightgbm_F1.json",
+      "metadata_sha256": "8f87bcbccf7fb8f7cfd5c0ccb38cb31dbcece992e963d331cbdf7d8296fd52c6",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag2_lightgbm_F1.txt",
+      "model_sha256": "f4fa2c674a9053b9da7066488d2f2038a48b8d6358a4e42e19920aa19ac73025",
+      "calibrate": true,
+      "prediction_num_iteration": 667
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "logistic_F2",
+      "learner": "logistic",
+      "arm": "F2",
+      "metadata_path": "data/probability_phase3/lr_ablations/run1/models/temporal/lag2_logistic_F2.json",
+      "metadata_sha256": "6ef38485b7100f55c7a0e5aa97e8d2548e23ee50e14dfa66eab702606658d720",
+      "model_path": "data/probability_phase3/lr_ablations/run1/models/temporal/lag2_logistic_F2.json",
+      "model_sha256": "6ef38485b7100f55c7a0e5aa97e8d2548e23ee50e14dfa66eab702606658d720",
+      "calibrate": true
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "lightgbm_F2",
+      "learner": "lightgbm",
+      "arm": "F2",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag2_lightgbm_F2.json",
+      "metadata_sha256": "23ec27931f70002051522e7d091d7282da74b1497442e8764c6ab40009e075b4",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag2_lightgbm_F2.txt",
+      "model_sha256": "e83c4fe308dfbc1db93ff2bd05e6ca8bcb427e770473b7d8699712ca56ee71bc",
+      "calibrate": true,
+      "prediction_num_iteration": 667
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "logistic_F3",
+      "learner": "logistic",
+      "arm": "F3",
+      "metadata_path": "data/probability_phase3/lr_ablations/run1/models/temporal/lag2_logistic_F3.json",
+      "metadata_sha256": "fc272c9ccfb08b031c833480c578f6dfc63d73496100066bf78b128ae62e6716",
+      "model_path": "data/probability_phase3/lr_ablations/run1/models/temporal/lag2_logistic_F3.json",
+      "model_sha256": "fc272c9ccfb08b031c833480c578f6dfc63d73496100066bf78b128ae62e6716",
+      "calibrate": true
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "lightgbm_F3",
+      "learner": "lightgbm",
+      "arm": "F3",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag2_lightgbm_F3.json",
+      "metadata_sha256": "a8e8820967cc299b086717775067f3244c42a4159fea2c155afa724a493d951b",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag2_lightgbm_F3.txt",
+      "model_sha256": "43bf2989d7e5d1f5f449f99670ce92dc831603beadbfe15e23300383c77b6933",
+      "calibrate": true,
+      "prediction_num_iteration": 667
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "logistic_F4",
+      "learner": "logistic",
+      "arm": "F4",
+      "metadata_path": "data/probability_phase2/experiments/run1/models/temporal/lag2_logistic_F4.json",
+      "metadata_sha256": "a40bd3758f89873074d2989634e178b455213e66a092548905e5f4f60b7556cf",
+      "model_path": "data/probability_phase2/experiments/run1/models/temporal/lag2_logistic_F4.json",
+      "model_sha256": "a40bd3758f89873074d2989634e178b455213e66a092548905e5f4f60b7556cf",
+      "calibrate": true
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "lightgbm_F4",
+      "learner": "lightgbm",
+      "arm": "F4",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag2_lightgbm_F4.json",
+      "metadata_sha256": "dac1145c0e19078e0580acd9ea975f01c8e7096a4e2f4c3b007caaed16b9ea28",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag2_lightgbm_F4.txt",
+      "model_sha256": "5ef03ad58e31245915aaa9d61ef4fafc168e0c2a474dad6fb4688ef00b857255",
+      "calibrate": true,
+      "prediction_num_iteration": 667
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "logistic_F0P",
+      "learner": "logistic",
+      "arm": "F0P",
+      "metadata_path": "data/probability_phase3/lr_ablations/run1/models/temporal/lag2_logistic_F0P.json",
+      "metadata_sha256": "5d786404ddc7747002ee2f669a7982892043f79d558adf1c90f717d109651d22",
+      "model_path": "data/probability_phase3/lr_ablations/run1/models/temporal/lag2_logistic_F0P.json",
+      "model_sha256": "5d786404ddc7747002ee2f669a7982892043f79d558adf1c90f717d109651d22",
+      "calibrate": true
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "lightgbm_F0P",
+      "learner": "lightgbm",
+      "arm": "F0P",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag2_lightgbm_F0P.json",
+      "metadata_sha256": "ce74df5d652c4494b8b0d2dbf53f9f275ee18bf3c97c3ad237c0cd9f65e1bf19",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag2_lightgbm_F0P.txt",
+      "model_sha256": "f17bdf4c8cbdbc045b53c61f46da542d09d254af31eadec56dd1430fbd76534f",
+      "calibrate": true,
+      "prediction_num_iteration": 667
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "logistic_F1P",
+      "learner": "logistic",
+      "arm": "F1P",
+      "metadata_path": "data/probability_phase3/lr_ablations/run1/models/temporal/lag2_logistic_F1P.json",
+      "metadata_sha256": "2e50fd970bea2e89f9a5addea5fd6862b99a7bb553bf151c089a1f6c83d78d9c",
+      "model_path": "data/probability_phase3/lr_ablations/run1/models/temporal/lag2_logistic_F1P.json",
+      "model_sha256": "2e50fd970bea2e89f9a5addea5fd6862b99a7bb553bf151c089a1f6c83d78d9c",
+      "calibrate": true
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "lightgbm_F1P",
+      "learner": "lightgbm",
+      "arm": "F1P",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag2_lightgbm_F1P.json",
+      "metadata_sha256": "8d2eda5599b765451e6572f2f63da7fedcddaaf5aacca293ca88075fd0542e4b",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag2_lightgbm_F1P.txt",
+      "model_sha256": "5e0673eebd5240a8572cb4dfc2596aea428c241122b7ce9fd70d3a899d9086f6",
+      "calibrate": true,
+      "prediction_num_iteration": 667
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "logistic_F2_minus_NT",
+      "learner": "logistic",
+      "arm": "F2_minus_NT",
+      "metadata_path": "data/probability_phase3/lr_ablations/run1/models/temporal/lag2_logistic_F2_minus_NT.json",
+      "metadata_sha256": "f3863ca0cdbc1f528de4c8d25c048eea770dfb101fd063d54a290a84f49a61b6",
+      "model_path": "data/probability_phase3/lr_ablations/run1/models/temporal/lag2_logistic_F2_minus_NT.json",
+      "model_sha256": "f3863ca0cdbc1f528de4c8d25c048eea770dfb101fd063d54a290a84f49a61b6",
+      "calibrate": true
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "lightgbm_F2_minus_NT",
+      "learner": "lightgbm",
+      "arm": "F2_minus_NT",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag2_lightgbm_F2_minus_NT.json",
+      "metadata_sha256": "cea05082e3c7c8fe46d2acbd33a06eb61250c15c1569a9863ce62cbcbbb58394",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag2_lightgbm_F2_minus_NT.txt",
+      "model_sha256": "0d3b269032e8d6ca46c0737713652b7bc8bca246b30191576702e9a94d0ce77b",
+      "calibrate": true,
+      "prediction_num_iteration": 667
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "logistic_F2_minus_NM",
+      "learner": "logistic",
+      "arm": "F2_minus_NM",
+      "metadata_path": "data/probability_phase3/lr_ablations/run1/models/temporal/lag2_logistic_F2_minus_NM.json",
+      "metadata_sha256": "b8b13bb6f04d3f40689067fc9b7cb79aa79a0a37b6c0ad875fa285413085fd01",
+      "model_path": "data/probability_phase3/lr_ablations/run1/models/temporal/lag2_logistic_F2_minus_NM.json",
+      "model_sha256": "b8b13bb6f04d3f40689067fc9b7cb79aa79a0a37b6c0ad875fa285413085fd01",
+      "calibrate": true
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "lightgbm_F2_minus_NM",
+      "learner": "lightgbm",
+      "arm": "F2_minus_NM",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag2_lightgbm_F2_minus_NM.json",
+      "metadata_sha256": "fa53e53f294ca559137cd2fae3a96d45199718f62e368db77769b8e6c2f0d243",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag2_lightgbm_F2_minus_NM.txt",
+      "model_sha256": "5f4a8b2ac1b8e4b2928dc4e7b9e2de96711ef98cf8eea4018881ba9e53c77856",
+      "calibrate": true,
+      "prediction_num_iteration": 667
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "logistic_F3_minus_RT",
+      "learner": "logistic",
+      "arm": "F3_minus_RT",
+      "metadata_path": "data/probability_phase3/lr_ablations/run1/models/temporal/lag2_logistic_F3_minus_RT.json",
+      "metadata_sha256": "2b1062eb0bb7381dfb5c54886551ce755ed7e53723b57f2419fb1f884d47a030",
+      "model_path": "data/probability_phase3/lr_ablations/run1/models/temporal/lag2_logistic_F3_minus_RT.json",
+      "model_sha256": "2b1062eb0bb7381dfb5c54886551ce755ed7e53723b57f2419fb1f884d47a030",
+      "calibrate": true
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "lightgbm_F3_minus_RT",
+      "learner": "lightgbm",
+      "arm": "F3_minus_RT",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag2_lightgbm_F3_minus_RT.json",
+      "metadata_sha256": "bba8015830f464aa5f229ddb3808545f8cbb6d76260cbae572680af4720aa32d",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag2_lightgbm_F3_minus_RT.txt",
+      "model_sha256": "9a77870cedceef4020944f33926d17572870df664dfb7e67543d2f998fc57933",
+      "calibrate": true,
+      "prediction_num_iteration": 667
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "logistic_F3_minus_RM",
+      "learner": "logistic",
+      "arm": "F3_minus_RM",
+      "metadata_path": "data/probability_phase3/lr_ablations/run1/models/temporal/lag2_logistic_F3_minus_RM.json",
+      "metadata_sha256": "3b88219783257d160c2df82f23ec0f39c2b3f1b36d35e2f241803eebf17fe16e",
+      "model_path": "data/probability_phase3/lr_ablations/run1/models/temporal/lag2_logistic_F3_minus_RM.json",
+      "model_sha256": "3b88219783257d160c2df82f23ec0f39c2b3f1b36d35e2f241803eebf17fe16e",
+      "calibrate": true
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "lightgbm_F3_minus_RM",
+      "learner": "lightgbm",
+      "arm": "F3_minus_RM",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag2_lightgbm_F3_minus_RM.json",
+      "metadata_sha256": "8fd5f0c4961c6c1690d67be2e89982d09ef64b24dafb84766e36875eb409fcd2",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/temporal/lag2_lightgbm_F3_minus_RM.txt",
+      "model_sha256": "53ac44965effbd637dbaab44ed662644a28df322a866f8fbace3b194ead5739d",
+      "calibrate": true,
+      "prediction_num_iteration": 667
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "persistence",
+      "learner": "simple_baseline",
+      "arm": null,
+      "metadata_path": "data/probability_phase2/experiments/run1/models/temporal/lag2_persistence.json",
+      "metadata_sha256": "60d4597f91ec9e0fbb279daad33f9c9d18565b8c2cfe100aee7762e53fdcd6a3",
+      "model_path": "data/probability_phase2/experiments/run1/models/temporal/lag2_persistence.json",
+      "model_sha256": "60d4597f91ec9e0fbb279daad33f9c9d18565b8c2cfe100aee7762e53fdcd6a3",
+      "calibrate": false
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "seasonal",
+      "learner": "simple_baseline",
+      "arm": null,
+      "metadata_path": "data/probability_phase2/experiments/run1/models/temporal/lag2_seasonal.json",
+      "metadata_sha256": "32af008c1692a555fb6c1f3bb1d77fd5d7f01bcd372b9ee66b62aeea7a18b037",
+      "model_path": "data/probability_phase2/experiments/run1/models/temporal/lag2_seasonal.json",
+      "model_sha256": "32af008c1692a555fb6c1f3bb1d77fd5d7f01bcd372b9ee66b62aeea7a18b037",
+      "calibrate": true
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "seasonal_pooled",
+      "learner": "simple_baseline",
+      "arm": null,
+      "metadata_path": "data/probability_phase2/experiments/run1/models/temporal/lag2_seasonal_pooled.json",
+      "metadata_sha256": "756d340fd3b577a6fcf4cf212993999ee1df635edb05e5fde8a3dcec8028eb43",
+      "model_path": "data/probability_phase2/experiments/run1/models/temporal/lag2_seasonal_pooled.json",
+      "model_sha256": "756d340fd3b577a6fcf4cf212993999ee1df635edb05e5fde8a3dcec8028eb43",
+      "calibrate": true
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "transition",
+      "learner": "simple_baseline",
+      "arm": null,
+      "metadata_path": "data/probability_phase2/experiments/run1/models/temporal/lag2_transition.json",
+      "metadata_sha256": "286c3d5fb88d5f871c6d3cba3160319f05e5f42cbe9edffada6d5e1eb8412eee",
+      "model_path": "data/probability_phase2/experiments/run1/models/temporal/lag2_transition.json",
+      "model_sha256": "286c3d5fb88d5f871c6d3cba3160319f05e5f42cbe9edffada6d5e1eb8412eee",
+      "calibrate": true
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "logistic_F0",
+      "learner": "logistic",
+      "arm": "F0",
+      "metadata_path": "data/probability_phase2/experiments/run1/models/strict/lag1_logistic_F0.json",
+      "metadata_sha256": "9ea0a8f50599aca0de3fccdb8501d74b76fe84c03d22ad29ceab01cad74aa9fc",
+      "model_path": "data/probability_phase2/experiments/run1/models/strict/lag1_logistic_F0.json",
+      "model_sha256": "9ea0a8f50599aca0de3fccdb8501d74b76fe84c03d22ad29ceab01cad74aa9fc",
+      "calibrate": true
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "lightgbm_F0",
+      "learner": "lightgbm",
+      "arm": "F0",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/strict/lag1_lightgbm_F0.json",
+      "metadata_sha256": "8bc751ddb1ced19242df5a520b67a32aa30424159181598b826402d2be50cfd5",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/strict/lag1_lightgbm_F0.txt",
+      "model_sha256": "e6af13964b23cb337f543838047d50ef4cc3d6515a21931afbd54d64003f354d",
+      "calibrate": true,
+      "prediction_num_iteration": 928
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "logistic_F1",
+      "learner": "logistic",
+      "arm": "F1",
+      "metadata_path": "data/probability_phase2/experiments/run1/models/strict/lag1_logistic_F1.json",
+      "metadata_sha256": "ffead0538cb638489788dccba74641db9a343c535d0f9d1dd1e4d03ffb314314",
+      "model_path": "data/probability_phase2/experiments/run1/models/strict/lag1_logistic_F1.json",
+      "model_sha256": "ffead0538cb638489788dccba74641db9a343c535d0f9d1dd1e4d03ffb314314",
+      "calibrate": true
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "lightgbm_F1",
+      "learner": "lightgbm",
+      "arm": "F1",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/strict/lag1_lightgbm_F1.json",
+      "metadata_sha256": "ea15f50be9e114763fef94aeb018edb4559901e6d19237053b2cfa578645040f",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/strict/lag1_lightgbm_F1.txt",
+      "model_sha256": "629494595a86719f8aaf9bed9faa2cd87a6ef735f65b0e8cffea4f8ca7a2e720",
+      "calibrate": true,
+      "prediction_num_iteration": 928
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "logistic_F2",
+      "learner": "logistic",
+      "arm": "F2",
+      "metadata_path": "data/probability_phase3/lr_ablations/run1/models/strict/lag1_logistic_F2.json",
+      "metadata_sha256": "95657794183fd9d476bb1acbf3a654f2f641d032122daeb1f35c582e1070e2f8",
+      "model_path": "data/probability_phase3/lr_ablations/run1/models/strict/lag1_logistic_F2.json",
+      "model_sha256": "95657794183fd9d476bb1acbf3a654f2f641d032122daeb1f35c582e1070e2f8",
+      "calibrate": true
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "lightgbm_F2",
+      "learner": "lightgbm",
+      "arm": "F2",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/strict/lag1_lightgbm_F2.json",
+      "metadata_sha256": "77ecf6e44bafea03c9f09afdda53a582bf46ded289099b6206447425585f0259",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/strict/lag1_lightgbm_F2.txt",
+      "model_sha256": "50a6012557d873b3096669249871eae025c9e3ec2243ec45b64b0b46669111f6",
+      "calibrate": true,
+      "prediction_num_iteration": 928
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "logistic_F3",
+      "learner": "logistic",
+      "arm": "F3",
+      "metadata_path": "data/probability_phase3/lr_ablations/run1/models/strict/lag1_logistic_F3.json",
+      "metadata_sha256": "f3af635d1045b8a15905809d94d67f6c4feab8c1bac7090d6498d6f3b8dd2728",
+      "model_path": "data/probability_phase3/lr_ablations/run1/models/strict/lag1_logistic_F3.json",
+      "model_sha256": "f3af635d1045b8a15905809d94d67f6c4feab8c1bac7090d6498d6f3b8dd2728",
+      "calibrate": true
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "lightgbm_F3",
+      "learner": "lightgbm",
+      "arm": "F3",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/strict/lag1_lightgbm_F3.json",
+      "metadata_sha256": "70c11aad70cf3fbcd5ba12eee70dc5596acaebb9590281674a371f2c9fea0c96",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/strict/lag1_lightgbm_F3.txt",
+      "model_sha256": "b4916e599e9ca943e1a14036147eb241984ac380b170f17cbaf53b2b53962681",
+      "calibrate": true,
+      "prediction_num_iteration": 928
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "logistic_F4",
+      "learner": "logistic",
+      "arm": "F4",
+      "metadata_path": "data/probability_phase2/experiments/run1/models/strict/lag1_logistic_F4.json",
+      "metadata_sha256": "689725aab42d60eefff27f5d44063baf65fccf215ea255bd5c6fdbe046ea7049",
+      "model_path": "data/probability_phase2/experiments/run1/models/strict/lag1_logistic_F4.json",
+      "model_sha256": "689725aab42d60eefff27f5d44063baf65fccf215ea255bd5c6fdbe046ea7049",
+      "calibrate": true
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "lightgbm_F4",
+      "learner": "lightgbm",
+      "arm": "F4",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/strict/lag1_lightgbm_F4.json",
+      "metadata_sha256": "54b9c318d6906b86fd6579debbf594e6376fc549216beafe7d35568f72a52a07",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/strict/lag1_lightgbm_F4.txt",
+      "model_sha256": "da3ce5ec1ba7c1206664031da6130d2be7945166041cbaff9a4300ab161533a2",
+      "calibrate": true,
+      "prediction_num_iteration": 928
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "logistic_F0P",
+      "learner": "logistic",
+      "arm": "F0P",
+      "metadata_path": "data/probability_phase3/lr_ablations/run1/models/strict/lag1_logistic_F0P.json",
+      "metadata_sha256": "0cfc94594c034526a9918a7d0ec6653ba44b99a78c340c4f89e9af2330ae4a2a",
+      "model_path": "data/probability_phase3/lr_ablations/run1/models/strict/lag1_logistic_F0P.json",
+      "model_sha256": "0cfc94594c034526a9918a7d0ec6653ba44b99a78c340c4f89e9af2330ae4a2a",
+      "calibrate": true
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "lightgbm_F0P",
+      "learner": "lightgbm",
+      "arm": "F0P",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/strict/lag1_lightgbm_F0P.json",
+      "metadata_sha256": "266be831f3ab9948e3ad13f44521785a27fc0aa5a2eb2bd319d8a71d8bad0f75",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/strict/lag1_lightgbm_F0P.txt",
+      "model_sha256": "d8a71da34299c9465f143d2dc02100780b540ac2933ec288596126bf4f548a27",
+      "calibrate": true,
+      "prediction_num_iteration": 928
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "logistic_F1P",
+      "learner": "logistic",
+      "arm": "F1P",
+      "metadata_path": "data/probability_phase3/lr_ablations/run1/models/strict/lag1_logistic_F1P.json",
+      "metadata_sha256": "dbccf3537aea1dfdf4ce2b71a56bc174438d8168c1ec162af6bbbe27b9ba13a7",
+      "model_path": "data/probability_phase3/lr_ablations/run1/models/strict/lag1_logistic_F1P.json",
+      "model_sha256": "dbccf3537aea1dfdf4ce2b71a56bc174438d8168c1ec162af6bbbe27b9ba13a7",
+      "calibrate": true
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "lightgbm_F1P",
+      "learner": "lightgbm",
+      "arm": "F1P",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/strict/lag1_lightgbm_F1P.json",
+      "metadata_sha256": "4b420c04132fd9c1d79b9f671dc39dfada01ac27de4ccdd5a0dbddee025705c1",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/strict/lag1_lightgbm_F1P.txt",
+      "model_sha256": "f9bd289690ae7b8e0225bfa9e0125b52ae8732e6335b13d8e2233194a433f257",
+      "calibrate": true,
+      "prediction_num_iteration": 928
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "logistic_F2_minus_NT",
+      "learner": "logistic",
+      "arm": "F2_minus_NT",
+      "metadata_path": "data/probability_phase3/lr_ablations/run1/models/strict/lag1_logistic_F2_minus_NT.json",
+      "metadata_sha256": "0a23c5ba2ba13b0f211a12151de58a8aaeb5f3199573eaa94fb690c1607166bb",
+      "model_path": "data/probability_phase3/lr_ablations/run1/models/strict/lag1_logistic_F2_minus_NT.json",
+      "model_sha256": "0a23c5ba2ba13b0f211a12151de58a8aaeb5f3199573eaa94fb690c1607166bb",
+      "calibrate": true
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "lightgbm_F2_minus_NT",
+      "learner": "lightgbm",
+      "arm": "F2_minus_NT",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/strict/lag1_lightgbm_F2_minus_NT.json",
+      "metadata_sha256": "d879b360cd778b9ba3e4b9cffedeac0d4f2ba537376e20ba5693aa77714b5068",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/strict/lag1_lightgbm_F2_minus_NT.txt",
+      "model_sha256": "69995eabe9487dae24e331f5cfe9d7f6cfd4874d3544529cbc7582c10005405a",
+      "calibrate": true,
+      "prediction_num_iteration": 928
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "logistic_F2_minus_NM",
+      "learner": "logistic",
+      "arm": "F2_minus_NM",
+      "metadata_path": "data/probability_phase3/lr_ablations/run1/models/strict/lag1_logistic_F2_minus_NM.json",
+      "metadata_sha256": "1afb9b861c57de62cb2416a9e27836dd6674f5d07d20cee7db6cafcb9a7d44e8",
+      "model_path": "data/probability_phase3/lr_ablations/run1/models/strict/lag1_logistic_F2_minus_NM.json",
+      "model_sha256": "1afb9b861c57de62cb2416a9e27836dd6674f5d07d20cee7db6cafcb9a7d44e8",
+      "calibrate": true
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "lightgbm_F2_minus_NM",
+      "learner": "lightgbm",
+      "arm": "F2_minus_NM",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/strict/lag1_lightgbm_F2_minus_NM.json",
+      "metadata_sha256": "19f6c2c7fafe012f14111971350970f3dc194ed77d27c2026095e8dfcf6b3ea5",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/strict/lag1_lightgbm_F2_minus_NM.txt",
+      "model_sha256": "fc46e1b48280dcc61da13fbe0694402adc2d22f184dde0a04be10885863f721e",
+      "calibrate": true,
+      "prediction_num_iteration": 928
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "logistic_F3_minus_RT",
+      "learner": "logistic",
+      "arm": "F3_minus_RT",
+      "metadata_path": "data/probability_phase3/lr_ablations/run1/models/strict/lag1_logistic_F3_minus_RT.json",
+      "metadata_sha256": "e41a4ce5851f10c14fb87a693ed0a21478d2bfb9216d58c1c2d017277c3bc1af",
+      "model_path": "data/probability_phase3/lr_ablations/run1/models/strict/lag1_logistic_F3_minus_RT.json",
+      "model_sha256": "e41a4ce5851f10c14fb87a693ed0a21478d2bfb9216d58c1c2d017277c3bc1af",
+      "calibrate": true
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "lightgbm_F3_minus_RT",
+      "learner": "lightgbm",
+      "arm": "F3_minus_RT",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/strict/lag1_lightgbm_F3_minus_RT.json",
+      "metadata_sha256": "5cc4b912793fbd831ec82d780614055eeda740bedc587969e5410a3336f2de37",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/strict/lag1_lightgbm_F3_minus_RT.txt",
+      "model_sha256": "592d88b2987a3e91d1db2f32827cf605f2162c31c78d21a4ab670404421ef830",
+      "calibrate": true,
+      "prediction_num_iteration": 928
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "logistic_F3_minus_RM",
+      "learner": "logistic",
+      "arm": "F3_minus_RM",
+      "metadata_path": "data/probability_phase3/lr_ablations/run1/models/strict/lag1_logistic_F3_minus_RM.json",
+      "metadata_sha256": "4b79d10068183527872853b1bb80779a46b13e646daa42bd9947fbecbfd3383d",
+      "model_path": "data/probability_phase3/lr_ablations/run1/models/strict/lag1_logistic_F3_minus_RM.json",
+      "model_sha256": "4b79d10068183527872853b1bb80779a46b13e646daa42bd9947fbecbfd3383d",
+      "calibrate": true
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "lightgbm_F3_minus_RM",
+      "learner": "lightgbm",
+      "arm": "F3_minus_RM",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/strict/lag1_lightgbm_F3_minus_RM.json",
+      "metadata_sha256": "22ce0b62e6b24fb655837cf89792291d0f18af3d268cfbb2bbeba47eda89e8e0",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/strict/lag1_lightgbm_F3_minus_RM.txt",
+      "model_sha256": "2f4f54734dda5c2e78e0564745c3b6603eae310a1d2e09a89ae9b67f4a4ba6d8",
+      "calibrate": true,
+      "prediction_num_iteration": 928
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "persistence",
+      "learner": "simple_baseline",
+      "arm": null,
+      "metadata_path": "data/probability_phase2/experiments/run1/models/strict/lag1_persistence.json",
+      "metadata_sha256": "25f45c5381a1298f4bb704707454fd90c0d2d2a9af9207e9a91b0916596af76f",
+      "model_path": "data/probability_phase2/experiments/run1/models/strict/lag1_persistence.json",
+      "model_sha256": "25f45c5381a1298f4bb704707454fd90c0d2d2a9af9207e9a91b0916596af76f",
+      "calibrate": false
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "seasonal",
+      "learner": "simple_baseline",
+      "arm": null,
+      "metadata_path": "data/probability_phase2/experiments/run1/models/strict/lag1_seasonal.json",
+      "metadata_sha256": "eb7222a9a77e577d584706b8600dee625bd696cdcb3e34b041669abd9f0a9240",
+      "model_path": "data/probability_phase2/experiments/run1/models/strict/lag1_seasonal.json",
+      "model_sha256": "eb7222a9a77e577d584706b8600dee625bd696cdcb3e34b041669abd9f0a9240",
+      "calibrate": true
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "seasonal_pooled",
+      "learner": "simple_baseline",
+      "arm": null,
+      "metadata_path": "data/probability_phase2/experiments/run1/models/strict/lag1_seasonal_pooled.json",
+      "metadata_sha256": "21f1f74ac0534b81294ea05d80d59531078383437839081df7aaa18004736dd8",
+      "model_path": "data/probability_phase2/experiments/run1/models/strict/lag1_seasonal_pooled.json",
+      "model_sha256": "21f1f74ac0534b81294ea05d80d59531078383437839081df7aaa18004736dd8",
+      "calibrate": true
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "model_id": "transition",
+      "learner": "simple_baseline",
+      "arm": null,
+      "metadata_path": "data/probability_phase2/experiments/run1/models/strict/lag1_transition.json",
+      "metadata_sha256": "b8b264df1203641285ceb956bfd7dbcf07ee1d1c36172559448bc3487a72afba",
+      "model_path": "data/probability_phase2/experiments/run1/models/strict/lag1_transition.json",
+      "model_sha256": "b8b264df1203641285ceb956bfd7dbcf07ee1d1c36172559448bc3487a72afba",
+      "calibrate": true
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "logistic_F0",
+      "learner": "logistic",
+      "arm": "F0",
+      "metadata_path": "data/probability_phase2/experiments/run1/models/strict/lag2_logistic_F0.json",
+      "metadata_sha256": "20b1c4392e9093c225ce3bf4659f32f79c100d3d341bf50b9353127fab890146",
+      "model_path": "data/probability_phase2/experiments/run1/models/strict/lag2_logistic_F0.json",
+      "model_sha256": "20b1c4392e9093c225ce3bf4659f32f79c100d3d341bf50b9353127fab890146",
+      "calibrate": true
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "lightgbm_F0",
+      "learner": "lightgbm",
+      "arm": "F0",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/strict/lag2_lightgbm_F0.json",
+      "metadata_sha256": "696bd781bd1c976849ce70d7ff41384e731d63109b058bd34ca8e1d1a08d581c",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/strict/lag2_lightgbm_F0.txt",
+      "model_sha256": "3b6c2c7e9df79cdcc25ee38c0c06cd63fb5a39bc6b51def46e02d9aca1adcb3c",
+      "calibrate": true,
+      "prediction_num_iteration": 928
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "logistic_F1",
+      "learner": "logistic",
+      "arm": "F1",
+      "metadata_path": "data/probability_phase2/experiments/run1/models/strict/lag2_logistic_F1.json",
+      "metadata_sha256": "31a40c6b5c60f0abe60eb16944ab2351a58a725ee7b3faa8539425870b6b42df",
+      "model_path": "data/probability_phase2/experiments/run1/models/strict/lag2_logistic_F1.json",
+      "model_sha256": "31a40c6b5c60f0abe60eb16944ab2351a58a725ee7b3faa8539425870b6b42df",
+      "calibrate": true
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "lightgbm_F1",
+      "learner": "lightgbm",
+      "arm": "F1",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/strict/lag2_lightgbm_F1.json",
+      "metadata_sha256": "850b270645233888c042dc52b86aa58972686675f17005b5f780de31ea80e528",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/strict/lag2_lightgbm_F1.txt",
+      "model_sha256": "0cd24f109155e1460a1a2382ddc51cbc8db5b003e3cb9e03b3ed6a944ae4e3da",
+      "calibrate": true,
+      "prediction_num_iteration": 928
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "logistic_F2",
+      "learner": "logistic",
+      "arm": "F2",
+      "metadata_path": "data/probability_phase3/lr_ablations/run1/models/strict/lag2_logistic_F2.json",
+      "metadata_sha256": "6d74dc6e623a4b79f74b464632aaa98a5d84d9e99588f8089e84d2b295be83bf",
+      "model_path": "data/probability_phase3/lr_ablations/run1/models/strict/lag2_logistic_F2.json",
+      "model_sha256": "6d74dc6e623a4b79f74b464632aaa98a5d84d9e99588f8089e84d2b295be83bf",
+      "calibrate": true
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "lightgbm_F2",
+      "learner": "lightgbm",
+      "arm": "F2",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/strict/lag2_lightgbm_F2.json",
+      "metadata_sha256": "8370368eae4ec6bfab2e3ac45042f112141e03e4803caac10c3c53cb592c3f93",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/strict/lag2_lightgbm_F2.txt",
+      "model_sha256": "07b59c2f952d6d0edcb56b40131011b7092c4ab2af1c93d27e9d5452f13654e9",
+      "calibrate": true,
+      "prediction_num_iteration": 928
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "logistic_F3",
+      "learner": "logistic",
+      "arm": "F3",
+      "metadata_path": "data/probability_phase3/lr_ablations/run1/models/strict/lag2_logistic_F3.json",
+      "metadata_sha256": "737f182a1ca7ea7f877e4b68864505cb9defcadf9a6362063e70093e57557fb9",
+      "model_path": "data/probability_phase3/lr_ablations/run1/models/strict/lag2_logistic_F3.json",
+      "model_sha256": "737f182a1ca7ea7f877e4b68864505cb9defcadf9a6362063e70093e57557fb9",
+      "calibrate": true
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "lightgbm_F3",
+      "learner": "lightgbm",
+      "arm": "F3",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/strict/lag2_lightgbm_F3.json",
+      "metadata_sha256": "95bdcf760627db416c733be2909942c5dc2a68886047e4aa824d080e02a23f45",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/strict/lag2_lightgbm_F3.txt",
+      "model_sha256": "22cc882a5bd1510c24331b9344e971e44dac1079d86c6f7a6f35642a0d6fd460",
+      "calibrate": true,
+      "prediction_num_iteration": 928
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "logistic_F4",
+      "learner": "logistic",
+      "arm": "F4",
+      "metadata_path": "data/probability_phase2/experiments/run1/models/strict/lag2_logistic_F4.json",
+      "metadata_sha256": "e2ad6e16571317fdcc8f9bc2651043314c42b17aa6cfcf7c1d101265bc8709cf",
+      "model_path": "data/probability_phase2/experiments/run1/models/strict/lag2_logistic_F4.json",
+      "model_sha256": "e2ad6e16571317fdcc8f9bc2651043314c42b17aa6cfcf7c1d101265bc8709cf",
+      "calibrate": true
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "lightgbm_F4",
+      "learner": "lightgbm",
+      "arm": "F4",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/strict/lag2_lightgbm_F4.json",
+      "metadata_sha256": "b0cf2230a370573652ae389ce5daf2fe5273ba7a67a162479da820ca5a3aca9c",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/strict/lag2_lightgbm_F4.txt",
+      "model_sha256": "d1bb86457abe03a5969e42715847aef1eb048f10bcb93863a6b06ebd9d1da89e",
+      "calibrate": true,
+      "prediction_num_iteration": 928
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "logistic_F0P",
+      "learner": "logistic",
+      "arm": "F0P",
+      "metadata_path": "data/probability_phase3/lr_ablations/run1/models/strict/lag2_logistic_F0P.json",
+      "metadata_sha256": "fc6ce746e93f70ee53bba84e41eb566f5c53f720436fdbd45de4056351c15a83",
+      "model_path": "data/probability_phase3/lr_ablations/run1/models/strict/lag2_logistic_F0P.json",
+      "model_sha256": "fc6ce746e93f70ee53bba84e41eb566f5c53f720436fdbd45de4056351c15a83",
+      "calibrate": true
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "lightgbm_F0P",
+      "learner": "lightgbm",
+      "arm": "F0P",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/strict/lag2_lightgbm_F0P.json",
+      "metadata_sha256": "2f54e78e4c6d8c415b5cb757431ff6cd463b4eeca6615ff0af50117952b71401",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/strict/lag2_lightgbm_F0P.txt",
+      "model_sha256": "2a0fa521813422bccb95497970ff8459d0940a104020113746471c065083b486",
+      "calibrate": true,
+      "prediction_num_iteration": 928
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "logistic_F1P",
+      "learner": "logistic",
+      "arm": "F1P",
+      "metadata_path": "data/probability_phase3/lr_ablations/run1/models/strict/lag2_logistic_F1P.json",
+      "metadata_sha256": "b71d248a9e46001f1a491b28d593a28786f57dd9c8e86f2238ac6017085b8789",
+      "model_path": "data/probability_phase3/lr_ablations/run1/models/strict/lag2_logistic_F1P.json",
+      "model_sha256": "b71d248a9e46001f1a491b28d593a28786f57dd9c8e86f2238ac6017085b8789",
+      "calibrate": true
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "lightgbm_F1P",
+      "learner": "lightgbm",
+      "arm": "F1P",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/strict/lag2_lightgbm_F1P.json",
+      "metadata_sha256": "c380cdc19e071836c52e9b80fc4e796b181b855d2991ad872f2fcb2c505028c8",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/strict/lag2_lightgbm_F1P.txt",
+      "model_sha256": "64da18a7c8e93524993b0e72c47e4250c075f90415bd093205b1fc54324eadd1",
+      "calibrate": true,
+      "prediction_num_iteration": 928
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "logistic_F2_minus_NT",
+      "learner": "logistic",
+      "arm": "F2_minus_NT",
+      "metadata_path": "data/probability_phase3/lr_ablations/run1/models/strict/lag2_logistic_F2_minus_NT.json",
+      "metadata_sha256": "5aad7b4d6095aca96876dd85b3cba21cd5e34b11eeb450966318fd4543c5133b",
+      "model_path": "data/probability_phase3/lr_ablations/run1/models/strict/lag2_logistic_F2_minus_NT.json",
+      "model_sha256": "5aad7b4d6095aca96876dd85b3cba21cd5e34b11eeb450966318fd4543c5133b",
+      "calibrate": true
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "lightgbm_F2_minus_NT",
+      "learner": "lightgbm",
+      "arm": "F2_minus_NT",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/strict/lag2_lightgbm_F2_minus_NT.json",
+      "metadata_sha256": "7525e11984ec16f9e662e900937748db10a0e75a1df76998f6081e247a1dbe66",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/strict/lag2_lightgbm_F2_minus_NT.txt",
+      "model_sha256": "7402433cbb4751d206eb90bdce237d603d6462c98b72f71a2c9386ab6fcf6ecf",
+      "calibrate": true,
+      "prediction_num_iteration": 928
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "logistic_F2_minus_NM",
+      "learner": "logistic",
+      "arm": "F2_minus_NM",
+      "metadata_path": "data/probability_phase3/lr_ablations/run1/models/strict/lag2_logistic_F2_minus_NM.json",
+      "metadata_sha256": "be43537fcc32bcb270380b9aa590113587ddeb443dc8468a53c7248895b07e44",
+      "model_path": "data/probability_phase3/lr_ablations/run1/models/strict/lag2_logistic_F2_minus_NM.json",
+      "model_sha256": "be43537fcc32bcb270380b9aa590113587ddeb443dc8468a53c7248895b07e44",
+      "calibrate": true
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "lightgbm_F2_minus_NM",
+      "learner": "lightgbm",
+      "arm": "F2_minus_NM",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/strict/lag2_lightgbm_F2_minus_NM.json",
+      "metadata_sha256": "b3eb5574adfc80c73bb03006ade78deabb8a903435231864600cb9b53cfa3161",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/strict/lag2_lightgbm_F2_minus_NM.txt",
+      "model_sha256": "daf354dc8bdf8292a9079d15ae5fcd837de84f42b58028be9b0e8b51129decd0",
+      "calibrate": true,
+      "prediction_num_iteration": 928
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "logistic_F3_minus_RT",
+      "learner": "logistic",
+      "arm": "F3_minus_RT",
+      "metadata_path": "data/probability_phase3/lr_ablations/run1/models/strict/lag2_logistic_F3_minus_RT.json",
+      "metadata_sha256": "35c7410673a10cb80fedbf04e9175dce7a2fc9bbde7653475b3e456a8969a540",
+      "model_path": "data/probability_phase3/lr_ablations/run1/models/strict/lag2_logistic_F3_minus_RT.json",
+      "model_sha256": "35c7410673a10cb80fedbf04e9175dce7a2fc9bbde7653475b3e456a8969a540",
+      "calibrate": true
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "lightgbm_F3_minus_RT",
+      "learner": "lightgbm",
+      "arm": "F3_minus_RT",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/strict/lag2_lightgbm_F3_minus_RT.json",
+      "metadata_sha256": "8b62ed9e3035a3b4cda517de586d7e9f201e0ea959168c02da52fe9d50cc2c95",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/strict/lag2_lightgbm_F3_minus_RT.txt",
+      "model_sha256": "0a496f84ab996e81ed68ae34ba0dedc64e158c141b26dc200f107b0c8d1dbc38",
+      "calibrate": true,
+      "prediction_num_iteration": 928
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "logistic_F3_minus_RM",
+      "learner": "logistic",
+      "arm": "F3_minus_RM",
+      "metadata_path": "data/probability_phase3/lr_ablations/run1/models/strict/lag2_logistic_F3_minus_RM.json",
+      "metadata_sha256": "f87df907c991bb6321570419383de9aef29b542d7787ed7129e7de1024f45a52",
+      "model_path": "data/probability_phase3/lr_ablations/run1/models/strict/lag2_logistic_F3_minus_RM.json",
+      "model_sha256": "f87df907c991bb6321570419383de9aef29b542d7787ed7129e7de1024f45a52",
+      "calibrate": true
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "lightgbm_F3_minus_RM",
+      "learner": "lightgbm",
+      "arm": "F3_minus_RM",
+      "metadata_path": "data/probability_phase3/lightgbm/run1/models/strict/lag2_lightgbm_F3_minus_RM.json",
+      "metadata_sha256": "18b180b6bb20379a821d9ae56b37cd8a29cf7c733a68ab997adcd8c5054c446f",
+      "model_path": "data/probability_phase3/lightgbm/run1/models/strict/lag2_lightgbm_F3_minus_RM.txt",
+      "model_sha256": "8088886e45c2b4d8536c8972bfa2a68591c29f8b93c716bf2e89f7588a1e06a5",
+      "calibrate": true,
+      "prediction_num_iteration": 928
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "persistence",
+      "learner": "simple_baseline",
+      "arm": null,
+      "metadata_path": "data/probability_phase2/experiments/run1/models/strict/lag2_persistence.json",
+      "metadata_sha256": "60d4597f91ec9e0fbb279daad33f9c9d18565b8c2cfe100aee7762e53fdcd6a3",
+      "model_path": "data/probability_phase2/experiments/run1/models/strict/lag2_persistence.json",
+      "model_sha256": "60d4597f91ec9e0fbb279daad33f9c9d18565b8c2cfe100aee7762e53fdcd6a3",
+      "calibrate": false
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "seasonal",
+      "learner": "simple_baseline",
+      "arm": null,
+      "metadata_path": "data/probability_phase2/experiments/run1/models/strict/lag2_seasonal.json",
+      "metadata_sha256": "e21b41ce1cf0d7f86e25729ce8a53179c0f6c3f006acce8a19b9cf0719c1e265",
+      "model_path": "data/probability_phase2/experiments/run1/models/strict/lag2_seasonal.json",
+      "model_sha256": "e21b41ce1cf0d7f86e25729ce8a53179c0f6c3f006acce8a19b9cf0719c1e265",
+      "calibrate": true
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "seasonal_pooled",
+      "learner": "simple_baseline",
+      "arm": null,
+      "metadata_path": "data/probability_phase2/experiments/run1/models/strict/lag2_seasonal_pooled.json",
+      "metadata_sha256": "cf4954936c70faa4c19117c91802c36d8382aa61361abbf2f1f49bab217d969b",
+      "model_path": "data/probability_phase2/experiments/run1/models/strict/lag2_seasonal_pooled.json",
+      "model_sha256": "cf4954936c70faa4c19117c91802c36d8382aa61361abbf2f1f49bab217d969b",
+      "calibrate": true
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "model_id": "transition",
+      "learner": "simple_baseline",
+      "arm": null,
+      "metadata_path": "data/probability_phase2/experiments/run1/models/strict/lag2_transition.json",
+      "metadata_sha256": "17a4391bfb160ef368bd1d053aa668765be6820479f7d684ee50880a4515302e",
+      "model_path": "data/probability_phase2/experiments/run1/models/strict/lag2_transition.json",
+      "model_sha256": "17a4391bfb160ef368bd1d053aa668765be6820479f7d684ee50880a4515302e",
+      "calibrate": true
+    }
+  ],
+  "calibration": {
+    "method": "nonnegative_slope_logit_platt",
+    "fit_years": [
+      2018,
+      2019
+    ],
+    "probability_clip": [
+      1e-06,
+      0.999999
+    ],
+    "mapping": "sigmoid(a*logit(clip(p))+b)",
+    "slope_lower_bound": 0,
+    "slope_upper_bound": null,
+    "intercept_bounds": [
+      null,
+      null
+    ],
+    "objective": "sum_y(0.5*mean_i(logaddexp(0,a*z_i+b)-y_i*(a*z_i+b)))) + 1e-6*(a-1)^2",
+    "penalty": 1e-06,
+    "year_weighting": "each_row_1_over_2n_year",
+    "area_weights": false,
+    "class_weights": false,
+    "optimizer": {
+      "library": "scipy.optimize.minimize",
+      "method": "L-BFGS-B",
+      "parameter_order": [
+        "a",
+        "b"
+      ],
+      "initial": [
+        1.0,
+        0.0
+      ],
+      "jac": "analytic_float64",
+      "maxiter": 2000,
+      "maxfun": 20000,
+      "maxls": 20,
+      "ftol": 1e-12,
+      "gtol": 1e-08
+    },
+    "fit_separately_by": [
+      "scope",
+      "lag",
+      "model_id"
+    ],
+    "require_two_nonempty_years": true,
+    "single_class_check": "pooled_two_year_y",
+    "no_subregion_or_previous_y_specific_calibrator": true,
+    "failure_conditions": [
+      "empty_required_year",
+      "pooled_single_class",
+      "optimizer_success_false",
+      "nonfinite_parameters_objective_or_predictions",
+      "negative_slope"
+    ],
+    "failure_fallback": "identity_return_original_p_exactly_with_status_and_reason",
+    "fallback_a": 1.0,
+    "fallback_b": 0.0,
+    "try_alternate_method_or_initialization": false,
+    "persistence": "skip_fit_p_calibrated_equals_p_raw_exactly",
+    "probability_bounds": "validate_0_to_1_raw_inputs_no_silent_clipping_except_logit_and_logloss",
+    "artifacts": "calibration/calibrators.json",
+    "calibration_diagnostics": "fitted_in_sample_only_not_independent_evidence"
+  },
+  "warning_rules": {
+    "primary": {
+      "probability": "calibrated",
+      "operator": ">=",
+      "threshold": 0.5
+    },
+    "secondary": {
+      "name": "calibration_alert_budget_10pct",
+      "max_calibration_alert_fraction": 0.1,
+      "thresholds": {
+        "start": 0,
+        "end": 1,
+        "step": 0.01,
+        "no_alert_sentinel": 1.000001
+      },
+      "selection": "smallest_threshold_meeting_budget",
+      "calibration_year_weighting": "equal",
+      "use_event_labels_for_threshold_selection": false,
+      "split_ties": false,
+      "freeze_before_test": true,
+      "recompute_on_test": false
+    },
+    "persistence_probability": "raw",
+    "occupational_action_threshold_claim": false,
+    "raw_diagnostic_threshold": 0.5
+  },
+  "comparisons": {
+    "primary_probability": "raw",
+    "secondary_probability": "calibrated",
+    "primary_confirmatory_feature_contrast": {
+      "candidate": "F1",
+      "reference": "F0"
+    },
+    "primary_learner": "lightgbm",
+    "lr_same_contrasts": "predefined_supporting_analysis_not_posthoc_model_switch",
+    "feature_contrasts": [
+      {
+        "candidate": "F1",
+        "reference": "F0",
+        "interpretation": "moisture_added_to_pure_temperature"
+      },
+      {
+        "candidate": "F1P",
+        "reference": "F0P",
+        "interpretation": "moisture_conditional_on_available_event_state"
+      },
+      {
+        "candidate": "F2",
+        "reference": "F1",
+        "interpretation": "completed_night_group"
+      },
+      {
+        "candidate": "F3",
+        "reference": "F2",
+        "interpretation": "regional_group"
+      },
+      {
+        "candidate": "F4",
+        "reference": "F3",
+        "interpretation": "historical_composite_heat_state"
+      },
+      {
+        "candidate": "F2",
+        "reference": "F2_minus_NT",
+        "interpretation": "night_temperature_with_night_moisture_already_present"
+      },
+      {
+        "candidate": "F2",
+        "reference": "F2_minus_NM",
+        "interpretation": "night_moisture_with_night_temperature_already_present"
+      },
+      {
+        "candidate": "F3",
+        "reference": "F3_minus_RT",
+        "interpretation": "regional_temperature_conditional_group"
+      },
+      {
+        "candidate": "F3",
+        "reference": "F3_minus_RM",
+        "interpretation": "regional_moisture_conditional_group"
+      }
+    ],
+    "learners": [
+      "logistic",
+      "lightgbm"
+    ],
+    "model_contrasts": [
+      "lightgbm_each_arm_minus_logistic_same_arm",
+      "each_ML_minus_fixed_logistic_F4",
+      "each_ML_minus_each_simple_baseline"
+    ],
+    "deduplicate_identical_pairs": true,
+    "simple_baselines": [
+      "persistence",
+      "seasonal",
+      "seasonal_pooled",
+      "transition"
+    ],
+    "risk_sets": [
+      "all",
+      "onset",
+      "continuation"
+    ],
+    "continuation_definition": "y_previous_equals_1_including_10_and_11",
+    "onset_definition": "y_previous_equals_0_including_00_and_01",
+    "scopes": [
+      "temporal",
+      "strict"
+    ],
+    "lags": [
+      1,
+      2
+    ],
+    "subgroups_do_not_select_candidates": true
+  },
+  "evaluation": {
+    "weighting": "within_year_equal_valid_grid_days_then_equal_years",
+    "area_sensitivity": "within_year_cos_latitude_renormalized_then_equal_years",
+    "brier": "weighted_mean_squared_error",
+    "delta": "candidate_minus_reference",
+    "bss": "1-ratio_of_equal_annual_candidate_and_reference_brier_not_mean_annual_ratios",
+    "zero_reference_brier": "NA_preserve_absolute_delta",
+    "risk_sets": [
+      "all",
+      "onset",
+      "continuation"
+    ],
+    "subregions": {
+      "full": "all_eligible_scope",
+      "SW": "longitude<117.5_and_latitude<30.5",
+      "NW": "longitude<117.5_and_latitude>=30.5",
+      "SE": "longitude>=117.5_and_latitude<30.5",
+      "NE": "longitude>=117.5_and_latitude>=30.5"
+    },
+    "empty_subregion": "explicit_NA_counts_zero_no_boundary_change_no_borrowing_other_regions",
+    "missing_year_risk_set": "five_year_aggregate_NA_never_silently_renormalize_over_available_years_report_valid_year_count",
+    "ranking_metrics": {
+      "primary": "average_precision_step_integral",
+      "secondary": "pr_auc_trapezoidal_recall_ascending",
+      "report_prevalence": true,
+      "one_class": "NA_with_counts",
+      "curve_definition": {
+        "order": "descending_probability",
+        "ties": "include_all_equal_probability_samples_together",
+        "start_point": {
+          "recall": 0,
+          "precision": 1
+        },
+        "end_point": {
+          "recall": 1,
+          "precision": "prevalence"
+        },
+        "ap_integral": "sum(delta_recall*precision_at_segment_end)",
+        "trapezoid_integral": "sum(delta_recall*(precision_previous+precision_current)/2)",
+        "constant_prediction": {
+          "ap": "prevalence",
+          "trapezoid": "(1+prevalence)/2"
+        }
+      }
+    },
+    "reliability": {
+      "bin_edges": [
+        0,
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7,
+        0.8,
+        0.9,
+        1
+      ],
+      "last_bin_includes_1": true,
+      "empty_bins": "NA_no_interpolation",
+      "report": [
+        "n",
+        "n_positive",
+        "mean_probability",
+        "event_fraction"
+      ],
+      "intervals": "left_closed_right_open_except_last_includes_1"
+    },
+    "alert_metrics": [
+      "TP",
+      "FP",
+      "FN",
+      "TN",
+      "recall",
+      "precision",
+      "FAR",
+      "FPR",
+      "miss_rate",
+      "per_grid_summer_alert_days",
+      "grid_day_alert_fraction"
+    ],
+    "zero_metric_denominator": "NA",
+    "logloss_clip": [
+      1e-06,
+      0.999999
+    ],
+    "reliability_aggregation": "annual_primary_plus_equal_year_weighted_pooled_diagnostic_report_raw_counts_and_weighted_mass",
+    "alert_aggregation": "annual_counts_and_rates_primary_mean_annual_rates_plus_separately_labeled_pooled_counts",
+    "per_grid_summer_alert_days": "observed_eligible_days_only_report_coverage_never_impute_missing_days",
+    "transition_groups": [
+      "0_to_0",
+      "0_to_1_onset",
+      "1_to_0_clearance",
+      "1_to_1_continuation"
+    ],
+    "transition_distribution": [
+      "n",
+      "n_positive",
+      "probability_mean",
+      "probability_std_ddof0",
+      "probability_quantiles_0_0.25_0.5_0.75_1",
+      "alert_count_and_rate_for_both_frozen_rules"
+    ],
+    "diagnostic_logistic": {
+      "purpose": "test_diagnostic_only_never_transform_saved_probabilities",
+      "target": "raw_and_calibrated_probabilities_by_scope_lag_model_year_all_risk",
+      "form": "logit_P_y = intercept + slope*logit(clip(p,1e-6,1-1e-6))",
+      "slope_constraint": null,
+      "penalty": 0,
+      "initial_intercept_slope": [
+        0.0,
+        1.0
+      ],
+      "method": "L-BFGS-B",
+      "maxiter": 2000,
+      "maxfun": 20000,
+      "maxls": 20,
+      "ftol": 1e-12,
+      "gtol": 1e-08,
+      "failure": "NA_on_single_class_constant_logit_complete_or_quasi_separation_nonfinite_or_nonconvergence_no_fallback_predictor",
+      "separation_check": "max(z_given_y0)<=min(z_given_y1)_or_max(z_given_y1)<=min(z_given_y0)"
+    },
+    "display_precision": {
+      "probability_scores_max_decimals": 4,
+      "percentage_decimals": 1
+    }
+  },
+  "uncertainty": {
+    "method": "paired_hierarchical_year_then_non_circular_moving_date_block_bootstrap",
+    "replicates": 2000,
+    "seed": 20261105,
+    "rng": "numpy.random.Generator(PCG64(SeedSequence([20261105,block_days])))",
+    "primary_block_days": 14,
+    "sensitivity_block_days": [
+      7,
+      21
+    ],
+    "confidence_percentiles": [
+      2.5,
+      97.5
+    ],
+    "quantile_method": "linear",
+    "year_order": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "sampled_year_slots": 5,
+    "days_per_slot": 84,
+    "draw_order": "for_each_replicate_draw_5_year_indices_then_for_each_slot_draw_ceil(84/block_days)_starts",
+    "block_start": "uniform_integer_0_through_84_minus_block_days_inclusive",
+    "last_block": "truncate_after_84_dates",
+    "calendar_missing_dates": "retain_date_positions_and_original_missing_mask_never_collapse_calendar",
+    "duplicate_years": "each_drawn_slot_remains_separately_normalized_equal_weight_1_over_5",
+    "within_slot_weights": "count_date_multiplicity_times_grid_weight_then_divide_by_valid_risk_subset_weight_sum",
+    "grid_weight": "1_primary_coslatitude_sensitivity",
+    "carry_full_space_and_all_models": true,
+    "paired_draws": "one_saved_draw_plan_per_block_days_shared_across_models_pairs_scopes_risk_sets_probability_types_and_weightings",
+    "statistics": [
+      "candidate_brier",
+      "reference_brier",
+      "delta_brier",
+      "bss"
+    ],
+    "uncertainty_coverage": "all_predefined_pairs_raw_and_calibrated_full_scope_and_all_onset_continuation_for_equal_and_coslat_weights",
+    "subregion_uncertainty": "descriptive_scores_and_annual_pairs_only_no_unregistered_claims",
+    "missing_slot_risk_rows": "that_replicate_metric_NA_no_replacement_draw",
+    "zero_reference_brier": "replicate_BSS_NA_absolute_delta_retained",
+    "valid_replicates": "report_n_valid_of_2000_and_missing_reason_counts",
+    "ci_minimum_valid_replicates": 1900,
+    "below_minimum": "CI_NA_insufficient_resampling_support",
+    "ci_with_some_invalid": "conditional_valid_replicate_percentiles_explicitly_labeled",
+    "gate_requires_complete_replicates": true,
+    "leave_one_year_out": "all_five_four_year_equal_annual_mean_deltas_and_ratio_BSS_no_refitting",
+    "yearly_differences_required": true,
+    "bootstrap_calibration_refitting": false,
+    "uncertainty_target": "conditional_on_frozen_models_and_calibrators_time_uncertainty_in_this_domain_or_this_single_H",
+    "spatial_iid": false,
+    "multiplicity": "no_independent_significance_claims_or_best_result_filtering",
+    "p_values": false,
+    "additional_comparisons": [
+      "each_model_calibrated_minus_same_model_raw_BS_same_draws"
+    ]
+  },
+  "application_gate": {
+    "status_before_test": "unevaluated",
+    "candidate": "lightgbm_F4",
+    "reference": "logistic_F4",
+    "assess_separately_by_scope": true,
+    "main_score": "raw_delta_brier",
+    "required_cells": [
+      "lag1/all",
+      "lag1/onset",
+      "lag2/all",
+      "lag2/onset"
+    ],
+    "require_each_cell": {
+      "mean_delta_lt": 0,
+      "minimum_years_delta_lt_zero": 3,
+      "total_years": 5,
+      "primary_14day_ci_upper_lt": 0,
+      "sensitivity_7_and_21day_ci_upper_lt": 0,
+      "complete_2000_valid_replicates": true
+    },
+    "leave_one_year_out": "report_every_value_sign_reversal_marks_instability_and_blocks_stable_advantage_claim",
+    "calibration_distortion": {
+      "any_calibration_fallback_for_candidate_or_reference": "block_recommendation",
+      "invalid_probabilities": "block_evaluation",
+      "check_cells": [
+        "lag1/all",
+        "lag1/onset",
+        "lag2/all",
+        "lag2/onset"
+      ],
+      "comparison": "calibrated_BS_minus_raw_BS_for_each_candidate_and_reference",
+      "positive_14day_ci_lower_bound": "block_application_support",
+      "diagnostic_failures": "report_no_automatic_claim_of_reliability"
+    },
+    "failure": "insufficient_evidence_or_instability_keep_frozen_simple_model_no_test_driven_model_switch",
+    "primary_moisture_claim": "F1_minus_F0_requires_own_paired_evidence_secondary_contrasts_cannot_rescue_failure",
+    "transfer_claim": "requires_strict_H_result_no_inference_from_strict_T_validation",
+    "operational_deployment_permission": false,
+    "provenance": "new_pre_reserved_data_conservative_operationalization_for_joint_stable_advantage_and_application_extension_not_verbatim_original_protocol_or_single_cell_significance_rule",
+    "retain_cell_findings_on_gate_failure": true
+  },
+  "output_contract": {
+    "calibration_model_records": "calibration/calibrators.json",
+    "calibration_diagnostics": "calibration/diagnostics.csv",
+    "calibration_enriched_predictions": "enriched/calibration/{scope}/lag{lag}/{model}/{year}.npz",
+    "final_reports": "evaluation/",
+    "required_prediction_fields": [
+      "grid_id",
+      "latitude",
+      "longitude",
+      "spatial_role",
+      "target_date_bjt",
+      "issue_time_bjt",
+      "issue_time_utc",
+      "target_start_bjt",
+      "target_end_bjt",
+      "target_start_utc",
+      "target_end_utc",
+      "lag_days",
+      "max_input_valid_time",
+      "model_id",
+      "protocol_version",
+      "p_raw",
+      "p_calibrated",
+      "alert_threshold",
+      "y_D",
+      "evaluation_y_D_minus1",
+      "sample_eligibility"
+    ],
+    "raw_and_calibrated_columns": true,
+    "read_access_audit": "record_phase_path_year_scope_purpose_timestamp_no_undeclared_scores",
+    "calibration_and_final_runs": "separate_status_records",
+    "report_all_failures_and_omissions": true,
+    "source_and_dependency_versions_in_seal": true
+  },
+  "interpretation": {
+    "prior_exposure_years": [
+      2017,
+      2022
+    ],
+    "claim": "2020-2024_did_not_participate_in_this_round_model_feature_or_alert_rule_selection",
+    "preregistration_or_new_blind_test_claim": false,
+    "setting": "retrospective_ERA5_reanalysis_hindcast_not_operational_warning",
+    "lag2": "assimilation_window_sensitivity_not_proof_all_future_influence_removed",
+    "strict": "single_H_transfer_with_recent_local_inputs_not_no_observation_cold_start",
+    "esg": "hazard_screening_and_adaptation_information_not_occupational_action_or_loss_model"
+  },
+  "decision_provenance": {
+    "inherited": "original_protocol_controls_splits_features_calibration_alerts_metrics_bootstrap_geometry",
+    "phase3_validation_locked": "all_88_models_unchanged_and_F4_simple_champion_each_scope_lag",
+    "new_pre_reserved_data_defaults": [
+      "optimizer_numerics_and_exact_identity",
+      "diagnostic_fit_specification",
+      "missing_subregion_and_year_NA_rules",
+      "paired_draw_algorithm_and_valid_replicate_policy",
+      "two_layer_lock_with_intermediate_calibration_parameter_seal",
+      "explicit_conservative_application_gate",
+      "all_104_instances_retained"
+    ]
+  }
+}

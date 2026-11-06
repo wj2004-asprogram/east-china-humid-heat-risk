@@ -1,0 +1,6 @@
+{
+  "kind": "persistence",
+  "cutoff_lag_days": 1,
+  "fit": false,
+  "probability": "y(D-1)"
+}

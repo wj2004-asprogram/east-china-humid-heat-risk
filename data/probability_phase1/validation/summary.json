@@ -1,0 +1,124 @@
+{
+  "created_at_utc": "2026-11-05T16:08:08.324160+00:00",
+  "status": "PASS_WITH_DOCUMENTED_LIMITATIONS",
+  "base_commit": "3aa2b0872a5d9a11909776229054e0f944e21d5f",
+  "branch": "research/probability-audit-20261105",
+  "protocol_status": "reviewable_draft_pending_feature_audit",
+  "scientific_scope": "ERA5 reanalysis-conditioned historical hindcast preparation; no trained meteorological model",
+  "software": {
+    "python": "3.13.1",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "xarray": "2026.9.0",
+    "netCDF4": "1.7.4",
+    "h5netcdf": "1.8.1",
+    "scipy": "1.18.1",
+    "pytest": "9.1.1",
+    "scikit-learn": "NOT_INSTALLED",
+    "lightgbm": "NOT_INSTALLED"
+  },
+  "test_counts": {
+    "passed": 56,
+    "failures": 0,
+    "errors": 0,
+    "warnings": 6
+  },
+  "test_command": "python -B -m pytest tests/test_probability_samples.py tests/test_probability_features.py tests/test_probability_baselines.py tests/test_indices.py tests/test_time_utils.py tests/test_land_sea_mask.py -q -p no:cacheprovider --basetemp <workspace>/pytest-probability-final --junitxml data/probability_phase1/validation/targeted-tests.xml",
+  "audit_checks_passed": 523,
+  "data": {
+    "raw_files": 101,
+    "raw_bytes": 366301416,
+    "land_cells": 1580,
+    "common_dates": 2100,
+    "structural_cell_days": 3318000,
+    "sample_counts_by_year_split": {
+      "calibration": 265440,
+      "final_test": 663600,
+      "train": 1990800,
+      "validation": 398160
+    }
+  },
+  "pilot": {
+    "year": 2000,
+    "daily_grid_shape": [
+      92,
+      45,
+      45
+    ],
+    "daily_variables": 7,
+    "rows": 42,
+    "distinct_grid_dates": 21,
+    "finite_rows": 42,
+    "all_seven_daily_arrays_finite": true,
+    "raw_inputs_after_pilot": [
+      {
+        "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2000_06.nc",
+        "sha256": "5226f36b493651f4d1919dbdfcd0884487af29b83bf73b308d9446e464c01a29"
+      },
+      {
+        "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2000_07.nc",
+        "sha256": "c85aa066531b883f8066166f24621bb7fc7f8e3d4c5018fdcacc7688133ae822"
+      },
+      {
+        "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2000_08.nc",
+        "sha256": "03ded1315ea59649e14390b965c1d1c23ee65104fc50bd07c1a5288707623059"
+      },
+      {
+        "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2000_05_31_h16-23.nc",
+        "sha256": "dd1d39f7e9876ae72e7b4fe7f6e743e2ca142af2e65190e384e4bc1fd4abeae8"
+      }
+    ],
+    "target_labels_in_sample_csv": false,
+    "full_protocol_feature_union_complete": false
+  },
+  "failures_and_resolutions": [
+    {
+      "stage": "initial sandbox shell checks",
+      "issue": "Git outside workspace and CIM blocked by sandbox; rg unavailable",
+      "resolution": "read-only approved escalated Git/CIM succeeded; used native PowerShell file discovery"
+    },
+    {
+      "stage": "audit initial",
+      "issue": "AttributeError: Paths.land_sea_mask",
+      "resolution": "Use existing cfg.paths.raw_land_sea_mask; no source data edited"
+    },
+    {
+      "stage": "audit-r1",
+      "issue": "Only config byte-hash check failed due LF/CRLF checkout",
+      "resolution": "Verify original accepted hash AND entire normalized text; preserve both hashes; audit-r2 PASS"
+    },
+    {
+      "stage": "agent synthetic test setup",
+      "issue": "Default pytest temp path inaccessible",
+      "resolution": "Explicit isolated writable --basetemp; combined 56-test run passed"
+    }
+  ],
+  "artifact_fix": {
+    "issue": "Geometry source-list hash was calculated for LF bytes, while Windows text output added CRLF",
+    "resolution": "Preserved initial output; made geometry writer explicit LF and normalized generated list only; final receipt verified exact file SHA-256"
+  },
+  "remaining_work": [
+    "Complete all protocol feature groups and full feature-union sample masks",
+    "Isolate and pin scikit-learn/LightGBM dependencies before their stages",
+    "Fit and validate real baselines only after sample/feature freeze",
+    "Keep final-test evaluation closed until model, calibration and thresholds freeze"
+  ],
+  "actions_not_taken": [
+    "real model fit",
+    "hyperparameter search",
+    "calibration",
+    "final-test performance calculation",
+    "download",
+    "source data changes",
+    "CDS state changes",
+    "push",
+    "merge",
+    "deployment",
+    "external messaging"
+  ],
+  "model_assignment": {
+    "scientific_design": "gpt-6-astra xhigh",
+    "engineering": "gpt-6-astra medium",
+    "speed_tier": "not configurable in available subagent interface"
+  }
+}

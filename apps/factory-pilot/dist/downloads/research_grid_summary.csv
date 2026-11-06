@@ -1,0 +1,7 @@
+﻿grid_id,latitude,longitude,land_mask,screening_status,analysis_role,primary_site_ids,bbox_site_ids,complete_summers,total_summers,mean_days_ge_threshold_per_complete_summer,max_consecutive_days
+"30.2500,120.5000",30.25,120.5,1.0,ok,primary,factory_002|factory_003|factory_004,factory_002|factory_003|factory_004,25,25,44.12,39
+"30.7500,121.7500",30.75,121.75,0.0,non_land_grid,primary,factory_001,factory_001,,,,
+"31.0000,121.2500",31.0,121.25,1.0,ok,primary,factory_006|factory_008|factory_010|factory_011|factory_012|factory_013|factory_014|factory_015|factory_016|factory_017|factory_021|factory_022|factory_023|factory_024|factory_025|factory_026|factory_027|factory_028|factory_029|factory_030|factory_031|factory_032,factory_006|factory_008|factory_010|factory_011|factory_012|factory_013|factory_014|factory_015|factory_016|factory_017|factory_021|factory_022|factory_023|factory_024|factory_025|factory_026|factory_027|factory_028|factory_029|factory_030|factory_031|factory_032,25,25,37.64,38
+"31.0000,121.5000",31.0,121.5,1.0,ok,primary,factory_005|factory_007|factory_009|factory_018|factory_019|factory_020,factory_005|factory_007|factory_009|factory_011|factory_016|factory_018|factory_019|factory_020,25,25,32.24,36
+"31.0000,121.7500",31.0,121.75,1.0,ok,sensitivity_only,,factory_001,25,25,10.52,14
+"31.5000,121.0000",31.5,121.0,1.0,ok,primary,factory_033|factory_034|factory_035,factory_033|factory_034|factory_035,25,25,33.12,29

@@ -1,0 +1,2478 @@
+{
+  "design_lock.json": {
+    "sha256": "18b67bfaf6e0ecac4b49f2468fbdf668aa6e407e541d5b55ab1420d74ed32238",
+    "bytes": 38892
+  },
+  "experiments.json": {
+    "sha256": "3015602636eb560ccf728d748839106925cad03d8aefab048949d26ce6f22139",
+    "bytes": 12500
+  },
+  "lr_validation_contrasts.csv": {
+    "sha256": "b4a0b2cb764198ef212069becbf3d105171781a12a9301739ebdd362fce60a26",
+    "bytes": 3139
+  },
+  "metrics_summary.csv": {
+    "sha256": "5aeae0bfb82bbaccca68164e334ee5196f16c20cd4d1932da9e590f3ca0f7c3e",
+    "bytes": 28859
+  },
+  "metrics_yearly.csv": {
+    "sha256": "57dadf392cc9a918cdf0b5dab10c9dcf98fb76362ac2ab34fd7773573e9bd3c1",
+    "bytes": 536711
+  },
+  "prediction_schema.json": {
+    "sha256": "64a9f3686f9b23732fff5bf8cabebca0dc447b068fc3c785adf799be5831d278",
+    "bytes": 1004
+  },
+  "reliability_yearly.csv": {
+    "sha256": "9e5e8a3b5201cdaa66fff579f856f8468449f93dbaf7899902f60344dc5007a5",
+    "bytes": 636089
+  },
+  "reused_phase2_models.json": {
+    "sha256": "205af19810bfc8f9c2435e4745695655cac02025e1a265bcee7f4770b4c17711",
+    "bytes": 4227
+  },
+  "run.json": {
+    "sha256": "ac83fd3be07f92357b847b0244ff7cf9d43bfdd889b391371505acb581de26c0",
+    "bytes": 6867
+  },
+  "threadpools.json": {
+    "sha256": "b4d36d612cdd2ec1697b6c0e73dbe32cd4e0a29225261b20ec9143a6cfbd88c7",
+    "bytes": 402
+  },
+  "validation_checks.json": {
+    "sha256": "3ef6e9082bbaa7370ed12fc12223aa585704f8ab78cef04c19808bf82bd0f692",
+    "bytes": 2379
+  },
+  "predictions\\temporal\\lag2\\logistic_F0P\\2000.npz": {
+    "sha256": "48a20b2f579a9ad7d6d6063af829f3d1bca2f8eee766f657f6c08920bd99857f",
+    "bytes": 1019546
+  },
+  "predictions\\temporal\\lag2\\logistic_F0P\\2001.npz": {
+    "sha256": "9648b0fde26380798abadec1090835b301308ddc16b2675752abc8321d899bef",
+    "bytes": 1018736
+  },
+  "predictions\\temporal\\lag2\\logistic_F0P\\2002.npz": {
+    "sha256": "4415f4e5a97038cb7aca0a18502fab061dadb5511df1641adbca18073d63fe13",
+    "bytes": 1017418
+  },
+  "predictions\\temporal\\lag2\\logistic_F0P\\2003.npz": {
+    "sha256": "6f47ec2fede3ba503fc87d48be9096be47c472246357a2892a9e1050c6dcb852",
+    "bytes": 1020132
+  },
+  "predictions\\temporal\\lag2\\logistic_F0P\\2004.npz": {
+    "sha256": "2e8ba4cf01504ce772e0c89b8e6e08bd2fdad11abf31e967457e8c6501b863b9",
+    "bytes": 1019564
+  },
+  "predictions\\temporal\\lag2\\logistic_F0P\\2005.npz": {
+    "sha256": "5c15dbcf3ac0f6e503037ddf7e098324d208e43aced727382100d3a74c92cd0a",
+    "bytes": 1019742
+  },
+  "predictions\\temporal\\lag2\\logistic_F0P\\2006.npz": {
+    "sha256": "d19cb26f6b9357795659cf8c644e9f2fb7119b47f55ce0d3118d074313ed9d9b",
+    "bytes": 1021441
+  },
+  "predictions\\temporal\\lag2\\logistic_F0P\\2007.npz": {
+    "sha256": "6c40ce2baf699da04aa6e13559ee0cc7437be09910e87f018904a44fc6a0b7cf",
+    "bytes": 1021580
+  },
+  "predictions\\temporal\\lag2\\logistic_F0P\\2008.npz": {
+    "sha256": "cf4d23d064b4862eb90824e9fa95e046ef74f72e0daef8ad3e8ece2fb86b30b7",
+    "bytes": 1019687
+  },
+  "predictions\\temporal\\lag2\\logistic_F0P\\2009.npz": {
+    "sha256": "435d68c69a17d6dceb80af4944d183070835013fb9a11a3619952f3895e84b64",
+    "bytes": 1020086
+  },
+  "predictions\\temporal\\lag2\\logistic_F0P\\2010.npz": {
+    "sha256": "1dfac2bcb650e715bc36e07476cd00fe253ca78232aefcfc682a0602a71be692",
+    "bytes": 1019497
+  },
+  "predictions\\temporal\\lag2\\logistic_F0P\\2011.npz": {
+    "sha256": "7ec9799070169d0202ffa31322e7f8d15279b22a91b83241787c072a93c40537",
+    "bytes": 1018386
+  },
+  "predictions\\temporal\\lag2\\logistic_F0P\\2012.npz": {
+    "sha256": "e9409590e8900d65e25e85790997546115d7fa40e117d02f4cce3fd82912179e",
+    "bytes": 1018648
+  },
+  "predictions\\temporal\\lag2\\logistic_F0P\\2013.npz": {
+    "sha256": "ddb87e2e20db441054eaf42c6acaf2b11f22ecd3134b29317e9c2139eee5b63c",
+    "bytes": 1021687
+  },
+  "predictions\\temporal\\lag2\\logistic_F0P\\2014.npz": {
+    "sha256": "247f03611484d78ff1fb4984ce21e4ce5059e438dfc704bee0da91efc05549c2",
+    "bytes": 1018536
+  },
+  "predictions\\temporal\\lag2\\logistic_F0P\\2015.npz": {
+    "sha256": "522c67a1e3c842ca93f7eebfa92eb96b10bd7a478cdea13508ce675d9da759de",
+    "bytes": 1017253
+  },
+  "predictions\\temporal\\lag2\\logistic_F0P\\2016.npz": {
+    "sha256": "bcd06463047e12498811b92149f41229c44a9d8f4f30628b6d1ea5e6f90ed11f",
+    "bytes": 1021621
+  },
+  "predictions\\temporal\\lag2\\logistic_F0P\\2017.npz": {
+    "sha256": "e649465333e194696e7d50bd63a5052e399399bd2bb476c8f32b369382c08102",
+    "bytes": 1020653
+  },
+  "predictions\\temporal\\lag2\\logistic_F1P\\2000.npz": {
+    "sha256": "12cef6a5b09b69830f25f01e9724b8a0fa4583a3d56180dee8d60b17b89fca3b",
+    "bytes": 1019867
+  },
+  "predictions\\temporal\\lag2\\logistic_F1P\\2001.npz": {
+    "sha256": "3955074f47c64f5ef49b2d2c3cc91a91db8d8979c66d3a607846b9063705f921",
+    "bytes": 1019215
+  },
+  "predictions\\temporal\\lag2\\logistic_F1P\\2002.npz": {
+    "sha256": "de56c643674f7266e84cb19bb8d580280a2bf13c182d29686620668759467f63",
+    "bytes": 1018164
+  },
+  "predictions\\temporal\\lag2\\logistic_F1P\\2003.npz": {
+    "sha256": "56ae6b0e3926562275e6197cef62845f2bfefdfa0712b9a5433243de51d89c34",
+    "bytes": 1020389
+  },
+  "predictions\\temporal\\lag2\\logistic_F1P\\2004.npz": {
+    "sha256": "4ba33dd6a0aa5931dc7bbd88399fbd8233fb8e0737a7e50334d4cc56f4fd1ce1",
+    "bytes": 1020038
+  },
+  "predictions\\temporal\\lag2\\logistic_F1P\\2005.npz": {
+    "sha256": "edf0ab46de02c8cf4ae38016c1b8f460831b5e73631cab58ed3033315f2ba99d",
+    "bytes": 1020195
+  },
+  "predictions\\temporal\\lag2\\logistic_F1P\\2006.npz": {
+    "sha256": "d00704322dd4c2a7e555ded5692da16c726fa003065f58a6e60a464c75358e16",
+    "bytes": 1021943
+  },
+  "predictions\\temporal\\lag2\\logistic_F1P\\2007.npz": {
+    "sha256": "1caff1cda2dfe2a3030c626e09707c84e4af59a40a771aba3685ec88d1e81357",
+    "bytes": 1021938
+  },
+  "predictions\\temporal\\lag2\\logistic_F1P\\2008.npz": {
+    "sha256": "ad572e48b6ef3e2c955bd13ee4b923ec4de8d7f8d3e4d04d75db36e8a3ca1624",
+    "bytes": 1020131
+  },
+  "predictions\\temporal\\lag2\\logistic_F1P\\2009.npz": {
+    "sha256": "7df7b27a06b94087daee3c3e6a1435fc1a1f7f3559b2f4a4f05c5f150834ccaa",
+    "bytes": 1020775
+  },
+  "predictions\\temporal\\lag2\\logistic_F1P\\2010.npz": {
+    "sha256": "21b7fa0cc60e03777d94fd2cad698a13cefb6b4b5cdd9de2c80aa04b85ca557a",
+    "bytes": 1020152
+  },
+  "predictions\\temporal\\lag2\\logistic_F1P\\2011.npz": {
+    "sha256": "d971579e933c3945656a876645ffa20a6f97a298a1fe6559a18ba8d120d2b4ca",
+    "bytes": 1019127
+  },
+  "predictions\\temporal\\lag2\\logistic_F1P\\2012.npz": {
+    "sha256": "c2d451c4d81d4b6177422856f41d4d771c4f41bcdae2e1a0d02f10dab6e2e352",
+    "bytes": 1019116
+  },
+  "predictions\\temporal\\lag2\\logistic_F1P\\2013.npz": {
+    "sha256": "9eda9153e5e14e0036e43dcb0c9922c70594d53b15f18692105a5f5eb0d10fe3",
+    "bytes": 1022186
+  },
+  "predictions\\temporal\\lag2\\logistic_F1P\\2014.npz": {
+    "sha256": "e2d1128e3518898e70bf1a4ff30c31f0b0d7ed7b79ab304a920142e20df428a2",
+    "bytes": 1019230
+  },
+  "predictions\\temporal\\lag2\\logistic_F1P\\2015.npz": {
+    "sha256": "fd92ea11d3debc6caf7ac227bec01b499fb9ff44e10f6e22dc4b537a8b4797a7",
+    "bytes": 1018055
+  },
+  "predictions\\temporal\\lag2\\logistic_F1P\\2016.npz": {
+    "sha256": "d0ec05822b0cb0f6f10d8bc60b171505b007defce8d936d0a4c6f2f58653fbdd",
+    "bytes": 1021759
+  },
+  "predictions\\temporal\\lag2\\logistic_F1P\\2017.npz": {
+    "sha256": "614223cf5a92a3fb226a5e3e51a845f62ae366340d4b7ae7e2c2785c6451b148",
+    "bytes": 1021228
+  },
+  "predictions\\temporal\\lag2\\logistic_F2\\2000.npz": {
+    "sha256": "dfb12b083e877debe10687e18e0afe44eb95c45fd92929c2b58b6594be0b2ef9",
+    "bytes": 1020052
+  },
+  "predictions\\temporal\\lag2\\logistic_F2\\2001.npz": {
+    "sha256": "893952231f97a894a8850adec32e95fde1df9580dd0eade3d29fcb50b69b72e1",
+    "bytes": 1019220
+  },
+  "predictions\\temporal\\lag2\\logistic_F2\\2002.npz": {
+    "sha256": "c8695d428445239bfbb5569e18ed6c41efcb550cc38a92aedca05d518f34ab65",
+    "bytes": 1018352
+  },
+  "predictions\\temporal\\lag2\\logistic_F2\\2003.npz": {
+    "sha256": "dda216c2d5bc48106a2212102dc1d191563f6b5d7a638df9528148b207fe0ea3",
+    "bytes": 1020653
+  },
+  "predictions\\temporal\\lag2\\logistic_F2\\2004.npz": {
+    "sha256": "e4874c5b8e0da8045805850d3a032ef8e3295f776ba5a11eaa160ea977e70a03",
+    "bytes": 1020198
+  },
+  "predictions\\temporal\\lag2\\logistic_F2\\2005.npz": {
+    "sha256": "a0881b984dc2811013007e3d7f7aaadb171e4502a48e968b3fc9f470a1c57042",
+    "bytes": 1020404
+  },
+  "predictions\\temporal\\lag2\\logistic_F2\\2006.npz": {
+    "sha256": "3bea5fd8c2437474c03c7199bbe169af637061b3fb398a7c3572727997c1f218",
+    "bytes": 1022047
+  },
+  "predictions\\temporal\\lag2\\logistic_F2\\2007.npz": {
+    "sha256": "561ce98a05d745edf4dceda901cfd0fdf2c4a30df7ab8969ca7242f93573ae9d",
+    "bytes": 1022174
+  },
+  "predictions\\temporal\\lag2\\logistic_F2\\2008.npz": {
+    "sha256": "5d813f21613efdbf0a721516cccd23a82932f0c33a192f14228894d7193f4e93",
+    "bytes": 1020290
+  },
+  "predictions\\temporal\\lag2\\logistic_F2\\2009.npz": {
+    "sha256": "884036ba7c2b6ee358fe621a8dbd79f21900f657c426d7912f36b37440504bf6",
+    "bytes": 1020968
+  },
+  "predictions\\temporal\\lag2\\logistic_F2\\2010.npz": {
+    "sha256": "19e8e240cfb6f42c88e076f8952d2406d90b87f863709c424eea614edd61502a",
+    "bytes": 1020445
+  },
+  "predictions\\temporal\\lag2\\logistic_F2\\2011.npz": {
+    "sha256": "4a529a04143edd0801c3a90cdf772dff76adce69ad320b9cb12cff7f61dcfcf0",
+    "bytes": 1019284
+  },
+  "predictions\\temporal\\lag2\\logistic_F2\\2012.npz": {
+    "sha256": "ad56018312c8f26ae4c3548aa6da7d2b7460ceaa274579e82e5efeaa42126d88",
+    "bytes": 1019357
+  },
+  "predictions\\temporal\\lag2\\logistic_F2\\2013.npz": {
+    "sha256": "0fe96229e6a059a2d942e14d317836896d454f3525c7970380c6580daa3652f6",
+    "bytes": 1022283
+  },
+  "predictions\\temporal\\lag2\\logistic_F2\\2014.npz": {
+    "sha256": "e9766954d45b70dd49e8c2415539a83585a51655581957bb363893581d7396d9",
+    "bytes": 1019339
+  },
+  "predictions\\temporal\\lag2\\logistic_F2\\2015.npz": {
+    "sha256": "953e39ece5a8edc8a79731e9e5f52a43783f7b19eb90e90bc3a24441e64a5b53",
+    "bytes": 1018239
+  },
+  "predictions\\temporal\\lag2\\logistic_F2\\2016.npz": {
+    "sha256": "7d5b98ecc5ab25df86492256d515f51153f0a206bd0a900985d2425d2470d981",
+    "bytes": 1021951
+  },
+  "predictions\\temporal\\lag2\\logistic_F2\\2017.npz": {
+    "sha256": "8b4217667c3413ddbd29e158d84d096436c7616744bf93b00563484da31dbc2c",
+    "bytes": 1021411
+  },
+  "predictions\\temporal\\lag2\\logistic_F2_minus_NM\\2000.npz": {
+    "sha256": "4ce3445f7be89a1587885b0c519c33ac5e044f3b48508cf4346a253e78b6e041",
+    "bytes": 1020015
+  },
+  "predictions\\temporal\\lag2\\logistic_F2_minus_NM\\2001.npz": {
+    "sha256": "8e7b15098fa04e61d14b9b565da74303d88a0960c0c8c07cb5e9f41a48229811",
+    "bytes": 1019329
+  },
+  "predictions\\temporal\\lag2\\logistic_F2_minus_NM\\2002.npz": {
+    "sha256": "29f0f34cfaeaca0c45a2aef3cadbe0208155f2c0eab12c9c9778912560e630d5",
+    "bytes": 1018248
+  },
+  "predictions\\temporal\\lag2\\logistic_F2_minus_NM\\2003.npz": {
+    "sha256": "b64dcb1c8a2fb7539168156fb65375dc09bbe6d3d9c031a0b437f272dda0c8bf",
+    "bytes": 1020473
+  },
+  "predictions\\temporal\\lag2\\logistic_F2_minus_NM\\2004.npz": {
+    "sha256": "0e0dacd53e6a76aae3424d99998e88f0531dd185f32a1bcb296a5c628e2fb905",
+    "bytes": 1020212
+  },
+  "predictions\\temporal\\lag2\\logistic_F2_minus_NM\\2005.npz": {
+    "sha256": "27d7c166b31af501666d3f9cf03ba6c4633a1f1576531dd61511691b9c756835",
+    "bytes": 1020255
+  },
+  "predictions\\temporal\\lag2\\logistic_F2_minus_NM\\2006.npz": {
+    "sha256": "eb6f7214b6485ffaf51229a2309181c921320894e3fb4606e25f7c120a19e5ad",
+    "bytes": 1021929
+  },
+  "predictions\\temporal\\lag2\\logistic_F2_minus_NM\\2007.npz": {
+    "sha256": "d2f3fb1bec3b06b776aa6930d753e63816371b851fe311da25a00dbcc9116ecc",
+    "bytes": 1022109
+  },
+  "predictions\\temporal\\lag2\\logistic_F2_minus_NM\\2008.npz": {
+    "sha256": "f99c5d1d75bf9764f81be9d0f0690d59f5c71ec57f72cfb0e1071aefae656d6f",
+    "bytes": 1020305
+  },
+  "predictions\\temporal\\lag2\\logistic_F2_minus_NM\\2009.npz": {
+    "sha256": "417f23c4bac601b4567ff307260375902ce085105012754cc555fe5acc4502c1",
+    "bytes": 1020982
+  },
+  "predictions\\temporal\\lag2\\logistic_F2_minus_NM\\2010.npz": {
+    "sha256": "fa43dc5184097ab9546be6b9fef097ef411c30ccb660ddfdc9c97f5b830bfe8e",
+    "bytes": 1020308
+  },
+  "predictions\\temporal\\lag2\\logistic_F2_minus_NM\\2011.npz": {
+    "sha256": "1a15c100f92bb23c98e7d769f5be3aa268c35b094f2804eeaa820f281424ecfd",
+    "bytes": 1019163
+  },
+  "predictions\\temporal\\lag2\\logistic_F2_minus_NM\\2012.npz": {
+    "sha256": "bdbaf88409b0ab253b8d62ecef5b91ed8f0d69c0561aee4ff891c374c680780f",
+    "bytes": 1019317
+  },
+  "predictions\\temporal\\lag2\\logistic_F2_minus_NM\\2013.npz": {
+    "sha256": "4673cb76cbb662aac6a103c041e335a7b057ee044aa63ed3cdb5dfe71c140364",
+    "bytes": 1022371
+  },
+  "predictions\\temporal\\lag2\\logistic_F2_minus_NM\\2014.npz": {
+    "sha256": "d2c89548bbc75eb4870e1a034af6c99938840d8f7a767b38e01cc33d07707113",
+    "bytes": 1019227
+  },
+  "predictions\\temporal\\lag2\\logistic_F2_minus_NM\\2015.npz": {
+    "sha256": "cdd42ed0fdec653a788615c3352685f67b9cc894ca48a36630626a825ffdfe82",
+    "bytes": 1018279
+  },
+  "predictions\\temporal\\lag2\\logistic_F2_minus_NM\\2016.npz": {
+    "sha256": "cdfb6be695c6653579d1daef9e3e0e108033fd62489b321f9ed5615edd8ff4c0",
+    "bytes": 1021961
+  },
+  "predictions\\temporal\\lag2\\logistic_F2_minus_NM\\2017.npz": {
+    "sha256": "bd44a8acda26dfeca7fd927a905e51f6dc24d427a9972638cabba2286b901755",
+    "bytes": 1021408
+  },
+  "predictions\\temporal\\lag2\\logistic_F2_minus_NT\\2000.npz": {
+    "sha256": "0f206f256327b87027f02b05466f1e4deeeb733a97f3a9ae40ee6a85503d5172",
+    "bytes": 1020074
+  },
+  "predictions\\temporal\\lag2\\logistic_F2_minus_NT\\2001.npz": {
+    "sha256": "d7974d50007e0bf233013e6f4216c4561e3963bfe2fd7c1b14e34c9f7bb1a872",
+    "bytes": 1019318
+  },
+  "predictions\\temporal\\lag2\\logistic_F2_minus_NT\\2002.npz": {
+    "sha256": "74f1d93b49cd5360dd8d10c6b1f80d4e11fb16b64fbafa79379e3e22a0f35e29",
+    "bytes": 1018209
+  },
+  "predictions\\temporal\\lag2\\logistic_F2_minus_NT\\2003.npz": {
+    "sha256": "322508701ff00b7ed0cd248bcb144bd9ee5f9c2c0b8ef6d5182d506b9f08378f",
+    "bytes": 1020642
+  },
+  "predictions\\temporal\\lag2\\logistic_F2_minus_NT\\2004.npz": {
+    "sha256": "3a966210735aef63648ffd3f345a310d5f5e0082fe7876ad1099a7179610ec99",
+    "bytes": 1020153
+  },
+  "predictions\\temporal\\lag2\\logistic_F2_minus_NT\\2005.npz": {
+    "sha256": "e04f8e318aff9876633db16da09ddcd554fefc93692d5613009d11ec70c77a9d",
+    "bytes": 1020386
+  },
+  "predictions\\temporal\\lag2\\logistic_F2_minus_NT\\2006.npz": {
+    "sha256": "ab8763f67dd3a33bde55c08c4b6a3acdd431ada59b86d828e4ec79de6885a7ab",
+    "bytes": 1021964
+  },
+  "predictions\\temporal\\lag2\\logistic_F2_minus_NT\\2007.npz": {
+    "sha256": "6fa799c8cc336881cc1c76fb0f2bccfcc108de4e82512b2ca93c39816a69fad1",
+    "bytes": 1022188
+  },
+  "predictions\\temporal\\lag2\\logistic_F2_minus_NT\\2008.npz": {
+    "sha256": "20e8e645cd04e10c5c66b3806aa8679341dc3bb31cbcf0b4190d332f158e54f4",
+    "bytes": 1020118
+  },
+  "predictions\\temporal\\lag2\\logistic_F2_minus_NT\\2009.npz": {
+    "sha256": "2cd4cc649ae2d8cf564f135b55f012795f105082729568b0d7f012814575f478",
+    "bytes": 1020911
+  },
+  "predictions\\temporal\\lag2\\logistic_F2_minus_NT\\2010.npz": {
+    "sha256": "44c833a2d707809c99262b02eb681bae27f228066da5d1826f2821a98e806bed",
+    "bytes": 1020352
+  },
+  "predictions\\temporal\\lag2\\logistic_F2_minus_NT\\2011.npz": {
+    "sha256": "e0ddf21897ff6fd5a932935f2a47b2407706b666a0f3e958c5a450ad43ea84ec",
+    "bytes": 1019154
+  },
+  "predictions\\temporal\\lag2\\logistic_F2_minus_NT\\2012.npz": {
+    "sha256": "0c9c8e72b5399fc92e9271dc7797a42909dfcc4f40491130ca41290b2b7138b7",
+    "bytes": 1019332
+  },
+  "predictions\\temporal\\lag2\\logistic_F2_minus_NT\\2013.npz": {
+    "sha256": "7b31d181fbdce9613fa8ccca882c9df047b9443b3e6306a3d4ae050969c0931c",
+    "bytes": 1022384
+  },
+  "predictions\\temporal\\lag2\\logistic_F2_minus_NT\\2014.npz": {
+    "sha256": "9e972da705bd2a0ad8c2f289582de5626ee0eb98a593f2a5212ac4b4ad063afa",
+    "bytes": 1019300
+  },
+  "predictions\\temporal\\lag2\\logistic_F2_minus_NT\\2015.npz": {
+    "sha256": "8f54fcc5b78eb97f14be555623bb718c3e54b98a3eab3662068b376216718a53",
+    "bytes": 1018196
+  },
+  "predictions\\temporal\\lag2\\logistic_F2_minus_NT\\2016.npz": {
+    "sha256": "8829a03a19c6323d08255af4f69667aea1e13327a2256e6d29d0c600ef4c5645",
+    "bytes": 1021843
+  },
+  "predictions\\temporal\\lag2\\logistic_F2_minus_NT\\2017.npz": {
+    "sha256": "5f096e0975bebfc1b8030a458ec7fdb56c18fe41361e24c797768bce73385b77",
+    "bytes": 1021251
+  },
+  "predictions\\temporal\\lag2\\logistic_F3\\2000.npz": {
+    "sha256": "5d833c31462fc12657daa0dc6abd5c8682916b228d571238a1c85329053ffa68",
+    "bytes": 1020339
+  },
+  "predictions\\temporal\\lag2\\logistic_F3\\2001.npz": {
+    "sha256": "00e19e19bf9239b72b08138fcf6a8e7d98ada811d51371c831c297470c24eddc",
+    "bytes": 1019789
+  },
+  "predictions\\temporal\\lag2\\logistic_F3\\2002.npz": {
+    "sha256": "8c547bfe3726062bf25d952778305e8788722ca97578b66c6bb0ed6e5995c354",
+    "bytes": 1018631
+  },
+  "predictions\\temporal\\lag2\\logistic_F3\\2003.npz": {
+    "sha256": "3326ffce1bdab05930ab8f61cc16af140fb60037fb62e7e36f5efaea78320cee",
+    "bytes": 1020932
+  },
+  "predictions\\temporal\\lag2\\logistic_F3\\2004.npz": {
+    "sha256": "fe7a1a932c1ad08cd3eacebe84d4d2fd7291e719bf7e09f952f4caf34e784437",
+    "bytes": 1020310
+  },
+  "predictions\\temporal\\lag2\\logistic_F3\\2005.npz": {
+    "sha256": "a46d792d275d68daf3c810c8222b23bbaa2c799f983939445b169141c91d12ff",
+    "bytes": 1020575
+  },
+  "predictions\\temporal\\lag2\\logistic_F3\\2006.npz": {
+    "sha256": "7c86a676649a97acb702aad63618fdb50006cce44e0dc8c2bbaca8028d2afe91",
+    "bytes": 1022278
+  },
+  "predictions\\temporal\\lag2\\logistic_F3\\2007.npz": {
+    "sha256": "05d6535da1bc83e5af7f79353d3deef67087751c50659a34da0761bb3f13015a",
+    "bytes": 1022370
+  },
+  "predictions\\temporal\\lag2\\logistic_F3\\2008.npz": {
+    "sha256": "cf7615c57fa7c211406e35bf5abc5ec3288976173d70c0ba865e64560321db14",
+    "bytes": 1020513
+  },
+  "predictions\\temporal\\lag2\\logistic_F3\\2009.npz": {
+    "sha256": "835d8e82478c71ea7fac47eaf643d05b401e1fdb7c2e068c41425371c4f6e23d",
+    "bytes": 1021152
+  },
+  "predictions\\temporal\\lag2\\logistic_F3\\2010.npz": {
+    "sha256": "309ede5dc3879c75d71d34ee8d8ad6dd335a5f09ec794791bee881b4a0b4a67b",
+    "bytes": 1020803
+  },
+  "predictions\\temporal\\lag2\\logistic_F3\\2011.npz": {
+    "sha256": "363978a50abde5a05d9348e335a7e1541946570df78e82f7adb97b3fa97f81b1",
+    "bytes": 1019502
+  },
+  "predictions\\temporal\\lag2\\logistic_F3\\2012.npz": {
+    "sha256": "035c307e763a951cfdd5f10c8831674607ff73ae1ade6c455ba46ea9244f74c8",
+    "bytes": 1019597
+  },
+  "predictions\\temporal\\lag2\\logistic_F3\\2013.npz": {
+    "sha256": "739e7ab2000538181bc570051d84a94a1bbce21419dbd6302f290bcced663171",
+    "bytes": 1022830
+  },
+  "predictions\\temporal\\lag2\\logistic_F3\\2014.npz": {
+    "sha256": "b30c988fb45a920902f2940a2bf07f1447e7c3ad315499c2f8685f5d4c7c462a",
+    "bytes": 1019538
+  },
+  "predictions\\temporal\\lag2\\logistic_F3\\2015.npz": {
+    "sha256": "c932f2725eac7d78e7505a21ab951ebc11bb43a318f61d995e25b7ec358d2562",
+    "bytes": 1018474
+  },
+  "predictions\\temporal\\lag2\\logistic_F3\\2016.npz": {
+    "sha256": "1aceeaaf024f6ac321ec180d5574c81706ee8b4f43de27acef37163e570844e0",
+    "bytes": 1022333
+  },
+  "predictions\\temporal\\lag2\\logistic_F3\\2017.npz": {
+    "sha256": "a236d7ce45293e4353f4edb5808330f3d8f6043305add1760fc9476f062a3528",
+    "bytes": 1021653
+  },
+  "predictions\\temporal\\lag2\\logistic_F3_minus_RM\\2000.npz": {
+    "sha256": "14ad0e8ef3ba1730c7d87eb2a6862f506371454117ffa35b420b327d29e10e45",
+    "bytes": 1020216
+  },
+  "predictions\\temporal\\lag2\\logistic_F3_minus_RM\\2001.npz": {
+    "sha256": "13ee16a231a401ed15ab185b55ad90e7699669185e4fa6c5bc57ce1d514e19a0",
+    "bytes": 1019601
+  },
+  "predictions\\temporal\\lag2\\logistic_F3_minus_RM\\2002.npz": {
+    "sha256": "338aba778400b7984abb58387887d348188b65e36543e44dec9bbebc6cfda640",
+    "bytes": 1018521
+  },
+  "predictions\\temporal\\lag2\\logistic_F3_minus_RM\\2003.npz": {
+    "sha256": "2dc932eea7fdaf5ca26dbb1e1648f9ff16921ceaed63d84d5a7ce1fb22f218e3",
+    "bytes": 1021001
+  },
+  "predictions\\temporal\\lag2\\logistic_F3_minus_RM\\2004.npz": {
+    "sha256": "0fa2ee6e846eaac0f41003b5d4e4cb139d8041675d89dd40e9f0da8c29b7757a",
+    "bytes": 1020392
+  },
+  "predictions\\temporal\\lag2\\logistic_F3_minus_RM\\2005.npz": {
+    "sha256": "0794a51fc3f4cee56322f92e4f2ebe86f97813a1780a0e54ccc6079cd66a7d77",
+    "bytes": 1020635
+  },
+  "predictions\\temporal\\lag2\\logistic_F3_minus_RM\\2006.npz": {
+    "sha256": "319d8e4711e6e395e8c23b14dc4f80a2552e41297e6fa9c436f220e5857dc16d",
+    "bytes": 1022229
+  },
+  "predictions\\temporal\\lag2\\logistic_F3_minus_RM\\2007.npz": {
+    "sha256": "dab9b4dd7641f908811983d36a65b7bade298186ef5919769bb66e8868463545",
+    "bytes": 1022454
+  },
+  "predictions\\temporal\\lag2\\logistic_F3_minus_RM\\2008.npz": {
+    "sha256": "b7123e01cb17c20e36e3bc31c16960afa97b29ec3f787da202bfbe7bb7e4e93e",
+    "bytes": 1020446
+  },
+  "predictions\\temporal\\lag2\\logistic_F3_minus_RM\\2009.npz": {
+    "sha256": "7abf7646eae835b06a8c92c9fd008016d1e1780628bcf871302f7a9041395cc4",
+    "bytes": 1021152
+  },
+  "predictions\\temporal\\lag2\\logistic_F3_minus_RM\\2010.npz": {
+    "sha256": "1b212100f9b7d87ca14dce430166b4dba8e335208ba89ab277d099bd04263cff",
+    "bytes": 1020701
+  },
+  "predictions\\temporal\\lag2\\logistic_F3_minus_RM\\2011.npz": {
+    "sha256": "8ba48bd2cbd51a24f15b75d6bce2ce6fa06e3574d5a389b72c565716f231ff11",
+    "bytes": 1019494
+  },
+  "predictions\\temporal\\lag2\\logistic_F3_minus_RM\\2012.npz": {
+    "sha256": "53aab3a76f1da029c33a3e7b90b03cf9cfca19db3ac18906ad1486f748755c9c",
+    "bytes": 1019702
+  },
+  "predictions\\temporal\\lag2\\logistic_F3_minus_RM\\2013.npz": {
+    "sha256": "c2542b94d8486ca95fae79ec7d0c76306783e6acddcd82c89e42524c4267e71b",
+    "bytes": 1022835
+  },
+  "predictions\\temporal\\lag2\\logistic_F3_minus_RM\\2014.npz": {
+    "sha256": "9e347b8a9110275aba21c5fcf5daac51e4ea622a8c2e30a201e3ac476e6b57ae",
+    "bytes": 1019562
+  },
+  "predictions\\temporal\\lag2\\logistic_F3_minus_RM\\2015.npz": {
+    "sha256": "6e3b4d3d4d279c35f24f799262c5ab9d468ca032ce86fc6c28478ba66bd7cc08",
+    "bytes": 1018446
+  },
+  "predictions\\temporal\\lag2\\logistic_F3_minus_RM\\2016.npz": {
+    "sha256": "bf71cfe644ae1ab9d145d4213214663746415acd44e655a598d7bc04e80feca7",
+    "bytes": 1022205
+  },
+  "predictions\\temporal\\lag2\\logistic_F3_minus_RM\\2017.npz": {
+    "sha256": "166b22b46a38d2af0d90fbad7ae884696bf25a4e608aecd18a5ef03ba5402508",
+    "bytes": 1021798
+  },
+  "predictions\\temporal\\lag2\\logistic_F3_minus_RT\\2000.npz": {
+    "sha256": "2c0e6a0863a52b4c4f21210d79517ba9a143b5924c046f09861485e699b0dd7a",
+    "bytes": 1020147
+  },
+  "predictions\\temporal\\lag2\\logistic_F3_minus_RT\\2001.npz": {
+    "sha256": "c3da750838ee100ef0b09c01a27f58e95af63134b79ecfc685d214d373f24103",
+    "bytes": 1019458
+  },
+  "predictions\\temporal\\lag2\\logistic_F3_minus_RT\\2002.npz": {
+    "sha256": "bdf1efacf9336cd5e5bd265ed91d24deda007dfbf603d078b14ac8fff252f500",
+    "bytes": 1018496
+  },
+  "predictions\\temporal\\lag2\\logistic_F3_minus_RT\\2003.npz": {
+    "sha256": "bfe4102d0a7a25f86b984ff360a2490825581d4f58fd78bd23a98de92d10a1fc",
+    "bytes": 1020866
+  },
+  "predictions\\temporal\\lag2\\logistic_F3_minus_RT\\2004.npz": {
+    "sha256": "866a317d11930fdae9b1fb3ff0a33da1f72ffc81ef48f4d039949cab3308f42d",
+    "bytes": 1020308
+  },
+  "predictions\\temporal\\lag2\\logistic_F3_minus_RT\\2005.npz": {
+    "sha256": "55bd640c5c4233e587b7e95c6b4eec9df04145f4e4d07b3efde807d7ceb081a6",
+    "bytes": 1020494
+  },
+  "predictions\\temporal\\lag2\\logistic_F3_minus_RT\\2006.npz": {
+    "sha256": "adccc5903f69d4a8bf4e647311478ef676b6ad857e0b59c889b0d222cc854534",
+    "bytes": 1022204
+  },
+  "predictions\\temporal\\lag2\\logistic_F3_minus_RT\\2007.npz": {
+    "sha256": "1cbb4fcfe432651f09f462da182dbec9866c26e2d8f41c1b9787d93f1efa05d1",
+    "bytes": 1022373
+  },
+  "predictions\\temporal\\lag2\\logistic_F3_minus_RT\\2008.npz": {
+    "sha256": "fa10a4ad2e2b991d9559922e4d7071f90b138ed78ff97c47da88663eb58aa03e",
+    "bytes": 1020381
+  },
+  "predictions\\temporal\\lag2\\logistic_F3_minus_RT\\2009.npz": {
+    "sha256": "983099f65830d1e2b2f163741d615936c9097bc8615dec306e01baf61ed80e14",
+    "bytes": 1021035
+  },
+  "predictions\\temporal\\lag2\\logistic_F3_minus_RT\\2010.npz": {
+    "sha256": "2edf93593aed9d5abdf5608b49a9cb134d037ae905f5dcfd062dcd358a84c6b7",
+    "bytes": 1020656
+  },
+  "predictions\\temporal\\lag2\\logistic_F3_minus_RT\\2011.npz": {
+    "sha256": "505b1a74e5a3e21fb50dae07497ee2f79f9a8617e7250ee290f209c08f69da0a",
+    "bytes": 1019351
+  },
+  "predictions\\temporal\\lag2\\logistic_F3_minus_RT\\2012.npz": {
+    "sha256": "bfae2dc7579ec00c044f063a699f161350df65a9ad7e17630967d33579146050",
+    "bytes": 1019541
+  },
+  "predictions\\temporal\\lag2\\logistic_F3_minus_RT\\2013.npz": {
+    "sha256": "8b1acb185aa207fba812305ffb56b186432eab5d335f20d90c2b3e0410c9779f",
+    "bytes": 1022662
+  },
+  "predictions\\temporal\\lag2\\logistic_F3_minus_RT\\2014.npz": {
+    "sha256": "1f371e0ebdedbfb25db218aeb1f11692ec4e3b8efbfabc9f7d9cc0fbce9b7758",
+    "bytes": 1019476
+  },
+  "predictions\\temporal\\lag2\\logistic_F3_minus_RT\\2015.npz": {
+    "sha256": "63f30eb343963190256a24f42a49aa92b67ee59a933849213d02b656d3e4209d",
+    "bytes": 1018287
+  },
+  "predictions\\temporal\\lag2\\logistic_F3_minus_RT\\2016.npz": {
+    "sha256": "aac24872cfa14556ed4fe804b7c498261ea8b2d7a9b1ef217929944f5d092e6e",
+    "bytes": 1022236
+  },
+  "predictions\\temporal\\lag2\\logistic_F3_minus_RT\\2017.npz": {
+    "sha256": "83f09df41462f2e8b435bb60fc9eda1542dadd1974fd443cb0236e91e98d31da",
+    "bytes": 1021678
+  },
+  "predictions\\temporal\\lag1\\logistic_F0P\\2000.npz": {
+    "sha256": "fa6234cc6017365ee22efe3a7b8024d157ff280305f38d44adc1983e1e15550e",
+    "bytes": 1020311
+  },
+  "predictions\\temporal\\lag1\\logistic_F0P\\2001.npz": {
+    "sha256": "c5313d057a4d51026cb742ef6b80a48e4d4c5c46198a56de29e38993bbf0a3f2",
+    "bytes": 1019395
+  },
+  "predictions\\temporal\\lag1\\logistic_F0P\\2002.npz": {
+    "sha256": "d24391a6664cd4c45901b3b9a729b34a2813a724a99e986bbce673b1bf777d9f",
+    "bytes": 1018145
+  },
+  "predictions\\temporal\\lag1\\logistic_F0P\\2003.npz": {
+    "sha256": "d8256bca6deac6bb0dc365eeaf151d2db34a62a6347da1d670cfe7fce97c2cd4",
+    "bytes": 1020325
+  },
+  "predictions\\temporal\\lag1\\logistic_F0P\\2004.npz": {
+    "sha256": "d3f075fd9af39edc1c7294a05151c9e1db7cee1e83bb560c31d624a84b7dde8c",
+    "bytes": 1020082
+  },
+  "predictions\\temporal\\lag1\\logistic_F0P\\2005.npz": {
+    "sha256": "c9903445c07a9c68627e55040bee0bcc59ef03324cc7e4646ba77e7efa5ab3ee",
+    "bytes": 1020296
+  },
+  "predictions\\temporal\\lag1\\logistic_F0P\\2006.npz": {
+    "sha256": "21fa3b66908002b306a7b73c3bbdb287c84d456f105a513a767a5f0e7acc0037",
+    "bytes": 1022046
+  },
+  "predictions\\temporal\\lag1\\logistic_F0P\\2007.npz": {
+    "sha256": "ee3b9f089fa10813e78bace2fc7fb64b738f9c68c5f4b845493b040b3c782bec",
+    "bytes": 1022060
+  },
+  "predictions\\temporal\\lag1\\logistic_F0P\\2008.npz": {
+    "sha256": "ee6c6a6eaec098bb7b08cc92fdc71847bd912a67b5eda20ca9b2f04e8351c8f0",
+    "bytes": 1020304
+  },
+  "predictions\\temporal\\lag1\\logistic_F0P\\2009.npz": {
+    "sha256": "f6e3da356d950aab74c8844156a197b1ab527a1386e1cac72e0395751fb9544e",
+    "bytes": 1020925
+  },
+  "predictions\\temporal\\lag1\\logistic_F0P\\2010.npz": {
+    "sha256": "aba2472092c2807a89d7e30881a8e0c87b08c43e1ce31f6233414b0b00201253",
+    "bytes": 1020003
+  },
+  "predictions\\temporal\\lag1\\logistic_F0P\\2011.npz": {
+    "sha256": "3c3ba87350206799a632cbd511184f4b83ede7c06e5993525dde480ff024c6b1",
+    "bytes": 1019054
+  },
+  "predictions\\temporal\\lag1\\logistic_F0P\\2012.npz": {
+    "sha256": "afd1c0e253974670e3c842b165e38f3fcf3dd15bad2d6c892b51c0816e60003c",
+    "bytes": 1019234
+  },
+  "predictions\\temporal\\lag1\\logistic_F0P\\2013.npz": {
+    "sha256": "6ac4131fa8c660db0c22b87de71db2e4837aa290e85764a28423ed1d8ebb877c",
+    "bytes": 1021870
+  },
+  "predictions\\temporal\\lag1\\logistic_F0P\\2014.npz": {
+    "sha256": "7779bd1e0558e716fd248ba2e971ef163f63201f0d0582dad2e461c32f5e92cf",
+    "bytes": 1019149
+  },
+  "predictions\\temporal\\lag1\\logistic_F0P\\2015.npz": {
+    "sha256": "d17287a71e4e956d38e1cbe37d697c4b94416173927f55930843f84090f8ec89",
+    "bytes": 1018163
+  },
+  "predictions\\temporal\\lag1\\logistic_F0P\\2016.npz": {
+    "sha256": "b34891e432b4e008a4e509cc8384208005111053e5b277b7944c45882e8434f9",
+    "bytes": 1021774
+  },
+  "predictions\\temporal\\lag1\\logistic_F0P\\2017.npz": {
+    "sha256": "0fca2db074aff8bdf08c0b2cff3e5ed09954874d9ba4674ab2f94d69fea30387",
+    "bytes": 1021236
+  },
+  "predictions\\temporal\\lag1\\logistic_F1P\\2000.npz": {
+    "sha256": "195648ec62072cd59ea7366f971f0f32df505ad01ef2546ee359ef848ffcff99",
+    "bytes": 1022410
+  },
+  "predictions\\temporal\\lag1\\logistic_F1P\\2001.npz": {
+    "sha256": "a91243855f8bf655848266cabe257aa72983ecd796cd58b26c50f4f96ab928fe",
+    "bytes": 1020947
+  },
+  "predictions\\temporal\\lag1\\logistic_F1P\\2002.npz": {
+    "sha256": "abc1e033b62fc1ae49c9229a5cd90caf2ed95d574b01bb5abf6214709bdc558d",
+    "bytes": 1019672
+  },
+  "predictions\\temporal\\lag1\\logistic_F1P\\2003.npz": {
+    "sha256": "c8fda8f15851d9b7616f39da301e059a308d8e3afa907d320435d98deba4b5ba",
+    "bytes": 1022416
+  },
+  "predictions\\temporal\\lag1\\logistic_F1P\\2004.npz": {
+    "sha256": "91c42ac48903d82b61ecd425c64ce682dd1d21256a3ef64a1ab17aacc1aaf318",
+    "bytes": 1022642
+  },
+  "predictions\\temporal\\lag1\\logistic_F1P\\2005.npz": {
+    "sha256": "a4e5fd01e00c5684c4b1c56e7680772a424b34fa91161f75a50501fc4869de15",
+    "bytes": 1022427
+  },
+  "predictions\\temporal\\lag1\\logistic_F1P\\2006.npz": {
+    "sha256": "25c3e050bfc03dd293cfb9954702ea3a4563c079d216869b3a4f5ba9e7edef1b",
+    "bytes": 1023623
+  },
+  "predictions\\temporal\\lag1\\logistic_F1P\\2007.npz": {
+    "sha256": "3e3e8f78b6adf090bcfc3da18670f3a1623522c1868d7a7b8c8c383b615fdbdd",
+    "bytes": 1024643
+  },
+  "predictions\\temporal\\lag1\\logistic_F1P\\2008.npz": {
+    "sha256": "490ef1cfe1f36c1c185b0358083a0150d9765e0c8baea7396948c439034eaeca",
+    "bytes": 1022513
+  },
+  "predictions\\temporal\\lag1\\logistic_F1P\\2009.npz": {
+    "sha256": "a41c9d2450228c341e14a859cdc5ed2fc0434e6018bfdc6b00502582eae48584",
+    "bytes": 1022657
+  },
+  "predictions\\temporal\\lag1\\logistic_F1P\\2010.npz": {
+    "sha256": "a38c585042a79a83da8723c1751d10a44507c6382a7a98d901ec3912e552c4fd",
+    "bytes": 1022008
+  },
+  "predictions\\temporal\\lag1\\logistic_F1P\\2011.npz": {
+    "sha256": "ba191a4aaec1e14bab7adf4ef3d272eb1b517161463cb687c308031beeda11ec",
+    "bytes": 1021235
+  },
+  "predictions\\temporal\\lag1\\logistic_F1P\\2012.npz": {
+    "sha256": "e64b0334807e8596188703f7762d231c9ec020f96bed2d69affdfdb7d0a9709a",
+    "bytes": 1021108
+  },
+  "predictions\\temporal\\lag1\\logistic_F1P\\2013.npz": {
+    "sha256": "d2a0747e2d303311cfaca922c1015c83a9c9d3366d95cbc75f485fb284d967cc",
+    "bytes": 1024315
+  },
+  "predictions\\temporal\\lag1\\logistic_F1P\\2014.npz": {
+    "sha256": "d78f02ab53d7e964a94f101bd59e8542c9aef81f1a93b385fef00e8bd2520fae",
+    "bytes": 1021204
+  },
+  "predictions\\temporal\\lag1\\logistic_F1P\\2015.npz": {
+    "sha256": "7a9542214e510478298b40bdd820912891b2d44400716e87df2e082b3a835b0d",
+    "bytes": 1020644
+  },
+  "predictions\\temporal\\lag1\\logistic_F1P\\2016.npz": {
+    "sha256": "47de8caf4860ad103ffb9a50975a37659f1824a327c9b0ce8d59f233ad5a0c49",
+    "bytes": 1023269
+  },
+  "predictions\\temporal\\lag1\\logistic_F1P\\2017.npz": {
+    "sha256": "fff31e0edbf627807dda3198c26761957843b290f6a9483955977957efc0fb9d",
+    "bytes": 1022661
+  },
+  "predictions\\temporal\\lag1\\logistic_F2\\2000.npz": {
+    "sha256": "f4024bfd4f93869a929fc6c13a846184beec2f2fe4b6629ce273b6b486710557",
+    "bytes": 1023242
+  },
+  "predictions\\temporal\\lag1\\logistic_F2\\2001.npz": {
+    "sha256": "729bc706546464d009553c20b58e2c244fab4ae8e999ec00c8a47b4829299e0f",
+    "bytes": 1022331
+  },
+  "predictions\\temporal\\lag1\\logistic_F2\\2002.npz": {
+    "sha256": "538bf818c8d41ac320366e18a588f050a4bbe6f2cf44af5ef1bcf281eca8c06d",
+    "bytes": 1021139
+  },
+  "predictions\\temporal\\lag1\\logistic_F2\\2003.npz": {
+    "sha256": "000bde31ca69e8594d284eefdb47b08298a34b4454777f9c8c53eedb64a3a5c4",
+    "bytes": 1024108
+  },
+  "predictions\\temporal\\lag1\\logistic_F2\\2004.npz": {
+    "sha256": "a32c5934a145060bbf3f8ac430639c51705be5a4467709b4507bb6a99e9ac624",
+    "bytes": 1024157
+  },
+  "predictions\\temporal\\lag1\\logistic_F2\\2005.npz": {
+    "sha256": "eefc095b7a69e4fffd4825232cd5e5551158d5a05a1e54973a0e1f95545b6855",
+    "bytes": 1024051
+  },
+  "predictions\\temporal\\lag1\\logistic_F2\\2006.npz": {
+    "sha256": "36a904dabf45a0fdf0a89076b9389edbf6b7625bbf2681800f1fcd40c8309397",
+    "bytes": 1024490
+  },
+  "predictions\\temporal\\lag1\\logistic_F2\\2007.npz": {
+    "sha256": "a915af332b6d5da695d84dd36876c770783994af19f74baf0f10edf1193fa50f",
+    "bytes": 1025879
+  },
+  "predictions\\temporal\\lag1\\logistic_F2\\2008.npz": {
+    "sha256": "903a688c08456af67bbc04ed6b7a741db1a556febc58ddbf8684dd177af4aa48",
+    "bytes": 1023796
+  },
+  "predictions\\temporal\\lag1\\logistic_F2\\2009.npz": {
+    "sha256": "d78de64ac95ba8ef105ea4ca2c39330818346c7cec4aa70a42e6d6a93af0d4f7",
+    "bytes": 1024145
+  },
+  "predictions\\temporal\\lag1\\logistic_F2\\2010.npz": {
+    "sha256": "6e80c527eb46639ef05468ce68bcfe81fe9a146116ce242bcbe6511a59cd0429",
+    "bytes": 1022854
+  },
+  "predictions\\temporal\\lag1\\logistic_F2\\2011.npz": {
+    "sha256": "8d0d3d744de2794ce2f8a6f7cc3bc530d71e59bb402eca66da71bc7ed7f8df02",
+    "bytes": 1022970
+  },
+  "predictions\\temporal\\lag1\\logistic_F2\\2012.npz": {
+    "sha256": "9357d5651c2c0caeaf943e2f2580c66d6c90f80ba5a25713625d809eaea90dc1",
+    "bytes": 1022547
+  },
+  "predictions\\temporal\\lag1\\logistic_F2\\2013.npz": {
+    "sha256": "d468f318637422064c77cf0dc7b98b0ac3b1a617277c03d9759268db69143056",
+    "bytes": 1024862
+  },
+  "predictions\\temporal\\lag1\\logistic_F2\\2014.npz": {
+    "sha256": "f25e19e29cb48de00069aa8d5b1bfb55a6d065fce30dfdd45a98e89afffaf6c3",
+    "bytes": 1023369
+  },
+  "predictions\\temporal\\lag1\\logistic_F2\\2015.npz": {
+    "sha256": "6e4e70675b6cafaf00ed1ed02d23b3429106d46d79174872f160248ee5d49af1",
+    "bytes": 1022741
+  },
+  "predictions\\temporal\\lag1\\logistic_F2\\2016.npz": {
+    "sha256": "75cb71f6f1d639217efad546be37a59962c7030a5126432c08f01885a3bef246",
+    "bytes": 1024478
+  },
+  "predictions\\temporal\\lag1\\logistic_F2\\2017.npz": {
+    "sha256": "88ebc5c98d095cc718a791fc697208e77cd0cacbfd2859ea2b017acbdfbdb893",
+    "bytes": 1023780
+  },
+  "predictions\\temporal\\lag1\\logistic_F2_minus_NM\\2000.npz": {
+    "sha256": "73e253037d2394d242bddb52d9f6b87d395441d1aeab535240e122b1fa3202d6",
+    "bytes": 1022958
+  },
+  "predictions\\temporal\\lag1\\logistic_F2_minus_NM\\2001.npz": {
+    "sha256": "501c60279a58c402c19d4f887ea0f08da3db806254efb52f676b45f0bca620ad",
+    "bytes": 1022027
+  },
+  "predictions\\temporal\\lag1\\logistic_F2_minus_NM\\2002.npz": {
+    "sha256": "ca139bb7a33e4df2c171af3371c64fc3d87fda239324a3025a42ed03a553f003",
+    "bytes": 1020821
+  },
+  "predictions\\temporal\\lag1\\logistic_F2_minus_NM\\2003.npz": {
+    "sha256": "86afc55b16393c09238541b4b8e7286bb55969667b9728a79ad17b84e031d964",
+    "bytes": 1023709
+  },
+  "predictions\\temporal\\lag1\\logistic_F2_minus_NM\\2004.npz": {
+    "sha256": "bc822343c7aaf84fda5d54526eb66591d6354c950241c8ddbe0cd0883d8bd12d",
+    "bytes": 1023744
+  },
+  "predictions\\temporal\\lag1\\logistic_F2_minus_NM\\2005.npz": {
+    "sha256": "9f543104f87d61e3c18f2c152c654f4a0f361a283aa299face755a47d2f613c2",
+    "bytes": 1023489
+  },
+  "predictions\\temporal\\lag1\\logistic_F2_minus_NM\\2006.npz": {
+    "sha256": "c047f732f3621bcfa7d85508960a6fb9fb32cb005a17aec086f21d84fe13b875",
+    "bytes": 1024412
+  },
+  "predictions\\temporal\\lag1\\logistic_F2_minus_NM\\2007.npz": {
+    "sha256": "d5cebe2dc1976f91c2cfc6bc891a8472d8bee5ec9101628b3e9db8a5fa6cf9e1",
+    "bytes": 1025754
+  },
+  "predictions\\temporal\\lag1\\logistic_F2_minus_NM\\2008.npz": {
+    "sha256": "e9ca35975cc1cbbdab837a8d0464b084988cc0822b7eddcb27f08fb656f27e52",
+    "bytes": 1023504
+  },
+  "predictions\\temporal\\lag1\\logistic_F2_minus_NM\\2009.npz": {
+    "sha256": "4628f00cc6501b88679b9877ae8b6e34891e810ba553ff474857072651ba37f8",
+    "bytes": 1023717
+  },
+  "predictions\\temporal\\lag1\\logistic_F2_minus_NM\\2010.npz": {
+    "sha256": "0de80a7553ac128e3869c71b50b115e7fda1276be871b5d37dd0573d1ebd6f99",
+    "bytes": 1022802
+  },
+  "predictions\\temporal\\lag1\\logistic_F2_minus_NM\\2011.npz": {
+    "sha256": "ea9cf2ab64a387cd080e11010dcda7e33fc99e066bfb7337592ef217a46166af",
+    "bytes": 1022650
+  },
+  "predictions\\temporal\\lag1\\logistic_F2_minus_NM\\2012.npz": {
+    "sha256": "cf9e1b4cba4176be1ad461f1681bf0af70a2814c5d3aa73c154fde582c2f7e51",
+    "bytes": 1022286
+  },
+  "predictions\\temporal\\lag1\\logistic_F2_minus_NM\\2013.npz": {
+    "sha256": "28dede88cec06499c582797924349457efafa24ef3c7d58767f7d836cbd66489",
+    "bytes": 1024757
+  },
+  "predictions\\temporal\\lag1\\logistic_F2_minus_NM\\2014.npz": {
+    "sha256": "6a912892da1f7251117bc939245070d0ec0e48127ac237da545c5ce6801d1ac3",
+    "bytes": 1022764
+  },
+  "predictions\\temporal\\lag1\\logistic_F2_minus_NM\\2015.npz": {
+    "sha256": "8d6b20f39a076b6637cef70b88e9452f8daaf951c250128994990c97de6ce64e",
+    "bytes": 1022295
+  },
+  "predictions\\temporal\\lag1\\logistic_F2_minus_NM\\2016.npz": {
+    "sha256": "942b748c8eb56f6be1da347bbf74153536a58ea780a7649767c2995161eb1897",
+    "bytes": 1024278
+  },
+  "predictions\\temporal\\lag1\\logistic_F2_minus_NM\\2017.npz": {
+    "sha256": "fc809905ae1cf18e4499e4f256e1a24da9b1ae04cb152a3b6cd8eac853d3436b",
+    "bytes": 1023414
+  },
+  "predictions\\temporal\\lag1\\logistic_F2_minus_NT\\2000.npz": {
+    "sha256": "e5b9d082055c4b5e7482de620ea9040ee941c4d723c7b8fa2a5121986ece3f6b",
+    "bytes": 1023091
+  },
+  "predictions\\temporal\\lag1\\logistic_F2_minus_NT\\2001.npz": {
+    "sha256": "de0e7a704c21b5e43e64a33914c415ddc687df03ad95f9bc331cf56416506c67",
+    "bytes": 1022187
+  },
+  "predictions\\temporal\\lag1\\logistic_F2_minus_NT\\2002.npz": {
+    "sha256": "c1596a934927dc43dcc0fd1e5eeeb23f9a70902cc99724666875ef8346c41493",
+    "bytes": 1021143
+  },
+  "predictions\\temporal\\lag1\\logistic_F2_minus_NT\\2003.npz": {
+    "sha256": "1c08937fb5ab1670a135071a18098d934e656e524167b27c63a2637a507dff2f",
+    "bytes": 1023945
+  },
+  "predictions\\temporal\\lag1\\logistic_F2_minus_NT\\2004.npz": {
+    "sha256": "400d96ab7db588fdbb0425c39096c62f625af33fb7a996e197372b2497dea785",
+    "bytes": 1023860
+  },
+  "predictions\\temporal\\lag1\\logistic_F2_minus_NT\\2005.npz": {
+    "sha256": "df2d2c046027a28b77b254f454bebc754e364135ce3ab52f3d460d9a9b766126",
+    "bytes": 1023758
+  },
+  "predictions\\temporal\\lag1\\logistic_F2_minus_NT\\2006.npz": {
+    "sha256": "03e357457538ca9504a28d416094ea3450a424dcbcc21a11d86cd72fb608cb47",
+    "bytes": 1024223
+  },
+  "predictions\\temporal\\lag1\\logistic_F2_minus_NT\\2007.npz": {
+    "sha256": "f817801a798cc8ceb6b96ee406c551e3dd10813f42d86ab2d5e4dd8cba66927e",
+    "bytes": 1025690
+  },
+  "predictions\\temporal\\lag1\\logistic_F2_minus_NT\\2008.npz": {
+    "sha256": "906da79eb27592989c4413faece67f1cd1d1fa4482d68586077b8917a9686059",
+    "bytes": 1023695
+  },
+  "predictions\\temporal\\lag1\\logistic_F2_minus_NT\\2009.npz": {
+    "sha256": "1e78da3cbeb8b9cfcf783d74352e106839624e4355abb1d81d818712cb99261d",
+    "bytes": 1023706
+  },
+  "predictions\\temporal\\lag1\\logistic_F2_minus_NT\\2010.npz": {
+    "sha256": "c28fc20ef71cb0bc6fd5fcf7fc250bf39d9271eb397ce514a1b4e2010f335eb9",
+    "bytes": 1022614
+  },
+  "predictions\\temporal\\lag1\\logistic_F2_minus_NT\\2011.npz": {
+    "sha256": "15f738614b6c63be5854261dd407ad665e2710949146b7fe8d721e1622f2a89a",
+    "bytes": 1022695
+  },
+  "predictions\\temporal\\lag1\\logistic_F2_minus_NT\\2012.npz": {
+    "sha256": "49f9693128f18d8f43f881dd14a0854c4276d5227694fea35c23cef47338887a",
+    "bytes": 1022098
+  },
+  "predictions\\temporal\\lag1\\logistic_F2_minus_NT\\2013.npz": {
+    "sha256": "4b0d5b150a8ae28218b7bf18bbe28a6d82664d69f6865dfa84f5063c4eb26ac2",
+    "bytes": 1024732
+  },
+  "predictions\\temporal\\lag1\\logistic_F2_minus_NT\\2014.npz": {
+    "sha256": "1a3c1ef875f898b6868a737299e8ceb62f5f9fa4bc556b52ccad77d5c12edb8b",
+    "bytes": 1022828
+  },
+  "predictions\\temporal\\lag1\\logistic_F2_minus_NT\\2015.npz": {
+    "sha256": "3e9bdaf5cf6106f7152f641083ecd9bbdba0f65f60a9d959c4c1b28ea2137d72",
+    "bytes": 1022171
+  },
+  "predictions\\temporal\\lag1\\logistic_F2_minus_NT\\2016.npz": {
+    "sha256": "a82468dd22dd86d935a69925f35993e5abae5cdc1dd0ab2f381e8c3cee8c20ee",
+    "bytes": 1024146
+  },
+  "predictions\\temporal\\lag1\\logistic_F2_minus_NT\\2017.npz": {
+    "sha256": "af558326fd1be6532a20d4906e46fa8fbdfd2e377821f84af4c0fa25e8a179a8",
+    "bytes": 1023552
+  },
+  "predictions\\temporal\\lag1\\logistic_F3\\2000.npz": {
+    "sha256": "08370f93f597f40ec170850e7c16e7c9def2b1e5ff177c5c95cc12cf43ab31da",
+    "bytes": 1023179
+  },
+  "predictions\\temporal\\lag1\\logistic_F3\\2001.npz": {
+    "sha256": "8e971e45834eac765dd7111ac62f4a88be4688922bed2fbd38a1fdbcc72b32ac",
+    "bytes": 1022665
+  },
+  "predictions\\temporal\\lag1\\logistic_F3\\2002.npz": {
+    "sha256": "3cc05dc5d5c45e8f05a2990e9f9addabd9dad562ec29f4b7bf6cbf8ef729cdfb",
+    "bytes": 1021346
+  },
+  "predictions\\temporal\\lag1\\logistic_F3\\2003.npz": {
+    "sha256": "da8701463870c06d88843a6dae4dc223ffae7d62acb1a892545daab0bc129452",
+    "bytes": 1024161
+  },
+  "predictions\\temporal\\lag1\\logistic_F3\\2004.npz": {
+    "sha256": "f501f8ef2afeb0a1d3ea9c9960d7fb80de296d24447dde8c63590ac6645e43a5",
+    "bytes": 1024112
+  },
+  "predictions\\temporal\\lag1\\logistic_F3\\2005.npz": {
+    "sha256": "095c2b830af8c462575e41a9f5d379cfbc71952875cc92fc4e0e5ef6b8f93b6e",
+    "bytes": 1024088
+  },
+  "predictions\\temporal\\lag1\\logistic_F3\\2006.npz": {
+    "sha256": "fcf39d58f62efe4dc289574e26c72d78d6e08dd549814deed6f73ed6c016a59c",
+    "bytes": 1024593
+  },
+  "predictions\\temporal\\lag1\\logistic_F3\\2007.npz": {
+    "sha256": "f4be84190ddd8e43c4d9046cc475e7df31c2a348e15a87fcb463c452e9b221d0",
+    "bytes": 1026066
+  },
+  "predictions\\temporal\\lag1\\logistic_F3\\2008.npz": {
+    "sha256": "74c41bc3fb1c2370dbde6d1196eaa1cf723642923e5d324a4a1eaaacfbc06e1a",
+    "bytes": 1024034
+  },
+  "predictions\\temporal\\lag1\\logistic_F3\\2009.npz": {
+    "sha256": "a4179de3e457076743e7cdd28de45773a03c102a85b267724c1a18901744d146",
+    "bytes": 1024376
+  },
+  "predictions\\temporal\\lag1\\logistic_F3\\2010.npz": {
+    "sha256": "51ad335901c622e1b2ce8860a0290e37feb571d4ce37b8a2e11b520053c4a942",
+    "bytes": 1023121
+  },
+  "predictions\\temporal\\lag1\\logistic_F3\\2011.npz": {
+    "sha256": "d62e2f22b211b5a8f4d0d683f0a295b80d542bde6a8bb2449a55ba407e671cc7",
+    "bytes": 1023206
+  },
+  "predictions\\temporal\\lag1\\logistic_F3\\2012.npz": {
+    "sha256": "b5559557bff55debefd9db488a3eb11a615290143af271b1a375347759de3149",
+    "bytes": 1022794
+  },
+  "predictions\\temporal\\lag1\\logistic_F3\\2013.npz": {
+    "sha256": "b0026444961479bf92668b0d2a873d7da817660e751d025268d98df077d298f6",
+    "bytes": 1025212
+  },
+  "predictions\\temporal\\lag1\\logistic_F3\\2014.npz": {
+    "sha256": "b467d6019f23cfec60152415d164d28623191eda3d3877896c9725787f51037c",
+    "bytes": 1023322
+  },
+  "predictions\\temporal\\lag1\\logistic_F3\\2015.npz": {
+    "sha256": "796462894cd18bcd5e3e8df5cb061de9a7f69a9186c82bb4968f1b2d1dfe72bf",
+    "bytes": 1022830
+  },
+  "predictions\\temporal\\lag1\\logistic_F3\\2016.npz": {
+    "sha256": "760d2bf465748b53c92cd219f6af4758147ad67b70bf947730f0242e8d43fcb7",
+    "bytes": 1024707
+  },
+  "predictions\\temporal\\lag1\\logistic_F3\\2017.npz": {
+    "sha256": "8471824baa2e7358f20d8163edebdf8f1e2d74576817f1ba0e69c6580b01d33d",
+    "bytes": 1023875
+  },
+  "predictions\\temporal\\lag1\\logistic_F3_minus_RM\\2000.npz": {
+    "sha256": "184e4bb2a13782ae19bbe24aa4c142742864d57d3f4bb6e17dea2ddba638ae6e",
+    "bytes": 1023384
+  },
+  "predictions\\temporal\\lag1\\logistic_F3_minus_RM\\2001.npz": {
+    "sha256": "c73ea6e95cc86704c14b644f708b0720b37b56fb37096e88b20e965c3977d17d",
+    "bytes": 1022642
+  },
+  "predictions\\temporal\\lag1\\logistic_F3_minus_RM\\2002.npz": {
+    "sha256": "6cc0420fe7921479de52a25e10ac2717570ca5fdf0cb2f55212ddb6f1d442dee",
+    "bytes": 1021204
+  },
+  "predictions\\temporal\\lag1\\logistic_F3_minus_RM\\2003.npz": {
+    "sha256": "0836e445b3f0a4bca1cfeb1b5b87614c9a1e1f53e0b55011cc61cf287af0805b",
+    "bytes": 1024077
+  },
+  "predictions\\temporal\\lag1\\logistic_F3_minus_RM\\2004.npz": {
+    "sha256": "57300c7990e63a7fd91ca133440f6e890141421631e0bdc00f2e494437b76fe8",
+    "bytes": 1024164
+  },
+  "predictions\\temporal\\lag1\\logistic_F3_minus_RM\\2005.npz": {
+    "sha256": "4af26e39aefd14bc1df90dcc9bd60ef3d422572f2e531c0bd3e52bca02a3ba4d",
+    "bytes": 1024142
+  },
+  "predictions\\temporal\\lag1\\logistic_F3_minus_RM\\2006.npz": {
+    "sha256": "23c509a50e918ac7a4bc4b5c02634dcbc9ec5ba7f7e97e8c37e298f7c8af5324",
+    "bytes": 1024639
+  },
+  "predictions\\temporal\\lag1\\logistic_F3_minus_RM\\2007.npz": {
+    "sha256": "4972ef45d21ded97cc0a062b4e58f8a2723850ae26139068f8a0646579b5a819",
+    "bytes": 1026023
+  },
+  "predictions\\temporal\\lag1\\logistic_F3_minus_RM\\2008.npz": {
+    "sha256": "b7e4b85c7dc415e3e3a68432474124e3c3972582196d7e59cdbfda5940fb50a9",
+    "bytes": 1024184
+  },
+  "predictions\\temporal\\lag1\\logistic_F3_minus_RM\\2009.npz": {
+    "sha256": "b0e7d3d0a8c2d99ce9498f7003345ff8ea070eb5b95e6b63795e9660e21a6a02",
+    "bytes": 1024307
+  },
+  "predictions\\temporal\\lag1\\logistic_F3_minus_RM\\2010.npz": {
+    "sha256": "425506332f0660823470c8baf969717e2aa8cb16850e41300eb668fdd4c79bd0",
+    "bytes": 1023032
+  },
+  "predictions\\temporal\\lag1\\logistic_F3_minus_RM\\2011.npz": {
+    "sha256": "39479ec78e5ead882acc07f55540fb39c669b1586b43b7ed33df07e1aab9bf3c",
+    "bytes": 1023072
+  },
+  "predictions\\temporal\\lag1\\logistic_F3_minus_RM\\2012.npz": {
+    "sha256": "94b15454c33aa7431ef06a7283379e0fb71769d1160123b88d9fdbcb5310097e",
+    "bytes": 1022717
+  },
+  "predictions\\temporal\\lag1\\logistic_F3_minus_RM\\2013.npz": {
+    "sha256": "0e9375960009f09aaf256fd3e6907ca1964c4080d0e8d7f4524a0a04b241a4da",
+    "bytes": 1025120
+  },
+  "predictions\\temporal\\lag1\\logistic_F3_minus_RM\\2014.npz": {
+    "sha256": "77979da05851b62ba67140a8d1b483a1dbb1da67bd39cc9274818de58f167a1e",
+    "bytes": 1023230
+  },
+  "predictions\\temporal\\lag1\\logistic_F3_minus_RM\\2015.npz": {
+    "sha256": "ee35f79654f3937ab52d7b574b7a80550f2e59036dd75c4fba3dbff9e43b99ad",
+    "bytes": 1022713
+  },
+  "predictions\\temporal\\lag1\\logistic_F3_minus_RM\\2016.npz": {
+    "sha256": "6a4927cf7b2f48f4837348ea070ffd2db03a68e55cdcebe711ad026acd4d63f1",
+    "bytes": 1024729
+  },
+  "predictions\\temporal\\lag1\\logistic_F3_minus_RM\\2017.npz": {
+    "sha256": "3c63ad3afa80fd6191db7cb4e453bda48cb5bb4c73b95299897326c099d47296",
+    "bytes": 1024009
+  },
+  "predictions\\temporal\\lag1\\logistic_F3_minus_RT\\2000.npz": {
+    "sha256": "f196aae759999073e86f2082869eef9a3490ac463db2db26b24130fc0ab5675d",
+    "bytes": 1023331
+  },
+  "predictions\\temporal\\lag1\\logistic_F3_minus_RT\\2001.npz": {
+    "sha256": "82895e2b30c918c97b70b811f85617d11eb02e9eee107c004429d3dd97141b08",
+    "bytes": 1022574
+  },
+  "predictions\\temporal\\lag1\\logistic_F3_minus_RT\\2002.npz": {
+    "sha256": "ded8916b51d32b28cb03bf8ab894344e900aa8aad98e0f5bd30f19cd171fe5e1",
+    "bytes": 1021133
+  },
+  "predictions\\temporal\\lag1\\logistic_F3_minus_RT\\2003.npz": {
+    "sha256": "b56efe17285606bb2910b28af1721d5702a6c4404d5cac4478b8590bc5c8ff91",
+    "bytes": 1024134
+  },
+  "predictions\\temporal\\lag1\\logistic_F3_minus_RT\\2004.npz": {
+    "sha256": "7e5cc305fba670bfb0b26b53324b7e14586b18c5730456e2ac79be51921b415b",
+    "bytes": 1024204
+  },
+  "predictions\\temporal\\lag1\\logistic_F3_minus_RT\\2005.npz": {
+    "sha256": "facb8a02f45449aaaab08a1b28aa14919f34a92bfe53791332f51a9164d4d103",
+    "bytes": 1024110
+  },
+  "predictions\\temporal\\lag1\\logistic_F3_minus_RT\\2006.npz": {
+    "sha256": "70b2caaee031672dc91ddbaf55f6b65e0d2affffc818babce878bd35e2df2678",
+    "bytes": 1024511
+  },
+  "predictions\\temporal\\lag1\\logistic_F3_minus_RT\\2007.npz": {
+    "sha256": "70044c68632257a2e210eb70155e3f5e60b6a6a6150deb4303e42ceecf410d3d",
+    "bytes": 1026010
+  },
+  "predictions\\temporal\\lag1\\logistic_F3_minus_RT\\2008.npz": {
+    "sha256": "c865bcdd16087c4cceaa4d78d7a694103aad8c5efeefe506271e0b5ffb415da8",
+    "bytes": 1024013
+  },
+  "predictions\\temporal\\lag1\\logistic_F3_minus_RT\\2009.npz": {
+    "sha256": "f702880a1a7c530325b8881bd8a145bed08fa1eb7e5f8a855694b8fd9fda8635",
+    "bytes": 1024137
+  },
+  "predictions\\temporal\\lag1\\logistic_F3_minus_RT\\2010.npz": {
+    "sha256": "37cba88930d49dcba37cfa32d7e53afd840d75c79cdb367f38c99327aed06938",
+    "bytes": 1022978
+  },
+  "predictions\\temporal\\lag1\\logistic_F3_minus_RT\\2011.npz": {
+    "sha256": "6109b153e716850bb7a5cdbab840ab093e2c2571c4be7d7df5c849a66cfedd0d",
+    "bytes": 1023110
+  },
+  "predictions\\temporal\\lag1\\logistic_F3_minus_RT\\2012.npz": {
+    "sha256": "e80623e1838603bca4a14346bfdbe8ae037ee346d31599f831821c3ef852cc4b",
+    "bytes": 1022681
+  },
+  "predictions\\temporal\\lag1\\logistic_F3_minus_RT\\2013.npz": {
+    "sha256": "a753773908e03691e1b944ebedc1d6b3326cd18b3a6915ca47971eb3d06a0184",
+    "bytes": 1025019
+  },
+  "predictions\\temporal\\lag1\\logistic_F3_minus_RT\\2014.npz": {
+    "sha256": "0cd638f6912573ce1bd59702be8230f208f7594d38ce393370ffada7de52d625",
+    "bytes": 1023391
+  },
+  "predictions\\temporal\\lag1\\logistic_F3_minus_RT\\2015.npz": {
+    "sha256": "36c19a13f72e74a4fcfc9de716a24acfe073cc4d80453409ad3f8b6c689a9fb8",
+    "bytes": 1022805
+  },
+  "predictions\\temporal\\lag1\\logistic_F3_minus_RT\\2016.npz": {
+    "sha256": "392005dcce20c258c494cf4393ce7bc5dd8f60056284de6f29b366e98edeaac0",
+    "bytes": 1024724
+  },
+  "predictions\\temporal\\lag1\\logistic_F3_minus_RT\\2017.npz": {
+    "sha256": "214a820d97493de9b823e5270aba55c49f52f2580a1b7fbd813b7db0ca5c8b85",
+    "bytes": 1023702
+  },
+  "predictions\\strict\\lag2\\logistic_F0P\\2000.npz": {
+    "sha256": "9a3cf445459f8121e910b1423977c89dca7d980a8e38cd94e617788ee5582abb",
+    "bytes": 838213
+  },
+  "predictions\\strict\\lag2\\logistic_F0P\\2001.npz": {
+    "sha256": "3c3ee04a038f2f3d9e2eb949c855fa6d7fd9ace4b736c74ce28719edbe21ada0",
+    "bytes": 838095
+  },
+  "predictions\\strict\\lag2\\logistic_F0P\\2002.npz": {
+    "sha256": "961263adfd308c11729d76720cad5d509f6ef329512fa28bb0b71a3d64d51522",
+    "bytes": 836654
+  },
+  "predictions\\strict\\lag2\\logistic_F0P\\2003.npz": {
+    "sha256": "48165e6477f1b7bff310ce99bcad9a4828e9ce23c7e9ec583d3966b3e623788e",
+    "bytes": 838970
+  },
+  "predictions\\strict\\lag2\\logistic_F0P\\2004.npz": {
+    "sha256": "4216a15e5ccbf7d5238cf3972371adeb1b61ed9d58c593b3908e1d739c2cff5c",
+    "bytes": 838022
+  },
+  "predictions\\strict\\lag2\\logistic_F0P\\2005.npz": {
+    "sha256": "3bd3741cb27b29c6642838287c01980c152c23a2292285f7097782fa97c698bf",
+    "bytes": 838263
+  },
+  "predictions\\strict\\lag2\\logistic_F0P\\2006.npz": {
+    "sha256": "56c68f1ba0159411e5543bc15d491475000d8a3cb7810e2d70e0448fb9069baa",
+    "bytes": 839773
+  },
+  "predictions\\strict\\lag2\\logistic_F0P\\2007.npz": {
+    "sha256": "05c045e488e6b56414dc9a604cf1456d1485f249f32317bc6c810aed2c0b1423",
+    "bytes": 839761
+  },
+  "predictions\\strict\\lag2\\logistic_F0P\\2008.npz": {
+    "sha256": "b75d163a3709b8c2c756e89721d98a26bea83d6c42a2dfd68bf4e2e2650f083a",
+    "bytes": 838224
+  },
+  "predictions\\strict\\lag2\\logistic_F0P\\2009.npz": {
+    "sha256": "717f33a4a5d696489f0b3cbdd29ab94d872430db95c72395e79b154013635b64",
+    "bytes": 838969
+  },
+  "predictions\\strict\\lag2\\logistic_F0P\\2010.npz": {
+    "sha256": "5973a1e60ed435e829adbaec3580242c289f41d3e0cedeb807d5ee99d6a9b63d",
+    "bytes": 838465
+  },
+  "predictions\\strict\\lag2\\logistic_F0P\\2011.npz": {
+    "sha256": "b248fd38111d5949ade761105d27c9c99e7547f5fe40d1df04df3625ef9c5a59",
+    "bytes": 837042
+  },
+  "predictions\\strict\\lag2\\logistic_F0P\\2012.npz": {
+    "sha256": "3b80779d205ed4598600a23e62154164bcf229f9ec0368a428c8784fab14156f",
+    "bytes": 837539
+  },
+  "predictions\\strict\\lag2\\logistic_F0P\\2013.npz": {
+    "sha256": "c449e1284cdf4ce7c6c13b6de1367024e4625805162ce866560c013e60f1ef1e",
+    "bytes": 840168
+  },
+  "predictions\\strict\\lag2\\logistic_F0P\\2014.npz": {
+    "sha256": "ed45da23a60f9be7c57738f2dd53b25ec638f9d4089f4b5c9de03c2e7fcada88",
+    "bytes": 837880
+  },
+  "predictions\\strict\\lag2\\logistic_F0P\\2015.npz": {
+    "sha256": "0fe26b604fb3f8d788ef9f20f783ad50035b6cc69586580b3f819d60df059959",
+    "bytes": 836801
+  },
+  "predictions\\strict\\lag2\\logistic_F0P\\2016.npz": {
+    "sha256": "1c0a3179c71de58bb38480faac2eb104f50d9552e7e17ebded2a4f276ff0c4a8",
+    "bytes": 839874
+  },
+  "predictions\\strict\\lag2\\logistic_F0P\\2017.npz": {
+    "sha256": "6f2d34dcc0f9213c7919d2f0924a18afd3afbbae12d60f3118e329a062b4d1c8",
+    "bytes": 839634
+  },
+  "predictions\\strict\\lag2\\logistic_F1P\\2000.npz": {
+    "sha256": "e1c60bf8b3b8d116d762af97b5ae2edb4996f159c6ea814b787453907b064f4e",
+    "bytes": 838700
+  },
+  "predictions\\strict\\lag2\\logistic_F1P\\2001.npz": {
+    "sha256": "879f25a943534d9e5f0011dc3bac2efe38eeb468d5510eda1b7ea51669925b8d",
+    "bytes": 838327
+  },
+  "predictions\\strict\\lag2\\logistic_F1P\\2002.npz": {
+    "sha256": "90330f6025960d5d854cf396e322871dfc6ff7d44a8436b7259bbe43ee4f31bc",
+    "bytes": 837230
+  },
+  "predictions\\strict\\lag2\\logistic_F1P\\2003.npz": {
+    "sha256": "d4d0297ffa9552dc1cad189ef30593c37c56b7ab6eb0cd78fda441dcc49be974",
+    "bytes": 839302
+  },
+  "predictions\\strict\\lag2\\logistic_F1P\\2004.npz": {
+    "sha256": "1fb50022c546033ef9ba913c964ceab9c0e347f4d458644291db824b453136c6",
+    "bytes": 838384
+  },
+  "predictions\\strict\\lag2\\logistic_F1P\\2005.npz": {
+    "sha256": "d2793f8bb567a54e5643ebc755f2dc65ed7046d54ea84c5de01e382d5f55bccb",
+    "bytes": 838570
+  },
+  "predictions\\strict\\lag2\\logistic_F1P\\2006.npz": {
+    "sha256": "ae0eb3deee303a725143a954e4aff2044a0830d890ebf7296360213bdbb8ece2",
+    "bytes": 840140
+  },
+  "predictions\\strict\\lag2\\logistic_F1P\\2007.npz": {
+    "sha256": "59e11ade389f931291ccd0c181a4ef7ec6081ff4183b764a1b5083596c6182e2",
+    "bytes": 840185
+  },
+  "predictions\\strict\\lag2\\logistic_F1P\\2008.npz": {
+    "sha256": "56bddd8271ecafa140b61f49a8d08f87984eef3e7b263fa5fe7861c2ed2d19dd",
+    "bytes": 838556
+  },
+  "predictions\\strict\\lag2\\logistic_F1P\\2009.npz": {
+    "sha256": "82bcd72b1c925d6af901a8a44fb32198cb97c9f9b087b42e394d7ff304fad495",
+    "bytes": 839415
+  },
+  "predictions\\strict\\lag2\\logistic_F1P\\2010.npz": {
+    "sha256": "a65b1c61d9b8422bc7b7c92090e48075ed2b608721a518ef4ef04d4a3c6fc780",
+    "bytes": 839057
+  },
+  "predictions\\strict\\lag2\\logistic_F1P\\2011.npz": {
+    "sha256": "38273160cc1a9090c4162d8f778f9e3ad4118fd31692c82f27928be9fe68244e",
+    "bytes": 837504
+  },
+  "predictions\\strict\\lag2\\logistic_F1P\\2012.npz": {
+    "sha256": "29a1456eefde421d6c3d86fe6ce9feeae40cb882d4d16bfb2120f0cd4c9fa2a8",
+    "bytes": 838043
+  },
+  "predictions\\strict\\lag2\\logistic_F1P\\2013.npz": {
+    "sha256": "3bdcd1f70e78640e63e9f4e170733cf6b06dfa8b1d10f124799e8725fb978c14",
+    "bytes": 840666
+  },
+  "predictions\\strict\\lag2\\logistic_F1P\\2014.npz": {
+    "sha256": "1291ddbcaa3ffe8b2733771ea36e49da5c0463ea747cbf0a576166439fb32ea9",
+    "bytes": 838355
+  },
+  "predictions\\strict\\lag2\\logistic_F1P\\2015.npz": {
+    "sha256": "56fa4b667e95eb9c7e26e577d97fa1fe42baeabe0430713b5a93ac9edae3671c",
+    "bytes": 837286
+  },
+  "predictions\\strict\\lag2\\logistic_F1P\\2016.npz": {
+    "sha256": "c5917a1786d38d6a971af38387724cff77a4b5e8cff5ce72484c531ead42c03f",
+    "bytes": 840190
+  },
+  "predictions\\strict\\lag2\\logistic_F1P\\2017.npz": {
+    "sha256": "275fed5edc4eb30a309eec1577028224ea35a03fb555eb55cf69e2bf8732b1ee",
+    "bytes": 840096
+  },
+  "predictions\\strict\\lag2\\logistic_F2\\2000.npz": {
+    "sha256": "400d6fd32bdafbf5e2882d1b1b329f521cd713010862cac2b6e4fefa5644ed7c",
+    "bytes": 838728
+  },
+  "predictions\\strict\\lag2\\logistic_F2\\2001.npz": {
+    "sha256": "f5a30f561f6be541bab46b158be887f6bb89e12303127c7e032237a889cdb7d9",
+    "bytes": 838453
+  },
+  "predictions\\strict\\lag2\\logistic_F2\\2002.npz": {
+    "sha256": "c808ce58475d0e9b0f5fcae8436dec652e28a8bd0640cec9ad45ff5ea266d5fb",
+    "bytes": 837479
+  },
+  "predictions\\strict\\lag2\\logistic_F2\\2003.npz": {
+    "sha256": "2844012ab3b3965c9c960d53a249db84315f23e223934d2493d20dfc0a67c030",
+    "bytes": 839490
+  },
+  "predictions\\strict\\lag2\\logistic_F2\\2004.npz": {
+    "sha256": "8be23efaf1e11d84d2d81fdacdbe5c8b8340754fd36cf2598a4e2ca489a7bdb6",
+    "bytes": 838556
+  },
+  "predictions\\strict\\lag2\\logistic_F2\\2005.npz": {
+    "sha256": "323a5b79ecc4339b023bacc60893aced167b6a5a3f784560577dbcf566cef93b",
+    "bytes": 838719
+  },
+  "predictions\\strict\\lag2\\logistic_F2\\2006.npz": {
+    "sha256": "a41488544409b97528f5835e0ba6d7d628a5560ab6596682eca914fda4ea0abb",
+    "bytes": 840236
+  },
+  "predictions\\strict\\lag2\\logistic_F2\\2007.npz": {
+    "sha256": "6c49f18e3bc123342ef95ae6e58e52eecfe453d01896f9fa1a37a933f2de4df7",
+    "bytes": 840181
+  },
+  "predictions\\strict\\lag2\\logistic_F2\\2008.npz": {
+    "sha256": "036ad574e722eb0ec3f13100de8fea18f90665e7c65990400fd1c600cc75bf2e",
+    "bytes": 838770
+  },
+  "predictions\\strict\\lag2\\logistic_F2\\2009.npz": {
+    "sha256": "4d8c8f1bc04e2c771bb8899d0f4bfcfb7d189f5e4f31aee41a7b24bc5b577640",
+    "bytes": 839491
+  },
+  "predictions\\strict\\lag2\\logistic_F2\\2010.npz": {
+    "sha256": "175842a3bbccc834a43c96cac0844edb35e8deed535fc70212398fb0355bb3c3",
+    "bytes": 839240
+  },
+  "predictions\\strict\\lag2\\logistic_F2\\2011.npz": {
+    "sha256": "bd1dbbd0b3fc2360341b72c226342b1e87f1ea491b981545a49053a3bac2d4c3",
+    "bytes": 837713
+  },
+  "predictions\\strict\\lag2\\logistic_F2\\2012.npz": {
+    "sha256": "951b786bc384b6119f75faf9c665772faed8d5b02c199f22db7879ea05b8ead4",
+    "bytes": 838176
+  },
+  "predictions\\strict\\lag2\\logistic_F2\\2013.npz": {
+    "sha256": "41b9233e0fc1609f7885ce2d2ca7e492b19dd47795e59b0cdcbbd019b428c421",
+    "bytes": 840772
+  },
+  "predictions\\strict\\lag2\\logistic_F2\\2014.npz": {
+    "sha256": "91fae8b5d3e5f75b707d951a533d5f35805f3538da51e3df00e2ba75f47beaca",
+    "bytes": 838437
+  },
+  "predictions\\strict\\lag2\\logistic_F2\\2015.npz": {
+    "sha256": "a00ccc803218c982179b5ede18fa1c997de89ccb6abed0cc7d1615f6f2b19249",
+    "bytes": 837438
+  },
+  "predictions\\strict\\lag2\\logistic_F2\\2016.npz": {
+    "sha256": "8902a4acb7ed4ba22290157fcbb3a4e544248f897f9310bdc47d72c9cf90c7fb",
+    "bytes": 840222
+  },
+  "predictions\\strict\\lag2\\logistic_F2\\2017.npz": {
+    "sha256": "3fab2af1f97888eabf5d8a96348519b5796d4973e5bacb8c93d677181142c2f6",
+    "bytes": 840349
+  },
+  "predictions\\strict\\lag2\\logistic_F2_minus_NM\\2000.npz": {
+    "sha256": "72f7254b838df0d369fd9b209cd9589db5d036084d0319a264573a0542c71360",
+    "bytes": 838632
+  },
+  "predictions\\strict\\lag2\\logistic_F2_minus_NM\\2001.npz": {
+    "sha256": "183919fde97dc73a21d0ea92079b8f46e9740989c51e48a13f6b6080a20bbccf",
+    "bytes": 838476
+  },
+  "predictions\\strict\\lag2\\logistic_F2_minus_NM\\2002.npz": {
+    "sha256": "d50d24fe5b69c6db520193e3ddbca72206dce6f230aed1e9e70c3f0058a3f5cc",
+    "bytes": 837475
+  },
+  "predictions\\strict\\lag2\\logistic_F2_minus_NM\\2003.npz": {
+    "sha256": "f0b28c20eb97622593d8f918cdbe626cad606514fa0d478ef537fde39270f29c",
+    "bytes": 839402
+  },
+  "predictions\\strict\\lag2\\logistic_F2_minus_NM\\2004.npz": {
+    "sha256": "b221e218fc92e8985e10ba43411b1dc4d6741979992c8f38eea93ca3722b4a4e",
+    "bytes": 838414
+  },
+  "predictions\\strict\\lag2\\logistic_F2_minus_NM\\2005.npz": {
+    "sha256": "8299ab3d3fcb4ca3ee09685542373ffc632baef09a9d0e74e8ebea9f9ebb77cf",
+    "bytes": 838547
+  },
+  "predictions\\strict\\lag2\\logistic_F2_minus_NM\\2006.npz": {
+    "sha256": "68cd02f009f1c012af5df9deeeda089d8e82217d36bc7d67e80e98e3a9a0955b",
+    "bytes": 840184
+  },
+  "predictions\\strict\\lag2\\logistic_F2_minus_NM\\2007.npz": {
+    "sha256": "03322c71d24cd899222a6064a5aadcb22bc29ae8784b70c4d2d9dc31d3d70335",
+    "bytes": 840198
+  },
+  "predictions\\strict\\lag2\\logistic_F2_minus_NM\\2008.npz": {
+    "sha256": "be72cf3b363bb35165b76efef3bfff5f59951801333fd5282d87dda6768861f1",
+    "bytes": 838595
+  },
+  "predictions\\strict\\lag2\\logistic_F2_minus_NM\\2009.npz": {
+    "sha256": "f371728ef3aa56b9ef386925d68521853ba61fff2bb3539d8f9a6fd348e04f04",
+    "bytes": 839327
+  },
+  "predictions\\strict\\lag2\\logistic_F2_minus_NM\\2010.npz": {
+    "sha256": "bc1bbf8cfd2fc0b15e22172656a7d4f66a5e6c39e3a5ac9e490b864d755b5d6b",
+    "bytes": 839186
+  },
+  "predictions\\strict\\lag2\\logistic_F2_minus_NM\\2011.npz": {
+    "sha256": "b0e51d79287d0f40d14c20c319a566090ea3e756cc60abeec604f7993fb663f4",
+    "bytes": 837651
+  },
+  "predictions\\strict\\lag2\\logistic_F2_minus_NM\\2012.npz": {
+    "sha256": "0a9ad84f5c38eaeb9c56dfecbce73ea04515a74b06c9d3b083dda431291ee84f",
+    "bytes": 838123
+  },
+  "predictions\\strict\\lag2\\logistic_F2_minus_NM\\2013.npz": {
+    "sha256": "766a385c8fb9e2dde0884abdbc7e95e4c8e4ccdeb7a4d219be8e8df456966997",
+    "bytes": 840724
+  },
+  "predictions\\strict\\lag2\\logistic_F2_minus_NM\\2014.npz": {
+    "sha256": "c4aff87b6b98df2d84fee41b1f5240b72e64426d7c96c43ab74cef777af2b91c",
+    "bytes": 838485
+  },
+  "predictions\\strict\\lag2\\logistic_F2_minus_NM\\2015.npz": {
+    "sha256": "b9e63bb5047c6888861d18038f27dc42bc10f8600690058f0ded0e59d52336f8",
+    "bytes": 837517
+  },
+  "predictions\\strict\\lag2\\logistic_F2_minus_NM\\2016.npz": {
+    "sha256": "041aef43c7f211eaa72d053ed68e6f8d0d6b50ff0023e48bd27f9b0ee1285494",
+    "bytes": 840243
+  },
+  "predictions\\strict\\lag2\\logistic_F2_minus_NM\\2017.npz": {
+    "sha256": "f660ccbd358aff0badebae1221a417ba88774d9d7a45c0a390516b237f0921bb",
+    "bytes": 840275
+  },
+  "predictions\\strict\\lag2\\logistic_F2_minus_NT\\2000.npz": {
+    "sha256": "64bd85308aebe3e7daecd837ae737e697ac01ab61184722e4b2e753d931f8f94",
+    "bytes": 838736
+  },
+  "predictions\\strict\\lag2\\logistic_F2_minus_NT\\2001.npz": {
+    "sha256": "50f504b750c5867572c05d445f7faf0bc7f0f41f178c24116e930123a41f15db",
+    "bytes": 838446
+  },
+  "predictions\\strict\\lag2\\logistic_F2_minus_NT\\2002.npz": {
+    "sha256": "3773b5f27502660dcde0c6da8b92b4c914b0429fd3264ebf5196b5687b14591b",
+    "bytes": 837395
+  },
+  "predictions\\strict\\lag2\\logistic_F2_minus_NT\\2003.npz": {
+    "sha256": "2d5f143e9221fbcadd8ebee2bb7ced8e739b8a68494dc3883909e4beeb5e0cd3",
+    "bytes": 839381
+  },
+  "predictions\\strict\\lag2\\logistic_F2_minus_NT\\2004.npz": {
+    "sha256": "c0a7307fbddae91f6a576388708288e76b9fd49f839eff6b4da543ab949f485a",
+    "bytes": 838438
+  },
+  "predictions\\strict\\lag2\\logistic_F2_minus_NT\\2005.npz": {
+    "sha256": "f4e464a0c8dbae791c08535814e1d9c8166fb59d4ee45be272cbff8a99fca2f7",
+    "bytes": 838573
+  },
+  "predictions\\strict\\lag2\\logistic_F2_minus_NT\\2006.npz": {
+    "sha256": "cc46d1743505a292f8339721f785f89655a4c1b201deed0e848e8f20ffb9fe86",
+    "bytes": 840213
+  },
+  "predictions\\strict\\lag2\\logistic_F2_minus_NT\\2007.npz": {
+    "sha256": "3b99300bb9e39b4f3e2025df2a0491f813c86652e2703b928aaf2272d8c5e9c2",
+    "bytes": 840121
+  },
+  "predictions\\strict\\lag2\\logistic_F2_minus_NT\\2008.npz": {
+    "sha256": "fe20ee89c99fcab001a3aa006ce038df7996f558abb5d28cd83411580c238dd8",
+    "bytes": 838693
+  },
+  "predictions\\strict\\lag2\\logistic_F2_minus_NT\\2009.npz": {
+    "sha256": "6de3d23fa1c5bcf80969b79c8ebe8563dcba6bb413fe0489be76066c7e7314ae",
+    "bytes": 839537
+  },
+  "predictions\\strict\\lag2\\logistic_F2_minus_NT\\2010.npz": {
+    "sha256": "767a6c2a80be58a992237adca6e107515d10fbdcaddf1f9847f21185fbbdf3cc",
+    "bytes": 839346
+  },
+  "predictions\\strict\\lag2\\logistic_F2_minus_NT\\2011.npz": {
+    "sha256": "dae0693f133c5d89f0b4cea21aed3a1b0767d26ddf7599a5564d1583f69f0c1d",
+    "bytes": 837591
+  },
+  "predictions\\strict\\lag2\\logistic_F2_minus_NT\\2012.npz": {
+    "sha256": "4a21a743a051627217e52eacb739406c2c3da17818b4aec04f493fddfd33add4",
+    "bytes": 838176
+  },
+  "predictions\\strict\\lag2\\logistic_F2_minus_NT\\2013.npz": {
+    "sha256": "178cfae4530229c01416d86a1be81a3e9a73a623087d5ed2e86eb6edbcd503c5",
+    "bytes": 840889
+  },
+  "predictions\\strict\\lag2\\logistic_F2_minus_NT\\2014.npz": {
+    "sha256": "1ba00cff36785563ccaf556475edad28c3d6039cf10af3137590d031878f0f4a",
+    "bytes": 838450
+  },
+  "predictions\\strict\\lag2\\logistic_F2_minus_NT\\2015.npz": {
+    "sha256": "89fef57ffd75449b9577c675a7ef86cf51b6bf576742dc70299af37d14a5813c",
+    "bytes": 837465
+  },
+  "predictions\\strict\\lag2\\logistic_F2_minus_NT\\2016.npz": {
+    "sha256": "0cdf9b8d2d38afa67b141fe23aa8df29a4a3a5e0a523c2751af454f620238bc8",
+    "bytes": 840165
+  },
+  "predictions\\strict\\lag2\\logistic_F2_minus_NT\\2017.npz": {
+    "sha256": "6c5c7a94696e45b919a66d1e6a7a719ee901fe4e8ca737fe9edf3fa9bbc28a84",
+    "bytes": 840228
+  },
+  "predictions\\strict\\lag2\\logistic_F3\\2000.npz": {
+    "sha256": "d7b35e6744db71a60441308f48665d2d60c90ed46a5e74e91cc5ecbed20b417d",
+    "bytes": 839116
+  },
+  "predictions\\strict\\lag2\\logistic_F3\\2001.npz": {
+    "sha256": "b68a7259bd83d2e893291614a590e90a7c4548c5c755779a3b1733aa24386bdf",
+    "bytes": 838735
+  },
+  "predictions\\strict\\lag2\\logistic_F3\\2002.npz": {
+    "sha256": "044b07d3aa1a9776d2ee5de30be8c5b0066ce043d8cc4c5b957e2ab4ef45eb51",
+    "bytes": 837621
+  },
+  "predictions\\strict\\lag2\\logistic_F3\\2003.npz": {
+    "sha256": "cb37c494db4d21506cfae316a25940d00f7c056062b7fa6f350ae0184d7f7447",
+    "bytes": 839739
+  },
+  "predictions\\strict\\lag2\\logistic_F3\\2004.npz": {
+    "sha256": "d84ca8c12bbe1ef292b73fce72c7571138bfe3c6290a515912cbfe3bd23e6f8b",
+    "bytes": 838938
+  },
+  "predictions\\strict\\lag2\\logistic_F3\\2005.npz": {
+    "sha256": "bd8374ec4ae4be4c88273a4885061b72c9c357cfc18db09fc58486925ae02af1",
+    "bytes": 838927
+  },
+  "predictions\\strict\\lag2\\logistic_F3\\2006.npz": {
+    "sha256": "916a18938f59ddb136a3f68a67a4234ce081cd04b54a39155c289995cabb4068",
+    "bytes": 840420
+  },
+  "predictions\\strict\\lag2\\logistic_F3\\2007.npz": {
+    "sha256": "c2218cbcf53f1ae4e5db9c739cefb36a9d755e9290e422eed7808accc4445ee6",
+    "bytes": 840330
+  },
+  "predictions\\strict\\lag2\\logistic_F3\\2008.npz": {
+    "sha256": "4930521cdc2c5847e4424ae9ab20a4626252292031c2fe2eb1dbc32d513d67cd",
+    "bytes": 838856
+  },
+  "predictions\\strict\\lag2\\logistic_F3\\2009.npz": {
+    "sha256": "263c621eb897abec7a6bfb020633e25de7dd7dde7bb2eda5f4fe495949166b0b",
+    "bytes": 839781
+  },
+  "predictions\\strict\\lag2\\logistic_F3\\2010.npz": {
+    "sha256": "c00a17395a38da667c512da0115b20b1609fa52c734e16d484582ec42cf90523",
+    "bytes": 839601
+  },
+  "predictions\\strict\\lag2\\logistic_F3\\2011.npz": {
+    "sha256": "3f60aa42d186c0a79ccc7975fe959110dd7cc84f2cb38a68d683bc4e732b2e26",
+    "bytes": 837875
+  },
+  "predictions\\strict\\lag2\\logistic_F3\\2012.npz": {
+    "sha256": "91a0ab79da76068f26846fd1d39c348d0403cdd5e76310802b2343241847f714",
+    "bytes": 838444
+  },
+  "predictions\\strict\\lag2\\logistic_F3\\2013.npz": {
+    "sha256": "70c8f2d2a376fd50a8a5819de1241d62463349c98d0c542c669fe3ad1666bf42",
+    "bytes": 841167
+  },
+  "predictions\\strict\\lag2\\logistic_F3\\2014.npz": {
+    "sha256": "35abddb69a9c8c5331ea68f074720e19121a55f376b8d3f5279d6ce015e94bd4",
+    "bytes": 838718
+  },
+  "predictions\\strict\\lag2\\logistic_F3\\2015.npz": {
+    "sha256": "ae1ec181b3c78bed32e4bbffdb7f7ca9752108102484590a8390853ed02d66ef",
+    "bytes": 837802
+  },
+  "predictions\\strict\\lag2\\logistic_F3\\2016.npz": {
+    "sha256": "554085667cb2ef5433829603939e62544a2e8cb53dfb3e713ce39b45ace84e4a",
+    "bytes": 840526
+  },
+  "predictions\\strict\\lag2\\logistic_F3\\2017.npz": {
+    "sha256": "bd9ff8d4a1d46117f1200f058308dba781f6ee03e516f559faab893a7a74c33a",
+    "bytes": 840551
+  },
+  "predictions\\strict\\lag2\\logistic_F3_minus_RM\\2000.npz": {
+    "sha256": "aa74cca43292b0a56e1794a3fa5484aaddbbfebc80da6aa6492c7ad11c470a39",
+    "bytes": 838949
+  },
+  "predictions\\strict\\lag2\\logistic_F3_minus_RM\\2001.npz": {
+    "sha256": "1c8d54a3089f1d53d3fa2543b75fb0c3823d93ef9e3d9b6d3c5ca07a0fa00725",
+    "bytes": 838842
+  },
+  "predictions\\strict\\lag2\\logistic_F3_minus_RM\\2002.npz": {
+    "sha256": "865ced46af2e3a0623536ed0313913742f8d108c445fd4e429407c5dcac5e8f8",
+    "bytes": 837595
+  },
+  "predictions\\strict\\lag2\\logistic_F3_minus_RM\\2003.npz": {
+    "sha256": "8cb3110377d84bb8faa6e27a76b0882bc6fe98efa5ba3e313ad24e14a55a7568",
+    "bytes": 839724
+  },
+  "predictions\\strict\\lag2\\logistic_F3_minus_RM\\2004.npz": {
+    "sha256": "03b71e6e4619b8ec90867f0478289cc38ecc174c2bf9dadea1cda778a85ae069",
+    "bytes": 838759
+  },
+  "predictions\\strict\\lag2\\logistic_F3_minus_RM\\2005.npz": {
+    "sha256": "abb9caa4e4600ed9fb66acacd8bf037d347e4182c1aa177fab333d47696b1039",
+    "bytes": 838942
+  },
+  "predictions\\strict\\lag2\\logistic_F3_minus_RM\\2006.npz": {
+    "sha256": "cedcd48feac5213206faffa7ae0d53818b117e031e098216214be136f9b00863",
+    "bytes": 840535
+  },
+  "predictions\\strict\\lag2\\logistic_F3_minus_RM\\2007.npz": {
+    "sha256": "9fe230e814ab8181e52be9532e56c52f9b0c30d7343b99eed96a6c5a3fc91f72",
+    "bytes": 840298
+  },
+  "predictions\\strict\\lag2\\logistic_F3_minus_RM\\2008.npz": {
+    "sha256": "9d05c711630a68388531fb326cfa5d15f805dd6d21290da2a49691c844095b3e",
+    "bytes": 838909
+  },
+  "predictions\\strict\\lag2\\logistic_F3_minus_RM\\2009.npz": {
+    "sha256": "be74cd0150d25e46e82d578e46d0c1aeb828f00fcaea669826af2540bafb9230",
+    "bytes": 839691
+  },
+  "predictions\\strict\\lag2\\logistic_F3_minus_RM\\2010.npz": {
+    "sha256": "855bc404022796bae543f4db35a04d2cb03855be5fa4d92f827dd0fceeec5c23",
+    "bytes": 839492
+  },
+  "predictions\\strict\\lag2\\logistic_F3_minus_RM\\2011.npz": {
+    "sha256": "a7dc2e5a46d9e3c2815d629e0bfc1441d3ecfa6a9ec817281d5c5b04bcf962dc",
+    "bytes": 838000
+  },
+  "predictions\\strict\\lag2\\logistic_F3_minus_RM\\2012.npz": {
+    "sha256": "a3b43a6dbc70bf613bd229998d51b528a5e7099290f70c2a01202cfebb0ca421",
+    "bytes": 838395
+  },
+  "predictions\\strict\\lag2\\logistic_F3_minus_RM\\2013.npz": {
+    "sha256": "834e5e43e581e8b3cb545b71db6c9aeff737782bf41baca352145dafec42850d",
+    "bytes": 841244
+  },
+  "predictions\\strict\\lag2\\logistic_F3_minus_RM\\2014.npz": {
+    "sha256": "86af67c83feefc0dc6131d5d0f35f9db0e7e80d879edc28aa6b74834ef8bfaf6",
+    "bytes": 838751
+  },
+  "predictions\\strict\\lag2\\logistic_F3_minus_RM\\2015.npz": {
+    "sha256": "bf76e1481ac897bc4ff984740db6ffa4de04164c5fa35f60e500948cffd2050f",
+    "bytes": 837766
+  },
+  "predictions\\strict\\lag2\\logistic_F3_minus_RM\\2016.npz": {
+    "sha256": "78ffbd72e7becc70529a6a8b798f49b4739066c3a4db199c4489f1228fe15a63",
+    "bytes": 840573
+  },
+  "predictions\\strict\\lag2\\logistic_F3_minus_RM\\2017.npz": {
+    "sha256": "0d3e8c359e21bce0ba66f1423f57b658fc1e1a75bd45c127224ba05aafb16d61",
+    "bytes": 840584
+  },
+  "predictions\\strict\\lag2\\logistic_F3_minus_RT\\2000.npz": {
+    "sha256": "72f5ccfe387d0ee7b336f442f2238ffc643a60f5dc5f50fc7b5584fa301e601c",
+    "bytes": 838959
+  },
+  "predictions\\strict\\lag2\\logistic_F3_minus_RT\\2001.npz": {
+    "sha256": "2b40d06f10c04ee13fa274eb38b850300bcfe1f1d06096587c7c2d73d51c0b63",
+    "bytes": 838670
+  },
+  "predictions\\strict\\lag2\\logistic_F3_minus_RT\\2002.npz": {
+    "sha256": "10b3aa2a046147cc2bc6da5bea49c3f9bfeb4dedb54f29631900e354130b08a4",
+    "bytes": 837554
+  },
+  "predictions\\strict\\lag2\\logistic_F3_minus_RT\\2003.npz": {
+    "sha256": "7ea15ea5a55ed30cbda41ae83d1e35fb5ef0d0f29f8d862a81dfcf33068a6399",
+    "bytes": 839529
+  },
+  "predictions\\strict\\lag2\\logistic_F3_minus_RT\\2004.npz": {
+    "sha256": "8694e0bd111155299603df2b176c4577875cd3a71c421a753d475ac056d1225a",
+    "bytes": 838612
+  },
+  "predictions\\strict\\lag2\\logistic_F3_minus_RT\\2005.npz": {
+    "sha256": "99b421b6898f8ac91bbbb9225c2bb5d18b129c4ef7879b2dbf6c549be9ce399f",
+    "bytes": 838737
+  },
+  "predictions\\strict\\lag2\\logistic_F3_minus_RT\\2006.npz": {
+    "sha256": "aed7d357cff643121dd4993b254f1c1c2a7ec9400c64f9b6afd76658da01c71f",
+    "bytes": 840335
+  },
+  "predictions\\strict\\lag2\\logistic_F3_minus_RT\\2007.npz": {
+    "sha256": "03d3faa356ccaa266325dbc3e74bcfeeaafbc80e61166ce892c8d782d61660f6",
+    "bytes": 840359
+  },
+  "predictions\\strict\\lag2\\logistic_F3_minus_RT\\2008.npz": {
+    "sha256": "fae14baa751cdd437463a1acbc3e6ee740274e4e9c475c5f90c12a0043fb63fb",
+    "bytes": 838835
+  },
+  "predictions\\strict\\lag2\\logistic_F3_minus_RT\\2009.npz": {
+    "sha256": "4b4a475914ad0d920516aaacabff900a19aa20c00094ee4ab0a400416140657a",
+    "bytes": 839613
+  },
+  "predictions\\strict\\lag2\\logistic_F3_minus_RT\\2010.npz": {
+    "sha256": "cc536809e364cebf6b19e151834ddde77d8560f8983ec038ba25448891922c7b",
+    "bytes": 839456
+  },
+  "predictions\\strict\\lag2\\logistic_F3_minus_RT\\2011.npz": {
+    "sha256": "785050271d737ba735de747c3f2f64fb56b7cfd0ba18df12d9233a1b2bc98c56",
+    "bytes": 837817
+  },
+  "predictions\\strict\\lag2\\logistic_F3_minus_RT\\2012.npz": {
+    "sha256": "a0d9702d898e6ee78dcf993d0945d0c574f5180b623c1bb6e262349d756d8082",
+    "bytes": 838233
+  },
+  "predictions\\strict\\lag2\\logistic_F3_minus_RT\\2013.npz": {
+    "sha256": "7b86c4760a5138a771147b8ae0781b5cea81d33eaf676b7dc715f007d3e56bad",
+    "bytes": 841054
+  },
+  "predictions\\strict\\lag2\\logistic_F3_minus_RT\\2014.npz": {
+    "sha256": "6874c5c513be3c6026935568b2c6b9a572353cb2d1ff0f9f5fb04d915567624f",
+    "bytes": 838631
+  },
+  "predictions\\strict\\lag2\\logistic_F3_minus_RT\\2015.npz": {
+    "sha256": "3d23ecb2f7418607122e4876c8b43754d3a1184b708b305307b35121c0ac199b",
+    "bytes": 837622
+  },
+  "predictions\\strict\\lag2\\logistic_F3_minus_RT\\2016.npz": {
+    "sha256": "638d4d672c09190a2b1a3fe5e37d9c85d6801fd090a26cb5a6d35e3c720a4d50",
+    "bytes": 840436
+  },
+  "predictions\\strict\\lag2\\logistic_F3_minus_RT\\2017.npz": {
+    "sha256": "a4152c140556e9e8d203e2961b1d56dd22036a731b7e5d0a52461155197e853e",
+    "bytes": 840558
+  },
+  "predictions\\strict\\lag1\\logistic_F0P\\2000.npz": {
+    "sha256": "53cfb89fa4c1489d09497302bfc8058e385ec8651c822d433909a9f747908c3e",
+    "bytes": 838842
+  },
+  "predictions\\strict\\lag1\\logistic_F0P\\2001.npz": {
+    "sha256": "21b37f80af3817899f996636d3b4b31b82440c6fc072b79bba58da3ccff02bc2",
+    "bytes": 838492
+  },
+  "predictions\\strict\\lag1\\logistic_F0P\\2002.npz": {
+    "sha256": "c4875632a0199a43effa9a1c2edcbd289fb0a51bb4151b43f27ea71c239ab220",
+    "bytes": 837260
+  },
+  "predictions\\strict\\lag1\\logistic_F0P\\2003.npz": {
+    "sha256": "3a511b58817491307f7946da40ac95af0b222f1b9e6f091b188b771d5dc03f6c",
+    "bytes": 839153
+  },
+  "predictions\\strict\\lag1\\logistic_F0P\\2004.npz": {
+    "sha256": "7cd14e163c54f4828a0207e5615fabbc470f5656118f953cf7a0f9a2c1092b1e",
+    "bytes": 838521
+  },
+  "predictions\\strict\\lag1\\logistic_F0P\\2005.npz": {
+    "sha256": "a643a9f12bfad2bae1d7c6d2c8eddbffd43a9f0b49d449516b2d38ed739a443b",
+    "bytes": 838604
+  },
+  "predictions\\strict\\lag1\\logistic_F0P\\2006.npz": {
+    "sha256": "12f666df48fe4ecab4e212d78137996009e6d9534c65d329ad124cbf0e36dea7",
+    "bytes": 840171
+  },
+  "predictions\\strict\\lag1\\logistic_F0P\\2007.npz": {
+    "sha256": "9a084026f8f10cdf72d0132cc43c3de32b5ac2f6026bd51d5ab55e6e5fbc9207",
+    "bytes": 840084
+  },
+  "predictions\\strict\\lag1\\logistic_F0P\\2008.npz": {
+    "sha256": "f33093327432035b779a63e730827d5fe31df8a24a2da03b147a71a4541f1fdf",
+    "bytes": 838648
+  },
+  "predictions\\strict\\lag1\\logistic_F0P\\2009.npz": {
+    "sha256": "7f2fdb75c6c5b46e5e63e73deb3690f0e139fd2478d858a38339b11a141a1fda",
+    "bytes": 839565
+  },
+  "predictions\\strict\\lag1\\logistic_F0P\\2010.npz": {
+    "sha256": "b4f145dce95108f4aae555bcc11cbf1d57a92505a86369b34fd96b81e83284f8",
+    "bytes": 838921
+  },
+  "predictions\\strict\\lag1\\logistic_F0P\\2011.npz": {
+    "sha256": "5ffd5afdbbdec5dabda8cbdcede7d67f957a5f0a89a71a3ceae9fda83495234e",
+    "bytes": 837492
+  },
+  "predictions\\strict\\lag1\\logistic_F0P\\2012.npz": {
+    "sha256": "014d09e4a2325d96e4f5b7b5d16a41c73fed9d9c35a669b87169516265569fa6",
+    "bytes": 838059
+  },
+  "predictions\\strict\\lag1\\logistic_F0P\\2013.npz": {
+    "sha256": "970486d6a294db467428b6a2ebd76a798af2571d84d0ad8154edfff313553772",
+    "bytes": 840503
+  },
+  "predictions\\strict\\lag1\\logistic_F0P\\2014.npz": {
+    "sha256": "b6b4b8ff484557e5f4bb1f2437656b78ff7ab68d357e73105b25d20ebf08b00d",
+    "bytes": 838357
+  },
+  "predictions\\strict\\lag1\\logistic_F0P\\2015.npz": {
+    "sha256": "327f0cca252f48428afa07fef3a26adf93098b8344d3ab7328f58b68d062f099",
+    "bytes": 837380
+  },
+  "predictions\\strict\\lag1\\logistic_F0P\\2016.npz": {
+    "sha256": "998d7a9587a73ddc5fb7017507fa5e8c0b6361cd5e6a70d5f97da1616d31da17",
+    "bytes": 840170
+  },
+  "predictions\\strict\\lag1\\logistic_F0P\\2017.npz": {
+    "sha256": "6158048a809b07ff7145edbbffb25479b93e62bc9aa31d61353fc3356e93020f",
+    "bytes": 840002
+  },
+  "predictions\\strict\\lag1\\logistic_F1P\\2000.npz": {
+    "sha256": "f6019e19f0585b16f1ec32999b916076ab1f9f758297e811be02e495dd844794",
+    "bytes": 840577
+  },
+  "predictions\\strict\\lag1\\logistic_F1P\\2001.npz": {
+    "sha256": "83f097c57f268fdce2519b5ef19cca450440e876ca13b775984e8a42a932416b",
+    "bytes": 839813
+  },
+  "predictions\\strict\\lag1\\logistic_F1P\\2002.npz": {
+    "sha256": "fd4c76b3da2f876334803023b5dc007e1865c479fe4e2cfbf12f289ec1054d87",
+    "bytes": 838928
+  },
+  "predictions\\strict\\lag1\\logistic_F1P\\2003.npz": {
+    "sha256": "44b55b61a08d7d86505f70aeee24f01557a4c767e8ffac5b6268e8f2ac4e2167",
+    "bytes": 841493
+  },
+  "predictions\\strict\\lag1\\logistic_F1P\\2004.npz": {
+    "sha256": "33111486c798a784e7dc58757148fdd276074dd96792763aa4430eaa434cc951",
+    "bytes": 840762
+  },
+  "predictions\\strict\\lag1\\logistic_F1P\\2005.npz": {
+    "sha256": "1e31ea246be46e05c42de534a5c167d252fd639a6716022d37d43505e5cdf890",
+    "bytes": 840618
+  },
+  "predictions\\strict\\lag1\\logistic_F1P\\2006.npz": {
+    "sha256": "a8eec829872023331bb4ebdff2c2f7a606de222b18f51802e02d3ceff94b7c8b",
+    "bytes": 841549
+  },
+  "predictions\\strict\\lag1\\logistic_F1P\\2007.npz": {
+    "sha256": "cf7d81838a1a3ae4189f0eac32fdc218eeacafa02ae85e0599c7dcd9523eb34a",
+    "bytes": 842197
+  },
+  "predictions\\strict\\lag1\\logistic_F1P\\2008.npz": {
+    "sha256": "c629d08ab4ab6607a84771ab3930ebe31932fe22215d5e370fc563f223860107",
+    "bytes": 840629
+  },
+  "predictions\\strict\\lag1\\logistic_F1P\\2009.npz": {
+    "sha256": "a20d6e0eb0a4efa8501a3d4711cbde9f462a3121ad4e8e6250d829b8d6a86151",
+    "bytes": 841269
+  },
+  "predictions\\strict\\lag1\\logistic_F1P\\2010.npz": {
+    "sha256": "054435a4f2b840fb4c54fc12999334854f2c0ff62d6440638191b455fd6e8972",
+    "bytes": 840611
+  },
+  "predictions\\strict\\lag1\\logistic_F1P\\2011.npz": {
+    "sha256": "fd17087b2ff946e9e6380fedfb8e9ca89fed2f21e33a6bb42cee17f1a22b4728",
+    "bytes": 839582
+  },
+  "predictions\\strict\\lag1\\logistic_F1P\\2012.npz": {
+    "sha256": "667ad021a792eb27aecf0ea8c5cd5b0bc22c4014840dde913a8208a18ce5157b",
+    "bytes": 839718
+  },
+  "predictions\\strict\\lag1\\logistic_F1P\\2013.npz": {
+    "sha256": "a96140a720c5578a4008ffc76edc76a79a286ca19911a6c5d72f7b2def1dd093",
+    "bytes": 842358
+  },
+  "predictions\\strict\\lag1\\logistic_F1P\\2014.npz": {
+    "sha256": "a48fd9245104a431bb1c82c75b5ca714cabfe23a21cfcbbd827c189c0b22b9f9",
+    "bytes": 840418
+  },
+  "predictions\\strict\\lag1\\logistic_F1P\\2015.npz": {
+    "sha256": "32db71fad5f1026fcdc7d12dab3750d59d13be4b3fec11852086e960de188a11",
+    "bytes": 839713
+  },
+  "predictions\\strict\\lag1\\logistic_F1P\\2016.npz": {
+    "sha256": "3fe18034b36b509084bcd5e14ff4cceda9350eca30ed3d327702f7e00922b3f3",
+    "bytes": 841676
+  },
+  "predictions\\strict\\lag1\\logistic_F1P\\2017.npz": {
+    "sha256": "41d803520a7a886c0ed1e4b9602cef9529b66b8c39fbc8a7810461fdba73edeb",
+    "bytes": 841546
+  },
+  "predictions\\strict\\lag1\\logistic_F2\\2000.npz": {
+    "sha256": "5b94c67c18c2a1f94dbbffa804305488e929910adbd55c8dbb96149d5d68102a",
+    "bytes": 841335
+  },
+  "predictions\\strict\\lag1\\logistic_F2\\2001.npz": {
+    "sha256": "ef2b072ee8a6bc7a960a2cca5bd691280be631e358499bca290027942ceda7c2",
+    "bytes": 841142
+  },
+  "predictions\\strict\\lag1\\logistic_F2\\2002.npz": {
+    "sha256": "05c897203fb43dc5c79c6b87f405d6b5d224fabf5d2978046192517eb3f67d82",
+    "bytes": 840102
+  },
+  "predictions\\strict\\lag1\\logistic_F2\\2003.npz": {
+    "sha256": "589f32daa4e71f5f512a85408d46d4e6fe1478f183c38ddc641891bdb1600028",
+    "bytes": 842663
+  },
+  "predictions\\strict\\lag1\\logistic_F2\\2004.npz": {
+    "sha256": "b152f74eb11d0ec8257aaccd74e6e4271d273aa1d5f2f262f97e26b788aced89",
+    "bytes": 842157
+  },
+  "predictions\\strict\\lag1\\logistic_F2\\2005.npz": {
+    "sha256": "5ab3ba8fb74d8aebb63c8b0180a9ac0ff2aa7ab79cac275e0427489b7a7a3346",
+    "bytes": 841772
+  },
+  "predictions\\strict\\lag1\\logistic_F2\\2006.npz": {
+    "sha256": "72d6cd814b6bd6f68fe12b47cd90ef5ce371130bf53fd73d877b1c46ec280b42",
+    "bytes": 842331
+  },
+  "predictions\\strict\\lag1\\logistic_F2\\2007.npz": {
+    "sha256": "9d05157f7fa23456317cc1a22dd79595eced4e6055f70e9bd3de08c986d4ece8",
+    "bytes": 843421
+  },
+  "predictions\\strict\\lag1\\logistic_F2\\2008.npz": {
+    "sha256": "0e19e250040c4c9451b14b3a0c66cfe6e286fd65a90a35e2645b286a3843eb86",
+    "bytes": 841777
+  },
+  "predictions\\strict\\lag1\\logistic_F2\\2009.npz": {
+    "sha256": "6c8bfdb8cb7f6d34ce1dfad317cf6d12bb0543e40e99aca8843c7b58f6dce09f",
+    "bytes": 842465
+  },
+  "predictions\\strict\\lag1\\logistic_F2\\2010.npz": {
+    "sha256": "567393258707e7af64f7a1a1c2f55950027779abe65aee564131b85812f3c566",
+    "bytes": 841393
+  },
+  "predictions\\strict\\lag1\\logistic_F2\\2011.npz": {
+    "sha256": "eeb396ce75f0f294b7506f5286e22feb7569afe6e475a2e7134b57e2227817af",
+    "bytes": 840963
+  },
+  "predictions\\strict\\lag1\\logistic_F2\\2012.npz": {
+    "sha256": "11757b39f4a66c606ebd099c84558aedcce637f9426beb311e62aa0eb4c3859f",
+    "bytes": 841058
+  },
+  "predictions\\strict\\lag1\\logistic_F2\\2013.npz": {
+    "sha256": "f4bd0b699b6a681b799567b50108ee7d97ce1e7a29931df960429463d8dcce25",
+    "bytes": 842905
+  },
+  "predictions\\strict\\lag1\\logistic_F2\\2014.npz": {
+    "sha256": "3acb90767870e0b6dbc2ca70df50909383f841c0a467fba9f758fb546af1b6e0",
+    "bytes": 842048
+  },
+  "predictions\\strict\\lag1\\logistic_F2\\2015.npz": {
+    "sha256": "596c0b86a690570bcacc92b6e95531188a2ae1c26aeb20a7494dad28b9334044",
+    "bytes": 841403
+  },
+  "predictions\\strict\\lag1\\logistic_F2\\2016.npz": {
+    "sha256": "bd8cd392681d274e40914defebcfe9d77303db2220aee2a99e6e1d97380b0689",
+    "bytes": 842618
+  },
+  "predictions\\strict\\lag1\\logistic_F2\\2017.npz": {
+    "sha256": "6baaa2ba25ae17a1332fbac56dd5ab0ced7eab14e0c78080253596355977ba66",
+    "bytes": 842426
+  },
+  "predictions\\strict\\lag1\\logistic_F2_minus_NM\\2000.npz": {
+    "sha256": "d6975cb6e938bdc2edcfe7a91f68a341494201d1cc57e7ae6c9993f7b6606db6",
+    "bytes": 841172
+  },
+  "predictions\\strict\\lag1\\logistic_F2_minus_NM\\2001.npz": {
+    "sha256": "32721f79cfc8f705aa7a401067764f2a235cabe1aa1313ffebc095ca5499a392",
+    "bytes": 840746
+  },
+  "predictions\\strict\\lag1\\logistic_F2_minus_NM\\2002.npz": {
+    "sha256": "ff6e8424cff08b02d278aca5c486e8fbf81e912636a13a4988da020c010f734a",
+    "bytes": 839823
+  },
+  "predictions\\strict\\lag1\\logistic_F2_minus_NM\\2003.npz": {
+    "sha256": "500ae62938f95702d082791dad565c5e8ab721141c1e0f2ded9266835a2f782a",
+    "bytes": 842472
+  },
+  "predictions\\strict\\lag1\\logistic_F2_minus_NM\\2004.npz": {
+    "sha256": "0fd2d72bf766190a69605a7e9369d0d74b55c2a931e9bf5235da7847733f7da6",
+    "bytes": 841812
+  },
+  "predictions\\strict\\lag1\\logistic_F2_minus_NM\\2005.npz": {
+    "sha256": "a52aee27938568e773b7582d6d8df22a9602c936209473dcaf536df76ae38cb8",
+    "bytes": 841427
+  },
+  "predictions\\strict\\lag1\\logistic_F2_minus_NM\\2006.npz": {
+    "sha256": "02ae5892991e8f56442d37199e583468a95ccb5beca2e8cb9ed0a34185f7592c",
+    "bytes": 842128
+  },
+  "predictions\\strict\\lag1\\logistic_F2_minus_NM\\2007.npz": {
+    "sha256": "896f511903676aa7c8985817734ec5389413890db517e6334def1d7e8d5f127a",
+    "bytes": 843111
+  },
+  "predictions\\strict\\lag1\\logistic_F2_minus_NM\\2008.npz": {
+    "sha256": "926227566e30e718c01c8fedd97ebe4988ba798314e6816cdc141fd3981d8196",
+    "bytes": 841580
+  },
+  "predictions\\strict\\lag1\\logistic_F2_minus_NM\\2009.npz": {
+    "sha256": "ab10f40cb24559421831bcfcb5d84b72231b6c070e072335e8014dd002c3137e",
+    "bytes": 842133
+  },
+  "predictions\\strict\\lag1\\logistic_F2_minus_NM\\2010.npz": {
+    "sha256": "74db644c4353b7d1f360c1d966c10e725539a30108d1854454873adc33b159ab",
+    "bytes": 841238
+  },
+  "predictions\\strict\\lag1\\logistic_F2_minus_NM\\2011.npz": {
+    "sha256": "5eb52b228ea587bb9d40e49f0e0a71174608ad0bebe13ab1fdf7209b78e7d07f",
+    "bytes": 840646
+  },
+  "predictions\\strict\\lag1\\logistic_F2_minus_NM\\2012.npz": {
+    "sha256": "8185292d288bd0f6a74b14e4eda181cae679127840536a7d69b31551adaba59a",
+    "bytes": 840692
+  },
+  "predictions\\strict\\lag1\\logistic_F2_minus_NM\\2013.npz": {
+    "sha256": "33c78193a0515145201873c274750b2a7c29c8d487bd0f68c52ffcda73899dd7",
+    "bytes": 842805
+  },
+  "predictions\\strict\\lag1\\logistic_F2_minus_NM\\2014.npz": {
+    "sha256": "9046a192b48321fc83fea0405cbbcfe99e5591fc6e6cbd5b8617d455cec5d5b4",
+    "bytes": 841678
+  },
+  "predictions\\strict\\lag1\\logistic_F2_minus_NM\\2015.npz": {
+    "sha256": "263450d3182a7639d46f028c7c1e4f6e7b36104d8fcf02e16b93fb493c59997c",
+    "bytes": 841077
+  },
+  "predictions\\strict\\lag1\\logistic_F2_minus_NM\\2016.npz": {
+    "sha256": "d82efce5f27f1d85b6a6f2a1ca798b2b83d274f96391f10bd1d307d4de9db477",
+    "bytes": 842285
+  },
+  "predictions\\strict\\lag1\\logistic_F2_minus_NM\\2017.npz": {
+    "sha256": "8dc927a49784c61a7793d62957d87893a614936a81d3ade65cc878dca4c10457",
+    "bytes": 842222
+  },
+  "predictions\\strict\\lag1\\logistic_F2_minus_NT\\2000.npz": {
+    "sha256": "40c6cb82deadce71af711990427c50198ba718d0c01c74eef216d24fcdd588b8",
+    "bytes": 841369
+  },
+  "predictions\\strict\\lag1\\logistic_F2_minus_NT\\2001.npz": {
+    "sha256": "55043ce50cbad882615234746ea74c249c93d0a9ca09dbf34221082fd3d235ad",
+    "bytes": 840979
+  },
+  "predictions\\strict\\lag1\\logistic_F2_minus_NT\\2002.npz": {
+    "sha256": "72dcfb72ac3aee50cbb931b7a0b8909f44ba7fffcbb5b613692b5dc2724ae7a1",
+    "bytes": 839837
+  },
+  "predictions\\strict\\lag1\\logistic_F2_minus_NT\\2003.npz": {
+    "sha256": "d11a0905e90f00fa9d77766d1c9d5d04dd9f3e572c148076a3f6aa590bb4c3ec",
+    "bytes": 842594
+  },
+  "predictions\\strict\\lag1\\logistic_F2_minus_NT\\2004.npz": {
+    "sha256": "abe09fba55bcb92c9ede4da58928975c179387336a6b6b23ee51f8c8cfe6cacb",
+    "bytes": 841824
+  },
+  "predictions\\strict\\lag1\\logistic_F2_minus_NT\\2005.npz": {
+    "sha256": "56f0f72776d4abf74e2d7f3d5982bd87a018b58dcf90040bd076e41bde635705",
+    "bytes": 841404
+  },
+  "predictions\\strict\\lag1\\logistic_F2_minus_NT\\2006.npz": {
+    "sha256": "d3649722bcfcc65081a61ef0d73ebc371787db9f57bcf1287c5720f9df4195c6",
+    "bytes": 842110
+  },
+  "predictions\\strict\\lag1\\logistic_F2_minus_NT\\2007.npz": {
+    "sha256": "a820e7f12df4ac0c7a482343eb6edd4bbfdc33a67a24c73dfe3303b6f9e04470",
+    "bytes": 843164
+  },
+  "predictions\\strict\\lag1\\logistic_F2_minus_NT\\2008.npz": {
+    "sha256": "d4aeeb06ea4d60b6f2f0e607ae17424ce497370ade168b8f961ad345d128453d",
+    "bytes": 841655
+  },
+  "predictions\\strict\\lag1\\logistic_F2_minus_NT\\2009.npz": {
+    "sha256": "50a03ae48d34cbcd8043c828fe02f42332c8193c32e574be1796ece1b70977fe",
+    "bytes": 842162
+  },
+  "predictions\\strict\\lag1\\logistic_F2_minus_NT\\2010.npz": {
+    "sha256": "59b8d14b367b07974714e5434ebd50a07b940fc6c862706420ca38db1d50328a",
+    "bytes": 841240
+  },
+  "predictions\\strict\\lag1\\logistic_F2_minus_NT\\2011.npz": {
+    "sha256": "bccc1b1d88242ecd98fc548d7cd4f4fa1063737cf0e85115837d009bbcf8a627",
+    "bytes": 840749
+  },
+  "predictions\\strict\\lag1\\logistic_F2_minus_NT\\2012.npz": {
+    "sha256": "e8567fd409b497c09d54565e2f59f76648ad5b611be7e323254bbb2fdd0f2ca8",
+    "bytes": 840667
+  },
+  "predictions\\strict\\lag1\\logistic_F2_minus_NT\\2013.npz": {
+    "sha256": "9ecd2829b9c8c037f2aab36f47a877512d2168f79f04bfd32f064ebc14974fd8",
+    "bytes": 842676
+  },
+  "predictions\\strict\\lag1\\logistic_F2_minus_NT\\2014.npz": {
+    "sha256": "cf3e08747d9401bf035e67f7429c358c5788c0f350ef2e938c6b1b399f924172",
+    "bytes": 841695
+  },
+  "predictions\\strict\\lag1\\logistic_F2_minus_NT\\2015.npz": {
+    "sha256": "3568194f800d408071ff405f0c7328f984682f79ed884365dd3ad3c22ec18be2",
+    "bytes": 841017
+  },
+  "predictions\\strict\\lag1\\logistic_F2_minus_NT\\2016.npz": {
+    "sha256": "461fa8d2989eedc5bb0d20122b4daefb1eb785b2f578970b6b7235d521fe5f76",
+    "bytes": 842249
+  },
+  "predictions\\strict\\lag1\\logistic_F2_minus_NT\\2017.npz": {
+    "sha256": "59d94b67a294ebe165432d902320169f4e9f7fee7b6f738fd0e8c3ac7fc61136",
+    "bytes": 842173
+  },
+  "predictions\\strict\\lag1\\logistic_F3\\2000.npz": {
+    "sha256": "e119be136b7e78d9204cefa72fab64fd637af151d43d3d83554d91e02167d960",
+    "bytes": 841482
+  },
+  "predictions\\strict\\lag1\\logistic_F3\\2001.npz": {
+    "sha256": "5d839a967c514a4e1bb26a23679a66807f47e1ab2be8e617fa7ff1400d79ec35",
+    "bytes": 841279
+  },
+  "predictions\\strict\\lag1\\logistic_F3\\2002.npz": {
+    "sha256": "84cf2e210adcd5ce0fe16be9a025a94b24884d5faab96e3c212142952118c860",
+    "bytes": 840248
+  },
+  "predictions\\strict\\lag1\\logistic_F3\\2003.npz": {
+    "sha256": "61c71dad2c0eaaddbe5a165653d4994f22b779299fbc3a999367b1565c16c35d",
+    "bytes": 842716
+  },
+  "predictions\\strict\\lag1\\logistic_F3\\2004.npz": {
+    "sha256": "7f329d9f63a7c71e8de208c2def6036605c40e16c1ed4da05e93db57712a4763",
+    "bytes": 842242
+  },
+  "predictions\\strict\\lag1\\logistic_F3\\2005.npz": {
+    "sha256": "d4ddb816d62f698ece22b920138dc9326afccee0d43272352c035f04bf7e5765",
+    "bytes": 841855
+  },
+  "predictions\\strict\\lag1\\logistic_F3\\2006.npz": {
+    "sha256": "7acb2a68fd23cff0fbe2fdada66fb1107e99cb1a39254ff2f87bd6997bd0b774",
+    "bytes": 842511
+  },
+  "predictions\\strict\\lag1\\logistic_F3\\2007.npz": {
+    "sha256": "bc60a1e112ae791acdfdcfb1c508f3d27e67c12662b348c72aad840250ed19dc",
+    "bytes": 843472
+  },
+  "predictions\\strict\\lag1\\logistic_F3\\2008.npz": {
+    "sha256": "def3986b1495a25be80580236e4d57a5aa5d1cf409a9a02629601725539b987b",
+    "bytes": 841841
+  },
+  "predictions\\strict\\lag1\\logistic_F3\\2009.npz": {
+    "sha256": "5c2910d60fc1b6d2d589ce59a1213c3a74a37ddcceaea7fae102e0f74c83cbf6",
+    "bytes": 842636
+  },
+  "predictions\\strict\\lag1\\logistic_F3\\2010.npz": {
+    "sha256": "46f1204136e6e1a92272059cb679bc5314777a49b78d0cd77ed0d872ad6e7c50",
+    "bytes": 841632
+  },
+  "predictions\\strict\\lag1\\logistic_F3\\2011.npz": {
+    "sha256": "d09f9a21d0c7953a369b5bd96975fdff87ca0d40a53bc2e93e471216edc7a22f",
+    "bytes": 841264
+  },
+  "predictions\\strict\\lag1\\logistic_F3\\2012.npz": {
+    "sha256": "eb8c2c669aa97f118bb89202630f63d9d2215f67281e7de670f79b04b01e5117",
+    "bytes": 841166
+  },
+  "predictions\\strict\\lag1\\logistic_F3\\2013.npz": {
+    "sha256": "50b852a5f03a04dee7770dce8cba45c9f166de9d92de73ccb529025c788520ae",
+    "bytes": 843070
+  },
+  "predictions\\strict\\lag1\\logistic_F3\\2014.npz": {
+    "sha256": "c622b8d096ad95f1132ef00a90059ef7b1542a417e13d6ea7ab9c2fa3ce70554",
+    "bytes": 842250
+  },
+  "predictions\\strict\\lag1\\logistic_F3\\2015.npz": {
+    "sha256": "64744a3ddad30895306a471c61555bc08f31895a3949a671652d625ad6bbae90",
+    "bytes": 841442
+  },
+  "predictions\\strict\\lag1\\logistic_F3\\2016.npz": {
+    "sha256": "15e2ae7245f624c4aa43d1c5d7f6d8ceaa5326a82249ae7a269b4b17288b4964",
+    "bytes": 842781
+  },
+  "predictions\\strict\\lag1\\logistic_F3\\2017.npz": {
+    "sha256": "92c622f96b339c4b3f4afb86262f2e80af868a94301fe742cc63db855d5a9f6f",
+    "bytes": 842499
+  },
+  "predictions\\strict\\lag1\\logistic_F3_minus_RM\\2000.npz": {
+    "sha256": "5b20f55e5f2f3cdab0ba10e60e24f6884847d21f5372931279dae63fe343b900",
+    "bytes": 841319
+  },
+  "predictions\\strict\\lag1\\logistic_F3_minus_RM\\2001.npz": {
+    "sha256": "c3838882af90514d1ec8631e19c0e69093176a021ce19cafb2587b9c95676b7a",
+    "bytes": 841100
+  },
+  "predictions\\strict\\lag1\\logistic_F3_minus_RM\\2002.npz": {
+    "sha256": "5dd51f6dbdaec88c617c01ec94f132ca1a099e7036cbb61b7021dbc53e3ca11c",
+    "bytes": 840162
+  },
+  "predictions\\strict\\lag1\\logistic_F3_minus_RM\\2003.npz": {
+    "sha256": "873dfa4abae84d45c3f2fb50984adc98d33a5618e0ed711bd6adac2b9da22321",
+    "bytes": 842822
+  },
+  "predictions\\strict\\lag1\\logistic_F3_minus_RM\\2004.npz": {
+    "sha256": "4d8f55859fc4e380dd3fbcd1e5907b508915e4c95270780ff87b1a9c8d962bbd",
+    "bytes": 842142
+  },
+  "predictions\\strict\\lag1\\logistic_F3_minus_RM\\2005.npz": {
+    "sha256": "5d070c859055cdeffbbbacb94d81db684d2c19c7e871de15707deb1bcc0c57e0",
+    "bytes": 841818
+  },
+  "predictions\\strict\\lag1\\logistic_F3_minus_RM\\2006.npz": {
+    "sha256": "57bba8843905940a6779a604dec441f848453ed0abac09dea83eda37539dbbe3",
+    "bytes": 842480
+  },
+  "predictions\\strict\\lag1\\logistic_F3_minus_RM\\2007.npz": {
+    "sha256": "ea0c064f184cedab00a361805a033156faa377ecc85552b334ba70691cb16680",
+    "bytes": 843464
+  },
+  "predictions\\strict\\lag1\\logistic_F3_minus_RM\\2008.npz": {
+    "sha256": "aa3947a2958c3886eeb5b0c05c07c9e814322578f1e3ec088cc2fe16b31fd1e6",
+    "bytes": 841904
+  },
+  "predictions\\strict\\lag1\\logistic_F3_minus_RM\\2009.npz": {
+    "sha256": "873b6160af5e2ef3f912315bf2d10bbc0b8c68f9c5b7399ef7b34055a3704511",
+    "bytes": 842702
+  },
+  "predictions\\strict\\lag1\\logistic_F3_minus_RM\\2010.npz": {
+    "sha256": "64fa1368bf4d28dee3bf87f7f0917221328639aeb9e9b3610027d8c116e4bb28",
+    "bytes": 841676
+  },
+  "predictions\\strict\\lag1\\logistic_F3_minus_RM\\2011.npz": {
+    "sha256": "2c099952e9ecd983a2f0b0320cd6bbb1180fde171071ca8e41c7bfe48014e234",
+    "bytes": 841159
+  },
+  "predictions\\strict\\lag1\\logistic_F3_minus_RM\\2012.npz": {
+    "sha256": "061b791ee6d89fe143c1dfadbe6eeb4f13db32b8267b0e941757c81603a51e58",
+    "bytes": 841088
+  },
+  "predictions\\strict\\lag1\\logistic_F3_minus_RM\\2013.npz": {
+    "sha256": "767ba8f775e2102f32a0a2ce6921fc8a3c2e4829ad245d5b7d2f29b80a26406b",
+    "bytes": 842960
+  },
+  "predictions\\strict\\lag1\\logistic_F3_minus_RM\\2014.npz": {
+    "sha256": "6a1dcdfbaf4cd1cfeb1d6023b60e4d89edff59dd0505b4f096750aa3dc2412db",
+    "bytes": 842128
+  },
+  "predictions\\strict\\lag1\\logistic_F3_minus_RM\\2015.npz": {
+    "sha256": "32bd5f47abf21e47cc45659aa2a6a5ef708f4efa3c949ba05c91bad2b383dacf",
+    "bytes": 841463
+  },
+  "predictions\\strict\\lag1\\logistic_F3_minus_RM\\2016.npz": {
+    "sha256": "be2cc5bb387ee1319b6b464e53164946d92edb979846c00aca3d4519a0c7376d",
+    "bytes": 842770
+  },
+  "predictions\\strict\\lag1\\logistic_F3_minus_RM\\2017.npz": {
+    "sha256": "3cbbc1984efc5928aa1a905ee070231ed435b0293b68343399db5402a8ebb273",
+    "bytes": 842539
+  },
+  "predictions\\strict\\lag1\\logistic_F3_minus_RT\\2000.npz": {
+    "sha256": "8ae69ef5648e0bf73a30670670073cfc9fb40324c2c18323fb41cad8dc451683",
+    "bytes": 841316
+  },
+  "predictions\\strict\\lag1\\logistic_F3_minus_RT\\2001.npz": {
+    "sha256": "f9e187dea8b43b8647c23fa8303c443a44f9aca95a96bc083699603489614b95",
+    "bytes": 841163
+  },
+  "predictions\\strict\\lag1\\logistic_F3_minus_RT\\2002.npz": {
+    "sha256": "d739f2982f3cbf45b4eb0ae03ccdea53ba7dc689c8df524bedac221a50d065c9",
+    "bytes": 840107
+  },
+  "predictions\\strict\\lag1\\logistic_F3_minus_RT\\2003.npz": {
+    "sha256": "7b251fb2021c94bb858a761d9a060ad93a9843620ef18252e1f11b31f2b334a5",
+    "bytes": 842666
+  },
+  "predictions\\strict\\lag1\\logistic_F3_minus_RT\\2004.npz": {
+    "sha256": "61b169c3f7744312e6b28996d9e1133c5a523a8b20f79f8fb19ae23cda0f1274",
+    "bytes": 842145
+  },
+  "predictions\\strict\\lag1\\logistic_F3_minus_RT\\2005.npz": {
+    "sha256": "53db04cdc1da02e02ad594b4d096743c45d4c1f93bc89e5323ef7b1981dd8818",
+    "bytes": 841775
+  },
+  "predictions\\strict\\lag1\\logistic_F3_minus_RT\\2006.npz": {
+    "sha256": "35a33bbfa5ab12ddffa7e33a4cf5078e5a20f829689a0871d3413488854c172b",
+    "bytes": 842390
+  },
+  "predictions\\strict\\lag1\\logistic_F3_minus_RT\\2007.npz": {
+    "sha256": "9810eb2037ddee97fe6c4a1bd60113088b915e5c0681b4173b6d3e88c47e6340",
+    "bytes": 843506
+  },
+  "predictions\\strict\\lag1\\logistic_F3_minus_RT\\2008.npz": {
+    "sha256": "a5998917a3b971eb585a9220ab64c9181608743cbfa92e75c6e361233606016b",
+    "bytes": 841907
+  },
+  "predictions\\strict\\lag1\\logistic_F3_minus_RT\\2009.npz": {
+    "sha256": "4945e0bc9752d0016c45b78d6b59cfb99fe397e234497a449f39c2b92f6e6702",
+    "bytes": 842553
+  },
+  "predictions\\strict\\lag1\\logistic_F3_minus_RT\\2010.npz": {
+    "sha256": "7fdaf9cf309cb8cf4ea2f6df42d6a6f33a1082c189ec33d9bf87c311c8338e50",
+    "bytes": 841592
+  },
+  "predictions\\strict\\lag1\\logistic_F3_minus_RT\\2011.npz": {
+    "sha256": "fa2206dc971e67f39aac6c518c66b37523b3be19f56d65721778e14ecb7f67ec",
+    "bytes": 841173
+  },
+  "predictions\\strict\\lag1\\logistic_F3_minus_RT\\2012.npz": {
+    "sha256": "c33eb3d5f04d857fc2e63022768b54c2b3eb2e56fe3991d51722df7c01bf39b1",
+    "bytes": 841144
+  },
+  "predictions\\strict\\lag1\\logistic_F3_minus_RT\\2013.npz": {
+    "sha256": "dd8d7aeba5be11a4a25aa8aea8d9508cc3141b137675b140c9136f2af17b0157",
+    "bytes": 843088
+  },
+  "predictions\\strict\\lag1\\logistic_F3_minus_RT\\2014.npz": {
+    "sha256": "2b48282a5438d65a6dca31deed90b7cb064e761c1a64f86de55329200a8d79bd",
+    "bytes": 842254
+  },
+  "predictions\\strict\\lag1\\logistic_F3_minus_RT\\2015.npz": {
+    "sha256": "c3a3f5d9dc944d2d8196df0bac2bb938b53362e9181a9f6fa10a6a10e8dedcf3",
+    "bytes": 841377
+  },
+  "predictions\\strict\\lag1\\logistic_F3_minus_RT\\2016.npz": {
+    "sha256": "3aa2cc14ba53ff88f8fe55984dd411c2c4fdb85f1e6b41de628d237ed9f83db1",
+    "bytes": 842567
+  },
+  "predictions\\strict\\lag1\\logistic_F3_minus_RT\\2017.npz": {
+    "sha256": "21916b997b980cc33400805b0e575a7d9d88ccc8c4b553b2f4d2b60301e970e4",
+    "bytes": 842500
+  },
+  "models\\strict\\lag1_logistic_F0P.json": {
+    "sha256": "0cfc94594c034526a9918a7d0ec6653ba44b99a78c340c4f89e9af2330ae4a2a",
+    "bytes": 4594
+  },
+  "models\\strict\\lag1_logistic_F1P.json": {
+    "sha256": "dbccf3537aea1dfdf4ce2b71a56bc174438d8168c1ec162af6bbbe27b9ba13a7",
+    "bytes": 10501
+  },
+  "models\\strict\\lag1_logistic_F2.json": {
+    "sha256": "95657794183fd9d476bb1acbf3a654f2f641d032122daeb1f35c582e1070e2f8",
+    "bytes": 10932
+  },
+  "models\\strict\\lag1_logistic_F2_minus_NM.json": {
+    "sha256": "1afb9b861c57de62cb2416a9e27836dd6674f5d07d20cee7db6cafcb9a7d44e8",
+    "bytes": 10733
+  },
+  "models\\strict\\lag1_logistic_F2_minus_NT.json": {
+    "sha256": "0a23c5ba2ba13b0f211a12151de58a8aaeb5f3199573eaa94fb690c1607166bb",
+    "bytes": 10623
+  },
+  "models\\strict\\lag1_logistic_F3.json": {
+    "sha256": "f3af635d1045b8a15905809d94d67f6c4feab8c1bac7090d6498d6f3b8dd2728",
+    "bytes": 12326
+  },
+  "models\\strict\\lag1_logistic_F3_minus_RM.json": {
+    "sha256": "4b79d10068183527872853b1bb80779a46b13e646daa42bd9947fbecbfd3383d",
+    "bytes": 11396
+  },
+  "models\\strict\\lag1_logistic_F3_minus_RT.json": {
+    "sha256": "e41a4ce5851f10c14fb87a693ed0a21478d2bfb9216d58c1c2d017277c3bc1af",
+    "bytes": 11869
+  },
+  "models\\strict\\lag2_logistic_F0P.json": {
+    "sha256": "fc6ce746e93f70ee53bba84e41eb566f5c53f720436fdbd45de4056351c15a83",
+    "bytes": 4601
+  },
+  "models\\strict\\lag2_logistic_F1P.json": {
+    "sha256": "b71d248a9e46001f1a491b28d593a28786f57dd9c8e86f2238ac6017085b8789",
+    "bytes": 10534
+  },
+  "models\\strict\\lag2_logistic_F2.json": {
+    "sha256": "6d74dc6e623a4b79f74b464632aaa98a5d84d9e99588f8089e84d2b295be83bf",
+    "bytes": 10952
+  },
+  "models\\strict\\lag2_logistic_F2_minus_NM.json": {
+    "sha256": "be43537fcc32bcb270380b9aa590113587ddeb443dc8468a53c7248895b07e44",
+    "bytes": 10757
+  },
+  "models\\strict\\lag2_logistic_F2_minus_NT.json": {
+    "sha256": "5aad7b4d6095aca96876dd85b3cba21cd5e34b11eeb450966318fd4543c5133b",
+    "bytes": 10644
+  },
+  "models\\strict\\lag2_logistic_F3.json": {
+    "sha256": "737f182a1ca7ea7f877e4b68864505cb9defcadf9a6362063e70093e57557fb9",
+    "bytes": 12338
+  },
+  "models\\strict\\lag2_logistic_F3_minus_RM.json": {
+    "sha256": "f87df907c991bb6321570419383de9aef29b542d7787ed7129e7de1024f45a52",
+    "bytes": 11409
+  },
+  "models\\strict\\lag2_logistic_F3_minus_RT.json": {
+    "sha256": "35c7410673a10cb80fedbf04e9175dce7a2fc9bbde7653475b3e456a8969a540",
+    "bytes": 11892
+  },
+  "models\\temporal\\lag1_logistic_F0P.json": {
+    "sha256": "e4c82dacecb2b1361bc36bc3f647ab50c440534f88975d63c18e9061ca13984d",
+    "bytes": 4602
+  },
+  "models\\temporal\\lag1_logistic_F1P.json": {
+    "sha256": "c969fc6f45d9a7384f229a594b59be2b7df2f8747c7c36b8d27d22a9a7a75f9c",
+    "bytes": 10527
+  },
+  "models\\temporal\\lag1_logistic_F2.json": {
+    "sha256": "7f1a8dc2d85ae4c5bc2a0d6a88466c73fab3dd4b5d7445f0fcd2678a62c2c299",
+    "bytes": 10951
+  },
+  "models\\temporal\\lag1_logistic_F2_minus_NM.json": {
+    "sha256": "c9c177ea93eb2a8a74c1f9a2d995da28616a6e11dd45060bb857e48e77d1e413",
+    "bytes": 10748
+  },
+  "models\\temporal\\lag1_logistic_F2_minus_NT.json": {
+    "sha256": "94badb9539474bbefd0d780808f2b1a2556f491a6d2fb03a1c219149ef1d1b2e",
+    "bytes": 10656
+  },
+  "models\\temporal\\lag1_logistic_F3.json": {
+    "sha256": "585744c028c6f63b2241214c151a95bb9c50ac964f78b8e692dfd2a4043c045b",
+    "bytes": 12353
+  },
+  "models\\temporal\\lag1_logistic_F3_minus_RM.json": {
+    "sha256": "ada48b950119a1a1f4aaf2c37e0369d0ac4be270a1d7354ea3c4342a16460605",
+    "bytes": 11417
+  },
+  "models\\temporal\\lag1_logistic_F3_minus_RT.json": {
+    "sha256": "59b517b69fda274331f2268602e863680a88f85d9b7562739db5b004bd02004c",
+    "bytes": 11900
+  },
+  "models\\temporal\\lag2_logistic_F0P.json": {
+    "sha256": "5d786404ddc7747002ee2f669a7982892043f79d558adf1c90f717d109651d22",
+    "bytes": 4607
+  },
+  "models\\temporal\\lag2_logistic_F1P.json": {
+    "sha256": "2e50fd970bea2e89f9a5addea5fd6862b99a7bb553bf151c089a1f6c83d78d9c",
+    "bytes": 10523
+  },
+  "models\\temporal\\lag2_logistic_F2.json": {
+    "sha256": "6ef38485b7100f55c7a0e5aa97e8d2548e23ee50e14dfa66eab702606658d720",
+    "bytes": 10950
+  },
+  "models\\temporal\\lag2_logistic_F2_minus_NM.json": {
+    "sha256": "b8b13bb6f04d3f40689067fc9b7cb79aa79a0a37b6c0ad875fa285413085fd01",
+    "bytes": 10756
+  },
+  "models\\temporal\\lag2_logistic_F2_minus_NT.json": {
+    "sha256": "f3863ca0cdbc1f528de4c8d25c048eea770dfb101fd063d54a290a84f49a61b6",
+    "bytes": 10651
+  },
+  "models\\temporal\\lag2_logistic_F3.json": {
+    "sha256": "fc272c9ccfb08b031c833480c578f6dfc63d73496100066bf78b128ae62e6716",
+    "bytes": 12343
+  },
+  "models\\temporal\\lag2_logistic_F3_minus_RM.json": {
+    "sha256": "3b88219783257d160c2df82f23ec0f39c2b3f1b36d35e2f241803eebf17fe16e",
+    "bytes": 11420
+  },
+  "models\\temporal\\lag2_logistic_F3_minus_RT.json": {
+    "sha256": "2b1062eb0bb7381dfb5c54886551ce755ed7e53723b57f2419fb1f884d47a030",
+    "bytes": 11894
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "completed_utc": "2026-11-05T23:13:31.903083+00:00",
+  "gates": {
+    "scientific_lock.json": "9e4e1539903757bc216bf951dddce799b713c6f2bb19bca4a27685551874f938",
+    "calibration_lock.json": "0383660a3c02ba5d0233f3bc54747d502d31a397105b8d7e36038dcb5d1588ad",
+    "test_open_lock.json": "4d834059bd4cfc68dcb4c407e896e8f26a715a20fcfc3ca69cc61ecb1c497415"
+  },
+  "raw_prediction_receipts_verified": 728,
+  "enriched_bundles_present": 728,
+  "original_raw_input_files_unchanged_since_access": 20,
+  "independent_annual_brier_and_count_checks": 96,
+  "evaluation_output_hashes_verified": 18,
+  "report_figure_hashes_verified": 13,
+  "result": "passed",
+  "no_new_models_thresholds_or_scientific_choices": true
+}

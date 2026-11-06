@@ -1,0 +1,218 @@
+{
+  "checked_at_utc": "2026-11-05T23:51:06.473378+00:00",
+  "status": "passed",
+  "source_commit": "0cb268536f496908dd28c5341992c0a262dc0326",
+  "source_code_sha256": "4dfe29b7a533480d76558290975ac0ea0e291456749e4db321bfa38b3ff333d9",
+  "checks": [
+    "eight_reported_moisture_contrasts_match_frozen_tables_and_14_day_intervals",
+    "30_frozen_bundles_independently_match_120_annual_brier_scores_and_counts",
+    "regional_and_site_D_minus_2_onset_calibration_counterexamples_preserved",
+    "both_frozen_application_gates_fail_correctly_label_ambiguity_annotated_without_rewriting_seals",
+    "100_successful_calibration_maps_four_raw_persistence_and_four_NA_diagnostics_are_distinct",
+    "H_buffer_mask_and_shared_grid_match_frozen_registry_and_all_delivered_predictions",
+    "report_local_links_cli_imports_and_all_declared_existing_extraction_inputs_available"
+  ],
+  "selected_npz_bundles": 30,
+  "independent_annual_brier_checks": 120,
+  "moisture_contrasts": [
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "risk_set": "all",
+      "delta_brier": -0.02108683042314123,
+      "lower": -0.028487428591963487,
+      "upper": -0.016012389031774866,
+      "years_improving": 5
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "risk_set": "onset",
+      "delta_brier": -0.007592068269742,
+      "lower": -0.01220021309475266,
+      "upper": -0.005586488869350671,
+      "years_improving": 5
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "risk_set": "all",
+      "delta_brier": -0.016428032615499022,
+      "lower": -0.02265328900178255,
+      "upper": -0.012067383614703721,
+      "years_improving": 5
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "risk_set": "onset",
+      "delta_brier": -0.009500083468385906,
+      "lower": -0.02038685191549255,
+      "upper": -0.0034314444737408496,
+      "years_improving": 4
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "risk_set": "all",
+      "delta_brier": -0.009734206939285256,
+      "lower": -0.015717578838224215,
+      "upper": -0.0056114467808669015,
+      "years_improving": 5
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "risk_set": "onset",
+      "delta_brier": 0.0005811354651016759,
+      "lower": -0.001249886989030603,
+      "upper": 0.003076337318902307,
+      "years_improving": 2
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "risk_set": "all",
+      "delta_brier": -0.006792880092455961,
+      "lower": -0.013152775073136225,
+      "upper": -0.00042948451033630164,
+      "years_improving": 4
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "risk_set": "onset",
+      "delta_brier": -0.001597989955274548,
+      "lower": -0.005370012812466816,
+      "upper": 0.002927741951747429,
+      "years_improving": 4
+    }
+  ],
+  "regional_onset_calibration": [
+    {
+      "model_id": "logistic_F4",
+      "raw": 0.1013419209745862,
+      "calibrated": 0.10726834453125726,
+      "delta": 0.005926423556671057,
+      "lower": 0.004362200744911412,
+      "upper": 0.010469765024306901
+    },
+    {
+      "model_id": "lightgbm_F4",
+      "raw": 0.10302357806642679,
+      "calibrated": 0.11081084095684575,
+      "delta": 0.007787262890418964,
+      "lower": 0.004238197672311541,
+      "upper": 0.014090530088261373
+    }
+  ],
+  "diagnostic_failures": [
+    {
+      "stage": "calibration",
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "transition",
+      "year": 2018,
+      "probability": "calibrated",
+      "status": "optimizer_failure"
+    },
+    {
+      "stage": "final_test",
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "persistence",
+      "year": 2022,
+      "probability": "raw",
+      "status": "optimizer_failure"
+    },
+    {
+      "stage": "final_test",
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "persistence",
+      "year": 2022,
+      "probability": "calibrated",
+      "status": "optimizer_failure"
+    },
+    {
+      "stage": "final_test",
+      "scope": "temporal",
+      "lag": 2,
+      "model_id": "transition",
+      "year": 2023,
+      "probability": "calibrated",
+      "status": "optimizer_failure"
+    }
+  ],
+  "gate_label_annotations": 24,
+  "entirely_positive_intervals_with_legacy_label": 9,
+  "command_smoke_checks": [
+    {
+      "command": [
+        "<ERA5_SOURCE_ROOT>\\.venv\\Scripts\\python.exe",
+        "tools/probability_phase5_sites.py",
+        "--help"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "<ERA5_SOURCE_ROOT>\\.venv\\Scripts\\python.exe",
+        "tools/probability_phase5_report.py",
+        "--help"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "input_sha256": {
+    "data/probability_phase4/evaluation/comparisons.csv": "7fe625b4f3c5482bcb5b4d63d6bf38cd384c930c84a386bf700a7eb4c9f76b07",
+    "data/probability_phase4/evaluation/bootstrap_intervals.csv": "e41998248994e31798368468ef2331fa0f9fcdcc3030fbbdb8e315624ab84073",
+    "data/probability_phase4/evaluation/annual_scores.csv": "1132f0b1d23846d622271b16578129debe0d82a44961091c66be2b6f40c7f111",
+    "data/probability_phase4/enriched/final_test/temporal/lag2/lightgbm_F0/2020.npz": "4bc840368cf16c759212a321f042677eb7d039f2780e625f838fb84f171befbd",
+    "data/probability_phase4/enriched/final_test/temporal/lag2/lightgbm_F0/2021.npz": "26a12b58574aff5aaea3d010b3cbe5080354b0136ef308821866264b7a247daf",
+    "data/probability_phase4/enriched/final_test/temporal/lag2/lightgbm_F0/2022.npz": "a828f8d8ae16f0835bba3207eb58a4ca2286aece0afd872f299811a2f3e001d4",
+    "data/probability_phase4/enriched/final_test/temporal/lag2/lightgbm_F0/2023.npz": "16a83ef5cd1ce8abc8a1867234f729a36b72c3274e40762a9249cf039ecc5726",
+    "data/probability_phase4/enriched/final_test/temporal/lag2/lightgbm_F0/2024.npz": "735c01778878aabda12f2356025ad466c9273e3c1638e456298a552b24879406",
+    "data/probability_phase4/enriched/final_test/temporal/lag2/lightgbm_F1/2020.npz": "8c23433997b013063570a4a4ba75e5260a9da77e401d42046ac7f42996c2c5ea",
+    "data/probability_phase4/enriched/final_test/temporal/lag2/lightgbm_F1/2021.npz": "2f662677bbd4766c09a61eae3c64143c6c3da4b478842e4a606b998860b79ce4",
+    "data/probability_phase4/enriched/final_test/temporal/lag2/lightgbm_F1/2022.npz": "71edd00b8eb29bb76602e319e9a83f45718b622d2bafa93a95281e1ebf4bf184",
+    "data/probability_phase4/enriched/final_test/temporal/lag2/lightgbm_F1/2023.npz": "9328ffca43953fd69a32d0d02e522e5783ba14ef9a4c072e1aeaf78ef2682c80",
+    "data/probability_phase4/enriched/final_test/temporal/lag2/lightgbm_F1/2024.npz": "e4c42bff96ae027957ee717562a8b747da11cbcbf6459b1aecb8c6ad18ec2a6e",
+    "data/probability_phase4/enriched/final_test/temporal/lag2/logistic_F4/2020.npz": "8b39abb73eaf40b616c34db5286effd76ae199adb87a4fa304f1705f388c464c",
+    "data/probability_phase4/enriched/final_test/temporal/lag2/logistic_F4/2021.npz": "ff7d70d3e279f54bba181ffb4286babd43b0b5d715ab77b17d80f0e06ed37714",
+    "data/probability_phase4/enriched/final_test/temporal/lag2/logistic_F4/2022.npz": "2a7a417e7513fceaced54317c5dea237c0d236dcd405f2a136846aaf3956039d",
+    "data/probability_phase4/enriched/final_test/temporal/lag2/logistic_F4/2023.npz": "c4eea045d65bbc1fc7d0f8a93730fe979fdf95da479f0b53c54d8d3ce251ebe4",
+    "data/probability_phase4/enriched/final_test/temporal/lag2/logistic_F4/2024.npz": "f0d5de69c6fbeb97f03267f297e56812a0436936c06550b340bde1af27bfc523",
+    "data/probability_phase4/enriched/final_test/temporal/lag2/lightgbm_F4/2020.npz": "ef86348c4973360e9e84db591e70919356fbb8aad0155eec514a53d1276774ec",
+    "data/probability_phase4/enriched/final_test/temporal/lag2/lightgbm_F4/2021.npz": "bf0c43906c9e98d41ee4099cfee8a2ece114ec6dd298248a9fb04ef17105c1d1",
+    "data/probability_phase4/enriched/final_test/temporal/lag2/lightgbm_F4/2022.npz": "ffd0fc8a51f5e91e6778281669d6f3911eea18a8848fa036275ba207c92c3506",
+    "data/probability_phase4/enriched/final_test/temporal/lag2/lightgbm_F4/2023.npz": "a006582b1e999afd9f1ab4ecab2359ba789733882dd54fbb319bc522db0c0b04",
+    "data/probability_phase4/enriched/final_test/temporal/lag2/lightgbm_F4/2024.npz": "8831f8f962ba13bf7daaa67017b48ee78c8cd7c4bd5303a467ddf940f09603de",
+    "data/probability_phase4/enriched/final_test/strict/lag2/lightgbm_F0/2020.npz": "ca3ebe0b7c2f2c032292dd2b1cf07700a15123f28d6d01ecc7a472e06b28519d",
+    "data/probability_phase4/enriched/final_test/strict/lag2/lightgbm_F0/2021.npz": "fc164645ab520fa763934083d707f4535d9dce260ddd8dc971b041233bfba90c",
+    "data/probability_phase4/enriched/final_test/strict/lag2/lightgbm_F0/2022.npz": "49f7957f373a01659027410d53dfc3facab265f5b2a1feef8e3fc84f66c43a3c",
+    "data/probability_phase4/enriched/final_test/strict/lag2/lightgbm_F0/2023.npz": "c3639f18fdab69f778a3f6ff73000fa035216b02bd3dcbe3728ced2b9f273813",
+    "data/probability_phase4/enriched/final_test/strict/lag2/lightgbm_F0/2024.npz": "9729ea72d94aad5bbd96ea0603d5b9b871ae2b6822eb806f75f247b99e6b0e8d",
+    "data/probability_phase4/enriched/final_test/strict/lag2/lightgbm_F1/2020.npz": "cdff12eaa1ef1ae54afed03fe5fe2e502a6db75420e6658794480f0e347d6c8b",
+    "data/probability_phase4/enriched/final_test/strict/lag2/lightgbm_F1/2021.npz": "4bc4c6407765ed308c1222ef10d04ef0bb862b0a3449bf76e7d8225377e8ebe3",
+    "data/probability_phase4/enriched/final_test/strict/lag2/lightgbm_F1/2022.npz": "a02918dee2a96bebd4cd3d9a348ba53ea9acada644d2e157b8898093acaa297c",
+    "data/probability_phase4/enriched/final_test/strict/lag2/lightgbm_F1/2023.npz": "64699ca20eca275a8ac32775e04ca573a86ce41471314445650492a55cf27a34",
+    "data/probability_phase4/enriched/final_test/strict/lag2/lightgbm_F1/2024.npz": "fe12ad71bc671b68dfc77622fb5587d002467fcc6dc9d98019eabf4b4f1247f8",
+    "data/probability_phase5/aggregate_scores.csv": "a7415e60cd2c29577f8f0d44b91c8962baf84df671621b35dc145ddd84e6e2c4",
+    "data/probability_phase5/site_mapping.csv": "d7042bae982c1e26535bcdc65e42beefb5b8b931a029dd0df1affd07bf858bf2",
+    "data/probability_phase4/evaluation/application_gate.json": "9632deffdc57316657f348ee34ff11c497c714dd6aef51f4e88a7820bb679c14",
+    "data/probability_phase4/calibration/calibrators.json": "0ae4d0fd8485b1e1acb01682856a5d49f7b0d61371630fe08431c580775d62a2",
+    "data/probability_phase4/calibration/diagnostics.csv": "4091c417f17ccfce24ec66d4c1e17ef4423deb9ac5c3e2ad4d9e0bfd9a952f41",
+    "data/probability_phase4/evaluation/calibration_diagnostics.csv": "75d7175f5485d56c94ab9fdd22703e3aa53e5ae0256c5900be7f90188ff72e0b",
+    "data/probability_phase1/samples/grid_registry.csv": "24342db500391f6301bcbed60953c2784f8b203eda020998457fbfa95f8026f6",
+    "data/probability_phase5/site_cards.json": "f3c7116c981145ad4da6e116d5a206c70effd12437e220e7519b8f37a5ab3857",
+    "data/probability_phase5/predictions.csv": "c2c281d4d5c935e24952ef71665578a3f06548d0874703caa71d8c1a739acf6f",
+    "reports/probability_phase5/index.html": "95cc0c5b4647c1e678d79d6e18b39edadf54f47e6884db4f4b68dbd59b3e2fec",
+    "docs/PROBABILITY_PHASE5_REPRODUCE.md": "ba0fbd149a424885ffa40c5e97cd3044e2da5084ba941eb128b1fe5fd9e2b3f9"
+  },
+  "model_training": false,
+  "model_selection": false,
+  "calibration_refit": false,
+  "entire_test_suite_rerun": false,
+  "external_data_published": false
+}

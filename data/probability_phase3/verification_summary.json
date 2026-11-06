@@ -1,0 +1,66 @@
+{
+  "scope": "Complete phase-3 training/validation matrix, 2026-11-05",
+  "targeted_tests": {
+    "command": "python -m pytest tests/test_probability_phase3_lightgbm.py tests/test_probability_phase3_lr_ablations.py --basetemp .test-tmp-phase3-completed-20261105 -q",
+    "passed": 16,
+    "failed": 0,
+    "duration_seconds": 2.13,
+    "log": "data/probability_phase3/validation-tests-completed.log"
+  },
+  "reused_engineering_evidence": {
+    "lr": "data/probability_phase3/lr_ablations/run1/validation_checks.json",
+    "lr_predictions_indexed": 576,
+    "lr_models_replayed": 32,
+    "lr_replay_max_difference": 0,
+    "tree_review": "docs/PROBABILITY_PHASE3_DESIGN_NOTES.md",
+    "tree_models_sampled_for_saved_prediction_replay": 3,
+    "tree_replay_max_difference": 0
+  },
+  "figures": {
+    "moisture": {
+      "annual_points": 48,
+      "means": 16,
+      "png_visually_inspected": true
+    },
+    "ladder": {
+      "annual_points": 120,
+      "means": 40,
+      "png_visually_inspected": true
+    },
+    "pairing_assertions": "Identical sample and outcome counts; expected validation years, lags, arms and model families only"
+  },
+  "original_worktrees": [
+    {
+      "path": "<ESG_SOURCE_ROOT>",
+      "branch": "esg-five-site-study",
+      "head_short": "3aa2b08",
+      "clean": true
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>",
+      "branch": "main",
+      "head_short": "d5f50d0",
+      "clean": true
+    }
+  ],
+  "original_status_check": "Read-only git status succeeded with escalation after the sandbox could not access the external cwd; no unresolved permission denial.",
+  "remaining_validation": [
+    "Calibration and final-test performance are not yet available",
+    "Held-out H-space evaluation remains closed",
+    "ERA5 reanalysis hindcast is not a real-time warning demonstration"
+  ],
+  "large_data_backup_policy": "Hash local arrays without copying; Git-only bundle retains small evidence.",
+  "archive_staging_correction": "Initial index-byte verification found only .gitattributes/.gitignore CRLF normalization mismatches; both working files normalized to LF before rebuilding the final manifest. Final check is recorded outside the manifest in ../backups/phase3-staged-verification.json.",
+  "prior_snapshot_tests": {
+    "command": "python -m pytest tests/test_probability_phase3_lightgbm.py tests/test_probability_phase3_lr_ablations.py --basetemp .test-tmp-phase3-close-20261105 -q",
+    "passed": 16,
+    "failed": 0,
+    "duration_seconds": 2.12,
+    "log": "data/probability_phase3/validation-tests-closeout.log"
+  },
+  "completion_verification": "data/probability_phase3/completion_verification.json",
+  "strict_scientific_review": "docs/PROBABILITY_PHASE3_STRICT_REVIEW.md",
+  "historical_execution_interruptions": 3,
+  "last_recovery_refitted_model": false,
+  "runtime_provenance_limit": "Original strict remaining invocation interrupted before final receipt; per-fit timings survive; aggregate invocation runtime/peak not claimed as measured."
+}

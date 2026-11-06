@@ -1,0 +1,37 @@
+{
+  "criterion": "mean annual raw Brier, 2015-2017",
+  "eligible": [
+    "persistence",
+    "seasonal",
+    "transition",
+    "logistic_F4",
+    "logistic_F0"
+  ],
+  "test_reselection": false,
+  "champions": [
+    {
+      "scope": "strict",
+      "lag": 1,
+      "validation_champion": "logistic_F4",
+      "mean_annual_raw_brier": 0.0753509448973496
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "validation_champion": "logistic_F4",
+      "mean_annual_raw_brier": 0.1088537976677743
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "validation_champion": "logistic_F4",
+      "mean_annual_raw_brier": 0.078638743339029
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "validation_champion": "logistic_F4",
+      "mean_annual_raw_brier": 0.1123592975155842
+    }
+  ]
+}

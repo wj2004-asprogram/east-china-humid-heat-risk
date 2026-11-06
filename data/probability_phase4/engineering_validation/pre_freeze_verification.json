@@ -1,0 +1,32 @@
+{
+  "scope": "pre_reserved_data_engineering_validation",
+  "real_reserved_data_opened": false,
+  "model_restoration": {
+    "file": "data/probability_phase4/engineering_validation/restoration_2000.json",
+    "instances": 104,
+    "year": 2000,
+    "rows_per_instance": 64,
+    "result": "all_predictions_match_existing_saved_values"
+  },
+  "test_files": {
+    "tests/test_probability_phase4_data.py": {"passed": 3},
+    "tests/test_probability_phase4_calibration.py": {"passed": 6},
+    "tests/test_probability_phase4_evaluation.py": {"passed": 5},
+    "tests/test_probability_phase4_runner.py": {"passed": 2}
+  },
+  "execution_evidence": {
+    "root_core_run": "14 passed in 1.46s; pytest data/calibration/evaluation files -q -p no:cacheprovider",
+    "implementing_agent_final_core_run": "11 calibration/evaluation tests passed after final implementation",
+    "implementing_agent_integration_run": "2 passed in 33.83s; synthetic 104 calibrators and 520 final bundles, two interrupt/resume checks, seal tamper rejection",
+    "report_smoke": "Synthetic completed statistics generated Markdown and six SVG/PNG figure pairs; inspected F4 comparison and annual reliability layout; clipped heading fixed before scientific seal",
+    "syntax": "py_compile report, seal and execution recorder passed",
+    "whitespace": "git diff --check passed"
+  },
+  "reproduce_tests": "python -m pytest tests/test_probability_phase4_data.py tests/test_probability_phase4_calibration.py tests/test_probability_phase4_evaluation.py tests/test_probability_phase4_runner.py -q -p no:cacheprovider",
+  "preflight_technical_notes": [
+    "Synthetic report hardlink was rejected by Windows filesystem permissions. Used an independent copy of small synthetic tables; no permission escalation or real data copy.",
+    "A patch context mismatch made no changes; the corrected patch was applied and report smoke rerun.",
+    "All synthetic intermediate outputs remain under ignored .test-tmp-phase4-* directories."
+  ],
+  "remaining_before_data_access": "root scientific seal; no model or threshold may be selected on reserved outcomes"
+}

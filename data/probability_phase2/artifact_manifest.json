@@ -1,0 +1,3426 @@
+{
+  "schema_version": 1,
+  "archival_policy": "Git and bundle contain small evidence only; regenerate local arrays from read-only raw inputs",
+  "large_arrays_copied": false,
+  "incomplete_2000_arrays": "retained locally, excluded from official artifact list; failure.json retained",
+  "files": {
+    "configs/probability_protocol_v1.json": {
+      "bytes": 24827,
+      "sha256": "f0aa474fd6a038709fa00bb8e0e6c9dc5af0d48647ef6b68c1eea968d703df82",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/design_lock.json": {
+      "bytes": 1119,
+      "sha256": "b011f4703a623d1a6697af5361033316316daacedb562eb5ce682eff5c25ad75",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/experiments.json": {
+      "bytes": 6701,
+      "sha256": "7a3e4e506c098ab3a6bd928702e2e7d1a37b34e7f704ba19ecaed3f6ad2d5b17",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/fit_attempt_summary.json": {
+      "bytes": 181,
+      "sha256": "6692305a5c8760f851b6035777c25a7b67553cf4347ee953267d60bd0fadccd3",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/lr_selection_strict.json": {
+      "bytes": 2283,
+      "sha256": "0c6926ebd2e26a7a137cf95d601540f9e1a6d7b680b9409302184f7b756a4475",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/lr_selection_temporal.json": {
+      "bytes": 1759,
+      "sha256": "ada2471d79f7fa0645a01ce076f9a34cf447ea48f3c0b10b25211ba78fdf923f",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/metrics_summary.csv": {
+      "bytes": 24466,
+      "sha256": "7ade2b7267aef22b852a394ca3b989e7b5248b2d5e2e4acfdb32c20c9ab01075",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/metrics_yearly.csv": {
+      "bytes": 418502,
+      "sha256": "efb447f5f39b119f62ce14f49457299cd0ce6c00d73f488c2d2d25d422aeee82",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/models/strict/lag1_logistic_F0.json": {
+      "bytes": 3899,
+      "sha256": "9ea0a8f50599aca0de3fccdb8501d74b76fe84c03d22ad29ceab01cad74aa9fc",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/models/strict/lag1_logistic_F1.json": {
+      "bytes": 9388,
+      "sha256": "ffead0538cb638489788dccba74641db9a343c535d0f9d1dd1e4d03ffb314314",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/models/strict/lag1_logistic_F4.json": {
+      "bytes": 12643,
+      "sha256": "689725aab42d60eefff27f5d44063baf65fccf215ea255bd5c6fdbe046ea7049",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/models/strict/lag1_persistence.json": {
+      "bytes": 95,
+      "sha256": "25f45c5381a1298f4bb704707454fd90c0d2d2a9af9207e9a91b0916596af76f",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/models/strict/lag1_seasonal.json": {
+      "bytes": 72869,
+      "sha256": "eb7222a9a77e577d584706b8600dee625bd696cdcb3e34b041669abd9f0a9240",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/models/strict/lag1_seasonal_pooled.json": {
+      "bytes": 72916,
+      "sha256": "21f1f74ac0534b81294ea05d80d59531078383437839081df7aaa18004736dd8",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/models/strict/lag1_transition.json": {
+      "bytes": 74457,
+      "sha256": "b8b264df1203641285ceb956bfd7dbcf07ee1d1c36172559448bc3487a72afba",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/models/strict/lag2_logistic_F0.json": {
+      "bytes": 3916,
+      "sha256": "20b1c4392e9093c225ce3bf4659f32f79c100d3d341bf50b9353127fab890146",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/models/strict/lag2_logistic_F1.json": {
+      "bytes": 9417,
+      "sha256": "31a40c6b5c60f0abe60eb16944ab2351a58a725ee7b3faa8539425870b6b42df",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/models/strict/lag2_logistic_F4.json": {
+      "bytes": 12457,
+      "sha256": "e2ad6e16571317fdcc8f9bc2651043314c42b17aa6cfcf7c1d101265bc8709cf",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/models/strict/lag2_persistence.json": {
+      "bytes": 95,
+      "sha256": "60d4597f91ec9e0fbb279daad33f9c9d18565b8c2cfe100aee7762e53fdcd6a3",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/models/strict/lag2_seasonal.json": {
+      "bytes": 72869,
+      "sha256": "e21b41ce1cf0d7f86e25729ce8a53179c0f6c3f006acce8a19b9cf0719c1e265",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/models/strict/lag2_seasonal_pooled.json": {
+      "bytes": 72916,
+      "sha256": "cf4954936c70faa4c19117c91802c36d8382aa61361abbf2f1f49bab217d969b",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/models/strict/lag2_transition.json": {
+      "bytes": 74456,
+      "sha256": "17a4391bfb160ef368bd1d053aa668765be6820479f7d684ee50880a4515302e",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/models/temporal/lag1_logistic_F0.json": {
+      "bytes": 3901,
+      "sha256": "97c9d172384fd9e2cc2bb1c2147fadcd44d2c222074f6b8c5bea1058d561b788",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/models/temporal/lag1_logistic_F1.json": {
+      "bytes": 9399,
+      "sha256": "48730413e38f9044607627f04d75ec91f7184305ef4f60efad94a37f50f30cdc",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/models/temporal/lag1_logistic_F4.json": {
+      "bytes": 12677,
+      "sha256": "d915f6a2455f12f4ecb2fa1a4d6ff161566584558f3011629b6cf5ee34b48d35",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/models/temporal/lag1_persistence.json": {
+      "bytes": 95,
+      "sha256": "25f45c5381a1298f4bb704707454fd90c0d2d2a9af9207e9a91b0916596af76f",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/models/temporal/lag1_seasonal.json": {
+      "bytes": 1686998,
+      "sha256": "f86ba02b56a78e14204a55b8355450d30bcd3cfa409775a0d0db1e8d55a3f294",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/models/temporal/lag1_seasonal_pooled.json": {
+      "bytes": 88376,
+      "sha256": "9b669cdad989b07d0934be0dd0243312a0c7f56059c1ceb72631a878cb6450b1",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/models/temporal/lag1_transition.json": {
+      "bytes": 89919,
+      "sha256": "41be6d512ed4e40edef47ea0716ccbef380c5ea0371d326e45055bb45dcdab09",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/models/temporal/lag2_logistic_F0.json": {
+      "bytes": 3915,
+      "sha256": "e0832a4aa5c86132f283b6d0fd164218080958fad7485f7a219932f0fb5f2c07",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/models/temporal/lag2_logistic_F1.json": {
+      "bytes": 9414,
+      "sha256": "9bdf79df9729df3c8c9dec75f00eb637e2edc29ad5ef4bf520862050b25bd53d",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/models/temporal/lag2_logistic_F4.json": {
+      "bytes": 12479,
+      "sha256": "a40bd3758f89873074d2989634e178b455213e66a092548905e5f4f60b7556cf",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/models/temporal/lag2_persistence.json": {
+      "bytes": 95,
+      "sha256": "60d4597f91ec9e0fbb279daad33f9c9d18565b8c2cfe100aee7762e53fdcd6a3",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/models/temporal/lag2_seasonal.json": {
+      "bytes": 1686998,
+      "sha256": "32af008c1692a555fb6c1f3bb1d77fd5d7f01bcd372b9ee66b62aeea7a18b037",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/models/temporal/lag2_seasonal_pooled.json": {
+      "bytes": 88376,
+      "sha256": "756d340fd3b577a6fcf4cf212993999ee1df635edb05e5fde8a3dcec8028eb43",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/models/temporal/lag2_transition.json": {
+      "bytes": 89918,
+      "sha256": "286c3d5fb88d5f871c6d3cba3160319f05e5f42cbe9edffada6d5e1eb8412eee",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/moisture_contrasts.json": {
+      "bytes": 4236,
+      "sha256": "fa38894f42c02bf2ac40cd700e6e6c95bfaadf4f33fd20d8dd6a4849d6d1aae0",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/moisture_contrasts_partial.csv": {
+      "bytes": 1050,
+      "sha256": "7e9a66b826c5dd7fa868b0d94d726303524deaa5f5fdf7c68bb2e53c4ef7443c",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/output_manifest.json": {
+      "bytes": 88329,
+      "sha256": "f3c5c6ee0d3d92adf7151836fc777e2c65c3910507ba095789643fecdd40f351",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/prediction_schema.json": {
+      "bytes": 1004,
+      "sha256": "64a9f3686f9b23732fff5bf8cabebca0dc447b068fc3c785adf799be5831d278",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F0/2000.npz": {
+      "bytes": 839631,
+      "sha256": "d07340181a5e926507cc30b6c1aa7e17025fa2f7646d8cb9a156901accc892c5",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F0/2001.npz": {
+      "bytes": 839023,
+      "sha256": "9539dfe4d2f6a8cbac800d3bf732061b90d1fe30e67782b7f307860ef7de5e80",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F0/2002.npz": {
+      "bytes": 837894,
+      "sha256": "ed782d1d7f381d63742e6088778d98c520183a9671edfe59cbe70e23bf6a3bb0",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F0/2003.npz": {
+      "bytes": 839994,
+      "sha256": "157d8ba3bc1cbfb0c8713ccb26ac1b4214fbf13cec26fbbe83a0dc1f3a857c5c",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F0/2004.npz": {
+      "bytes": 839205,
+      "sha256": "a1900ddd9f64bf4eed711c15fc29562cf996eb34ca8946a63d6dffd99f68bba7",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F0/2005.npz": {
+      "bytes": 839220,
+      "sha256": "67c8b0779670f03b9c79b86eda3c704a65c01446b905744d7b21ee7813bb943b",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F0/2006.npz": {
+      "bytes": 840563,
+      "sha256": "57283c51535a9f55ef286520cae25e8c8b33a29004145c8cb58039f5ace7e9e4",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F0/2007.npz": {
+      "bytes": 840674,
+      "sha256": "ce6d4b2a3f94024f9ff8a65364dd8e5ee9f64dabb46f4917ad8dea4dc305f864",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F0/2008.npz": {
+      "bytes": 839151,
+      "sha256": "efdec7b2472616bc6899ef1fd4fee8cc8d974b82a2fe5b3b325ac38678f07b35",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F0/2009.npz": {
+      "bytes": 840097,
+      "sha256": "dd44edb67bb3d21d99f40a5f1e2e604f98cd87ea5f33cf03d02ae995bb82a15c",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F0/2010.npz": {
+      "bytes": 839632,
+      "sha256": "5dd0216353fc7666274195eed448763a2998042bc55d1e2650a01da4972d0c16",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F0/2011.npz": {
+      "bytes": 837859,
+      "sha256": "b2e0a8b22bad918b7b5e5a410501c5fa2c44e06f47be24644f4d4730dd48f233",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F0/2012.npz": {
+      "bytes": 838415,
+      "sha256": "4e036635b049b4323abb37dd7eacf497e0181420514d3c2bd9332c12e6dd8088",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F0/2013.npz": {
+      "bytes": 841143,
+      "sha256": "75e3737e099839725cda43f0f6add1c1d3e2295e14f742dd3d618606193ad93b",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F0/2014.npz": {
+      "bytes": 839022,
+      "sha256": "147a775cc5fbb9f8f1f8f52cc809596ea5baeac1e1c73bcd0c564fd641ca6563",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F0/2015.npz": {
+      "bytes": 837946,
+      "sha256": "19664079fc307ccc2b32fb7c831ebe1981f572213c8fb47d4526bce86a1385a7",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F0/2016.npz": {
+      "bytes": 840847,
+      "sha256": "9b571f072a249d39e9daecf15cdd5eaf4e0bed3698364731983b6fa5e2b01b8d",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F0/2017.npz": {
+      "bytes": 840938,
+      "sha256": "abed53211b510b6fdab2bff847005cf227ae88ffe73a7c9cd54c44007261323d",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F1/2000.npz": {
+      "bytes": 840804,
+      "sha256": "f5d9fe4f0d6b934f676a3a8964ff17c00fe0aed2c64fc294c82aad99b65d433b",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F1/2001.npz": {
+      "bytes": 840275,
+      "sha256": "999cdf7cb25d346d5db7f8a19cec1ffd17a4b7e0dd48b764ab7dcaaf89963dd7",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F1/2002.npz": {
+      "bytes": 839439,
+      "sha256": "0bd9437e2c94875b329fb522800887e085d57e65dc4e794895758719f4655a58",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F1/2003.npz": {
+      "bytes": 841982,
+      "sha256": "504dfa8cc8c49546ab7f0c278a44d89f5589537299dedaf0974b61bc0af116b9",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F1/2004.npz": {
+      "bytes": 841341,
+      "sha256": "4abae5110131ca1a5b2c82aab227aa20f4b29eebeb43b85d1dddfa433b6ce1cf",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F1/2005.npz": {
+      "bytes": 841131,
+      "sha256": "9b63714acc436b09e2b5ef41b2bf7036b176c7e4b1426ff04c09445551121365",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F1/2006.npz": {
+      "bytes": 841963,
+      "sha256": "4f2753e36308a9a730fc9ff79c5cc12ed78950a40fef53fb8863f1e52249b08e",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F1/2007.npz": {
+      "bytes": 842828,
+      "sha256": "7bf83b9a92bb4cf0937584a313afdbdd3edb5dc99422a7a6952babaa7c05bce3",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F1/2008.npz": {
+      "bytes": 841153,
+      "sha256": "066c103659da86566f4341c7bfda1516e4e83a4f395671a0f3c9db5aa469e169",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F1/2009.npz": {
+      "bytes": 841566,
+      "sha256": "06e79dbb0c647bf810eefdfdaac559b3a2f71dcb0718834dbd7faccf15fe2629",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F1/2010.npz": {
+      "bytes": 841064,
+      "sha256": "37ea027334a427233a7f1d906b86cf9744d01c0b97a3bf7ed39c83ce64ada4a0",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F1/2011.npz": {
+      "bytes": 840123,
+      "sha256": "31b74e91e5aebbdd23e0d0201b73cad87802284ad7dc6b6510706903d486ff9a",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F1/2012.npz": {
+      "bytes": 840349,
+      "sha256": "028292e279f9002e6637544841f788134c2f90f4be82aa4ca6350129aebeb439",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F1/2013.npz": {
+      "bytes": 842629,
+      "sha256": "04f0b25bba9b46db01d9b0c1dac5dfd20aa3fc830126145e85dc3f8677abd337",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F1/2014.npz": {
+      "bytes": 841160,
+      "sha256": "22800ddd4ab355c5a188be301784d802bb3d72dc421a5e26e672029fd1dcb013",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F1/2015.npz": {
+      "bytes": 840411,
+      "sha256": "1c8724c1ed2d23d7427e15040d67c04254cdcdfad0657bf360a05f5f1076badb",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F1/2016.npz": {
+      "bytes": 842096,
+      "sha256": "f766819a19a96517a576ec893b36a4ce513100f7126cf1a54a1f98d6ad7e224b",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F1/2017.npz": {
+      "bytes": 842060,
+      "sha256": "ea7ed45e516a245e332c6eab2a91e6a9a5cae00ab9aa6f88cc0df79e3d2db531",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F4/2000.npz": {
+      "bytes": 841505,
+      "sha256": "f1932ba61f01e61cc4f0125168eab502781dd83327e4ee623a87cf38db9b77b8",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F4/2001.npz": {
+      "bytes": 841428,
+      "sha256": "5e674476b01de55a4c5be9a0172e43e11a4a494a9d1cf49bfabbd179e143feb8",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F4/2002.npz": {
+      "bytes": 840433,
+      "sha256": "7b0f37b8cff36786cf5893db488998e11ff2fc3a396798d28ec4b297c9703ef4",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F4/2003.npz": {
+      "bytes": 843012,
+      "sha256": "cae79c346dfd46af1937d094a3ca2db0a4bc952002e0f5a421138bb8b25996fa",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F4/2004.npz": {
+      "bytes": 842252,
+      "sha256": "0aeb410afe93487d83ac52272f201f6eab40fdd16013b669a567a9b4815cca2e",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F4/2005.npz": {
+      "bytes": 841951,
+      "sha256": "5c0aae91917c3af72a621ec6f65bbf5b8dcbffff77fd2ee21c29c81dc542ccc4",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F4/2006.npz": {
+      "bytes": 842767,
+      "sha256": "9ab1c26815cc1083a92c4c5d9c0636acdb6d1a6e124e1ecb344fe3950b3d9896",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F4/2007.npz": {
+      "bytes": 843665,
+      "sha256": "c7ae00a579ead0197d294c68e99b3f38b3a7189419e9ea4fdb7dc271292250fe",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F4/2008.npz": {
+      "bytes": 842085,
+      "sha256": "39f104f6370c43e6abfcbd1529f0b03f9ff947264856ff1707e00ed7e80cf82a",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F4/2009.npz": {
+      "bytes": 842823,
+      "sha256": "da6264da48d824160e39010aebf940670c5ab170ba4e7651bf4614a35d53319d",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F4/2010.npz": {
+      "bytes": 841819,
+      "sha256": "cf7712ace20f3c904022dee1c8cabf8655126de36418d1f5c301ed44295e5c78",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F4/2011.npz": {
+      "bytes": 841414,
+      "sha256": "d63df3cc626908d9d1f1c208688a29f10e72648d80a9c7240a945e24398f9d07",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F4/2012.npz": {
+      "bytes": 841566,
+      "sha256": "e607a68092cb8937016ccb52591649786e23b95e39d6f2453cc7ef7a05aa7202",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F4/2013.npz": {
+      "bytes": 843106,
+      "sha256": "bbc84469e6439063f91d17b13d9d8ba523be82a9550bcece77cc9ce2db12fd33",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F4/2014.npz": {
+      "bytes": 842451,
+      "sha256": "6faea0246d490dac0358606d908f01766a59afda6a550d90091d0e1dbd72b7d5",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F4/2015.npz": {
+      "bytes": 841766,
+      "sha256": "729bce9a22cac305b37207499eeaa99db9ff0b51220cb021f079d125a2b378ed",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F4/2016.npz": {
+      "bytes": 842824,
+      "sha256": "285d82b0e57d90a9f25ca849851e8025cd761ad34367b497d26d404266a9aa54",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/logistic_F4/2017.npz": {
+      "bytes": 842652,
+      "sha256": "b386b5837280ce1ebac28c80c2950787578391f308ba61aa6a8fcecdc252e65b",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/persistence/2000.npz": {
+      "bytes": 21539,
+      "sha256": "41454627338508d466f60f65b90d55f6bace437343f2a2ee543e1409af4ac20b",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/persistence/2001.npz": {
+      "bytes": 21301,
+      "sha256": "296adebdb57c85b909419086cf9252841a49722ae7f56f5270d15f57e4dff672",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/persistence/2002.npz": {
+      "bytes": 19445,
+      "sha256": "00e341cd26a295703ca14fa4d06ca753e87179329c06170050fb02fe5ef650ef",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/persistence/2003.npz": {
+      "bytes": 23497,
+      "sha256": "1c75f78c70f92ba8a602ed3758d3318d253f5c11f278e3037d3234675c12566c",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/persistence/2004.npz": {
+      "bytes": 20981,
+      "sha256": "d05b8db31fc704c9e245336cba0b005019d1681da9307c7b6155249d43482878",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/persistence/2005.npz": {
+      "bytes": 21235,
+      "sha256": "194b8e5e03e9573354db4d085559a1ff5b0f825cad737cabd7565427388bda4f",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/persistence/2006.npz": {
+      "bytes": 24373,
+      "sha256": "aafaa58571548711e1860dc2674ae91b972f78f023746f8c7b917cff613e3c9b",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/persistence/2007.npz": {
+      "bytes": 24084,
+      "sha256": "fc7f55d4f9e8720cc4641d2ebbfa154c77d553b56f7cd14d42146f256ab1a9db",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/persistence/2008.npz": {
+      "bytes": 20692,
+      "sha256": "6b61c9defa3c2f92f9b9c38cc1111b91d5dadfa562d6caedfb274d48b42d3c38",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/persistence/2009.npz": {
+      "bytes": 22510,
+      "sha256": "68af473f4fa976a2cd857ec20d2ad9b8a5b994152f41032bbe6f610f78fed5b0",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/persistence/2010.npz": {
+      "bytes": 22675,
+      "sha256": "7c36dd15bcde1b21e05a28a82010aba5e1c4b9f6126b4782e82dba8e0ab410b0",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/persistence/2011.npz": {
+      "bytes": 19323,
+      "sha256": "cdd8ce06b96e99816a9087eb88c3b836425b42967a733c7763f2b72022c0b76d",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/persistence/2012.npz": {
+      "bytes": 20477,
+      "sha256": "988d969de415c7276e0a034d286671f5f3685367f379d7ee7f8f3cd58f489d28",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/persistence/2013.npz": {
+      "bytes": 26574,
+      "sha256": "0f1e0f7a577c023bff104bc263b54e3f538b4a15312119332f6b760bd6cffc0d",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/persistence/2014.npz": {
+      "bytes": 20712,
+      "sha256": "20c1b17b64ada285075293d6e3cebb39ba67f240c3d026d9fc24899988067bf6",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/persistence/2015.npz": {
+      "bytes": 19004,
+      "sha256": "b006cc9ddb9d7535368b0b40202428e40ab71fe15c7ac5ac078167328d81e158",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/persistence/2016.npz": {
+      "bytes": 25861,
+      "sha256": "286dce3587ceaee9d4ca594f5a0b7845ebb382986bf1496f549077262d154a16",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/persistence/2017.npz": {
+      "bytes": 25856,
+      "sha256": "b1e3b0cfb2e920f0df67e748c2c0d1f59079d16d9049237b726cfc401e0cb708",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/seasonal/2000.npz": {
+      "bytes": 15386,
+      "sha256": "024e11672a536d0dcc16a610cecf8e407d21f040d6ca86c37311d2d34658d3bd",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/seasonal/2001.npz": {
+      "bytes": 15189,
+      "sha256": "4bdc7aeecf31f16008d4c110b1e4bbcdcb9d0cc18ddf267e0b583650dc672c5a",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/seasonal/2002.npz": {
+      "bytes": 14129,
+      "sha256": "05cd3a8d440426e50323c5b947f884ff174ac1a3bb032295bd469ad2d3509d13",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/seasonal/2003.npz": {
+      "bytes": 16349,
+      "sha256": "c1f75cd6cdcce13fa678efcee4ccf4da7533e01f55c0d0493f90497860765d2d",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/seasonal/2004.npz": {
+      "bytes": 15043,
+      "sha256": "8dca6aebf96adc04bceef3ea17da510758f15b45e9957feb4b111d924bac520c",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/seasonal/2005.npz": {
+      "bytes": 15216,
+      "sha256": "b8a8dc82be90993ccb68200d90b8f962248b80220a0fbf4ff8e7ea48c38cc9d0",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/seasonal/2006.npz": {
+      "bytes": 16943,
+      "sha256": "712bd57e6dfb877be28c6e68a09c569f6895bc7cd2f8f9f5a52f6b14230d7580",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/seasonal/2007.npz": {
+      "bytes": 16785,
+      "sha256": "f6094c0fe391cf5f2c55e2a91ba492626073513b27e6d152d04ea567c7025195",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/seasonal/2008.npz": {
+      "bytes": 14981,
+      "sha256": "2d165ad38b6a70306838130debf01bc4e81aca661a5ce9a2a72423c03e3cc12a",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/seasonal/2009.npz": {
+      "bytes": 15907,
+      "sha256": "414640e661e40b3c6d41a16ee053d15d47ac8f9a57fc7ed1be973104700c6657",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/seasonal/2010.npz": {
+      "bytes": 15985,
+      "sha256": "288109020b6435d497bf19510bd4f2ff45d7c63c87fc9539e6287532077767c0",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/seasonal/2011.npz": {
+      "bytes": 14144,
+      "sha256": "2eb48be669d399207adf387da316619161d75341c61cf626b61bd71bdb0f117a",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/seasonal/2012.npz": {
+      "bytes": 14767,
+      "sha256": "74199b209426225a134ca35805d9d9b2669ac7bebe77afe6dd519298847895fa",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/seasonal/2013.npz": {
+      "bytes": 17975,
+      "sha256": "a55541830ec85865531f1427b7002a30e34e17397037a4d6c345644c0036d3ee",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/seasonal/2014.npz": {
+      "bytes": 14925,
+      "sha256": "53e8be7c36c4b1c7ebcaae0ace12545b9c437425ea9efb7310555d5a63d5c68d",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/seasonal/2015.npz": {
+      "bytes": 13930,
+      "sha256": "f8bbee9f8ac05e01eff8ea8ead7920be0e72cb5f52dc7203cb16346732923813",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/seasonal/2016.npz": {
+      "bytes": 17555,
+      "sha256": "1d4ef262eeb9b41f2e14904e96a96f15301e053242440c8258982f28bfe891e8",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/seasonal/2017.npz": {
+      "bytes": 17612,
+      "sha256": "eee08ef7ebaeec2e63cbefe6d120f6c78804a08761a1424eb1f15f808166c3af",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/seasonal_pooled/2000.npz": {
+      "bytes": 15386,
+      "sha256": "024e11672a536d0dcc16a610cecf8e407d21f040d6ca86c37311d2d34658d3bd",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/seasonal_pooled/2001.npz": {
+      "bytes": 15189,
+      "sha256": "4bdc7aeecf31f16008d4c110b1e4bbcdcb9d0cc18ddf267e0b583650dc672c5a",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/seasonal_pooled/2002.npz": {
+      "bytes": 14129,
+      "sha256": "05cd3a8d440426e50323c5b947f884ff174ac1a3bb032295bd469ad2d3509d13",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/seasonal_pooled/2003.npz": {
+      "bytes": 16349,
+      "sha256": "c1f75cd6cdcce13fa678efcee4ccf4da7533e01f55c0d0493f90497860765d2d",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/seasonal_pooled/2004.npz": {
+      "bytes": 15043,
+      "sha256": "8dca6aebf96adc04bceef3ea17da510758f15b45e9957feb4b111d924bac520c",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/seasonal_pooled/2005.npz": {
+      "bytes": 15216,
+      "sha256": "b8a8dc82be90993ccb68200d90b8f962248b80220a0fbf4ff8e7ea48c38cc9d0",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/seasonal_pooled/2006.npz": {
+      "bytes": 16943,
+      "sha256": "712bd57e6dfb877be28c6e68a09c569f6895bc7cd2f8f9f5a52f6b14230d7580",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/seasonal_pooled/2007.npz": {
+      "bytes": 16785,
+      "sha256": "f6094c0fe391cf5f2c55e2a91ba492626073513b27e6d152d04ea567c7025195",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/seasonal_pooled/2008.npz": {
+      "bytes": 14981,
+      "sha256": "2d165ad38b6a70306838130debf01bc4e81aca661a5ce9a2a72423c03e3cc12a",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/seasonal_pooled/2009.npz": {
+      "bytes": 15907,
+      "sha256": "414640e661e40b3c6d41a16ee053d15d47ac8f9a57fc7ed1be973104700c6657",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/seasonal_pooled/2010.npz": {
+      "bytes": 15985,
+      "sha256": "288109020b6435d497bf19510bd4f2ff45d7c63c87fc9539e6287532077767c0",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/seasonal_pooled/2011.npz": {
+      "bytes": 14144,
+      "sha256": "2eb48be669d399207adf387da316619161d75341c61cf626b61bd71bdb0f117a",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/seasonal_pooled/2012.npz": {
+      "bytes": 14767,
+      "sha256": "74199b209426225a134ca35805d9d9b2669ac7bebe77afe6dd519298847895fa",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/seasonal_pooled/2013.npz": {
+      "bytes": 17975,
+      "sha256": "a55541830ec85865531f1427b7002a30e34e17397037a4d6c345644c0036d3ee",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/seasonal_pooled/2014.npz": {
+      "bytes": 14925,
+      "sha256": "53e8be7c36c4b1c7ebcaae0ace12545b9c437425ea9efb7310555d5a63d5c68d",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/seasonal_pooled/2015.npz": {
+      "bytes": 13930,
+      "sha256": "f8bbee9f8ac05e01eff8ea8ead7920be0e72cb5f52dc7203cb16346732923813",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/seasonal_pooled/2016.npz": {
+      "bytes": 17555,
+      "sha256": "1d4ef262eeb9b41f2e14904e96a96f15301e053242440c8258982f28bfe891e8",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/seasonal_pooled/2017.npz": {
+      "bytes": 17612,
+      "sha256": "eee08ef7ebaeec2e63cbefe6d120f6c78804a08761a1424eb1f15f808166c3af",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/transition/2000.npz": {
+      "bytes": 21730,
+      "sha256": "0f1e9fbe4a439f2107d1ce05690f182f516b38c08e38fc0ac5a9757babdf93dd",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/transition/2001.npz": {
+      "bytes": 21436,
+      "sha256": "7e2265268dbce536b59eadf81de4875cdfaa88a3f997125d41955c589620d147",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/transition/2002.npz": {
+      "bytes": 19601,
+      "sha256": "d3b1b602f42ca52b96b87826c7995a4301d0a7e2a8c1cea91147ee316c9a8371",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/transition/2003.npz": {
+      "bytes": 23488,
+      "sha256": "24fba34da62cddb998e4b3f4d0fd0a520a20660c8d10b008d6794a7c350a5266",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/transition/2004.npz": {
+      "bytes": 21181,
+      "sha256": "bccbd718626321b0e21e256bacd31c51bd79ce19ce934a7b6661c46306281cd9",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/transition/2005.npz": {
+      "bytes": 21508,
+      "sha256": "866787d3bf92c8d5c8d493f6b696ac5128207034e991c909871d328cc2968f8d",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/transition/2006.npz": {
+      "bytes": 24561,
+      "sha256": "e642b32e1bc0954cdbfbe5bfc06d414045e864d37e231e290f152387590c6b26",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/transition/2007.npz": {
+      "bytes": 24280,
+      "sha256": "0e60343fd9583d2e30a39039f3124533a775522fc731927956d5de8b721c08fc",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/transition/2008.npz": {
+      "bytes": 21057,
+      "sha256": "85e3af745efcd9c5d95d0dcd67f6bf7d70ff594ea1bed7b256b8e8abaf35c30d",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/transition/2009.npz": {
+      "bytes": 22752,
+      "sha256": "13b2b4f21a458f550077a482d67d43c0857196018e6412f97e22c4710fb3441d",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/transition/2010.npz": {
+      "bytes": 22812,
+      "sha256": "145705f8c9eee754b84492499bf267d0953a872777c777216adccdb769219e51",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/transition/2011.npz": {
+      "bytes": 19690,
+      "sha256": "e9479316c1eaf3978f4245b4d2bce3da3d78bf66a71165fd4a2440b4418977f3",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/transition/2012.npz": {
+      "bytes": 20742,
+      "sha256": "d5248ada083ff31d27e4b02a4bb83ba71ebe27a52922725f5235074d5ce8885d",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/transition/2013.npz": {
+      "bytes": 26379,
+      "sha256": "95a50355668dfe8e967f254fad3ed3e006693f9a6e99ef8a02ec0840fbb359f3",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/transition/2014.npz": {
+      "bytes": 20921,
+      "sha256": "504b0961d3b2bed2db61e354c85eefc1a3411c991e4d2d5af6c6067a3de52181",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/transition/2015.npz": {
+      "bytes": 19218,
+      "sha256": "2537f5d2f71aa1e0555c0a5ca9c9f19e90ee9d617b48bc5fa50947fac5688782",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/transition/2016.npz": {
+      "bytes": 25757,
+      "sha256": "41ac6279a1223f474decf6c482c2f6e9fa31cff15e9d14c8bfbccf54c09a7565",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag1/transition/2017.npz": {
+      "bytes": 25759,
+      "sha256": "ca3108440ec85af2aac5b80f1046ff1883880aaa5f6f067e6cbc445742b64524",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F0/2000.npz": {
+      "bytes": 838395,
+      "sha256": "acca166039b19f77340d7c50b87901ec20248247357bb8f2526a3d7a673c0e7e",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F0/2001.npz": {
+      "bytes": 838375,
+      "sha256": "125c0ce3feff063b50ce82ec25c9c7c48cc7f5431b42a9004b903f8ebd5c6e67",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F0/2002.npz": {
+      "bytes": 837150,
+      "sha256": "843859b042d465d54d8a0c1a0718b4f8876fb8fa4f85503ff95faab25d73f402",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F0/2003.npz": {
+      "bytes": 839261,
+      "sha256": "63a7b0a316c5564f4ae7e7ce90d91dd35d0e4babea45891ee3802a25042ca84f",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F0/2004.npz": {
+      "bytes": 838229,
+      "sha256": "7b243415d21b45c2a1e01e2af0520389e28193c183a2f28694319f9dcd633076",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F0/2005.npz": {
+      "bytes": 838334,
+      "sha256": "8e9b70c8e588933a1c0cb227dccab06eb7e4fb04efd95d3d2c5d46387a3a0335",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F0/2006.npz": {
+      "bytes": 839971,
+      "sha256": "0e7c05df5201bceb912497f6184df38dd85391bef799f02ef768663ba084c896",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F0/2007.npz": {
+      "bytes": 839862,
+      "sha256": "a08c198c8eeacb92b57752f234ae12ada958e84623e8f87cb2e47bcc5d7b4856",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F0/2008.npz": {
+      "bytes": 838385,
+      "sha256": "765fddcca7eea996681e4e851ad96fedd94f361427911d155c819f8e8f0965e0",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F0/2009.npz": {
+      "bytes": 839169,
+      "sha256": "16a93f8795029bdeb9c39248c24db8eaf79cdcbaee845330c480691d51daab1b",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F0/2010.npz": {
+      "bytes": 838869,
+      "sha256": "18d0a2611b442c97051027accad57966df3aaa1096b9554f6ebb7380b308f201",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F0/2011.npz": {
+      "bytes": 837259,
+      "sha256": "d95f444c67c5b068abe66642c4c20b1033e9c801207cbb45ab2e35f035330771",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F0/2012.npz": {
+      "bytes": 837755,
+      "sha256": "db5a5ae87959dcf18acec0ce8119bbc181b9f53fa500f0ca400ee751716b4e7b",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F0/2013.npz": {
+      "bytes": 840562,
+      "sha256": "96ac849650af80a50767f0c3e7bd626326f7b6182408b35ae61aab43cea6ec46",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F0/2014.npz": {
+      "bytes": 838127,
+      "sha256": "ce67f309a566e23ab035eee492044f7f98fb3883844c10e73616a7e411cc6207",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F0/2015.npz": {
+      "bytes": 836999,
+      "sha256": "c8a7076e455bded26ff124ff866fe27e74cda95f57e8fef1fca18233033ce104",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F0/2016.npz": {
+      "bytes": 840237,
+      "sha256": "80373c72fdabc518026b22e9beffa51869e0f63acdf0990f7d3e75d06b29ef51",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F0/2017.npz": {
+      "bytes": 840083,
+      "sha256": "a66a72e994f5f82c31f0d6f313761bce1b9effc72c52df84cef35e558b4bda80",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F1/2000.npz": {
+      "bytes": 838757,
+      "sha256": "b764891ded13de1a42cc19f7b3fff541ca437d6bad5e1c3bfc63e2b5e028b755",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F1/2001.npz": {
+      "bytes": 838421,
+      "sha256": "3e7112febfee347f525e4953a78e923fe053a24348d9625267a23be13bbbc701",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F1/2002.npz": {
+      "bytes": 837368,
+      "sha256": "96cc731ecb20b174b72d58399548510f07fb6134608374808d6227539c417204",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F1/2003.npz": {
+      "bytes": 839391,
+      "sha256": "804114d5ce7c166c64b22e52f94e83ff6d5d1a26e7dd999b142eafdc1125102a",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F1/2004.npz": {
+      "bytes": 838496,
+      "sha256": "1f361ea0efc8f62dd61b0bcd154b93f2cac74a72cfb4041993ed2513897d0e9c",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F1/2005.npz": {
+      "bytes": 838638,
+      "sha256": "e4cc958fd5d478589a9801cc05ea19411add922b28e9702d58e9dd705d626527",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F1/2006.npz": {
+      "bytes": 840164,
+      "sha256": "a090642328462b59136c4329e0c78096083d3038debd3c78de061bd37995b5fb",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F1/2007.npz": {
+      "bytes": 840018,
+      "sha256": "3606e2ccc1049cb31174aea89ad7cfeb8ccd8934dee49b331a03e225d280e78b",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F1/2008.npz": {
+      "bytes": 838613,
+      "sha256": "902c87963f760f96acc1ef9f3be79febe3b2a25f72cf8ef4928b0e56ba188c54",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F1/2009.npz": {
+      "bytes": 839399,
+      "sha256": "0f0bc4fecaf6d32e42654a7c558f20c7b6d67dc215c12eb64afa4286d955d42a",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F1/2010.npz": {
+      "bytes": 839192,
+      "sha256": "f9541f81e88f3efc2e93bb8fe5d05baf21722bfae5c8c99cf0b41d0ffd2f1143",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F1/2011.npz": {
+      "bytes": 837519,
+      "sha256": "ea5d7b01a7c75281dea431e839971eaa4f0160cda51a43b4bc36932844afcaf4",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F1/2012.npz": {
+      "bytes": 838162,
+      "sha256": "1308662423fd3d31c9015e7f92d8c513f067aebeba382374dbacf7bd615019d1",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F1/2013.npz": {
+      "bytes": 840809,
+      "sha256": "4c49537a76b2578e1bb528e01bd5ca61b9748e44e24e896fd94b2a72b140aaa2",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F1/2014.npz": {
+      "bytes": 838530,
+      "sha256": "adf90f4f01ed24151f20285a3243e94bc439ffd704acdd407ad5463da8fbb791",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F1/2015.npz": {
+      "bytes": 837356,
+      "sha256": "ef8f735a0dc8f8846133a24667e9391aa103efe91d38b3c1819c76d3dfe2a4db",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F1/2016.npz": {
+      "bytes": 839987,
+      "sha256": "011b3cf7a09fae20aedb8dce7cd164120cde224ba63f98da28a580753280f153",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F1/2017.npz": {
+      "bytes": 840117,
+      "sha256": "981f0b71bf85e1c28fbe025d863ee1c4ad825f59b44e5cd5833c98f30755a8f8",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F4/2000.npz": {
+      "bytes": 839432,
+      "sha256": "3e7725b5455183ac2faf3b4c5db43948e2e6794780f895c8e38dc2bf9124a680",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F4/2001.npz": {
+      "bytes": 838927,
+      "sha256": "e7372c51ba3dab8c8e46b71aff17e24e3ea6c49265e5f70b4f179a2ce818c84f",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F4/2002.npz": {
+      "bytes": 837846,
+      "sha256": "a948d631478eb38203c2d23d0c24ddc8da94aa6d72e3ae4e9214b50a298dbf8c",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F4/2003.npz": {
+      "bytes": 839837,
+      "sha256": "186e23420053fa62203728e764c87f8898c935ec94fe32f4e81e390a72b05061",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F4/2004.npz": {
+      "bytes": 839133,
+      "sha256": "f214b5a57a8c8c9bc9f76b48d2f2b31c2fb1772d7ccb3984fcdd01e91da96215",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F4/2005.npz": {
+      "bytes": 839165,
+      "sha256": "181d8477be0eb6c9ee3307bce1be79ee4324bf5730c51129946e5d1f858d3c75",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F4/2006.npz": {
+      "bytes": 840795,
+      "sha256": "e959e92d389af6c2795a38ec21d08d5a7406dc21ebf5732f85aefbce6579054e",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F4/2007.npz": {
+      "bytes": 840586,
+      "sha256": "d9be0ddc28f85ecacdcb380672e5ce282012fb1258a166993a9a547336c496c3",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F4/2008.npz": {
+      "bytes": 839211,
+      "sha256": "a2e5b12e0fd1c4d62a50ddd4dcaceda8b063cc033e69004561c49652b43095d8",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F4/2009.npz": {
+      "bytes": 839939,
+      "sha256": "26e6e23b3698f40b5933dc0106e208b368a3f210ca9ad7c69c57e22db4b9b15b",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F4/2010.npz": {
+      "bytes": 840046,
+      "sha256": "cd9caca613215cebd5d03ddb4aeef38d63814dccbf76b5efb28e1a67490eb6e8",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F4/2011.npz": {
+      "bytes": 838170,
+      "sha256": "bdd32f1e351f3ee77fc540e8faeb950443c5a872291a52d330d21f0b79d5a884",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F4/2012.npz": {
+      "bytes": 838587,
+      "sha256": "3aa5884c0c3b0cdf6cf43e4f5a43f4b324ba150c2f4a4506a18e89179294e0a4",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F4/2013.npz": {
+      "bytes": 841375,
+      "sha256": "0e4e95e7f28901767d417dba2a83e730d3e8e2ca7682262a43b667c817e322f5",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F4/2014.npz": {
+      "bytes": 838952,
+      "sha256": "b77ac3188c366a68581c914cc065c1a66b1f030e7e77e759709728e8109f18da",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F4/2015.npz": {
+      "bytes": 837993,
+      "sha256": "fbda60f010f7bd15f48f98ff0034785b3192b801a6689c8a52b0fc99e35f794f",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F4/2016.npz": {
+      "bytes": 840590,
+      "sha256": "7245b3f39d36ac8ca5023960140c9932e9d7bb2c9d122995a086ee086d5928d5",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/logistic_F4/2017.npz": {
+      "bytes": 840830,
+      "sha256": "33be1f3e1735765888f69d9f24e9c6784a4abfef9ca6a64a7533d7ed54845294",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/persistence/2000.npz": {
+      "bytes": 21560,
+      "sha256": "f6bc7583e9f641884f30ebccdbef5cde3937b297fed2702fa0b085131c036e86",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/persistence/2001.npz": {
+      "bytes": 21302,
+      "sha256": "2813a887af9ef433ca20ce4fe32bf0499ee44701dff609b27890bdcff04f1888",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/persistence/2002.npz": {
+      "bytes": 19556,
+      "sha256": "22a91b5162873240fb0d098d0d91288f4c7f61d7f346dd53e872d785cfddc22a",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/persistence/2003.npz": {
+      "bytes": 23393,
+      "sha256": "f844a16dd76c3b09e6d660ec3b8af98740905295aeb3bff521426c27e502d337",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/persistence/2004.npz": {
+      "bytes": 20953,
+      "sha256": "ac28721a632dafb6d391824442b4d78bd9e5d471a0ac1007a8df9938d2b40601",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/persistence/2005.npz": {
+      "bytes": 21176,
+      "sha256": "97c48523a3642c1097b87d14963702a21b8298deea845c873afc49176b68911d",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/persistence/2006.npz": {
+      "bytes": 24240,
+      "sha256": "581c4a018da868964599da3604c5f2bcaee510d0f8771ead289992fa5bf56a74",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/persistence/2007.npz": {
+      "bytes": 23990,
+      "sha256": "7698c46586be7f460089114af1d1c242a1eff9778bf87e4a4b7eb939021f5ac0",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/persistence/2008.npz": {
+      "bytes": 20689,
+      "sha256": "e35b28c05f112822518fddc23539d46849b29399330e8466e53e01b5688151c6",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/persistence/2009.npz": {
+      "bytes": 22496,
+      "sha256": "8e39c9611ada0df930bc28255bd493199cc017bbdb2c043af8c534006573489b",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/persistence/2010.npz": {
+      "bytes": 22674,
+      "sha256": "989fc37d5e8d7d9e4b7a825ff567ff89e9e81115998a3d4934d8ba8a550c44b6",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/persistence/2011.npz": {
+      "bytes": 19323,
+      "sha256": "dcf7a0459c61283e5593080ae11507da3ed2cfd4f1ddbdc05fddc379537423da",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/persistence/2012.npz": {
+      "bytes": 20480,
+      "sha256": "1e23f93176be18002e8c187a0e55df8158b901e3855e72e26bb749570cf60d26",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/persistence/2013.npz": {
+      "bytes": 26550,
+      "sha256": "1ab48ff0cd6feef163eeb3246ec1d25b9580d0f95225ec14047f08dc9c135cff",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/persistence/2014.npz": {
+      "bytes": 20622,
+      "sha256": "70fbd6f5d857a3d3260f4e3e7bc6f46071c05af6a6ce5f32365f288fdf9d6e81",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/persistence/2015.npz": {
+      "bytes": 19004,
+      "sha256": "7ca7e118cf80e99b6bc15b09399596d8ddd1ffac20fa507b04ece54c57ef4f73",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/persistence/2016.npz": {
+      "bytes": 25865,
+      "sha256": "5655532bd78a1dc9401bab50c778b795afaff2e1d8db1fbb0929f1a193a8cd22",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/persistence/2017.npz": {
+      "bytes": 25801,
+      "sha256": "b6758359ea96e7c802ef7e96d34c94cb85c852f01182c3548b31d4b76d0b6303",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/seasonal/2000.npz": {
+      "bytes": 15386,
+      "sha256": "024e11672a536d0dcc16a610cecf8e407d21f040d6ca86c37311d2d34658d3bd",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/seasonal/2001.npz": {
+      "bytes": 15189,
+      "sha256": "4bdc7aeecf31f16008d4c110b1e4bbcdcb9d0cc18ddf267e0b583650dc672c5a",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/seasonal/2002.npz": {
+      "bytes": 14129,
+      "sha256": "05cd3a8d440426e50323c5b947f884ff174ac1a3bb032295bd469ad2d3509d13",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/seasonal/2003.npz": {
+      "bytes": 16349,
+      "sha256": "c1f75cd6cdcce13fa678efcee4ccf4da7533e01f55c0d0493f90497860765d2d",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/seasonal/2004.npz": {
+      "bytes": 15043,
+      "sha256": "8dca6aebf96adc04bceef3ea17da510758f15b45e9957feb4b111d924bac520c",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/seasonal/2005.npz": {
+      "bytes": 15216,
+      "sha256": "b8a8dc82be90993ccb68200d90b8f962248b80220a0fbf4ff8e7ea48c38cc9d0",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/seasonal/2006.npz": {
+      "bytes": 16943,
+      "sha256": "712bd57e6dfb877be28c6e68a09c569f6895bc7cd2f8f9f5a52f6b14230d7580",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/seasonal/2007.npz": {
+      "bytes": 16785,
+      "sha256": "f6094c0fe391cf5f2c55e2a91ba492626073513b27e6d152d04ea567c7025195",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/seasonal/2008.npz": {
+      "bytes": 14981,
+      "sha256": "2d165ad38b6a70306838130debf01bc4e81aca661a5ce9a2a72423c03e3cc12a",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/seasonal/2009.npz": {
+      "bytes": 15907,
+      "sha256": "414640e661e40b3c6d41a16ee053d15d47ac8f9a57fc7ed1be973104700c6657",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/seasonal/2010.npz": {
+      "bytes": 15985,
+      "sha256": "288109020b6435d497bf19510bd4f2ff45d7c63c87fc9539e6287532077767c0",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/seasonal/2011.npz": {
+      "bytes": 14144,
+      "sha256": "2eb48be669d399207adf387da316619161d75341c61cf626b61bd71bdb0f117a",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/seasonal/2012.npz": {
+      "bytes": 14767,
+      "sha256": "74199b209426225a134ca35805d9d9b2669ac7bebe77afe6dd519298847895fa",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/seasonal/2013.npz": {
+      "bytes": 17975,
+      "sha256": "a55541830ec85865531f1427b7002a30e34e17397037a4d6c345644c0036d3ee",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/seasonal/2014.npz": {
+      "bytes": 14925,
+      "sha256": "53e8be7c36c4b1c7ebcaae0ace12545b9c437425ea9efb7310555d5a63d5c68d",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/seasonal/2015.npz": {
+      "bytes": 13930,
+      "sha256": "f8bbee9f8ac05e01eff8ea8ead7920be0e72cb5f52dc7203cb16346732923813",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/seasonal/2016.npz": {
+      "bytes": 17555,
+      "sha256": "1d4ef262eeb9b41f2e14904e96a96f15301e053242440c8258982f28bfe891e8",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/seasonal/2017.npz": {
+      "bytes": 17612,
+      "sha256": "eee08ef7ebaeec2e63cbefe6d120f6c78804a08761a1424eb1f15f808166c3af",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/seasonal_pooled/2000.npz": {
+      "bytes": 15386,
+      "sha256": "024e11672a536d0dcc16a610cecf8e407d21f040d6ca86c37311d2d34658d3bd",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/seasonal_pooled/2001.npz": {
+      "bytes": 15189,
+      "sha256": "4bdc7aeecf31f16008d4c110b1e4bbcdcb9d0cc18ddf267e0b583650dc672c5a",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/seasonal_pooled/2002.npz": {
+      "bytes": 14129,
+      "sha256": "05cd3a8d440426e50323c5b947f884ff174ac1a3bb032295bd469ad2d3509d13",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/seasonal_pooled/2003.npz": {
+      "bytes": 16349,
+      "sha256": "c1f75cd6cdcce13fa678efcee4ccf4da7533e01f55c0d0493f90497860765d2d",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/seasonal_pooled/2004.npz": {
+      "bytes": 15043,
+      "sha256": "8dca6aebf96adc04bceef3ea17da510758f15b45e9957feb4b111d924bac520c",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/seasonal_pooled/2005.npz": {
+      "bytes": 15216,
+      "sha256": "b8a8dc82be90993ccb68200d90b8f962248b80220a0fbf4ff8e7ea48c38cc9d0",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/seasonal_pooled/2006.npz": {
+      "bytes": 16943,
+      "sha256": "712bd57e6dfb877be28c6e68a09c569f6895bc7cd2f8f9f5a52f6b14230d7580",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/seasonal_pooled/2007.npz": {
+      "bytes": 16785,
+      "sha256": "f6094c0fe391cf5f2c55e2a91ba492626073513b27e6d152d04ea567c7025195",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/seasonal_pooled/2008.npz": {
+      "bytes": 14981,
+      "sha256": "2d165ad38b6a70306838130debf01bc4e81aca661a5ce9a2a72423c03e3cc12a",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/seasonal_pooled/2009.npz": {
+      "bytes": 15907,
+      "sha256": "414640e661e40b3c6d41a16ee053d15d47ac8f9a57fc7ed1be973104700c6657",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/seasonal_pooled/2010.npz": {
+      "bytes": 15985,
+      "sha256": "288109020b6435d497bf19510bd4f2ff45d7c63c87fc9539e6287532077767c0",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/seasonal_pooled/2011.npz": {
+      "bytes": 14144,
+      "sha256": "2eb48be669d399207adf387da316619161d75341c61cf626b61bd71bdb0f117a",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/seasonal_pooled/2012.npz": {
+      "bytes": 14767,
+      "sha256": "74199b209426225a134ca35805d9d9b2669ac7bebe77afe6dd519298847895fa",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/seasonal_pooled/2013.npz": {
+      "bytes": 17975,
+      "sha256": "a55541830ec85865531f1427b7002a30e34e17397037a4d6c345644c0036d3ee",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/seasonal_pooled/2014.npz": {
+      "bytes": 14925,
+      "sha256": "53e8be7c36c4b1c7ebcaae0ace12545b9c437425ea9efb7310555d5a63d5c68d",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/seasonal_pooled/2015.npz": {
+      "bytes": 13930,
+      "sha256": "f8bbee9f8ac05e01eff8ea8ead7920be0e72cb5f52dc7203cb16346732923813",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/seasonal_pooled/2016.npz": {
+      "bytes": 17555,
+      "sha256": "1d4ef262eeb9b41f2e14904e96a96f15301e053242440c8258982f28bfe891e8",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/seasonal_pooled/2017.npz": {
+      "bytes": 17612,
+      "sha256": "eee08ef7ebaeec2e63cbefe6d120f6c78804a08761a1424eb1f15f808166c3af",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/transition/2000.npz": {
+      "bytes": 21740,
+      "sha256": "b8a4a640ef362b36878b43467144d38f9d83abb03027c2386571aaf01096ee82",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/transition/2001.npz": {
+      "bytes": 21445,
+      "sha256": "d86a53cf4baf9a6845c4969f157c0f112da813aff6331973a36fc8cb4ddf1915",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/transition/2002.npz": {
+      "bytes": 19705,
+      "sha256": "329a6c78a3e071372b12d3cb515a062b3cab283374e266ae0399f4680f02c600",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/transition/2003.npz": {
+      "bytes": 23383,
+      "sha256": "79540ef632385af107ab6da145d9fcc87d61cd0aabd915539f9449122939ab83",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/transition/2004.npz": {
+      "bytes": 21160,
+      "sha256": "103c005345bb5a240e343a33425bb895b6670ff6b9d2cd40bfc1f9c7eb01c270",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/transition/2005.npz": {
+      "bytes": 21437,
+      "sha256": "d0424e3b64d44857b8047ae99d9716fa32e8d05bb8f8551441f707940e475a94",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/transition/2006.npz": {
+      "bytes": 24423,
+      "sha256": "5af3fcfcdafdcdade3d8884dd9f924895fb8ebfabe4b1358f7b8a25d2a77465d",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/transition/2007.npz": {
+      "bytes": 24181,
+      "sha256": "f35f7c56453f659ec842ff8f5fb374de88ea41d2be877774efbea8549c3a73d9",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/transition/2008.npz": {
+      "bytes": 21055,
+      "sha256": "99484de069e3df4b7e9d21184d957de90028589d979970d981bbe74fff334ee0",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/transition/2009.npz": {
+      "bytes": 22743,
+      "sha256": "3350005eaed9829c3db8956390e95229427f10211be4a4d8ef818b4c9a225c2d",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/transition/2010.npz": {
+      "bytes": 22795,
+      "sha256": "a5c22361506349630db13219d1e359ce2621bdf4e6aa2b2285acb3291d4b2dec",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/transition/2011.npz": {
+      "bytes": 19697,
+      "sha256": "2f0d7ff7c8cefc195449b32f6521e402a28f6b3355bb5d6df4833249647b432b",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/transition/2012.npz": {
+      "bytes": 20763,
+      "sha256": "b1beab4b5d9bccae19524b6bd6f101a37358aeb16d7fcfdb0e05f4b616ecc900",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/transition/2013.npz": {
+      "bytes": 26367,
+      "sha256": "a35c1bb0d14eedb0cbcdedba0804630d2198689e15465f591dd5c831ee5a7d3d",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/transition/2014.npz": {
+      "bytes": 20856,
+      "sha256": "99332972904337b01e4fddb2d134e4770c20ec0257d9e5a18004c087ef86b1cd",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/transition/2015.npz": {
+      "bytes": 19227,
+      "sha256": "80277ecad2244afc58665f6e51994002902408a7240a7b05bc8d76cb483fa5bb",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/transition/2016.npz": {
+      "bytes": 25755,
+      "sha256": "51962f89f5de0d001b9078b507b3eb9923f7da9bbaeb7a5f8e8dc4608270e419",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/strict/lag2/transition/2017.npz": {
+      "bytes": 25730,
+      "sha256": "6a442a0ffb4fef11747115bc6d35dbee7b73b90c525eefb3a745dd49b6c8498f",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F0/2000.npz": {
+      "bytes": 1021171,
+      "sha256": "90b1cab1ae075b9f789574409d530c66429bf002fe307cad96b020acfbcd8400",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F0/2001.npz": {
+      "bytes": 1020114,
+      "sha256": "275999d759e5cc1375beba97a0f3022dc2edf22b863afa71fd64b6417f4f014f",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F0/2002.npz": {
+      "bytes": 1018851,
+      "sha256": "e3b8f71004d8c96d3af53a44a0f1856c02f61eab1ed078e597e681fe5bcbdc92",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F0/2003.npz": {
+      "bytes": 1021272,
+      "sha256": "72af10d69465a95d3798da5094953d11c5d65c559db0b5c7b7f8f3c94b2e40ed",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F0/2004.npz": {
+      "bytes": 1020716,
+      "sha256": "8bb0cda09d4caaeb8ea7d15552bd9a5a3f17a3c33a63f511243efa5ad45d43e4",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F0/2005.npz": {
+      "bytes": 1020846,
+      "sha256": "5401230f6b557555b5c2613bcc42b85b28a9ec2f4fd5bf7d8a317f193e428966",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F0/2006.npz": {
+      "bytes": 1022535,
+      "sha256": "e2d410f1661d6a8608e02130f04781baf5eb82b9617bf7880017cdf19a048e70",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F0/2007.npz": {
+      "bytes": 1022748,
+      "sha256": "ed558ec0c01ffd13a6e383a1235ffe7e3a4f021b24601c318c08077c42ef97f9",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F0/2008.npz": {
+      "bytes": 1020929,
+      "sha256": "78aa19112f6ad86569f5b8684652a9920df19ca51d9d9f60a344eb335b39c2f6",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F0/2009.npz": {
+      "bytes": 1021456,
+      "sha256": "3ea604b6394e6fa04cf27cdb521dac02ec45d9911ebb4726666c38dfd0f1f5e8",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F0/2010.npz": {
+      "bytes": 1020977,
+      "sha256": "1ed3c362d3f1b66ea05695c14d38ad8654fe2b3094e55499d587aeb16b27649c",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F0/2011.npz": {
+      "bytes": 1019427,
+      "sha256": "9add7e43b8fb7623f116e65ed86a75491612d9c0703aff8b9dcc206bbede136d",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F0/2012.npz": {
+      "bytes": 1019734,
+      "sha256": "c6eb6db461ed9a0780cb973d2e16e159f20e1341be033f2b7af44cc61bb7f0b2",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F0/2013.npz": {
+      "bytes": 1022697,
+      "sha256": "10f516a2da0a09374c0106e08de76c63f8273f0aba52649d0dd7ac3d9ff877b7",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F0/2014.npz": {
+      "bytes": 1019752,
+      "sha256": "163daffe6c61e188f97a696369c4b30262cc93b8260c1c227578793a75f7e57b",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F0/2015.npz": {
+      "bytes": 1018604,
+      "sha256": "2887d0fe47addad0f6524c78cbfa8879f70bb6fc571f251479b7c6d4c2127958",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F0/2016.npz": {
+      "bytes": 1022669,
+      "sha256": "90bf76dc390072fb267d58f29fd0a2bf9c7c6b82ea723667df4467925aec7d16",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F0/2017.npz": {
+      "bytes": 1022392,
+      "sha256": "925508e3f00253ba69b59d3d4526e3ef5715c049d07cd9f7b95a801f18ae76db",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F1/2000.npz": {
+      "bytes": 1022756,
+      "sha256": "c95aee356b18fc263e5b7c1c9335dcddaf0b9d04e8db83975abc195ab492d785",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F1/2001.npz": {
+      "bytes": 1021433,
+      "sha256": "ba6bf1195d6dcca63058bd49c43c117de62d0c55eca2372580cd51ed8d0a95ef",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F1/2002.npz": {
+      "bytes": 1020375,
+      "sha256": "17a762140683e0ffe6f7f648a75e541af48e0a5152269f7e44e6887ee1ac0ae8",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F1/2003.npz": {
+      "bytes": 1023149,
+      "sha256": "51cc82e92b91e73fff2a5085880fee94e54bb225c5f1128c80dff81c99716873",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F1/2004.npz": {
+      "bytes": 1023221,
+      "sha256": "85fe3d6c3b9be60f86c0bfbc79461d3dbf2728976def934a10a32901a155ae1e",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F1/2005.npz": {
+      "bytes": 1023226,
+      "sha256": "fd1d7424d50db91e9570aa48d3a89f3c147c108cdd4d70fe27ade55f25706590",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F1/2006.npz": {
+      "bytes": 1024075,
+      "sha256": "953150bf26880e528883384acbfa0e491c134e5e46685ef41ac6a31e034feac3",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F1/2007.npz": {
+      "bytes": 1025290,
+      "sha256": "f1a5b2eda0a86c11da0d905d711f301ab459df0a07bb5fa350cc96bb4c1af5ff",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F1/2008.npz": {
+      "bytes": 1023127,
+      "sha256": "e49b16f125f313bbf43f42dfcf3d224c6df3b0aaaa31c06b4bd5d1e3a73a01ab",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F1/2009.npz": {
+      "bytes": 1023192,
+      "sha256": "d31ed4aacfc16c683179c65719dab2dc11bf5cb2ee88f775d5718e6e33c3eacc",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F1/2010.npz": {
+      "bytes": 1022438,
+      "sha256": "c246b299d231d4ddf644b472261079eba704dbd5648e167b57e22da2514f85d7",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F1/2011.npz": {
+      "bytes": 1022055,
+      "sha256": "657aebfad2fa6211527a6e83aa868e5eac7f52bf9ba1fec1548445064ca72433",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F1/2012.npz": {
+      "bytes": 1021835,
+      "sha256": "fae6eaa9edc5d28b346a7ec6b9f42725370ccb20f030622a5a2c95303f53c046",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F1/2013.npz": {
+      "bytes": 1024554,
+      "sha256": "bd8622e6194d68433b45a85aa52450384da207df6b39ad12e99188b5c4dd0202",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F1/2014.npz": {
+      "bytes": 1022216,
+      "sha256": "14b3b366591353ebe4b522c97146497c4975c7c5a2ef4570c4633fb29fd7d0eb",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F1/2015.npz": {
+      "bytes": 1021442,
+      "sha256": "8f049e385a0b19d7b8493d0e30d2c90ebdcbf3409cdb66f92de0f38ea4bb6547",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F1/2016.npz": {
+      "bytes": 1023893,
+      "sha256": "bec5801087769a8399bc5fc74568cca36d4db667568abb2f821c52063cff39ad",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F1/2017.npz": {
+      "bytes": 1023264,
+      "sha256": "2240145dd9345757863bfeb06b5c4184ab069673e0ad0bdfe1c99b3e286dcaa4",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F4/2000.npz": {
+      "bytes": 1023289,
+      "sha256": "2627e77d4b30d3be53bc5fb28142a431e1618a7e130040ff28c3bc4490bf518c",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F4/2001.npz": {
+      "bytes": 1022603,
+      "sha256": "e31a0dac7735b5b70c4bff761d1eb4e8eef7718d47271510932b3ef23b6ead92",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F4/2002.npz": {
+      "bytes": 1021346,
+      "sha256": "1173fe9e287b7275e0ba4c1fc99cc24092568cab6d4a03cbf6a82ce883e51fb6",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F4/2003.npz": {
+      "bytes": 1024329,
+      "sha256": "03ccdf42b8a177d7e95ad54628c487a76cbb6b4c0f753b337c21f29dd85379f9",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F4/2004.npz": {
+      "bytes": 1024201,
+      "sha256": "4fef39d20e0cee3e3b8718ddc364a8bea4439504d90199c21af5416c9f3dc09c",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F4/2005.npz": {
+      "bytes": 1024144,
+      "sha256": "ddbda1292900e4dce149c255eeb2a8049351f3435f2e26cfdf670a1459d34c3e",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F4/2006.npz": {
+      "bytes": 1024863,
+      "sha256": "61c5ec64928e8a745626290f9691ed0b24140d7de1d422976725518cf8895d66",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F4/2007.npz": {
+      "bytes": 1026073,
+      "sha256": "e31d6abfbe2f2463e1e44be73a09e684b257bb9fb6e72b681e9cec8497605071",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F4/2008.npz": {
+      "bytes": 1024084,
+      "sha256": "2970510a163943faaf6f81bfcd6ab3b57c7fa42bdd39134771a007c1ad269aa0",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F4/2009.npz": {
+      "bytes": 1024440,
+      "sha256": "a8dd998d27b13ac05abeb75166f00519810c7da9831e8ef454188377385b0448",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F4/2010.npz": {
+      "bytes": 1023099,
+      "sha256": "19f301ab62326156914b6f3625baf6d771878e6c135328cc0df71454d54df533",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F4/2011.npz": {
+      "bytes": 1023407,
+      "sha256": "536d70de48e53db656abf83e7c918d335942f5383ba3eee0b2684bbd05bbadfb",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F4/2012.npz": {
+      "bytes": 1023086,
+      "sha256": "eda7e9974e0f4573b74dccf19f693912587592e59c40aa9e61e976697a6b3918",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F4/2013.npz": {
+      "bytes": 1025102,
+      "sha256": "8a737dc9b7f934b850a7d76947ad50c30e97257478f3ca9d51ede6267e087ddb",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F4/2014.npz": {
+      "bytes": 1023298,
+      "sha256": "ef376aacc2d8b3fca15a6e8c76939383af04724ae9fbfd39bc25053f5d55627e",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F4/2015.npz": {
+      "bytes": 1022975,
+      "sha256": "fdb4e1bd477f3db3923f2fc15374a1da1d3727f3c0343d7d0434d551e9da97ad",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F4/2016.npz": {
+      "bytes": 1024689,
+      "sha256": "afad4cc41d3983ab7582d83a56b572b96490192283adba5dcf2512831ddae3e4",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/logistic_F4/2017.npz": {
+      "bytes": 1023961,
+      "sha256": "77adb22ae7c5445673d132907cb53ac386a6eb6cfc63dc1a8047cb27aded88c5",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/persistence/2000.npz": {
+      "bytes": 26478,
+      "sha256": "abd3659e574f830a28237f6927d99bc3d6dbb1ddc05a619c5a37f9b24d9c1b73",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/persistence/2001.npz": {
+      "bytes": 25773,
+      "sha256": "cbae4d7158c1ec9381d234ea588eec8cb149d807d6f61152b650382b3109b6eb",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/persistence/2002.npz": {
+      "bytes": 23677,
+      "sha256": "d273db204912fe4f66b4375896f95aedfbdb1bfac178ff1717468a2229dd2eb2",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/persistence/2003.npz": {
+      "bytes": 28714,
+      "sha256": "34df6fec3d857f70e8ac4557cff039cc7f99b254dc09ca32b8e143b4de5d5e84",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/persistence/2004.npz": {
+      "bytes": 26167,
+      "sha256": "aba174d227d70d6ea712ae31dba1a0ce68cf875304a799ad50e170670dc422ff",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/persistence/2005.npz": {
+      "bytes": 26798,
+      "sha256": "59ec4f68934e1ab01a01637e5bd17d39d3e49286e4876bb2d39b87a77b322a23",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/persistence/2006.npz": {
+      "bytes": 30373,
+      "sha256": "8ab8d65858ac3995edf03dad794d145e350b9eaee0b6a46d125112009886c606",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/persistence/2007.npz": {
+      "bytes": 30269,
+      "sha256": "fe645c2aea3e56b5ff136e840bfa30c82cb30cfeaa05e9396c292970d307d25b",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/persistence/2008.npz": {
+      "bytes": 26025,
+      "sha256": "c7d6b643ed9f3fc44122c72cfdac3b91b55df0056d8a95e9b603fa4294843274",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/persistence/2009.npz": {
+      "bytes": 27371,
+      "sha256": "da27e21fa45642e49294224524d0c50b506b97c5105d58d2dde42475cee09662",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/persistence/2010.npz": {
+      "bytes": 27727,
+      "sha256": "8ace9d91dd912560c4a46809775f879393be952f09b5b5528046255804eaa4fe",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/persistence/2011.npz": {
+      "bytes": 24637,
+      "sha256": "db68931bdfb7096fdbe4adebd47117a732f29adf62372530456131e3044c607a",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/persistence/2012.npz": {
+      "bytes": 25214,
+      "sha256": "63063111313ffa55500787956ced3e7111d6de3e7e815e72198e0b51e392eb0c",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/persistence/2013.npz": {
+      "bytes": 32773,
+      "sha256": "7f387502da1512a81a0814c9e6a7317e2c02fa162c8ca7957108be7bebcd50ea",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/persistence/2014.npz": {
+      "bytes": 24719,
+      "sha256": "76fddbfd3cf8cfcfdca892350caedd0a4f27ec386522bfc7ce4333a9e8142ab3",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/persistence/2015.npz": {
+      "bytes": 22646,
+      "sha256": "70cf5801cd361b667aedf82ea6623ebe38adbf93c315cf91bbe562df9794766c",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/persistence/2016.npz": {
+      "bytes": 32115,
+      "sha256": "243a9312125311a5fa10ddbfd7f6bd6679962916960b6792fa66e4b2dda7050a",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/persistence/2017.npz": {
+      "bytes": 31207,
+      "sha256": "d835a1f08d1d319b17603ab6a58d6ac59b2e6b7e6b961794e4f04a02f5eb0d29",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/seasonal/2000.npz": {
+      "bytes": 43257,
+      "sha256": "d1ee0520e04b2b968aadb1268f6d6bfcf2749b0ffda5c3486e09c69734e23d46",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/seasonal/2001.npz": {
+      "bytes": 42709,
+      "sha256": "26ec57464b5091378e871f0ba74d30a25bbe6f9579dd70b71df1463958ca88e9",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/seasonal/2002.npz": {
+      "bytes": 41550,
+      "sha256": "f485e16b6a12a6f773f96fd9d564cb05a3e6cff772513a6593a86c1f86378c25",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/seasonal/2003.npz": {
+      "bytes": 44308,
+      "sha256": "98b83654eff3af2a954c3ab73b7a95864fbb10d3e92bb27af8a91b4ab549f236",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/seasonal/2004.npz": {
+      "bytes": 43080,
+      "sha256": "5818c7e5f0f881aaed8e02cecf70d65b80705330a6294ac8def4de91697f8b94",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/seasonal/2005.npz": {
+      "bytes": 43416,
+      "sha256": "f652f64a7ff7dd65b05785d7102500011bfc17b28705bb03eb528fa0228c74a2",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/seasonal/2006.npz": {
+      "bytes": 45386,
+      "sha256": "5c145f65a4f4f17c660a3f6459c282d223b3941405f16f31ff7fa19c0fb55b56",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/seasonal/2007.npz": {
+      "bytes": 45344,
+      "sha256": "915a3bd975ebb28b584fda859b6d86e0195410efcd045c981d98237e774709f9",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/seasonal/2008.npz": {
+      "bytes": 43030,
+      "sha256": "1cb871346dc7c03128c688bed1332dc12018aef5d97a5c510914042019d8201c",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/seasonal/2009.npz": {
+      "bytes": 43748,
+      "sha256": "8232b728bd0f3d281e6ade205f2a26d2f9cf7f94622ad105dc72f26dce71211f",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/seasonal/2010.npz": {
+      "bytes": 43804,
+      "sha256": "08270eebf20f61722bf5935c8769c2e55b569a4b7e645ac640c6cf97c5b25813",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/seasonal/2011.npz": {
+      "bytes": 42227,
+      "sha256": "f483492bd10f969f5bede5cdaee5ca77d63f768b374a3a6e0c238c0fbe90d14b",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/seasonal/2012.npz": {
+      "bytes": 42471,
+      "sha256": "a1f2edae0ea9b53bba5af386359ca13bac8845ab47c8feb2b9693121308abee5",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/seasonal/2013.npz": {
+      "bytes": 46424,
+      "sha256": "340529d4821551b9f18c8a175f62cbb81016a697313dad0b1d6e76464a1ff0f2",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/seasonal/2014.npz": {
+      "bytes": 42260,
+      "sha256": "bd11ca9059c669fa668aa11e5637531d141e176444fd738d8a89814960d376c3",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/seasonal/2015.npz": {
+      "bytes": 41063,
+      "sha256": "ba4991ad1e4151a784a3de013d308b8cc29a1fb8a5785bad46c2734cd40a217f",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/seasonal/2016.npz": {
+      "bytes": 46115,
+      "sha256": "17d06b11e9b2196d7b31318121445e05ee3fb4627a3d5cc18c5d2c0dfbff32f8",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/seasonal/2017.npz": {
+      "bytes": 45615,
+      "sha256": "0cbf5704f970decacf71c3f18237097e3433c4ddb2c4132169e6429762358a69",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/seasonal_pooled/2000.npz": {
+      "bytes": 18762,
+      "sha256": "345671b5e2203ea662e5a741491400293c50c0879c0bb2d26305366c41aa0f8d",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/seasonal_pooled/2001.npz": {
+      "bytes": 18214,
+      "sha256": "541e9a3235cda6b1644e916ffd6da79d18eda2c9d18a739e3b4972d2ffa5b3d0",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/seasonal_pooled/2002.npz": {
+      "bytes": 17055,
+      "sha256": "613e123838431706963148ab670c15b74deab47c000c26935ad0eeb1d5b23185",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/seasonal_pooled/2003.npz": {
+      "bytes": 19813,
+      "sha256": "9ad02d884f30b669871ee62289b10ef11f8d301fd87201477c66f6291767ee93",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/seasonal_pooled/2004.npz": {
+      "bytes": 18585,
+      "sha256": "b4e5ab4e67ffeb520cfd9ee9425b103d7d91875efbc1df09ea561067d57c60e3",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/seasonal_pooled/2005.npz": {
+      "bytes": 18921,
+      "sha256": "241a148b585550a9a0e874ae678aac8af5f6e9ac86fa17b4e43462f9c8b96ede",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/seasonal_pooled/2006.npz": {
+      "bytes": 20891,
+      "sha256": "9d30982cf595c2ca60406bd0bc2f22e07f6278e40cde6cfb66a48316cace5c70",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/seasonal_pooled/2007.npz": {
+      "bytes": 20849,
+      "sha256": "18091353cd4ac2188fe7f7e4c8f00df52526b97b3e061ea06d26024cce47edd0",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/seasonal_pooled/2008.npz": {
+      "bytes": 18535,
+      "sha256": "ca5ed8036dd3c2e9dbf4d744cc70694ead11bcff17c172f99771fc3a2ad20d71",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/seasonal_pooled/2009.npz": {
+      "bytes": 19253,
+      "sha256": "66eeb08e514bbfbb4b13edbf083bb088c8f4ca11d5093e69e5d4b3ba4d99fed9",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/seasonal_pooled/2010.npz": {
+      "bytes": 19309,
+      "sha256": "30d38fdcc128dbeed4280fb5ea9bc6f5054746662eb872885dfff365e3724563",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/seasonal_pooled/2011.npz": {
+      "bytes": 17732,
+      "sha256": "a9b0fb4a93f89ef359aefbf900367b973021583a668506505ede7b9bab7b39b2",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/seasonal_pooled/2012.npz": {
+      "bytes": 17976,
+      "sha256": "e57b65a56bac2a8530848fe914ed6b2b75783159d7926d1240d52abfa0882a45",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/seasonal_pooled/2013.npz": {
+      "bytes": 21929,
+      "sha256": "dc5cc465287feb911050ef7460123a3bc3b3c820a3f39d2219bb8f3ca6af432a",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/seasonal_pooled/2014.npz": {
+      "bytes": 17765,
+      "sha256": "2ccb02cb0e5c00dbdfd1972ecb58205e7dddcdd5743df610fc606af751dd49a1",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/seasonal_pooled/2015.npz": {
+      "bytes": 16568,
+      "sha256": "34b03034de37e49fdf36d7a201a6a9fa870aef93da807bae000e3fdb652c54e0",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/seasonal_pooled/2016.npz": {
+      "bytes": 21620,
+      "sha256": "9569a2743309d8c3e6eb7417f2b38a894499c34a5b27b733876557ea245d9713",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/seasonal_pooled/2017.npz": {
+      "bytes": 21120,
+      "sha256": "19498fc723ae41e1eee222848603b66e4d663e9284efb909866d3aeab2741742",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/transition/2000.npz": {
+      "bytes": 26641,
+      "sha256": "1afe206cd022b708504ca976e41ab3f68b24198611e2ed86bdf4939c8c04f0cd",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/transition/2001.npz": {
+      "bytes": 25686,
+      "sha256": "5a18fe36469b8f1a34a509dbe092bc8678956690f19c68564eda788a3d0dfad3",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/transition/2002.npz": {
+      "bytes": 23804,
+      "sha256": "f06662c848ba5887845a38afa8ce632cd295b847dfe2468bf9e406800afa3a92",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/transition/2003.npz": {
+      "bytes": 28511,
+      "sha256": "8156865b6047ee4e4396d322fa70a5a5967ba86a1b3ca55b7abd4a08f29b06db",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/transition/2004.npz": {
+      "bytes": 26320,
+      "sha256": "fa5e2cf63dcb1af248ea24ac60827ec58f9d6030fcbc9a9325446d445f3ebe23",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/transition/2005.npz": {
+      "bytes": 26973,
+      "sha256": "f9aca0b3802c75eb2024211c410b6b2ebed6cbafc7cfbaa35d2774641e0c6cb6",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/transition/2006.npz": {
+      "bytes": 30354,
+      "sha256": "56ca425204003f886d3040a44202726c17150fd8513ac3a82d0222f0039e784e",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/transition/2007.npz": {
+      "bytes": 30257,
+      "sha256": "972f565fc404868ef7f599775fbefb6770c33555b1e71d953e7e604ca5502edc",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/transition/2008.npz": {
+      "bytes": 26400,
+      "sha256": "89dd7a97f11cab49207510ee0b7fa5b6730cba6a7ba68709870e83c107e13f32",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/transition/2009.npz": {
+      "bytes": 27531,
+      "sha256": "0e2d97c511aafe4d07f0bb1715962aa5747d2ac824a924aac269e326b052cf74",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/transition/2010.npz": {
+      "bytes": 27654,
+      "sha256": "4780cb85c6a08c5187ff6fb20f0e4c028a8466cd8fd721d753cb673feab99a71",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/transition/2011.npz": {
+      "bytes": 24898,
+      "sha256": "8aa3ad5ab45253c39374ccdc1b34e60a9b534dc6f75cb505d38326b692d2f345",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/transition/2012.npz": {
+      "bytes": 25342,
+      "sha256": "48697a89bba2ed4d59fb4c3a7120863f312b5caa26767471b2e13b0d53b1048a",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/transition/2013.npz": {
+      "bytes": 32240,
+      "sha256": "13ea5a5651cff5191b1fba098390765a33aefb6f25c5c408124a7948b9dfa487",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/transition/2014.npz": {
+      "bytes": 24861,
+      "sha256": "a4246ec671f923b9373d4912242ca6a16886e1bdc53e8e2aeccfd09c20ca8cbb",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/transition/2015.npz": {
+      "bytes": 22905,
+      "sha256": "64721c794b8baf8fafd724140def50ee01a8df0fa33f7f5a474dbac0c5215b9a",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/transition/2016.npz": {
+      "bytes": 31714,
+      "sha256": "0b9be555dbd00a64f5da854b31219b86a299134d14edead68bd0e6313d2e1b5e",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag1/transition/2017.npz": {
+      "bytes": 30785,
+      "sha256": "7930df9387c9896b16e3851bf3dcdd90815810e196247c775159a0144ad8d0a9",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F0/2000.npz": {
+      "bytes": 1019761,
+      "sha256": "c239c0195481dd8517726e91f2f2b2093d13824fb4446808f24b659ef15db417",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F0/2001.npz": {
+      "bytes": 1019267,
+      "sha256": "c5a8e54033b78e7d51c02329460a781e381bf0ff96e532d5097f3dd58ffe9938",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F0/2002.npz": {
+      "bytes": 1017977,
+      "sha256": "26228514064e29204eea3b8967a5c5d712803b136c12bedb4ec4c2df2347b65a",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F0/2003.npz": {
+      "bytes": 1020666,
+      "sha256": "d5503d533258ecd3b3d1b36223f0d47527dcaf05ba36d36559a17c185360f2a7",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F0/2004.npz": {
+      "bytes": 1019751,
+      "sha256": "5eff93f2b6c244600ae40cb2ce471f05263de0eda415bbc736115ea17972cf9d",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F0/2005.npz": {
+      "bytes": 1019948,
+      "sha256": "3fd91447b6cc070deddaad7b6e5cb5d7e07ed1d7403ac362b4fb663714a6246b",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F0/2006.npz": {
+      "bytes": 1021768,
+      "sha256": "0619de83a9b977ba7fa0d29c25dee2efe730cb955791e91d8a74c62549b62936",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F0/2007.npz": {
+      "bytes": 1021843,
+      "sha256": "91f06f2e791ccf091b1587427d96b47c7466a53776b7ada47f5cfed0a85618b2",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F0/2008.npz": {
+      "bytes": 1019927,
+      "sha256": "d089d391eb3a79c77d9835426033d8851fe63fcc57d1c1cee0218ef3350e4c83",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F0/2009.npz": {
+      "bytes": 1020319,
+      "sha256": "5b47079d47ca8dcfea0fb981d93c4a75e482619ae1fa25b8d44980bacaecb822",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F0/2010.npz": {
+      "bytes": 1019771,
+      "sha256": "be3a75815bfbb6113af8e705032c302567a1da3f39b103c8d3c52d0c1468af11",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F0/2011.npz": {
+      "bytes": 1018795,
+      "sha256": "b6458fd254c53a9948c83a54af20d134a61cf549d1e685a9d4da5ed45251cca3",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F0/2012.npz": {
+      "bytes": 1018804,
+      "sha256": "d8d6fd4e720ee46faf063043b84b30fe754db3a71163f1c9c54d4f5c49d52adf",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F0/2013.npz": {
+      "bytes": 1021906,
+      "sha256": "e33edfdee01fcd9d9c7e9d87959ff7a738ea072030f7e7df8660c108fe4f8b6f",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F0/2014.npz": {
+      "bytes": 1018917,
+      "sha256": "021307717e89d03c20a7dc3e783837cb60a1775c88dad2297d68e40ac1d5bc23",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F0/2015.npz": {
+      "bytes": 1017783,
+      "sha256": "ccc0e44bd8c231f6e0aa0915c741f1179c3c895004d77f4168c55c1fdae97c47",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F0/2016.npz": {
+      "bytes": 1022159,
+      "sha256": "ce7a80bc241d0e95bc094e06f6fdf3179d6cf0a54d097af11fddfc7adebcda56",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F0/2017.npz": {
+      "bytes": 1021455,
+      "sha256": "2c7cc01d263653109bb741bce3949252faf343054509def413e5dcfa7da2d2e0",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F1/2000.npz": {
+      "bytes": 1020042,
+      "sha256": "3e0f38aa6e15da59fd65182bfc7e42e2539570e838340d03db28a5342c31c445",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F1/2001.npz": {
+      "bytes": 1019356,
+      "sha256": "261d7b958b634d4ac1a626db13cb911839f6a4221225934fb351fb8498a10a75",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F1/2002.npz": {
+      "bytes": 1018295,
+      "sha256": "74bd637ec526503ae0cf5ece5fe2b3d57f17e17882fb9d4f4b14327c58c29ae8",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F1/2003.npz": {
+      "bytes": 1020574,
+      "sha256": "d09e6b5933931e1d00274262e629a7b4751bab32a0ee8c79973aa825f957d0e9",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F1/2004.npz": {
+      "bytes": 1020059,
+      "sha256": "61d9ecb02303aeaf87f82139c3f06bb3e826a89b7ae3760e1e65dc2ceb82c187",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F1/2005.npz": {
+      "bytes": 1020332,
+      "sha256": "8ff55c72ad50b62aafa0398871f669ef9212d24913cf884cbbc00ce03dbb725c",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F1/2006.npz": {
+      "bytes": 1021841,
+      "sha256": "0dff93821f8c80d31a6739ad90b8912c0ec2c815c5ca6234f47765ec5e7595c0",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F1/2007.npz": {
+      "bytes": 1021965,
+      "sha256": "e6edbbd4e8a6116f12c29dbda85d27bf922e4033c6c644f1d26306828c3cdfa6",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F1/2008.npz": {
+      "bytes": 1020153,
+      "sha256": "f6aec53e4f71798b51a03e067b15fc2c35743283ffe8dc6152aeab2c12a721df",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F1/2009.npz": {
+      "bytes": 1020784,
+      "sha256": "c52e84bcfff6b6261e98e41df0b9fc590e5a45aa73b2ec22007bf58950e26017",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F1/2010.npz": {
+      "bytes": 1020232,
+      "sha256": "09de8e3787b9cfafda7f13f755e51371cdb19c26b411b8a3d52e10a4e4989964",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F1/2011.npz": {
+      "bytes": 1019193,
+      "sha256": "acc87551509594de558bab659955b9bdeb2754957d8da0d98c391b74beb4e153",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F1/2012.npz": {
+      "bytes": 1019185,
+      "sha256": "bacd8125c93841414508680b0ac3ab95735bdea00f134338d016fac41e566854",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F1/2013.npz": {
+      "bytes": 1022412,
+      "sha256": "27e7dbfa9326d8c95ee1b5728e44e827caa35a9c5cc4534ecfea62e453e93aec",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F1/2014.npz": {
+      "bytes": 1019204,
+      "sha256": "76cf6dc6c40bb5d809fec9ae0e9a363114f03cce929225986e835b7ebff845a6",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F1/2015.npz": {
+      "bytes": 1018148,
+      "sha256": "88d3c86ab8d65fcb52acbe9e3fa2aea967b5957fe91e2b4db7b21b9d1114d658",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F1/2016.npz": {
+      "bytes": 1021827,
+      "sha256": "78b1607ff9fbccf3b6112bb887528850f09aeb6813682903d587fd384100b6b1",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F1/2017.npz": {
+      "bytes": 1021224,
+      "sha256": "ef4467971441a47451d606bba85878e7df09a9d7ceb1a57ed90f11d73c0b97cc",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F4/2000.npz": {
+      "bytes": 1020717,
+      "sha256": "7d73ef47ade7592059890c261d06276fabdea00ea97c06b6c8dfe0678b829aea",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F4/2001.npz": {
+      "bytes": 1019854,
+      "sha256": "4673a29420225a313b58b75dd845aa90ce98c2f7dd953d306f1503bf0a054d1d",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F4/2002.npz": {
+      "bytes": 1018671,
+      "sha256": "9cc4fd04ba0e337f7ecf02a4813917b9c4cd6e406bd10beed38e34a66a965521",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F4/2003.npz": {
+      "bytes": 1021083,
+      "sha256": "b1512adcaf8caf51fa3752c00b2d80512929dcb552e20a2e88d3ab86fd747adc",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F4/2004.npz": {
+      "bytes": 1020661,
+      "sha256": "b5d01d291dd7900adde5dd8ee352705a290616e9254942e92a5fc97b25321bd3",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F4/2005.npz": {
+      "bytes": 1020825,
+      "sha256": "0872f6d0f066d7a7baaa8405e7c1fbf188a21d2ce232c4bd7a80f7afe8e28b36",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F4/2006.npz": {
+      "bytes": 1022610,
+      "sha256": "3d8a4b113404c412c48c933e4d6aa638f4cc9711b9d847dea95c037172065180",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F4/2007.npz": {
+      "bytes": 1022576,
+      "sha256": "631f51399a7a3505ccbf31ddf12ea68070a59376f26d3f09a30972a955df04c2",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F4/2008.npz": {
+      "bytes": 1020789,
+      "sha256": "8bd58c4a08a74a04a195380f856b1c03169d17bbb2b640c1f20f060bcb8eab1a",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F4/2009.npz": {
+      "bytes": 1021332,
+      "sha256": "81d1091964ec199e48919e48e8fb56af11f5dba5a006dd8960084946179fe6c5",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F4/2010.npz": {
+      "bytes": 1021154,
+      "sha256": "16080fd26df614c91b7d52d92e7047f2b5ef2f468ab79b17135d5d101f408a67",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F4/2011.npz": {
+      "bytes": 1019730,
+      "sha256": "8a8cffa300e7d15e250fd1dae7e89e43bf22572b8fadd3a59ad7e171ab5308b3",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F4/2012.npz": {
+      "bytes": 1019745,
+      "sha256": "f59defa1636fef3718f4a4b980cad08311763dbb63eedaedf9bc298232389a4e",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F4/2013.npz": {
+      "bytes": 1023148,
+      "sha256": "76ba47936169423cd98cedcb98689de340fef6892bd60e3baf16fe9caa1295bc",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F4/2014.npz": {
+      "bytes": 1019768,
+      "sha256": "db74936cb9dab84c953afb9b6e6b94c306d05b4b134cc13907623d1efc9cf641",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F4/2015.npz": {
+      "bytes": 1018668,
+      "sha256": "e13ef91fba63f93a902347ad8508a70ac17bc23513ab5fdf1fa268daa19a4506",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F4/2016.npz": {
+      "bytes": 1022385,
+      "sha256": "9e46fda056376b5c2e94612c1ea53031e078f46c5acab918393aa81945ba1305",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/logistic_F4/2017.npz": {
+      "bytes": 1021830,
+      "sha256": "c2628f7e572790f4cccc3a76b0b2842ac42ea2ac27c948fa10d6830a96610756",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/persistence/2000.npz": {
+      "bytes": 26502,
+      "sha256": "f2205ebe46dd4a06a6e89c4397c4c1576a206d0e7671131e641ada5108d3fe5e",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/persistence/2001.npz": {
+      "bytes": 25773,
+      "sha256": "94c84f5e14f2b9c96245204626d5f4a6ebd3fbb2d63edff860fd52fcd66defd4",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/persistence/2002.npz": {
+      "bytes": 23802,
+      "sha256": "03549c76932f9e4af642e0052422430b6882b40a4ac375040270e6b05bb980a7",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/persistence/2003.npz": {
+      "bytes": 28581,
+      "sha256": "820fe9979ae08d38d928291b3d03e7376c1f54afdabc3cb4c9f28b9801030169",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/persistence/2004.npz": {
+      "bytes": 26141,
+      "sha256": "edcf11935a8087494f8f9e37785204e98badc1e2ce943d9834e38c8e992672e2",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/persistence/2005.npz": {
+      "bytes": 26714,
+      "sha256": "ed59e1fd6e5e8112bea614f240a55db5b3f01eaba2b096c14964fafdc0e40e50",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/persistence/2006.npz": {
+      "bytes": 30205,
+      "sha256": "3f3b1222f1f54f6d236301e56ff25b667a9db021cc66adabf39f520697120c39",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/persistence/2007.npz": {
+      "bytes": 30153,
+      "sha256": "491b3322ff09c35c8f5d27141e58edd478561a43b2cc0a58bac691a045b9d1c8",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/persistence/2008.npz": {
+      "bytes": 26022,
+      "sha256": "92156480bcd9e31481f991c9598be41839b85d263fb662b8cf8169fcdbee261d",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/persistence/2009.npz": {
+      "bytes": 27359,
+      "sha256": "ef5e872d2505cacc846a5eae15193c411a49d92ce58231b011aa87462d5b8e54",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/persistence/2010.npz": {
+      "bytes": 27727,
+      "sha256": "f0e7670b7bd1749f88a1fa6453414cee94f121a956ddc109ea85f419125e4e9c",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/persistence/2011.npz": {
+      "bytes": 24633,
+      "sha256": "c148ebbbfc42380284df0ba31eb08aac85b294f923e5c5cab58b0b722fb4e761",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/persistence/2012.npz": {
+      "bytes": 25215,
+      "sha256": "9120d54c5bb0f9c2ccc726ec212dd4a412e2f26e477e548c76b424080eb57662",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/persistence/2013.npz": {
+      "bytes": 32747,
+      "sha256": "080753b35710719eab8d34b94234fccbbaa24c16306c47fc2453b0d1cfa58245",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/persistence/2014.npz": {
+      "bytes": 24618,
+      "sha256": "49c50ddf1d75565fca81d7d09eebdb2245807bf04c90bc3c87277aa7769b8ae4",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/persistence/2015.npz": {
+      "bytes": 22646,
+      "sha256": "1c75ff60ef86ed92b1a695591c0fc1095594ed77c16913d6199fbcd3ccf08834",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/persistence/2016.npz": {
+      "bytes": 32119,
+      "sha256": "8d1fcd27254042812fa5803dda92fc7870e8020c6d44912fbb430cbf63057e75",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/persistence/2017.npz": {
+      "bytes": 31146,
+      "sha256": "c9d9e461e5291fdf796cb3bd7279fcb8409db67046c7b547fa542783c74322dd",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/seasonal/2000.npz": {
+      "bytes": 43257,
+      "sha256": "d1ee0520e04b2b968aadb1268f6d6bfcf2749b0ffda5c3486e09c69734e23d46",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/seasonal/2001.npz": {
+      "bytes": 42709,
+      "sha256": "26ec57464b5091378e871f0ba74d30a25bbe6f9579dd70b71df1463958ca88e9",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/seasonal/2002.npz": {
+      "bytes": 41550,
+      "sha256": "f485e16b6a12a6f773f96fd9d564cb05a3e6cff772513a6593a86c1f86378c25",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/seasonal/2003.npz": {
+      "bytes": 44308,
+      "sha256": "98b83654eff3af2a954c3ab73b7a95864fbb10d3e92bb27af8a91b4ab549f236",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/seasonal/2004.npz": {
+      "bytes": 43080,
+      "sha256": "5818c7e5f0f881aaed8e02cecf70d65b80705330a6294ac8def4de91697f8b94",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/seasonal/2005.npz": {
+      "bytes": 43416,
+      "sha256": "f652f64a7ff7dd65b05785d7102500011bfc17b28705bb03eb528fa0228c74a2",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/seasonal/2006.npz": {
+      "bytes": 45386,
+      "sha256": "5c145f65a4f4f17c660a3f6459c282d223b3941405f16f31ff7fa19c0fb55b56",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/seasonal/2007.npz": {
+      "bytes": 45344,
+      "sha256": "915a3bd975ebb28b584fda859b6d86e0195410efcd045c981d98237e774709f9",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/seasonal/2008.npz": {
+      "bytes": 43030,
+      "sha256": "1cb871346dc7c03128c688bed1332dc12018aef5d97a5c510914042019d8201c",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/seasonal/2009.npz": {
+      "bytes": 43748,
+      "sha256": "8232b728bd0f3d281e6ade205f2a26d2f9cf7f94622ad105dc72f26dce71211f",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/seasonal/2010.npz": {
+      "bytes": 43804,
+      "sha256": "08270eebf20f61722bf5935c8769c2e55b569a4b7e645ac640c6cf97c5b25813",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/seasonal/2011.npz": {
+      "bytes": 42227,
+      "sha256": "f483492bd10f969f5bede5cdaee5ca77d63f768b374a3a6e0c238c0fbe90d14b",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/seasonal/2012.npz": {
+      "bytes": 42471,
+      "sha256": "a1f2edae0ea9b53bba5af386359ca13bac8845ab47c8feb2b9693121308abee5",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/seasonal/2013.npz": {
+      "bytes": 46424,
+      "sha256": "340529d4821551b9f18c8a175f62cbb81016a697313dad0b1d6e76464a1ff0f2",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/seasonal/2014.npz": {
+      "bytes": 42260,
+      "sha256": "bd11ca9059c669fa668aa11e5637531d141e176444fd738d8a89814960d376c3",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/seasonal/2015.npz": {
+      "bytes": 41063,
+      "sha256": "ba4991ad1e4151a784a3de013d308b8cc29a1fb8a5785bad46c2734cd40a217f",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/seasonal/2016.npz": {
+      "bytes": 46115,
+      "sha256": "17d06b11e9b2196d7b31318121445e05ee3fb4627a3d5cc18c5d2c0dfbff32f8",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/seasonal/2017.npz": {
+      "bytes": 45615,
+      "sha256": "0cbf5704f970decacf71c3f18237097e3433c4ddb2c4132169e6429762358a69",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/seasonal_pooled/2000.npz": {
+      "bytes": 18762,
+      "sha256": "345671b5e2203ea662e5a741491400293c50c0879c0bb2d26305366c41aa0f8d",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/seasonal_pooled/2001.npz": {
+      "bytes": 18214,
+      "sha256": "541e9a3235cda6b1644e916ffd6da79d18eda2c9d18a739e3b4972d2ffa5b3d0",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/seasonal_pooled/2002.npz": {
+      "bytes": 17055,
+      "sha256": "613e123838431706963148ab670c15b74deab47c000c26935ad0eeb1d5b23185",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/seasonal_pooled/2003.npz": {
+      "bytes": 19813,
+      "sha256": "9ad02d884f30b669871ee62289b10ef11f8d301fd87201477c66f6291767ee93",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/seasonal_pooled/2004.npz": {
+      "bytes": 18585,
+      "sha256": "b4e5ab4e67ffeb520cfd9ee9425b103d7d91875efbc1df09ea561067d57c60e3",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/seasonal_pooled/2005.npz": {
+      "bytes": 18921,
+      "sha256": "241a148b585550a9a0e874ae678aac8af5f6e9ac86fa17b4e43462f9c8b96ede",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/seasonal_pooled/2006.npz": {
+      "bytes": 20891,
+      "sha256": "9d30982cf595c2ca60406bd0bc2f22e07f6278e40cde6cfb66a48316cace5c70",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/seasonal_pooled/2007.npz": {
+      "bytes": 20849,
+      "sha256": "18091353cd4ac2188fe7f7e4c8f00df52526b97b3e061ea06d26024cce47edd0",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/seasonal_pooled/2008.npz": {
+      "bytes": 18535,
+      "sha256": "ca5ed8036dd3c2e9dbf4d744cc70694ead11bcff17c172f99771fc3a2ad20d71",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/seasonal_pooled/2009.npz": {
+      "bytes": 19253,
+      "sha256": "66eeb08e514bbfbb4b13edbf083bb088c8f4ca11d5093e69e5d4b3ba4d99fed9",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/seasonal_pooled/2010.npz": {
+      "bytes": 19309,
+      "sha256": "30d38fdcc128dbeed4280fb5ea9bc6f5054746662eb872885dfff365e3724563",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/seasonal_pooled/2011.npz": {
+      "bytes": 17732,
+      "sha256": "a9b0fb4a93f89ef359aefbf900367b973021583a668506505ede7b9bab7b39b2",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/seasonal_pooled/2012.npz": {
+      "bytes": 17976,
+      "sha256": "e57b65a56bac2a8530848fe914ed6b2b75783159d7926d1240d52abfa0882a45",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/seasonal_pooled/2013.npz": {
+      "bytes": 21929,
+      "sha256": "dc5cc465287feb911050ef7460123a3bc3b3c820a3f39d2219bb8f3ca6af432a",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/seasonal_pooled/2014.npz": {
+      "bytes": 17765,
+      "sha256": "2ccb02cb0e5c00dbdfd1972ecb58205e7dddcdd5743df610fc606af751dd49a1",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/seasonal_pooled/2015.npz": {
+      "bytes": 16568,
+      "sha256": "34b03034de37e49fdf36d7a201a6a9fa870aef93da807bae000e3fdb652c54e0",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/seasonal_pooled/2016.npz": {
+      "bytes": 21620,
+      "sha256": "9569a2743309d8c3e6eb7417f2b38a894499c34a5b27b733876557ea245d9713",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/seasonal_pooled/2017.npz": {
+      "bytes": 21120,
+      "sha256": "19498fc723ae41e1eee222848603b66e4d663e9284efb909866d3aeab2741742",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/transition/2000.npz": {
+      "bytes": 26638,
+      "sha256": "7ed7a4c58551467c30e7f239757256eed232f5d023fb3cc5c90fe08f60dd37ea",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/transition/2001.npz": {
+      "bytes": 25685,
+      "sha256": "2f1937788535704e8a77eb4e517dc0f8a87ab0b1336174fe86c54f926d238b65",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/transition/2002.npz": {
+      "bytes": 23938,
+      "sha256": "0eff6677e55c0ce8e62fe78d5650465e297ee9ea67011bba037c384e448bbe85",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/transition/2003.npz": {
+      "bytes": 28381,
+      "sha256": "cac5639ad176c0fbfbd68c38a9049e28a091c3bcc145d579d713aea6db8e87f1",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/transition/2004.npz": {
+      "bytes": 26299,
+      "sha256": "e2e3ef581fea0984222eb88d99a3eefc6d0b990c26d041679f0999a138b436f8",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/transition/2005.npz": {
+      "bytes": 26852,
+      "sha256": "3480d731574b3ade02ebf38980fd615cb719ab59a750c23b3f1059bf1ae283a4",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/transition/2006.npz": {
+      "bytes": 30190,
+      "sha256": "a50b6328f574b0b6f68f83411bc5efd9e9c3bddfb5089d5be4f18964f213dffa",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/transition/2007.npz": {
+      "bytes": 30139,
+      "sha256": "6b5577e46c3c279a2a107e617b2ada43c0373eb32d5e62be3d77360652bfdaa0",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/transition/2008.npz": {
+      "bytes": 26373,
+      "sha256": "8a80bcd04f33a1d73ebae068df29faf3a87164f01bbd1ff8048fe71bbbacf58e",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/transition/2009.npz": {
+      "bytes": 27519,
+      "sha256": "59daea8a905739dea46e0b130437ecdf481671ad735a8709aa5ff8601d98d737",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/transition/2010.npz": {
+      "bytes": 27633,
+      "sha256": "eee68c1c27c439cf7c8a32854c39367d9f01518e9711bbd3b4cdfc7cea329cb7",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/transition/2011.npz": {
+      "bytes": 24900,
+      "sha256": "400307a6aef795474998cd7012f9aca99dc309025b8e6f5e47048696ae386e07",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/transition/2012.npz": {
+      "bytes": 25357,
+      "sha256": "35c73171115951c66745614724d5befcc61734e7a934e11e05b98af82a5e5c47",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/transition/2013.npz": {
+      "bytes": 32220,
+      "sha256": "93eaa4281b73e1f8156fdcff49e2a51879afa2850079c9af7ba2ecc53c0a57bf",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/transition/2014.npz": {
+      "bytes": 24776,
+      "sha256": "7834eacbc22d0a7837ab5c0cb8d0f6da39cf1457e7aa8f43abfaf6ea62d5072a",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/transition/2015.npz": {
+      "bytes": 22911,
+      "sha256": "432ea236ab16bc269cf68e728be6c360204dc41bc80378dd6e6d666674651869",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/transition/2016.npz": {
+      "bytes": 31716,
+      "sha256": "44f22cad1105723582032cb8e6528a7125822fdc79de2fdffa8ab912a2a39185",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/predictions/temporal/lag2/transition/2017.npz": {
+      "bytes": 30749,
+      "sha256": "40ed1a3ee23abfdc740ad81480fd8f41512d4418d53e48040543810389fce45e",
+      "git_expected": false
+    },
+    "data/probability_phase2/experiments/run1/reliability_yearly.csv": {
+      "bytes": 465728,
+      "sha256": "480bbe56e9908cdf170e2c9ea34bf1d63c82ebb556bea2fddb8766594059576a",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/run.json": {
+      "bytes": 3478,
+      "sha256": "5f942c30e125450d515ef01ad53b595e16c9797726cdede17a0f6ab40e6f2106",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/threadpools_strict.json": {
+      "bytes": 1060,
+      "sha256": "a4dee2e2e85863721c8d5b661cfe8a55f4060055f333eaf64f4a04d7520cf7d4",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/threadpools_temporal.json": {
+      "bytes": 1060,
+      "sha256": "a4dee2e2e85863721c8d5b661cfe8a55f4060055f333eaf64f4a04d7520cf7d4",
+      "git_expected": true
+    },
+    "data/probability_phase2/experiments/run1/validation_champions.json": {
+      "bytes": 810,
+      "sha256": "6cf97b1460ea4d8dbdaab99e30bc7ab802a840cf47069f596ce9f37b94edc527",
+      "git_expected": true
+    },
+    "data/probability_phase2/extraction-batch.log": {
+      "bytes": 15992,
+      "sha256": "b2aac304e499536d43c3061218cac231c526d1304e0628714a561c978b4d2fd2",
+      "git_expected": true
+    },
+    "data/probability_phase2/feature_counts_yearly.csv": {
+      "bytes": 6016,
+      "sha256": "23921b97eb7b99638ac2f86468bb8611772eb1ec08a4cd1e9d41fd90fdc5fa5c",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2000/daily_night.nc": {
+      "bytes": 6390231,
+      "sha256": "2351c040b439f0761dc77d3df9d8710b68c4ef6f6e3901e0cf2531fb1fb14cc3",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2000/feature_registry.json": {
+      "bytes": 4462,
+      "sha256": "92dc1344b8925b1940c34fed4e2ec09aab429eba0299a1e7922a3e867f991f11",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2000/run.json": {
+      "bytes": 3518,
+      "sha256": "38d14fe683fe7e7d05fc783e971afc99f5ccc00596230a4dea2f3836aeefeeae",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2000/strict.npz": {
+      "bytes": 66629094,
+      "sha256": "622cd18e9b9b1ec62520e4ccb9385e2202724342c055faf52af931bec15b98f1",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2000/temporal.npz": {
+      "bytes": 81068747,
+      "sha256": "caf85609fd5106d286263ba60abd3f350a5b86338355d731f844872be69c6604",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2000-r1-incomplete/failure.json": {
+      "bytes": 516,
+      "sha256": "c782e19b6434c3e40602b8016e18d533ba575b78dd55fec6415b6d442d741dc3",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2001/daily_night.nc": {
+      "bytes": 6396103,
+      "sha256": "1b5b25a6bbb548a090c9de98b2b7db9df415b337562a0fce82fdc4f89d82832c",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2001/feature_registry.json": {
+      "bytes": 4462,
+      "sha256": "92dc1344b8925b1940c34fed4e2ec09aab429eba0299a1e7922a3e867f991f11",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2001/run.json": {
+      "bytes": 3518,
+      "sha256": "dcc996a99aa675b48d3ec18710713f80ae1ed741d31dcdaae7ae4c40aa3e6c96",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2001/strict.npz": {
+      "bytes": 66609209,
+      "sha256": "22937509443dc4c45dba38ac02fe5ba542f44465dd139b13fa788c8f3cf526fc",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2001/temporal.npz": {
+      "bytes": 81046564,
+      "sha256": "9c505f57a58fdf73b50ff6a775cbbd7aa8d8e353bb2c311d91996fb6a6ab695c",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2002/daily_night.nc": {
+      "bytes": 6392316,
+      "sha256": "35ff18c07877de8a94e0d466dbcc1a5cbbf649cfb8ef15b4dc2df51db162b049",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2002/feature_registry.json": {
+      "bytes": 4462,
+      "sha256": "92dc1344b8925b1940c34fed4e2ec09aab429eba0299a1e7922a3e867f991f11",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2002/run.json": {
+      "bytes": 3517,
+      "sha256": "9e45e6fc2bcd9adb9d28af76295052942c211ddec831d1b8dda4f62e67c0cea0",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2002/strict.npz": {
+      "bytes": 66422291,
+      "sha256": "fbe5ec2a73bbcbc76fce754d47666cf23f94aeccd2cdf29732957d9098281b39",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2002/temporal.npz": {
+      "bytes": 80835926,
+      "sha256": "c292e7a7202be4af4458e172078eecd15e1056f7ddf2ccb8dd96adebafdab532",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2003/daily_night.nc": {
+      "bytes": 6446876,
+      "sha256": "dfcce7e9b00fbaf2ad33381f8b82417b2a92b39b02e27a9a89801e894eff4e85",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2003/feature_registry.json": {
+      "bytes": 4462,
+      "sha256": "92dc1344b8925b1940c34fed4e2ec09aab429eba0299a1e7922a3e867f991f11",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2003/run.json": {
+      "bytes": 3518,
+      "sha256": "564e1d2229940b4ffed1b91f9c024805bf1034416fbcf0f86edcba6d579e58d4",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2003/strict.npz": {
+      "bytes": 66561056,
+      "sha256": "58c1867e36637f546fc84c57224342537c3e0fbad1c6275e0fc72947d5dbb987",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2003/temporal.npz": {
+      "bytes": 80994898,
+      "sha256": "8334be3ce86a7da7aef332ac264fc51f793ab3f4d262934c4c08e200f56092f7",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2004/daily_night.nc": {
+      "bytes": 6445912,
+      "sha256": "9edeee45f812ad7424d6177c012207e1ee6f03dd0cd62696761061a2391b2767",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2004/feature_registry.json": {
+      "bytes": 4462,
+      "sha256": "92dc1344b8925b1940c34fed4e2ec09aab429eba0299a1e7922a3e867f991f11",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2004/run.json": {
+      "bytes": 3518,
+      "sha256": "49a8af180d6ce9685b36c809e41c5e5193585e3a3ead1b9b554cdb3220d48baa",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2004/strict.npz": {
+      "bytes": 66732551,
+      "sha256": "034efbd3353305614a327ec5669b86218cb2cfee05c53c2daf97f566929d0f15",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2004/temporal.npz": {
+      "bytes": 81240997,
+      "sha256": "f9e0af4409fb7c8968d27fbe2af0a1f371ba3d9d4d2a430ddce064e98a2d8123",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2005/daily_night.nc": {
+      "bytes": 6451295,
+      "sha256": "ce6e61285fa30677c35b0b9538e6b41e108a0405080738bdd8e9b89f279878f3",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2005/feature_registry.json": {
+      "bytes": 4462,
+      "sha256": "92dc1344b8925b1940c34fed4e2ec09aab429eba0299a1e7922a3e867f991f11",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2005/run.json": {
+      "bytes": 3518,
+      "sha256": "adc3b25d4f27982441db32f9e006c951914c9d6ff18619cba5bab7027bb1f7eb",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2005/strict.npz": {
+      "bytes": 66731303,
+      "sha256": "a648ccdc36743e5a6c77a1ac32680ab8fd7c4a964ad70584cd98ed1267ddda78",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2005/temporal.npz": {
+      "bytes": 81235379,
+      "sha256": "06249be8a3164113f81b4d604c8d55feec9d1728c6e9c0318e3d08b058fe0e33",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2006/daily_night.nc": {
+      "bytes": 6421540,
+      "sha256": "637918f8c0cdcaeff312e5a50f6e3fbdd693a94bc1d989e41082f85cfd7f0488",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2006/feature_registry.json": {
+      "bytes": 4462,
+      "sha256": "92dc1344b8925b1940c34fed4e2ec09aab429eba0299a1e7922a3e867f991f11",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2006/run.json": {
+      "bytes": 3518,
+      "sha256": "9fe6a4c4754a9ef374ba7eed2869269837ba988ad83262d9aa5cb311c8ce6ff1",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2006/strict.npz": {
+      "bytes": 66702913,
+      "sha256": "9b90492d93f0003bf0b63e6bc513de34e37fec2a02e600023b8a6227668672d8",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2006/temporal.npz": {
+      "bytes": 81150073,
+      "sha256": "e0f749855ffa7cdf02576bfa2352127baffd9adc56ad9193b5ca5eb41faf47ca",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2007/daily_night.nc": {
+      "bytes": 6417173,
+      "sha256": "d3f6ba73901d59d8f68c1dfd317c3581811eee81207feb49986d384bffaeebd3",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2007/feature_registry.json": {
+      "bytes": 4462,
+      "sha256": "92dc1344b8925b1940c34fed4e2ec09aab429eba0299a1e7922a3e867f991f11",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2007/run.json": {
+      "bytes": 3518,
+      "sha256": "609a1435a122151e22a9edb06ae5d38fcdc8fa158f975b5c08987788b623d060",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2007/strict.npz": {
+      "bytes": 66504282,
+      "sha256": "db2219215f2eaaabc4b336eabbbd7b0ab8cc821261c32ff0b4a397fc9e8a3042",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2007/temporal.npz": {
+      "bytes": 80953299,
+      "sha256": "a6cb39496f2e41987f1e806670cc3cc462589b24e9a42160e0c9a3bfa7b04e98",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2008/daily_night.nc": {
+      "bytes": 6417895,
+      "sha256": "9e42c632e30377a8cd53568b6d1ba87cb8aa5afe5568218cb3cea1eedfa98c97",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2008/feature_registry.json": {
+      "bytes": 4462,
+      "sha256": "92dc1344b8925b1940c34fed4e2ec09aab429eba0299a1e7922a3e867f991f11",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2008/run.json": {
+      "bytes": 3516,
+      "sha256": "2eae3b8146fc16b5249084c0610957086fb1c9fe83006bed1682af05b0e33ecf",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2008/strict.npz": {
+      "bytes": 66591036,
+      "sha256": "2133e110f62e8ac9ca5ab6b40e7cdb4307186d5f1d7ea0e7a0077bf0f4a0f720",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2008/temporal.npz": {
+      "bytes": 81009007,
+      "sha256": "df5487327ae1a3e352932f9c969270e2fa74ea79962ddf1345178f5856a9d246",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2009/daily_night.nc": {
+      "bytes": 6455519,
+      "sha256": "29a732961109ca2751645896926e5e719fa544086fddc45e475146be6894b106",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2009/feature_registry.json": {
+      "bytes": 4462,
+      "sha256": "92dc1344b8925b1940c34fed4e2ec09aab429eba0299a1e7922a3e867f991f11",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2009/run.json": {
+      "bytes": 3518,
+      "sha256": "22bbb249b9eb27e5908d3227231a506918a6373276c552ce15767724c82e26f0",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2009/strict.npz": {
+      "bytes": 66697827,
+      "sha256": "d9a4a8dc86933a78454f7132facdaabd280d19bba935f32ca69c0c1b5d9dff4d",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2009/temporal.npz": {
+      "bytes": 81128465,
+      "sha256": "1d622c6f4b52482976939f5fbbd4af0f4de205d8395209621f69643b11138305",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2010/daily_night.nc": {
+      "bytes": 6445897,
+      "sha256": "6079681ba642c60a2d56665faded0b902f57f22b4ae6970784b98895a2af3953",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2010/feature_registry.json": {
+      "bytes": 4462,
+      "sha256": "92dc1344b8925b1940c34fed4e2ec09aab429eba0299a1e7922a3e867f991f11",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2010/run.json": {
+      "bytes": 3518,
+      "sha256": "75e69575a1f97e2b26c72f93a74ba6d939028afeab08e71ec280d5df60f38ac3",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2010/strict.npz": {
+      "bytes": 66755235,
+      "sha256": "c549160a42ac6d6530aecfd86248d0d223b715cd4ff2dd702748b0da66a5b675",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2010/temporal.npz": {
+      "bytes": 81200295,
+      "sha256": "7420ed9c2066d8370c469c38c7cf854a2a9c92a21702ee706b0a571030bf0a79",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2011/daily_night.nc": {
+      "bytes": 6470333,
+      "sha256": "a81af80f5c25be13ecd8e3f55784dd1c5d00c146caeeabc9d1171bd218d78b79",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2011/feature_registry.json": {
+      "bytes": 4462,
+      "sha256": "92dc1344b8925b1940c34fed4e2ec09aab429eba0299a1e7922a3e867f991f11",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2011/run.json": {
+      "bytes": 3518,
+      "sha256": "39d923dd990e855b1c075a631223437e590d7e4dfb54f90a6f756e4dbad86b9e",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2011/strict.npz": {
+      "bytes": 66798504,
+      "sha256": "b6128575e6e309680794aaa7ae7a453575d08bd0ecdb16e4e137572f6cab3c82",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2011/temporal.npz": {
+      "bytes": 81257240,
+      "sha256": "14e7ba74818222e063ef93a7408c287f98c5f22b1d0598d55e5b4281c4702262",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2012/daily_night.nc": {
+      "bytes": 6438637,
+      "sha256": "deee336c4be64b7fc32edc97e9b9521a1303f89db2603e1d371cb1c83c8cd741",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2012/feature_registry.json": {
+      "bytes": 4462,
+      "sha256": "92dc1344b8925b1940c34fed4e2ec09aab429eba0299a1e7922a3e867f991f11",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2012/run.json": {
+      "bytes": 3518,
+      "sha256": "7fb53622772e1783e4de69d83295d3598649c8dd442dca4a4ddfc23a0c1cbc7e",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2012/strict.npz": {
+      "bytes": 66846521,
+      "sha256": "758660c6ebbe9cfa915996bf496588ce51e61ba553d61bec8bfcc6b4b93805a8",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2012/temporal.npz": {
+      "bytes": 81345171,
+      "sha256": "6271f94a312e88533f0c630cecf79ccec513e4919e0304a865d610c5fd7704dd",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2013/daily_night.nc": {
+      "bytes": 6478026,
+      "sha256": "43f28c6b49c84a3592e9f78377698958ff5d354339aab6778c811e523a601869",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2013/feature_registry.json": {
+      "bytes": 4462,
+      "sha256": "92dc1344b8925b1940c34fed4e2ec09aab429eba0299a1e7922a3e867f991f11",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2013/run.json": {
+      "bytes": 3518,
+      "sha256": "b754f0e414a5a982b6979e3b3d8ad7575dd58c242603b5da0b541bccdabdb434",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2013/strict.npz": {
+      "bytes": 66740771,
+      "sha256": "596af0d6df1b3d6d48979e61a908b977170dd4f1a53e1d561f383732bf419b56",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2013/temporal.npz": {
+      "bytes": 81224217,
+      "sha256": "8ca8bbf6cb1e7eed6b3577c0ba5e9c3adb90fd8f2cb0a3cb8300089c514516b8",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2014/daily_night.nc": {
+      "bytes": 6410063,
+      "sha256": "fa0997c10d331e7aeff35963bc90405b5e1b807ebe24aa392b985ed938e14b36",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2014/feature_registry.json": {
+      "bytes": 4462,
+      "sha256": "92dc1344b8925b1940c34fed4e2ec09aab429eba0299a1e7922a3e867f991f11",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2014/run.json": {
+      "bytes": 3518,
+      "sha256": "18ffe94f805f7c4f4e34a4620a59524709319122eb36eb5360488ee5b299966b",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2014/strict.npz": {
+      "bytes": 66591181,
+      "sha256": "ef34f099127f3498745c10eabe4c29cb1dd0481c6e17b59a70ab2ade3d1e610a",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2014/temporal.npz": {
+      "bytes": 80960642,
+      "sha256": "e782f4621291f62c9dc90d38d09bd2e449abea94f6ecf357cb875d39c803a03a",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2015/daily_night.nc": {
+      "bytes": 6401016,
+      "sha256": "d594d5bf1ea6028e30d417d1c3622f62d256bb313f0148cd7fea79ec9385d70f",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2015/feature_registry.json": {
+      "bytes": 4462,
+      "sha256": "92dc1344b8925b1940c34fed4e2ec09aab429eba0299a1e7922a3e867f991f11",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2015/run.json": {
+      "bytes": 3518,
+      "sha256": "9101786aa521ab117dec5b000fe4df886f7bc865ac518d81c870b422d59f8064",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2015/strict.npz": {
+      "bytes": 66567675,
+      "sha256": "2d6c4f7621c1168e650505f8e2900708228c36698511dddaad5e3dbe9242a92b",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2015/temporal.npz": {
+      "bytes": 80970479,
+      "sha256": "5b1ae2b20491359447dda683b34db93878b028e3a436661e5f4ce8fde5cb7293",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2016/daily_night.nc": {
+      "bytes": 6412869,
+      "sha256": "173371ad2999e8cf27b21de2345a9687ed37e0aaa2d5a7c650e928e3e1cf4d99",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2016/feature_registry.json": {
+      "bytes": 4462,
+      "sha256": "92dc1344b8925b1940c34fed4e2ec09aab429eba0299a1e7922a3e867f991f11",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2016/run.json": {
+      "bytes": 3518,
+      "sha256": "d3a2b69db3ca685b94bec5ab90c8d5f86dfb715df237c0f6b3cdf169f7cfd351",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2016/strict.npz": {
+      "bytes": 66433151,
+      "sha256": "d8b505c572ea324fcf808f78d13e06dfcd861481057876cd8205d71157f0f1c9",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2016/temporal.npz": {
+      "bytes": 80840140,
+      "sha256": "7bf3e581242a28cc6d2b8f66e8eb29eeb9d708072fc8e125a8578108a5ffaac5",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2017/daily_night.nc": {
+      "bytes": 6417325,
+      "sha256": "fda036e68594f8d2a28d803152b79cd5dc607559e162ad8da84a6d003ed96670",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2017/feature_registry.json": {
+      "bytes": 4462,
+      "sha256": "92dc1344b8925b1940c34fed4e2ec09aab429eba0299a1e7922a3e867f991f11",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2017/run.json": {
+      "bytes": 3518,
+      "sha256": "cae5a5835a41b0916598291ee2f4cf00f9b542587a63da379e4b3c7f02e4cee1",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2017/strict.npz": {
+      "bytes": 66529909,
+      "sha256": "7360620d9df9204282c3f7f035f3c1c647887cf832c1c4ca95c91abb4d32e01c",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2017/temporal.npz": {
+      "bytes": 80925089,
+      "sha256": "fd26a814d6c0ee8fb84cfbb518d02791ce9bbaaaec6e12a777da173863f73f51",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2018/daily_night.nc": {
+      "bytes": 6426589,
+      "sha256": "ca243a90844a584840aa9fd5e04d5d0f1aafd449ac1b3837d015792a4f686cc4",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2018/feature_registry.json": {
+      "bytes": 4462,
+      "sha256": "92dc1344b8925b1940c34fed4e2ec09aab429eba0299a1e7922a3e867f991f11",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2018/run.json": {
+      "bytes": 3517,
+      "sha256": "76d0ef098ee575f47f88f7296575b42bf3ed12d10a9117c3000337aec4837979",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2018/strict.npz": {
+      "bytes": 66703653,
+      "sha256": "f286c5c9318c7a81aa74c207c239599fa000696580606754e5557a372acf6797",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2018/temporal.npz": {
+      "bytes": 81169444,
+      "sha256": "deb42b2a9193aac3468c44dbc2c56e3dcdee3f8cac48b05937f5b6bc52d78409",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2019/daily_night.nc": {
+      "bytes": 6453344,
+      "sha256": "0188d710f5a509d051a3b778ae2161388d1ddbebf01c8a0df98a10baf374e9ab",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2019/feature_registry.json": {
+      "bytes": 4462,
+      "sha256": "92dc1344b8925b1940c34fed4e2ec09aab429eba0299a1e7922a3e867f991f11",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2019/run.json": {
+      "bytes": 3516,
+      "sha256": "cf99bcbde68b5b5d13ce6cd84d60c8e5d41f563054314d22497284574594916e",
+      "git_expected": true
+    },
+    "data/probability_phase2/features/2019/strict.npz": {
+      "bytes": 66667239,
+      "sha256": "2b69bd53778876177627a521c6ded40ceb8ae158fa7ed001401800cabfa57d81",
+      "git_expected": false
+    },
+    "data/probability_phase2/features/2019/temporal.npz": {
+      "bytes": 81090817,
+      "sha256": "8916e450784b5952f3970f496cc3f9aee4a5b4d15d4c535cc02c75cef5486092",
+      "git_expected": false
+    },
+    "data/probability_phase2/input_manifest.json": {
+      "bytes": 16009,
+      "sha256": "a8a40fdeae09dce6cc2379bc3c5f43efcbdb8f4ba48d0ef68d8dc40eb16154f1",
+      "git_expected": true
+    },
+    "data/probability_phase2/model-run1.log": {
+      "bytes": 9079,
+      "sha256": "9a6222dd3bc32dae0e5e066d75b221fa1f60401058122f3a066878cd43824492",
+      "git_expected": true
+    },
+    "data/probability_phase2/transition_d2_2015_preview.csv": {
+      "bytes": 9483,
+      "sha256": "e0fbb8a70321d12a8ba7df3ec2d3d3fdf5155e5c0c2114070f00ec7906348b57",
+      "git_expected": true
+    },
+    "data/probability_phase2/validation/targeted-final.log": {
+      "bytes": 1111,
+      "sha256": "9b4bee0d1dcf12a3d8abc737d1544c5245995f0f5e0b21794d943a1552710792",
+      "git_expected": true
+    },
+    "data/probability_phase2/validation/targeted-final.xml": {
+      "bytes": 4747,
+      "sha256": "2334f23ec563d57e2659fa6d07b7d12e32e7a65537ea848d54b1b3e5ce35154b",
+      "git_expected": true
+    },
+    "data/probability_phase2/validation/targeted.log": {
+      "bytes": 1111,
+      "sha256": "dc4e8c5f1544647f7245e27deb2dcc59675dce99f23145bb173b6a3b4a6c317e",
+      "git_expected": true
+    },
+    "data/probability_phase2/validation/targeted.xml": {
+      "bytes": 4609,
+      "sha256": "ea05a28451e2c0c0a96878a05b112e3a9d7abd6daa389e11f54f8e45c09edcaf",
+      "git_expected": true
+    },
+    "docs/PROBABILITY_PHASE2_DESIGN_NOTES.md": {
+      "bytes": 9876,
+      "sha256": "52e3b625c345f1b24caa791ea205cfed0ce948dbbab279bb83b7b497078b2455",
+      "git_expected": true
+    },
+    "docs/PROBABILITY_PHASE2_REPRODUCE.md": {
+      "bytes": 5130,
+      "sha256": "16e875ca15bf9d3dc1030eccdb3a72dac2eb05ca2e39b2fcdafae1f2723f3393",
+      "git_expected": true
+    },
+    "docs/PROBABILITY_PHASE2_RESULTS.md": {
+      "bytes": 7727,
+      "sha256": "ce21551847781f1e5af40f28a4c0793eb44266ddca38e6c6cec0fb69a624b998",
+      "git_expected": true
+    },
+    "figures/probability_phase2/moisture_validation_deltas.png": {
+      "bytes": 88805,
+      "sha256": "602053b8ee94c33e1bfe7692e180279ac9f74dcb32c135abcbe567474de4017e",
+      "git_expected": true
+    },
+    "src/probability_baselines.py": {
+      "bytes": 8749,
+      "sha256": "ab9e45f53934802f2cab33fc0ac062331b4fbbaa94ea7043046ca50a90c474a3",
+      "git_expected": true
+    },
+    "src/probability_complete_features.py": {
+      "bytes": 8924,
+      "sha256": "8075bc7ef6d2bdfbc1af4964ce3bb9e42dd8a329fffae0c0ff361d65f6fe142a",
+      "git_expected": true
+    },
+    "src/probability_features.py": {
+      "bytes": 7669,
+      "sha256": "3dca10caa8de10101f4e0e55db04d6f39c67033eff1dc56861b5954f6ff322c2",
+      "git_expected": true
+    },
+    "src/probability_metrics.py": {
+      "bytes": 2916,
+      "sha256": "998a3c3aff58796cb0e74e3b96e2feb9b64516b95b394f3bdb30e748033ff2b5",
+      "git_expected": true
+    },
+    "src/probability_samples.py": {
+      "bytes": 9275,
+      "sha256": "b0612117b8fb83d31d900867be73b1e454d57b2a1df29d70afd379700b09e245",
+      "git_expected": true
+    },
+    "tests/test_probability_baselines.py": {
+      "bytes": 4980,
+      "sha256": "a5cf69e6fbdd7f192c518733ab34d46dbe5ad8aa8599d380c8d6c0d1a811460b",
+      "git_expected": true
+    },
+    "tests/test_probability_complete_features.py": {
+      "bytes": 3566,
+      "sha256": "748acbc9e1f30a497d217836468d37d744d87654b2e5bf2e7aa29a7976071f9e",
+      "git_expected": true
+    },
+    "tests/test_probability_features.py": {
+      "bytes": 5107,
+      "sha256": "e8284f2bfb2935c778ccdddcf41711bd10032e36409f3a7232c565b33114f3ff",
+      "git_expected": true
+    },
+    "tests/test_probability_metrics.py": {
+      "bytes": 918,
+      "sha256": "0a317a181a04b9cc4aa1d6e4f8312bf6acbe6d613db304455d4eb03137d6cbdd",
+      "git_expected": true
+    },
+    "tests/test_probability_phase2_runner.py": {
+      "bytes": 2470,
+      "sha256": "ccf7527c66fb5ed651bd8dd97ae0409df60c189bb3831f2a62f57ba4ac19df9f",
+      "git_expected": true
+    },
+    "tests/test_probability_samples.py": {
+      "bytes": 6090,
+      "sha256": "ce68287fc52491c9334278896c1128f181be9b9a00df51606fc0a1a0fd3c095b",
+      "git_expected": true
+    },
+    "tools/probability_data_audit.py": {
+      "bytes": 10979,
+      "sha256": "dcbddd7eda3ed2805bf2602508f5effcfc70ccf9379a02d4cfd4744c035f6738",
+      "git_expected": true
+    },
+    "tools/probability_feature_pilot.py": {
+      "bytes": 4775,
+      "sha256": "2b1b909098f5ef8e0c91a468af4ff0b9f5017c193cf2af3f6fef2187846fe9f0",
+      "git_expected": true
+    },
+    "tools/probability_geometry.py": {
+      "bytes": 4642,
+      "sha256": "72214e4dc983131441db554d60c7f4bf8263cd84d56803e9ab37d15630653ed3",
+      "git_expected": true
+    },
+    "tools/probability_phase2_archive.py": {
+      "bytes": 1951,
+      "sha256": "9ba501d11e6f71cec5f2a835b3a48a9a356726908882898ca2ad8558e319c0bd",
+      "git_expected": true
+    },
+    "tools/probability_phase2_baselines.py": {
+      "bytes": 17331,
+      "sha256": "4a6e22e0b34e6bbb627b5bf04d017fc3c8b18666a608cb0995c28bb071c07e97",
+      "git_expected": true
+    },
+    "tools/probability_phase2_features.py": {
+      "bytes": 6404,
+      "sha256": "f8ccd9981bef9038282feff2eb330a8c3a4254fba74789f59e81636d853c7feb",
+      "git_expected": true
+    },
+    "tools/probability_phase2_report.py": {
+      "bytes": 14234,
+      "sha256": "66d83ad6bd7cae90f2c7231415b9d4e6be68663e2d699337d8838b5336dec65c",
+      "git_expected": true
+    },
+    "tools/probability_prediction_export.py": {
+      "bytes": 2963,
+      "sha256": "a16d6079cc5208cfac7a88588013cb2b63c7b750f7f1ee85462a88a44520e7fc",
+      "git_expected": true
+    },
+    "tools/probability_sample_manifest.py": {
+      "bytes": 5808,
+      "sha256": "9bf87a3e4b829d5582d7419489d125f2c7a8ff2bea7de1b484a9af8edf9a82d6",
+      "git_expected": true
+    }
+  },
+  "file_count": 683,
+  "total_bytes": 3296851257,
+  "git_expected_bytes": 5791102
+}

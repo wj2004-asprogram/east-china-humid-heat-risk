@@ -1,5 +1,25 @@
 # East China Humid Heat Risk
 
+## Public research release
+
+This branch publishes the frozen ERA5 probability study and public-source factory evidence. Start with the [portable reproduction guide](docs/PROBABILITY_PUBLIC_REPRODUCE.md), [data attribution and licences](DATA_LICENSES.md), and [code reuse status](LICENSE.md).
+
+The portable runner reconstructs missing arrays from identified hourly inputs using the saved models, calibration maps and alert thresholds. It writes a new local output directory and never refits or selects models. The earlier phase-by-phase commands below describe the original local archive; they are not the recovery route for a fresh clone.
+
+[Publication provenance](publication/publication_manifest.json) maps the original research commit to the public file bytes. [Recovery inputs](publication/recovery_manifest.json) bind the portable calculation and its reference predictions. Older seals and manifests are historical receipts: path-redacted files no longer satisfy those original byte chains. The original local archive is retained separately, and its unpublished Git ancestry is not part of this release.
+
+ERA5-derived results: ECMWF ERA5 reanalysis, obtained through the Copernicus Climate Data Store, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), [dataset DOI](https://doi.org/10.24381/cds.adbb2d47). Hourly data have been transformed into daily heat indices, features and probability evaluations. Site coordinates and geometry include © OpenStreetMap contributors, [ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/). These data licences do not grant a code licence.
+
+The [clean-checkout validation](publication/verification.json) replayed all 728 frozen prediction bundles and checked 3,120 final-test annual score rows. Eight new recovery tests passed. This used the existing Windows environment; a fresh dependency installation on another operating system has not been verified.
+
+## Probability research and five-site evidence (completed phases 1–5)
+
+The isolated research branch now includes the authorized 2000–2024 probability hindcast study and five-site evidence delivery. Open the [local research report](reports/probability_phase5/index.html), [research findings](docs/PROBABILITY_PHASE5_RESULTS.md), [model-use supplement](docs/PROBABILITY_PHASE5_MODEL_USE.md) and [reproduction entry](docs/PROBABILITY_PHASE5_REPRODUCE.md). The five cards preserve a rejected primary grid, three sites sharing one grid, and a buffer-grid site with no strict-H score. No real-time warning, occupational-safety or financial-risk claim is supported.
+
+The historical project overview below records earlier milestones and advisor-gated plans; those earlier ML plans have been superseded within this isolated research branch by the user's explicit research authorization. The original pilot interface remains unchanged.
+
+The [final targeted quality review](docs/PROBABILITY_PHASE5_FINAL_QUALITY_REVIEW.md) confirms the key scientific results and documents a diagnostic-label wording correction without changing frozen probabilities or decisions.
+
 This project is an atmospheric data science workflow for analyzing humid heat risk over East China using ERA5 hourly single-level reanalysis data.
 
 The analysis is a **full-month July 2022 case study** (v0.2), now re-run with the corrected v0.3 methods: NOAA/WPC heat index, risk area fractions over land only, Beijing-time calendar days, and explicit handling of missing data. It demonstrates a reproducible pipeline for downloading ERA5 data, preprocessing 2m temperature and 2m dewpoint temperature, calculating relative humidity and heat index, classifying humid heat risk levels, comparing selected city points, and visualizing spatial risk patterns.
@@ -7,6 +27,8 @@ The analysis is a **full-month July 2022 case study** (v0.2), now re-run with th
 This project is not intended to make long-term climate trend claims at the current stage. Instead, it focuses on building a clean, reproducible, and extensible workflow, now also run on 25 summers. A formal long-term trend analysis has not been performed.
 
 ## Project Status
+
+- **Public factory pilot (local prototype):** 35 traceable locations, including 5 production sites cross-checked against public sources and 30 unverified candidates. Open [the offline dashboard](apps/factory-pilot/dist/index.html); see [verification evidence and limitations](docs/ESG_FACTORY_VERIFICATION.md) and [reproduction instructions](apps/factory-pilot/README.md). This reuses historical climate outputs and does not start the advisor-gated machine learning phase.
 
 - **v0.1:** 7-day workflow test, 2022-07-01 to 2022-07-07.
 - **v0.2:** Full-month July 2022 case study, 2022-07-01 to 2022-07-31.

@@ -1,0 +1,31 @@
+{
+  "created_at_utc": "2026-11-05T23:53:53.048487+00:00",
+  "phase4_base_commit": "4bb4028977ee3ad75d2035e60887491f53096a49",
+  "tests_passed": 12,
+  "test_failures": 0,
+  "ui": {
+    "checked_at_utc": "2026-11-05T23:41:23.541Z",
+    "browser": "151.0.7922.34",
+    "checks": [
+      "five_cards_and_four_loaded_figures",
+      "local_links_and_downloads_resolve",
+      "desktop_tablet_phone_no_page_overflow_with_tables_expanded",
+      "masked_primary_and_buffer_scope_are_visible",
+      "no_page_errors_or_external_requests"
+    ],
+    "errors": [],
+    "external_requests": [],
+    "status": "passed"
+  },
+  "deterministic_numeric_rebuild": true,
+  "protected_tracked_files_changed": [],
+  "source_inputs_verified_at_extraction": true,
+  "model_refit": false,
+  "calibration_refit": false,
+  "test_based_selection": false,
+  "limitations": [
+    "No field data or current operating verification.",
+    "No real forecast availability validation.",
+    "Only two valid primary climate sequences; no company-risk interpretation."
+  ]
+}

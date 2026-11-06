@@ -1,0 +1,13 @@
+.................................                                        [100%]
+============================== warnings summary ===============================
+tests/test_probability_samples.py::test_factorized_cli_uses_coordinates_and_static_mask_without_label_completeness
+  <frozen importlib._bootstrap>:488: RuntimeWarning: numpy.ndarray size changed, may indicate binary incompatibility. Expected 16 from C header, got 96 from PyObject
+
+tests/test_probability_samples.py::test_factorized_cli_uses_coordinates_and_static_mask_without_label_completeness
+tests/test_probability_samples.py::test_factorized_cli_uses_coordinates_and_static_mask_without_label_completeness
+  <ERA5_SOURCE_ROOT>\.venv\Lib\site-packages\xarray\backends\netCDF4_.py:96: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    data[key] = value
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+33 passed, 3 warnings in 6.47s

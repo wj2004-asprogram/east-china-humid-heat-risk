@@ -1,0 +1,89 @@
+{
+  "passed": true,
+  "checked_at_utc": "2026-11-05T09:28:17.671545+00:00",
+  "review_type": "Codex author-team self-review; not independent or field verification",
+  "protocol_sha256": "76986d6482885af5fb14df904595c3cd900f303496240746bc84231da21d2acc",
+  "pytest": {
+    "passed": 74,
+    "warnings": 4,
+    "warnings_detail": [
+      "One numpy.ndarray binary-compatibility RuntimeWarning in NetCDF dependency path",
+      "Three NumPy shape-setting deprecation warnings"
+    ],
+    "junit_xml": "<LOCAL_EVIDENCE_ROOT>\\esg-five-site-study-20261105\\pytest.xml"
+  },
+  "browser": {
+    "passed": true,
+    "checked_at_utc": "2026-11-05T09:25:03.256Z",
+    "checks": [
+      "entry_five_cases_deduplicated_episodes_and_spatial_results",
+      "all_local_links_downloads_and_figures_exist",
+      "grid_year_duration_filters_and_full_precision_export",
+      "most_threshold_days_year_distinct_from_all_time_longest",
+      "empty_episode_filter_disables_export",
+      "tablet_landscape_portrait_and_phone_without_page_overflow",
+      "expandable_twenty_scenario_table",
+      "return_to_existing_workbench",
+      "no_javascript_errors_or_external_requests"
+    ],
+    "browser_version": "151.0.7922.34",
+    "errors": [],
+    "external_requests": []
+  },
+  "manifest_checks": [
+    {
+      "manifest": "data\\research_phase1\\temporal\\manifest.json",
+      "checked_outputs": 6
+    },
+    {
+      "manifest": "data\\research_phase1\\spatial\\spatial_manifest.json",
+      "checked_outputs": 5
+    },
+    {
+      "manifest": "apps\\factory-pilot\\dist\\study\\report-manifest.json",
+      "checked_outputs": 33
+    },
+    {
+      "manifest": "apps\\factory-pilot\\dist\\package_manifest.json",
+      "checked_outputs": 5
+    },
+    {
+      "manifest": "apps\\factory-pilot\\dist\\downloads\\research_manifest.json",
+      "checked_outputs": 5
+    }
+  ],
+  "climate_inputs_unchanged": true,
+  "climate_input_sha256": {
+    "heat_index": "15809010f8228b41f14883612f4487010698e0c8e58c26e1783bee0548f11e06",
+    "risk": "9efea1d5b2d2750aa200813c7b5ffafb101992367503316664b26800dcf93d5b"
+  },
+  "zip_entries_match_report_files": 28,
+  "case_counts": {
+    "verified_site_count": 5,
+    "distinct_primary_grids": 3,
+    "distinct_valid_primary_grids": 2,
+    "unique_primary_grid_years": 50,
+    "complete_primary_grid_years": 50,
+    "deduplicated_episode_count": 407,
+    "reference_annual_values_match": true,
+    "episode_duration_sums_and_maxima_match_annual": true,
+    "research_source_manifest_hash_matches": true,
+    "protocol_rules_match_implementation": true
+  },
+  "spatial_counts": {
+    "sites": 5,
+    "intersections": 6,
+    "scenarios": 20,
+    "changed_primary_grid_scenarios": 0
+  },
+  "figures_visually_reviewed": [
+    "annual-comparison",
+    "selected-summers",
+    "polygon-grid-audit"
+  ],
+  "report_screenshots_visually_reviewed": [
+    "report-top.png",
+    "report-spatial.png"
+  ],
+  "source_hourly_pipeline_rerun": false
+}

@@ -9,7 +9,7 @@ files, changes a scientific calculation, or regenerates production outputs.
 From the independent clone:
 
 ```powershell
-.\.venv\Scripts\python.exe -B -m tools.validate_era5 --config configs/sample_2022_07_01_07.yaml configs/sample_2022_07_01_07_bjt.yaml --raw-dir D:\Claudecode_workspace\projects\ehhr-1a-verify\data\raw --output D:\AS\ehhr-codex-output\new-sample-report.json
+.\.venv\Scripts\python.exe -B -m tools.validate_era5 --config configs/sample_2022_07_01_07.yaml configs/sample_2022_07_01_07_bjt.yaml --raw-dir <LOCAL_WORKSPACE_ROOT>\projects\ehhr-1a-verify\data\raw --output <LOCAL_EVIDENCE_ROOT>\new-sample-report.json
 ```
 
 The JSON report and a Markdown companion are created with exclusive writes.

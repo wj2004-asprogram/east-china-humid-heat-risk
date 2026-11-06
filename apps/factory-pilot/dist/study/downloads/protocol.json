@@ -1,0 +1,42 @@
+{
+  "protocol_id": "EHHR-FIVE-SITE-01",
+  "version": "1.0",
+  "rules_fixed_at_utc": "2026-11-05T09:12:21Z",
+  "registration_status": "Internal analysis plan fixed before the new case analyses; not a preregistration. Prior summary results were already available.",
+  "evidence_snapshot_date": "2026-10-29",
+  "source_commit": "32e88659f1140f5ab2a6069969515ed633cf41ba",
+  "primary_site_ids": ["factory_001", "factory_002", "factory_003", "factory_004", "factory_005"],
+  "inclusion": "These five public-source desk-verified production sites only; no candidate site enters the primary case analysis.",
+  "climate_unit": "Unique accepted representative-point grid. Shared grids are not repeated climate observations; distinct grids are not assumed statistically independent.",
+  "period": {"first_year": 2000, "last_year": 2024, "months": [6, 7, 8], "expected_days": 92, "timezone": "UTC+8"},
+  "variable": "daily_max_heat_index_c",
+  "threshold_c": 40.6,
+  "threshold_interpretation": "Inherited project threshold, not an occupational limit or an asserted exact conversion of an official Fahrenheit category boundary.",
+  "complete_summer": "Exactly the expected JJA dates, no duplicate date, and all daily values finite. Annual summaries and episodes use complete summers only.",
+  "episode": {
+    "definition": "A maximal run of consecutive calendar days with daily maximum HI >= 40.6 Celsius, contained within one complete JJA season.",
+    "minimum_duration_days": 1,
+    "cross_season_join": false,
+    "cross_missing_date_or_value_join": false,
+    "boundary_censoring": "Flag runs touching June 1 or August 31; the full process may extend outside the observed JJA season.",
+    "peak_tie_break": "Earliest date",
+    "interpretation": "Threshold episode, not a formally defined heatwave or an independent meteorological event."
+  },
+  "descriptive_statistics": {"quantiles": [0, 0.25, 0.5, 0.75, 1], "quantile_method": "linear", "trend_or_significance_test": false},
+  "year_selection": {
+    "typical": ["Minimum absolute distance between annual threshold-day count and its complete-summer median", "Earliest year"],
+    "extreme": ["Maximum annual threshold-day count", "Maximum annual longest-run length", "Earliest year"],
+    "ties": "Retain all first-criterion candidates and the final tie-break decision. Do not choose years after inspecting the desired narrative."
+  },
+  "spatial": {
+    "geometry": "Archived OSM factory polygons; not cadastral or field-survey validation",
+    "partition": "Nearest-centre regions of the original latitude and longitude axes; this is the project's point-matching partition, not a factory-scale physical climate footprint",
+    "area": "Intersect true polygons with coordinate partitions; report projected equal-area areas and fractions, projection and software versions, closure and an area-method cross-check",
+    "point_scenarios": ["accepted primary representative point", "polygon area centroid", "point on surface", "largest positive-area intersection grid"],
+    "outside_centroid": "Retain and flag; do not adopt as a valid in-factory primary point",
+    "mask": "Retain masked intersections and their area; never renormalize only the unmasked portion into a whole-factory estimate",
+    "primary_result": "Unchanged; alternative land grids cannot replace a masked primary grid",
+    "delta": "Compute numeric differences only when both the accepted primary and the comparison grid have valid metrics"
+  },
+  "scope_exclusions": ["new site acquisition", "field verification", "worker exposure or occupational compliance", "enterprise ESG scoring", "trend significance or attribution", "machine learning"]
+}

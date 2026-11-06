@@ -1,0 +1,20 @@
+{
+  "gates": {
+    "scientific_lock.json": "9e4e1539903757bc216bf951dddce799b713c6f2bb19bca4a27685551874f938",
+    "calibration_lock.json": "0383660a3c02ba5d0233f3bc54747d502d31a397105b8d7e36038dcb5d1588ad",
+    "test_open_lock.json": "4d834059bd4cfc68dcb4c407e896e8f26a715a20fcfc3ca69cc61ecb1c497415"
+  },
+  "inputs_sha256": {
+    "data\\probability_phase4\\features\\2024\\temporal.npz": "e04c2a17e9ee4b646d8fb55a539a60419259d19d666fba7aa3004c0b02407c34",
+    "data\\probability_phase4\\features\\2024\\feature_registry.json": "fe18d7afe6948d7c69f6092b917c946edbf4ea82751fbb1bb68ddef497deb99d",
+    "data\\probability_phase1\\samples\\grid_registry.csv": "24342db500391f6301bcbed60953c2784f8b203eda020998457fbfa95f8026f6",
+    "data\\probability_phase3\\lightgbm\\run1\\models\\temporal\\lag1_lightgbm_F1P.json": "5edf112435fef39e8ce1b4421182e589d116d2fafaa3617abcdbd539591cbaf1",
+    "data\\probability_phase3\\lightgbm\\run1\\models\\temporal\\lag1_lightgbm_F1P.txt": "c1616bfa45d0771c24a9e3e346a3426106e73c0c7a2eb0501d3707104d9cb2d1"
+  },
+  "output_sha256": "01b71bf543e46fa89bf605c29e0349e1afacbef2ae440004b1d87016cbe37cba",
+  "sample_index_sha256": "dda4a6a361eb6ce767ae47fd2381f90c36d912eb10f63ce338ed8cf63af65595",
+  "source_sha256": {
+    "<PROJECT_ROOT>\\tools\\probability_phase4_predict.py": "0df4692998f59c6b4b84ce6a9110d4131be8c0ad29a799824dd74ce9f0cd650f",
+    "src/probability_phase4_data.py": "c0877eb00742e9c6aacd839fdad55e32fdd29325ed870f600f33aa314950c8d9"
+  }
+}

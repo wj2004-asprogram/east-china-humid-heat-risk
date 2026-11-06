@@ -28,7 +28,7 @@ Run from a clone containing the fixed Phase 2 production code and prior Codex
 tools, with a new output path outside the raw directory:
 
 ```powershell
-.\.venv\Scripts\python.exe -B -m tools.validate_multiyear --config configs/jja_2000_2024_bjt.yaml --raw-dir D:\approved\raw --output D:\AS\ehhr-codex-output\new-phase2-report.json
+.\.venv\Scripts\python.exe -B -m tools.validate_multiyear --config configs/jja_2000_2024_bjt.yaml --raw-dir D:\approved\raw --output <LOCAL_EVIDENCE_ROOT>\new-phase2-report.json
 ```
 
 `D:\approved\raw` is a placeholder; use the actual agreed read-only path. The
@@ -58,7 +58,7 @@ Missing; these are different statements. Nothing is clipped or filled.
 ## Resume review and dependencies
 
 ```powershell
-.\.venv\Scripts\python.exe -B -m tools.validate_multiyear --config configs/jja_2000_2024_bjt.yaml --raw-dir D:\approved\raw --previous-report D:\AS\ehhr-codex-output\new-phase2-report.json --output D:\AS\ehhr-codex-output\new-phase2-recheck.json
+.\.venv\Scripts\python.exe -B -m tools.validate_multiyear --config configs/jja_2000_2024_bjt.yaml --raw-dir D:\approved\raw --previous-report <LOCAL_EVIDENCE_ROOT>\new-phase2-report.json --output <LOCAL_EVIDENCE_ROOT>\new-phase2-recheck.json
 ```
 
 Previous evidence must have the same config bytes, physical paths and options.
@@ -77,7 +77,7 @@ season-edge file blocks June only; July and August may already be ready.
 ## Reproduce independent acceptance
 
 ```powershell
-.\.venv\Scripts\python.exe -B -m tests.run_phase2_demo --output-dir D:\AS\ehhr-codex-output\new-m1b-demo
+.\.venv\Scripts\python.exe -B -m tests.run_phase2_demo --output-dir <LOCAL_EVIDENCE_ROOT>\new-m1b-demo
 ```
 
 The directory must be new. Only synthetic 3×3 files are created. Four preserved

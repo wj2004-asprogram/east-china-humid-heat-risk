@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="制造业场所历史湿热环境研究工作台：网格去重、完整性、逐日结果、空间匹配和证据溯源。">
+  <title>制造业场所历史湿热环境 · 研究工作台</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="pilot-data.js" defer></script><script src="research-data.js" defer></script><script src="app.js" defer></script>
+</head>
+<body><aside style="padding:12px 20px;background:#eef5f1;color:#193c30;font:14px/1.6 system-ui">公开研究版本 · <a href="../../../docs/PROBABILITY_PUBLIC_REPRODUCE.md">复现入口</a> · <a href="../../../DATA_LICENSES.md">数据署名与许可</a> · <a href="../../../publication/publication_manifest.json">发布来源清单</a>。ERA5派生数据：ECMWF / Copernicus CDS，CC BY 4.0；场所坐标与几何：© OpenStreetMap contributors，ODbL 1.0。</aside>
+  <header><div><span class="document-id">EHHR / RESEARCH NOTE 01</span><h1>制造业场所历史湿热环境</h1></div><div class="version">研究工作台 v0.3<br>界面修订 2026-11-05 · <span id="snapshot"></span></div></header>
+  <main>
+    <p class="study-question"><strong>研究对象：</strong>公开资料定位的制造业场所，在 2000—2024 年夏季所对应的 ERA5 网格环境条件。分析变量为北京时间日最高热指数；以网格作为气候数据单元，场所作为关联对象。</p>
+    <p class="note"><a href="study/index.html"><strong>新增：首批五场所研究报告（阶段1—3）</strong></a> · 固定方案、407段连续过程、实际多边形空间审查与完整资料下载。</p>
+    <div id="study-summary" class="study-summary"></div>
+    <p class="boundary-note">不同网格不自动构成统计独立样本。当前结果不用于推断员工实际暴露、工厂历史存续或企业 ESG 评级。</p>
+
+    <form class="filters" onsubmit="return false" aria-label="样本筛选">
+      <label>检索场所 / 地址<input id="search" type="search" placeholder="名称、企业实体、地址"></label>
+      <label>身份核验<select id="verification"><option value="verified_public_sources">公开资料已核验</option><option value="candidate_unverified">待核验候选</option><option value="all">全部地点</option></select></label>
+      <label>城市<select id="city"><option value="all">全部城市</option></select></label>
+      <label>场所排序<select id="sort"><option value="id">编号</option><option value="heat">平均阈值天数（降序）</option></select></label>
+      <button id="reset" type="button">重置</button><button id="export" type="button">导出筛选场所 CSV</button>
+    </form>
+    <div class="selection-line"><span id="list-count" aria-live="polite"></span><label>当前研究场所 <select id="active-site"></select></label></div>
+    <p id="candidate-notice" class="notice" hidden>当前筛选包含待核验候选。地图名称与工业标签尚未与实际生产地址交叉核对；气候数据的可用性不证明企业身份或生产活动。</p>
+    <div id="empty" class="empty" hidden>没有符合筛选条件的地点。可清除检索词或点击“重置”。</div>
+
+    <nav class="tabs" aria-label="研究视图" role="tablist">
+      <button id="tab-sample" role="tab" aria-selected="true" aria-controls="panel-sample" data-tab="sample">01 样本与空间匹配</button>
+      <button id="tab-time" role="tab" aria-selected="false" aria-controls="panel-time" data-tab="time">02 年度与逐日数据</button>
+      <button id="tab-sensitivity" role="tab" aria-selected="false" aria-controls="panel-sensitivity" data-tab="sensitivity">03 网格敏感性</button>
+      <button id="tab-evidence" role="tab" aria-selected="false" aria-controls="panel-evidence" data-tab="evidence">04 方法与证据</button>
+    </nav>
+
+    <section id="panel-sample" role="tabpanel" aria-labelledby="tab-sample">
+      <h2>表 1 · 当前筛选对应的不同气候网格</h2>
+      <p class="caption">每格只列一行。关联场所数量不作为气候观测重复次数；非陆地匹配单独保留。</p>
+      <div class="table-wrap"><table><thead><tr><th>网格（°N, °E）</th><th>关联场所 / 已核验</th><th>气候状态</th><th>完整夏季</th><th>平均阈值天数<br><small>天 / 完整夏季</small></th><th>最长连续<br><small>天</small></th></tr></thead><tbody id="grid-rows"></tbody></table></div>
+      <h2>表 2 · 场所—网格关联与位置质量</h2>
+      <div class="table-wrap site-table"><table><thead><tr><th>场所 / 身份核验</th><th>代表点（WGS84）<br><small>纬度, 经度</small></th><th>匹配网格</th><th>距离<br><small>km</small></th><th>气候状态</th><th>潜在跨格<br><small>包围盒口径</small></th></tr></thead><tbody id="site-rows"></tbody></table></div>
+      <div id="detail" class="site-detail" aria-live="polite"></div>
+      <div class="spatial-layout"><figure><figcaption>图 1 · 当前场所边界、代表点与最近网格分区</figcaption><div id="geometry"></div><p class="caption">边界来自 OSM；格线为 0.25°网格中心的最近点分区。局部平面示意，不含影像底图。背景分区仅用于解释点位匹配。</p></figure><div id="coordinate-audit"></div></div>
+    </section>
+
+    <section id="panel-time" role="tabpanel" aria-labelledby="tab-time" hidden>
+      <div id="time-context"></div>
+      <figure><figcaption>图 2 · 当前筛选的不同有效网格：逐年阈值天数</figcaption><div id="annual-comparison"></div><p class="caption">统一纵轴 0—92 天，每条线对应一格；当前场所对应网格加粗。这里只展示年际变化，未做趋势拟合、显著性检验或归因。</p></figure>
+      <h2>表 3 · 当前主匹配网格的年度明细</h2><div class="table-actions"><button id="export-annual">导出该网格年度 CSV</button></div><div id="annual-table" class="table-wrap scroll-table"></div>
+      <div class="daily-heading"><h2>图 3 / 表 4 · 单个夏季的日最高热指数</h2><label>年份 <select id="daily-year"></select></label><button id="export-daily">导出该年逐日 CSV</button></div>
+      <div id="daily-chart"></div><div id="daily-table" class="table-wrap scroll-table"></div><p class="caption">逐日值来自既有日最高 HI 文件，不是小时值、气温或现场实测值。表内数值显示两位小数；阈值判定采用未舍入原值，CSV 保留原精度。阈值采用 ≥40.6°C；各夏季独立计数，曲线不跨越冬季。</p>
+    </section>
+
+    <section id="panel-sensitivity" role="tabpanel" aria-labelledby="tab-sensitivity" hidden>
+      <h2>表 5 · 当前场所的代表点匹配与包围盒情景</h2>
+      <p class="caption">固定主匹配结果，同时列出厂区包围盒可能涉及的其他最近网格。这里的数值差异是位置选择情景差异，不是定位误差、置信区间或整个厂区的暴露范围。</p>
+      <div id="sensitivity-context"></div><div id="sensitivity-table" class="table-wrap"></div><div id="sensitivity-note" class="note"></div>
+      <h2>判读限制</h2><ol class="method-list"><li>包围盒覆盖的分区可能只与包围盒相交，不能据此确认真实厂区多边形覆盖。</li><li>非陆地状态表示所选再分析网格未通过掩膜，不表示工厂位于海中。缺失指标不以 0 代替。</li><li>其他情景即使有有效数值，也不会替换原主匹配结果；主结果始终由已记录的代表点确定。</li></ol>
+    </section>
+
+    <section id="panel-evidence" role="tabpanel" aria-labelledby="tab-evidence" hidden>
+      <div class="methods-layout"><div><h2>数据与方法</h2><div id="method-table"></div><h3>统计定义</h3><dl class="formulas"><dt>年度阈值天数 D<sub>y,g</sub></dt><dd>该年 JJA 内，日最高 HI ≥40.6°C 的日期数；92天全部有效才输出。</dd><dt>年度最长连续天数 L<sub>y,g</sub></dt><dd>该夏季满足阈值的最长连续日数，跨年重新计数。</dd><dt>长期均值 / 最长连续</dt><dd>D 的完整夏季算术平均；L 在完整夏季中的最大值。均值分母随完整夏季数量记录。</dd></dl><h3>抽样和推断边界</h3><p>便利样本集中于上海闵行、杭州及太仓，尚无安徽样本；公开地图和企业披露覆盖不均。未开展现场调查、员工暴露测量或运行状态实时核验。</p><p>当前厂址在历史时期的环境条件，不能证明工厂在2000—2024年一直存在。企业身份核验、气候可用性、现场适用性应分别判断。</p></div><div><h2>当前场所的证据链</h2><div id="evidence-context"></div><div id="sources"></div></div></div>
+      <h2>计算输入与可复现性</h2><div id="provenance"></div>
+      <p class="caption">以下研究网格文件包含主匹配与敏感性情景。统计主样本时，筛选 <code>analysis_role = primary</code>：有效主网格100个网格年，附加情景25个网格年。</p>
+      <div class="downloads"><a href="downloads/site_summary.csv" download>场所主结果</a><a href="downloads/site_annual.csv" download>场所逐年展开</a><a href="downloads/research_grid_summary.csv" download>网格汇总（含情景）</a><a href="downloads/research_grid_annual.csv" download>网格逐年（含情景）</a><a href="downloads/research_grid_daily.csv" download>网格逐日（含情景）</a><a href="downloads/research_manifest.json" download>研究数据清单</a><a href="downloads/factory_sites.json" download>核验与来源目录</a><a href="downloads/screening_manifest.json" download>原筛查清单</a></div>
+    </section>
+  </main>
+  <footer><span>资料核验与作者自审；无现场审查或独立审阅背书。</span><span>地图数据 © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors · ODbL</a>；其他公开材料保留原权利。</span></footer>
+</body></html>

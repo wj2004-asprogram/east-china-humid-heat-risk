@@ -1,0 +1,19 @@
+{
+  "recorded_utc": "2026-11-05T20:31:42.7092018Z",
+  "status": "resumed",
+  "invocation_start_utc": "2026-11-05T20:30:07Z",
+  "scope": "strict",
+  "stage": "search",
+  "resume": true,
+  "run_config_sha256": "69a5f0879df7b501249a60c8712dc7d6508c580b5c9f3b3ee87c5f5409986363",
+  "batch_plan": "data/probability_phase3/execution_batches.json",
+  "original_deadline_unchanged": true,
+  "prior_interruption_receipt_preserved": "data/probability_phase3/lightgbm/run1/interrupted_invocations/20261105T201535Z.json",
+  "log": "data/probability_phase3/strict-search-resume-20261105T2030.log",
+  "first_resumed_candidate": "leaves7_child100_lambda10",
+  "completed_candidate_reused": "leaves7_child100_lambda1",
+  "free_C_bytes": 65427431424,
+  "process_visibility_note": "Sandbox Get-Process returned empty even while active training; cannot alone establish absence. Root elevated read-only CIM confirmed exactly the current parent-child Python invocation, PIDs 73588 (parent 55628) and 69432 (parent 73588), both matching this resume command; no old training process.",
+  "authorization": "Parent explicitly instructed resume unchanged predeclared strict matrix; no new stop instruction; independent maximum two-hour second batch after original deadline, resource checks required.",
+  "calibration_and_final_years_opened": []
+}

@@ -1,0 +1,17 @@
+{
+  "started_utc": "20261105T230131815358Z",
+  "module": "tools.probability_phase4_predict",
+  "arguments": [
+    "--year",
+    "2022",
+    "--batch"
+  ],
+  "python_executable": "<ERA5_SOURCE_ROOT>\\.venv\\Scripts\\python.exe",
+  "working_directory": "<PROJECT_ROOT>",
+  "source_sha256": "0df4692998f59c6b4b84ce6a9110d4131be8c0ad29a799824dd74ce9f0cd650f",
+  "status": "completed",
+  "completed_utc": "2026-11-05T23:03:29.179683+00:00",
+  "runtime_seconds": 117.36174050002592,
+  "peak_working_set_bytes": 661827584,
+  "output_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

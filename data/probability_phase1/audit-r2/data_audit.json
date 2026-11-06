@@ -1,0 +1,5503 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-11-05T15:48:59.504625+00:00",
+  "status": "PASS",
+  "scope": "hash and structure audit all years; numerical check June 2000 only; no final-test statistics or model evaluation",
+  "source_root": "<ERA5_SOURCE_ROOT>",
+  "config_sha256": "b478234a2704360e73849f2df23802314427531eac859362c316e0987d597f02",
+  "accepted_config_sha256": "025db53f7501fd072160212146b93d045511f98e0eefe8227be6c842430bee6b",
+  "config_byte_difference": "Git checkout line endings only; normalized full text checked",
+  "previous_input_report": {
+    "path": "<LOCAL_EVIDENCE_ROOT>\\phase2-production-20261029\\input-bjt.json",
+    "sha256": "34e336a475df7b19323c1d1907a5bc0de51ea97aa74c754f6d6c422dab3cc733",
+    "summary": {
+      "status": "PASS",
+      "counts": {
+        "PASS": 2259,
+        "FAIL": 0,
+        "ERROR": 0,
+        "NOT_RUN": 0
+      },
+      "quality_ready_files": 101,
+      "ready_local_months": 75,
+      "changed_input_files": 0
+    }
+  },
+  "previous_output_manifest_sha256": "de3be58cf23710ec3ffd4982193d83eda5edb0bdc9d1d9dce7974513bc473eab",
+  "software": {
+    "python": "3.13.1",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "xarray": "2026.9.0",
+    "netCDF4": "1.7.4",
+    "h5netcdf": "1.8.1",
+    "scipy": "1.18.1",
+    "pytest": "9.1.1",
+    "scikit-learn": "NOT_INSTALLED",
+    "lightgbm": "NOT_INSTALLED"
+  },
+  "raw_file_count": 101,
+  "raw_bytes": 366301416,
+  "land_cells": 1580,
+  "candidate_spatial_roles_land_cells": {
+    "holdout": 165,
+    "buffer": 113,
+    "train": 1302
+  },
+  "raw_files": [
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2000_06.nc",
+      "bytes": 4756011,
+      "sha256": "5226f36b493651f4d1919dbdfcd0884487af29b83bf73b308d9446e464c01a29",
+      "prior_sha256": "5226f36b493651f4d1919dbdfcd0884487af29b83bf73b308d9446e464c01a29",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 720,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2000-06-01 00:00:00",
+      "time_end_utc": "2000-06-30 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2000_07.nc",
+      "bytes": 4900084,
+      "sha256": "c85aa066531b883f8066166f24621bb7fc7f8e3d4c5018fdcacc7688133ae822",
+      "prior_sha256": "c85aa066531b883f8066166f24621bb7fc7f8e3d4c5018fdcacc7688133ae822",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2000-07-01 00:00:00",
+      "time_end_utc": "2000-07-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2000_08.nc",
+      "bytes": 4867321,
+      "sha256": "03ded1315ea59649e14390b965c1d1c23ee65104fc50bd07c1a5288707623059",
+      "prior_sha256": "03ded1315ea59649e14390b965c1d1c23ee65104fc50bd07c1a5288707623059",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2000-08-01 00:00:00",
+      "time_end_utc": "2000-08-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2001_06.nc",
+      "bytes": 4739371,
+      "sha256": "cfc9526b7974373778464bea763faaa467988c14223de42d0acb6b93dc1ac043",
+      "prior_sha256": "cfc9526b7974373778464bea763faaa467988c14223de42d0acb6b93dc1ac043",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 720,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2001-06-01 00:00:00",
+      "time_end_utc": "2001-06-30 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2001_07.nc",
+      "bytes": 4904033,
+      "sha256": "b5aa98f95f48bb6fc03c57f534c6747d73aac44d6af16205f89725c97b0aa534",
+      "prior_sha256": "b5aa98f95f48bb6fc03c57f534c6747d73aac44d6af16205f89725c97b0aa534",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2001-07-01 00:00:00",
+      "time_end_utc": "2001-07-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2001_08.nc",
+      "bytes": 4887114,
+      "sha256": "f3b2a111b375feac80651352cbaa707b9040af600ffd576ef023eda5cd68b8a4",
+      "prior_sha256": "f3b2a111b375feac80651352cbaa707b9040af600ffd576ef023eda5cd68b8a4",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2001-08-01 00:00:00",
+      "time_end_utc": "2001-08-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2002_06.nc",
+      "bytes": 4757499,
+      "sha256": "0324243e7915dbbc3e4d35fefe6dc4995d11ece8cb3445b37e51f16af54c2142",
+      "prior_sha256": "0324243e7915dbbc3e4d35fefe6dc4995d11ece8cb3445b37e51f16af54c2142",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 720,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2002-06-01 00:00:00",
+      "time_end_utc": "2002-06-30 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2002_07.nc",
+      "bytes": 4885266,
+      "sha256": "c9d036d07e66dff010a8d03aede3a0fe262ffcd14c00be92fb8244be23317f89",
+      "prior_sha256": "c9d036d07e66dff010a8d03aede3a0fe262ffcd14c00be92fb8244be23317f89",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2002-07-01 00:00:00",
+      "time_end_utc": "2002-07-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2002_08.nc",
+      "bytes": 4875558,
+      "sha256": "632f51a33bfbe60d50694838a91ebfd19e917c11b157aaf8313f0e105aa7e290",
+      "prior_sha256": "632f51a33bfbe60d50694838a91ebfd19e917c11b157aaf8313f0e105aa7e290",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2002-08-01 00:00:00",
+      "time_end_utc": "2002-08-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2003_06.nc",
+      "bytes": 4779459,
+      "sha256": "c5a7cef6c603069eba5bfb0850cf7e51cf0a299d9de341ccd6fef1edfe2a22ca",
+      "prior_sha256": "c5a7cef6c603069eba5bfb0850cf7e51cf0a299d9de341ccd6fef1edfe2a22ca",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 720,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2003-06-01 00:00:00",
+      "time_end_utc": "2003-06-30 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2003_07.nc",
+      "bytes": 4913793,
+      "sha256": "f32d9063e9fe561763ad0885872c7cda6661b6f7be93ecc2662ca0da5e571be5",
+      "prior_sha256": "f32d9063e9fe561763ad0885872c7cda6661b6f7be93ecc2662ca0da5e571be5",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2003-07-01 00:00:00",
+      "time_end_utc": "2003-07-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2003_08.nc",
+      "bytes": 4890085,
+      "sha256": "256da7211c2c605b14ca7f332ba8f0c9afdea67d84003dee592b9acda0de7b74",
+      "prior_sha256": "256da7211c2c605b14ca7f332ba8f0c9afdea67d84003dee592b9acda0de7b74",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2003-08-01 00:00:00",
+      "time_end_utc": "2003-08-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2004_06.nc",
+      "bytes": 4777940,
+      "sha256": "0135c45dd7d5833e40f381cdba3c25b0ece4c7602037c4229a243201d10f6761",
+      "prior_sha256": "0135c45dd7d5833e40f381cdba3c25b0ece4c7602037c4229a243201d10f6761",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 720,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2004-06-01 00:00:00",
+      "time_end_utc": "2004-06-30 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2004_07.nc",
+      "bytes": 4925739,
+      "sha256": "2f5c93d825f1102e2921d615e7c36c4df71426c6f218a06bca547f87a91fb52d",
+      "prior_sha256": "2f5c93d825f1102e2921d615e7c36c4df71426c6f218a06bca547f87a91fb52d",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2004-07-01 00:00:00",
+      "time_end_utc": "2004-07-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2004_08.nc",
+      "bytes": 4910418,
+      "sha256": "ea0e6a82b9d0cf5000acc398648b1fe31ddba26e16441b14de52d0da25ab04d7",
+      "prior_sha256": "ea0e6a82b9d0cf5000acc398648b1fe31ddba26e16441b14de52d0da25ab04d7",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2004-08-01 00:00:00",
+      "time_end_utc": "2004-08-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2005_06.nc",
+      "bytes": 4791733,
+      "sha256": "5ff885c99f0274b88b582d5d020cdb49946f39fd541e64d95f79a9069374026f",
+      "prior_sha256": "5ff885c99f0274b88b582d5d020cdb49946f39fd541e64d95f79a9069374026f",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 720,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2005-06-01 00:00:00",
+      "time_end_utc": "2005-06-30 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2005_07.nc",
+      "bytes": 4905373,
+      "sha256": "8f63ca02089e1226015f7bdd15f80a55e127aa85ccb5736a77d71af5c3eb13e2",
+      "prior_sha256": "8f63ca02089e1226015f7bdd15f80a55e127aa85ccb5736a77d71af5c3eb13e2",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2005-07-01 00:00:00",
+      "time_end_utc": "2005-07-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2005_08.nc",
+      "bytes": 4901481,
+      "sha256": "710b2102e81cd088d1015043f53221673999b6359ecf6fc7ed6dc1dc16b42fc0",
+      "prior_sha256": "710b2102e81cd088d1015043f53221673999b6359ecf6fc7ed6dc1dc16b42fc0",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2005-08-01 00:00:00",
+      "time_end_utc": "2005-08-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2006_06.nc",
+      "bytes": 4760862,
+      "sha256": "8f89a369d49a77b04d201140f2d16ec13357cbf52edb85509321a52303fb1631",
+      "prior_sha256": "8f89a369d49a77b04d201140f2d16ec13357cbf52edb85509321a52303fb1631",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 720,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2006-06-01 00:00:00",
+      "time_end_utc": "2006-06-30 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2006_07.nc",
+      "bytes": 4869783,
+      "sha256": "e278658dd5ecb10a7fadda5d2ffaa834b9b46b9ce500f907c6b99a429b98d30e",
+      "prior_sha256": "e278658dd5ecb10a7fadda5d2ffaa834b9b46b9ce500f907c6b99a429b98d30e",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2006-07-01 00:00:00",
+      "time_end_utc": "2006-07-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2006_08.nc",
+      "bytes": 4912320,
+      "sha256": "70e73d6ec8b8ba537f0182fa630253bf8d45d14f7395965d43c24b7927950ca9",
+      "prior_sha256": "70e73d6ec8b8ba537f0182fa630253bf8d45d14f7395965d43c24b7927950ca9",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2006-08-01 00:00:00",
+      "time_end_utc": "2006-08-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2007_06.nc",
+      "bytes": 4735573,
+      "sha256": "c9545c8be115aade457b07df86991abed16f98efa249620e82df601b7778f807",
+      "prior_sha256": "c9545c8be115aade457b07df86991abed16f98efa249620e82df601b7778f807",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 720,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2007-06-01 00:00:00",
+      "time_end_utc": "2007-06-30 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2007_07.nc",
+      "bytes": 4925395,
+      "sha256": "1ddf1d2ec70e13f4ac91e811e655d21dc58e21f5d887f8804fcc040b3b426879",
+      "prior_sha256": "1ddf1d2ec70e13f4ac91e811e655d21dc58e21f5d887f8804fcc040b3b426879",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2007-07-01 00:00:00",
+      "time_end_utc": "2007-07-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2007_08.nc",
+      "bytes": 4892171,
+      "sha256": "cc203341312636caa0c2af7343e0e88f410b0833ddc614c8f28581bb71d56602",
+      "prior_sha256": "cc203341312636caa0c2af7343e0e88f410b0833ddc614c8f28581bb71d56602",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2007-08-01 00:00:00",
+      "time_end_utc": "2007-08-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2008_06.nc",
+      "bytes": 4751463,
+      "sha256": "e4c706ab004a48249901b4dfab586c696b271adcac02762108ee941537c098d1",
+      "prior_sha256": "e4c706ab004a48249901b4dfab586c696b271adcac02762108ee941537c098d1",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 720,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2008-06-01 00:00:00",
+      "time_end_utc": "2008-06-30 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2008_07.nc",
+      "bytes": 4904769,
+      "sha256": "e80fc47f1ebc786a55cf539e76507fd0dbed0ab88f3f63f1e4536366093dbd30",
+      "prior_sha256": "e80fc47f1ebc786a55cf539e76507fd0dbed0ab88f3f63f1e4536366093dbd30",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2008-07-01 00:00:00",
+      "time_end_utc": "2008-07-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2008_08.nc",
+      "bytes": 4905200,
+      "sha256": "348fe29610fdb263cbcad5a613b5809ff9cce1b124bb4253b41aaf056fbf5391",
+      "prior_sha256": "348fe29610fdb263cbcad5a613b5809ff9cce1b124bb4253b41aaf056fbf5391",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2008-08-01 00:00:00",
+      "time_end_utc": "2008-08-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2009_06.nc",
+      "bytes": 4804843,
+      "sha256": "4d6abf6a3287366a5fb2704d2f6544e65874ba1e4a8b1a7baf412722322de31e",
+      "prior_sha256": "4d6abf6a3287366a5fb2704d2f6544e65874ba1e4a8b1a7baf412722322de31e",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 720,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2009-06-01 00:00:00",
+      "time_end_utc": "2009-06-30 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2009_07.nc",
+      "bytes": 4901309,
+      "sha256": "08ee903fc23a55e81d8a2472a2eceb792b9c38d0e72d17b41abe373fea1689db",
+      "prior_sha256": "08ee903fc23a55e81d8a2472a2eceb792b9c38d0e72d17b41abe373fea1689db",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2009-07-01 00:00:00",
+      "time_end_utc": "2009-07-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2009_08.nc",
+      "bytes": 4885061,
+      "sha256": "d084d961c92b1e54b781a26d3f91048c91066dd32a64b459cf734d65c3ce63af",
+      "prior_sha256": "d084d961c92b1e54b781a26d3f91048c91066dd32a64b459cf734d65c3ce63af",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2009-08-01 00:00:00",
+      "time_end_utc": "2009-08-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2010_06.nc",
+      "bytes": 4746793,
+      "sha256": "aa6e6f2733a3fa3b8ccd7b2f862f5042fd2371919cdacb03d9be3c97e4597374",
+      "prior_sha256": "aa6e6f2733a3fa3b8ccd7b2f862f5042fd2371919cdacb03d9be3c97e4597374",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 720,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2010-06-01 00:00:00",
+      "time_end_utc": "2010-06-30 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2010_07.nc",
+      "bytes": 4886341,
+      "sha256": "f563d6b16573723acf2a7e21c89ec40ae5ac9d30726eabba32d0ad9544a647e0",
+      "prior_sha256": "f563d6b16573723acf2a7e21c89ec40ae5ac9d30726eabba32d0ad9544a647e0",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2010-07-01 00:00:00",
+      "time_end_utc": "2010-07-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2010_08.nc",
+      "bytes": 4923541,
+      "sha256": "c0f18f4f5d23245796ad54da80c36a3b889b3b88c17e1e05d9f152e3f9f458a1",
+      "prior_sha256": "c0f18f4f5d23245796ad54da80c36a3b889b3b88c17e1e05d9f152e3f9f458a1",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2010-08-01 00:00:00",
+      "time_end_utc": "2010-08-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2011_06.nc",
+      "bytes": 4769292,
+      "sha256": "15e39c04246e6b13bf4740e459d77c72c474f1ee4f0e87281529b647405c9921",
+      "prior_sha256": "15e39c04246e6b13bf4740e459d77c72c474f1ee4f0e87281529b647405c9921",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 720,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2011-06-01 00:00:00",
+      "time_end_utc": "2011-06-30 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2011_07.nc",
+      "bytes": 4927067,
+      "sha256": "a00649d9f27df0d031370fd09598ed74ea3743dcee9bc1eb9a395ae72a9785c3",
+      "prior_sha256": "a00649d9f27df0d031370fd09598ed74ea3743dcee9bc1eb9a395ae72a9785c3",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2011-07-01 00:00:00",
+      "time_end_utc": "2011-07-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2011_08.nc",
+      "bytes": 4912424,
+      "sha256": "3643b8ad439223b4eeb8c387021c691caa109e6d7f7d9428e7920e80f1b57723",
+      "prior_sha256": "3643b8ad439223b4eeb8c387021c691caa109e6d7f7d9428e7920e80f1b57723",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2011-08-01 00:00:00",
+      "time_end_utc": "2011-08-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2012_06.nc",
+      "bytes": 4761327,
+      "sha256": "469bfceff55cfba09a067ac66fd870fa1065769cd7cf9cd573b6fa4372d7e9d6",
+      "prior_sha256": "469bfceff55cfba09a067ac66fd870fa1065769cd7cf9cd573b6fa4372d7e9d6",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 720,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2012-06-01 00:00:00",
+      "time_end_utc": "2012-06-30 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2012_07.nc",
+      "bytes": 4890667,
+      "sha256": "a388660429f37d18ebbf51ae5f18450acb3757ac9cb1df48cb7ac318b2eba0cd",
+      "prior_sha256": "a388660429f37d18ebbf51ae5f18450acb3757ac9cb1df48cb7ac318b2eba0cd",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2012-07-01 00:00:00",
+      "time_end_utc": "2012-07-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2012_08.nc",
+      "bytes": 4896754,
+      "sha256": "e914a78af5f6322edf173a61ba77fcdb5454839e9265af3476643ec78ffab40d",
+      "prior_sha256": "e914a78af5f6322edf173a61ba77fcdb5454839e9265af3476643ec78ffab40d",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2012-08-01 00:00:00",
+      "time_end_utc": "2012-08-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2013_06.nc",
+      "bytes": 4740641,
+      "sha256": "8d2bf67a81780766d5479e85b31b57d335abeeb0521ead0e31157a12e11e13d5",
+      "prior_sha256": "8d2bf67a81780766d5479e85b31b57d335abeeb0521ead0e31157a12e11e13d5",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 720,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2013-06-01 00:00:00",
+      "time_end_utc": "2013-06-30 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2013_07.nc",
+      "bytes": 4918982,
+      "sha256": "030b7aebd5bdb2c2b2996011209cc47b2d409d68ad288456e15018d5bdb24e22",
+      "prior_sha256": "030b7aebd5bdb2c2b2996011209cc47b2d409d68ad288456e15018d5bdb24e22",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2013-07-01 00:00:00",
+      "time_end_utc": "2013-07-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2013_08.nc",
+      "bytes": 4935712,
+      "sha256": "46c841a315eaca20916465ca5f53425bd5794387d1f4b4f9a6a20831c0350d28",
+      "prior_sha256": "46c841a315eaca20916465ca5f53425bd5794387d1f4b4f9a6a20831c0350d28",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2013-08-01 00:00:00",
+      "time_end_utc": "2013-08-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2014_06.nc",
+      "bytes": 4750461,
+      "sha256": "cfb18f3d14e7e6d8c0ecf7b71dfe6b520f51f4477fce8d09fe8538d323ca7cfe",
+      "prior_sha256": "cfb18f3d14e7e6d8c0ecf7b71dfe6b520f51f4477fce8d09fe8538d323ca7cfe",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 720,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2014-06-01 00:00:00",
+      "time_end_utc": "2014-06-30 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2014_07.nc",
+      "bytes": 4898943,
+      "sha256": "f448e3602a6cd83d598af36163563c4eb054ecb01ec94255c6f36c3592dc1024",
+      "prior_sha256": "f448e3602a6cd83d598af36163563c4eb054ecb01ec94255c6f36c3592dc1024",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2014-07-01 00:00:00",
+      "time_end_utc": "2014-07-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2014_08.nc",
+      "bytes": 4889748,
+      "sha256": "05d51e201574e4918be729cae01893384b9fbb240302ce6eb351a4fc7b6b1b4a",
+      "prior_sha256": "05d51e201574e4918be729cae01893384b9fbb240302ce6eb351a4fc7b6b1b4a",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2014-08-01 00:00:00",
+      "time_end_utc": "2014-08-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2015_06.nc",
+      "bytes": 4747273,
+      "sha256": "3ea63b985e552d7f0f3326526a1a092974928d39f5c270916bde45be9c476d82",
+      "prior_sha256": "3ea63b985e552d7f0f3326526a1a092974928d39f5c270916bde45be9c476d82",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 720,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2015-06-01 00:00:00",
+      "time_end_utc": "2015-06-30 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2015_07.nc",
+      "bytes": 4871560,
+      "sha256": "88f276b541a1fcbbf36dfd6c5738e90b621e32e0d117fdb90ef0cb3ec22e6d9b",
+      "prior_sha256": "88f276b541a1fcbbf36dfd6c5738e90b621e32e0d117fdb90ef0cb3ec22e6d9b",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2015-07-01 00:00:00",
+      "time_end_utc": "2015-07-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2015_08.nc",
+      "bytes": 4886637,
+      "sha256": "c223b3261bf73c7a5bad742cb21173521876119b4f783d484e1e0ba5b4ed9fb2",
+      "prior_sha256": "c223b3261bf73c7a5bad742cb21173521876119b4f783d484e1e0ba5b4ed9fb2",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2015-08-01 00:00:00",
+      "time_end_utc": "2015-08-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2016_06.nc",
+      "bytes": 4745129,
+      "sha256": "3ddfe59219d45ebd4d6b7c87eb7029db684e591aa92cc373d25d1b5be6fdd602",
+      "prior_sha256": "3ddfe59219d45ebd4d6b7c87eb7029db684e591aa92cc373d25d1b5be6fdd602",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 720,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2016-06-01 00:00:00",
+      "time_end_utc": "2016-06-30 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2016_07.nc",
+      "bytes": 4874281,
+      "sha256": "66afc7c8612b270069672f5af2befa43bc85bc686a29330a6f43b4c6ae15aae0",
+      "prior_sha256": "66afc7c8612b270069672f5af2befa43bc85bc686a29330a6f43b4c6ae15aae0",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2016-07-01 00:00:00",
+      "time_end_utc": "2016-07-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2016_08.nc",
+      "bytes": 4907355,
+      "sha256": "ad16e137e5112d596e47f9edbdd0d015fdc6f149e97d53a71e33bc1fd475c529",
+      "prior_sha256": "ad16e137e5112d596e47f9edbdd0d015fdc6f149e97d53a71e33bc1fd475c529",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2016-08-01 00:00:00",
+      "time_end_utc": "2016-08-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2017_06.nc",
+      "bytes": 4741390,
+      "sha256": "9a0e3288ba2c21b496efff3bc3ed97a3d422786424c80f2fdcb6570114d751c3",
+      "prior_sha256": "9a0e3288ba2c21b496efff3bc3ed97a3d422786424c80f2fdcb6570114d751c3",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 720,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2017-06-01 00:00:00",
+      "time_end_utc": "2017-06-30 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2017_07.nc",
+      "bytes": 4896365,
+      "sha256": "d2a926f7856d1b223187c95f6ee97164f6311249ae71adb261ce6137a0fecd99",
+      "prior_sha256": "d2a926f7856d1b223187c95f6ee97164f6311249ae71adb261ce6137a0fecd99",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2017-07-01 00:00:00",
+      "time_end_utc": "2017-07-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2017_08.nc",
+      "bytes": 4901158,
+      "sha256": "ecdac47464348dd3e57bf9e140447d17460e7c1c93ed5a05c2954bd213abe4f2",
+      "prior_sha256": "ecdac47464348dd3e57bf9e140447d17460e7c1c93ed5a05c2954bd213abe4f2",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2017-08-01 00:00:00",
+      "time_end_utc": "2017-08-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2018_06.nc",
+      "bytes": 4767525,
+      "sha256": "986218ef7f46330bd247ff5f10cc6bc8989100a6495e5607eaddefa825a3f131",
+      "prior_sha256": "986218ef7f46330bd247ff5f10cc6bc8989100a6495e5607eaddefa825a3f131",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 720,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2018-06-01 00:00:00",
+      "time_end_utc": "2018-06-30 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2018_07.nc",
+      "bytes": 4890931,
+      "sha256": "6f003e8b30853e99bc1834e39773492a7eb50be86afcf318a7310d77068f51ec",
+      "prior_sha256": "6f003e8b30853e99bc1834e39773492a7eb50be86afcf318a7310d77068f51ec",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2018-07-01 00:00:00",
+      "time_end_utc": "2018-07-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2018_08.nc",
+      "bytes": 4887488,
+      "sha256": "ecef1ac659410c72875f41cd210fdbe9c8ef944d91eeb61eeabb9601618ab1dd",
+      "prior_sha256": "ecef1ac659410c72875f41cd210fdbe9c8ef944d91eeb61eeabb9601618ab1dd",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2018-08-01 00:00:00",
+      "time_end_utc": "2018-08-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2019_06.nc",
+      "bytes": 4773142,
+      "sha256": "7824c48d99c0e4ff6ed2be1d06f0f689280aa213c1dac6e8a6c5f6327e88dad8",
+      "prior_sha256": "7824c48d99c0e4ff6ed2be1d06f0f689280aa213c1dac6e8a6c5f6327e88dad8",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 720,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2019-06-01 00:00:00",
+      "time_end_utc": "2019-06-30 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2019_07.nc",
+      "bytes": 4886317,
+      "sha256": "7d2f5a3915dca01fe846a62fffe451d2dd3b69ec6fca4435089e4c0367bbdac7",
+      "prior_sha256": "7d2f5a3915dca01fe846a62fffe451d2dd3b69ec6fca4435089e4c0367bbdac7",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2019-07-01 00:00:00",
+      "time_end_utc": "2019-07-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2019_08.nc",
+      "bytes": 4917733,
+      "sha256": "c7b5650579f22e7dfa5f46c5261ab3f39b872fbc77cf7f88e6cf7f01c4144e04",
+      "prior_sha256": "c7b5650579f22e7dfa5f46c5261ab3f39b872fbc77cf7f88e6cf7f01c4144e04",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2019-08-01 00:00:00",
+      "time_end_utc": "2019-08-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2020_06.nc",
+      "bytes": 4742207,
+      "sha256": "2bd6a6222fff3139eca6a7ba52e232fdd7478173c2c756681abf3a3aca3aab0c",
+      "prior_sha256": "2bd6a6222fff3139eca6a7ba52e232fdd7478173c2c756681abf3a3aca3aab0c",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 720,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2020-06-01 00:00:00",
+      "time_end_utc": "2020-06-30 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2020_07.nc",
+      "bytes": 4875909,
+      "sha256": "6be3938fdfb1ebe2638c2ff73d13afada3058cc69763120b79bd369fd53b2ff4",
+      "prior_sha256": "6be3938fdfb1ebe2638c2ff73d13afada3058cc69763120b79bd369fd53b2ff4",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2020-07-01 00:00:00",
+      "time_end_utc": "2020-07-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2020_08.nc",
+      "bytes": 4903893,
+      "sha256": "5bcfe5c639412ca89758aa06edff7d62dac1e09a1d121327267a6a701d8cfe3f",
+      "prior_sha256": "5bcfe5c639412ca89758aa06edff7d62dac1e09a1d121327267a6a701d8cfe3f",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2020-08-01 00:00:00",
+      "time_end_utc": "2020-08-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2021_06.nc",
+      "bytes": 4770356,
+      "sha256": "2a0e2f67eaac985bd0b19dea5eb89cf782860539598816071b651792e9dd092d",
+      "prior_sha256": "2a0e2f67eaac985bd0b19dea5eb89cf782860539598816071b651792e9dd092d",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 720,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2021-06-01 00:00:00",
+      "time_end_utc": "2021-06-30 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2021_07.nc",
+      "bytes": 4887071,
+      "sha256": "3aaf61b046e41b3f70978ee97a448c96093c7cc2608bc13683b4c08ea6d995c7",
+      "prior_sha256": "3aaf61b046e41b3f70978ee97a448c96093c7cc2608bc13683b4c08ea6d995c7",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2021-07-01 00:00:00",
+      "time_end_utc": "2021-07-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2021_08.nc",
+      "bytes": 4872714,
+      "sha256": "08a7dd1c8ceff7d0965e16590ee1aa6e4fed8c0c29b99d14e645c8480a432fcc",
+      "prior_sha256": "08a7dd1c8ceff7d0965e16590ee1aa6e4fed8c0c29b99d14e645c8480a432fcc",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2021-08-01 00:00:00",
+      "time_end_utc": "2021-08-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2022_06.nc",
+      "bytes": 4776831,
+      "sha256": "9408f53df1cf318221e647250b432fa81693d7d07b28e20118314c9a5918eec1",
+      "prior_sha256": "9408f53df1cf318221e647250b432fa81693d7d07b28e20118314c9a5918eec1",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 720,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2022-06-01 00:00:00",
+      "time_end_utc": "2022-06-30 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2022_07.nc",
+      "bytes": 4915432,
+      "sha256": "2d3b422288ddc11b6c5a70dfe5ac410e9247bd3059fb968837592f4eac672ad4",
+      "prior_sha256": "2d3b422288ddc11b6c5a70dfe5ac410e9247bd3059fb968837592f4eac672ad4",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2022-07-01 00:00:00",
+      "time_end_utc": "2022-07-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2022_08.nc",
+      "bytes": 4942282,
+      "sha256": "2fba90c9ac40657b9c779e89cfd566eb9b437f27f76864e8b5b5500bae87495f",
+      "prior_sha256": "2fba90c9ac40657b9c779e89cfd566eb9b437f27f76864e8b5b5500bae87495f",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2022-08-01 00:00:00",
+      "time_end_utc": "2022-08-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2023_06.nc",
+      "bytes": 4774928,
+      "sha256": "eeb57fcaa92939768690e1b53748c8f01ce98737abd187dda8448404aa1bffca",
+      "prior_sha256": "eeb57fcaa92939768690e1b53748c8f01ce98737abd187dda8448404aa1bffca",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 720,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2023-06-01 00:00:00",
+      "time_end_utc": "2023-06-30 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2023_07.nc",
+      "bytes": 4892984,
+      "sha256": "7e5fa19f64c2392b2c0fedf0a38f7631699deb6b02c4108ff7f8c63d2eb2beb5",
+      "prior_sha256": "7e5fa19f64c2392b2c0fedf0a38f7631699deb6b02c4108ff7f8c63d2eb2beb5",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2023-07-01 00:00:00",
+      "time_end_utc": "2023-07-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2023_08.nc",
+      "bytes": 4898303,
+      "sha256": "bc4087eeb94321279b5da390120c488c59000db82085b618c969e553c60525d3",
+      "prior_sha256": "bc4087eeb94321279b5da390120c488c59000db82085b618c969e553c60525d3",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2023-08-01 00:00:00",
+      "time_end_utc": "2023-08-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2024_06.nc",
+      "bytes": 4767344,
+      "sha256": "cb3bd844fac8e0b14941ece957ce044e9e2d425f169bb793314d7c7bcfe72f0c",
+      "prior_sha256": "cb3bd844fac8e0b14941ece957ce044e9e2d425f169bb793314d7c7bcfe72f0c",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 720,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2024-06-01 00:00:00",
+      "time_end_utc": "2024-06-30 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2024_07.nc",
+      "bytes": 4893376,
+      "sha256": "08399a7127347b36be94f901854793c19fbd61d143a67eedeee8b7c0c6e1b96f",
+      "prior_sha256": "08399a7127347b36be94f901854793c19fbd61d143a67eedeee8b7c0c6e1b96f",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2024-07-01 00:00:00",
+      "time_end_utc": "2024-07-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2024_08.nc",
+      "bytes": 4915884,
+      "sha256": "e8dadbdd2ae2d2f31bd37f8631a23d87d63b1ac40d648f2fb2af17084357941e",
+      "prior_sha256": "e8dadbdd2ae2d2f31bd37f8631a23d87d63b1ac40d648f2fb2af17084357941e",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 744,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2024-08-01 00:00:00",
+      "time_end_utc": "2024-08-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2000_05_31_h16-23.nc",
+      "bytes": 90903,
+      "sha256": "dd1d39f7e9876ae72e7b4fe7f6e743e2ca142af2e65190e384e4bc1fd4abeae8",
+      "prior_sha256": "dd1d39f7e9876ae72e7b4fe7f6e743e2ca142af2e65190e384e4bc1fd4abeae8",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 8,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2000-05-31 16:00:00",
+      "time_end_utc": "2000-05-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2001_05_31_h16-23.nc",
+      "bytes": 92382,
+      "sha256": "250ba20dc14eb268aee70da2f5d2c5bacbe6d9df10f0a89e61a859c031a0c8aa",
+      "prior_sha256": "250ba20dc14eb268aee70da2f5d2c5bacbe6d9df10f0a89e61a859c031a0c8aa",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 8,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2001-05-31 16:00:00",
+      "time_end_utc": "2001-05-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2002_05_31_h16-23.nc",
+      "bytes": 91499,
+      "sha256": "9baea4c2c1f526b090ae8dfbd77ed2dae7b8780015774bf4e582bcfd6483d1b2",
+      "prior_sha256": "9baea4c2c1f526b090ae8dfbd77ed2dae7b8780015774bf4e582bcfd6483d1b2",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 8,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2002-05-31 16:00:00",
+      "time_end_utc": "2002-05-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2003_05_31_h16-23.nc",
+      "bytes": 92809,
+      "sha256": "e3927510ca708e14092e3ed35675459614e78dfc9e885a294fbe35533bc6ec08",
+      "prior_sha256": "e3927510ca708e14092e3ed35675459614e78dfc9e885a294fbe35533bc6ec08",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 8,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2003-05-31 16:00:00",
+      "time_end_utc": "2003-05-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2004_05_31_h16-23.nc",
+      "bytes": 92066,
+      "sha256": "d06ac7ea705628970c8059a38ce30c97757af9be3ada15bf844d6fd6ee9aff6f",
+      "prior_sha256": "d06ac7ea705628970c8059a38ce30c97757af9be3ada15bf844d6fd6ee9aff6f",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 8,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2004-05-31 16:00:00",
+      "time_end_utc": "2004-05-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2005_05_31_h16-23.nc",
+      "bytes": 90933,
+      "sha256": "53b02872f21df45f95a40e9f07f0db40b43be0c2df3bfcfb84fb1e5070683a88",
+      "prior_sha256": "53b02872f21df45f95a40e9f07f0db40b43be0c2df3bfcfb84fb1e5070683a88",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 8,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2005-05-31 16:00:00",
+      "time_end_utc": "2005-05-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2006_05_31_h16-23.nc",
+      "bytes": 90340,
+      "sha256": "d756d34eca939c94fe40949fccffe1964a782d11c5505fd85b2f4eed8de36a72",
+      "prior_sha256": "d756d34eca939c94fe40949fccffe1964a782d11c5505fd85b2f4eed8de36a72",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 8,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2006-05-31 16:00:00",
+      "time_end_utc": "2006-05-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2007_05_31_h16-23.nc",
+      "bytes": 90846,
+      "sha256": "0c66766f3ad40905df6133bf51a128b46192f54b48f7fc77d0f0a8b14376eff3",
+      "prior_sha256": "0c66766f3ad40905df6133bf51a128b46192f54b48f7fc77d0f0a8b14376eff3",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 8,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2007-05-31 16:00:00",
+      "time_end_utc": "2007-05-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2008_05_31_h16-23.nc",
+      "bytes": 92309,
+      "sha256": "99eb309cf7039c182bb16c5a1d0b4b9ca9584033574a9ae75e718d7884ff5556",
+      "prior_sha256": "99eb309cf7039c182bb16c5a1d0b4b9ca9584033574a9ae75e718d7884ff5556",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 8,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2008-05-31 16:00:00",
+      "time_end_utc": "2008-05-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2009_05_31_h16-23.nc",
+      "bytes": 92217,
+      "sha256": "82902dfcb030a743027bfbd9aa4d54e6868451132f2e664156c2717754b4a8cd",
+      "prior_sha256": "82902dfcb030a743027bfbd9aa4d54e6868451132f2e664156c2717754b4a8cd",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 8,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2009-05-31 16:00:00",
+      "time_end_utc": "2009-05-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2010_05_31_h16-23.nc",
+      "bytes": 91246,
+      "sha256": "d57c6adc528b499a4486aaf7e816215705bd9a50cbdfec86a0d829aae78937fe",
+      "prior_sha256": "d57c6adc528b499a4486aaf7e816215705bd9a50cbdfec86a0d829aae78937fe",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 8,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2010-05-31 16:00:00",
+      "time_end_utc": "2010-05-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2011_05_31_h16-23.nc",
+      "bytes": 91807,
+      "sha256": "20a76b9ec8c21d55328187ad31c1456b32295290a1141b85b8697b4194ada8bf",
+      "prior_sha256": "20a76b9ec8c21d55328187ad31c1456b32295290a1141b85b8697b4194ada8bf",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 8,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2011-05-31 16:00:00",
+      "time_end_utc": "2011-05-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2012_05_31_h16-23.nc",
+      "bytes": 90658,
+      "sha256": "6e5671a0863a679f58af3853ffdc54ca145a22b334ecd385a66a531aa6b46e9f",
+      "prior_sha256": "6e5671a0863a679f58af3853ffdc54ca145a22b334ecd385a66a531aa6b46e9f",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 8,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2012-05-31 16:00:00",
+      "time_end_utc": "2012-05-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2013_05_31_h16-23.nc",
+      "bytes": 90404,
+      "sha256": "31ce2f90dffbd3c4d48411ee2c8aedd2a83b090b5ed0edd68edd95a2464a841f",
+      "prior_sha256": "31ce2f90dffbd3c4d48411ee2c8aedd2a83b090b5ed0edd68edd95a2464a841f",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 8,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2013-05-31 16:00:00",
+      "time_end_utc": "2013-05-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2014_05_31_h16-23.nc",
+      "bytes": 90475,
+      "sha256": "e5880b8eaf9db733a2f8ad7ab9f616aee0f45f4434fcdec85dd8807c10a0f734",
+      "prior_sha256": "e5880b8eaf9db733a2f8ad7ab9f616aee0f45f4434fcdec85dd8807c10a0f734",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 8,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2014-05-31 16:00:00",
+      "time_end_utc": "2014-05-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2015_05_31_h16-23.nc",
+      "bytes": 90868,
+      "sha256": "d86cb74f68dd44a1b4757f8c8b7b7c6045f8c0ab718a34788e5ba01d2e0849d9",
+      "prior_sha256": "d86cb74f68dd44a1b4757f8c8b7b7c6045f8c0ab718a34788e5ba01d2e0849d9",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 8,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2015-05-31 16:00:00",
+      "time_end_utc": "2015-05-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2016_05_31_h16-23.nc",
+      "bytes": 90196,
+      "sha256": "29ec352b73b2e4319a353564ce284a8c55e0978d7f5a571f4623a5241495af51",
+      "prior_sha256": "29ec352b73b2e4319a353564ce284a8c55e0978d7f5a571f4623a5241495af51",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 8,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2016-05-31 16:00:00",
+      "time_end_utc": "2016-05-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2017_05_31_h16-23.nc",
+      "bytes": 91270,
+      "sha256": "3375c8f1f44da0b0aed5ffaf879abb3a911790d10c1c9a3c980f4021827e0e25",
+      "prior_sha256": "3375c8f1f44da0b0aed5ffaf879abb3a911790d10c1c9a3c980f4021827e0e25",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 8,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2017-05-31 16:00:00",
+      "time_end_utc": "2017-05-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2018_05_31_h16-23.nc",
+      "bytes": 91685,
+      "sha256": "683be30442690786134947b403002fe094154bb59cc17f241a1e2f826b013654",
+      "prior_sha256": "683be30442690786134947b403002fe094154bb59cc17f241a1e2f826b013654",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 8,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2018-05-31 16:00:00",
+      "time_end_utc": "2018-05-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2019_05_31_h16-23.nc",
+      "bytes": 90731,
+      "sha256": "1f2001b0f0b61d4af73d92fcbdc8c22fa8411f91f36b8a5616b08145c1d8beba",
+      "prior_sha256": "1f2001b0f0b61d4af73d92fcbdc8c22fa8411f91f36b8a5616b08145c1d8beba",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 8,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2019-05-31 16:00:00",
+      "time_end_utc": "2019-05-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2020_05_31_h16-23.nc",
+      "bytes": 91197,
+      "sha256": "884fdb07d490fffd88b3254077183709df020394b0cbb3cd0a0b221101470ebe",
+      "prior_sha256": "884fdb07d490fffd88b3254077183709df020394b0cbb3cd0a0b221101470ebe",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 8,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2020-05-31 16:00:00",
+      "time_end_utc": "2020-05-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2021_05_31_h16-23.nc",
+      "bytes": 91442,
+      "sha256": "21f89a98e9719398a4586523d9c9fa28d8594197b4c5fe6d8914523bb0465c54",
+      "prior_sha256": "21f89a98e9719398a4586523d9c9fa28d8594197b4c5fe6d8914523bb0465c54",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 8,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2021-05-31 16:00:00",
+      "time_end_utc": "2021-05-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2022_05_31_h16-23.nc",
+      "bytes": 91425,
+      "sha256": "0f274014583702304a999b673924172341e57ec88414ec6c833473de16f7a007",
+      "prior_sha256": "0f274014583702304a999b673924172341e57ec88414ec6c833473de16f7a007",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 8,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2022-05-31 16:00:00",
+      "time_end_utc": "2022-05-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2023_05_31_h16-23.nc",
+      "bytes": 90244,
+      "sha256": "4d382830e5b5640f8fd66343f4a0fe9245a34db09075efcaea484d1bba04ca3a",
+      "prior_sha256": "4d382830e5b5640f8fd66343f4a0fe9245a34db09075efcaea484d1bba04ca3a",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 8,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2023-05-31 16:00:00",
+      "time_end_utc": "2023-05-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2024_05_31_h16-23.nc",
+      "bytes": 91460,
+      "sha256": "025dd234ec40d426e85a0cd9b092e61afadc5e2bee10a2a94e4ff41c40b26ed4",
+      "prior_sha256": "025dd234ec40d426e85a0cd9b092e61afadc5e2bee10a2a94e4ff41c40b26ed4",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 8,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "dtype": "float32"
+        },
+        "d2m": {
+          "units": "K",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2024-05-31 16:00:00",
+      "time_end_utc": "2024-05-31 23:00:00"
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_land_sea_mask_36N_112E_25N_123E.nc",
+      "bytes": 30486,
+      "sha256": "0417ee02bdbb40f3dbdde3c028d53a5976f1181c6fb2244e97f30f074a42c991",
+      "prior_sha256": "0417ee02bdbb40f3dbdde3c028d53a5976f1181c6fb2244e97f30f074a42c991",
+      "prior_quality_status": "PASS",
+      "sizes": {
+        "valid_time": 1,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "variables": {
+        "lsm": {
+          "units": "(0 - 1)",
+          "dtype": "float32"
+        }
+      },
+      "time_start_utc": "2022-07-01 00:00:00",
+      "time_end_utc": "2022-07-01 00:00:00"
+    }
+  ],
+  "processed_files": [
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\processed\\daily_tmax_jja_2000_2024_bjt.nc",
+      "bytes": 37304294,
+      "sha256": "d53876d9160c253d4a30b6d4179309f5337f18fd62cb138282acd057d9bb8e3d",
+      "sizes": {
+        "valid_time": 2300,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "attrs": {
+        "GRIB_centre": "ecmf",
+        "GRIB_centreDescription": "European Centre for Medium-Range Weather Forecasts",
+        "GRIB_subCentre": "0",
+        "Conventions": "CF-1.7",
+        "institution": "European Centre for Medium-Range Weather Forecasts",
+        "history": "2026-10-22T22:13 GRIB to CDM+CF via cfgrib-0.9.15.1/ecCodes-2.48.2 with {\"source\": \"tmpfnkwxztg/data.grib\", \"filter_by_keys\": {\"stream\": [\"oper\"], \"stepType\": [\"instant\"]}, \"encode_cf\": [\"parameter\", \"time\", \"geography\", \"vertical\"]}",
+        "daily_aggregation": "local calendar days, UTC+8"
+      },
+      "variables": {
+        "t2m": {
+          "dims": [
+            "valid_time",
+            "latitude",
+            "longitude"
+          ],
+          "dtype": "float32",
+          "attrs": {
+            "GRIB_paramId": "167",
+            "GRIB_dataType": "an",
+            "GRIB_numberOfPoints": "2025",
+            "GRIB_typeOfLevel": "surface",
+            "GRIB_stepUnits": "1",
+            "GRIB_stepType": "instant",
+            "GRIB_gridType": "regular_ll",
+            "GRIB_uvRelativeToGrid": "0",
+            "GRIB_NV": "0",
+            "GRIB_Nx": "45",
+            "GRIB_Ny": "45",
+            "GRIB_cfName": "unknown",
+            "GRIB_cfVarName": "t2m",
+            "GRIB_gridDefinitionDescription": "Latitude/Longitude Grid",
+            "GRIB_iDirectionIncrementInDegrees": 0.25,
+            "GRIB_iScansNegatively": "0",
+            "GRIB_jDirectionIncrementInDegrees": 0.25,
+            "GRIB_jPointsAreConsecutive": "0",
+            "GRIB_jScansPositively": "0",
+            "GRIB_latitudeOfFirstGridPointInDegrees": 36.0,
+            "GRIB_latitudeOfLastGridPointInDegrees": 25.0,
+            "GRIB_longitudeOfFirstGridPointInDegrees": 112.0,
+            "GRIB_longitudeOfLastGridPointInDegrees": 123.0,
+            "GRIB_missingValue": 3.4028234663852886e+38,
+            "GRIB_name": "2 metre temperature",
+            "GRIB_shortName": "2t",
+            "GRIB_totalNumber": "0",
+            "GRIB_units": "K",
+            "long_name": "2 metre temperature (daily maximum)",
+            "units": "Celsius",
+            "standard_name": "unknown",
+            "GRIB_surface": 0.0
+          }
+        },
+        "d2m": {
+          "dims": [
+            "valid_time",
+            "latitude",
+            "longitude"
+          ],
+          "dtype": "float32",
+          "attrs": {
+            "GRIB_paramId": "168",
+            "GRIB_dataType": "an",
+            "GRIB_numberOfPoints": "2025",
+            "GRIB_typeOfLevel": "surface",
+            "GRIB_stepUnits": "1",
+            "GRIB_stepType": "instant",
+            "GRIB_gridType": "regular_ll",
+            "GRIB_uvRelativeToGrid": "0",
+            "GRIB_NV": "0",
+            "GRIB_Nx": "45",
+            "GRIB_Ny": "45",
+            "GRIB_cfName": "unknown",
+            "GRIB_cfVarName": "d2m",
+            "GRIB_gridDefinitionDescription": "Latitude/Longitude Grid",
+            "GRIB_iDirectionIncrementInDegrees": 0.25,
+            "GRIB_iScansNegatively": "0",
+            "GRIB_jDirectionIncrementInDegrees": 0.25,
+            "GRIB_jPointsAreConsecutive": "0",
+            "GRIB_jScansPositively": "0",
+            "GRIB_latitudeOfFirstGridPointInDegrees": 36.0,
+            "GRIB_latitudeOfLastGridPointInDegrees": 25.0,
+            "GRIB_longitudeOfFirstGridPointInDegrees": 112.0,
+            "GRIB_longitudeOfLastGridPointInDegrees": 123.0,
+            "GRIB_missingValue": 3.4028234663852886e+38,
+            "GRIB_name": "2 metre dewpoint temperature",
+            "GRIB_shortName": "2d",
+            "GRIB_totalNumber": "0",
+            "GRIB_units": "K",
+            "long_name": "2 metre dewpoint temperature",
+            "units": "K",
+            "standard_name": "unknown",
+            "GRIB_surface": 0.0
+          }
+        }
+      },
+      "days": 2300
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\processed\\humid_heat_jja_2000_2024_bjt.nc",
+      "bytes": 37304387,
+      "sha256": "15809010f8228b41f14883612f4487010698e0c8e58c26e1783bee0548f11e06",
+      "sizes": {
+        "date": 2300,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "attrs": {
+        "title": "Humid heat risk indices for East China",
+        "period": "June to August, 2000 to 2024",
+        "source": "ERA5 hourly single-level reanalysis",
+        "created_with": "src/process_humid_heat.py",
+        "daily_aggregation": "local calendar days, UTC+8",
+        "hourly_variables": "not saved for multi-year runs; recompute them from the raw files if needed"
+      },
+      "variables": {
+        "daily_max_heat_index_c": {
+          "dims": [
+            "date",
+            "latitude",
+            "longitude"
+          ],
+          "dtype": "float32",
+          "attrs": {
+            "GRIB_paramId": "167",
+            "GRIB_dataType": "an",
+            "GRIB_numberOfPoints": "2025",
+            "GRIB_typeOfLevel": "surface",
+            "GRIB_stepUnits": "1",
+            "GRIB_stepType": "instant",
+            "GRIB_gridType": "regular_ll",
+            "GRIB_uvRelativeToGrid": "0",
+            "GRIB_NV": "0",
+            "GRIB_Nx": "45",
+            "GRIB_Ny": "45",
+            "GRIB_cfName": "unknown",
+            "GRIB_cfVarName": "t2m",
+            "GRIB_gridDefinitionDescription": "Latitude/Longitude Grid",
+            "GRIB_iDirectionIncrementInDegrees": 0.25,
+            "GRIB_iScansNegatively": "0",
+            "GRIB_jDirectionIncrementInDegrees": 0.25,
+            "GRIB_jPointsAreConsecutive": "0",
+            "GRIB_jScansPositively": "0",
+            "GRIB_latitudeOfFirstGridPointInDegrees": 36.0,
+            "GRIB_latitudeOfLastGridPointInDegrees": 25.0,
+            "GRIB_longitudeOfFirstGridPointInDegrees": 112.0,
+            "GRIB_longitudeOfLastGridPointInDegrees": 123.0,
+            "GRIB_missingValue": 3.4028234663852886e+38,
+            "GRIB_name": "2 metre temperature",
+            "GRIB_shortName": "2t",
+            "GRIB_totalNumber": "0",
+            "GRIB_units": "K",
+            "standard_name": "unknown",
+            "GRIB_surface": 0.0,
+            "units": "Celsius",
+            "long_name": "daily maximum heat index",
+            "description": "Daily maximum of the hourly NOAA/Rothfusz heat index over local calendar days (UTC+8); NaN if any hour is missing"
+          }
+        },
+        "daily_mean_rh": {
+          "dims": [
+            "date",
+            "latitude",
+            "longitude"
+          ],
+          "dtype": "float32",
+          "attrs": {
+            "GRIB_dataType": "an",
+            "GRIB_numberOfPoints": "2025",
+            "GRIB_typeOfLevel": "surface",
+            "GRIB_stepUnits": "1",
+            "GRIB_stepType": "instant",
+            "GRIB_gridType": "regular_ll",
+            "GRIB_uvRelativeToGrid": "0",
+            "GRIB_NV": "0",
+            "GRIB_Nx": "45",
+            "GRIB_Ny": "45",
+            "GRIB_cfName": "unknown",
+            "GRIB_gridDefinitionDescription": "Latitude/Longitude Grid",
+            "GRIB_iDirectionIncrementInDegrees": 0.25,
+            "GRIB_iScansNegatively": "0",
+            "GRIB_jDirectionIncrementInDegrees": 0.25,
+            "GRIB_jPointsAreConsecutive": "0",
+            "GRIB_jScansPositively": "0",
+            "GRIB_latitudeOfFirstGridPointInDegrees": 36.0,
+            "GRIB_latitudeOfLastGridPointInDegrees": 25.0,
+            "GRIB_longitudeOfFirstGridPointInDegrees": 112.0,
+            "GRIB_longitudeOfLastGridPointInDegrees": 123.0,
+            "GRIB_missingValue": 3.4028234663852886e+38,
+            "GRIB_totalNumber": "0",
+            "GRIB_units": "K",
+            "units": "%",
+            "standard_name": "unknown",
+            "GRIB_surface": 0.0,
+            "long_name": "daily mean relative humidity",
+            "description": "Daily mean of hourly relative humidity over local calendar days (UTC+8); NaN if any hour is missing"
+          }
+        }
+      },
+      "days": 2300
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\processed\\heat_risk_categories_jja_2000_2024_bjt.nc",
+      "bytes": 23336933,
+      "sha256": "9efea1d5b2d2750aa200813c7b5ffafb101992367503316664b26800dcf93d5b",
+      "sizes": {
+        "date": 2300,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "attrs": {
+        "title": "Heat risk categories for East China",
+        "period": "June to August, 2000 to 2024",
+        "source": "Based on ERA5 hourly single-level reanalysis",
+        "created_with": "src/classify_heat_risk.py"
+      },
+      "variables": {
+        "daily_max_heat_index_c": {
+          "dims": [
+            "date",
+            "latitude",
+            "longitude"
+          ],
+          "dtype": "float32",
+          "attrs": {
+            "GRIB_paramId": "167",
+            "GRIB_dataType": "an",
+            "GRIB_numberOfPoints": "2025",
+            "GRIB_typeOfLevel": "surface",
+            "GRIB_stepUnits": "1",
+            "GRIB_stepType": "instant",
+            "GRIB_gridType": "regular_ll",
+            "GRIB_uvRelativeToGrid": "0",
+            "GRIB_NV": "0",
+            "GRIB_Nx": "45",
+            "GRIB_Ny": "45",
+            "GRIB_cfName": "unknown",
+            "GRIB_cfVarName": "t2m",
+            "GRIB_gridDefinitionDescription": "Latitude/Longitude Grid",
+            "GRIB_iDirectionIncrementInDegrees": 0.25,
+            "GRIB_iScansNegatively": "0",
+            "GRIB_jDirectionIncrementInDegrees": 0.25,
+            "GRIB_jPointsAreConsecutive": "0",
+            "GRIB_jScansPositively": "0",
+            "GRIB_latitudeOfFirstGridPointInDegrees": 36.0,
+            "GRIB_latitudeOfLastGridPointInDegrees": 25.0,
+            "GRIB_longitudeOfFirstGridPointInDegrees": 112.0,
+            "GRIB_longitudeOfLastGridPointInDegrees": 123.0,
+            "GRIB_missingValue": 3.4028234663852886e+38,
+            "GRIB_name": "2 metre temperature",
+            "GRIB_shortName": "2t",
+            "GRIB_totalNumber": "0",
+            "GRIB_units": "K",
+            "standard_name": "unknown",
+            "GRIB_surface": 0.0,
+            "units": "Celsius",
+            "long_name": "daily maximum heat index",
+            "description": "Daily maximum of the hourly NOAA/Rothfusz heat index over local calendar days (UTC+8); NaN if any hour is missing"
+          }
+        },
+        "heat_risk_category": {
+          "dims": [
+            "date",
+            "latitude",
+            "longitude"
+          ],
+          "dtype": "int8",
+          "attrs": {
+            "units": "category",
+            "description": "Heat risk category based on daily maximum heat index",
+            "category_0": "No Risk: heat index < 26.7°C",
+            "category_1": "Caution: 26.7°C <= heat index < 32.2°C",
+            "category_2": "Extreme Caution: 32.2°C <= heat index < 40.6°C",
+            "category_3": "Danger: 40.6°C <= heat index < 54.4°C",
+            "category_4": "Extreme Danger: heat index >= 54.4°C",
+            "category_missing": "-1 = Missing: daily maximum heat index is missing (NaN); not counted in the area fractions"
+          }
+        },
+        "land_mask": {
+          "dims": [
+            "latitude",
+            "longitude"
+          ],
+          "dtype": "int8",
+          "attrs": {
+            "GRIB_paramId": "172",
+            "GRIB_dataType": "an",
+            "GRIB_numberOfPoints": "2025",
+            "GRIB_typeOfLevel": "surface",
+            "GRIB_stepUnits": "1",
+            "GRIB_stepType": "instant",
+            "GRIB_gridType": "regular_ll",
+            "GRIB_uvRelativeToGrid": "0",
+            "GRIB_NV": "0",
+            "GRIB_Nx": "45",
+            "GRIB_Ny": "45",
+            "GRIB_cfName": "land_binary_mask",
+            "GRIB_cfVarName": "lsm",
+            "GRIB_gridDefinitionDescription": "Latitude/Longitude Grid",
+            "GRIB_iDirectionIncrementInDegrees": 0.25,
+            "GRIB_iScansNegatively": "0",
+            "GRIB_jDirectionIncrementInDegrees": 0.25,
+            "GRIB_jPointsAreConsecutive": "0",
+            "GRIB_jScansPositively": "0",
+            "GRIB_latitudeOfFirstGridPointInDegrees": 36.0,
+            "GRIB_latitudeOfLastGridPointInDegrees": 25.0,
+            "GRIB_longitudeOfFirstGridPointInDegrees": 112.0,
+            "GRIB_longitudeOfLastGridPointInDegrees": 123.0,
+            "GRIB_missingValue": 3.4028234663852886e+38,
+            "GRIB_name": "Land-sea mask",
+            "GRIB_shortName": "lsm",
+            "GRIB_totalNumber": "0",
+            "GRIB_units": "(0 - 1)",
+            "long_name": "land mask",
+            "units": "1",
+            "standard_name": "land_binary_mask",
+            "GRIB_surface": 0.0,
+            "description": "1 = land (ERA5 land_sea_mask >= 0.5), 0 = sea; risk area fractions count land cells only"
+          }
+        }
+      },
+      "days": 2300,
+      "land_cells": 1580
+    },
+    {
+      "path": "<ERA5_SOURCE_ROOT>\\data\\processed\\heat_index_climatology_jja_2000_2024_bjt.nc",
+      "bytes": 13263486,
+      "sha256": "201e758ff35507494a802d4493bc733f417cce82f69537fa42a3d52ba932d431",
+      "sizes": {
+        "year": 25,
+        "day_of_year": 92,
+        "latitude": 45,
+        "longitude": 45
+      },
+      "attrs": {
+        "title": "Daily maximum heat index by year and day of year (climatology input)",
+        "period": "June to August, 2000 to 2024",
+        "source": "Based on ERA5 hourly single-level reanalysis",
+        "created_with": "src/climatology.py",
+        "daily_aggregation": "local calendar days, UTC+8",
+        "day_of_year": "365-day calendar: 29 February left out; 1 June = 152 in every year",
+        "usage": "Climatology of chosen years only (e.g. the phase 3 training years): src.climatology.climatology_for_years(load_by_year(path), years). No climatology over all years is stored, so test years cannot leak into the baseline."
+      },
+      "variables": {
+        "daily_max_heat_index_c": {
+          "dims": [
+            "year",
+            "day_of_year",
+            "latitude",
+            "longitude"
+          ],
+          "dtype": "float32",
+          "attrs": {
+            "GRIB_paramId": "167",
+            "GRIB_dataType": "an",
+            "GRIB_numberOfPoints": "2025",
+            "GRIB_typeOfLevel": "surface",
+            "GRIB_stepUnits": "1",
+            "GRIB_stepType": "instant",
+            "GRIB_gridType": "regular_ll",
+            "GRIB_uvRelativeToGrid": "0",
+            "GRIB_NV": "0",
+            "GRIB_Nx": "45",
+            "GRIB_Ny": "45",
+            "GRIB_cfName": "unknown",
+            "GRIB_cfVarName": "t2m",
+            "GRIB_gridDefinitionDescription": "Latitude/Longitude Grid",
+            "GRIB_iDirectionIncrementInDegrees": 0.25,
+            "GRIB_iScansNegatively": "0",
+            "GRIB_jDirectionIncrementInDegrees": 0.25,
+            "GRIB_jPointsAreConsecutive": "0",
+            "GRIB_jScansPositively": "0",
+            "GRIB_latitudeOfFirstGridPointInDegrees": 36.0,
+            "GRIB_latitudeOfLastGridPointInDegrees": 25.0,
+            "GRIB_longitudeOfFirstGridPointInDegrees": 112.0,
+            "GRIB_longitudeOfLastGridPointInDegrees": 123.0,
+            "GRIB_missingValue": 3.4028234663852886e+38,
+            "GRIB_name": "2 metre temperature",
+            "GRIB_shortName": "2t",
+            "GRIB_totalNumber": "0",
+            "GRIB_units": "K",
+            "standard_name": "unknown",
+            "GRIB_surface": 0.0,
+            "units": "Celsius",
+            "long_name": "daily maximum heat index",
+            "description": "Daily maximum heat index of each year by day of year (365-day calendar), input of the climatology baseline; NaN = missing"
+          }
+        }
+      }
+    }
+  ],
+  "bounded_numerical_check": {
+    "period_bjt": "2000-06-01/2000-06-30",
+    "grids": 2025,
+    "method": "direct_hourly_reshape; existing_tested_HI_formula",
+    "tmax_c_max_absolute_difference": 0.0,
+    "stored_d2m_is_daily_max_kelvin_max_absolute_difference": 0.0,
+    "rh_mean_percent_max_absolute_difference": 0.0,
+    "hi_max_c_max_absolute_difference": 0.0,
+    "daily_dewpoint_max_minus_mean_c_max": 8.5152587890625
+  },
+  "checks": [
+    {
+      "check": "previous_raw_acceptance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "original_config_same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "clone_config_equal_except_line_endings",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2000_06.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2000_06.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2000_06.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2000_06.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2000_06.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2000_07.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2000_07.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2000_07.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2000_07.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2000_07.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2000_08.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2000_08.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2000_08.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2000_08.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2000_08.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2001_06.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2001_06.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2001_06.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2001_06.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2001_06.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2001_07.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2001_07.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2001_07.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2001_07.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2001_07.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2001_08.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2001_08.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2001_08.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2001_08.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2001_08.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2002_06.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2002_06.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2002_06.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2002_06.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2002_06.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2002_07.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2002_07.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2002_07.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2002_07.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2002_07.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2002_08.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2002_08.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2002_08.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2002_08.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2002_08.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2003_06.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2003_06.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2003_06.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2003_06.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2003_06.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2003_07.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2003_07.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2003_07.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2003_07.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2003_07.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2003_08.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2003_08.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2003_08.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2003_08.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2003_08.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2004_06.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2004_06.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2004_06.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2004_06.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2004_06.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2004_07.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2004_07.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2004_07.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2004_07.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2004_07.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2004_08.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2004_08.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2004_08.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2004_08.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2004_08.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2005_06.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2005_06.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2005_06.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2005_06.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2005_06.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2005_07.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2005_07.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2005_07.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2005_07.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2005_07.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2005_08.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2005_08.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2005_08.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2005_08.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2005_08.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2006_06.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2006_06.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2006_06.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2006_06.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2006_06.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2006_07.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2006_07.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2006_07.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2006_07.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2006_07.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2006_08.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2006_08.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2006_08.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2006_08.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2006_08.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2007_06.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2007_06.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2007_06.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2007_06.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2007_06.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2007_07.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2007_07.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2007_07.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2007_07.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2007_07.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2007_08.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2007_08.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2007_08.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2007_08.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2007_08.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2008_06.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2008_06.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2008_06.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2008_06.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2008_06.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2008_07.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2008_07.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2008_07.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2008_07.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2008_07.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2008_08.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2008_08.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2008_08.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2008_08.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2008_08.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2009_06.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2009_06.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2009_06.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2009_06.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2009_06.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2009_07.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2009_07.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2009_07.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2009_07.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2009_07.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2009_08.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2009_08.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2009_08.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2009_08.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2009_08.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2010_06.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2010_06.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2010_06.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2010_06.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2010_06.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2010_07.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2010_07.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2010_07.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2010_07.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2010_07.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2010_08.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2010_08.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2010_08.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2010_08.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2010_08.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2011_06.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2011_06.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2011_06.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2011_06.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2011_06.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2011_07.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2011_07.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2011_07.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2011_07.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2011_07.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2011_08.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2011_08.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2011_08.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2011_08.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2011_08.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2012_06.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2012_06.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2012_06.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2012_06.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2012_06.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2012_07.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2012_07.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2012_07.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2012_07.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2012_07.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2012_08.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2012_08.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2012_08.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2012_08.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2012_08.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2013_06.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2013_06.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2013_06.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2013_06.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2013_06.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2013_07.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2013_07.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2013_07.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2013_07.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2013_07.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2013_08.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2013_08.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2013_08.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2013_08.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2013_08.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2014_06.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2014_06.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2014_06.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2014_06.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2014_06.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2014_07.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2014_07.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2014_07.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2014_07.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2014_07.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2014_08.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2014_08.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2014_08.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2014_08.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2014_08.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2015_06.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2015_06.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2015_06.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2015_06.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2015_06.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2015_07.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2015_07.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2015_07.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2015_07.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2015_07.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2015_08.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2015_08.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2015_08.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2015_08.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2015_08.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2016_06.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2016_06.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2016_06.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2016_06.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2016_06.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2016_07.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2016_07.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2016_07.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2016_07.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2016_07.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2016_08.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2016_08.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2016_08.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2016_08.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2016_08.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2017_06.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2017_06.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2017_06.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2017_06.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2017_06.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2017_07.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2017_07.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2017_07.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2017_07.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2017_07.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2017_08.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2017_08.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2017_08.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2017_08.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2017_08.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2018_06.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2018_06.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2018_06.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2018_06.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2018_06.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2018_07.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2018_07.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2018_07.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2018_07.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2018_07.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2018_08.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2018_08.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2018_08.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2018_08.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2018_08.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2019_06.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2019_06.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2019_06.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2019_06.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2019_06.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2019_07.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2019_07.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2019_07.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2019_07.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2019_07.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2019_08.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2019_08.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2019_08.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2019_08.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2019_08.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2020_06.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2020_06.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2020_06.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2020_06.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2020_06.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2020_07.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2020_07.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2020_07.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2020_07.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2020_07.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2020_08.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2020_08.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2020_08.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2020_08.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2020_08.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2021_06.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2021_06.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2021_06.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2021_06.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2021_06.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2021_07.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2021_07.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2021_07.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2021_07.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2021_07.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2021_08.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2021_08.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2021_08.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2021_08.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2021_08.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2022_06.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2022_06.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2022_06.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2022_06.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2022_06.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2022_07.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2022_07.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2022_07.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2022_07.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2022_07.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2022_08.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2022_08.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2022_08.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2022_08.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2022_08.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2023_06.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2023_06.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2023_06.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2023_06.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2023_06.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2023_07.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2023_07.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2023_07.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2023_07.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2023_07.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2023_08.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2023_08.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2023_08.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2023_08.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2023_08.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2024_06.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2024_06.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2024_06.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2024_06.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2024_06.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2024_07.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2024_07.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2024_07.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2024_07.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2024_07.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2024_08.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2024_08.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2024_08.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2024_08.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2024_08.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2000_05_31_h16-23.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2000_05_31_h16-23.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2000_05_31_h16-23.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2000_05_31_h16-23.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2000_05_31_h16-23.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2001_05_31_h16-23.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2001_05_31_h16-23.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2001_05_31_h16-23.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2001_05_31_h16-23.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2001_05_31_h16-23.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2002_05_31_h16-23.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2002_05_31_h16-23.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2002_05_31_h16-23.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2002_05_31_h16-23.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2002_05_31_h16-23.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2003_05_31_h16-23.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2003_05_31_h16-23.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2003_05_31_h16-23.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2003_05_31_h16-23.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2003_05_31_h16-23.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2004_05_31_h16-23.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2004_05_31_h16-23.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2004_05_31_h16-23.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2004_05_31_h16-23.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2004_05_31_h16-23.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2005_05_31_h16-23.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2005_05_31_h16-23.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2005_05_31_h16-23.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2005_05_31_h16-23.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2005_05_31_h16-23.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2006_05_31_h16-23.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2006_05_31_h16-23.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2006_05_31_h16-23.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2006_05_31_h16-23.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2006_05_31_h16-23.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2007_05_31_h16-23.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2007_05_31_h16-23.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2007_05_31_h16-23.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2007_05_31_h16-23.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2007_05_31_h16-23.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2008_05_31_h16-23.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2008_05_31_h16-23.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2008_05_31_h16-23.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2008_05_31_h16-23.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2008_05_31_h16-23.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2009_05_31_h16-23.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2009_05_31_h16-23.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2009_05_31_h16-23.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2009_05_31_h16-23.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2009_05_31_h16-23.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2010_05_31_h16-23.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2010_05_31_h16-23.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2010_05_31_h16-23.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2010_05_31_h16-23.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2010_05_31_h16-23.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2011_05_31_h16-23.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2011_05_31_h16-23.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2011_05_31_h16-23.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2011_05_31_h16-23.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2011_05_31_h16-23.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2012_05_31_h16-23.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2012_05_31_h16-23.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2012_05_31_h16-23.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2012_05_31_h16-23.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2012_05_31_h16-23.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2013_05_31_h16-23.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2013_05_31_h16-23.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2013_05_31_h16-23.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2013_05_31_h16-23.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2013_05_31_h16-23.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2014_05_31_h16-23.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2014_05_31_h16-23.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2014_05_31_h16-23.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2014_05_31_h16-23.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2014_05_31_h16-23.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2015_05_31_h16-23.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2015_05_31_h16-23.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2015_05_31_h16-23.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2015_05_31_h16-23.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2015_05_31_h16-23.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2016_05_31_h16-23.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2016_05_31_h16-23.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2016_05_31_h16-23.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2016_05_31_h16-23.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2016_05_31_h16-23.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2017_05_31_h16-23.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2017_05_31_h16-23.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2017_05_31_h16-23.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2017_05_31_h16-23.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2017_05_31_h16-23.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2018_05_31_h16-23.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2018_05_31_h16-23.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2018_05_31_h16-23.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2018_05_31_h16-23.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2018_05_31_h16-23.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2019_05_31_h16-23.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2019_05_31_h16-23.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2019_05_31_h16-23.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2019_05_31_h16-23.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2019_05_31_h16-23.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2020_05_31_h16-23.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2020_05_31_h16-23.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2020_05_31_h16-23.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2020_05_31_h16-23.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2020_05_31_h16-23.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2021_05_31_h16-23.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2021_05_31_h16-23.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2021_05_31_h16-23.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2021_05_31_h16-23.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2021_05_31_h16-23.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2022_05_31_h16-23.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2022_05_31_h16-23.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2022_05_31_h16-23.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2022_05_31_h16-23.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2022_05_31_h16-23.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2023_05_31_h16-23.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2023_05_31_h16-23.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2023_05_31_h16-23.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2023_05_31_h16-23.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2023_05_31_h16-23.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2024_05_31_h16-23.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2024_05_31_h16-23.nc:timestamps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2024_05_31_h16-23.nc:units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2024_05_31_h16-23.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_east_china_2024_05_31_h16-23.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_land_sea_mask_36N_112E_25N_123E.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_land_sea_mask_36N_112E_25N_123E.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "era5_land_sea_mask_36N_112E_25N_123E.nc:unchanged_while_reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "daily_tmax_jja_2000_2024_bjt.nc:dates",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "daily_tmax_jja_2000_2024_bjt.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "daily_tmax_jja_2000_2024_bjt.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "humid_heat_jja_2000_2024_bjt.nc:dates",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "humid_heat_jja_2000_2024_bjt.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "humid_heat_jja_2000_2024_bjt.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "heat_risk_categories_jja_2000_2024_bjt.nc:dates",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "heat_risk_categories_jja_2000_2024_bjt.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "heat_risk_categories_jja_2000_2024_bjt.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "heat_index_climatology_jja_2000_2024_bjt.nc:grid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "heat_index_climatology_jja_2000_2024_bjt.nc:same_accepted_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "stored_mask_equals_raw_threshold",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "bounded_month_hours",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "bounded_month:tmax_c",
+      "passed": true,
+      "detail": 0.0
+    },
+    {
+      "check": "bounded_month:stored_d2m_is_daily_max_kelvin",
+      "passed": true,
+      "detail": 0.0
+    },
+    {
+      "check": "bounded_month:rh_mean_percent",
+      "passed": true,
+      "detail": 0.0
+    },
+    {
+      "check": "bounded_month:hi_max_c",
+      "passed": true,
+      "detail": 0.0
+    }
+  ],
+  "limitations": [
+    "All-year finite-value acceptance is inherited only where exact accepted SHA-256 matches, not recomputed.",
+    "Mean dewpoint, Tmin, complete-night and regional historical features have not yet been extracted.",
+    "ERA5 vintages/as-of availability cannot be reconstructed from current final reanalysis files.",
+    "No training, calibration, model selection or final-test evaluation performed."
+  ],
+  "audit_script_sha256": "dcbddd7eda3ed2805bf2602508f5effcfc70ccf9379a02d4cfd4744c035f6738"
+}

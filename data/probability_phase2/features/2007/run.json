@@ -1,0 +1,80 @@
+{
+  "year": 2007,
+  "purpose": "features_only_no_fitting_or_evaluation",
+  "command": [
+    "<PROJECT_ROOT>\\tools\\probability_phase2_features.py",
+    "--config",
+    "<ERA5_SOURCE_ROOT>\\configs\\jja_2000_2024_bjt.yaml",
+    "--source-project-root",
+    "<ERA5_SOURCE_ROOT>",
+    "--year",
+    "2007",
+    "--output-dir",
+    "data/probability_phase2/features/2007"
+  ],
+  "python": "3.13.1",
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "xarray": "2026.9.0",
+    "netCDF4": "1.7.4"
+  },
+  "protocol_sha256": "f0aa474fd6a038709fa00bb8e0e6c9dc5af0d48647ef6b68c1eea968d703df82",
+  "raw_inputs_sha256": {
+    "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2007_06.nc": "c9545c8be115aade457b07df86991abed16f98efa249620e82df601b7778f807",
+    "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2007_07.nc": "1ddf1d2ec70e13f4ac91e811e655d21dc58e21f5d887f8804fcc040b3b426879",
+    "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2007_08.nc": "cc203341312636caa0c2af7343e0e88f410b0833ddc614c8f28581bb71d56602",
+    "<ERA5_SOURCE_ROOT>\\data\\raw\\era5_east_china_2007_05_31_h16-23.nc": "0c66766f3ad40905df6133bf51a128b46192f54b48f7fc77d0f0a8b14376eff3"
+  },
+  "geometry_sha256": {
+    "registry": "24342db500391f6301bcbed60953c2784f8b203eda020998457fbfa95f8026f6",
+    "sources": "8c809c44e75551422e60bb29ba1e5c01749b63e515b0c94db6b503aa9b7f16dc"
+  },
+  "counts": {
+    "temporal": {
+      "total_grid_dates": 132720,
+      "geometry_eligible_grid_dates": 132720,
+      "common_samples": 132720,
+      "geometry_excluded": 0,
+      "bad_labels_within_geometry": 0,
+      "bad_lag1_features_within_geometry": 0,
+      "bad_lag2_features_within_geometry": 0,
+      "missing_counts_overlap": true,
+      "sample_index_sha256": "dda4a6a361eb6ce767ae47fd2381f90c36d912eb10f63ce338ed8cf63af65595"
+    },
+    "strict": {
+      "total_grid_dates": 132720,
+      "geometry_eligible_grid_dates": 109116,
+      "common_samples": 109116,
+      "geometry_excluded": 23604,
+      "bad_labels_within_geometry": 0,
+      "bad_lag1_features_within_geometry": 0,
+      "bad_lag2_features_within_geometry": 0,
+      "missing_counts_overlap": true,
+      "sample_index_sha256": "69e3d82a8a84c26e58d69c8eb7270dfc58bfc8c3f8db27647c185cfcde04bc7a"
+    }
+  },
+  "runtime_seconds": 13.432905599998776,
+  "peak_working_set_bytes": 550092800,
+  "outputs": {
+    "daily_night.nc": {
+      "bytes": 6417173,
+      "sha256": "d3f6ba73901d59d8f68c1dfd317c3581811eee81207feb49986d384bffaeebd3"
+    },
+    "feature_registry.json": {
+      "bytes": 4462,
+      "sha256": "92dc1344b8925b1940c34fed4e2ec09aab429eba0299a1e7922a3e867f991f11"
+    },
+    "strict.npz": {
+      "bytes": 66504282,
+      "sha256": "db2219215f2eaaabc4b336eabbbd7b0ab8cc821261c32ff0b4a397fc9e8a3042"
+    },
+    "temporal.npz": {
+      "bytes": 80953299,
+      "sha256": "a6cb39496f2e41987f1e806670cc3cc462589b24e9a42160e0c9a3bfa7b04e98"
+    }
+  },
+  "format": "NPZ row key=(year,day_index,grid_index); day_index=0 means June9; grid_index refers frozen registry; X1/X2 identical rows",
+  "calibration_year_policy": "2018-2019 features prepared only; no fitting, selection, calibration or evaluation",
+  "final_years": "2020-2024 never opened"
+}

@@ -10,7 +10,7 @@ choose a scientific method. It reuses T-C3's read-only input checks.
 From the independent clone, create a new plan outside the raw directory:
 
 ```powershell
-.\.venv\Scripts\python.exe -B -m tools.validate_batch plan --template-config configs/july_2022_bjt.yaml --years 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022 2023 2024 --months 6 7 8 --output D:\AS\ehhr-codex-output\new-jja-plan.json
+.\.venv\Scripts\python.exe -B -m tools.validate_batch plan --template-config configs/july_2022_bjt.yaml --years 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022 2023 2024 --months 6 7 8 --output <LOCAL_EVIDENCE_ROOT>\new-jja-plan.json
 ```
 
 The result contains 75 expected months / 2,300 local days, with no file
@@ -52,7 +52,7 @@ region, offset or threshold is FAIL and is not used to interpret raw data.
 ## Audit and safe output
 
 ```powershell
-.\.venv\Scripts\python.exe -B -m tools.validate_batch audit --manifest D:\AS\ehhr-codex-output\new-jja-plan.json --output D:\AS\ehhr-codex-output\new-inventory.json
+.\.venv\Scripts\python.exe -B -m tools.validate_batch audit --manifest <LOCAL_EVIDENCE_ROOT>\new-jja-plan.json --output <LOCAL_EVIDENCE_ROOT>\new-inventory.json
 ```
 
 Both JSON and Markdown reports must be new files, outside all bound raw/daily
@@ -79,7 +79,7 @@ equivalence are tested separately against the existing daily reducer.
 ## Review a resumed batch using previous evidence
 
 ```powershell
-.\.venv\Scripts\python.exe -B -m tools.validate_batch audit --manifest D:\AS\ehhr-codex-output\new-jja-plan.json --previous-report D:\AS\ehhr-codex-output\new-inventory.json --output D:\AS\ehhr-codex-output\new-inventory-after-download.json
+.\.venv\Scripts\python.exe -B -m tools.validate_batch audit --manifest <LOCAL_EVIDENCE_ROOT>\new-jja-plan.json --previous-report <LOCAL_EVIDENCE_ROOT>\new-inventory.json --output <LOCAL_EVIDENCE_ROOT>\new-inventory-after-download.json
 ```
 
 The identical manifest is required so a revised plan cannot silently inherit an
@@ -110,7 +110,7 @@ artifact. This tool reruns checks instead of treating file existence as validity
 Reproduce initial absence, completion, unchanged reuse and changed accepted data:
 
 ```powershell
-.\.venv\Scripts\python.exe -B -m tools.demo_batch_validation --output-dir D:\AS\ehhr-codex-output\new-m1-demo
+.\.venv\Scripts\python.exe -B -m tools.demo_batch_validation --output-dir <LOCAL_EVIDENCE_ROOT>\new-m1-demo
 ```
 
 The directory must not exist. All generated configs, raw/daily NetCDFs and a

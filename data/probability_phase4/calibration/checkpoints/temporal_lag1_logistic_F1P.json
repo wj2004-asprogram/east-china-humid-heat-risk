@@ -1,0 +1,176 @@
+{
+  "gates": {
+    "scientific_lock.json": "9e4e1539903757bc216bf951dddce799b713c6f2bb19bca4a27685551874f938"
+  },
+  "freeze_config_sha256": "21d0e8c54810398f97160952880f3b3449b5b59f7dd5c7caa9a7ab8c5773caed",
+  "artifacts_sha256": {
+    "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F1P\\2018.npz": "066a17a1f42749622cee1d234372e3cc6a6dda355fd5104178cce752d1bead6e",
+    "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F1P\\2018.json": "9f12dc4eb83be6afbdac0122b7c2463c3cd1c3c12b19576ac76b29d1ba08e1f3",
+    "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F1P\\2019.npz": "97c30d2c83a3b965a1556896315921f742b347be298d59f120574ad84da2c224",
+    "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F1P\\2019.json": "1367f64fa50925fb4bb8fbcd98ff7aee1d188c174342c086365a924a50e9f42a",
+    "data\\probability_phase4\\enriched\\calibration\\temporal\\lag1\\logistic_F1P\\2018.npz": "70840d8e18c00b927fed6105550ed805019fe4bb1f941a0400b9805db7a76fdc",
+    "data\\probability_phase4\\enriched\\calibration\\temporal\\lag1\\logistic_F1P\\2019.npz": "32cbcb0faa06c369a2a8d5ae03bb1e9d2cc0cf2bc47378711784425c791473ed"
+  },
+  "record": {
+    "scope": "temporal",
+    "lag": 1,
+    "model_id": "logistic_F1P",
+    "mapping": {
+      "a": 1.012949513906492,
+      "b": 0.24164548047352674,
+      "status": "fitted",
+      "reason": "",
+      "objective": 0.2969076674505673,
+      "iterations": 6
+    },
+    "budget": {
+      "threshold": 0.86,
+      "calibration_alert_fraction": 0.09735533453887885,
+      "annual_alert_fractions": [
+        0.10628390596745027,
+        0.08842676311030741
+      ],
+      "budget": 0.1
+    },
+    "fit_years": [
+      2018,
+      2019
+    ],
+    "inputs_sha256": {
+      "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F1P\\2018.npz": "066a17a1f42749622cee1d234372e3cc6a6dda355fd5104178cce752d1bead6e",
+      "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F1P\\2018.json": "9f12dc4eb83be6afbdac0122b7c2463c3cd1c3c12b19576ac76b29d1ba08e1f3",
+      "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F1P\\2019.npz": "97c30d2c83a3b965a1556896315921f742b347be298d59f120574ad84da2c224",
+      "data\\probability_phase4\\predictions\\calibration\\temporal\\lag1\\logistic_F1P\\2019.json": "1367f64fa50925fb4bb8fbcd98ff7aee1d188c174342c086365a924a50e9f42a"
+    }
+  },
+  "diagnostics": [
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "logistic_F1P",
+      "year": 2018,
+      "probability": "raw",
+      "interpretation": "calibration_in_sample_not_generalization",
+      "n": 132720,
+      "events": 41553,
+      "prevalence": 0.3130877034358047,
+      "brier": 0.10605710800518613,
+      "ap": 0.8342932913257144,
+      "pr_auc_trapezoid": 0.8342864249076141,
+      "tp": 29073,
+      "fp": 7835,
+      "fn": 12480,
+      "tn": 83332,
+      "recall": 0.6996606743195437,
+      "precision": 0.7877154004551858,
+      "far": 0.21228459954481413,
+      "fpr": 0.08594118485855627,
+      "miss_rate": 0.3003393256804563,
+      "alert_fraction": 0.27808921036769135,
+      "brier_coslat": 0.10609068117177323,
+      "log_loss_clip_1e_6": 0.3347318265200332,
+      "intercept": 0.2246625188341182,
+      "slope": 0.9750109794295604,
+      "status": "fitted"
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "logistic_F1P",
+      "year": 2018,
+      "probability": "calibrated",
+      "interpretation": "calibration_in_sample_not_generalization",
+      "n": 132720,
+      "events": 41553,
+      "prevalence": 0.3130877034358047,
+      "brier": 0.10523639270953751,
+      "ap": 0.8342932913257143,
+      "pr_auc_trapezoid": 0.8342864249076141,
+      "tp": 30853,
+      "fp": 9409,
+      "fn": 10700,
+      "tn": 81758,
+      "recall": 0.7424975332707626,
+      "precision": 0.7663056976801947,
+      "far": 0.23369430231980529,
+      "fpr": 0.10320620399925412,
+      "miss_rate": 0.2575024667292374,
+      "alert_fraction": 0.30336045810729356,
+      "brier_coslat": 0.10522634682152743,
+      "log_loss_clip_1e_6": 0.3319523945618995,
+      "intercept": -0.00793255505192775,
+      "slope": 0.9625464751143089,
+      "status": "fitted"
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "logistic_F1P",
+      "year": 2019,
+      "probability": "raw",
+      "interpretation": "calibration_in_sample_not_generalization",
+      "n": 132720,
+      "events": 33664,
+      "prevalence": 0.2536467751657625,
+      "brier": 0.08307121522185472,
+      "ap": 0.8521659551226729,
+      "pr_auc_trapezoid": 0.8521630111387166,
+      "tp": 23394,
+      "fp": 5545,
+      "fn": 10270,
+      "tn": 93511,
+      "recall": 0.6949263307984791,
+      "precision": 0.8083900618542451,
+      "far": 0.19160993814575486,
+      "fpr": 0.05597843643999354,
+      "miss_rate": 0.3050736692015209,
+      "alert_fraction": 0.2180455093429777,
+      "brier_coslat": 0.08378013996891738,
+      "log_loss_clip_1e_6": 0.26428059211992266,
+      "intercept": 0.2685385970638098,
+      "slope": 1.0587434787182048,
+      "status": "fitted"
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "model_id": "logistic_F1P",
+      "year": 2019,
+      "probability": "calibrated",
+      "interpretation": "calibration_in_sample_not_generalization",
+      "n": 132720,
+      "events": 33664,
+      "prevalence": 0.2536467751657625,
+      "brier": 0.08207928607068114,
+      "ap": 0.8521659551226728,
+      "pr_auc_trapezoid": 0.8521630111387167,
+      "tp": 24777,
+      "fp": 6817,
+      "fn": 8887,
+      "tn": 92239,
+      "recall": 0.7360087927756654,
+      "precision": 0.7842311831360385,
+      "far": 0.21576881686396152,
+      "fpr": 0.0688196575674366,
+      "miss_rate": 0.2639912072243346,
+      "alert_fraction": 0.23805003013863774,
+      "brier_coslat": 0.08273336751076879,
+      "log_loss_clip_1e_6": 0.26186294000385585,
+      "intercept": 0.01596870461122366,
+      "slope": 1.045208520282347,
+      "status": "fitted"
+    }
+  ],
+  "index_registry": [
+    [
+      "temporal",
+      2018,
+      "10600a6472203ace6bdab4df1dcbfc37f6c2dca3f1886e257fcc20100fa69103"
+    ],
+    [
+      "temporal",
+      2019,
+      "78e4ffe0cd91b7a435d220f5ceba0a398dfd4058dcdcd8c33c098f740511eb7b"
+    ]
+  ]
+}

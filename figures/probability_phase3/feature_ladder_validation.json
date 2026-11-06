@@ -1,0 +1,25 @@
+{
+  "inputs_sha256": {
+    "data\\probability_phase2\\experiments\\run1\\metrics_yearly.csv": "efb447f5f39b119f62ce14f49457299cd0ce6c00d73f488c2d2d25d422aeee82",
+    "data\\probability_phase3\\lr_ablations\\run1\\metrics_yearly.csv": "57dadf392cc9a918cdf0b5dab10c9dcf98fb76362ac2ab34fd7773573e9bd3c1",
+    "data\\probability_phase3\\lightgbm\\run1\\metrics_yearly.csv": "576fc4ee544cc9eac569774f0ddabe3f975375d38a0b03ac183149d358700b73"
+  },
+  "annual_records": 120,
+  "mean_records": 40,
+  "years": [
+    2015,
+    2016,
+    2017
+  ],
+  "scope": "temporal",
+  "probabilities": "uncalibrated",
+  "aggregation": "equal-weight mean annual Brier",
+  "test_or_calibration_years_read": false,
+  "interpretation": "Controlled feature ladder under each family's fixed selected settings, not causal effects",
+  "script_sha256": "add686f723c3565a4d721a4c6d34fb0d6922a4fd21a0143406c8d1b6508f3e04",
+  "versions": {
+    "matplotlib": "3.11.2",
+    "pandas": "3.0.6",
+    "numpy": "2.5.4"
+  }
+}

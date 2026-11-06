@@ -1,0 +1,13 @@
+{
+  "started_utc": "20261105T225354875573Z",
+  "module": "tools.probability_phase4_calibrate",
+  "arguments": [],
+  "python_executable": "<ERA5_SOURCE_ROOT>\\.venv\\Scripts\\python.exe",
+  "working_directory": "<PROJECT_ROOT>",
+  "source_sha256": "91194c4545cae4c5f3cb312916241bf31c6b21accfd81224febf1f90aea57bde",
+  "status": "completed",
+  "completed_utc": "2026-11-05T22:54:51.566777+00:00",
+  "runtime_seconds": 56.68915160000324,
+  "peak_working_set_bytes": 152121344,
+  "output_log_sha256": "3d813bbdaead38ba6052513198228def15599c4392a7c849c616e8f27de82340"
+}

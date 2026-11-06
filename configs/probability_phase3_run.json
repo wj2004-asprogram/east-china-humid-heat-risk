@@ -1,0 +1,569 @@
+{
+  "run_id": "ehhr_probability_phase3_v1",
+  "prepared_on": "2026-11-05",
+  "status": "execution_design_locked_before_formal_fitting",
+  "base_commit": "4de4e1cb05ab5791d1ee8af8e4b054a28bdc9044",
+  "branch": "research/probability-lightgbm-20261105",
+  "source_protocol": "configs/probability_protocol_v1.json",
+  "source_protocol_sha256": "f0aa474fd6a038709fa00bb8e0e6c9dc5af0d48647ef6b68c1eea968d703df82",
+  "source_protocol_is_immutable": true,
+  "design_notes": "docs/PROBABILITY_PHASE3_DESIGN_NOTES.md",
+  "execution": {
+    "fit_training_models": true,
+    "fit_calibration": false,
+    "evaluate_final_test": false,
+    "open_final_year_weather_or_labels": false,
+    "download_raw": false,
+    "modify_raw": false,
+    "push": false,
+    "deploy": false
+  },
+  "input": {
+    "feature_root": "data/probability_phase2/features",
+    "feature_registry": "data/probability_phase2/features/2000/feature_registry.json",
+    "feature_registry_sha256": "92dc1344b8925b1940c34fed4e2ec09aab429eba0299a1e7922a3e867f991f11",
+    "feature_storage_dtype": "float32",
+    "preserve_existing_labels": true,
+    "model_years_allowed": [
+      2000,
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017
+    ],
+    "train_years": [
+      2000,
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014
+    ],
+    "validation_years": [
+      2015,
+      2016,
+      2017
+    ],
+    "calibration_years_excluded": [
+      2018,
+      2019
+    ],
+    "final_years_closed": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "common_index_policy": "reuse_phase2_same_rows_for_all_arms_algorithms_and_both_lags",
+    "scopes": {
+      "temporal": {
+        "annual_rows": 132720,
+        "train_rows": 1990800,
+        "validation_rows": 398160
+      },
+      "strict": {
+        "annual_rows": 109116,
+        "train_rows": 1636740,
+        "validation_rows": 327348,
+        "query_role": "train",
+        "query_grid_count": 1299,
+        "weather_source_grid_count": 1302,
+        "holdout_evaluation": false
+      }
+    },
+    "lags": [
+      1,
+      2
+    ]
+  },
+  "features": {
+    "registry_columns": 117,
+    "order": "original_registry_relative_order",
+    "selection": "union_of_group_matches_and_exact_names_without_duplicates",
+    "arms": {
+      "F0": {
+        "groups": [
+          "C",
+          "T"
+        ],
+        "exact_names": [],
+        "n_features": 33
+      },
+      "F1": {
+        "groups": [
+          "C",
+          "T",
+          "M"
+        ],
+        "exact_names": [],
+        "n_features": 87
+      },
+      "F2": {
+        "groups": [
+          "C",
+          "T",
+          "M",
+          "NT",
+          "NM"
+        ],
+        "exact_names": [],
+        "n_features": 92
+      },
+      "F3": {
+        "groups": [
+          "C",
+          "T",
+          "M",
+          "NT",
+          "NM",
+          "RT",
+          "RM"
+        ],
+        "exact_names": [],
+        "n_features": 104
+      },
+      "F4": {
+        "groups": [
+          "C",
+          "T",
+          "M",
+          "NT",
+          "NM",
+          "RT",
+          "RM",
+          "H"
+        ],
+        "exact_names": [],
+        "n_features": 117
+      },
+      "F0P": {
+        "groups": [
+          "C",
+          "T"
+        ],
+        "exact_names": [
+          "y_anchor"
+        ],
+        "n_features": 34
+      },
+      "F1P": {
+        "groups": [
+          "C",
+          "T",
+          "M"
+        ],
+        "exact_names": [
+          "y_anchor"
+        ],
+        "n_features": 88
+      },
+      "F2_minus_NT": {
+        "groups": [
+          "C",
+          "T",
+          "M",
+          "NM"
+        ],
+        "exact_names": [],
+        "n_features": 89
+      },
+      "F2_minus_NM": {
+        "groups": [
+          "C",
+          "T",
+          "M",
+          "NT"
+        ],
+        "exact_names": [],
+        "n_features": 90
+      },
+      "F3_minus_RT": {
+        "groups": [
+          "C",
+          "T",
+          "M",
+          "NT",
+          "NM",
+          "RM"
+        ],
+        "exact_names": [],
+        "n_features": 100
+      },
+      "F3_minus_RM": {
+        "groups": [
+          "C",
+          "T",
+          "M",
+          "NT",
+          "NM",
+          "RT"
+        ],
+        "exact_names": [],
+        "n_features": 96
+      }
+    },
+    "P_definition": "exact_column_y_anchor_only_from_corresponding_X1_or_X2",
+    "evaluation_previous_y_never_used_as_lag2_P": true,
+    "tree_and_lr_feature_names_must_match": true,
+    "tree_scaling": false,
+    "tree_categorical_feature": [],
+    "require_all_finite": true
+  },
+  "lightgbm": {
+    "library_version": "4.7.0",
+    "candidate_grid": {
+      "num_leaves": [
+        7,
+        15
+      ],
+      "min_data_in_leaf": [
+        100,
+        500
+      ],
+      "lambda_l2": [
+        1,
+        10
+      ]
+    },
+    "parameter_aliases": {
+      "min_child_samples": "min_data_in_leaf",
+      "reg_lambda": "lambda_l2"
+    },
+    "candidate_order": "num_leaves_ascending_then_min_data_in_leaf_ascending_then_lambda_l2_ascending",
+    "params": {
+      "objective": "binary",
+      "metric": "binary_logloss",
+      "boosting_type": "gbdt",
+      "learning_rate": 0.05,
+      "max_depth": -1,
+      "feature_fraction": 1,
+      "feature_fraction_bynode": 1,
+      "bagging_fraction": 1,
+      "bagging_freq": 0,
+      "lambda_l1": 0,
+      "min_sum_hessian_in_leaf": 0.001,
+      "min_gain_to_split": 0,
+      "device_type": "cpu",
+      "num_threads": 1,
+      "deterministic": true,
+      "force_col_wise": true,
+      "force_row_wise": false,
+      "seed": 20261105,
+      "data_random_seed": 20261105,
+      "feature_fraction_seed": 20261105,
+      "bagging_seed": 20261105,
+      "extra_seed": 20261105,
+      "max_bin": 255,
+      "min_data_in_bin": 3,
+      "bin_construct_sample_cnt": 200000,
+      "feature_pre_filter": false,
+      "zero_as_missing": false,
+      "use_missing": true,
+      "is_unbalance": false,
+      "scale_pos_weight": 1,
+      "boost_from_average": true,
+      "verbosity": -1
+    },
+    "dataset": {
+      "training_fit_years": [
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014
+      ],
+      "training_data_only_for_bins": true,
+      "validation_reference": "matching_training_dataset",
+      "validation_creation": "train.create_valid_or_Dataset_with_reference_train",
+      "categorical_feature": [],
+      "combined_train_validation_dataset_forbidden": true,
+      "combined_dataset_then_subset_forbidden": true,
+      "reuse_f4_lag1_dataset_for_eight_candidates": true,
+      "feature_pre_filter_must_remain_false": true,
+      "different_scope_lag_arm_requires_matching_train_representation": true,
+      "row_order": "phase2_ascending_year_then_saved_annual_order",
+      "class_weight": null,
+      "oversampling": false
+    },
+    "search": {
+      "reference_arm": "F4",
+      "reference_lag": 1,
+      "independent_by_scope": true,
+      "max_boost_rounds": 2000,
+      "early_stopping": {
+        "enabled_only_during_search": true,
+        "metric": "binary_logloss",
+        "stopping_rounds": 100,
+        "min_delta": 0,
+        "first_metric_only": true,
+        "validation_dataset_count": 1,
+        "pooled_validation_years": [
+          2015,
+          2016,
+          2017
+        ],
+        "annual_counts_must_be_equal": true,
+        "weighting": "pooled_logloss_equals_equal_annual_logloss_for_verified_equal_counts",
+        "training_metric_used_for_stopping": false
+      },
+      "candidate_selection_metric": "mean_annual_raw_brier_at_logloss_best_iteration",
+      "select_another_iteration_using_brier": false,
+      "tie_break": [
+        "smaller_num_leaves",
+        "larger_min_data_in_leaf",
+        "larger_lambda_l2"
+      ],
+      "save_candidate_params_iteration_scores_failures": true,
+      "invalid_best_iteration_policy": "fail_candidate_if_not_positive",
+      "failure_policy": "record_and_exclude_without_extra_search"
+    },
+    "reuse": {
+      "winner_f4_lag1_model_directly_exported": true,
+      "all_other_arms_and_lags_use_scope_winner_params": true,
+      "num_boost_round": "scope_winner_best_iteration",
+      "early_stopping": false,
+      "validation_used_to_select_reuse_rounds": false,
+      "refit_on_train_plus_validation": false,
+      "prediction_num_iteration": "same_frozen_requested_or_recorded_actual_iterations",
+      "record_requested_and_actual_iterations": true,
+      "no_further_split_policy": "record_actual_count_do_not_search_or_fill"
+    }
+  },
+  "resources": {
+    "pilot": {
+      "enabled": true,
+      "count": 1,
+      "scope": "temporal",
+      "arm": "F4",
+      "lag": 1,
+      "params": {
+        "num_leaves": 7,
+        "min_data_in_leaf": 100,
+        "lambda_l2": 1
+      },
+      "rounds": 100,
+      "data": "training_only",
+      "validation_metrics": false,
+      "selection_eligible": false,
+      "export_predictions": false,
+      "counted_separately_from_formal_fits": true
+    },
+    "core_arms_first": [
+      "F4",
+      "F0",
+      "F1",
+      "F0P",
+      "F1P"
+    ],
+    "remaining_arms": [
+      "F2",
+      "F3",
+      "F2_minus_NT",
+      "F2_minus_NM",
+      "F3_minus_RT",
+      "F3_minus_RM"
+    ],
+    "both_lags_required_for_executed_arm_comparisons": true,
+    "planned_formal_counts": {
+      "scopes": 2,
+      "arms": 11,
+      "lags": 2,
+      "search_per_scope": 8,
+      "reuse_new_per_scope": 21,
+      "total_per_scope": 29,
+      "total_search": 16,
+      "total_reuse_new": 42,
+      "total_formal_fits": 58,
+      "exported_models": 44
+    },
+    "core_counts_if_resource_limited": {
+      "arms": 5,
+      "total_formal_fits": 34,
+      "exported_models": 20
+    },
+    "do_not_silently_reduce_years_features_bins_or_threads": true,
+    "omission_policy": "record_scope_arm_lag_reason_and_status_never_omit_based_on_score",
+    "automatic_wall_time_stop": null
+  },
+  "lr_completion": {
+    "already_exported_arms": [
+      "F0",
+      "F1",
+      "F4"
+    ],
+    "new_arms": [
+      "F2",
+      "F3",
+      "F0P",
+      "F1P",
+      "F2_minus_NT",
+      "F2_minus_NM",
+      "F3_minus_RT",
+      "F3_minus_RM"
+    ],
+    "new_fits_planned": 32,
+    "all_models_if_complete": 44,
+    "C_by_scope": {
+      "temporal": 0.1,
+      "strict": 0.1
+    },
+    "new_C_search": false,
+    "solver": "lbfgs",
+    "max_iter": 2000,
+    "tol": 0.000001,
+    "fit_scaler_train_only": true,
+    "failure_policy": "record_nonconvergence_without_solver_or_parameter_search"
+  },
+  "comparisons": {
+    "primary_model_comparison": "LightGBM_minus_LR_same_scope_lag_arm_common_keys",
+    "fixed_phase2_strong_reference": "logistic_F4",
+    "replace_fixed_reference_after_subgroup_results": false,
+    "supplementary_lr_champion": {
+      "enabled": true,
+      "candidate_arms": "completed_planned_arms_only",
+      "scope": "once_per_scope_and_lag",
+      "split": "validation",
+      "risk_set": "all",
+      "metric": "mean_annual_raw_brier",
+      "tie_break": [
+        "fewer_features",
+        "lexicographic_arm"
+      ],
+      "selection_bias_disclosed": true,
+      "does_not_replace_fixed_primary_reference": true,
+      "subgroup_specific_selection": false
+    },
+    "predefined_feature_contrasts": [
+      {
+        "candidate": "F1",
+        "reference": "F0",
+        "interpretation": "moisture_added_to_pure_temperature"
+      },
+      {
+        "candidate": "F1P",
+        "reference": "F0P",
+        "interpretation": "moisture_conditional_on_available_event_state"
+      },
+      {
+        "candidate": "F2",
+        "reference": "F1",
+        "interpretation": "completed_night_group"
+      },
+      {
+        "candidate": "F3",
+        "reference": "F2",
+        "interpretation": "regional_group"
+      },
+      {
+        "candidate": "F4",
+        "reference": "F3",
+        "interpretation": "historical_composite_heat_state"
+      },
+      {
+        "candidate": "F2",
+        "reference": "F2_minus_NT",
+        "interpretation": "night_temperature_with_night_moisture_already_present"
+      },
+      {
+        "candidate": "F2",
+        "reference": "F2_minus_NM",
+        "interpretation": "night_moisture_with_night_temperature_already_present"
+      },
+      {
+        "candidate": "F3",
+        "reference": "F3_minus_RT",
+        "interpretation": "regional_temperature_conditional_group"
+      },
+      {
+        "candidate": "F3",
+        "reference": "F3_minus_RM",
+        "interpretation": "regional_moisture_conditional_group"
+      }
+    ],
+    "delta_definition": "candidate_brier_minus_reference_brier_negative_is_improvement",
+    "risk_sets": [
+      "all",
+      "onset",
+      "persistence_or_clearance"
+    ],
+    "onset_definition": "evaluation_previous_y_equals_zero_including_both_00_and_01",
+    "probabilities": "raw",
+    "alert_threshold": 0.5,
+    "calibration_budget_threshold": false,
+    "annual_reports": [
+      2015,
+      2016,
+      2017
+    ],
+    "aggregate": "equal_annual_mean",
+    "independent_test_claim": false,
+    "preserve_phase2_lag2_onset_counterexample": true
+  },
+  "artifact_requirements": [
+    "protocol_and_run_config_hashes",
+    "feature_registry_and_common_index_identity",
+    "library_version",
+    "dataset_bin_source_years_and_scope",
+    "exact_features_order",
+    "all_candidate_params_scores_best_iterations_status",
+    "selected_scope_config",
+    "requested_actual_iterations",
+    "prediction_identity_and_raw_probability",
+    "failures_and_unexecuted_arm_registry"
+  ],
+  "review": {
+    "mode": "one_substantive_review_on_completed_artifacts_continuable_during_long_run",
+    "repeat_raw_inventory": false,
+    "status": "pending_results"
+  },
+  "sources": [
+    {
+      "title": "LightGBM 4.7.0 Dataset",
+      "url": "https://lightgbm.readthedocs.io/en/stable/pythonapi/lightgbm.Dataset.html",
+      "retrieved_on": "2026-11-05"
+    },
+    {
+      "title": "LightGBM 4.7.0 parameters",
+      "url": "https://lightgbm.readthedocs.io/en/stable/Parameters.html",
+      "retrieved_on": "2026-11-05"
+    },
+    {
+      "title": "LightGBM 4.7.0 early_stopping",
+      "url": "https://lightgbm.readthedocs.io/en/stable/pythonapi/lightgbm.early_stopping.html",
+      "retrieved_on": "2026-11-05"
+    }
+  ]
+}

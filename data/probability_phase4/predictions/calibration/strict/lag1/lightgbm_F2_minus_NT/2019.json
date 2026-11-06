@@ -1,0 +1,18 @@
+{
+  "gates": {
+    "scientific_lock.json": "9e4e1539903757bc216bf951dddce799b713c6f2bb19bca4a27685551874f938"
+  },
+  "inputs_sha256": {
+    "data\\probability_phase2\\features\\2019\\strict.npz": "2b69bd53778876177627a521c6ded40ceb8ae158fa7ed001401800cabfa57d81",
+    "data\\probability_phase2\\features\\2019\\feature_registry.json": "92dc1344b8925b1940c34fed4e2ec09aab429eba0299a1e7922a3e867f991f11",
+    "data\\probability_phase1\\samples\\grid_registry.csv": "24342db500391f6301bcbed60953c2784f8b203eda020998457fbfa95f8026f6",
+    "data\\probability_phase3\\lightgbm\\run1\\models\\strict\\lag1_lightgbm_F2_minus_NT.json": "d879b360cd778b9ba3e4b9cffedeac0d4f2ba537376e20ba5693aa77714b5068",
+    "data\\probability_phase3\\lightgbm\\run1\\models\\strict\\lag1_lightgbm_F2_minus_NT.txt": "69995eabe9487dae24e331f5cfe9d7f6cfd4874d3544529cbc7582c10005405a"
+  },
+  "output_sha256": "5145460ca9173c68f5848b7d66a028cce9d3603a96ac44131675e913e3dd2383",
+  "sample_index_sha256": "69e3d82a8a84c26e58d69c8eb7270dfc58bfc8c3f8db27647c185cfcde04bc7a",
+  "source_sha256": {
+    "<PROJECT_ROOT>\\tools\\probability_phase4_predict.py": "0df4692998f59c6b4b84ce6a9110d4131be8c0ad29a799824dd74ce9f0cd650f",
+    "src/probability_phase4_data.py": "c0877eb00742e9c6aacd839fdad55e32fdd29325ed870f600f33aa314950c8d9"
+  }
+}

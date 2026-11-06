@@ -1,0 +1,17 @@
+{
+  "representation": "Factorized annual NPZ predictions and immutable grid registry",
+  "grid_registry": "data\\probability_phase1\\samples\\grid_registry.csv",
+  "grid_registry_sha256": "24342db500391f6301bcbed60953c2784f8b203eda020998457fbfa95f8026f6",
+  "row_key": "grid_id[grid_index] + '|' + (year-June09 + day_index)",
+  "date_rule": "day_index 0 = June9, 83 = August31",
+  "issue_target_start": "target date 00 BJT = preceding date 16 UTC",
+  "target_end_exclusive": "next date 00 BJT = target date 16 UTC",
+  "max_input_valid_time": "D-lag 23 BJT = D-lag 15 UTC",
+  "spatial_role_latitude_longitude": "join exact registry row grid_index",
+  "model_id_lag_scope_year": "directory and filename",
+  "p_calibrated": null,
+  "raw_research_alert_threshold": 0.5,
+  "sample_eligibility": "same finite 117-feature union for both lags within each scope",
+  "previous_y": "evaluation only, never a D2 model input",
+  "protocol_sha256": "f0aa474fd6a038709fa00bb8e0e6c9dc5af0d48647ef6b68c1eea968d703df82"
+}

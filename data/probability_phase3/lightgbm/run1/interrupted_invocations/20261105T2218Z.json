@@ -1,0 +1,12 @@
+{
+  "observed_utc": "2026-11-05T22:18:07Z",
+  "tool_observation": "functions.wait returned aborted by user after 13.3s while polling session 74701",
+  "process_check": "Elevated read-only CIM returned no Python processes",
+  "interrupted_fit_directories": ["data/probability_phase3/lightgbm/run1/reuse/strict/lag2_F3_minus_RM"],
+  "completed_checkpoint_for_interrupted_candidate": true,
+  "saved_iterations": 928,
+  "saved_fit_seconds": 194.44399679999333,
+  "export_complete": false,
+  "cause": "Unknown; no explicit new stop instruction found",
+  "recovery": "Parent-authorized continuation restores the complete model and exports predictions only; no refitting. Original batch2 deadline unchanged."
+}

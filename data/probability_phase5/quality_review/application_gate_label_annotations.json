@@ -1,0 +1,271 @@
+{
+  "source": "data/probability_phase4/evaluation/application_gate.json",
+  "interpretation": "The preserved label means upper endpoint is unavailable or >=0, not necessarily that the interval contains zero.",
+  "gate_decisions_unchanged": true,
+  "annotations": [
+    {
+      "scope": "temporal",
+      "cell": "lag1/all",
+      "block_days": 14,
+      "original_label": "block_14_interval_does_not_exclude_zero",
+      "corrected_meaning": "interval_not_strictly_below_zero",
+      "delta_brier_lower": 0.00040595624715179454,
+      "delta_brier_upper": 0.0034316330056098866,
+      "interval_entirely_positive": true,
+      "decision_changed": false
+    },
+    {
+      "scope": "temporal",
+      "cell": "lag1/all",
+      "block_days": 7,
+      "original_label": "block_7_interval_does_not_exclude_zero",
+      "corrected_meaning": "interval_not_strictly_below_zero",
+      "delta_brier_lower": 0.0003919599016672975,
+      "delta_brier_upper": 0.0038987348492246273,
+      "interval_entirely_positive": true,
+      "decision_changed": false
+    },
+    {
+      "scope": "temporal",
+      "cell": "lag1/all",
+      "block_days": 21,
+      "original_label": "block_21_interval_does_not_exclude_zero",
+      "corrected_meaning": "interval_not_strictly_below_zero",
+      "delta_brier_lower": 0.00044057918660632514,
+      "delta_brier_upper": 0.003256175076272427,
+      "interval_entirely_positive": true,
+      "decision_changed": false
+    },
+    {
+      "scope": "temporal",
+      "cell": "lag1/onset",
+      "block_days": 14,
+      "original_label": "block_14_interval_does_not_exclude_zero",
+      "corrected_meaning": "interval_not_strictly_below_zero",
+      "delta_brier_lower": 0.00022012039941381596,
+      "delta_brier_upper": 0.003564050073408199,
+      "interval_entirely_positive": true,
+      "decision_changed": false
+    },
+    {
+      "scope": "temporal",
+      "cell": "lag1/onset",
+      "block_days": 7,
+      "original_label": "block_7_interval_does_not_exclude_zero",
+      "corrected_meaning": "interval_not_strictly_below_zero",
+      "delta_brier_lower": 0.00033881775483776135,
+      "delta_brier_upper": 0.003738146769477583,
+      "interval_entirely_positive": true,
+      "decision_changed": false
+    },
+    {
+      "scope": "temporal",
+      "cell": "lag1/onset",
+      "block_days": 21,
+      "original_label": "block_21_interval_does_not_exclude_zero",
+      "corrected_meaning": "interval_not_strictly_below_zero",
+      "delta_brier_lower": 0.0004453003700747315,
+      "delta_brier_upper": 0.003176520350382488,
+      "interval_entirely_positive": true,
+      "decision_changed": false
+    },
+    {
+      "scope": "temporal",
+      "cell": "lag2/all",
+      "block_days": 14,
+      "original_label": "block_14_interval_does_not_exclude_zero",
+      "corrected_meaning": "interval_not_strictly_below_zero",
+      "delta_brier_lower": 0.003288637017021261,
+      "delta_brier_upper": 0.012800432543588742,
+      "interval_entirely_positive": true,
+      "decision_changed": false
+    },
+    {
+      "scope": "temporal",
+      "cell": "lag2/all",
+      "block_days": 7,
+      "original_label": "block_7_interval_does_not_exclude_zero",
+      "corrected_meaning": "interval_not_strictly_below_zero",
+      "delta_brier_lower": 0.002621947275306056,
+      "delta_brier_upper": 0.013019560583265097,
+      "interval_entirely_positive": true,
+      "decision_changed": false
+    },
+    {
+      "scope": "temporal",
+      "cell": "lag2/all",
+      "block_days": 21,
+      "original_label": "block_21_interval_does_not_exclude_zero",
+      "corrected_meaning": "interval_not_strictly_below_zero",
+      "delta_brier_lower": 0.003969906749850651,
+      "delta_brier_upper": 0.012657801762980241,
+      "interval_entirely_positive": true,
+      "decision_changed": false
+    },
+    {
+      "scope": "temporal",
+      "cell": "lag2/onset",
+      "block_days": 14,
+      "original_label": "block_14_interval_does_not_exclude_zero",
+      "corrected_meaning": "interval_not_strictly_below_zero",
+      "delta_brier_lower": -0.0036359084165158958,
+      "delta_brier_upper": 0.004903946883445092,
+      "interval_entirely_positive": false,
+      "decision_changed": false
+    },
+    {
+      "scope": "temporal",
+      "cell": "lag2/onset",
+      "block_days": 7,
+      "original_label": "block_7_interval_does_not_exclude_zero",
+      "corrected_meaning": "interval_not_strictly_below_zero",
+      "delta_brier_lower": -0.0030631369852052144,
+      "delta_brier_upper": 0.004919020069549274,
+      "interval_entirely_positive": false,
+      "decision_changed": false
+    },
+    {
+      "scope": "temporal",
+      "cell": "lag2/onset",
+      "block_days": 21,
+      "original_label": "block_21_interval_does_not_exclude_zero",
+      "corrected_meaning": "interval_not_strictly_below_zero",
+      "delta_brier_lower": -0.003876915725364277,
+      "delta_brier_upper": 0.004689857841459577,
+      "interval_entirely_positive": false,
+      "decision_changed": false
+    },
+    {
+      "scope": "strict",
+      "cell": "lag1/all",
+      "block_days": 14,
+      "original_label": "block_14_interval_does_not_exclude_zero",
+      "corrected_meaning": "interval_not_strictly_below_zero",
+      "delta_brier_lower": -0.009187232709123593,
+      "delta_brier_upper": 0.007007030101255402,
+      "interval_entirely_positive": false,
+      "decision_changed": false
+    },
+    {
+      "scope": "strict",
+      "cell": "lag1/all",
+      "block_days": 7,
+      "original_label": "block_7_interval_does_not_exclude_zero",
+      "corrected_meaning": "interval_not_strictly_below_zero",
+      "delta_brier_lower": -0.008772203209477844,
+      "delta_brier_upper": 0.007251128447358518,
+      "interval_entirely_positive": false,
+      "decision_changed": false
+    },
+    {
+      "scope": "strict",
+      "cell": "lag1/all",
+      "block_days": 21,
+      "original_label": "block_21_interval_does_not_exclude_zero",
+      "corrected_meaning": "interval_not_strictly_below_zero",
+      "delta_brier_lower": -0.009057101395062921,
+      "delta_brier_upper": 0.006839246341384089,
+      "interval_entirely_positive": false,
+      "decision_changed": false
+    },
+    {
+      "scope": "strict",
+      "cell": "lag1/onset",
+      "block_days": 14,
+      "original_label": "block_14_interval_does_not_exclude_zero",
+      "corrected_meaning": "interval_not_strictly_below_zero",
+      "delta_brier_lower": -0.004190191565795505,
+      "delta_brier_upper": 0.005592062317981515,
+      "interval_entirely_positive": false,
+      "decision_changed": false
+    },
+    {
+      "scope": "strict",
+      "cell": "lag1/onset",
+      "block_days": 7,
+      "original_label": "block_7_interval_does_not_exclude_zero",
+      "corrected_meaning": "interval_not_strictly_below_zero",
+      "delta_brier_lower": -0.004038976705872927,
+      "delta_brier_upper": 0.005269332008645276,
+      "interval_entirely_positive": false,
+      "decision_changed": false
+    },
+    {
+      "scope": "strict",
+      "cell": "lag1/onset",
+      "block_days": 21,
+      "original_label": "block_21_interval_does_not_exclude_zero",
+      "corrected_meaning": "interval_not_strictly_below_zero",
+      "delta_brier_lower": -0.004575347899309589,
+      "delta_brier_upper": 0.005951527458614578,
+      "interval_entirely_positive": false,
+      "decision_changed": false
+    },
+    {
+      "scope": "strict",
+      "cell": "lag2/all",
+      "block_days": 14,
+      "original_label": "block_14_interval_does_not_exclude_zero",
+      "corrected_meaning": "interval_not_strictly_below_zero",
+      "delta_brier_lower": -0.019582238624245372,
+      "delta_brier_upper": 0.009504849736506723,
+      "interval_entirely_positive": false,
+      "decision_changed": false
+    },
+    {
+      "scope": "strict",
+      "cell": "lag2/all",
+      "block_days": 7,
+      "original_label": "block_7_interval_does_not_exclude_zero",
+      "corrected_meaning": "interval_not_strictly_below_zero",
+      "delta_brier_lower": -0.01652697561406731,
+      "delta_brier_upper": 0.009194157458385257,
+      "interval_entirely_positive": false,
+      "decision_changed": false
+    },
+    {
+      "scope": "strict",
+      "cell": "lag2/all",
+      "block_days": 21,
+      "original_label": "block_21_interval_does_not_exclude_zero",
+      "corrected_meaning": "interval_not_strictly_below_zero",
+      "delta_brier_lower": -0.020058187696478644,
+      "delta_brier_upper": 0.01004057002366921,
+      "interval_entirely_positive": false,
+      "decision_changed": false
+    },
+    {
+      "scope": "strict",
+      "cell": "lag2/onset",
+      "block_days": 14,
+      "original_label": "block_14_interval_does_not_exclude_zero",
+      "corrected_meaning": "interval_not_strictly_below_zero",
+      "delta_brier_lower": -0.008284085236013452,
+      "delta_brier_upper": 0.011948343031054753,
+      "interval_entirely_positive": false,
+      "decision_changed": false
+    },
+    {
+      "scope": "strict",
+      "cell": "lag2/onset",
+      "block_days": 7,
+      "original_label": "block_7_interval_does_not_exclude_zero",
+      "corrected_meaning": "interval_not_strictly_below_zero",
+      "delta_brier_lower": -0.0057626151550720164,
+      "delta_brier_upper": 0.011652686270375816,
+      "interval_entirely_positive": false,
+      "decision_changed": false
+    },
+    {
+      "scope": "strict",
+      "cell": "lag2/onset",
+      "block_days": 21,
+      "original_label": "block_21_interval_does_not_exclude_zero",
+      "corrected_meaning": "interval_not_strictly_below_zero",
+      "delta_brier_lower": -0.009460686917537967,
+      "delta_brier_upper": 0.012816087228261363,
+      "interval_entirely_positive": false,
+      "decision_changed": false
+    }
+  ]
+}

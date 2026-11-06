@@ -1,0 +1,110 @@
+{"stage": "model_exported", "scope": "strict", "lag": 1, "arm": "F4", "iterations": 928}
+{"stage": "fit_start", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F0", "rounds_requested": 928}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F0", "round": 100, "elapsed_seconds": 11.292270999983884}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F0", "round": 200, "elapsed_seconds": 21.3808541999897}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F0", "round": 300, "elapsed_seconds": 30.406913699989673}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F0", "round": 400, "elapsed_seconds": 39.24827480001841}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F0", "round": 500, "elapsed_seconds": 47.51160600001458}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F0", "round": 600, "elapsed_seconds": 55.78658750001341}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F0", "round": 700, "elapsed_seconds": 63.92519739997806}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F0", "round": 800, "elapsed_seconds": 72.32128279999597}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F0", "round": 900, "elapsed_seconds": 80.77861600002507}
+{"stage": "fit_saved", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F0", "best_iteration": 928, "actual_model_iterations": 928, "fit_seconds": 83.24482879997231}
+{"stage": "model_exported", "scope": "strict", "lag": 1, "arm": "F0", "iterations": 928}
+{"stage": "fit_start", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F1", "rounds_requested": 928}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F1", "round": 100, "elapsed_seconds": 25.721184800029732}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F1", "round": 200, "elapsed_seconds": 46.936457900039386}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F1", "round": 300, "elapsed_seconds": 66.25883840001188}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F1", "round": 400, "elapsed_seconds": 85.1493407000089}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F1", "round": 500, "elapsed_seconds": 103.42975730000762}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F1", "round": 600, "elapsed_seconds": 122.3234030000167}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F1", "round": 700, "elapsed_seconds": 140.83752420003293}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F1", "round": 800, "elapsed_seconds": 159.34157789999153}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F1", "round": 900, "elapsed_seconds": 177.09928419999778}
+{"stage": "fit_saved", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F1", "best_iteration": 928, "actual_model_iterations": 928, "fit_seconds": 181.94114190002438}
+{"stage": "model_exported", "scope": "strict", "lag": 1, "arm": "F1", "iterations": 928}
+{"stage": "fit_start", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F4", "rounds_requested": 928}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F4", "round": 100, "elapsed_seconds": 33.18167060002452}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F4", "round": 200, "elapsed_seconds": 58.95495410001604}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F4", "round": 300, "elapsed_seconds": 83.31399460003013}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F4", "round": 400, "elapsed_seconds": 106.61095190001652}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F4", "round": 500, "elapsed_seconds": 129.78529720002552}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F4", "round": 600, "elapsed_seconds": 153.44586120004533}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F4", "round": 700, "elapsed_seconds": 176.41589750000276}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F4", "round": 800, "elapsed_seconds": 199.41690190002555}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F4", "round": 900, "elapsed_seconds": 222.95904680003878}
+{"stage": "fit_saved", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F4", "best_iteration": 928, "actual_model_iterations": 928, "fit_seconds": 229.53894669999136}
+{"stage": "model_exported", "scope": "strict", "lag": 2, "arm": "F4", "iterations": 928}
+{"stage": "fit_start", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F0", "rounds_requested": 928}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F0", "round": 100, "elapsed_seconds": 12.277170499961358}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F0", "round": 200, "elapsed_seconds": 22.58726999995997}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F0", "round": 300, "elapsed_seconds": 31.922412099957}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F0", "round": 400, "elapsed_seconds": 41.80566099996213}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F0", "round": 500, "elapsed_seconds": 50.87052319996292}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F0", "round": 600, "elapsed_seconds": 59.71952439995948}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F0", "round": 700, "elapsed_seconds": 68.6444124999689}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F0", "round": 800, "elapsed_seconds": 77.35901859996375}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F0", "round": 900, "elapsed_seconds": 85.7090769999777}
+{"stage": "fit_saved", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F0", "best_iteration": 928, "actual_model_iterations": 928, "fit_seconds": 88.31215000001248}
+{"stage": "model_exported", "scope": "strict", "lag": 2, "arm": "F0", "iterations": 928}
+{"stage": "fit_start", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F1", "rounds_requested": 928}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F1", "round": 100, "elapsed_seconds": 24.697134599962737}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F1", "round": 200, "elapsed_seconds": 44.61781999998493}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F1", "round": 300, "elapsed_seconds": 63.50568020000355}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F1", "round": 400, "elapsed_seconds": 82.48466179997195}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F1", "round": 500, "elapsed_seconds": 100.98691579996375}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F1", "round": 600, "elapsed_seconds": 119.23074189998442}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F1", "round": 700, "elapsed_seconds": 137.54864459997043}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F1", "round": 800, "elapsed_seconds": 156.26896689995192}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F1", "round": 900, "elapsed_seconds": 175.03897689998848}
+{"stage": "fit_saved", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F1", "best_iteration": 928, "actual_model_iterations": 928, "fit_seconds": 179.89871740003582}
+{"stage": "model_exported", "scope": "strict", "lag": 2, "arm": "F1", "iterations": 928}
+{"stage": "fit_start", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F0P", "rounds_requested": 928}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F0P", "round": 100, "elapsed_seconds": 12.699102799990214}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F0P", "round": 200, "elapsed_seconds": 23.621472999977414}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F0P", "round": 300, "elapsed_seconds": 33.683774399978574}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F0P", "round": 400, "elapsed_seconds": 43.44837940001162}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F0P", "round": 500, "elapsed_seconds": 53.407691499975044}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F0P", "round": 600, "elapsed_seconds": 63.13475460000336}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F0P", "round": 700, "elapsed_seconds": 72.38345239998307}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F0P", "round": 800, "elapsed_seconds": 82.00666419998743}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F0P", "round": 900, "elapsed_seconds": 91.33071080001537}
+{"stage": "fit_saved", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F0P", "best_iteration": 928, "actual_model_iterations": 928, "fit_seconds": 94.06812199996784}
+{"stage": "model_exported", "scope": "strict", "lag": 1, "arm": "F0P", "iterations": 928}
+{"stage": "fit_start", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F1P", "rounds_requested": 928}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F1P", "round": 100, "elapsed_seconds": 25.563738299999386}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F1P", "round": 200, "elapsed_seconds": 47.29619580000872}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F1P", "round": 300, "elapsed_seconds": 68.85576219996437}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F1P", "round": 400, "elapsed_seconds": 88.4260774999857}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F1P", "round": 500, "elapsed_seconds": 107.12026369996602}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F1P", "round": 600, "elapsed_seconds": 126.37093430000823}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F1P", "round": 700, "elapsed_seconds": 144.9272613999783}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F1P", "round": 800, "elapsed_seconds": 163.82182199996896}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F1P", "round": 900, "elapsed_seconds": 182.17471619998105}
+{"stage": "fit_saved", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag1_F1P", "best_iteration": 928, "actual_model_iterations": 928, "fit_seconds": 187.3103897999972}
+{"stage": "model_exported", "scope": "strict", "lag": 1, "arm": "F1P", "iterations": 928}
+{"stage": "fit_start", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F0P", "rounds_requested": 928}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F0P", "round": 100, "elapsed_seconds": 12.885988700028975}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F0P", "round": 200, "elapsed_seconds": 23.834522399993148}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F0P", "round": 300, "elapsed_seconds": 33.70621510001365}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F0P", "round": 400, "elapsed_seconds": 44.04875820002053}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F0P", "round": 500, "elapsed_seconds": 53.871575900004245}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F0P", "round": 600, "elapsed_seconds": 63.41589110001223}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F0P", "round": 700, "elapsed_seconds": 72.9303417999763}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F0P", "round": 800, "elapsed_seconds": 82.3784579000203}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F0P", "round": 900, "elapsed_seconds": 91.64012950001052}
+{"stage": "fit_saved", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F0P", "best_iteration": 928, "actual_model_iterations": 928, "fit_seconds": 94.2860045999987}
+{"stage": "model_exported", "scope": "strict", "lag": 2, "arm": "F0P", "iterations": 928}
+{"stage": "fit_start", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F1P", "rounds_requested": 928}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F1P", "round": 100, "elapsed_seconds": 25.87305190000916}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F1P", "round": 200, "elapsed_seconds": 46.339523200003896}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F1P", "round": 300, "elapsed_seconds": 64.93314759997884}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F1P", "round": 400, "elapsed_seconds": 84.39198499999475}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F1P", "round": 500, "elapsed_seconds": 103.59820399997989}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F1P", "round": 600, "elapsed_seconds": 122.62193439999828}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F1P", "round": 700, "elapsed_seconds": 141.3299267999828}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F1P", "round": 800, "elapsed_seconds": 160.18641089997254}
+{"stage": "boosting", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F1P", "round": 900, "elapsed_seconds": 178.6639269000152}
+{"stage": "fit_saved", "fit": "data\\probability_phase3\\lightgbm\\run1\\reuse\\strict\\lag2_F1P", "best_iteration": 928, "actual_model_iterations": 928, "fit_seconds": 184.20118889998412}
+{"stage": "model_exported", "scope": "strict", "lag": 2, "arm": "F1P", "iterations": 928}
+{"stage": "batch_complete", "batch": "core", "scopes": ["strict"], "runtime_seconds": 1788.003522599989}

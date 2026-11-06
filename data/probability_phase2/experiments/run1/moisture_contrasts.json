@@ -1,0 +1,161 @@
+{
+  "status": "validation_only_no_independent_test_claim",
+  "contrasts": [
+    {
+      "scope": "strict",
+      "lag": 1,
+      "risk_set": "all",
+      "mean_delta_F1_minus_F0": -0.012390329696869103,
+      "years_improving": 3,
+      "validation_years": 3,
+      "annual_delta": {
+        "2015": -0.0089728626802568,
+        "2016": -0.016404242373868907,
+        "2017": -0.0117938840364816
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "risk_set": "onset",
+      "mean_delta_F1_minus_F0": -0.005071741491037801,
+      "years_improving": 3,
+      "validation_years": 3,
+      "annual_delta": {
+        "2015": -0.005637355043270502,
+        "2016": -0.0032211304904205956,
+        "2017": -0.0063567389394223045
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 1,
+      "risk_set": "persistence_or_clearance",
+      "mean_delta_F1_minus_F0": -0.03559257046278036,
+      "years_improving": 3,
+      "validation_years": 3,
+      "annual_delta": {
+        "2015": -0.032990222269889485,
+        "2016": -0.048353011275861,
+        "2017": -0.02543447784259059
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "risk_set": "all",
+      "mean_delta_F1_minus_F0": -0.005815499298957504,
+      "years_improving": 3,
+      "validation_years": 3,
+      "annual_delta": {
+        "2015": -0.003037663668988902,
+        "2016": -0.006615527006840594,
+        "2017": -0.0077933072210430165
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "risk_set": "onset",
+      "mean_delta_F1_minus_F0": 0.002769146577091199,
+      "years_improving": 0,
+      "validation_years": 3,
+      "annual_delta": {
+        "2015": 5.7360270584699835e-05,
+        "2016": 0.006933455836859198,
+        "2017": 0.001316623623829699
+      }
+    },
+    {
+      "scope": "strict",
+      "lag": 2,
+      "risk_set": "persistence_or_clearance",
+      "mean_delta_F1_minus_F0": -0.03180749854877038,
+      "years_improving": 3,
+      "validation_years": 3,
+      "annual_delta": {
+        "2015": -0.02532341773862201,
+        "2016": -0.039450970228247506,
+        "2017": -0.030648107679441622
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "risk_set": "all",
+      "mean_delta_F1_minus_F0": -0.012953770761640565,
+      "years_improving": 3,
+      "validation_years": 3,
+      "annual_delta": {
+        "2015": -0.008850646082594796,
+        "2016": -0.016842527570371704,
+        "2017": -0.013168138631955192
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "risk_set": "onset",
+      "mean_delta_F1_minus_F0": -0.005348441744308635,
+      "years_improving": 3,
+      "validation_years": 3,
+      "annual_delta": {
+        "2015": -0.005556567031004496,
+        "2016": -0.004292029538836409,
+        "2017": -0.006196728663085002
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 1,
+      "risk_set": "persistence_or_clearance",
+      "mean_delta_F1_minus_F0": -0.034949074994638334,
+      "years_improving": 3,
+      "validation_years": 3,
+      "annual_delta": {
+        "2015": -0.031551939353935604,
+        "2016": -0.0445974496938287,
+        "2017": -0.02869783593615069
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "risk_set": "all",
+      "mean_delta_F1_minus_F0": -0.006505272209581761,
+      "years_improving": 3,
+      "validation_years": 3,
+      "annual_delta": {
+        "2015": -0.0031007050743078884,
+        "2016": -0.0075804611801046085,
+        "2017": -0.008834650374332786
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "risk_set": "onset",
+      "mean_delta_F1_minus_F0": 0.002861303204416299,
+      "years_improving": 0,
+      "validation_years": 3,
+      "annual_delta": {
+        "2015": 0.0001157567575457985,
+        "2016": 0.006628243669414197,
+        "2017": 0.0018399091862889017
+      }
+    },
+    {
+      "scope": "temporal",
+      "lag": 2,
+      "risk_set": "persistence_or_clearance",
+      "mean_delta_F1_minus_F0": -0.03229437284915445,
+      "years_improving": 3,
+      "validation_years": 3,
+      "annual_delta": {
+        "2015": -0.02526709580064279,
+        "2016": -0.03900244105553888,
+        "2017": -0.03261358169128167
+      }
+    }
+  ]
+}

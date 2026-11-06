@@ -1,0 +1,286 @@
+[
+  {
+    "scope": "temporal",
+    "lag": 1,
+    "model": "persistence",
+    "training_rows": 1990800,
+    "state": "models\\temporal\\lag1_persistence.json",
+    "status": "complete"
+  },
+  {
+    "scope": "temporal",
+    "lag": 1,
+    "model": "seasonal",
+    "training_rows": 1990800,
+    "state": "models\\temporal\\lag1_seasonal.json",
+    "status": "complete"
+  },
+  {
+    "scope": "temporal",
+    "lag": 1,
+    "model": "seasonal_pooled",
+    "training_rows": 1990800,
+    "state": "models\\temporal\\lag1_seasonal_pooled.json",
+    "status": "complete"
+  },
+  {
+    "scope": "temporal",
+    "lag": 1,
+    "model": "transition",
+    "training_rows": 1990800,
+    "state": "models\\temporal\\lag1_transition.json",
+    "status": "complete"
+  },
+  {
+    "scope": "temporal",
+    "lag": 2,
+    "model": "persistence",
+    "training_rows": 1990800,
+    "state": "models\\temporal\\lag2_persistence.json",
+    "status": "complete"
+  },
+  {
+    "scope": "temporal",
+    "lag": 2,
+    "model": "seasonal",
+    "training_rows": 1990800,
+    "state": "models\\temporal\\lag2_seasonal.json",
+    "status": "complete"
+  },
+  {
+    "scope": "temporal",
+    "lag": 2,
+    "model": "seasonal_pooled",
+    "training_rows": 1990800,
+    "state": "models\\temporal\\lag2_seasonal_pooled.json",
+    "status": "complete"
+  },
+  {
+    "scope": "temporal",
+    "lag": 2,
+    "model": "transition",
+    "training_rows": 1990800,
+    "state": "models\\temporal\\lag2_transition.json",
+    "status": "complete"
+  },
+  {
+    "scope": "temporal",
+    "lag": 1,
+    "model": "logistic_F4",
+    "status": "complete",
+    "state": "models\\temporal\\lag1_logistic_F4.json",
+    "C": 0.1,
+    "converged": true,
+    "iterations": 1232,
+    "runtime_seconds": 250.54815380001673,
+    "warnings": [],
+    "annual_validation_brier": {
+      "2015": 0.05255232851890086,
+      "2016": 0.09128030475285413,
+      "2017": 0.09208359674533213
+    },
+    "mean_annual_validation_brier": 0.07863874333902904
+  },
+  {
+    "scope": "temporal",
+    "lag": 1,
+    "model": "logistic_F0",
+    "status": "complete",
+    "state": "models\\temporal\\lag1_logistic_F0.json",
+    "C": 0.1,
+    "converged": true,
+    "iterations": 383,
+    "runtime_seconds": 38.6112742999976,
+    "warnings": []
+  },
+  {
+    "scope": "temporal",
+    "lag": 1,
+    "model": "logistic_F1",
+    "status": "complete",
+    "state": "models\\temporal\\lag1_logistic_F1.json",
+    "C": 0.1,
+    "converged": true,
+    "iterations": 932,
+    "runtime_seconds": 156.9340525000007,
+    "warnings": []
+  },
+  {
+    "scope": "temporal",
+    "lag": 2,
+    "model": "logistic_F0",
+    "status": "complete",
+    "state": "models\\temporal\\lag2_logistic_F0.json",
+    "C": 0.1,
+    "converged": true,
+    "iterations": 382,
+    "runtime_seconds": 40.249170299997786,
+    "warnings": []
+  },
+  {
+    "scope": "temporal",
+    "lag": 2,
+    "model": "logistic_F1",
+    "status": "complete",
+    "state": "models\\temporal\\lag2_logistic_F1.json",
+    "C": 0.1,
+    "converged": true,
+    "iterations": 835,
+    "runtime_seconds": 136.85778240000946,
+    "warnings": []
+  },
+  {
+    "scope": "temporal",
+    "lag": 2,
+    "model": "logistic_F4",
+    "status": "complete",
+    "state": "models\\temporal\\lag2_logistic_F4.json",
+    "C": 0.1,
+    "converged": true,
+    "iterations": 1496,
+    "runtime_seconds": 282.19253959998605,
+    "warnings": []
+  },
+  {
+    "scope": "strict",
+    "lag": 1,
+    "model": "persistence",
+    "training_rows": 1636740,
+    "state": "models\\strict\\lag1_persistence.json",
+    "status": "complete"
+  },
+  {
+    "scope": "strict",
+    "lag": 1,
+    "model": "seasonal",
+    "training_rows": 1636740,
+    "state": "models\\strict\\lag1_seasonal.json",
+    "status": "complete"
+  },
+  {
+    "scope": "strict",
+    "lag": 1,
+    "model": "seasonal_pooled",
+    "training_rows": 1636740,
+    "state": "models\\strict\\lag1_seasonal_pooled.json",
+    "status": "complete"
+  },
+  {
+    "scope": "strict",
+    "lag": 1,
+    "model": "transition",
+    "training_rows": 1636740,
+    "state": "models\\strict\\lag1_transition.json",
+    "status": "complete"
+  },
+  {
+    "scope": "strict",
+    "lag": 2,
+    "model": "persistence",
+    "training_rows": 1636740,
+    "state": "models\\strict\\lag2_persistence.json",
+    "status": "complete"
+  },
+  {
+    "scope": "strict",
+    "lag": 2,
+    "model": "seasonal",
+    "training_rows": 1636740,
+    "state": "models\\strict\\lag2_seasonal.json",
+    "status": "complete"
+  },
+  {
+    "scope": "strict",
+    "lag": 2,
+    "model": "seasonal_pooled",
+    "training_rows": 1636740,
+    "state": "models\\strict\\lag2_seasonal_pooled.json",
+    "status": "complete"
+  },
+  {
+    "scope": "strict",
+    "lag": 2,
+    "model": "transition",
+    "training_rows": 1636740,
+    "state": "models\\strict\\lag2_transition.json",
+    "status": "complete"
+  },
+  {
+    "scope": "strict",
+    "lag": 1,
+    "model": "logistic_F4",
+    "status": "complete",
+    "state": "models\\strict\\lag1_logistic_F4.json",
+    "C": 0.1,
+    "converged": true,
+    "iterations": 1236,
+    "runtime_seconds": 193.82425050000893,
+    "warnings": [],
+    "annual_validation_brier": {
+      "2015": 0.05095794427136752,
+      "2016": 0.08683559992916022,
+      "2017": 0.08825929049152133
+    },
+    "mean_annual_validation_brier": 0.07535094489734968
+  },
+  {
+    "scope": "strict",
+    "lag": 1,
+    "model": "logistic_F0",
+    "status": "complete",
+    "state": "models\\strict\\lag1_logistic_F0.json",
+    "C": 0.1,
+    "converged": true,
+    "iterations": 359,
+    "runtime_seconds": 30.396457299997564,
+    "warnings": []
+  },
+  {
+    "scope": "strict",
+    "lag": 1,
+    "model": "logistic_F1",
+    "status": "complete",
+    "state": "models\\strict\\lag1_logistic_F1.json",
+    "C": 0.1,
+    "converged": true,
+    "iterations": 921,
+    "runtime_seconds": 122.02664820000064,
+    "warnings": []
+  },
+  {
+    "scope": "strict",
+    "lag": 2,
+    "model": "logistic_F0",
+    "status": "complete",
+    "state": "models\\strict\\lag2_logistic_F0.json",
+    "C": 0.1,
+    "converged": true,
+    "iterations": 335,
+    "runtime_seconds": 28.21644680001191,
+    "warnings": []
+  },
+  {
+    "scope": "strict",
+    "lag": 2,
+    "model": "logistic_F1",
+    "status": "complete",
+    "state": "models\\strict\\lag2_logistic_F1.json",
+    "C": 0.1,
+    "converged": true,
+    "iterations": 804,
+    "runtime_seconds": 104.79511470001307,
+    "warnings": []
+  },
+  {
+    "scope": "strict",
+    "lag": 2,
+    "model": "logistic_F4",
+    "status": "complete",
+    "state": "models\\strict\\lag2_logistic_F4.json",
+    "C": 0.1,
+    "converged": true,
+    "iterations": 1333,
+    "runtime_seconds": 204.36352520002401,
+    "warnings": []
+  }
+]

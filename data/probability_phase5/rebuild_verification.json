@@ -1,0 +1,43 @@
+{
+  "runs": [
+    {
+      "command": [
+        "<ERA5_SOURCE_ROOT>\\.venv\\Scripts\\python.exe",
+        "tools/probability_phase5_sites.py",
+        "--config",
+        "configs/probability_phase5_sites.json"
+      ],
+      "started_utc": "2026-11-05T23:38:46.349137+00:00",
+      "elapsed_seconds": 5.2408742000116035,
+      "exit_code": 0,
+      "stdout": "extracted temporal D-1 logistic_F4\nextracted temporal D-1 lightgbm_F4\nextracted temporal D-1 persistence\nextracted temporal D-1 seasonal\nextracted temporal D-1 seasonal_pooled\nextracted temporal D-1 transition\nextracted temporal D-2 logistic_F4\nextracted temporal D-2 lightgbm_F4\nextracted temporal D-2 persistence\nextracted temporal D-2 seasonal\nextracted temporal D-2 seasonal_pooled\nextracted temporal D-2 transition\nextracted strict D-1 logistic_F4\nextracted strict D-1 lightgbm_F4\nextracted strict D-1 persistence\nextracted strict D-1 seasonal\nextracted strict D-1 seasonal_pooled\nextracted strict D-1 transition\nextracted strict D-2 logistic_F4\nextracted strict D-2 lightgbm_F4\nextracted strict D-2 persistence\nextracted strict D-2 seasonal\nextracted strict D-2 seasonal_pooled\nextracted strict D-2 transition\n{\"prediction_rows\": 15120, \"distinct_physical_grid_days\": 840, \"unrounded_legacy_labels_match\": true, \"common_model_lag_samples\": true, \"frozen_calibrated_alerts_match\": true, \"site_count\": 5, \"accepted_primary_sites\": 4, \"distinct_accepted_primary_grids\": 2, \"historical_grid_days\": 4600, \"historical_grid_years\": 50, \"source_prediction_bundles\": 120, \"gates\": {\"scientific_lock.json\": \"9e4e1539903757bc216bf951dddce799b713c6f2bb19bca4a27685551874f938\", \"calibration_lock.json\": \"0383660a3c02ba5d0233f3bc54747d502d31a397105b8d7e36038dcb5d1588ad\", \"test_open_lock.json\": \"4d834059bd4cfc68dcb4c407e896e8f26a715a20fcfc3ca69cc61ecb1c497415\"}, \"no_training_or_calibration\": true, \"no_test_based_model_selection\": true, \"source_site_snapshot\": \"2026-10-29\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "<ERA5_SOURCE_ROOT>\\.venv\\Scripts\\python.exe",
+        "tools/probability_phase5_report.py",
+        "--config",
+        "configs/probability_phase5_sites.json",
+        "--application",
+        "configs/probability_phase5_application.json"
+      ],
+      "started_utc": "2026-11-05T23:38:51.590073+00:00",
+      "elapsed_seconds": 2.618151000002399,
+      "exit_code": 0,
+      "stdout": "Created 5 cards, 15 conditional pathways, 65 missing fields, 15 monitoring tasks, 4 figures and local report.\n",
+      "stderr": ""
+    }
+  ],
+  "deterministic_rebuild_csv_sha256": {
+    "predictions.csv": "c2c281d4d5c935e24952ef71665578a3f06548d0874703caa71d8c1a739acf6f",
+    "site_mapping.csv": "d7042bae982c1e26535bcdc65e42beefb5b8b931a029dd0df1affd07bf858bf2",
+    "historical_daily.csv": "c05c14b5cd5fb5f1bd8cf51a3db787b500e03aa385c52a2cea7cdc5ac9fc795b",
+    "historical_annual.csv": "2e1507a6e2c566ce9adaa02d077ca14f9f6eff32bfa155f593284dbced893ef8",
+    "annual_scores.csv": "6c1a3adef92f13811a92cb5c5e5279066aab17257b05d86a5e74548c2570cfb2",
+    "aggregate_scores.csv": "a7415e60cd2c29577f8f0d44b91c8962baf84df671621b35dc145ddd84e6e2c4",
+    "reliability.csv": "500fbb34f33e2aeb7ec7e2c4c16dadc94ea80d65426fb2ccbda5e8cde628257d",
+    "annual_alerts.csv": "b2d3f929afcc4bd9a048e21d85ea8dcb9f4b8a4b6fff853e29df3de481e8661f"
+  },
+  "all_eight_numeric_tables_byte_identical": true
+}

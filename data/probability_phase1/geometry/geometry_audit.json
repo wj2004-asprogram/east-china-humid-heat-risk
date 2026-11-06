@@ -1,0 +1,29 @@
+{
+  "scope": "geometry_only_no_weather_or_labels",
+  "radius_degrees_each_axis": 0.5,
+  "exclude_center": true,
+  "minimum_sources": 3,
+  "source_weight": "equal",
+  "spatial_std_ddof": 0,
+  "grid_counts": {
+    "train": 1302,
+    "buffer": 113,
+    "holdout": 165
+  },
+  "holdout_four_neighbor_component_sizes": [
+    165
+  ],
+  "holdout_largest_component_fraction": 1.0,
+  "ordinary_eligible_grids": 1580,
+  "ordinary_excluded_grids": 0,
+  "strict_eligible_grids_by_role": {
+    "train": 1299,
+    "holdout": 165
+  },
+  "strict_rule": "train queries source train only; holdout queries source holdout only; buffer excluded",
+  "grid_registry_sha256": "24342db500391f6301bcbed60953c2784f8b203eda020998457fbfa95f8026f6",
+  "neighbor_sources_sha256": "8c809c44e75551422e60bb29ba1e5c01749b63e515b0c94db6b503aa9b7f16dc",
+  "source_index_meaning": "Zero-based row in exact grid_registry.csv; hash binds row order",
+  "limitation": "Geometric eligibility only; hourly/feature finite-value masks still required",
+  "geometry_gate_passed": true
+}
